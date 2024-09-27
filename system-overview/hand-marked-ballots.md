@@ -99,7 +99,7 @@ In the election definition, bubble positions and other ballot regions are specif
 **Notes:**
 
 * Coordinates correspond to the _centers_ of timing marks
-* When specifying a bubble position, the _center_ of the bubbles is what is specified
+* Coordinates specify the _center_ of bubbles
 * Fractional coordinates are allowed
 
 ## Complete Example
