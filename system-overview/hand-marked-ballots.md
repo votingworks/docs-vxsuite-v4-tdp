@@ -14,7 +14,7 @@ layout:
 
 # Hand Marked Ballots
 
-VxSuite can accept an enormous range of ballots, which can be organized and stylized in a limitless number of ways. The ballots must conform to a these design requirements:
+VxSuite can accept an enormous range of ballots, which can be organized and stylized in a limitless number of ways. The ballots must conform to these design requirements:
 
 1. Ballot size much be one of the available system options
 2. Ballot must include a correctly formatted timing mark grid
