@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # System Overview
 
 <figure><img src="../.gitbook/assets/Untitled (3).png" alt=""><figcaption><p>Top Level System Diagram</p></figcaption></figure>
