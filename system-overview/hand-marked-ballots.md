@@ -51,7 +51,7 @@ The timing mark grid must exist on every ballot, front and back. The timing mark
 
 As for number of timing marks, there are always 34 columns. The number of rows varies based on the length of the ballot, and should be calculated by the formula **(# inches \* 4) - 3**. For example, a letter-sized ballot (11 inches) should have 41 rows of timing marks whereas a legal-sized ballot (14 inches) should have 53 rows of timing marks. The number of rows is inclusive of the top and and bottom row that are completely full of timing marks.
 
-The timing marks should be up aligned the margins of the page and evenly spaced.
+The timing marks should be aligned to the margins of the page and evenly spaced.
 
 ## QR Code Metadata
 
