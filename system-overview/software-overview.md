@@ -22,11 +22,11 @@ The kiosk browser is a web browser restricted to rendering a single full-screen 
 
 ### Application Frontend Server
 
-The frontend is a [React](https://react.dev/) application served from a [Node.js](https://nodejs.org/en) server. All code for the application frontends are in the [vxsuite repository](https://github.com/votingworks/vxsuite).
+The frontend is a [React](https://react.dev/) application served from a [Node.js](https://nodejs.org/en) server. All code for the application frontends are in the [vxsuite repository](https://github.com/votingworks/vxsuite) under `apps/[app-name]/frontend`.&#x20;
 
 ### Application Backend Server
 
-The application backend is a separate [Node.js](https://nodejs.org/en) server which acts as the core of the entire application in that it manages all persistent data and communication with peripherals. All code for the application backends are in the [vxsuite repository](https://github.com/votingworks/vxsuite). Most code is written in Typescript but some performance sensitive code, such as interpretation and background daemons, are written in [Rust](https://www.rust-lang.org/) and executed as binaries at runtime.
+The application backend is a separate [Node.js](https://nodejs.org/en) server which acts as the core of the entire application in that it manages all persistent data and communication with peripherals. All code for the application backends are in the [vxsuite repository](https://github.com/votingworks/vxsuite) under `apps/[app-name]/backend`. Most code is written in Typescript but some performance sensitive code, such as interpretation and background daemons, are written in [Rust](https://www.rust-lang.org/) and executed as binaries at runtime.
 
 #### Application Data Management
 
@@ -64,20 +64,20 @@ All machines do not and cannot connect to any network at any time. Networking is
 * **BIOS -** The networking stack is disabled at the BIOS level.
 * **Operating System** - All network drivers are purged from the system when the software image is locked down.
 
-Because there is no networking, all electronic data transfer takes place via USB flash drives.
+Because there is no networking, all electronic data transfer is air-gapped via USB flash drives.
 
 ## Key VotingWorks Repositories
 
 There are four code repositories relevant to the voting system:
 
-* [vxsuite](https://github.com/votingworks/vxsuite) - all application code and supporting libraries
+* [vxsuite](https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch) - all application code and supporting libraries
 * [kiosk-browser](https://github.com/votingworks/kiosk-browser) - kiosk browser code
 * [vxsuite-complete-system](https://github.com/votingworks/vxsuite-complete-system) - installation code and configuration
 * [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/main) - image creation and dependency management
 
 ## Key Dependency Chart
 
-<table><thead><tr><th width="293">Dependency</th><th>Version</th></tr></thead><tbody><tr><td>Debian</td><td>12.2.0</td></tr><tr><td>Additional Debian Packages</td><td>See <a href="https://github.com/votingworks/vxsuite-build-system/blob/main/inventories/v3.1/group_vars/all/packages.yaml">build system package inventory</a> (<strong>update link</strong>)</td></tr><tr><td>Node.js</td><td>20.16.0</td></tr><tr><td>pnpm</td><td>8.15.5</td></tr><tr><td>Application Node Packages</td><td>See the relevant <a href="https://github.com/votingworks/vxsuite/blob/main/pnpm-lock.yaml">lock file</a> (<strong>update link</strong>)</td></tr><tr><td>Rust</td><td>1.81</td></tr><tr><td>Rust Packages</td><td>See the relevant <a href="https://github.com/votingworks/vxsuite/blob/main/Cargo.lock">lock file</a> <strong>(update link)</strong></td></tr><tr><td>yarn</td><td>1.22.22</td></tr><tr><td>Electron</td><td>17.4.1</td></tr><tr><td>Chromium</td><td>98.0.4758.141</td></tr><tr><td>Kiosk Browser Node Packages</td><td>See the relevant <a href="https://github.com/votingworks/kiosk-browser/blob/main/yarn.lock">lock file</a> (<strong>update link</strong>)</td></tr></tbody></table>
+<table><thead><tr><th width="293">Dependency</th><th>Version</th></tr></thead><tbody><tr><td>Debian</td><td>12.2.0</td></tr><tr><td>Additional Debian Packages</td><td>See <a href="https://github.com/votingworks/vxsuite-build-system/blob/main/inventories/v3.1/group_vars/all/packages.yaml">build system package inventory</a> (<strong>update link</strong>)</td></tr><tr><td>Node.js</td><td>20.16.0</td></tr><tr><td>pnpm</td><td>8.15.5</td></tr><tr><td>Application Node Packages</td><td>See the relevant <a href="https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/pnpm-lock.yaml">lock file</a></td></tr><tr><td>Rust</td><td>1.81</td></tr><tr><td>Rust Packages</td><td>See the relevant <a href="https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/Cargo.lock">lock file</a></td></tr><tr><td>yarn</td><td>1.22.22</td></tr><tr><td>Electron</td><td>17.4.1</td></tr><tr><td>Chromium</td><td>98.0.4758.141</td></tr><tr><td>Kiosk Browser Node Packages</td><td>See the relevant <a href="https://github.com/votingworks/kiosk-browser/blob/main/yarn.lock">lock file</a> (<strong>update link</strong>)</td></tr></tbody></table>
 
 ## Software Traceability
 
@@ -111,7 +111,7 @@ All machines allow system administrators and election managers to edit the date,
 **User Manual Reference**: [Setting Date & Time](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxadmin-system-setup/setting-date-and-time "mention")
 {% endhint %}
 
-### Other
+### Other Shared Software Patterns
 
 * [ballot-interpretation.md](ballot-interpretation.md "mention")
 * [diagnostics.md](diagnostics.md "mention")
