@@ -34,7 +34,7 @@ VxAdmin is later used to load, store, and tabulate cast vote records from the sc
 
 ## VxMark
 
-VxMark is the system's ballot-marking device (BMD) that provides an accessible voting experience. At the beginning of an election, it is configured with an election package from VxAdmin. Once configured, a voter can make vote selections in various interaction modes according to their needs. The following input modes are supported:
+VxMark is the system's ballot-marking device (BMD) that provides an accessible voting experience. At the beginning of an election, it is configured with an [election package](election-package/) from VxAdmin. Once configured, a voter can make vote selections in various interaction modes according to their needs. The following input modes are supported:
 
 * Touch, using the touchscreen
 * Tactile, using the accessible controller
@@ -54,22 +54,22 @@ After finishing with selections, the a [machine marked ballot](machine-marked-ba
 
 ## VxScan
 
-VxScan is the system's precinct scanner. At the beginning of an election, it is configured with an election package from VxAdmin which specifies the ballot layouts. The polls are opened by a poll worker after which casting ballots is allowed. Opening polls prints a tally report which is empty because no ballots have been scanned, a.k.a. the zero report.&#x20;
+VxScan is the system's precinct scanner. At the beginning of an election, it is configured with an [election package](election-package/) from VxAdmin which specifies the ballot layouts. The polls are opened by a poll worker after which casting ballots is allowed. Opening polls prints [a tally report](vxscan-polls-reports.md) which is empty because no ballots have been scanned, a.k.a. the zero report.&#x20;
 
-Voters cast ballots by inserting their ballots into the scanner in any orientation. After interpreting the scanned ballot, the scanner will drop the ballot into the ballot box and inform the voter their ballot was successfully cast. If the election is configured to support adjudication reasons (e.g. overvotes) and the ballot triggers an adjudication reason, the scanner will hold the ballot while the voter is notified of the issues on their ballot and chooses whether to cast their ballot or return it to update or spoil. During voting, VxScan is continuously exporting CVRs to an attached USB drive.&#x20;
+Voters cast ballots by inserting their ballots into the scanner in any orientation. After interpreting the scanned ballot, the scanner will drop the ballot into the ballot box and inform the voter their ballot was successfully cast. If the election is configured to support adjudication reasons (e.g. overvotes) and the ballot triggers an adjudication reason, the scanner will hold the ballot while the voter is notified of the issues on their ballot and chooses whether to cast their ballot or return it to update or spoil. During voting, VxScan is continuously exporting [cast vote records](cast-vote-records.md) to an attached USB drive.&#x20;
 
-When polls are closed, the CVR export is completed and a polls closed report prints. The polls closed report includes the vote tallies of all ballots cast at the scanner while polls were open. Unlike the vote tallies eventually exported from VxAdmin, the vote tallies at VxScan do not contain any adjudication information such as write-in adjudication. The CVR export on the USB drive is then taken to VxAdmin for adjudication, aggregation, and reporting.
+When polls are closed, the CVR export is completed and a [polls closed report ](vxscan-polls-reports.md)prints. The polls closed report includes the vote tallies of all ballots cast at the scanner while polls were open. Unlike the vote tallies eventually exported from VxAdmin, the vote tallies at VxScan do not contain any adjudication information such as write-in adjudication. The CVR export on the USB drive is then taken to VxAdmin for adjudication, aggregation, and reporting.
 
 * [vxscan-function.md](vxscan-function.md "mention")
 * [vxscan-hardware.md](vxscan-hardware.md "mention")
 
 ## VxCentralScan
 
-VxCentralScan is the system's batch scanner, often used to scan absentee or provisional ballots. At the beginning of an election, it is configured with an election package from VxAdmin which specifies the ballot layouts.&#x20;
+VxCentralScan is the system's batch scanner, often used to scan absentee or provisional ballots. At the beginning of an election, it is configured with an [election package](election-package/) from VxAdmin which specifies the ballot layouts.&#x20;
 
 Ballots are inserted in the batch scanner's hopper and a batch scan is triggered from VxCentralScan. The ballots are scanned and interpreted in succession until the hopper is empty. If a ballot triggers a configured adjudication reason (e.g. it has an overvote) scanning will pause and the ballot will be displayed on screen, at which point the user can choose to tabulate the ballot anyway or remove it, untabulated.
 
-After scanning is complete, the user can export the CVRs to a USB drive and take the USB drive to VxAdmin for adjudication, aggregation, and reporting.
+After scanning is complete, the user can export the [cast vote records](cast-vote-records.md) to a USB drive and take the USB drive to VxAdmin for adjudication, aggregation, and reporting.
 
 * [vxcentralscan-function.md](vxcentralscan-function.md "mention")
 * [vxadmin-and-vxcentralscan-hardware.md](vxadmin-and-vxcentralscan-hardware.md "mention")
