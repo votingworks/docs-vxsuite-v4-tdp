@@ -1,8 +1,47 @@
 # VxAdmin & VxCentralScan Hardware
 
-## Functional Overview
+## Overview
 
-\[insert images and explanations]
+### Common Laptop
+
+VxAdmin and VxCentralScan are both laptops that connect to peripherals as needed. The laptop is a [custom configured HP Elitebook 840 14" G11](vxadmin-and-vxcentralscan-hardware.md#laptop-specification).
+
+<div>
+
+<figure><img src="../.gitbook/assets/840-front.jpg" alt="" width="375"><figcaption><p>Laptop keyboard and screen</p></figcaption></figure>
+
+ 
+
+<figure><img src="../.gitbook/assets/840-side.avif" alt="" width="430"><figcaption><p>Laptop ports</p></figcaption></figure>
+
+</div>
+
+The relevant hardware interfaces are:
+
+* **Smart Card Reader** - Enables reading and writing to smart cards, which is the basis for authentication in VxSuite
+* **USB Ports -** Allows connecting to the peripherals for scanning or printing
+
+While not strictly necessary, VxAdmin and VxCentralScan are bundled with a mouse and a USB hub for ease of use.  A USB A-B cable is included to connect to the peripherals.
+
+### VxAdmin
+
+VxAdmin connects to a printer for the purposes of printing reports. The printer includes an RJ45 (ethernet) port which is blocked by a port blocker because network connectivity is not required by the system.&#x20;
+
+<figure><img src="../.gitbook/assets/PXL_20241119_221005359 (1).jpg" alt="" width="563"><figcaption><p>VxAdmin fully connected with mouse, hub, charger, USB cable, and printer</p></figcaption></figure>
+
+### VxCentralScan
+
+VxCentralScan connects to a batch scanner for batch scanning. The scanner is either the smaller Ricoh fi-8170 or the larger Ricoh fi-7600. Ballots are loaded into the hopper and then, after a scan is triggered from the application, the scanner processes the ballots one-by-one, sending images to the application for interpretation.
+
+Both batch scanners can be used with Ricoh imprinters (not pictured) which allow printing an identifier on each ballot as it's exiting the scanner, which can be useful for certain types of post-election audits.&#x20;
+
+The batch scanner is powered through a Anker Solix C300 LFS (Lithium Ferrite System) UPS (Uninterruptible Power Supply) to ensure that the scanner can operate in variable power environments.&#x20;
+
+The fi-8170 includes an RJ45 (ethernet) port which is blocked by a port blocker because network connectivity is not required by the system.
+
+<figure><img src="../.gitbook/assets/PXL_20241119_215840432.jpg" alt="" width="563"><figcaption><p>VxCentralScan fully connected with mouse, hub, charger, USB cable, scanner, and power backup</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/PXL_20241119_215725302.jpg" alt="" width="563"><figcaption><p>VxCentralScan fully connected with mouse, hub, charger, USB cable, scanner, and power backup</p></figcaption></figure>
 
 ## Bill of Materials
 
@@ -20,11 +59,11 @@ All components for VxAdmin and VxCentralScan are commercial-off-the-shelf (COTS)
 
 VxCentralScan can be used with either the Ricoh fi-8170 or the Ricoh fi-7600, but does not need both. Each scanner can be paired with one of the two imprinters listed below.
 
-<table><thead><tr><th width="152">Manufacturer</th><th width="276">Component</th><th width="201">Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>Ricoh</td><td>fi-8170 Small Desktop Scanner</td><td>PA03810-B055</td><td>High</td></tr><tr><td>Ricoh</td><td>fi-819PRB Imprinter (for fi-8170)</td><td>PA03810-D201</td><td>Medium</td></tr><tr><td>Ricoh</td><td>fi-7600 Large Desktop Scanner</td><td>PA03740-B505</td><td>High</td></tr><tr><td>Ricoh</td><td>fi-760PRB Imprinter (for fi-7600)</td><td>PA03740-D101</td><td>Medium</td></tr><tr><td>Lindy</td><td>RJ45 Port Blocker</td><td>40471</td><td>Low</td></tr></tbody></table>
+<table><thead><tr><th width="155">Manufacturer</th><th width="303">Component</th><th width="176">Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>Ricoh</td><td>fi-8170 Small Desktop Scanner</td><td>PA03810-B055</td><td>High</td></tr><tr><td>Ricoh</td><td>fi-819PRB Imprinter (for fi-8170)</td><td>PA03810-D201</td><td>Medium</td></tr><tr><td>Ricoh</td><td>fi-7600 Large Desktop Scanner</td><td>PA03740-B505</td><td>High</td></tr><tr><td>Ricoh</td><td>fi-760PRB Imprinter (for fi-7600)</td><td>PA03740-D101</td><td>Medium</td></tr><tr><td>Anker</td><td>Solix C300X Portable Power Station</td><td>A1723</td><td>Low</td></tr><tr><td>Lindy</td><td>RJ45 Port Blocker</td><td>40471</td><td>Low</td></tr></tbody></table>
 
 ## Laptop Specification
 
-The laptop is a custom configuration of the widely available HP Elitebook 840 11" G11 laptop. B43P6UP#ABA is the HP SKU of the VotingWorks configuration, which includes the following:
+The laptop is a custom configuration of the widely available HP Elitebook 840 14" G11 laptop. B43P6UP#ABA is the HP SKU of the VotingWorks configuration, which includes the following:
 
 | Component                | Configuration                       |
 | ------------------------ | ----------------------------------- |
@@ -55,6 +94,3 @@ The medium criticality components and the reasons for their classification are a
 * **Monoprice USB A-B Cable -** Manages flow of data between laptop and peripherals.
 * **HP LaserJet Pro 4001dn -** The VxAdmin printer is responsible for printing reports from VxAdmin and therefore handles highly sensitive election information. All reports from VxAdmin can be exported as PDFs and printed elsewhere, so it is not strictly necessary for the operation of the system and thus is not the highest criticality.
 * **Ricoh fi-760PRB & fi-819PRB** - The imprinters that pair with the Ricoh scanners are not involved in generating ballot data, so they cannot influence the interpretation of ballots when used according to instructions. The imprinted identifiers are important for post-election audits, however, so the imprinters are security-sensitive components.
-
-
-
