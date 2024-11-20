@@ -58,8 +58,6 @@ Switching between ballot modes clears all scanned ballot data and resets the pol
 
 VxScan can be unconfigured by an election manager or system administrator. If ballots have been scanned in official ballot mode, an election manager can only unconfigure the machine after scanned ballot data has synced to a USB drive. System administrators can unconfigure the machine at any time.
 
-
-
 ## Polls Management
 
 <figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
@@ -95,6 +93,8 @@ Once the ballot is cast, whether immediately after interpretation or after the v
 {% hint style="info" %}
 **User Manual Reference**: [Assisting Voters](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/election-day-guides/assisting-voters "mention")
 {% endhint %}
+
+### Visual Settings
 
 The voter interface can be tuned to be more accessible to different voters:&#x20;
 
