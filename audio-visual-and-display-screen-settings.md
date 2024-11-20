@@ -19,7 +19,7 @@ All audio and video devices are certified in accordance with the requirements of
 
 ## Audio-Visual Settings
 
-The audio-visual settings for the voter experience are described in the [system-overview](system-overview/ "mention"):
+The audio-visual settings for the voter experience are described in the [.](./ "mention"):
 
 * [vxmark-function.md](system-overview/vxmark-function.md "mention") > [#display-formats-and-interaction-modes](system-overview/vxmark-function.md#display-formats-and-interaction-modes "mention")&#x20;
 * [vxscan-function.md](system-overview/vxscan-function.md "mention") > [#visual-settings](system-overview/vxscan-function.md#visual-settings "mention")
