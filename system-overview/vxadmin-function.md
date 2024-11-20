@@ -54,7 +54,7 @@ Each write-in on a CVR will map to a `write-ins` record, whether it is an unmark
 
 If an error is found when loading any single CVR in a CVR export, the entire export is rejected and a message is surfaced to the user. CVRs can be rejected for a variety of reasons: authentication failed; a file is incorrectly formatted; a CVR is not for a currently valid election, precinct, ballot style, or contest; a CVR with an identical ID has been loaded with different data. In everyday use of the system, all of these errors are either rare or impossible because VxAdmin will not allow loading CVR files from elections with mismatched metadata.
 
-VxAdmin allows loading CVR exports that have already been partially loaded. For example, image that VxCentralScan exports CVRs after scanning 5 ballots and then again after scanning 10 ballots. If we first load the 5 CVR export and then the 10 CVR export, the 10 CVR export will successfully load but will ignore the CVRs that have already been imported.
+VxAdmin allows loading CVR exports that have already been partially loaded. For example, imagine that VxCentralScan exports CVRs after scanning 5 ballots and then again after scanning 10 ballots. If we first load the 5 CVR export and then the 10 CVR export, the 10 CVR export will successfully load but will ignore the CVRs that have already been imported.
 
 {% hint style="info" %}
 **User Manual Reference:** [Loading CVRs](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/election-night-guides/tally-results "mention")
