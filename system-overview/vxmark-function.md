@@ -113,7 +113,7 @@ Voters usually choose to use the touchscreen to vote. The voter taps buttons to 
 
 When there's more content on a page than can fit on one screen, the voter can scroll through the screen in one of two ways. First, they can tap the "More" button which acts as both the visual indicator that there are more contest options or contests. Second, they can use a swiping motion on the screen to move up or down. Swiping to see more contest options or contests is VxMark's only touch screen gesture. It cannot be used horizontally to navigate between contests or pages and  (VVSG 2.0 7.2-E).
 
-### Limited Dexterity Mode - Accessible Controller
+### Audio Tactile Mode - Accessible Controller
 
 VxMark has a permanently attached accessible controller that can be used to navigate the ballot instead of using the touchscreen directly. The left and right buttons are used to navigate between contests and other screens while the up and down buttons are used to navigate between contest options or contests within each screen. The controller has a help button which will navigate to a help interface that explains the function of each button on the controller when pressed.
 
