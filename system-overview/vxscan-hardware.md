@@ -1,6 +1,6 @@
 # VxScan Hardware
 
-## Functional Overview
+## Overview
 
 VxScan consists of two main components - the collapsible ballot box and the scanner itself - which are secured together during setup.
 
