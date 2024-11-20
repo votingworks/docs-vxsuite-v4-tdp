@@ -17,7 +17,7 @@ All audio and video devices are certified in accordance with the requirements of
 
 <table><thead><tr><th width="167">Device</th><th>Test Report</th></tr></thead><tbody><tr><td>VxScan</td><td><strong>(insert link)</strong></td></tr><tr><td>VxMark</td><td><em><strong>Report Pending</strong></em></td></tr><tr><td>Central Laptops</td><td>Contact HP</td></tr></tbody></table>
 
-## Audio-Visual Functionality
+## Audio-Visual Settings
 
 The audio-visual settings for the voter experience are described in the [system-overview](system-overview/ "mention"):
 
