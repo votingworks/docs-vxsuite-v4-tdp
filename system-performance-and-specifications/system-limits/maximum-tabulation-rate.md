@@ -22,3 +22,9 @@ In addition to the sheet per minute rate of a given batch, the maximum tabulatio
 
 * Ricoh fi-8170: 30 sheets per batch
 * Ricoh fi-7600: 100 sheets per batch
+
+Finally, the maximum tabulation rate over the course of a day is limited by the daily volume limitations of each central scanner:
+
+* Ricoh fi-8170: 10,000 sheets/day
+* Ricoh fi-7600: 44,000 sheets/day
+
