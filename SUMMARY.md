@@ -28,6 +28,7 @@
   * [Diagnostics](system-overview/diagnostics.md)
 * [System Performance & Specifications](system-performance-and-specifications/README.md)
   * [Paper Specifications](system-performance-and-specifications/paper-specifications.md)
+  * [Maximum Tabulation Rate](system-performance-and-specifications/maximum-tabulation-rate.md)
 * [System Security, Auditing, & Logging](system-security-auditing-and-logging/README.md)
   * [Logging](system-security-auditing-and-logging/logging.md)
   * [Physical Security](system-security-auditing-and-logging/physical-security.md)
