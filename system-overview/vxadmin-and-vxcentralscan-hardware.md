@@ -2,7 +2,9 @@
 
 ## Overview
 
-### Common Laptop
+### &#x20;<a href="#laptop" id="laptop"></a>
+
+### Laptop <a href="#laptop" id="laptop"></a>
 
 VxAdmin and VxCentralScan are both laptops that connect to peripherals as needed. The laptop is a [custom configured HP Elitebook 840 14" G11](vxadmin-and-vxcentralscan-hardware.md#laptop-specification).
 
@@ -21,7 +23,7 @@ The relevant hardware interfaces are:
 * **Smart Card Reader** - Enables reading and writing to smart cards, which is the basis for authentication in VxSuite
 * **USB Ports -** Allows connecting to the peripherals for scanning or printing
 
-While not strictly necessary, VxAdmin and VxCentralScan are bundled with a mouse and a USB hub for ease of use.  A USB A-B cable is included to connect to the peripherals.
+While not strictly necessary, VxAdmin and VxCentralScan are bundled with a mouse and a USB hub for ease of use. A USB A-B cable is included to connect to the peripherals.
 
 ### VxAdmin
 
