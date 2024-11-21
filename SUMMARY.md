@@ -31,6 +31,8 @@
   * [System Limits](system-performance-and-specifications/system-limits/README.md)
     * [Maximum Tabulation Rate](system-performance-and-specifications/system-limits/maximum-tabulation-rate.md)
   * [Paper Specifications](system-performance-and-specifications/paper-specifications.md)
+  * [Reliably Detectable Marks](system-performance-and-specifications/reliably-detectable-marks.md)
+  * [Processing Capabilities](system-performance-and-specifications/processing-capabilities.md)
 * [System Security, Auditing, & Logging](system-security-auditing-and-logging/README.md)
   * [Logging](system-security-auditing-and-logging/logging.md)
   * [Physical Security](system-security-auditing-and-logging/physical-security.md)
