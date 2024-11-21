@@ -20,7 +20,7 @@ Whereas in tally reports, each group corresponds to a subsection of the report, 
 
 In the following example, the ballot counts are grouped by both precinct and voting method:&#x20;
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt="" width="563"><figcaption><p>Ballot count report grouped by precinct and voting method</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt="" width="563"><figcaption><p>Ballot count report grouped by precinct and voting method</p></figcaption></figure>
 
 The following metadata columns may appear in a ballot count report table in order to specify groupings:
 
