@@ -53,7 +53,7 @@ Performance critical parts of the application are written in [Rust](https://www.
 
 Despite those protections, unsafe concurrency is technically still possible as it is widely acknowledged as generally impossible to definitively prove that a complex piece of software is free of race conditions.
 
-In order to catch any other instances of unsafe concurrency, VotingWorks tests software operation at scale in automated tests as discussed above. In an actively developed repository like those for VxSuite, tests are running hundreds or thousands of times before the software is actually used on a machine. At that scale, intermittent concurrency issues are surfaced in the form of flaky tests. VotingWorks reviews flaky tests weekly and uses them to identify and fix any concurrency issues.
+In order to catch any other instances of unsafe concurrency, VotingWorks tests software operation at scale in automated tests as discussed above. In actively developed repositories like those for VxSuite, tests are running hundreds or thousands of times before the software is actually used on a machine. At that scale, intermittent concurrency issues are surfaced in the form of flaky tests. VotingWorks reviews flaky tests weekly and uses them to identify and fix any concurrency issues.
 
 Once software is actually imaged to hardware, VotingWorks tests the software thoroughly and at high volumes. For example on VxScan, the `precinctScanEnableShoeshineMode` flag in the [#system-settings](system-overview/election-package/#system-settings "mention") allows testing the scanner with a repeated scan that may run thousands of times. In addition, VotingWorks attempts to identify edge cases and break the software during testing by performing operations in unusual or rapid succession which may reveal concurrency issues.
 
@@ -80,8 +80,14 @@ TODO - link to documentation provided by JD on Work Plans
 
 ## Quality Assurance Protocols – Integration Testing
 
-### Manual Software QA for each official software build on prod hardware
+### Full System Integration Testing
 
-### Built Unit Quality Assurance
+Many issues only emerge when software is installed on production hardware or when the various components of the system are used together. In order to catch these higher-level system issues, VotingWorks performs full system integration testing before every release.&#x20;
 
-Every assembled unit is manually tested against a comprehensive checklist to ensure the unit is fully operational.&#x20;
+At VotingWorks locations, VotingWorks testing staff set up the full suite of hardware with the latest software release. The testing procedures are designed to imitate an election flow and test any common corner cases or past issues. Most testing procedures are repeated with multiple election packages and system settings to confirm that there are not issues specific to certain configurations.&#x20;
+
+When an issues is found, the issue is immediately escalated to the engineering team for a fix. A new release is created and testing procedures are restarted in full to ensure fixes do not introduce regressions.
+
+### Production Unit Quality Assurance
+
+Every unit assembled in production is manually tested against a comprehensive checklist to ensure the unit is fully operational. The quality assurance procedures are designed to imitate an election flow and check for any issues found on past units. Checklists for VxAdmin, VxMark, VxScan, and VxCentralScan are public [here in the documentation repository](https://github.com/votingworks/docs-vxsuite-v4/tree/main/quality-assurance/production).
