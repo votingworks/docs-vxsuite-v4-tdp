@@ -38,7 +38,7 @@ VxMark is the system's ballot-marking device (BMD) that provides an accessible v
 
 * Touch, using the touchscreen
 * Tactile, using the accessible controller
-* Limited Dexterity, using a sip-and-puff device or equivalent
+* Limited Dexterity, using a sip-and-puff device or other dual-switch input
 
 The following output modes are supported:
 
