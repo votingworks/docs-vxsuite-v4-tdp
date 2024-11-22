@@ -1,0 +1,43 @@
+# System Integrity
+
+The foundation of our system integrity solution is the TPM (described in greater detail under [Private Key Storage](broken-reference)).
+
+Our design for system integrity maps closely to that of ChromeOS:
+
+1. The hard drive is partitioned such that executable code lives on read-only partitions, and only `/var` and `/home` are mounted read/write for configuration, logs, and working data like scanned ballot images.
+2. The read-only partitions are verified by [dm-verity](https://source.android.com/docs/security/features/verifiedboot/dm-verity), which generates a hash tree of all the raw partition blocks, culminating in a single hash root for the entire read-only filesystem.
+3. The kernel boot command line includes the dm-verity hash root as an argument, ensuring that Linux halts if the read-only partitions are not successfully verified against this hash root.
+4. The BIOS is configured to only boot a properly signed bootloader+kernel+command-line, with public keys managed by VotingWorks and configured in the BIOS as secure boot keys. The bootloader+kernel+command-line that we want is set up as the default boot option in UEFI.
+5. The private key described previously in [Access Control](broken-reference) is generated in the TPM and bound to Platform Configuration Registers (PCRs) that include the BIOS, the secure boot public keys, and the bootloader+kernel+command-line. Thus, this private key is only usable if the machine boots appropriately sanctioned source code with a hard drive whose read-only partitions are unmodified.
+
+As a diagram:
+
+<figure><img src="../../.gitbook/assets/Screenshot 2023-06-30 at 9.55.02 AM (1).png" alt=""><figcaption></figcaption></figure>
+
+The integrity of the overall system is ensured because:
+
+* Any change in the executable portion of the hard drive will be detected when dm-verity checks the hard drive blocks against its stored hashes.
+* Any change in the hashes stored on disk will be detected against the mismatched root hash, present in the kernel boot command line.
+* Any live changes to the hard drive, even while the machine is already booted up, will be detected the moment Linux tries to read those modified blocks, as all disk reads are live-checked against the hashes.
+* Any change in the kernel boot command line will be detected in two ways:
+  * First, the TPM won’t unseal secrets since a change in the command line changes one of the PCR values, which means that the TPM’s policy check will fail.
+  * Second, the system won’t even boot at all because the changed command line invalidates the signature on the bootloader+kernel+command-line, and UEFI will refuse to execute the now-improperly signed bootloader+kernel+command-line.
+
+Thus, if the system boots, it means that the hard drive corresponds, by hashing, to the expected value that we baked into the bootloader+kernel+command-line and signed.
+
+## Hard Drive Partitioning
+
+Our system is configured so that all partitions other than `/var`, `/tmp`, and `/home` are mounted as read-only. This requires writing logs and other runtime-generated VotingWorks data, e.g. scanned ballot images, to `/var`. Variable system configuration, e.g. timezone information, also needs to be redirected to `/var`. A USB mount point is pre-created at `/media/vx/usb-drive`.
+
+## Signed Bootloader and Kernel
+
+With secure boot, UEFI passes control to the bootloader only if the bootloader is appropriately signed. Then, the bootloader passes control to the kernel. We choose to bundle the bootloader, kernel, and command line that is used to run the kernel all as one, and to present that to the UEFI as the single executable whose signature should be verified before running. The three are combined into a single object file, along with the dm-verity root hash. This single object file is signed by VotingWorks secure boot private keys.
+
+## Secure Boot
+
+Every VotingWorks machine’s BIOS is configured with VotingWorks secure boot public keys, and the BIOS is configured to require secure boot. Thus, only a properly signed object file can serve as bootloader.
+
+## Mounting USB Drives
+
+When mounting USB drives, VxSuite always mounts them using standard Linux mount configuration options that makes files on the USB drive **NOT executable**. This further protects from any unauthorized software running, even in a transient fashion.&#x20;
+
