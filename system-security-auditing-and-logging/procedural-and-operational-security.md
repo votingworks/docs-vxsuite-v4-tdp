@@ -1,26 +1,24 @@
 # Procedural and Operational Security
 
-VxSuite can be operated securely by following these procedures. Some of these procedures are intentionally redundant for defense-in-depth as it is always expected that some operational mistakes are made.
+VxSuite can be operated securely using the following these procedures. Some of these procedures are intentionally redundant for defense-in-depth as it is always expected that some operational mistakes are made.
 
 ## Using Proper Equipment
 
-VxSuite should be used only with sanctioned equipment and peripherals.
-
-* do not connect USB devices of unknown source to any VxSuite component.
-* do not connect any USB device to VxSuite ports other than those explicitly sanctioned in this documentation.
+VxSuite should be used only with sanctioned equipment and peripherals. In particular, when connecting USB devices to any VxSuite component, use only USB devices of the type specified in this documentation, and only devices of known and reputable source.
 
 ## In Between Elections
 
 When there are no active elections happening, VxSuite equipment should be physically secured so it is difficult to access and so that any access is evident at a later date.
 
-* VxAdmin laptop and peripherals should be kept in their case, with a numbered seal through the appropriate hole, preventing the case from being opened without breaking the seal.
-* VxCentralScan laptop and peripherals should be kept in their case, with a numbered seal through the appropriate hole, preventing the case from being opened without breaking the seal.
-* The Fujitsu scanner that works with VxCentralScan should be kept in its supplied soft case, with a numbered seal through the appropriate zipper hole, preventing the case from being opened without breaking the seal.
-* VxScan should be kept closed with a numbered seal through the appropriate hole, preventing the case from being opened without breaking the seal.
-* VxAdmin, VxCentralScan, VxScan, and the Fujitsu scanner, once sealed, should be kept in a safely locked room or storage area that only authorized election administrators have access to.
+* VxAdmin laptop and peripherals should be kept in their case, with numbered seals through both case seal points, preventing the case from being opened without breaking one or both seals.
+* VxCentralScan laptop and peripherals should be kept in their case, with numbered seals through both case seal points, preventing the case from being opened without breaking one or both seals.
+* The small Fujitsu/Ricoh scanner that works with VxCentralScan should be kept in its supplied soft case, with a numbered seal through the appropriate zipper hole, preventing the case from being opened without breaking the seal.
+* The larger Fujitsu/Ricoh scanner that works with VxCentralScan should be kept in its supplied manufacturer box, with tamper evident tape along all sides and a numbered sticker seal on the main opening.
+* VxScan should be kept closed with a numbered seal through one of the two seal points, preventing the case from being opened without breaking the seal.
+* VxAdmin, VxCentralScan, VxScan, and the Fujitsu/Ricoh scanner, once sealed, should be kept in a safely locked room or storage area that only authorized election administrators have access to.
 * The system admin smartcards should be kept in a safe or locked drawer, separately from VxAdmin. The PIN for the system admin smartcard, if recorded on paper, should also be kept locked separate from both VxAdmin and the card.
 
-It is a good practice, every year or so, to reset the PIN on the system administrator cards. This can be done using the VxAdmin laptop.
+You may consider occasionally resetting the PIN on the system administrator cards. This can be done using the VxAdmin laptop.
 
 ## During L\&A Testing
 
@@ -33,7 +31,7 @@ Both VxAdmin and VxScan are required for Logic & Accuracy testing. VxCentralScan
 At the end of L\&A testing, ensure that the VxScan is ready and secured for election day:
 
 * the correct USB drive is inserted into one of the two USB slots.
-* the system has been switched to live mode.
+* the system has been switched to official-ballot mode.
 * the VxScan is powered down.
 * the VxScan case is closed and sealed.
 
@@ -55,7 +53,7 @@ After setting up VxScan on the ballot box and opening the polls, ensure that:
 
 * the ballot box is locked and/or sealed
 * the auxiliary ballot box is locked and/or sealed
-* the VxScan is sealed to the box
+* the VxScan is attached to the ballot box using the locking mechanism
 * the poll-worker access door on the VxScan is sealed shut
 
 All seal numbers should be recorded.
@@ -64,7 +62,7 @@ All seal numbers should be recorded.
 
 A poll worker should observe VxScan from afar at all times, ensuring voters are not attempting to break any seals.
 
-If a ballot jam requires opening the poll worker door, record the seal number before opening, and ensure the poll worker door is resealed afterwards, recording the new seal number.
+If a ballot jam requires opening the poll worker door or the ballot box door, record the corresponding seal number before breaking, and ensure resealing afterwards, recording the new seal number(s).
 
 ### Scanning Absentee Ballots
 
@@ -72,7 +70,7 @@ VxCentralScan is only meant to be accessed by authorized election administrators
 
 ### Closing the Polls
 
-Unsealing the poll worker door is required to close the polls. Ensure the seal number matches the expected value. Once the polls are closed and the USB drive is removed, take care to secure the chain of custody of the USB drive. VxScan should be closed up and sealed.
+Unsealing the poll worker door is required to extract the USB drive after polls are closed. Ensure the seal number matches the expected value. Once the polls are closed and the USB drive is removed, take care to secure the chain of custody of the USB drive. VxScan should be closed up and sealed.
 
 ## After an Election&#x20;
 
