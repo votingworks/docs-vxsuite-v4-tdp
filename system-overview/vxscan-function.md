@@ -17,7 +17,7 @@ Election managers normally install the thermal paper rolls via a guided flow. Th
 The printer roll can be loaded at any time, including when VxScan is off. It only requires opening the access door which may be sealed.
 
 {% hint style="info" %}
-**User Manual Reference:** [Printer](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxscan/election-manager-settings#printer "mention")
+**User Manual Reference:** [Printer Management](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxscan/printer-management "mention")
 {% endhint %}
 
 ### Scanner Management
@@ -27,6 +27,10 @@ VxScan scans ballots with an embedded A4/Letter document scanner which produces 
 The embedded scanner includes a multi-sheet detector (MSD) which allows the application to reject cases of voters feeding in multiple ballots at a time. The multi-sheet detection must be calibrated at the beginning of an election based on the thickness of the ballot paper. The double sheet detection calibration flow is exposed in the election manager menu. The election manager can choose to disable double sheet detection, but it is enabled by default.
 
 The scanner's cover can be opened for cleaning, during which scanning will be disabled and the application will show a warning on screen if the polls are open.
+
+{% hint style="info" %}
+**User Manual Reference:** [Scanner Management](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxscan/scanner-management "mention")
+{% endhint %}
 
 ### Audio Management
 
@@ -115,7 +119,7 @@ Continuous export can be disabled by an election manager if need be, for example
 CVRs can be exported directly from the election manager menu, in which case they export all at once.
 
 {% hint style="info" %}
-**User Manual Reference**: [CVRs and Logs](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxscan/election-manager-settings#cvrs-and-logs "mention")
+**User Manual Reference**: [Saving CVRs](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxscan/additional-vxscan-settings#saving-cvrs "mention")
 {% endhint %}
 
 ## Reports
