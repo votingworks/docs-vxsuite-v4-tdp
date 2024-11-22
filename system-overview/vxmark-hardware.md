@@ -10,15 +10,7 @@ VxMark exposes various hardware interfaces for various modes of voting. The touc
 
 The right side of the machine is the paper path. Paper is inserted into the printer-scanner by feeding it forward on the front paper input. When the ballot is cast, it is ejected to the rear into the attached ballot box. In case of paper jams, the printer-scaner cover can lift to expose the printer-scanner. If the cover is opened while polls are opened without authentication, an alarm will be triggered through the onboard speaker.
 
-<div>
-
-<figure><img src="../.gitbook/assets/ballot_box.png" alt=""><figcaption></figcaption></figure>
-
- 
-
-<figure><img src="../.gitbook/assets/printer-scanner.png" alt=""><figcaption></figcaption></figure>
-
-</div>
+<div><figure><img src="../.gitbook/assets/ballot_box.png" alt=""><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/printer-scanner.png" alt=""><figcaption></figcaption></figure></div>
 
 The primary modification made by VotingWorks to the original Smartmatic hardware is adding a smart card reader for authentication. The smart card reader is positioned beneath the accessible controller:
 
@@ -34,51 +26,23 @@ Power is controlled by a button in the back left of the machine. When activated,
 
 VxMark is shipped and stored in large hardshell cases with custom foam cutouts. The first case, accented in blue, is for the BMD itself, its headphones, and its power supply. The second case, accented in yellow, is for the other peripherals - legs, power supply holder, privacy shield, and ballot box.
 
-<div>
-
-<figure><img src="../.gitbook/assets/PXL_20241119_202755951.jpg" alt=""><figcaption></figcaption></figure>
-
- 
-
-<figure><img src="../.gitbook/assets/PXL_20241119_202836043.jpg" alt=""><figcaption></figcaption></figure>
-
-</div>
+<div><figure><img src="../.gitbook/assets/PXL_20241119_202755951.jpg" alt=""><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241119_202836043.jpg" alt=""><figcaption></figcaption></figure></div>
 
 The BMD itself must be padded as shown below for transport and vibrational testing. Padding is used to protect the screen and hold it in place, to hold the accessible controller in place, to hold the printer-scanner cover in place, and to further secure the BMD within the enclosure.
 
 <figure><img src="../.gitbook/assets/PXL_20241119_201847102.jpg" alt="" width="375"><figcaption><p>BMD case fully packed and padded</p></figcaption></figure>
 
-<div>
-
-<figure><img src="../.gitbook/assets/PXL_20241119_202236326.jpg" alt=""><figcaption><p>Peripherals case fully packed</p></figcaption></figure>
-
- 
-
-<figure><img src="../.gitbook/assets/PXL_20241119_202304226.jpg" alt=""><figcaption><p>Peripherals case with privacy shield removed</p></figcaption></figure>
-
- 
-
-<figure><img src="../.gitbook/assets/PXL_20241119_203128035.jpg" alt=""><figcaption><p>Peripherals unpacked</p></figcaption></figure>
-
-</div>
+<div><figure><img src="../.gitbook/assets/PXL_20241119_202236326.jpg" alt=""><figcaption><p>Peripherals case fully packed</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241119_202304226.jpg" alt=""><figcaption><p>Peripherals case with privacy shield removed</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241119_203128035.jpg" alt=""><figcaption><p>Peripherals unpacked</p></figcaption></figure></div>
 
 ### Assembly
 
 Assembly instructions are covered in the user manual under [VxMark Hardware Setup](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/vxmark-hardware-setup "mention"). In short, the legs are unfolded and the power block holder is set on the legs with the power block inside. The BMD then fits onto the legs with grooves on its underside.
 
-<div>
-
-<figure><img src="../.gitbook/assets/PXL_20241119_203621085.jpg" alt="" width="563"><figcaption></figcaption></figure>
-
- 
-
-<figure><img src="../.gitbook/assets/PXL_20241119_204010865.jpg" alt="" width="375"><figcaption></figcaption></figure>
-
-</div>
+<div><figure><img src="../.gitbook/assets/PXL_20241119_203621085.jpg" alt="" width="563"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241119_204010865.jpg" alt="" width="375"><figcaption></figcaption></figure></div>
 
 ## COTS Components
 
-The vast majority of the VxMark hardware is the [VSAP (Voting Solutions for All People) ](https://www.lavote.gov/vsap/home)developed by Los Angeles County, manufactured by Smartmatic, and purchased through Los Angeles County. In addition, VotingWorks includes a few peripherals or COTS components added through modification. Documentation for these components can be found in [the documentation repository](https://github.com/votingworks/docs-vxsuite-v4/tree/main/hardware-assets/cots-documentation/mark) or in the separately provided Los Angeles County documentation.
+The vast majority of the VxMark hardware is the [VSAP (Voting Solutions for All People) ](https://www.lavote.gov/vsap/home)Ballot Marking Device (Model 150) developed by Los Angeles County, manufactured by Smartmatic, and purchased through Los Angeles County. In addition, VotingWorks includes a few peripherals or COTS components added through modification. Documentation for these components can be found in [the documentation repository](https://github.com/votingworks/docs-vxsuite-v4/tree/main/hardware-assets/cots-documentation/mark) or in the separately provided Los Angeles County documentation.
 
 <table><thead><tr><th>Manufacturer</th><th width="216">Component</th><th width="175">Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>Smartmatic</td><td>Ballot Marking Device</td><td>VSAP-150</td><td>High</td></tr><tr><td>APC</td><td>Uninterruptible Power Supply</td><td>BN1500M2</td><td>Low</td></tr><tr><td>HID</td><td>Smart Card Reader</td><td>R31210375-1</td><td>Medium</td></tr><tr><td>LORELEI</td><td>Headphones</td><td>X6</td><td>Low</td></tr></tbody></table>
 
