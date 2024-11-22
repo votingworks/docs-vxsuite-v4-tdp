@@ -1,8 +1,8 @@
-# Paper Specifications
+# Paper Ballot Specifications
 
 The following defines the minimal specifications for VxSuite paper stock. Ballot layout requirements are enumerated in [hand-marked-ballots.md](../system-overview/hand-marked-ballots.md "mention") and [machine-marked-ballots.md](../system-overview/machine-marked-ballots.md "mention") in the System Overview.
 
-## Hand Marked Paper Ballots
+## Hand Marked Ballots
 
 VxSuite supports a wide range of paper for hand-marked paper ballot style printing within the following supported specifications:
 
