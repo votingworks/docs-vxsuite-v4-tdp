@@ -50,7 +50,6 @@
   * [Logging](system-security-auditing-and-logging/logging.md)
   * [Known Vulnerabilities](system-security-auditing-and-logging/known-vulnerabilities.md)
   * [Risk Assessment](system-security-auditing-and-logging/risk-assessment.md)
-  * [Supply Chain Risk Management](system-security-auditing-and-logging/supply-chain-risk-management.md)
 * [Software Installation](software-installation.md)
   * [Trusted Build](software-installation/trusted-build.md)
 * [System Operations & Training Manual](system-operations-and-training-manual.md)
