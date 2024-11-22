@@ -11,7 +11,7 @@ The end user should never try to perform complex repairs on VxScan. The top pane
 
 ### Scanner Cleaning
 
-The scanner should be cleaned for every election before pre-election testing and again after pre-election testing. For instructions, see the [#scanner-cleaning](vxscan-maintenance-manual.md#scanner-cleaning "mention") article in the user manual. VotingWorks recommends using Ricoh Cleaner F1 (PN: PA03950-0352) with cleaning wipes (PN: CG90000-120001) or equivalent. Other scanner-specific cleaning fluids or greater than 70% isopropyl alcohol can be used for the cleaning fluid. A microfiber or lint-free cloth can be used for the wipe.
+The scanner should be cleaned for every election before pre-election testing and again after pre-election testing. For instructions, see the [Scanner Management](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxscan/scanner-management "mention") article in the user manual. VotingWorks recommends using Ricoh Cleaner F1 (PN: PA03950-0352) with cleaning wipes (PN: CG90000-120001) or equivalent. Other scanner-specific cleaning fluids or greater than 70% isopropyl alcohol can be used for the cleaning fluid. A microfiber or lint-free cloth can be used for the wipe.
 
 If the software detects streaks in a scanned ballot, the user will be alerted and prompted to clean the scanner. To identify streaks proactively, an election manager or system administrator can perform a test scan in the diagnostics interface. For instructions, see the[System Administrator Functions & System Diagnostics](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxscan/system-administrator-functions-and-system-diagnostics "mention") article in the user manual.
 
@@ -21,9 +21,9 @@ VxScan features a full letter-width report printer. In order for VxScan to print
 
 The thermal paper rolls are 78' in length. The amount of paper used will depend on the number of reports printed and the number of contests appearing on the report. 78' is enough for an entire election, including pre-election testing, in almost all cases. VotingWorks recommends replacing the thermal paper roll once for each election. Customers may choose to re-use rolls between elections but, in doing so, greatly increase the risk of running out of paper in the middle of an election. In those situations, an unprepared poll worker may have to replace paper or wait for an election administrator.
 
-Replacing the paper roll is generally performed by an election manager, but may also be performed by a system administrator, a technician, or in rare cases a poll worker. The application guides the user through the paper loading flow. For additional instructions, see the [Election Manager Settings](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxscan/election-manager-settings "mention") article in the user manual.
+Replacing the paper roll is generally performed by an election manager, but may also be performed by a system administrator, a technician, or in rare cases a poll worker. The application guides the user through the paper loading flow. For additional instructions, see the [Printer Management](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxscan/printer-management "mention") article in the user manual.
 
-When the scanner is not in use between elections, the thermal paper roll should be left loaded in the scanner.
+When the scanner is not in use between elections, the thermal paper roll should be left loaded in the scanner to protect the thermal printer head.
 
 ### Other Maintenance Tasks
 
