@@ -13,7 +13,7 @@ The end user should never try to perform complex repairs on VxScan. The top pane
 
 The scanner should be cleaned for every election before pre-election testing and again after pre-election testing. For instructions, see the [Scanner Management](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxscan/scanner-management "mention") article in the user manual. VotingWorks recommends using Ricoh Cleaner F1 (PN: PA03950-0352) with cleaning wipes (PN: CG90000-120001) or equivalent. Other scanner-specific cleaning fluids or greater than 70% isopropyl alcohol can be used for the cleaning fluid. A microfiber or lint-free cloth can be used for the wipe.
 
-If the software detects streaks in a scanned ballot, the user will be alerted and prompted to clean the scanner. To identify streaks proactively, an election manager or system administrator can perform a test scan in the diagnostics interface. For instructions, see the[System Administrator Functions & System Diagnostics](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxscan/system-administrator-functions-and-system-diagnostics "mention") article in the user manual.
+If the software detects streaks in a scanned ballot, the user will be alerted and prompted to clean the scanner. To identify streaks proactively, an election manager or system administrator can perform a test scan in the diagnostics interface. For instructions, see the[VxScan Diagnostics](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxscan/vxscan-diagnostics "mention") article in the user manual.
 
 ### Printer Paper Management
 

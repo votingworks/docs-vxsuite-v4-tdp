@@ -25,7 +25,7 @@
 
 ### VxMark
 
-* VxMark only supports 8" x 13.25" ballots as specified in [paper-specifications.md](../paper-specifications.md "mention").
+* VxMark only supports 8" x 13.25" ballots as specified in [paper-ballot-specifications.md](../paper-ballot-specifications.md "mention").
 * VxMark is limited to printing of 50 contest selections before needing to reduce text size to fit a summary ballot on a single sheet. VxMark can print a maximum of 100 contest selections with text-size reduction.
 * The ballot box supports up to 200 ballots before needing to be cleared.
 

@@ -30,7 +30,7 @@
   * [Supported Voting Variations & Languages](system-performance-and-specifications/supported-voting-variations-and-languages.md)
   * [System Limits](system-performance-and-specifications/system-limits/README.md)
     * [Maximum Tabulation Rate](system-performance-and-specifications/system-limits/maximum-tabulation-rate.md)
-  * [Paper Specifications](system-performance-and-specifications/paper-specifications.md)
+  * [Paper Ballot Specifications](system-performance-and-specifications/paper-ballot-specifications.md)
   * [Reliably Detectable Marks](system-performance-and-specifications/reliably-detectable-marks.md)
   * [Processing Capabilities](system-performance-and-specifications/processing-capabilities.md)
 * [System Security, Auditing, & Logging](system-security-auditing-and-logging/README.md)
