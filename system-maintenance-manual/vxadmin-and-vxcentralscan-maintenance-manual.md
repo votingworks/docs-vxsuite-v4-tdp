@@ -67,3 +67,7 @@ The scanner must be periodically cleaned to ensure image quality, before every e
 
 The scanner's brake rollers (PN: PA03810-0001) and pick rollers (PA03640-0002) must be replaced every 200,000 sheets or every year, whichever is sooner. To replace these consumables, follow the instructions in the [manufacturer's consumable replacement and cleaning guide](../). In order to get all consumables and cleaning supplies together, you may choose to purchase the fi-8170 ScanAid kit (PN: CG01000-302801).
 
+## Maintenance Support & Spare Recommendations
+
+For VxAdmin, VotingWorks recommends keeping an extra toner cartridge and an extra ream of report paper on hand at all times. For VxCentralScan, VotingWorks recommends keeping scanner cleaning materials on hand at all times. Maintenance tasks can be performed by election managers or system administrators at the central location where VxAdmin and VxCentralScan are used.
+
