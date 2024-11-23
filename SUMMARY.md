@@ -26,6 +26,7 @@
   * [VxMark Hardware](system-overview/vxmark-hardware.md)
   * [Ballot Interpretation](system-overview/ballot-interpretation.md)
   * [Diagnostics](system-overview/diagnostics.md)
+  * [Signed Hash Validation](system-overview/signed-hash-validation.md)
 * [System Performance & Specifications](system-performance-and-specifications/README.md)
   * [Supported Voting Variations & Languages](system-performance-and-specifications/supported-voting-variations-and-languages.md)
   * [System Limits](system-performance-and-specifications/system-limits/README.md)
