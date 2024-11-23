@@ -48,7 +48,7 @@
   * [Procedural and Operational Security](system-security-auditing-and-logging/procedural-and-operational-security.md)
   * [Audit Procedure](system-security-auditing-and-logging/auditing.md)
   * [Logging](system-security-auditing-and-logging/logging.md)
-  * [Known Vulnerabilities](system-security-auditing-and-logging/known-vulnerabilities.md)
+  * [Vulnerability Management](system-security-auditing-and-logging/vulnerability-management.md)
   * [Risk Assessment](system-security-auditing-and-logging/risk-assessment.md)
 * [Software Installation](software-installation.md)
   * [Trusted Build](software-installation/trusted-build.md)
