@@ -108,7 +108,7 @@ The date and time is set on the machine in during initial configuration before t
 All machines allow system administrators and election managers to edit the date, time, and time zone in order to address clock drift or, in rare cases, to set up machines for use in a part of the jurisdiction with different time settings.
 
 {% hint style="info" %}
-**User Manual Reference**: [Setting Date & Time](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxadmin-system-setup/setting-date-and-time "mention")
+**User Manual Reference**: [Setting Date & Time](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/reference/setting-date-and-time "mention")
 {% endhint %}
 
 ### Other Shared Software Patterns

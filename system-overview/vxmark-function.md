@@ -43,7 +43,7 @@ VxMark also allows poll workers to pause voting a.k.a. suspend the polls. While 
 If the polls have been closed, the only possible way for the polls to be re-opened is if a system administrator resets the polls to paused. Only the system administrator may do this - poll workers and election managers cannot - per the allowance in VVSG 2.0 1.1.7-E. Once polls have been reset to paused by the system administrator, voting may be resumed by a poll worker. The goal of this flow is to allow voting to continue after a poll worker has prematurely closed the polls.
 
 {% hint style="info" %}
-**User Manual Reference:** [Open/Close Polls](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/open-close-polls "mention")
+**User Manual Reference:** [Open and Close Polls](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/open-and-close-polls "mention")
 {% endhint %}
 
 ## Voting Sessions

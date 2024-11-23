@@ -27,7 +27,7 @@ The free disk space available on VxAdmin and VxCentralScan is visible to system 
 
 When the machine is unconfigured or ballot data is cleared, disk space will be recovered. It will likely not return all the way to 100% free disk space, due to how the database is configured to vacuum only as needed, but all disk space from deleted records will be usable for new records.
 
-VotingWorks recommends that all scanned ballot data is backed up from VxCentralScan to a USB drive before being cleared from the application. The application forces the user to perform the backup. VotingWorks recommends a 64GB SanDisk Ultra Flair USB 3.0 Drive (PN: SDCZ73-064G-G46) for most operations and the faster 128GB SanDisk Extreme PRO USB 3.2 Drive (PN: SDCZ880-128G-G46) for very large backups. See user manual instructions [Retaining and Removing Files - VxCS](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxcentralscan/retaining-and-removing-files-vxcs "mention")for details.&#x20;
+VotingWorks recommends that all scanned ballot data is backed up from VxCentralScan to a USB drive before being cleared from the application. The application forces the user to perform the backup. VotingWorks recommends a 64GB SanDisk Ultra Flair USB 3.0 Drive (PN: SDCZ73-064G-G46) for most operations and the faster 128GB SanDisk Extreme PRO USB 3.2 Drive (PN: SDCZ880-128G-G46) for very large backups. See user manual instructions [Retaining and Removing Files - VxCentralScan](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxcentralscan/retaining-and-removing-files-vxcentralscan "mention")for details.&#x20;
 
 ## VxAdmin Printer Maintenance
 
@@ -41,11 +41,11 @@ VotingWorks recommends using only the printer's Tray 2, which is the bottom, hig
 
 The HP LaserJet Pro 4001dn requires genuine HP toner cartridges. Both the HP 148A Black Original LaserJet Toner Cartridge and the HP 148X High Yield Black Original LaserJet Toner Cartridge are acceptable.&#x20;
 
-The printer is provided to customers initially with toner installed, which should last for many elections or even for the lifetime of the system. Low toner is indicated on the printer's small LED screen and also in the VxAdmin diagnostics section. When replacing the toner, refer to the [manufacturer's instructions](https://support.hp.com/us-en/document/ish\_5455373-5578919-16).
+The printer is provided to customers initially with toner installed, which should last for many elections or even for the lifetime of the system. Low toner is indicated on the printer's small LED screen and also in the VxAdmin diagnostics section. When replacing the toner, refer to the [manufacturer's instructions](https://support.hp.com/us-en/document/ish_5455373-5578919-16).
 
 ### Diagnostics & Troubleshooting
 
-VxAdmin features diagnostics for troubleshooting the printer. After authenticating and navigating to the **Diagnostics** menu, you can select **Print Test Page** to print a mock report. The diagnostics interface will also provide the printer status, including if paper is jammed or toner is low. For the most common issues, refer to the [HP Printer FAQ](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/reference/printer-faqs#hp-printer-faq "mention") in the user manual. For more other issues, refer directly to the [manufacturer user guide](https://github.com/votingworks/docs-vxsuite-v4/blob/main/hardware-assets/cots-documentation/central-system/hp-laserjet-pro-4001dn/hp-laserjet-pro-4001dn-user-guide.pdf).
+VxAdmin features diagnostics for troubleshooting the printer. After authenticating and navigating to the **Diagnostics** menu, you can select **Print Test Page** to print a mock report. The diagnostics interface will also provide the printer status, including if paper is jammed or toner is low. For the most common issues, refer to the [hp-printer-faq](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxadmin-system-setup/vxadmin-printer-faqs#hp-printer-faq "mention") in the user manual. For more other issues, refer directly to the [manufacturer user guide](https://github.com/votingworks/docs-vxsuite-v4/blob/main/hardware-assets/cots-documentation/central-system/hp-laserjet-pro-4001dn/hp-laserjet-pro-4001dn-user-guide.pdf).
 
 ## VxCentralScan Scanner Maintenance
 
