@@ -10,7 +10,7 @@ sudo virt-manager
 3. Press the start button ▶️.
 4. Once the VM has initialized, log in with username **vx** and password **votingworks**.
 5. To ensure that the console displays correctly, select "View" > "Resize to VM".
-6. In the terminal window, run the following commands:
+6. In the VM terminal window, run the following commands:
 
 ```
 mkdir ~/code && cd ~/code
