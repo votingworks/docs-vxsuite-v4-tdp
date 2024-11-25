@@ -12,7 +12,7 @@ description: >-
 
 * [Access Control](system-security-architecture/access-control.md) describes the certificates and signatures used by smart cards.
 * [Artifact Authentication](system-security-architecture/artifact-authentication/) describes the signatures applied to all files exchanged between system components.
-* [System Integrity](system-security-architecture/system-integrity.md) describes the hard-drive partition hashes and the kernel and bootloader signature used by Secure Boot.
+* [System Integrity](system-security-architecture/system-integrity.md) describes the hard-drive partition hashes and the kernel and bootloader signature used by secure boot.
 * [Cryptography](system-security-architecture/cryptography.md) provides additional details on encryption vs. authentication and the type and size of cryptographic keys that we use.
 {% endhint %}
 
