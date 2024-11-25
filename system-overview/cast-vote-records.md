@@ -14,9 +14,9 @@ layout:
 
 # Cast Vote Records
 
-A cast vote records is a record of voter selections based on the system's interpretation of a scanned ballot. Each cast vote record corresponds to a single scanned ballot sheet, which means that multi-sheet ballots correspond to multiple cast vote records.
+A cast vote record is a record of voter selections based on the system's interpretation of a scanned ballot. Each cast vote record corresponds to a single scanned ballot sheet. Multi-sheet ballots produce multiple cast vote records.
 
-Cast vote records are exported from VxScan and VxCentralScan onto USB drives and then imported into VxAdmin. Each cast vote record export is created with a digital signature which must be valid in order to successfully import it into VxAdmin. A valid signature ensures that the files have not been tampered with.
+Cast vote records are exported from VxScan and VxCentralScan onto USB drives and then imported into VxAdmin. Each cast vote record export is created with a digital signature. VxAdmin verifies this signature when importing cast vote records to ensure that the export has not been tampered with.
 
 ## Directory Structure
 
@@ -44,21 +44,21 @@ In order to export cast vote records efficiently and without compromising voter 
 
 The cast vote record export contains a directory for each cast vote record, labelled with its UUID. Each specific cast vote record directory contains:
 
-* **Cast Vote Record Report** - Contains information about the election and the ballot interpretation in the Common Data Format. The information in the report used as the basis for tabulation at VxAdmin.
+* **Cast Vote Record Report** - Contains information about the election and the ballot interpretation in the Common Data Format. The information in the report is used as the basis for tabulation by VxAdmin.
 * **Images** - Ballot images to be used in write-in adjudication or auditing
-* **Interpreted Ballot Layouts -** Metadata for the position of ballot features such as contests, contest options, and bubbles in the ballot image. The interpreted layout data is used to properly crop and highlight ballot images in write-in adjudication.
+* **Interpreted Ballot Layouts -** Metadata for the position of ballot features such as contests, contest options, and bubbles in the ballot image. The interpreted layout data is used to properly crop and highlight ballot images for write-in adjudication.
 
 In addition, there is a metadata file that applies to the entire export at the root of the directory, **metadata.json.**
 
 ### Including Ballot Images
 
-In VxScan, ballot images and layouts are always included. In VxCentralScan, ballot images and layouts are included in the default export only if the ballot has write-ins that may require adjudication. When exporting a backup from VxCentralScan, however, ballot images and layouts are included for all ballots.
+In VxScan, ballot images and layouts are always included. In VxCentralScan, ballot images and layouts are only included in the cast vote record export if the ballot has write-ins that may require adjudication. When exporting a backup from VxCentralScan, however, ballot images and layouts are included for all ballots.
 
 Layouts are not included for machine marked ballots.
 
 ### Including Rejected Ballots
 
-In VxScan, images of rejected ballots are always included. In VxCentralScan, images of rejected ballots are not included in the default export but are included in the backup. There are no layout files or cast vote record report for rejected ballots because they are often uninterpretable. When rejected ballots are included, they will appear in the directory as in the following example:
+In VxScan, images of rejected ballots are always included. In VxCentralScan, images of rejected ballots are not included in the cast vote record export but are included in the backup. There are no layout files or cast vote record report for rejected ballots because they are often uninterpretable. When rejected ballots are included, they will appear in the directory with the prefix `rejected-`, as in the following example:
 
 ```
 - root
@@ -75,7 +75,7 @@ In VxScan, images of rejected ballots are always included. In VxCentralScan, ima
 
 VxSuite does not use any data extensions beyond the NIST specification, but some fields are made required that are not required in the original NIST specification. The two specifications can be compared by comparing the [NIST JSON schema](https://github.com/usnistgov/CastVoteRecords/blob/master/NIST_V0_cast_vote_records.json) with the [VxSuite JSON schema](https://github.com/votingworks/vxsuite/blob/main/libs/types/src/cdf/cast-vote-records/vx-schema.json) (**insert link updated).** The additionally required fields are listed in a table below.
 
-Because VxAdmin requires a VxSuite digital signature on all imported cast vote records, it's not possible to import a cast vote record from outside of VxSuite. The goal of using an interoperable format, like the NIST CDT, is to help external systems consume VxSuite cast vote records for audit or analysis.
+Because VxAdmin requires a VxSuite digital signature on all imported cast vote records, it's not possible to import a cast vote record from outside of VxSuite. The goal of using CDF is to help external systems consume VxSuite cast vote records for audit or analysis.
 
 #### VxSuite Required Fields
 
@@ -155,15 +155,15 @@ The CDF specification does not have any allowance for a ballot type such as "abs
 
 The `CVRContest` class within each snapshot contains a list of vote records by contest. The fields are used as follows:
 
-<table><thead><tr><th width="351">CDF Attribute</th><th>Usage</th></tr></thead><tbody><tr><td>CVRContest.ContestId</td><td>The contest identifier from the election definition</td></tr><tr><td>CVRContest.Overvotes</td><td>The number of overvotes for a contest. The number can only be 0 or the maximum number of votes in the contest</td></tr><tr><td>CVRContest.Undervotes</td><td>The number of undervotes for a contest</td></tr><tr><td>CVRContest.WriteIns</td><td>The number of write-ins for a contest</td></tr><tr><td>CVRContest.Status</td><td><p>The list of applicable contest statuses:</p><ul><li>"not-indicated" - no votes cast in contest</li><li>"undervoted" - fewer than allowed votes cast in contest</li><li>"overvoted" - more than allowed votes cast in contest</li><li>"invalidated-rules" - applies if overvoted</li></ul></td></tr><tr><td>CVRContestSelection.ContestSelectionId</td><td>The option identifier from the election definition</td></tr><tr><td>CVRContestSelection.OptionPosition</td><td>The index of the contest position within the contest</td></tr><tr><td>CVRContestSelection.Status</td><td><p>The list of applicable contest selection statuses:</p><ul><li>"invalidated-rules" - mark is part of an overvote</li><li>"needs-adjudication" - mark corresponds to a write-in</li></ul></td></tr><tr><td>SelectionPosition.HasIndication</td><td>"yes" or "no" depending on whether a mark in the bubble passed the mark threshold. In the original hand marked paper ballot snapshots, this may be either value. In the modified snapshot, it is always "yes" except for unmarked write-ins</td></tr><tr><td>SelectionPosition.NumberVotes</td><td>Fixed to 1</td></tr><tr><td>SelectionPosition.IsAllocable</td><td><p>"yes" except:</p><ul><li>"no" if an overvote</li><li>"unknown" if an unmarked write-in</li></ul></td></tr><tr><td>SelectionPosition.MarkMetricValue</td><td>The mark score, a decimal between 0 and 1.00 such as 0.23. Only included in the original snapshots.</td></tr><tr><td>SelectionPosition.Status</td><td><ul><li>"invalidated-rules" if an overvote</li><li>"needs-adjudication" if an unmarked write-in</li></ul></td></tr><tr><td>SelectionPosition.OtherStatus</td><td>"unmarked-write-in" if an unmarked write-in</td></tr><tr><td>CVRWriteIn.WriteInImage</td><td>The <code>BallotImage</code> data for the side of the sheet on which the write-in occurs</td></tr></tbody></table>
+<table><thead><tr><th width="351">CDF Attribute</th><th>Usage</th></tr></thead><tbody><tr><td>CVRContest.ContestId</td><td>The contest identifier from the election definition</td></tr><tr><td>CVRContest.Overvotes</td><td>The number of overvotes for a contest. The number can only be 0 or the maximum number of votes in the contest</td></tr><tr><td>CVRContest.Undervotes</td><td>The number of undervotes for a contest</td></tr><tr><td>CVRContest.WriteIns</td><td>The number of write-ins for a contest</td></tr><tr><td>CVRContest.Status</td><td><p>The list of applicable contest statuses:</p><ul><li>"not-indicated" - no votes cast in contest</li><li>"undervoted" - fewer than allowed votes cast in contest</li><li>"overvoted" - more than allowed votes cast in contest</li><li>"invalidated-rules" - applies if overvoted</li></ul></td></tr><tr><td>CVRContestSelection.ContestSelectionId</td><td>The option identifier from the election definition</td></tr><tr><td>CVRContestSelection.OptionPosition</td><td>The index of the contest position within the contest</td></tr><tr><td>CVRContestSelection.Status</td><td><p>The list of applicable contest selection statuses:</p><ul><li>"invalidated-rules" - mark is part of an overvote</li><li>"needs-adjudication" - mark corresponds to a write-in</li></ul></td></tr><tr><td>SelectionPosition.HasIndication</td><td>"yes" or "no" depending on whether a mark in the bubble passed the mark threshold. In the original hand marked paper ballot snapshots, this may be either value. In the modified snapshot, it is always "yes" except for unmarked write-ins.</td></tr><tr><td>SelectionPosition.NumberVotes</td><td>Fixed to 1</td></tr><tr><td>SelectionPosition.IsAllocable</td><td><p>"yes" except:</p><ul><li>"no" if an overvote</li><li>"unknown" if an unmarked write-in</li></ul></td></tr><tr><td>SelectionPosition.MarkMetricValue</td><td>The mark score, a decimal between 0 and 1.00 such as 0.23. Only included in the original snapshots.</td></tr><tr><td>SelectionPosition.Status</td><td><ul><li>"invalidated-rules" if an overvote</li><li>"needs-adjudication" if an unmarked write-in</li></ul></td></tr><tr><td>SelectionPosition.OtherStatus</td><td>"unmarked-write-in" if an unmarked write-in</td></tr><tr><td>CVRWriteIn.WriteInImage</td><td>The <code>BallotImage</code> data for the side of the sheet on which the write-in occurs</td></tr></tbody></table>
 
 ## Ballot Images
 
-Ballot images are `.jpg` files are included in the cast vote record to be used for write-in adjudication or auditing. They are the image generated by the scanner, normalized to reduce skew and enforce a consistent orientation. Images from VxCentralScan are in grayscale while images for VxScan are in black and white.
+Ballot images are `.jpg` files. They are included in the cast vote record in order to be used for write-in adjudication or auditing. Ballot images are generated by the scanning hardware and then normalized to reduce skew and enforce a consistent orientation. Images from VxCentralScan are in grayscale while images for VxScan are in black and white.
 
 ## Ballot Layouts
 
-Ballot layouts are JSON files which describe the geometry of the interpreted ballots including where each contest and contest option appears. Although the layout of each ballot is in the election definition, each scanned image may have slightly different positioning due to offset or skew of the ballot. As a result, the layouts are included in order to have accurate image highlights and crops for write-in adjudication.
+Ballot layouts are JSON files which describe the discovered position of ballot content within interpreted ballots, including where each contest and contest option appears. Although the layout of ballot content within the ballot grid is specified by the election definition, the ballot content may be positioned in a slightly differently location in each scanned ballot image due to offset or skew of the ballot during scanning. As a result, the layouts are included in order to have accurate image highlights and crops for write-in adjudication.
 
 ## Export Metadata
 
