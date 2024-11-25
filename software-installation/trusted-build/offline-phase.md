@@ -10,7 +10,7 @@ sudo virt-manager
 3. Press the start button ▶️.
 4. Once the VM has initialized, log in with username **vx** and password **votingworks**.
 5. To ensure that the console displays correctly, select "View" > "Resize to VM".
-6. In a terminal window, validate that networking is automatically disabled in the offline VM using the following command:
+6. In the VM terminal window, validate that networking is automatically disabled in the offline VM using the following command:
 
 ```
 ping -c2 google.com
