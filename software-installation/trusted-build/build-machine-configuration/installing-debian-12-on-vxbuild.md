@@ -24,7 +24,7 @@ lsblk /dev/disk/by-id/usb*part* --noheadings --output PATH
 dd if=/path/to/debian-12.8.0-amd64-netinst.iso of=/dev/sda bs=4M && sync
 ```
 
-* NOTE: At the time of this writing, the latest stable release is 12.8. Please update to the appropriate filename if you use a newer version.
+* NOTE: At the time of this writing, the latest stable release is 12.8. Please update to the appropriate file name if you're using a newer version.
 
 4. Once the above command completes, you can safely remove the USB install drive from your system.
 
@@ -32,14 +32,14 @@ dd if=/path/to/debian-12.8.0-amd64-netinst.iso of=/dev/sda bs=4M && sync
 
 1. Before powering VxBuild on, insert the USB install drive created in the previous step.
 2. After powering VxBuild on, begin pressing F12 until it enters the boot menu. Boot the system from the USB install drive.
-3. You will be presented with the following screen. Select "Graphical install" and press enter.
+3.  You will be presented with the following screen. Select "Graphical install" and press enter.\
 
-<figure><img src="../../../.gitbook/assets/image-1.png" alt="" width="320"><figcaption></figcaption></figure>
 
-4. Select your preferred language and click "Continue".
+    <figure><img src="../../../.gitbook/assets/image-1.png" alt="" width="320"><figcaption></figcaption></figure>
+4.  Select your preferred language and click "Continue".\
 
-<figure><img src="../../../.gitbook/assets/image-2.png" alt="" width="375"><figcaption></figcaption></figure>
 
+    <figure><img src="../../../.gitbook/assets/image-2.png" alt="" width="375"><figcaption></figcaption></figure>
 5. Select your location and click "Continue".
 
 <figure><img src="../../../.gitbook/assets/image-3.png" alt="" width="375"><figcaption></figcaption></figure>
