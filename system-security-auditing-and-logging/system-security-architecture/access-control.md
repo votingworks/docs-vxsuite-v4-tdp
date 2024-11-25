@@ -16,7 +16,7 @@ As a diagram:
 
 <figure><img src="../../.gitbook/assets/security-diagram (1).png" alt=""><figcaption></figcaption></figure>
 
-VxCentralScan, VxMark, and VxScan, unlike VxAdmin, aren’t bound to a jurisdiction by VotingWorks. They’re bound and unbound to jurisdictions as they’re configured and unconfigured by election managers. When an Election Manager configures a VxCentralScan, VxMark, or VxScan for an election, the machine persists in its datastore the jurisdiction of the Election Manager card used to unlock it and then only accepts cards from that jurisdiction. When the machine is unconfigured for that election, the machine returns to a jurisdiction-agnostic state.
+VxCentralScan, VxMark, and VxScan, unlike VxAdmin, aren’t bound to a jurisdiction by VotingWorks. They’re bound and unbound to jurisdictions as they’re configured and unconfigured by election managers. When an election manager configures a VxCentralScan, VxMark, or VxScan for an election, the machine persists in its datastore the jurisdiction of the election manager card used to unlock it and then only accepts cards from that jurisdiction. When the machine is unconfigured for that election, the machine returns to a jurisdiction-agnostic state.
 
 ## Smart Card Keys and Certificates
 
@@ -41,7 +41,7 @@ We store our root VotingWorks certificate authority (CA) private key encrypted i
 
 VxAdmin, VxCentralScan, VxMark, and VxScan are all built on devices with a Trusted Platform Module (TPM) 2.0, a chip that ships standard on modern Intel and AMD hardware. The TPM can keep cryptographic material secret inside its tamper-resistant boundary until a certain set of system conditions are met. Only once the TPM determines that the system meets a set of appropriate conditions—correct bootloader, kernel, kernel command line, etc.—does the TPM allow an application to ask it to perform signing operations with its contained secret key.
 
-Our smart cards are Java Cards, version 3.0.4. These Java Cards can generate 256-bit ECC key pairs such that the private key never leaves the card, while the public key is exported. The cards are capable of self-destructing if someone attempts to extract the private key at the hardware level.
+Our smart cards are Java Cards, version 3.0.5. These Java Cards can generate 256-bit ECC key pairs such that the private key never leaves the card, while the public key is exported. The cards are capable of self-destructing if someone attempts to extract the private key at the hardware level.
 
 ### Smart Card PINs
 
