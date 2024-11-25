@@ -6,7 +6,7 @@ To install Debian 12 on the build machine (VxBuild), you will need to download t
 
 You should use a blank USB drive for the install drive. The process described below will wipe any existing content.
 
-To create a USB install drive with the downloaded .iso file:
+To create a USB install drive with the downloaded ISO file:
 
 1. Ensure that the USB drive is available to the system. By default, it tries to attach as the `/dev/sda` device. An easy way to verify this is via the following command:
 
