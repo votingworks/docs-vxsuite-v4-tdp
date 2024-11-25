@@ -20,7 +20,7 @@ Smart cards are used for two-factor authentication on all machines in the system
 
 Programming, like authentication, takes place via the laptop's built-in USB card reader. Once a card is inserted, the application is able to detect the card and read and write data by issuing APDUs (application protocol data units) which are the standard form of communication between smart card readers and smart cards.
 
-For extensive details on the authentication scheme, see the **SECURITY SECTION LINK**.
+For extensive details on the authentication scheme, see the [access control documentation](../system-security-auditing-and-logging/system-security-architecture/access-control.md).
 
 {% hint style="info" %}
 **User Manual Reference:** [Smart Cards and User Roles](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxadmin-system-setup/programming-cards "mention")
