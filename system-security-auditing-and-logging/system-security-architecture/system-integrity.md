@@ -1,6 +1,6 @@
 # System Integrity
 
-The foundation of our system integrity solution is the TPM (described in greater detail under [Private Key Storage](broken-reference)).
+The foundation of our system integrity solution is the TPM (described in greater detail under [cryptography.md](cryptography.md "mention")).
 
 Our design for system integrity maps closely to that of ChromeOS:
 
@@ -8,7 +8,7 @@ Our design for system integrity maps closely to that of ChromeOS:
 2. The read-only partitions are verified by [dm-verity](https://source.android.com/docs/security/features/verifiedboot/dm-verity), which generates a hash tree of all the raw partition blocks, culminating in a single hash root for the entire read-only filesystem.
 3. The kernel boot command line includes the dm-verity hash root as an argument, ensuring that Linux halts if the read-only partitions are not successfully verified against this hash root.
 4. The BIOS is configured to only boot a properly signed bootloader+kernel+command-line, with public keys managed by VotingWorks and configured in the BIOS as secure boot keys. The bootloader+kernel+command-line that we want is set up as the default boot option in UEFI.
-5. The private key described previously in [Access Control](broken-reference) is generated in the TPM and bound to Platform Configuration Registers (PCRs) that include the BIOS, the secure boot public keys, and the bootloader+kernel+command-line. Thus, this private key is only usable if the machine boots appropriately sanctioned source code with a hard drive whose read-only partitions are unmodified.
+5. The private key described previously in [Access Control](access-control.md) is generated in the TPM and bound to Platform Configuration Registers (PCRs) that include the BIOS, the secure boot public keys, and the bootloader+kernel+command-line. Thus, this private key is only usable if the machine boots appropriately sanctioned source code with a hard drive whose read-only partitions are unmodified.
 
 As a diagram:
 
