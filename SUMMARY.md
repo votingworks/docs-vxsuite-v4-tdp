@@ -64,6 +64,8 @@
     * [Imaging Machines](software-installation/imaging-machines/imaging-machines.md)
     * [Basic Configuration Wizard](software-installation/imaging-machines/basic-configuration-wizard.md)
     * [Verifying the Image Installed on a Machine](software-installation/imaging-machines/verifying-the-image-installed-on-a-machine.md)
+  * [Hash/Checksum Verification](software-installation/hash-checksum-verification.md)
+  * [Virt Manager - Network Access & Troubleshooting](software-installation/virt-manager-network-access-and-troubleshooting.md)
 * [System Operations & Training Manual](system-operations-and-training-manual.md)
 * [System Inspection & Logic and Accuracy Testing](system-inspection-and-logic-and-accuracy-testing.md)
 * [System Maintenance Manual](system-maintenance-manual.md)
