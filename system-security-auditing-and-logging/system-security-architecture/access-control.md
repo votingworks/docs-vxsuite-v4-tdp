@@ -63,7 +63,7 @@ Our IANA-assigned Private Enterprise Number (PEN) is 59817, which means that the
 
 Our custom fields are:
 
-* 1.3.6.1.4.1.59817.1 — Component = admin, central-scan, scan, or card (the first three referring to machines)
+* 1.3.6.1.4.1.59817.1 — Component = admin, central-scan, mark-scan, scan, or card (the first four referring to machines)
 * 1.3.6.1.4.1.59817.2 — Jurisdiction = {state-2-letter-abbreviation}.{county-or-town} (e.g. ms.warren or ca.los-angeles)
 * 1.3.6.1.4.1.59817.3 — Card type = vendor, system-administrator, election-manager, poll-worker, or poll-worker-with-pin (vendor, system administrator, and election manager cards always have PINs)
 * 1.3.6.1.4.1.59817.4 — Election ID = The ID of the election that an election card was programmed for
