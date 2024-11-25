@@ -2,7 +2,7 @@
 
 This risk assessment reviews threats and vulnerabilities identified in:
 
-* VxSuite hardware, including: VxCentralScan, VxAdmin, and VxScan. Also included are any items and peripherals needed to operate the equipment listed above (e.g., USB drives, scanners, printers).
+* VxSuite hardware, including VxCentralScan, VxAdmin, vxMark, and VxScan. Also included are any items and peripherals needed to operate the equipment listed above (e.g., USB drives, scanners, printers).
 * VxSuite software and source code
 * VotingWorks internal communication and operation support systems.
 
@@ -20,7 +20,7 @@ For additional information on how physical, technical, and operational controls 
 * [procedural-and-operational-security.md](procedural-and-operational-security.md "mention")
 * [trusted-build](../software-installation/trusted-build/ "mention")
 
-Please also refer to the VxSuite User Manual, notably the setup process, election manager settings, and system administrator functions. Also of interest, the Seals and Port blockers instructions.
+Please also refer to the [VxSuite User Manual - v4](https://app.gitbook.com/o/-MG9xpTX0GFiCyXHEhNe/s/JtZutzGTdCzsGITrdiph/ "mention"), notably the [Setup Inspection](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/logic-and-accuracy-pre-election-testing/setup-inspection "mention") documentation.
 
 
 
