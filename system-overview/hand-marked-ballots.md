@@ -14,12 +14,13 @@ layout:
 
 # Hand Marked Ballots
 
-VxSuite can accept an enormous range of ballots, which can be organized and stylized in a limitless number of ways. The ballots must conform to these design requirements:
+VxSuite can tabulate a wide variety of ballot designs as long as they conform to the following requirements:
 
 1. Ballot size much be one of the available system options
-2. Ballot must include a correctly formatted timing mark grid
-3. Ballot must include an appropriately positioned QR code with its metadata
-4. Ballot must use a specific bubble format
+2. Ballot must include correctly formatted timing mark borders
+3. Ballot must include an appropriately positioned metadata QR code
+4. Ballot must use a specific bubble shape
+5. Ballot must adhere to [system limits](../system-performance-and-specifications/system-limits/#hand-marked-paper-ballots)
 
 ## Ballot Size
 
@@ -36,11 +37,11 @@ There are six valid ballot sizes. All are 8.5 inches in width, but vary in heigh
 
 These lengths correspond to the length specified in the [Ballot Layout](hand-marked-ballots.md) within the election definition.
 
-## Timing Mark Grid
+## Timing Mark Borders
 
-<figure><img src="../.gitbook/assets/image (21).png" alt="" width="563"><figcaption><p>Example of a timing mark-grid on letter-sized paper (scaled)</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (21).png" alt="" width="563"><figcaption><p>Example of timing mark borders on letter-sized paper (scaled)</p></figcaption></figure>
 
-The timing mark grid must exist on every ballot, front and back. The timing marks and page margins are strictly defined:
+Every ballot must have timing mark borders on both front and back. The timing marks and page margins are strictly defined:
 
 | Dimension                 |                |
 | ------------------------- | -------------- |
@@ -49,9 +50,9 @@ The timing mark grid must exist on every ballot, front and back. The timing mark
 | Page Margin (Top, Bottom) | 12pt (1/6 in.) |
 | Page Margin (Left, Right) | 5mm            |
 
-As for number of timing marks, there are always 34 columns. The number of rows varies based on the length of the ballot, and should be calculated by the formula **(# inches \* 4) - 3**. For example, a letter-sized ballot (11 inches) should have 41 rows of timing marks whereas a legal-sized ballot (14 inches) should have 53 rows of timing marks. The number of rows is inclusive of the top and and bottom row that are completely full of timing marks.
+As for number of timing marks, there are always 34 in the top and bottom borders. The number of marks in the left and right borders varies based on the length of the ballot, and should be calculated by the formula **(# inches \* 4) - 3**. For example, a letter-sized ballot (11 inches) should have 41 left and right timing marks whereas a legal-sized ballot (14 inches) should have 53 left and right timing marks.
 
-The timing marks should be aligned to the margins of the page and evenly spaced.
+The timing marks must be aligned to the margins of the page and evenly spaced.
 
 ## QR Code Metadata
 
@@ -71,11 +72,11 @@ In addition, the QR code includes the [ballot hash](election-package/#ballot-has
 
 For full specifications on how to generate readable QR codes, view the [ballot encoder documentation](https://github.com/votingworks/vxsuite/tree/main/libs/ballot-encoder#hmpb-metadata-encoding) (**insert link updated)**.
 
-### QR Code Placement
+### Metadata QR Code Placement
 
-The interpreter looks for ballots in the top-right and bottom-left corners of the ballot within squares that are 1/4 of the width across.&#x20;
+The interpreter looks for ballots in the bottom-left corner of the ballot. The detection area is a square whose sides are 1/4 of the ballot width.&#x20;
 
-<figure><img src="../.gitbook/assets/image (22).png" alt="" width="563"><figcaption><p>Highlighted areas must contain a QR code</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (66).png" alt=""><figcaption><p>The highlighted area must contain the metadata QR code</p></figcaption></figure>
 
 ## Bubble Format
 
@@ -92,14 +93,14 @@ In order to be interpreted correctly, bubbles must meet the following dimensions
 
 ## Grid Coordinates
 
-In the election definition, bubble positions and other ballot regions are specified relative to the grid coordinates. The ballot grid is an XY grid with the origin in the top-left corner. For example, the coordinate **(5, 3)** would correspond to the following position on the ballot:
+The timing mark borders define an abstract grid that VxSuite uses to assign coordinates to positions on the ballot. In the election definition, bubble positions and other ballot regions are specified using these grid coordinates. The ballot grid is an XY grid with the origin in the top-left corner. For example, the coordinate **(5, 3)** would correspond to the following position on the ballot:
 
 <figure><img src="../.gitbook/assets/image (27).png" alt="" width="563"><figcaption></figcaption></figure>
 
 **Notes:**
 
-* Coordinates correspond to the _centers_ of timing marks
-* Coordinates specify the _center_ of bubbles
+* Coordinates correspond to the _center_ of each timing mark
+* Coordinates specify the _center_ of each bubble
 * Fractional coordinates are allowed
 
 ## Complete Example
