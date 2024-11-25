@@ -67,7 +67,7 @@ The QR code includes ballot metadata:
 * Test Ballot Flag - indicates whether the ballot is a test ballot or an official ballot
 * Ballot Type (Precinct, Absentee, or Provisional)
 
-In addition, the QR code includes the [ballot hash](election-package/#election-package-and-ballot-hashes). The ballot hash ensures that the ballot was generated from the same election definition that will be used to interpret the ballot.
+In addition, the QR code includes the [ballot hash](election-package/#ballot-hash-and-election-package-hash). The ballot hash ensures that the ballot was generated from the same election definition that will be used to interpret the ballot.
 
 For full specifications on how to generate readable QR codes, view the [ballot encoder documentation](https://github.com/votingworks/vxsuite/tree/main/libs/ballot-encoder#hmpb-metadata-encoding) (**insert link updated)**.
 

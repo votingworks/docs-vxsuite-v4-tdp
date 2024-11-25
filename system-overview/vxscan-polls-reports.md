@@ -23,7 +23,7 @@ Note the following features about the tally report header in the examples below:
 * **Title** - Includes the type of the polls report and the name of the precinct, or "All Precincts" if VxScan is configured to accept ballots from all precincts
 * **Subtitle** - For primary elections, includes the full party name or "Nonpartisan Contests"
 * **Timestamps** - The first timestamp indicates when the poll status changed and the second indicates when the report was printed. In most cases these times are the same, but in some cases the report may be printed later.
-* **Election ID** - The election ID on the report is a concatenation of the [ballot hash and the election package hash](election-package/#election-package-and-ballot-hashes) and specifies exactly which election definition and election settings that the report corresponds to
+* **Election ID** - The election ID on the report is a concatenation of the [ballot hash and the election package hash](election-package/#ballot-hash-and-election-package-hash) and specifies exactly which election definition and election settings that the report corresponds to
 * **Certification Signatures** - The space is provided for poll workers or election officials to sign the report in accordance with local statute.
 
 The ballot counts table will provide the count of hand marked vs. machine marked ballots. For multi-sheet elections, it will provide counts per sheet.

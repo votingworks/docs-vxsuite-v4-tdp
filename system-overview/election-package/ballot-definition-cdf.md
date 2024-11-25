@@ -6,11 +6,11 @@ The election definition within the election package can be a JSON Ballot Definit
 
 VxSuite accepts the Ballot Definition CDF Version 1.0 as defined by NIST without any data extensions. VxSuite requirements differ from the NIST CDF schema only in the following respects:
 
-* Some fields not required in the NIST CDF but are required in VxSuite
+* Some fields not required in the NIST CDF are required in VxSuite
 * Some enumeration values are more restricted in VxSuite than in the NIST CDF
 * Some classes and attributes are ignored in VxSuite
 
-The exact VxSuite schema is defined as a [JSON schema in the vxsuite repository](https://github.com/votingworks/vxsuite/blob/main/libs/types/src/cdf/ballot-definition/vx-schema.json) (**insert link updated)** which is derived from the [original NIST schema](https://github.com/usnistgov/BallotDefinition/blob/master/NIST\_V1\_ballot\_definition.json). The differences between the two are documented in the below tables.
+The exact VxSuite schema is defined as a [JSON schema in the vxsuite repository](https://github.com/votingworks/vxsuite/blob/main/libs/types/src/cdf/ballot-definition/vx-schema.json) (**insert link updated)** which is derived from the [original NIST schema](https://github.com/usnistgov/BallotDefinition/blob/master/NIST_V1_ballot_definition.json). The differences between the two are documented in the below tables.
 
 ### Required Class Attributes
 
@@ -71,7 +71,7 @@ When importing a Ballot Definition CDF file, attributes will be mapped to the [V
 
 ### Translations
 
-Most attributes in the Ballot Definition CDF that could require translation are defined with the CDF `InternationalizedText` class which allows specifying variants for each language. InternationalizedText maps directly onto VxSuite's [ballot strings](vxsuite-election-definition.md#ballot-strings). When an `InternationalizedText` attribute is mapped to a ballot string, the English version is used as the default which will appear on reports and administrator interfaces while the translations are maintained in the election definition for multi-language experiences on voter devices.
+Most attributes in the Ballot Definition CDF that could require translation are defined with the CDF `InternationalizedText` class which allows specifying variants for each language. `InternationalizedText` maps directly onto VxSuite's [ballot strings](vxsuite-election-definition.md#ballot-strings). When an `InternationalizedText` attribute is mapped to a ballot string, the English version is used as the default which will appear on reports and administrator interfaces while the translations are maintained in the election definition for multi-language experiences on voter devices.
 
 ### Geographies
 
@@ -85,9 +85,9 @@ Any `GpUnit` with an associated contest is mapped to a [District](vxsuite-electi
 
 ## VxSuite CDF Limitations
 
-Because VxSuite does not utilize any data extensions to the Ballot Definition CDF, some information cannot be included when using the Ballot Definition CDF. The missing information corresponds to some limitations when using the Ballot Definition CDF when compared to the [VxSuite Election Definition](vxsuite-election-definition.md) format:
+Because VxSuite does not utilize any data extensions to the Ballot Definition CDF, some information cannot be included when using the Ballot Definition CDF. The missing information creates some limitations when using the Ballot Definition CDF when compared to the [VxSuite Election Definition](vxsuite-election-definition.md) format:
 
 * Contest term descriptions (e.g. “2 years”) will always show up in English because there is no field in the CDF for internationalized term descriptions
 * The full party name will be displayed for each candidate on VxMark (e.g. “Democratic Party” instead of “Democrat”) because the CDF only has one attribute for party name. In contrast, the VxSuite format supports two separate fields, one for the full name and one for showing on the ballot.
-* When adjudicating write-ins, the crop area will be set to a default because there is no field in the CDF for this parameter.
+* When adjudicating write-ins, the highlighted contest option area will be set to a default because there is no field in the CDF for this parameter.
 * Seal images are not supported in the CDF, so no seal will be shown in association with the election.
