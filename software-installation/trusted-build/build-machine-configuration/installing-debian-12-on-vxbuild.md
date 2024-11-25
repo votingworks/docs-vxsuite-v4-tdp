@@ -1,36 +1,32 @@
 # Installing Debian 12 on VxBuild
 
-
-
-## Create Debian 12 USB <a href="#create-debian-12-usb" id="create-debian-12-usb"></a>
+## Create Debian 12 USB Install Drive <a href="#create-debian-12-usb" id="create-debian-12-usb"></a>
 
 To install Debian 12 on the build machine (VxBuild), you will need to download the latest Debian 12 amd64 installer file here: [Latest Debian Release](https://www.debian.org/releases/stable/debian-installer/).
 
-You should use a blank USB for this install drive. The process described below will wipe any existing content.
+You should use a blank USB drive for the install drive. The process described below will wipe any existing content.
 
-To create a USB install drive with the downloaded iso file:
+To create a USB install drive with the downloaded .iso file:
 
-1. Ensure the USB is available to the system. By default, it tries to attach as the /dev/sda device. An easy way to verify this is via the following command:
+1. Ensure that the USB drive is available to the system. By default, it tries to attach as the `/dev/sda` device. An easy way to verify this is via the following command:
 
 ```
 lsblk /dev/disk/by-id/usb*part* --noheadings --output PATH
 ```
 
-2. If the USB is not attached as the /dev/sda device, that’s ok. Simply replace “/dev/sda” with the device your USB did attach to.
+2. If the USB drive is not attached as the `/dev/sda` device, that’s ok. Simply replace `/dev/sda` with the device that your USB drive did attach to.
 
-* NOTE: The command below should not include any number as part of the device path. As an example, if the above command returns “/dev/sda1”, you must use “/dev/sda” as the path in the next command.
+* NOTE: The command below should not include any number as part of the device path. For example, if the above command returns `/dev/sda1`, you must use `/dev/sda` as the path in the next command.
 
-1. Now that you know the correct device path, you can create the USB install drive via the following command:
-
-Copy
+3. Now that you know the correct device path, you can create the USB install drive via the following command:
 
 ```
-dd if=/path/to/debian-12.2.0-amd64-netinst.iso of=/dev/sda bs=4M && sync
+dd if=/path/to/debian-12.8.0-amd64-netinst.iso of=/dev/sda bs=4M && sync
 ```
 
-* NOTE: At the time of this writing, the latest stable release is 12.2. Please update to the appropriate filename if you use a newer version.)
+* NOTE: At the time of this writing, the latest stable release is 12.8. Please update to the appropriate filename if you use a newer version.
 
-1. Once the above command completes, you can safely remove the USB install drive from your system.
+4. Once the above command completes, you can safely remove the USB install drive from your system.
 
 ## Installing to VxBuild <a href="#installing-to-vxbuild" id="installing-to-vxbuild"></a>
 
