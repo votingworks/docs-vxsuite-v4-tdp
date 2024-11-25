@@ -56,16 +56,6 @@ Ballots are never modified by the system after voter verification in any way tha
 
 Because all voter selections are recorded on paper, voter-verified, and unmodified, the election results can always be re-tabulated or audited.
 
-## Lack of Network Connectivity
-
-All machines do not and cannot connect to any network at any time. Networking is disabled in a multi-layered approach:
-
-* **Hardware** - Wireless network chips are not installed, preventing the device from accessing wireless networks. On devices with an ethernet port, a port blocker is installed.
-* **BIOS -** The networking stack is disabled at the BIOS level.
-* **Operating System** - All network drivers are purged from the system when the software image is locked down.
-
-Because there is no networking, all electronic data transfer is air-gapped via USB flash drives.
-
 ## Key VotingWorks Repositories
 
 There are four code repositories relevant to the voting system:
