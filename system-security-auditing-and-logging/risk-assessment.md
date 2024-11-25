@@ -18,10 +18,10 @@ For additional information on how physical, technical, and operational controls 
 * [defense-in-depth-and-least-privilege.md](system-security-architecture/defense-in-depth-and-least-privilege.md "mention")
 * [cryptography.md](system-security-architecture/cryptography.md "mention")
 * [procedural-and-operational-security.md](procedural-and-operational-security.md "mention")
-* [trusted-build.md](../software-installation/trusted-build.md "mention")
+* [trusted-build](../software-installation/trusted-build/ "mention")
 
 Please also refer to the VxSuite User Manual, notably the setup process, election manager settings, and system administrator functions. Also of interest, the Seals and Port blockers instructions.
 
 
 
-{% file src="../.gitbook/assets/VxSuite v4 Risk Assessment – Nov 2024 - v4.pdf" %}
+{% file src="../.gitbook/assets/VxSuite v4 Risk Assessment – Nov 2024 - v4 (1).pdf" %}
