@@ -1,6 +1,6 @@
 # Audio Visual & Display Screen Settings
 
-## 8.1-A Electronic Display Screens
+## Electronic Display Screen Specifications
 
 The voting system features three electronic display screens - on VxScan, on VxMark, and an identical screen on the laptops for VxAdmin and VxCentralScan. All screens are in conformance with 8.1-A's requirements for electronic display screens.
 
@@ -11,7 +11,7 @@ The voting system features three electronic display screens - on VxScan, on VxMa
 
 <table><thead><tr><th width="167">Device</th><th width="159">Display Diagonal</th><th>Resolution</th><th width="108">Contrast</th><th>Max. Brightness</th></tr></thead><tbody><tr><td>VxScan</td><td>15.6"</td><td>1920 x 1080</td><td>1,000:1</td><td>450 nits</td></tr><tr><td>VxMark</td><td>15.6"</td><td>1080 x 1920</td><td>700:1</td><td>220 nits</td></tr><tr><td>Central Laptops</td><td>14"</td><td>1920 x 1200</td><td>1,330:1</td><td>300 nits</td></tr></tbody></table>
 
-## 8.1-K Eliminating Hazards
+## Eliminating Hazards
 
 All audio and video devices are tested to be in accordance with the requirements of IEC/UL 62368-1 (8.1-K).
 
