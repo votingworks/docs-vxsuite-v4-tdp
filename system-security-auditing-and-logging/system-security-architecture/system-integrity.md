@@ -31,7 +31,7 @@ Our system is configured so that `/var`, `/tmp`, and `/home` are mounted read-wr
 
 ## Protecting Critical Read-Write Data
 
-In addition to locking down the `/` partition, the `/var` partition is encrypted and authenticate using `dm-crypt`. This ensures that, even if an attacker removes the physical hard drive and connects it to a different CPU, they cannot read nor modify the contents of the `/var` partition in an attempt to make the VxSuite component behave differently.
+In addition to locking down the `/` partition, the `/var` partition is encrypted and authenticated using `dm-crypt`. This ensures that, even if an attacker removes the physical hard drive and connects it to a different CPU, they cannot read or modify the contents of the `/var` partition in an attempt to make the VxSuite component behave differently.
 
 Furthermore, as an extra layer of defense, every individual VxSuite component instance uses a unique random encryption key for its `/var` partition. Thus, if an attacker were to break the encryption on one VxSuite machine, they would have gained no advantage in penetrating a second machine. This is ensured through rekeying of the `/var` partition encryption on first boot of a VxSuite component.
 
