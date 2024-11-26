@@ -48,6 +48,8 @@ In each article describing the hardware of a specific component, some section wi
 * [vxscan-hardware.md](vxscan-hardware.md "mention")
 * [vxmark-hardware.md](vxmark-hardware.md "mention")
 
+We consider the supplier of any critical component a critical supplier.
+
 
 
 
