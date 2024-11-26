@@ -30,7 +30,7 @@ cd ~/code/vxsuite-complete-system
 ```
 
 8. You will be guided through several prompts.
-9. Select the index of the machine type that you intend to build.
+9. Select the number of the machine type that you intend to build.
 
 ```
 Welcome to VxSuite. THIS IS A DESTRUCTIVE SCRIPT. Ctrl-C right now if you don't know for sure what you're doing.
@@ -58,4 +58,4 @@ Is this additionally an official release image? [y/N]
 13. After the script finishes, the VM will reboot. You will see a white screen displaying “Card Reader Not Detected”. In the VM menu, select "Virtual Machine" > "Shut Down" > "Shut Down". Close the VM window once shutdown is complete.
 14. You will now need to perform the [Secure Boot Signing](https://docs.voting.works/vxsuite-tdp-v3.1/trusted-build/final-configuration/secure-boot-signing) process with VotingWorks. Once that process is completed, the VM and corresponding image will be ready for use with Secure Boot.
 
-At this point, you are ready to install the image. You can find those instructions in \[placeholder].
+At this point, you are ready to install the image. You can find those instructions in [Imagine Machines](../../imaging-machines/).
