@@ -2,7 +2,7 @@
 
 Signed Hash Validation provides end users with a way to verify that a VotingWorks machine is running authentic unmodified VotingWorks software.
 
-The machine preps a payload consisting of the following, with `1//shv` as a prefix and `#` as a separator:
+The machine preps a payload consisting of the following, with `1//shv//` as a prefix and `#` as a separator:
 
 * System hash
 * Software version
@@ -15,7 +15,14 @@ The machine signs that payload with its TPM private key and then bundles the fol
 * Payload signature
 * Machine cert
 
-This combination is displayed as a QR code, which can be scanned at [https://check.voting.works](https://check.voting.works). The site parses the QR code and performs the following verification:
+This combination is displayed as a QR code. Putting this all together, the QR code contains:
+
+```
+message = 1//shv//<system-hash>#<software-version>#<election-id>#<current-timestamp>
+qrCode  = <message>;signature(<message>);<machine-cert>
+```
+
+This QR code can be scanned at [https://check.voting.works](https://check.voting.works). The site parses the QR code and performs the following verification:
 
 * Verifies the machine cert using the root VotingWorks cert.
 * Extracts the machine's public key from the machine cert.
