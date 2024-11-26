@@ -22,6 +22,6 @@ For additional information on how physical, technical, and operational controls 
 
 Please also refer to the [VxSuite User Manual - v4](https://app.gitbook.com/o/-MG9xpTX0GFiCyXHEhNe/s/JtZutzGTdCzsGITrdiph/ "mention"), notably the [Setup Inspection](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/logic-and-accuracy-pre-election-testing/setup-inspection "mention") documentation.
 
+[Risk Assessment](https://github.com/votingworks/docs-vxsuite-v4/blob/main/risk-assessment/vxsuite-v4-risk-assessment.pdf) \[PDF]
 
-
-{% file src="../.gitbook/assets/VxSuite v4 Risk Assessment – Nov 2024 - v4 (1).pdf" %}
+[Risk Assessment](https://github.com/votingworks/docs-vxsuite-v4/blob/main/risk-assessment/vxsuite-v4-risk-assessment.xlsx) \[Excel]

@@ -20,10 +20,8 @@ Multidisciplinary Collaboration: VotingWorks gathered feedback from not just ele
 Usability Testing: Finally, VotingWorks conducted formal usability and accessibility testing, as required by VVSG 2.0. \
 
 
-[VotingWorks Pollworker Testing Report VxSuite](https://docs.google.com/document/d/124i3qNYMfCRwRvihs9qN9kzp1Hx6jE6ql0Cu_HM-OFU/edit?usp=sharing)
+[VotingWorks Pollworker Testing Report VxSuite](https://github.com/votingworks/docs-vxsuite-v4/blob/main/uat-reports/vxsuite-v4-pollworker-testing-report.pdf)
 
-
-
-[VotingWorks UAT Report VxSuite](https://docs.google.com/document/d/1vpLAQtwj_a0UICjDGd2OdngomuPF6PUwjRiIPSWxCCQ/edit?usp=sharing)
+[VotingWorks UAT Report VxSuite](https://github.com/votingworks/docs-vxsuite-v4/blob/main/uat-reports/vxsuite-v4-pollworker-testing-report.pdf)
 
 \
