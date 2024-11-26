@@ -6,13 +6,13 @@ First make sure that you've prepared USB drives for imaging, following the instr
 2. Insert both the vx-iso and image USB drives into the system. If this is a VxMark or a VxScan, connect a keyboard as well. If there aren't enough ports available, use a USB hub as provided by VotingWorks.
 3. Power on the machine. Our machines our configured to auto-boot from a bootable USB drive when connected and should auto-boot to vx-iso. You can navigate vx-iso with the keyboard.
 4. Select "Write an image". This option will be auto-selected in 10 seconds.
-5. If the machine already has Secure Boot keys installed, it should not prompt you to install keys. If it does for some reason, but you know Secure Boot keys to be installed, opt not to install Secure Boot keys. Only if you know the keys need to be installed should you opt to install them.
-6. The images on the image USB drive will be displayed. Select the index of the correct image.
+5. If the machine already has Secure Boot keys installed, it should not prompt you to install keys. If it does for some reason, you should reach out to VotingWorks for assistance. Only if you know the keys need to be installed should you opt to install them.
+6. The images on the image USB drive will be displayed. Select the number of the correct image.
 7. Enter 27 for the final expected size of the image in GB.
 8. Confirm your selections and wait for imaging to complete.
 9. Once imaging completes, remove the USB drives and press "Enter" to reboot.
 10. On reboot, you should see a prompt for a passphrase. This passphrase is used to decrypt the machine's /var partition so that it can be re-encrypted via the TPM. Enter "insecure" — this passphrase is not relevant to our security architecture. If Secure Boot is not enabled, you'll instead see a note about needing to enable Secure Boot. The machine will auto-boot you into the BIOS. On reboot after that, you should see the passphrase prompt.
-11. The /var partition should encrypt and expand, and you should then find yourself in Basic Configuration Wizard. Proceed to that section.
+11. The /var partition should encrypt and expand, and you should then find yourself in [Basic Configuration Wizard](basic-configuration-wizard.md). Proceed to that section.
 
 ### VxMark Boot Order Fix
 
