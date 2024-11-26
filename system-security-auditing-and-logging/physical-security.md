@@ -27,7 +27,7 @@ In addition to the processes in [procedural-and-operational-security.md](procedu
 
 ## VxMark
 
-* VxMark transport & storage cases have several tamper-evident seal points to detect any unauthorized physical access.
+* VxMark transport & storage cases have tamper-evident seal points to detect any unauthorized physical access.
 * VxMark has an adhesive tamper-evident seal on each side of the BMD to detect any unauthorized physical access to the device internals.
 * VxMark ballot box has a tamper-evident seal point to detect any unauthorized access to cast ballots and the printer-scanner.
 * VxMark triggers a visual & audible alert when the printer-scanner and/or printer-scanner cover is opened in an activated state to alert any unauthorized access.
