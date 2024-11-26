@@ -3,7 +3,7 @@
 To install an image on a VotingWorks component, i.e., to image a machine, you need two USB drives:
 
 * A vx-iso USB drive — [vx-iso](https://github.com/votingworks/vx-iso) is an Arch Linux ISO installer program.
-* An image USB drive — This is an empty USB drive, partitioned in a particular way, with a "Data" partition that can contain as many VotingWorks images as space allows and a "Keys" partition that can optionally contain the VotingWorks Secure Boot public keys, necessary if these keys haven't already been installed.
+* An image USB drive — This is an empty USB drive with two partitions, a "Data" partition that can contain as many VotingWorks images as space allows and a "Keys" partition that can optionally contain the VotingWorks Secure Boot public keys, necessary if a machine hasn't had these keys installed yet.
 
 Clone the vx-iso repo for the tooling necessary to prepare the above:
 
