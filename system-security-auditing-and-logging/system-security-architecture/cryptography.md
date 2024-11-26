@@ -64,4 +64,6 @@ All digital signatures for authenticating election definitions and CVRs are gene
 
 All hashes – for generating election IDs, digesting data before signing, constructing the Merkle-tree hash for CVRs, and constructing the dm-verity system integrity hash – are generated using the NIST standard SHA-256.
 
+Encryption of disk partitions is done using AES with 256-bit keys in XTS mode.
+
 Secure boot code signing uses RSA 4096-bit keys.
