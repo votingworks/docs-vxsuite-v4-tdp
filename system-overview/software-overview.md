@@ -77,10 +77,19 @@ The authenticity of VotingWorks software can be confirmed using [signed-hash-val
 
 The VotingWorks codebase is written in TypeScript and Rust. Our best practices and tooling used to enforce those best practices are detailed here:
 
-* [TypeScript best practices](https://github.com/votingworks/vxsuite/blob/main/docs/best_practices/typescript.md)
-* [Rust best practices](https://github.com/votingworks/vxsuite/blob/main/docs/best_practices/rust.md)
+* [TypeScript best practices and tooling](https://github.com/votingworks/vxsuite/blob/main/docs/best_practices/typescript.md)
+* [Rust best practices and tooling](https://github.com/votingworks/vxsuite/blob/main/docs/best_practices/rust.md)
 
-Through the above best practices and peer code review of every change, we guarantee that we meet requirements 2.3, 2.4, 2.5, and 2.6.
+{% hint style="success" %}
+Through the above best practices, tooling used to enforce those best practices, and peer code review of every change, we guarantee that we meet the following requirements:
+
+* 2.3: Voting system logic is clear, meaningful, and well-structured
+* 2.4: Voting system structure is modular, scalable, and robust
+* 2.5: The voting system supports system processes and data with integrity
+* 2.6: The voting system handles errors robustly and gracefully recovers from failure
+
+Much of 2.5 is additionally covered under [system-integrity.md](../system-security-auditing-and-logging/system-security-architecture/system-integrity.md "mention").
+{% endhint %}
 
 ## Common Software Functions
 
