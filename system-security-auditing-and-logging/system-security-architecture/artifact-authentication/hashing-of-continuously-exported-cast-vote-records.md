@@ -49,7 +49,7 @@ Then on the USB, we can use a flat structure that’s much easier to reason abou
     Images
 ```
 
-The database table makes recomputing hashes easy, as retrieval of all hashes for a given ID prefix becomes a simple SQL query. This approach also decreases the chance that we accidentally depend on data written to USB when computing hashes, protecting against [compromised or faulty USBs](https://github.com/votingworks/vxsuite/pull/3554).
+The database table makes recomputing hashes easy, as retrieval of all hashes for a given ID prefix becomes a simple SQL query. This approach also decreases the chance that we accidentally depend on data written to the USB drive when computing hashes, protecting against [compromised or faulty USB drives](https://github.com/votingworks/vxsuite/pull/3554).
 
 In the above examples, we’ve listed a root-hash.txt file and have signed that. In practice, we use a JSON file capable of storing other metadata and sign that:
 
