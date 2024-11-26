@@ -57,7 +57,7 @@ Using the criteria described above, the VotingWorks operations team narrows down
 For each critical component, VotingWorks requires a warranty on defective components and a delivery timeline for all orders. Specifically, contracts with suppliers include language matching or to the effect of:
 
 * The supplier is required to provide a warranty for all products or services that do not conform to specification.
-* The supplier is also required to provide a delivery timeline for each order.
+* The supplier is required to provide a delivery timeline for each order.
 
 Suppliers for all critical components in the bill of materials are audited at the beginning and end of each hardware development cycle. If we discover disqualifying information about a supplier, VotingWorks works to identify alternative suppliers. If components are no longer available due to supply chain issues or the end of a product's lifecycle, VotingWorks works to identify alternative suppliers.
 
