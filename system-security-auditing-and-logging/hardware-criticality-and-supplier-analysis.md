@@ -44,13 +44,27 @@ A seal point or hinge may be more critical than an interior panel because, if it
 
 In each article describing the hardware of a specific component, some section will specify the high and medium criticality components and provide some explanation of why it is deemed critical. All unlisted components are low criticality.
 
-* [vxadmin-and-vxcentralscan-hardware.md](vxadmin-and-vxcentralscan-hardware.md "mention")
-* [vxscan-hardware.md](vxscan-hardware.md "mention")
-* [vxmark-hardware.md](vxmark-hardware.md "mention")
+* [vxadmin-and-vxcentralscan-hardware.md](../system-overview/vxadmin-and-vxcentralscan-hardware.md "mention")
+* [vxscan-hardware.md](../system-overview/vxscan-hardware.md "mention")
+* [vxmark-hardware.md](../system-overview/vxmark-hardware.md "mention")
 
 We consider the supplier of any critical component a critical supplier.
 
+## Supply Chain Risk Management Strategy
 
+Using the criteria described above, the VotingWorks operations team narrows down the list of medium and high criticality components. For critical COTS components, we limit our suppliers to reputable and well-established vendors and manufacturers. When assessing whether a supplier is trustworthy, we consider several factors: length of time established; reputation for reliability; degree to which organization and manufacturing is based in the United States; the outcome of previous orders; responsiveness to issues; and their focus on critical business applications. For critical VotingWorks-specific manufactured components, for example any custom cables, we look for domestic-based manufacturers with ISO quality certifications (e.g. ISO 9001) and, where possible, prefer to perform site visits during onboarding.
 
+For each critical component, VotingWorks requires a warranty on defective components and a delivery timeline for all orders. Specifically, contracts with suppliers include language matching or to the effect of:
 
+* The supplier is required to provide a warranty for all products or services that do not conform to specification.
+* The supplier is also required to provide a delivery timeline for each order.
+
+Suppliers for all critical components in the bill of materials are audited at the beginning and end of each hardware development cycle. If we discover disqualifying information about a supplier, VotingWorks works to identify alternative suppliers. If components are no longer available due to supply chain issues or the end of a product's lifecycle, VotingWorks works to identify alternative suppliers.
+
+Defective components during production are handled by:
+
+1. Identifying the defect
+2. Notifying the supplier
+3. Returning the defective component to the supplier for analysis
+4. Requiring an explanation from the supplier as to how the defect occurred and how it will be mitigated in the future.
 
