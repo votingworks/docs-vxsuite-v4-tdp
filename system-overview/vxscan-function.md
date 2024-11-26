@@ -82,7 +82,7 @@ If the polls have been closed, the only possible way for the polls to be re-open
 
 ## Scanning
 
-Scanning can begin once VxScan is fully configured and polls are open. If any user authenticates, scanning will be disabled until they remove their card. If CVRs are not synced to the USB drive, scanning will be disabled until a sync is complete.
+Scanning can begin once VxScan is fully configured and polls are open. If any user authenticates, scanning will be disabled until they remove their card. If CVRs are not synced to the USB drive, or no USB drive is inserted, scanning will be disabled. Scanning will be enabled again once a USB drive with synced CVRs is detected. If the election manager has disabled continuous export then scanning will be enabled without a synced USB drive present.&#x20;
 
 While scanning is enabled, the scanner will grab and scan paper as soon as it is detected. The scanned image will be [interpreted](ballot-interpretation.md) while the ballot is still being held by the scanner. If the ballot is interpreted successfully and contains no errors, it will be ejected into the ballot box with a chime and the screen will inform the voter that their ballot has been cast.&#x20;
 
@@ -128,7 +128,7 @@ On polls open, polls closed, voting paused, and voting resumed, VxScan prints a 
 
 For details about the format of the polls reports, see [vxscan-polls-reports.md](vxscan-polls-reports.md "mention").
 
-For polls opened and polls closed reports, the vote interpretations of all ballots are tallied together. In the case of polls opened reports, the tallies should always be zero forming a zero report. It is impossible to have any ballots scanned already at the time of polls are opened, because the scanner is disabled until polls are opened. Pursuant to VVSG 2.0 1.1.3-B, however, in the impossible event that non-zero totals are detected on the machine when the poll worker attempts to open the polls, an error will be presented to the poll worker and they will be unable to open the polls.&#x20;
+For polls opened and polls closed reports, the vote interpretations of all ballots are tallied together. In the case of polls opened reports, the tallies should always be zero forming a zero report. It is impossible to have any ballots scanned already at the time of polls are opened, because the scanner is disabled until polls are opened. Pursuant to VVSG 2.0 1.1.3-B, however, in the impossible event that non-zero totals are detected on the machine when the poll worker attempts to open the polls, an error will be presented to the poll worker, and logged, and they will be unable to open the polls.&#x20;
 
 Tallies for the polls closed report are created by iterating through the data store's table of cast vote records and forming totals of votes for contest options, undervotes, overvotes, and total ballots cast. The process is the same as on VxAdmin but with far fewer steps because there are no write-in adjudication results to consider and no manual tallies. All marked write-ins are grouped as a generic "Write-In" count in reports. All unmarked write-ins are considered as undervotes.
 
