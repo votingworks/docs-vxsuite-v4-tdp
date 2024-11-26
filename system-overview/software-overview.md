@@ -75,7 +75,7 @@ The authenticity of VotingWorks software can be confirmed using [signed-hash-val
 
 ## Software Best Practices
 
-The VotingWorks codebase is written in TypeScript and Rust. Our best practices and tooling used to enforce those best practices are detailed here:
+The VotingWorks codebase is written in TypeScript and Rust, two widely used languages with well established coding conventions. We make use of automatic code linters to enforce these conventions. We also require peer code review of every change. Details about our best practices and tooling used to enforce those best practices can be found here:
 
 * [TypeScript best practices and tooling](https://github.com/votingworks/vxsuite/blob/main/docs/best_practices/typescript.md)
 * [Rust best practices and tooling](https://github.com/votingworks/vxsuite/blob/main/docs/best_practices/rust.md)
