@@ -70,6 +70,10 @@ It's possible that a voter removes their ballot and does not re-insert it before
 
 If a re-inserted ballot is somehow not compatible with the machine - wrong election, wrong precinct or wrong ballot mode - the user is alerted and the ballot is rejected out the front.
 
+If a poll worker card is inserted during a voting session the poll worker can deactivate the current session and spoil any current ballot.&#x20;
+
+From the poll worker screen a poll worker may choose "Insert Printed Ballot" in order to scan a previously printed ballot and start a new voter session at the "Review Ballot" stage of the flow diagram above.&#x20;
+
 {% hint style="info" %}
 **User Manual Reference**: [Voting Sessions](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/voting-sessions "mention")
 {% endhint %}
