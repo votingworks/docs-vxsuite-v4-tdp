@@ -6,7 +6,7 @@ VxScan is the system's precinct scanner into which voters cast their ballots dir
 
 ### Printer Management
 
-VxScan includes an embedded A4 thermal roll printer which is used to print polls reports. The application communicates with the printer via a driver written in-house by VotingWorks. The application is regularly polling the printer for status, which is one of the following:
+VxScan includes an embedded A4 thermal roll printer which is used to print polls reports. The application communicates with the printer via a custom driver developed by VotingWorks. The application is regularly polling the printer for status, which is one of the following:
 
 <table><thead><tr><th width="172">Status</th><th width="282">Meaning</th><th>Effect</th></tr></thead><tbody><tr><td>Ready</td><td>Platen is attached and paper is detected</td><td>Application may print normally</td></tr><tr><td>No Paper</td><td>Platen is attached but no paper is detected</td><td>Printing disabled. A warning will be shown on poll worker screens. </td></tr><tr><td>Cover Open</td><td>Platen is not attached</td><td>Printing disabled. If the polls are open, a warning will be shown.</td></tr><tr><td>Error</td><td>Most likely the printhead has overheated, but other hardware errors are possible. Details available in diagnostics interface.</td><td>Printing disabled. Poll workers will not be able to operate the polls, but election managers and system administrators can still authenticate for diagnostics.</td></tr></tbody></table>
 
@@ -22,7 +22,7 @@ The printer roll can be loaded at any time, including when VxScan is off. It onl
 
 ### Scanner Management
 
-VxScan scans ballots with an embedded A4/Letter document scanner which produces double-sided ballot images. The application communicates with the scanner through a driver written in-house by VotingWorks. The application sends and receives events to and from the driver, managing its transitions between scanning states (waiting, accepting, etc.) and controlling when it will or will not accept ballots.
+VxScan scans ballots with an embedded A4/Letter document scanner which produces double-sided ballot images. The application communicates with the scanner through a custom driver developed by VotingWorks. The application sends and receives events to and from the driver, managing its transitions between scanning states (waiting, accepting, etc.) and controlling when it will or will not accept ballots.
 
 The embedded scanner includes a multi-sheet detector (MSD) which allows the application to reject cases of voters feeding in multiple ballots at a time. The multi-sheet detection must be calibrated at the beginning of an election based on the thickness of the ballot paper. The double sheet detection calibration flow is exposed in the election manager menu. The election manager can choose to disable double sheet detection, but it is enabled by default.
 

@@ -8,45 +8,21 @@ VxScan consists of two main components - the collapsible ballot box and the scan
 
 ### Ballot Box
 
-<div>
-
-<figure><img src="../.gitbook/assets/ballot-box labels_11.png" alt=""><figcaption><p>Ballot box front, collapsed</p></figcaption></figure>
-
- 
-
-<figure><img src="../.gitbook/assets/ballot-box labels_10.png" alt=""><figcaption><p>Ballot box side, collapsed</p></figcaption></figure>
-
- 
-
-<figure><img src="../.gitbook/assets/ballot-box labels_9.png" alt=""><figcaption><p>Ballot box lid underside, collapsed</p></figcaption></figure>
-
-</div>
+<div><figure><img src="../.gitbook/assets/ballot-box labels_11.png" alt=""><figcaption><p>Ballot box front, collapsed</p></figcaption></figure> <figure><img src="../.gitbook/assets/ballot-box labels_10.png" alt=""><figcaption><p>Ballot box side, collapsed</p></figcaption></figure> <figure><img src="../.gitbook/assets/ballot-box labels_9.png" alt=""><figcaption><p>Ballot box lid underside, collapsed</p></figcaption></figure></div>
 
 The ballot box features a telescoping handle and wheels for ease of transport. When collapsed, closing straps run around the side of the box to hold it closed. Before the ballot box is set up, the closing straps are loosened and secured to the underside of the ballot box lid. &#x20;
 
 The front of the ballot box is the ballot door, which is used to access the bin interior and any ballots within. It's opened by pulling the ballot door latch pictured above, which automatically latches whenever the door is closed. A seal can be installed to prevent the door from being opened without tamper-evidence.
 
-The ballot door has a built-in auxiliary bin for depositing ballots in situations where the cannot be scanned. It can be in one of three states: closed, open slightly for depositing ballots, or open fully for removing ballots. It's opened by pressing down on the indicated handle which can be sealed with the adjacent seal point.
+The ballot door has a built-in auxiliary bin for depositing ballots in situations where the ballots cannot be scanned. It can be in one of three states: closed, partially open for depositing ballots, or fully open for removing ballots. It's opened by pressing down on the indicated handle which can be sealed with the adjacent seal point.
 
-After closing straps are loosened, the ballot box can be expanded. An accented foot hook can be used as an aid in expanding the box. Once the box is fully expanded, the lid can be rotated up and over to eventually latch into place.
+After closing straps are loosened, the ballot box can be expanded. An accented foot hook can be used as an aid in expanding the box. Once the box is fully expanded, the lid can be rotated up and over 270 degrees to eventually close and latch into place.
 
-<div>
+<div><figure><img src="../.gitbook/assets/foot-hook.png" alt=""><figcaption><p>Ballot box side, open</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241031_183046879.jpg" alt=""><figcaption><p>Ballot box interior</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241031_183140058.jpg" alt=""><figcaption><p>Ballot box side, closed</p></figcaption></figure></div>
 
-<figure><img src="../.gitbook/assets/foot-hook.png" alt=""><figcaption><p>Ballot box side, open</p></figcaption></figure>
+After being latched, the ballot box lid can be released by pushing the ballot box lid handle, indicated below. The handle is covered by the scanner when installed, so it cannot be opened while the scanner is in operation and sealed in place. The box lid has a ballot slot which mates with the scanner's ballot outfeed.&#x20;
 
- 
-
-<figure><img src="../.gitbook/assets/PXL_20241031_183046879.jpg" alt=""><figcaption><p>Ballot box interior</p></figcaption></figure>
-
- 
-
-<figure><img src="../.gitbook/assets/PXL_20241031_183140058.jpg" alt=""><figcaption><p>Ballot box side, closed</p></figcaption></figure>
-
-</div>
-
-The ballot box lid can be released by pushing the ballot box lid handle, indicated below. The handle is covered by the scanner when installed, so it cannot be opened while the scanner is in operation and sealed in place. The box lid has a ballot slot which mates with the scanner's ballot outfeed.&#x20;
-
-The scanner attaches to the ballot box by sliding into the area in the front of the lid. Flanges on the bottom of the scanner prevent it from moving up and down or side to side. To secure the scanner front to back and lock it into place, the scanner has a security bolt which mates with the security bolt hole on the top of the ballot box. After the security bolt is engaged, the scanner cannot be removed until the security bolt is unsealed and released.
+The scanner attaches to the ballot box by sliding into the area in the front of the lid. Flanges on the bottom of the scanner prevent it from moving up and down or side to side. To secure the scanner front to back and lock it into place, the scanner has a security bolt which mates with the security bolt hole on the top of the ballot box. After the security bolt is engaged, the scanner cannot be removed until the security bolt is unsealed and released. This is covered more fully in the next section.
 
 <figure><img src="../.gitbook/assets/ballot-box labels_8.png" alt="" width="375"><figcaption><p>Ballot box from above, closed</p></figcaption></figure>
 
@@ -60,51 +36,21 @@ The scanner is built into a customized Pelican 1485 Air case. The COTS case feat
 
 Additional cuts are made into the case for the back power port, the back cable wrap, the security bolt exit, nameplate attachment, and mounting features within the case.
 
-<div>
+<div><figure><img src="../.gitbook/assets/ballot-box labels_3.png" alt=""><figcaption><p>Ballot box with scanner installed</p></figcaption></figure> <figure><img src="../.gitbook/assets/case-back-redo.png" alt=""><figcaption><p>Scanner rear</p></figcaption></figure></div>
 
-<figure><img src="../.gitbook/assets/ballot-box labels_3.png" alt=""><figcaption><p>Ballot box with scanner installed</p></figcaption></figure>
+The case is opened by pressing the buttons on each case latch and then lifting the lid. The elements that a voter or poll worker interact with are generally accented in purple, just as with the ballot box. In the picture below you can see the smart card insert, security bolt, ballot infeed, and printer outfeed all accented in purple.
 
- 
+<div><figure><img src="../.gitbook/assets/ballot-box labels_7.png" alt=""><figcaption><p>Scanner main bottom tub</p></figcaption></figure> <figure><img src="../.gitbook/assets/ballot-box labels_1.png" alt=""><figcaption><p>Scanner upper tub </p></figcaption></figure></div>
 
-<figure><img src="../.gitbook/assets/case-back-redo.png" alt=""><figcaption><p>Scanner rear</p></figcaption></figure>
+When the scanner is first installed on the ballot box, the security bolt must be disengaged. While the security bolt is disengaged, the smart card slot will be blocked. Once the scanner is installed on the ballot box, the user must push the bolt down to lock the scanner into place on the ballot box. This will also unblock the smart card slot. In this way, the scanner can not be activated until it is properly installed.&#x20;
 
-</div>
+When the scanner must be removed from the ballot box, the user pushes the security bolt release to the left to disengage the security bolt. The security bolt release is accented with graphical instructions for the user. In order to access the security bolt release, the poll worker door must be opened, which also exposes the scanner's USB ports. The poll worker door can be sealed shut by passing a seal through a cutout in the door and the hole in the top of the security bolt.
 
-The case is opened by pressing the button on the case latch and lifting the lid. The elements that a voter or poll worker interact with are generally accented in purple, just as with the ballot box. In the picture below you can see the smart card insert, security bolt, ballot infeed, and printer outfeed all accented in purple.
+<div><figure><img src="../.gitbook/assets/ballot-box labels_4.png" alt="" width="563"><figcaption><p>Poll worker door area</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241031_184055101.jpg" alt="" width="563"><figcaption><p>Poll worker door sealed</p></figcaption></figure></div>
 
-<div>
+Poll workers will normally not have to interface with any parts of the scanner that have not already been described, but election managers may have to open the access door to perform maintenance on the printer and scanner. The access door is held in place by the poll worker door and can only be opened when the poll worker door is unsealed and opened. The printer and printer roll holder are beneath the access door toward the screen. The user presses the green release lever to remove the printer roll holder and install a paper roll. The scanner can be opened simply by lifting the scanner cover handle, revealing the scanner glass for easy cleaning.
 
-<figure><img src="../.gitbook/assets/ballot-box labels_7.png" alt=""><figcaption><p>Scanner main bottom tub</p></figcaption></figure>
-
- 
-
-<figure><img src="../.gitbook/assets/ballot-box labels_1.png" alt=""><figcaption><p>Scanner upper tub </p></figcaption></figure>
-
-</div>
-
-Then the scanner is first installed on the ballot box, the security bolt will be disengaged. While the security bolt is disengaged, the smart card slot will be blocked. The user must push the bolt down to lock the scanner into place on the ballot box and unblock the smart card slot. When the scanner must be removed from the ballot box, the user pulls the security bolt release to disengage the security bolt. In order to access the security bolt release, the poll worker door must be opened, which also reveals the scanner's USB ports. The poll worker door can be sealed shut by passing a seal through a cutout in the door and the hold in the top of the security bolt.
-
-<div>
-
-<figure><img src="../.gitbook/assets/ballot-box labels_4.png" alt="" width="563"><figcaption><p>Poll worker door area</p></figcaption></figure>
-
- 
-
-<figure><img src="../.gitbook/assets/PXL_20241031_184055101.jpg" alt="" width="563"><figcaption><p>Poll worker door sealed</p></figcaption></figure>
-
-</div>
-
-Poll workers will normally not have to interface with any parts of the scanner that have not already been described, but election managers will have to open the access door to perform maintenance on the printer and scanner. The access door is held in place by the poll worker door and can only be opened when the poll worker door is unsealed and opened. The printer and printer roll holder are beneath the access door toward the screen. The user presses the green release lever to remove the printer roll holder and install a paper roll. The scanner can be opened simply by lifting the scanner cover handle, revealing the scanner glass for easy cleaning.
-
-<div>
-
-<figure><img src="../.gitbook/assets/ballot-box labels_5.png" alt=""><figcaption><p>Access door area</p></figcaption></figure>
-
- 
-
-<figure><img src="../.gitbook/assets/ballot-box labels_6.png" alt=""><figcaption><p>Scanner features</p></figcaption></figure>
-
-</div>
+<div><figure><img src="../.gitbook/assets/ballot-box labels_5.png" alt=""><figcaption><p>Access door area</p></figcaption></figure> <figure><img src="../.gitbook/assets/ballot-box labels_6.png" alt=""><figcaption><p>Scanner features</p></figcaption></figure></div>
 
 ## Scanner Internals
 
@@ -120,31 +66,11 @@ The wiring digram below outlines the power and data connections within the scann
 
 <figure><img src="../.gitbook/assets/image (64).png" alt=""><figcaption><p>VxScan Wiring Diagram</p></figcaption></figure>
 
-<div>
-
-<figure><img src="../.gitbook/assets/internals.png" alt="" width="563"><figcaption><p>Wiring components</p></figcaption></figure>
-
- 
-
-<figure><img src="../.gitbook/assets/IMG_1611.jpg" alt="" width="375"><figcaption><p>Voltage warning over power supplies</p></figcaption></figure>
-
-</div>
+<div><figure><img src="../.gitbook/assets/internals.png" alt="" width="563"><figcaption><p>Wiring components</p></figcaption></figure> <figure><img src="../.gitbook/assets/IMG_1611.jpg" alt="" width="375"><figcaption><p>Voltage warning over power supplies</p></figcaption></figure></div>
 
 To prevent access to internals, VotingWorks installs three seals over screws holding the metal panels in place - one on the bottom left panel covering the computer, one on the bottom right panel covering the power supplies, and one on the top panel holding the display in place. These seals are installed at the factory and are intended to be permanent aside from when panels need to be opened for repairs.
 
-<div>
-
-<figure><img src="../.gitbook/assets/PXL_20241115_211101998.jpg" alt="" width="375"><figcaption><p>Bottom left panel seal</p></figcaption></figure>
-
- 
-
-<figure><img src="../.gitbook/assets/PXL_20241115_211107051.jpg" alt="" width="375"><figcaption><p>Bottom right panel seal</p></figcaption></figure>
-
- 
-
-<figure><img src="../.gitbook/assets/PXL_20241115_211114764.jpg" alt="" width="563"><figcaption><p>Top panel seal</p></figcaption></figure>
-
-</div>
+<div><figure><img src="../.gitbook/assets/PXL_20241115_211101998.jpg" alt="" width="375"><figcaption><p>Bottom left panel seal</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241115_211107051.jpg" alt="" width="375"><figcaption><p>Bottom right panel seal</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241115_211114764.jpg" alt="" width="563"><figcaption><p>Top panel seal</p></figcaption></figure></div>
 
 ### Paper Path
 
