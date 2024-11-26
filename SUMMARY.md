@@ -33,7 +33,7 @@
   * [Paper Ballot Specifications](system-performance-and-specifications/paper-ballot-specifications.md)
   * [Reliably Detectable Marks](system-performance-and-specifications/reliably-detectable-marks.md)
   * [Processing Capabilities](system-performance-and-specifications/processing-capabilities.md)
-* [System Security, Auditing, & Logging](system-security-auditing-and-logging/README.md)
+* [System Security, Auditing & Logging](system-security-auditing-and-logging/README.md)
   * [System Security Architecture](system-security-auditing-and-logging/software-security.md)
     * [Access Control](system-security-auditing-and-logging/system-security-architecture/access-control.md)
     * [Artifact Authentication](system-security-auditing-and-logging/system-security-architecture/artifact-authentication/README.md)
