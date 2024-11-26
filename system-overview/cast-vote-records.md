@@ -50,6 +50,10 @@ The cast vote record export contains a directory for each cast vote record, labe
 
 In addition, there is a metadata file that applies to the entire export at the root of the directory, **metadata.json.**
 
+#### CVR UUIDs
+
+The UUID (universally unique identifier) for each cast vote record is generated when the ballot information is first stored in the database in VxScan or VxCentralScan. It is generated with the `node:crypto` package's `createHash` method using the SHA256 algorithm provided by system's underlying FIPS-complaint OpenSSL implementation.
+
 ### Including Ballot Images
 
 In VxScan, ballot images and layouts are always included. In VxCentralScan, ballot images and layouts are only included in the cast vote record export if the ballot has write-ins that may require adjudication. When exporting a backup from VxCentralScan, however, ballot images and layouts are included for all ballots.
