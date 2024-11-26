@@ -4,8 +4,8 @@ The foundation of our system integrity solution is the TPM (described in greater
 
 Our design for system integrity maps closely to that of ChromeOS:
 
-1. The hard drive is partitioned such that executable code lives on read-only partitions, and only `/var` and `/home` are mounted read/write for configuration, logs, and working data like scanned ballot images.
-2. The read-only partitions are verified by [dm-verity](https://source.android.com/docs/security/features/verifiedboot/dm-verity), which generates a hash tree of all the raw partition blocks, culminating in a single hash root for the entire read-only filesystem.
+1. The hard drive is partitioned such that executable code lives on the read-only partition `/`, and only `/var` and `/home` are mounted read/write for configuration, logs, and working data like scanned ballot images.
+2. The read-only partition is verified by [dm-verity](https://source.android.com/docs/security/features/verifiedboot/dm-verity), which generates a hash tree of all the raw partition blocks, culminating in a single hash root for the entire read-only filesystem.
 3. The kernel boot command line includes the dm-verity hash root as an argument, ensuring that Linux halts if the read-only partitions are not successfully verified against this hash root.
 4. The BIOS is configured to only boot a properly signed bootloader+kernel+command-line, with public keys managed by VotingWorks and configured in the BIOS as secure boot keys. The bootloader+kernel+command-line that we want is set up as the default boot option in UEFI.
 5. The private key described previously in [Access Control](access-control.md) is generated in the TPM and bound to Platform Configuration Registers (PCRs) that include the BIOS, the secure boot public keys, and the bootloader+kernel+command-line. Thus, this private key is only usable if the machine boots appropriately sanctioned source code with a hard drive whose read-only partitions are unmodified.
@@ -18,7 +18,7 @@ The integrity of the overall system is ensured because:
 
 * Any change in the executable portion of the hard drive will be detected when dm-verity checks the hard drive blocks against its stored hashes.
 * Any change in the hashes stored on disk will be detected against the mismatched root hash, present in the kernel boot command line.
-* Any live changes to the hard drive, even while the machine is already booted up, will be detected the moment Linux tries to read those modified blocks, as all disk reads are live-checked against the hashes.
+* Any live changes to the read-only portion of the drive, even while the machine is already booted up, will be detected the moment Linux tries to read those modified blocks, as all disk reads are live-checked against the hashes.
 * Any change in the kernel boot command line will be detected in two ways:
   * First, the TPM won’t unseal secrets since a change in the command line changes one of the PCR values, which means that the TPM’s policy check will fail.
   * Second, the system won’t even boot at all because the changed command line invalidates the signature on the bootloader+kernel+command-line, and UEFI will refuse to execute the now-improperly signed bootloader+kernel+command-line.
@@ -27,7 +27,13 @@ Thus, if the system boots, it means that the hard drive corresponds, by hashing,
 
 ## Hard Drive Partitioning
 
-Our system is configured so that all partitions other than `/var`, `/tmp`, and `/home` are mounted as read-only. This requires writing logs and other runtime-generated VotingWorks data, e.g. scanned ballot images, to `/var`. Variable system configuration, e.g. timezone information, also needs to be redirected to `/var`. A USB mount point is pre-created at `/media/vx/usb-drive`.
+Our system is configured so that `/var`, `/tmp`, and `/home` are mounted read-write, and `/` for everything else is mounted read-only. This requires writing logs and other runtime-generated VotingWorks data, e.g. scanned ballot images, to `/var`. Variable system configuration, e.g. timezone information, also needs to be redirected to `/var`. A USB mount point is pre-created at `/media/vx/usb-drive`.
+
+## Protecting Critical Read-Write Data
+
+In addition to locking down the `/` partition, the `/var` partition is encrypted and authenticate using `dm-crypt`. This ensures that, even if an attacker removes the physical hard drive and connects it to a different CPU, they cannot read nor modify the contents of the `/var` partition in an attempt to make the VxSuite component behave differently.
+
+Furthermore, as an extra layer of defense, every individual VxSuite component instance uses a unique random encryption key for its `/var` partition. Thus, if an attacker were to break the encryption on one VxSuite machine, they would have gained no advantage in penetrating a second machine. This is ensured through rekeying of the `/var` partition encryption on first boot of a VxSuite component.
 
 ## Signed Bootloader and Kernel
 
