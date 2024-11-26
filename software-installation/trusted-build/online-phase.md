@@ -23,7 +23,7 @@ cd ~/code/vxsuite-build-system
 
 7. The online phase will take awhile to complete.
 8. Once it finishes, you need to attach a USB drive to the build machine. This USB drive will be used to transfer all necessary tools and code to the offline VM.
-9. To make the USB available to the online VM, select "Virtual Machine" > "Redirect USB Device". In the dialog box that opens, select the USB drive that you attached and close the dialog.
+9. To make the USB drive available to the online VM, select "Virtual Machine" > "Redirect USB Device". In the dialog box that opens, select the USB drive that you attached and close the dialog.
 10. In the online VM terminal:
 
 ```

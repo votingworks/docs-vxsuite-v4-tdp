@@ -46,4 +46,4 @@ sudo su -
 /home/vx/code/vxsuite-build-system/scripts/sb-signed-download.sh vxadmin
 ```
 
-Once SLI has completed the download, and hashes have been validated, the compressed image and signature can be provided to EAC for official use. At any point after submission to EAC, election officials and VotingWorks can verify the image hash via [Signed Hash Validation](../../../system-overview/signed-hash-validation.md), the vendor menu, or the vx-verifier tool.
+Once SLI has completed the download, and hashes have been validated, the compressed image and signature can be provided to EAC for official use. At any point after submission to EAC, election officials and VotingWorks can verify the image hash as described under [verifying-the-image-installed-on-a-machine.md](../../imaging-machines/verifying-the-image-installed-on-a-machine.md "mention").

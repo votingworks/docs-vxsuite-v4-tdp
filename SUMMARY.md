@@ -63,7 +63,7 @@
     * [Virt Manager - Network Access & Troubleshooting](software-installation/trusted-build/virt-manager-network-access-and-troubleshooting.md)
   * [Imaging Machines](software-installation/imaging-machines/README.md)
     * [Preparing USB Drives for Imaging](software-installation/imaging-machines/preparing-usb-drives-for-imaging.md)
-    * [Imaging Machines](software-installation/imaging-machines/imaging-machines.md)
+    * [Imaging](software-installation/imaging-machines/imaging.md)
     * [Basic Configuration Wizard](software-installation/imaging-machines/basic-configuration-wizard.md)
     * [Verifying the Image Installed on a Machine](software-installation/imaging-machines/verifying-the-image-installed-on-a-machine.md)
 * [System Operations & Training Manual](system-operations-and-training-manual.md)
