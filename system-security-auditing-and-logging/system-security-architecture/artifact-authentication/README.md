@@ -13,9 +13,9 @@ It then outputs the following to a .vxsig file:
 
 `SIGNATURE_LENGTH + SIGNATURE + SIGNING_MACHINE_CERTIFICATE`
 
-The importing machine parses the above, extracts the exporting/signing machine’s public key from its certificate as provided in the .vxsig file, reconstructs the message, and then verifies the signature. The importing machine also importantly verifies that the signing machine certificate in the .vxsig file is a valid certificate that is 1) signed by VotingWorks and 2) for the expected machine given the artifact type, e.g. VxAdmin if the artifact is a ballot package. We verify 1 using the VotingWorks CA certificate installed on every machine.
+The importing machine parses the above and verifies that the signing machine certificate in the .vxsig file is a valid certificate that is signed by VotingWorks, using the VotingWorks CA certificate installed on every machine. The importing machine then extracts the exporting/signing machine’s public key from this certificate, reconstructs the message, and verifies the signature. After this, the importing machine performs artifact-specific authentication checks, e.g., that the signing machine cert is a VxAdmin cert if the artifact is an election package.
 
-If signature verification fails on the importing machine, the importing machine will refuse to import the artifact. This provides protection against data tampering and/or corruption as data is transferred from one machine to another via USB.
+If verification fails on the importing machine, the importing machine will refuse to import the artifact. This provides protection against data tampering and/or corruption as data is transferred from one machine to another via USB.
 
 ### Code Links
 

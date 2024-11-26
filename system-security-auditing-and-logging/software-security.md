@@ -12,12 +12,12 @@ description: >-
 
 * [Access Control](system-security-architecture/access-control.md) describes the certificates and signatures used by smart cards.
 * [Artifact Authentication](system-security-architecture/artifact-authentication/) describes the signatures applied to all files exchanged between system components.
-* [System Integrity](system-security-architecture/system-integrity.md) describes the hard-drive partition hashes and the kernel and bootloader signature used by secure boot.
+* [System Integrity](system-security-architecture/system-integrity.md) describes the hard-drive partition hashes and the kernel and bootloader signature used by Secure Boot.
 * [Cryptography](system-security-architecture/cryptography.md) provides additional details on encryption vs. authentication and the type and size of cryptographic keys that we use.
 {% endhint %}
 
 {% hint style="success" %}
-**Requirement 14.1-C.2** – the use of **malware protection** to secure VxSuite – is covered by the secure boot and safe mounting of external drives, described in [System Integrity](system-security-architecture/system-integrity.md).
+**Requirement 14.1-C.2** – the use of **malware protection** to secure VxSuite – is covered by Secure Boot and safe mounting of external drives, described in [System Integrity](system-security-architecture/system-integrity.md).
 {% endhint %}
 
 {% hint style="success" %}
