@@ -71,7 +71,16 @@ There are four code repositories relevant to the voting system:
 
 ## Software Traceability
 
-**NEED TO WRITE**
+The authenticity of VotingWorks software can be confirmed using [signed-hash-validation.md](signed-hash-validation.md "mention"). For test labs, additional methods of verification exist, laid out in [verifying-the-image-installed-on-a-machine.md](../software-installation/imaging-machines/verifying-the-image-installed-on-a-machine.md "mention").
+
+## Software Best Practices
+
+The VotingWorks codebase is written in TypeScript and Rust. Our best practices and tooling used to enforce those best practices are detailed here:
+
+* [TypeScript best practices](https://github.com/votingworks/vxsuite/blob/main/docs/best_practices/typescript.md)
+* [Rust best practices](https://github.com/votingworks/vxsuite/blob/main/docs/best_practices/rust.md)
+
+Through the above best practices and peer code review of every change, we guarantee that we meet requirements 2.3, 2.4, 2.5, and 2.6.
 
 ## Common Software Functions
 
