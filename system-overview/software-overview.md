@@ -2,7 +2,7 @@
 
 VotingWorks software is open-source, which means that the code is free and publicly available. All code written by VotingWorks and almost all dependencies are open-source, with the notable exception of third-party firmware for various hardware components.&#x20;
 
-All system components - VxAdmin, VxMark, VxScan, and VxCentralScan - run different application code but have fundamentally the same software architecture. The rest of this document applies to all system components unless otherwise noted.
+All system components - VxAdmin, VxCentralScan, VxMark, VxScan - run different application code but have fundamentally the same software architecture. The rest of this document applies to all system components unless otherwise noted.
 
 ## Operating System
 
@@ -16,17 +16,17 @@ Due to the extensive security measures, users are limited to using the applicati
 
 All machines are completely disconnected from any network and have network capabilities disabled, but the frameworks and architecture employed are borrowed from web-based development. The user interacts with a restricted browser which communicates with a server that provides the web-content and another server that provides application data and hardware status.&#x20;
 
-### Kiosk Browser
+### kiosk-browser
 
-The kiosk browser is a web browser restricted to rendering a single full-screen application. The code can be found in the [kiosk-browser repository](https://github.com/votingworks/kiosk-browser) **(update link)**. It is a thin [Electron](https://www.electronjs.org/) application which uses [Chromium](https://www.chromium.org/chromium-projects/) as its rendering engine. The browser communicates with the frontend server which serves HTML, JavaScript, and assets. The browser also communicates with the backend server which serves application data. Electron enables the browser to access certain operating system APIs - such as open file dialogs - that a lone renderer would not have access to. The browser is launched at startup, with limited privileges, and cannot be exited. Everything a standard (non-vendor) user sees or does is mediated through the kiosk browser.
+kiosk-browser is a web browser restricted to rendering a single full-screen application. The code can be found in the [kiosk-browser repository](https://github.com/votingworks/kiosk-browser/tree/v4.0.0-release-branch). It is a thin [Electron](https://www.electronjs.org/) application which uses [Chromium](https://www.chromium.org/chromium-projects/) as its rendering engine. The browser communicates with the frontend server which serves HTML, JavaScript, and assets. The browser also communicates with the backend server which serves application data. Electron enables the browser to access certain operating system APIs - such as open file dialogs - that a lone renderer would not have access to. The browser is launched at startup, with limited privileges, and cannot be exited. Everything a standard (non-vendor) user sees or does is mediated through kiosk-browser.
 
 ### Application Frontend Server
 
-The frontend is a [React](https://react.dev/) application served from a [Node.js](https://nodejs.org/en) server. All code for the application frontends are in the [vxsuite repository](https://github.com/votingworks/vxsuite) under `apps/[app-name]/frontend`.&#x20;
+The frontend is a [React](https://react.dev/) application served from a [Node.js](https://nodejs.org/en) server. All code for the application frontends are in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch) under `apps/[app-name]/frontend`.&#x20;
 
 ### Application Backend Server
 
-The application backend is a separate [Node.js](https://nodejs.org/en) server which acts as the core of the entire application in that it manages all persistent data and communication with peripherals. All code for the application backends are in the [vxsuite repository](https://github.com/votingworks/vxsuite) under `apps/[app-name]/backend`. Most code is written in Typescript but some performance sensitive code, such as interpretation and background daemons, are written in [Rust](https://www.rust-lang.org/) and executed as binaries at runtime.
+The application backend is a separate [Node.js](https://nodejs.org/en) server which acts as the core of the entire application in that it manages all persistent data and communication with peripherals. All code for the application backends are in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch) under `apps/[app-name]/backend`. Most code is written in TypeScript but some performance sensitive code, such as interpretation and background daemons, are written in [Rust](https://www.rust-lang.org/) and executed as binaries at runtime.
 
 #### Application Data Management
 
@@ -40,7 +40,7 @@ The exact layer between the application backend and the hardware varies by hardw
 
 In many cases VotingWorks has written custom drivers that interface directly with the USB device. In other cases, VotingWorks leverages open-source middleware layers installed as Debian packages:
 
-<table><thead><tr><th width="177">Machine</th><th width="198">Peripheral</th><th>Middleware Source</th></tr></thead><tbody><tr><td>All</td><td>Card Reader</td><td><a href="https://pcsclite.apdu.fr/">PCSC lite</a></td></tr><tr><td>VxScan</td><td>Scanner</td><td>VotingWorks</td></tr><tr><td>VxScan</td><td>Printer</td><td>VotingWorks</td></tr><tr><td>VxMark</td><td>Printer-Scanner</td><td>VotingWorks</td></tr><tr><td>VxMark</td><td>Accessible Controller</td><td>VotingWorks</td></tr><tr><td>VxMark</td><td>Sip and Puff</td><td>VotingWorks</td></tr><tr><td>VxAdmin</td><td>Printer</td><td><a href="https://www.cups.org/">CUPS</a></td></tr><tr><td>VxCentralScan</td><td>Scanner</td><td><a href="http://www.sane-project.org/">SANE</a></td></tr></tbody></table>
+<table><thead><tr><th width="177">Machine</th><th width="198">Peripheral</th><th>Middleware Source</th></tr></thead><tbody><tr><td>All</td><td>Card reader</td><td><a href="https://pcsclite.apdu.fr/">PCSC lite</a></td></tr><tr><td>VxScan</td><td>Scanner</td><td>VotingWorks</td></tr><tr><td>VxScan</td><td>Printer</td><td>VotingWorks</td></tr><tr><td>VxMark</td><td>Printer-scanner</td><td>VotingWorks</td></tr><tr><td>VxMark</td><td>Accessible controller</td><td>VotingWorks</td></tr><tr><td>VxMark</td><td>PAT (sip and puff)</td><td>VotingWorks</td></tr><tr><td>VxAdmin</td><td>Printer</td><td><a href="https://www.cups.org/">CUPS</a></td></tr><tr><td>VxCentralScan</td><td>Scanner</td><td><a href="http://www.sane-project.org/">SANE</a></td></tr></tbody></table>
 
 Firmware for embedded devices such as screens and speakers is bundled with the operating system.
 
@@ -61,9 +61,9 @@ Because all voter selections are recorded on paper, voter-verified, and unmodifi
 There are four code repositories relevant to the voting system:
 
 * [vxsuite](https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch) - all application code and supporting libraries
-* [kiosk-browser](https://github.com/votingworks/kiosk-browser) - kiosk browser code
-* [vxsuite-complete-system](https://github.com/votingworks/vxsuite-complete-system) - installation code and configuration
-* [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/main) - image creation and dependency management
+* [kiosk-browser](https://github.com/votingworks/kiosk-browser/tree/v4.0.0-release-branch) - kiosk-browser code
+* [vxsuite-complete-system](https://github.com/votingworks/vxsuite-complete-system/tree/v4.0.0-rc2) - installation code and configuration
+* [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.0.0) - image creation and dependency management
 
 ## Key Dependency Chart
 
