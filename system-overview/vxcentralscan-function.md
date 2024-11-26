@@ -38,7 +38,7 @@ The start time, end time, size, and index of all batches is tracked and displaye
 
 ### Imprinting
 
-Both Ricoh scanners can be used with an optional imprinter - the fi-819PRB for the fi-8170 and the fi-760PRB for the fi-7600. As the ballot exits the scanner, the imprinter prints an identifier on the side margin of the ballot. The identifier is the batch's UUID (assigned at random at the start of the batch) suffixed with the index of the sheet in the batch e.g. `378f6a69-62d3-4184-a1a7-3a5d90083e21_0000` for the first sheet in a batch. The identifier will appear in the CVR as the `BallotAuditId`. Imprinting allows later reconciling CVRs to ballots such as in ballot comparison audits.
+Both Ricoh scanners can be used with an optional imprinter - the fi-819PRB for the fi-8170 and the fi-760PRB for the fi-7600. As the ballot exits the scanner, the imprinter prints an identifier on the side margin of the ballot. The identifier is the batch's UUID (assigned at random using v4 UUIDs at the start of the batch) suffixed with the index of the sheet in the batch e.g. `378f6a69-62d3-4184-a1a7-3a5d90083e21_0000` for the first sheet in a batch. The identifier will appear in the CVR as the `BallotAuditId`. Imprinting allows later reconciling CVRs to ballots such as in ballot comparison audits.
 
 ## Ballot Issues & Adjudication
 
