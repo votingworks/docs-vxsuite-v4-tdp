@@ -11,4 +11,4 @@ Networking is disabled through several layers of defense:
 * Ethernet ports are blocked.
 * As a final layer of defense, a [firewall configuration](https://github.com/votingworks/vxsuite-build-system/blob/main/playbooks/trusted_build/firewalld.yaml) is defined to block any incoming or outgoing traffic in the event a connection was somehow created.
 
-Because there is no networking, all electronic data transfer is air-gapped via USB flash drives.
+Because there is no networking, all electronic data transfer is air-gapped via USB drives.
