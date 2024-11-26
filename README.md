@@ -29,8 +29,8 @@ Using VxSuite for an election begins with generating an [election package](syste
 
 VxAdmin is where the election administrator performs election setup tasks and manages election results. At the beginning of an election, the user configures VxAdmin with an [election package](system-overview/election-package/). Once configured, VxAdmin is used for two key election setup tasks:
 
-* Exporting a copy of the election package to USB drives with a digital signature. The election package is used to configure VxMark, VxScan, and VxCentralScan, and it _must_ be digitally signed by VxAdmin. (**insert link to authentication doc)**
-* Programming role-based smart cards that will be used to authenticate on all machines. While the "System Administrator" role is election-agnostic, the "Election Manager" and "Poll Worker" roles are election-specific and cards must be programmed for every election. (**insert link to roles doc)**
+* Exporting a copy of the election package to USB drives with a [digital signature](system-security-auditing-and-logging/system-security-architecture/artifact-authentication/). The election package is used to configure VxMark, VxScan, and VxCentralScan, and it _must_ be digitally signed by VxAdmin.
+* Programming [role-based smart cards](system-overview/user-roles.md) that will be used to authenticate on all machines. While the "System Administrator" role is election-agnostic, the "Election Manager" and "Poll Worker" roles are election-specific and cards must be programmed for every election.
 
 VxAdmin is later used to load, store, and tabulate cast vote records from the scanners. The results are available for review or export in [several results formats](system-overview/vxadmin-results-exports/). Once tabulation is complete, election administrators can mark results as official, after which no new results can be added.
 
