@@ -2,9 +2,9 @@
 
 ## Creating a Debian 12 USB Install Drive <a href="#create-debian-12-usb" id="create-debian-12-usb"></a>
 
-To install Debian 12 on the build machine (VxBuild), you will need to download the latest Debian 12 amd64 installer file here: [Latest Debian Release](https://www.debian.org/releases/stable/debian-installer/).
+To install Debian 12 on the build machine (VxBuild), you will need to download the latest Debian 12 amd64 installer file here: [latest Debian release](https://www.debian.org/releases/stable/debian-installer/).
 
-You should use a blank USB drive for the install drive. The process described below will wipe any existing content.
+You should use a blank USB drive to create the install drive. The process described below will wipe any existing content.
 
 To create a USB install drive with the downloaded ISO file:
 
@@ -53,10 +53,9 @@ dd if=/path/to/debian-12.8.0-amd64-netinst.iso of=/dev/sda bs=4M && sync
 <figure><img src="../../../.gitbook/assets/image-5.png" alt="" width="375"><figcaption></figcaption></figure>
 
 8. If using a wired connection, it will configure automatically.
+9. If using a wireless connection, select a network, select WPA/WPA2 PSK, and click "Continue". Enter your wireless network password and click "Continue".
 
 <figure><img src="../../../.gitbook/assets/image-6.png" alt="" width="375"><figcaption></figcaption></figure>
-
-9. If using a wireless connection, select WPA/WPA2 PSK and click "Continue". Enter your wireless network password and click "Continue".
 
 <figure><img src="../../../.gitbook/assets/image-7.png" alt="" width="375"><figcaption></figcaption></figure>
 
@@ -137,14 +136,14 @@ su -
 <Enter root user password>
 ```
 
-3. You will see your terminal window prompt change to "root@VxBuild". To grant the "vx" user sudo privileges, run the following command as root.
+3. You will see your terminal window prompt change to `root@VxBuild`. To grant the "vx" user sudo privileges, run the following command as root.
 
 ```
 echo "vx ALL=NOPASSWD: ALL" > /etc/sudoers.d/vx
 exit
 ```
 
-4. You will see your terminal window prompt change to "vx@VxBuild". You are now the "vx" user instead of the "root" user. To confirm sudo privileges, run the following command:
+4. You will see your terminal window prompt change to `vx@VxBuild`. You are now the "vx" user instead of the "root" user. To confirm sudo privileges, run the following command:
 
 ```
 sudo whoami
