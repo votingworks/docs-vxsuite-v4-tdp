@@ -52,7 +52,7 @@ In addition, there is a metadata file that applies to the entire export at the r
 
 #### CVR UUIDs
 
-The UUID (universally unique identifier) for each cast vote record is generated when the ballot information is first stored in the database in VxScan or VxCentralScan. It is generated with the `node:crypto` package's `createHash` method using the SHA256 algorithm provided by system's underlying FIPS-complaint OpenSSL implementation.
+The v4 UUID (universally unique identifier) for each cast vote record is generated when the ballot information is first stored in the database in VxScan or VxCentralScan. It is generated with the `node:crypto` package's `createHash` method using the SHA256 algorithm provided by system's underlying FIPS-complaint OpenSSL implementation.
 
 ### Including Ballot Images
 
