@@ -9,5 +9,6 @@ Networking is disabled through several layers of defense:
 * The network stack is disabled in the BIOS.
 * Wi-fi or bluetooth hardware is not present on the machines.
 * Ethernet ports are blocked.
+* As a final layer of defense, a [firewall configuration](https://github.com/votingworks/vxsuite-build-system/blob/main/playbooks/trusted_build/firewalld.yaml) is defined to block any incoming or outgoing traffic in the event a connection was somehow created.
 
 Because there is no networking, all electronic data transfer is air-gapped via USB flash drives.
