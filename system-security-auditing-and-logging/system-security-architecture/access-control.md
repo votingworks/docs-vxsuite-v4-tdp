@@ -20,7 +20,7 @@ VxCentralScan, VxMark, and VxScan, unlike VxAdmin, aren’t bound to a jurisdict
 
 ## Smart Card Keys and Certificates
 
-As described above, programmed smart cards have two certificates, one issued by VotingWorks and one issued by VxAdmin. We generate two key pairs on the card, one for each certificate—we could have chosen to certify the same key twice, but, as will be described below, we wanted to have different policies for making use of the two secret keys, thus the issuance of certificates against two different keys. Smart cards also have PINs (with the exception of poll worker cards, unless an election official chooses to enable poll worker card PINs). These interface as follows:
+As described above, programmed smart cards have two certificates, one issued by VotingWorks and one issued by VxAdmin. We generate two key pairs on the card, one for each certificate. We could have chosen to certify the same key twice, but as will be described below, we wanted to have different usage policies for the two private keys, thus the issuance of certificates against two different keys. Smart cards also have PINs (with the exception of poll worker cards, unless an election official chooses to enable poll worker card PINs). These interface as follows:
 
 * The private key slot associated with the card’s VotingWorks-issued certificate is not PIN-gated, so anyone can immediately verify that a card is a VotingWorks-certified card.
 * The private key slot associated with the card’s VxAdmin-issued certificate is PIN-gated, so authentication requires PIN entry.
@@ -41,7 +41,7 @@ We store our root VotingWorks certificate authority (CA) private key encrypted i
 
 VxAdmin, VxCentralScan, VxMark, and VxScan are all built on devices with a Trusted Platform Module (TPM) 2.0, a chip that ships standard on modern Intel and AMD hardware. The TPM can keep cryptographic material secret inside its tamper-resistant boundary until a certain set of system conditions are met. Only once the TPM determines that the system meets a set of appropriate conditions—correct bootloader, kernel, kernel command line, etc.—does the TPM allow an application to ask it to perform signing operations with its contained secret key.
 
-Our smart cards are Java Cards, version 3.0.5. These Java Cards can generate 256-bit ECC key pairs such that the private key never leaves the card, while the public key is exported. The cards are capable of self-destructing if someone attempts to extract the private key at the hardware level.
+Our smart cards are JCOP 4 Java Cards, version 3.0.5. These Java Cards can generate 256-bit ECC key pairs such that the private key never leaves the card, while the public key is exported. The cards are capable of self-destructing if someone attempts to extract the private key at the hardware level.
 
 ### Smart Card PINs
 
@@ -64,11 +64,13 @@ Our IANA-assigned Private Enterprise Number (PEN) is 59817, which means that the
 Our custom fields are:
 
 * 1.3.6.1.4.1.59817.1 — Component = admin, central-scan, mark-scan, scan, or card (the first four referring to machines)
-* 1.3.6.1.4.1.59817.2 — Jurisdiction = {state-2-letter-abbreviation}.{county-or-town} (e.g. ms.warren or ca.los-angeles)
+* 1.3.6.1.4.1.59817.2 — Jurisdiction = {state-2-letter-abbreviation}.{county-or-town} (e.g., ms.warren or ca.los-angeles)
 * 1.3.6.1.4.1.59817.3 — Card type = vendor, system-administrator, election-manager, poll-worker, or poll-worker-with-pin (vendor, system administrator, and election manager cards always have PINs)
-* 1.3.6.1.4.1.59817.4 — Election ID = The ID of the election that an election card was programmed for
+* 1.3.6.1.4.1.59817.4 — Election ID = The ID of the election that an election card was programmed for\*
 * 1.3.6.1.4.1.59817.5 — Election date = The date of the election that an election card was programmed for
 * 1.3.6.1.4.1.59817.6 — Machine ID = A VxAdmin, VxCentralScan, VxMark, or VxScan machine ID
+
+\*This is not the same election ID as displayed in machine footers. The election ID as it pertains to cards is the `id` field in the election definition. The election ID as it pertains to machine footers is actually a hash, specifically `<first-7-digits-of-hash-of-election-json>-<first-7-digits-of-hash-of-election-zip>`. The reason for not using the latter in card certificates is to avoid having to reprogram cards after election package edits for what is conceptually still the same election.
 
 ## Certificate Expiries
 
@@ -98,11 +100,11 @@ The card is now VotingWorks-certified but “blank” from the perspective of Vo
 VotingWorks also certifies its machines at this facility. After a machine has been imaged with our latest software release, the machine boots into a configuration wizard. The software image includes the root VotingWorks CA certificate, so no extra work is required beyond imaging to “install” that certificate. Using the configuration wizard and VxCertifier, VotingWorks certifies machines:
 
 1. VotingWorks machine code instructs the machine’s TPM to generate a key pair and export the public key.
-2. VotingWorks machine code generates a certificate signing request (CSR) for that public key and writes the CSR to a USB.
+2. VotingWorks machine code generates a certificate signing request (CSR) for that public key and writes the CSR to a USB drive.
    1. On VxAdmin, VotingWorks additionally specifies a jurisdiction. That jurisdiction is included in the CSR.
-3. The USB is plugged into VxCertifier. Through VxCertifier, the root VotingWorks CA certifies the machine public key and saves the resulting certificate onto the USB.
+3. The USB is plugged into VxCertifier. Through VxCertifier, the root VotingWorks CA certifies the machine public key and saves the resulting certificate onto the USB drive.
    1. VxAdmin certificates are themselves CA certificates capable of creating additional certificates (necessary for smart card programming).
-4. The USB is plugged back into the machine to be certified. The machine loads the certificate from the USB and saves it onto its hard drive.
+4. The USB drive is plugged back into the machine to be certified. The machine loads the certificate from the USB drive, verifies its correctness, and saves it onto its hard drive.
 5. On VxAdmin, the configuration wizard also surfaces a prompt to program a first system administrator card to bootstrap the jurisdiction as, from here on out, the machine will need to be unlocked by a system administrator card in order to program any other cards.
 
 Machines, a first system administrator card, and “blank” cards are shipped to jurisdictions.
@@ -122,7 +124,7 @@ In the field, election officials use their VxAdmin and their first system admini
 Smart card authentication involves the following steps:
 
 1. The machine retrieves the card’s VotingWorks-issued certificate and verifies that it was signed by VotingWorks using the VotingWorks CA certificate installed on every machine.
-2. The machine retrieves 1) the card’s VxAdmin-issued certificate and 2) the certificate of the VxAdmin that programmed the card, which as noted in [Smart Card Programming](https://docs.google.com/document/d/17qLbrHYkjlEtXx18Oh1TovZz1D1dQd3Ze7azknqd3jA/edit#heading=h.9lruswcmd5zl) is also loaded onto the card. The machine verifies that the former (1) was signed by the latter (2). The machine also verifies that the latter is a valid VxAdmin certificate signed by VotingWorks using the VotingWorks CA certificate, establishing a chain of trust all the way up to a trusted root.
+2. The machine retrieves 1) the card’s VxAdmin-issued certificate and 2) the certificate of the VxAdmin that programmed the card, which as noted in [Smart Card Programming](access-control.md#smart-card-programming) is also loaded onto the card. The machine verifies that the former (1) was signed by the latter (2). The machine also verifies that the latter is a valid VxAdmin certificate signed by VotingWorks using the VotingWorks CA certificate, establishing a chain of trust all the way up to a trusted root.
 3. The machine verifies that the card has a private key that corresponds to the public key in the card’s VotingWorks-issued certificate by asking the card to sign a challenge with its private key and attempting to verify it with the public key.
 4. The machine verifies that the card has a private key that corresponds to the public key in the card’s VxAdmin-issued certificate by asking the card to sign a challenge with its private key and attempting to verify it with the public key.
    1. If the card has a PIN, the card will only proceed with this signature if provided the appropriate PIN. The VotingWorks machine thus asks the user for their PIN to perform this operation.

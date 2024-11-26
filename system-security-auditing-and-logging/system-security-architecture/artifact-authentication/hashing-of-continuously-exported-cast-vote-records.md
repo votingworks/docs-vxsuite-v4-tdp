@@ -6,7 +6,7 @@ Our precinct scanners export cast vote records (CVRs) to USB drive continuously,
 
 ## Merkle Tree Structure
 
-To perform continuous export while also keeping signatures, i.e. authenticity information, up-to-date, we have to be able to write both CVRs and authenticity information incrementally. (It isn’t enough to just hash and sign new data. We need an up-to-date root hash/signature.) We can use a [Merkle tree](https://en.wikipedia.org/wiki/Merkle\_tree) structure to accomplish this efficiently.
+To perform continuous export while also keeping signatures, i.e., authenticity information, up-to-date, we have to be able to write both CVRs and authenticity information incrementally. (It isn’t enough to just hash and sign new data. We need an up-to-date root hash/signature.) We can use a [Merkle tree](https://en.wikipedia.org/wiki/Merkle_tree) structure to accomplish this efficiently.
 
 <figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -62,19 +62,6 @@ In the above examples, we’ve listed a root-hash.txt file and have signed that.
     Images
 ```
 
-The database table makes recomputing hashes easy, as retrieval of all hashes for a given ID prefix becomes a simple SQL query. This approach also decreases the chance that we accidentally depend on data written to USB when computing hashes, protecting against [compromised or faulty USBs](https://github.com/votingworks/vxsuite/pull/3554).
-
-In the above examples, we’ve listed a root-hash.txt file and have signed that. In practice, we use a JSON file capable of storing other metadata and sign that:
-
-```
-<cvr-directory-name>.vxsig ← Signature on metadata.json
-<cvr-directory-name>/
-  metadata.json
-  4d6a9dad-e6d6-4a29-89bc-9ab915012b73/
-    cast-vote-record-report.json
-    Images
-```
-
 Sample metadata.json:
 
 ```
@@ -93,4 +80,4 @@ Whenever a machine imports a CVR directory, it authenticates the CVRs by 1) veri
 
 Refer to the following codebase links for more detail on CVR hashing:
 
-* [https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/cast\_vote\_record\_hashes.ts](https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/cast\_vote\_record\_hashes.ts) — CVR hashing logic, including the Merkle tree implementation
+* [https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/cast\_vote\_record\_hashes.ts](https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/cast_vote_record_hashes.ts) — CVR hashing logic, including the Merkle tree implementation
