@@ -15,7 +15,7 @@ This approach allows you to verify the system hash using a tool outside the syst
 
 ### Using Signed Hash Validation
 
-This approach allows you to verify the system hash from within the system. See \[insert link].
+This approach allows you to verify the system hash from within the system. See [Signed Hash Validation](../../system-overview/signed-hash-validation.md).
 
 [\
 ](https://docs.voting.works/vxsuite-tdp-v3.1/trusted-build/installing-an-image-via-vx-iso/machine-configuration-wizard-and-vxcertifier)
