@@ -150,15 +150,6 @@ If a language other than English is set when printing the ballot, the ballot wil
 
 ## Printer Access Control
 
+VxMark's printer and scanner are covered by the printer cover which can be opened at any time in order to clear a paper jam or clean the scanner. In order to prevent unauthorized access, pursuant to VVSG 2.0 12.1-B, VxMark produces a jarring, audible alarm if the printer cover is opened while polls are opened. The alarm should alert a poll worker that something is wrong. A poll worker then inserts their card, which silences the alarm, and follows on screen instructions to close the printer cover.
 
-
-
-
-
-
-
-
-
-
-
-
+Because authentication is required for the poll worker to open the printer cover without triggering an alarm, poll workers are instructed on screen to authenticate when clearing a paper jam. When polls are closed, the alarm is not active, so cleaning and setup can take place without triggering the alarm.
