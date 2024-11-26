@@ -2,7 +2,7 @@
 
 ## Basic Structure
 
-The basic structure of the tally reports printed from VxAdmin is generally similar to the [polls opened and closed reports](../vxscan-polls-reports.md) printed from VxScan.
+The basic structure of the tally reports printed from VxAdmin is similar to the [polls opened and closed reports](../vxscan-polls-reports.md) printed from VxScan.
 
 <figure><img src="../../.gitbook/assets/image (52).png" alt="" width="563"><figcaption><p>Full election tally report</p></figcaption></figure>
 
@@ -21,35 +21,23 @@ When a report is grouped, the report is broken up into multiple sections each wi
 
 <figure><img src="../../.gitbook/assets/image (54).png" alt="" width="563"><figcaption><p>Full election results grouped by voting method</p></figcaption></figure>
 
-The filter for a given report section is indicated in the title of the report. If the report has more than one filter applied to it, the full details of the filter will be specified at the top of the report:
+The filter for a given report section is indicated in the title of the report. If the report has more than one filter applied to it, the full details of the filter will be specified in a box below the title:
 
 <figure><img src="../../.gitbook/assets/image (55).png" alt="" width="563"><figcaption><p>Tally report with a complex filter</p></figcaption></figure>
 
-Note that filters and groups can be combined, so there may be report filtered by&#x20;
+Note that filters and groups can be combined.
 
 ## Manual Results
 
-If manual results have been added, they will be be included in the report separately from scanned results:
+If manual results have been added, they will be included in the tally report alongside the scanned results. For each contest, there will be three results columns: "scanned", "manual", and "total".
 
 <figure><img src="../../.gitbook/assets/image (57).png" alt="" width="563"><figcaption></figcaption></figure>
 
 ## Write-In Candidate Aggregation
 
-In order to prevent a long list of write-in candidates from making contest results difficult to read, VxAdmin tally reports consolidate write-in candidates if they're not relevant to the contest outcome. Relevant write-ins are included as "Name (Write-In)". Irrelevant write-ins are bucketed as "Write-In" or, if there are relevant write-ins in the list, "Other Write-In". Unajudicated write-ins are always bucketed under "Unadjudicated Write-In."
+In order to prevent a long list of write-in candidates from making contest results difficult to read, VxAdmin tally reports consolidate write-in candidates if they're not relevant to the contest outcome. Relevant write-ins are included as "\<Name> (Write-In)". Irrelevant write-ins are consolidated as "Write-In" or, if there are relevant write-ins in the list, "Other Write-In". Unajudicated write-ins are always consolidated as "Unadjudicated Write-In."
 
-A write-in is deemed relevant if it must be listed for the reader to determine the winner(s) of the contest. In the middle example below, the single adjudicated write-in is bucketed because _Natalie Portman_ is the winner regardless of the idenities of the write-ins. In the last example, however, there are 31 adjudicated write-ins so it's possible that a write-in got more votes than _Natalie Portman_. The report then enumerates the write-ins with the highest vote totals until the "Other Write-In" count is smaller than the counts for all winners.&#x20;
+A write-in is deemed relevant if it must be listed for the reader to determine the winner(s) of the contest. In the middle example below, the single adjudicated write-in is consolidated because _Natalie Portman_ is the winner regardless of the identities of the write-ins. In the last example, however, there are 31 adjudicated write-ins so it's possible that a write-in got more votes than _Natalie Portman_. The report then enumerates the write-ins with the highest vote totals until the "Other Write-In" count is smaller than the counts for all winners.&#x20;
 
-<div>
-
-<figure><img src="../../.gitbook/assets/Screen Shot 2024-10-01 at 4.52.26 PM.png" alt="" width="407"><figcaption><p>Before adjudication</p></figcaption></figure>
-
- 
-
-<figure><img src="../../.gitbook/assets/Screen Shot 2024-10-01 at 4.52.31 PM.png" alt="" width="392"><figcaption><p>Adjudication just started</p></figcaption></figure>
-
- 
-
-<figure><img src="../../.gitbook/assets/Screen Shot 2024-10-01 at 4.52.45 PM.png" alt="" width="399"><figcaption><p>Adjudication almost finished</p></figcaption></figure>
-
-</div>
+<div><figure><img src="../../.gitbook/assets/Screen Shot 2024-10-01 at 4.52.26 PM.png" alt="" width="407"><figcaption><p>Before adjudication</p></figcaption></figure> <figure><img src="../../.gitbook/assets/Screen Shot 2024-10-01 at 4.52.31 PM.png" alt="" width="392"><figcaption><p>Adjudication just started</p></figcaption></figure> <figure><img src="../../.gitbook/assets/Screen Shot 2024-10-01 at 4.52.45 PM.png" alt="" width="399"><figcaption><p>Adjudication almost finished</p></figcaption></figure></div>
 

@@ -28,13 +28,15 @@ The values in the contest table above are as follows:
 
 Before adjudication, write-ins are treated as votes for a generic write-in candidate and will appear in tally reports as "Unadjudicated Write-In." After adjudication, the new value will be reflected on tally reports:
 
-* When adjudicated for an official candidate, the write-in will be added to the official candidate count just as a regular mark for the candidate would be
-* When adjudicated for a write-in candidate, the write-in will appear in the adjudicated write-in bucket or are individually listed if they are[ relevant to the results](tally-reports.md#write-in-candidate-aggregation)
+* When adjudicated for an official candidate, the write-in will be added to the official candidate count just as a regular vote for the candidate would be
+* When adjudicated for a write-in candidate, either:
+  * The write-in will be individually listed if it is [relevant to the results](tally-reports.md#write-in-candidate-aggregation)
+  * The write-in will appear in the adjudicated write-in bucket if it is not relevant to the results
 * When invalid, the write-in becomes an undervote
 
 ### Unmarked Write-Ins
 
-Unmarked write-ins behave differently in relationship to the tally results because they cannot be considered a valid mark before adjudication. As a result, they are actually considered undervotes before adjudication. If the unmarked write-in is marked as invalid, then tally results are unchanged. If they're adjudicated for a candidate, the unmarked write-in is no longer an undervote and is added to the vote total for the candidate.
+Unmarked write-ins behave differently in relationship to the tally results because they cannot be considered a valid vote before adjudication. As a result, they are considered undervotes before adjudication. If an unmarked write-in is adjudicated as invalid, then tally results will not change. If an unmarked write-in is adjudicated for a candidate, the unmarked write-in is no longer an undervote and is added to the vote total for that candidate.
 
 Also note that, because the write-in adjudication report includes unmarked write-ins, the "Unadjudicated Write-In" count on tally reports may be less than the "Not Adjudicated" count on the write-in adjudication report. The initial difference is the count of unmarked write-ins.&#x20;
 
