@@ -10,7 +10,7 @@ Each test always either passes or fails. A test fails if an error is thrown or a
 
 Whenever changes are made to VotingWorks code, all tests are automatically run as part of a continuous integration (CI) process through CircleCI. Code changes cannot be merged unless all tests pass. A single failing test will prevent changes from being merged. Every test run on CirceCI provides evidence that the software is operating as expected.
 
-Test runs are public information available via CircleCI. For example, tests running in `vxsuite` are tracked [here](https://app.circleci.com/pipelines/github/votingworks/vxsuite).&#x20;
+Test runs are public information available via CircleCI. For example, tests running in `vxsuite` are tracked [here](https://app.circleci.com/pipelines/github/votingworks/vxsuite).
 
 If tests are flaky, meaning that they usually pass but occasionally don't, VotingWorks investigates and fixes the underlying issue. Flaky tests are automatically reported by the CircleCI tooling. VotingWorks reviews new flaky tests as necessary on a weekly basis.
 
@@ -22,7 +22,13 @@ In addition to unit tests, VotingWorks code has end-to-end integration tests for
 
 Whenever a software issue is discovered in manual testing or in actual operation in the field, VotingWorks creates an automated regression test after fixing the issue. For example if a particular ballot image was not interpreted but should have been interpreted, that ballot image would be used to create an automated regression test to ensure that not only is the issue fixed but that future changes cannot recreate the issue.
 
-Even tests which are not explicitly created as regression tests have an anti-regression function. The advantage of having a robust test suite is that failing tests will inform developers when new fixes or improvements break previous functionality,&#x20;
+Even tests which are not explicitly created as regression tests have an anti-regression function. The advantage of having a robust test suite is that failing tests will inform developers when new fixes or improvements break previous functionality.
+
+### Manual Testing
+
+While we strive to cover as much as we possibly can with automated tests, there remains significant value in rigorous manual testing of software on actual hardware. We periodically conduct such passes and perform particularly rigorous passes before freezing software for a release.
+
+To organize this process, we make use of checklists. A base set of checklists can be viewed here: [Software QA Checklists](https://github.com/votingworks/docs-vxsuite-v4/blob/main/quality-assurance/testing/internal-testing/Software%20QA%20Checklists.pdf). When performing QA before a release for a particular state or election, we often tweak these base checklists to hone in on the specific circumstances, e.g., using specific adjudication settings and HMP ballot lengths.
 
 ### Safe Concurrency (2.5-B)
 
