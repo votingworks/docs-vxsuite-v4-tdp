@@ -16,7 +16,7 @@ layout:
 
 The election package contains all of the information that defines an election. VxAdmin is configured by inserting a USB drive and selecting an election package from the drive.
 
-After VxAdmin is configured, the election package can then be digitally signed and exported onto a USB drive in order to configure VxScan, VxCentralScan, and VxMark. The digital signature verifies that the election package is legitimate (**insert link)**. The other devices require that the signature is present. As a result, an election package from outside the system cannot be used to directly configure VxScan, VxCentralScan, or VxMark.
+After VxAdmin is configured, the election package can then be digitally signed and exported onto a USB drive in order to configure VxScan, VxCentralScan, and VxMark. The [digital signature](../../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/) verifies that the election package is legitimate. The other devices require that the signature is present. As a result, an election package from outside the system cannot be used to directly configure VxScan, VxCentralScan, or VxMark.
 
 ## Election Package Contents
 
@@ -60,7 +60,7 @@ In the case of specifying a Spanish translation and overriding the English trans
 
 * Voter-facing strings that appear on ballots (contest names, candidate names, the name of the jurisdiction, etc.) are not included in the app strings file because they are already included in the election definition.
 * The language codes in the app strings file are the [IETF language tags](https://www.w3.org/International/articles/language-tags/) for supported VxSuite languages: English, Spanish, Simplified Chinese, and Traditional Chinese.
-* The keys for the various user interface app strings (e.g. `buttonStartVoting`) are defined in VxSuite's app string catalog (**insert link**)
+* The keys for the various user interface app strings (e.g. `buttonStartVoting`) are defined in VxSuite's [app strings catalog](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/ui/src/ui_strings/app_strings_catalog/latest.json).
 
 The app strings file is optional. If not provided, default English strings will be used.
 

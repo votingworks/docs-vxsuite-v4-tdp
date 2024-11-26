@@ -10,7 +10,7 @@ VxSuite accepts the Ballot Definition CDF Version 1.0 as defined by NIST without
 * Some enumeration values are more restricted in VxSuite than in the NIST CDF
 * Some classes and attributes are ignored in VxSuite
 
-The exact VxSuite schema is defined as a [JSON schema in the vxsuite repository](https://github.com/votingworks/vxsuite/blob/main/libs/types/src/cdf/ballot-definition/vx-schema.json) (**insert link updated)** which is derived from the [original NIST schema](https://github.com/usnistgov/BallotDefinition/blob/master/NIST_V1_ballot_definition.json). The differences between the two are documented in the below tables.
+The exact VxSuite schema is defined as a [JSON schema in the vxsuite repository](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/types/src/cdf/ballot-definition/vx-schema.json) which is derived from the [original NIST schema](https://github.com/usnistgov/BallotDefinition/blob/master/NIST_V1_ballot_definition.json). The differences between the two are documented in the below tables.
 
 ### Required Class Attributes
 

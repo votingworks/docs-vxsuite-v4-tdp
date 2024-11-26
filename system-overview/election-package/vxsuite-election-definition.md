@@ -207,4 +207,4 @@ In some jurisdictions, a write-in can only be counted if the associated bubble i
 
 ## Examples
 
-Election definition examples are located in the `vxsuite` repository, such as [here](https://github.com/votingworks/vxsuite/blob/main/libs/hmpb/fixtures/famous-names/election.json). **(insert link updated).**
+Election definition examples are located in the `vxsuite` repository, such as [here](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/hmpb/fixtures/famous-names/election.json).

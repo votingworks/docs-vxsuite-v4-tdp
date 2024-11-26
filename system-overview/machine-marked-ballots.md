@@ -22,4 +22,4 @@ If VxMark is being used in a language other than English, the resulting ballot w
 
 ## QR Code
 
-The QR codes on VxMark ballots are different than the [QR codes on hand marked ballots](hand-marked-ballots.md#qr-code-metadata) in that they actually contain voter selections in addition to the ballot metadata. For full specifications on how metadata and selections are encoded, view the [ballot encoder documentation](https://github.com/votingworks/vxsuite/tree/main/libs/ballot-encoder#hmpb-metadata-encoding) (**insert link updated)**.
+The QR codes on VxMark ballots are different than the [QR codes on hand marked ballots](hand-marked-ballots.md#qr-code-metadata) in that they actually contain voter selections in addition to the ballot metadata. For full specifications on how metadata and selections are encoded, view the [ballot encoder documentation](https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch/libs/ballot-encoder#ballot-encoder-data-format).

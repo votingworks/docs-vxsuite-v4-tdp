@@ -73,7 +73,7 @@ In VxScan, images of rejected ballots are always included. In VxCentralScan, ima
 
 ### CDF Implementation
 
-VxSuite does not use any data extensions beyond the NIST specification, but some fields are made required that are not required in the original NIST specification. The two specifications can be compared by comparing the [NIST JSON schema](https://github.com/usnistgov/CastVoteRecords/blob/master/NIST_V0_cast_vote_records.json) with the [VxSuite JSON schema](https://github.com/votingworks/vxsuite/blob/main/libs/types/src/cdf/cast-vote-records/vx-schema.json) (**insert link updated).** The additionally required fields are listed in a table below.
+VxSuite does not use any data extensions beyond the NIST specification, but some fields are made required that are not required in the original NIST specification. The two specifications can be compared by comparing the [NIST JSON schema](https://github.com/usnistgov/CastVoteRecords/blob/master/NIST_V0_cast_vote_records.json) with the [VxSuite JSON schema](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/types/src/cdf/cast-vote-records/vx-schema.json). The additionally required fields are listed in a table below.
 
 Because VxAdmin requires a VxSuite digital signature on all imported cast vote records, it's not possible to import a cast vote record from outside of VxSuite. The goal of using CDF is to help external systems consume VxSuite cast vote records for audit or analysis.
 
