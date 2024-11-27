@@ -42,7 +42,7 @@ Both Ricoh scanners can be used with an optional imprinter - the fi-819PRB for t
 
 #### Batch UUIDs
 
-The v4 UUID (universally unique identifier) for each batch is generated when the batch is first created. It is generated with the `node:crypto` package's `createHash` method using the SHA256 algorithm provided by system's underlying FIPS-complaint OpenSSL implementation.
+The v4 UUID (universally unique identifier) for each batch is generated when the batch is first created. It is generated with the node package `uuid` which uses the system's underlying FIPS-complaint OpenSSL implementation to generated random bytes.
 
 ## Ballot Issues & Adjudication
 
