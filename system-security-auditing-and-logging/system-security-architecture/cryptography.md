@@ -48,7 +48,7 @@ This provider is FIPS140-2-certified: [https://csrc.nist.gov/projects/cryptograp
 FIPS-compliance of all OpenSSL operations is guaranteed as follows:
 
 * **FIPS compliance via hardware modules:** For relevant operations, OpenSSL outsources cryptographic operations to the TPM 2.0 chip, and as noted above, all of our TPM 2.0 chips are FIPS-compliant.
-* **FIPS compliance via software modules:** For all other operations, OpenSSL uses the FIPS provider. Our [OpenSSL config](https://github.com/votingworks/vxsuite-build-system/blob/main/playbooks/trusted_build/files/openssl-3.0.9.cnf) guarantees this.
+* **FIPS compliance via software modules:** For all other operations, OpenSSL uses the FIPS provider. Our [OpenSSL config](https://github.com/votingworks/vxsuite-build-system/blob/v4.0.0/playbooks/trusted_build/files/openssl-3.0.9.cnf) guarantees this.
 
 ## Authentication vs. Encryption
 
