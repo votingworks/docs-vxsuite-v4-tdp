@@ -8,15 +8,7 @@
 
 VxAdmin and VxCentralScan are both laptops that connect to peripherals as needed. The laptop is a [custom configured HP Elitebook 840 14" G11](vxadmin-and-vxcentralscan-hardware.md#laptop-specification).
 
-<div>
-
-<figure><img src="../.gitbook/assets/840-front.jpg" alt="" width="375"><figcaption><p>Laptop keyboard and screen</p></figcaption></figure>
-
- 
-
-<figure><img src="../.gitbook/assets/840-side.avif" alt="" width="430"><figcaption><p>Laptop ports</p></figcaption></figure>
-
-</div>
+<div><figure><img src="../.gitbook/assets/840-front.jpg" alt="" width="375"><figcaption><p>Laptop keyboard and screen</p></figcaption></figure> <figure><img src="../.gitbook/assets/840-side.avif" alt="" width="430"><figcaption><p>Laptop ports</p></figcaption></figure></div>
 
 The relevant hardware interfaces are:
 
@@ -37,7 +29,7 @@ VxCentralScan connects to a batch scanner for batch scanning. The scanner is eit
 
 Both batch scanners can be used with Ricoh imprinters (not pictured) which allow printing an identifier on each ballot as it's exiting the scanner, which can be useful for certain types of post-election audits.&#x20;
 
-The batch scanner is powered through a Anker Solix C300 LFS (Lithium Ferrite System) UPS (Uninterruptible Power Supply) to ensure that the scanner can operate in variable power environments.&#x20;
+The batch scanner is powered through an Anker Solix C300 LFS (Lithium Ferrite System) UPS (Uninterruptible Power Supply) to ensure that the scanner can operate in variable power environments.&#x20;
 
 The fi-8170 includes an RJ45 (ethernet) port which is blocked by a port blocker because network connectivity is not required by the system.
 
