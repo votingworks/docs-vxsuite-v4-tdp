@@ -69,9 +69,9 @@ There are four code repositories relevant to the voting system:
 
 <table><thead><tr><th width="293">Dependency</th><th>Version</th></tr></thead><tbody><tr><td>Debian</td><td>12.2.0</td></tr><tr><td>Additional Debian Packages</td><td>See <a href="https://github.com/votingworks/vxsuite-build-system/blob/v4.0.0/inventories/v4.0.0/group_vars/all/packages.yaml">build system package inventory</a></td></tr><tr><td>Node.js</td><td>20.16.0</td></tr><tr><td>pnpm</td><td>8.15.5</td></tr><tr><td>Application Node Packages</td><td>See the relevant <a href="https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/pnpm-lock.yaml">lock file</a></td></tr><tr><td>Rust</td><td>1.81</td></tr><tr><td>Rust Packages</td><td>See the relevant <a href="https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/Cargo.lock">lock file</a></td></tr><tr><td>yarn</td><td>1.22.22</td></tr><tr><td>Electron</td><td>17.4.1</td></tr><tr><td>Chromium</td><td>98.0.4758.141</td></tr><tr><td>Kiosk Browser Node Packages</td><td>See the relevant <a href="https://github.com/votingworks/kiosk-browser/blob/v4.0.0-release-branch/yarn.lock">lock file</a></td></tr></tbody></table>
 
-## Software Traceability
+## Traceability of Procured Software
 
-The authenticity of VotingWorks software can be confirmed using [signed-hash-validation.md](signed-hash-validation.md "mention"). For test labs, additional methods of verification exist, laid out in [verifying-the-image-installed-on-a-machine.md](../software-installation/imaging-machines/verifying-the-image-installed-on-a-machine.md "mention").
+We take care to ensure that we're pulling authentic/correct versions of dependencies, by verifying against known hashes, checksums, or digital signatures The details of this are covered in [hash-checksum-verification.md](../software-installation/trusted-build/hash-checksum-verification.md "mention").
 
 ## Software Best Practices
 
