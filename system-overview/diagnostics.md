@@ -38,21 +38,21 @@ For scanners - VxScan and VxCentralScan - the currently configured mark and writ
 
 The toner level and any alerts from the printer are displayed, such as sleep mode, paper jams, or hardware malfunctions. The user may perform a test print, which will send a mock report to the printer. The user inspects the printed document and confirms whether the test print was successful or failed.
 
+{% hint style="info" %}
+**User Manual Reference:** [VxAdmin Diagnostics](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxadmin-system-setup/vxadmin-diagnostics "mention")
+{% endhint %}
+
 ## VxCentralScan Diagnostics
 
 ### Batch Scanner
 
 The user may perform a test scan, which requires that a blank white sheet of paper be scanned. The scanned image is broken up into small cells and each cell is checked for the percent of black pixels after binarization. If that percent is more than slightly over 0%, that cell is flagged and the entire diagnostic fails. The goal of the diagnostic is catch any defects in the scanned images, such as streaking produced by a dirty scanner.
 
-<div>
+<div><figure><img src="../.gitbook/assets/3d3eeff3-0eda-48fd-be9d-8edda7abdd2d-front_debug_diagnostic.png" alt=""><figcaption><p>Passed</p></figcaption></figure> <figure><img src="../.gitbook/assets/0dc29646-3c6a-4abd-9d2d-ae1b03a3b4ad-front_debug_diagnostic.png" alt=""><figcaption><p>Failed</p></figcaption></figure></div>
 
-<figure><img src="../.gitbook/assets/3d3eeff3-0eda-48fd-be9d-8edda7abdd2d-front_debug_diagnostic.png" alt=""><figcaption><p>Passed</p></figcaption></figure>
-
- 
-
-<figure><img src="../.gitbook/assets/0dc29646-3c6a-4abd-9d2d-ae1b03a3b4ad-front_debug_diagnostic.png" alt=""><figcaption><p>Failed</p></figcaption></figure>
-
-</div>
+{% hint style="info" %}
+**User Manual Reference**: [VxCentralScan Diagnostics](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxcentralscan/vxcentralscan-diagnostics "mention")
+{% endhint %}
 
 ## VxScan Diagnostics
 
@@ -71,6 +71,10 @@ The diagnostics page will also display details about any printer errors if the p
 ### Speaker
 
 The user may test the speaker by triggering the chime sound and confirming whether they heard the chime or not.&#x20;
+
+{% hint style="info" %}
+**User Manual Reference**: [VxScan Diagnostics](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxscan/vxscan-diagnostics "mention")
+{% endhint %}
 
 ## VxMark Diagnostics
 
@@ -97,3 +101,6 @@ The user may perform a test of the PAT input, which is simply confirms that a PA
 
 The user may perform a test of the front headphone input by connecting headphones and triggering a chime. The user must indicate whether they heard the chime or not, corresponding to a pass or fail respectively.
 
+{% hint style="info" %}
+**User Manual Reference**: [VxMark Diagnostics](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/vxmark-diagnostics "mention")
+{% endhint %}
