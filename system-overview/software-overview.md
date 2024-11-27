@@ -75,10 +75,12 @@ We take care to ensure that we're pulling authentic/correct versions of dependen
 
 ## Software Best Practices
 
-The VotingWorks codebase is written in TypeScript and Rust, two widely used languages with well established coding conventions. We make use of automatic code linters to enforce these conventions. We also require peer code review of every change. Details about our best practices and tooling used to enforce those best practices can be found here:
+The VotingWorks codebase is written in TypeScript and Rust, two widely used languages with well established coding conventions. We make use of automatic code linters to enforce these conventions. Details about our best practices and tooling used to enforce those best practices can be found here:
 
 * [TypeScript best practices and tooling](https://github.com/votingworks/vxsuite/blob/main/docs/best_practices/typescript.md)
 * [Rust best practices and tooling](https://github.com/votingworks/vxsuite/blob/main/docs/best_practices/rust.md)
+
+We also require peer code review of every change ([examples of that process here](https://github.com/votingworks/vxsuite/pulls?q=is%3Apr+is%3Aclosed)), and for larger changes and features, we hold architecture discussions as a team to land on the best possible solutions given the constraints.
 
 {% hint style="success" %}
 Through the above best practices, tooling used to enforce those best practices, and peer code review of every change, we guarantee that we meet the following requirements:
