@@ -37,6 +37,8 @@
 
 ### Hand Marked Paper Ballots
 
+In addition to the design requirements specified in [hand-marked-ballots.md](../../system-overview/hand-marked-ballots.md "mention"), ballots are constrained by the following limits.
+
 #### Bubble Positions
 
 VxSuite hand marked paper ballot interpretation supports fractional grid coordinate positions, which enable bubble positions to be placed anywhere within the timing mark grid. However, the density of bubbles on a given ballot is limited to the total number of timing mark grid intersections to ensure accurate interpretation.
