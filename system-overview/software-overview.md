@@ -82,6 +82,8 @@ The VotingWorks codebase is written in TypeScript and Rust, two widely used lang
 
 We also require peer code review of every change ([examples of that process here](https://github.com/votingworks/vxsuite/pulls?q=is%3Apr+is%3Aclosed)), and for larger changes and features, we hold architecture discussions as a team to land on the best possible solutions given the constraints.
 
+Our practices around testing are covered under [#quality-assurance-protocols-software](<../README (1).md#quality-assurance-protocols-software> "mention").
+
 {% hint style="success" %}
 Through the above best practices, tooling used to enforce those best practices, and peer code review of every change, we guarantee that we meet the following requirements:
 
