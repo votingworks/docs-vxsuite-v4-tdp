@@ -1,6 +1,6 @@
 # User Roles
 
-VxSuite has four authenticated user roles. Authentication is performed with JCOP4 Java Cards, a security-oriented type of smart card. Each card is programmed with a single role and, in most cases, a PIN for two-factor authentication. Details of the authentication system can be found in the System Security section of the TDP (**insert link**).&#x20;
+VxSuite has four authenticated user roles. Authentication is performed with JCOP4 Java Cards, a security-oriented type of smart card. Each card is programmed with a single role and, in most cases, a PIN for two-factor authentication. Details of the authentication system can be found here: [access-control.md](../system-security-auditing-and-logging/system-security-architecture/access-control.md "mention").
 
 ## Poll Worker Role
 
