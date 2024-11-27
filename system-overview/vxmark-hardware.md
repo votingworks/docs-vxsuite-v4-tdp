@@ -8,7 +8,7 @@ VxMark exposes various hardware interfaces for various modes of voting. The touc
 
 <figure><img src="../.gitbook/assets/acc-controller.png" alt="" width="331"><figcaption><p>Accessible Controller</p></figcaption></figure>
 
-The right side of the machine is the paper path. Paper is inserted into the printer-scanner by feeding it forward on the front paper input. When the ballot is cast, it is ejected to the rear into the attached ballot box. In case of paper jams, the printer-scaner cover can lift to expose the printer-scanner. If the cover is opened while polls are opened without authentication, an alarm will be triggered through the onboard speaker.
+The right side of the machine is the paper path. Paper is inserted into the printer-scanner by feeding it forward on the front paper input. When the ballot is cast, it is ejected to the rear into the attached ballot box. In case of paper jams, the printer-scanner cover can lift to expose the printer-scanner. If the cover is opened while polls are opened without authentication, an alarm will be triggered through the onboard speaker.
 
 <div><figure><img src="../.gitbook/assets/ballot_box.png" alt=""><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/printer-scanner.png" alt=""><figcaption></figcaption></figure></div>
 

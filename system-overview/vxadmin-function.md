@@ -57,7 +57,7 @@ If an error is found when loading any single CVR in a CVR export, the entire exp
 VxAdmin allows loading CVR exports that have already been partially loaded. For example, imagine that VxCentralScan exports CVRs after scanning 5 ballots and then again after scanning 10 ballots. If we first load the 5 CVR export and then the 10 CVR export, the 10 CVR export will successfully load but will ignore the CVRs that have already been imported.
 
 {% hint style="info" %}
-**User Manual Reference:** [Loading CVRs](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/election-night-guides/tally-results "mention")
+**User Manual Reference:** [Tally Results](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/election-night-guides/tally-results "mention")
 {% endhint %}
 
 ### Ballot Mode
@@ -200,7 +200,7 @@ The **Ballot Count** is defined in VxSuite as simply the count of first sheets. 
 
 Results on VxAdmin are considered unofficial until the election manager marks them as official. As long as results are unofficial, CVRs can be loaded, write-ins can be adjudicated, and manual tallies can be added and edited. All reports and result exports are labelled as "Unofficial."&#x20;
 
-Once the results are final and often only after a jurisidiction's specific certification process, the election manager can mark results as official. All reports and result exports will then be labelled as "Official." CVRs can no longer be loaded, write-ins can no longer be adjudicated, and manual tallies can no longer be altered.
+Once the results are final and often only after a jurisdiction's specific certification process, the election manager can mark results as official. All reports and result exports will then be labelled as "Official." CVRs can no longer be loaded, write-ins can no longer be adjudicated, and manual tallies can no longer be altered.
 
 There are two ways to exit official results modes:&#x20;
 

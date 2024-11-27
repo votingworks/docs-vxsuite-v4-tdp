@@ -16,7 +16,7 @@ When there are no active elections happening, VxSuite equipment should be physic
 * The larger Fujitsu/Ricoh scanner that works with VxCentralScan should be kept in its supplied manufacturer box, with tamper evident tape along all sides and a numbered sticker seal on the main opening.
 * VxScan should be kept closed with a numbered seal through one of the two seal points, preventing the case from being opened without breaking the seal.
 * VxAdmin, VxCentralScan, VxScan, and the Fujitsu/Ricoh scanner, once sealed, should be kept in a safely locked room or storage area that only authorized election administrators have access to.
-* The system admin smartcards should be kept in a safe or locked drawer, separately from VxAdmin. The PIN for the system admin smartcard, if recorded on paper, should also be kept locked separate from both VxAdmin and the card.
+* The system admin smart cards should be kept in a safe or locked drawer, separately from VxAdmin. The PIN for the system admin smart card, if recorded on paper, should also be kept locked separate from both VxAdmin and the card.
 
 You may consider occasionally resetting the PIN on the system administrator cards. This can be done using the VxAdmin laptop.
 
@@ -25,7 +25,7 @@ You may consider occasionally resetting the PIN on the system administrator card
 Both VxAdmin and VxScan are required for Logic & Accuracy testing. VxCentralScan is required if it is planned to be used for counting absentee ballots. VotingWorks's recommended practices take into account that this testing is often performed in view of the public.
 
 * When retrieving all components from their locked storage location, ensure that the seal numbers match the logs.
-* Keep clear and strong custody of all smartcards.
+* Keep clear and strong custody of all smart cards.
 * Use the system admin card only long enough to un-configure VxAdmin, VxScan, and VxCentralScan from the last election, and to program VxAdmin for the new election. Then return the system admin card to its secure storage.
 
 At the end of L\&A testing, ensure that the VxScan is ready and secured for election day:
@@ -66,7 +66,7 @@ If a ballot jam requires opening the poll worker door or the ballot box door, re
 
 ### Scanning Absentee Ballots
 
-VxCentralScan is only meant to be accessed by authorized election administrators. However, it is safe to project the screen via overhead projector, as long as the smartcard PIN is entered via the keyboard, and not via the mouse.
+VxCentralScan is only meant to be accessed by authorized election administrators. However, it is safe to project the screen via overhead projector, as long as the smart card PIN is entered via the keyboard, and not via the mouse.
 
 ### Closing the Polls
 

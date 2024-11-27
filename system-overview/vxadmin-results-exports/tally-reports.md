@@ -35,7 +35,7 @@ If manual results have been added, they will be included in the tally report alo
 
 ## Write-In Candidate Aggregation
 
-In order to prevent a long list of write-in candidates from making contest results difficult to read, VxAdmin tally reports consolidate write-in candidates if they're not relevant to the contest outcome. Relevant write-ins are included as "\<Name> (Write-In)". Irrelevant write-ins are consolidated as "Write-In" or, if there are relevant write-ins in the list, "Other Write-In". Unajudicated write-ins are always consolidated as "Unadjudicated Write-In."
+In order to prevent a long list of write-in candidates from making contest results difficult to read, VxAdmin tally reports consolidate write-in candidates if they're not relevant to the contest outcome. Relevant write-ins are included as "\<Name> (Write-In)". Irrelevant write-ins are consolidated as "Write-In" or, if there are relevant write-ins in the list, "Other Write-In". Unadjudicated write-ins are always consolidated as "Unadjudicated Write-In."
 
 A write-in is deemed relevant if it must be listed for the reader to determine the winner(s) of the contest. In the middle example below, the single adjudicated write-in is consolidated because _Natalie Portman_ is the winner regardless of the identities of the write-ins. In the last example, however, there are 31 adjudicated write-ins so it's possible that a write-in got more votes than _Natalie Portman_. The report then enumerates the write-ins with the highest vote totals until the "Other Write-In" count is smaller than the counts for all winners.&#x20;
 
