@@ -63,7 +63,7 @@ There are four code repositories relevant to the voting system:
 * [vxsuite](https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch) - all application code and supporting libraries
 * [kiosk-browser](https://github.com/votingworks/kiosk-browser/tree/v4.0.0-release-branch) - kiosk-browser code
 * [vxsuite-complete-system](https://github.com/votingworks/vxsuite-complete-system/tree/v4.0.0-rc2) - installation code and configuration
-* [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.0.0) - image creation and dependency management
+* [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system) - image creation and dependency management
 
 ## Key Dependency Chart
 
@@ -77,8 +77,8 @@ We take care to ensure that we're pulling authentic/correct versions of dependen
 
 The VotingWorks codebase is written in TypeScript and Rust, two widely used languages with well established coding conventions. We make use of automatic code linters to enforce these conventions. Details about our best practices and tooling used to enforce those best practices can be found here:
 
-* [TypeScript best practices and tooling](https://github.com/votingworks/vxsuite/blob/main/docs/best_practices/typescript.md)
-* [Rust best practices and tooling](https://github.com/votingworks/vxsuite/blob/main/docs/best_practices/rust.md)
+* [TypeScript best practices and tooling](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/docs/best_practices/typescript.md)
+* [Rust best practices and tooling](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/docs/best_practices/rust.md)
 
 We also require peer code review of every change ([examples of that process here](https://github.com/votingworks/vxsuite/pulls?q=is%3Apr+is%3Aclosed)), and for larger changes and features, we hold architecture discussions as a team to land on the best possible solutions given the constraints.
 

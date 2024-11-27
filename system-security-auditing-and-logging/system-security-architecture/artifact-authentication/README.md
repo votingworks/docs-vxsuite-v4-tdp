@@ -19,8 +19,8 @@ If verification fails on the importing machine, the importing machine will refus
 
 ### Code Links
 
-Refer to the following codebase links for more detail on VxSuite artfiact authentication:
+Refer to the following code links for more details:
 
-* [https://github.com/votingworks/vxsuite/tree/main/libs/auth](https://github.com/votingworks/vxsuite/tree/main/libs/auth) — VxSuite authentication lib, a good starting point for all things authentication
-* [https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/artifact\_authenticator.ts](https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/artifact_authenticator.ts) —  Artifact authentication logic
-* [https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/cryptography.ts](https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/cryptography.ts) — OpenSSL commands underlying various authentication and signing operations
+* [https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch/libs/auth](https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch/libs/auth) — VxSuite authentication lib, a good starting point for all things authentication
+* [https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/artifact\_authentication.ts](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/artifact_authentication.ts) —  Artifact authentication logic
+* [https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/cryptography.ts](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/cryptography.ts) — OpenSSL commands underlying various authentication and signing operations

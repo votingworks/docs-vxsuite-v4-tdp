@@ -78,6 +78,6 @@ Whenever a machine imports a CVR directory, it authenticates the CVRs by 1) veri
 
 ## Code Links
 
-Refer to the following codebase links for more detail on CVR hashing:
+Refer to the following code links for more details:
 
-* [https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/cast\_vote\_record\_hashes.ts](https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/cast_vote_record_hashes.ts) — CVR hashing logic, including the Merkle tree implementation
+* [https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/cast\_vote\_record\_hashes.ts](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/cast_vote_record_hashes.ts) — CVR hashing logic, including the Merkle tree implementation

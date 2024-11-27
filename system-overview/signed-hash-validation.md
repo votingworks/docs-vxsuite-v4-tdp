@@ -37,4 +37,6 @@ After completing the above verification, [https://check.voting.works](https://ch
 
 ### Code Links
 
-* [https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/signed\_hash\_validation.ts](https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/signed_hash_validation.ts)
+Refer to the following code links for more details:
+
+* [https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/signed\_hash\_validation.ts](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/signed_hash_validation.ts)

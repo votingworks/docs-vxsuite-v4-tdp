@@ -138,16 +138,16 @@ These time limits do not apply to unauthenticated screens like the “Insert You
 
 ### Code Links
 
-Refer to the following codebase links for more detail on VxSuite access control:
+Refer to the following code links for more details:
 
-* [https://github.com/votingworks/vxsuite/tree/main/libs/auth](https://github.com/votingworks/vxsuite/tree/main/libs/auth) — VxSuite authentication lib, a good starting point for all things authentication
-* [https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/dipped\_smart\_card\_auth.ts](https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/dipped_smart_card_auth.ts) — High-level authentication state management for VxAdmin and VxCentralScan
-* [https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/inserted\_smart\_card\_auth.ts](https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/inserted_smart_card_auth.ts) — High-level authentication state management for VxScan
-* [https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/java\_card.ts](https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/java_card.ts) — Java Card implementation
-* [https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/certs.ts](https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/certs.ts) — Certificate configuration
-* [https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/cryptography.ts](https://github.com/votingworks/vxsuite/blob/main/libs/auth/src/cryptography.ts) — OpenSSL commands underlying various authentication and signing operations
-* [https://github.com/votingworks/vxsuite-complete-system/blob/main/config/admin-functions/basic-configuration.sh](https://github.com/votingworks/vxsuite-complete-system/blob/main/config/admin-functions/basic-configuration.sh) — The production machine configuration wizard
-* [https://github.com/votingworks/vxsuite/tree/main/libs/auth#scripts](https://github.com/votingworks/vxsuite/tree/main/libs/auth#scripts) — A summary of the scripts in [https://github.com/votingworks/vxsuite/tree/main/libs/auth/scripts](https://github.com/votingworks/vxsuite/tree/main/libs/auth/scripts), many of which are used for production configuration
+* [https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch/libs/auth](https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch/libs/auth)— VxSuite authentication lib, a good starting point for all things authentication
+* [https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/dipped\_smart\_card\_auth.ts](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/dipped_smart_card_auth.ts) — High-level authentication state management for VxAdmin and VxCentralScan
+* [https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/inserted\_smart\_card\_auth.ts](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/inserted_smart_card_auth.ts) — High-level authentication state management for VxScan
+* [https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/java\_card.ts](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/java_card.ts) — Java Card implementation
+* [https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/certs.ts](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/certs.ts) — Certificate configuration
+* [https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/cryptography.ts](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/cryptography.ts) — OpenSSL commands underlying various authentication and signing operations
+* [https://github.com/votingworks/vxsuite-complete-system/blob/v4.0.0-rc2/config/vendor-functions/basic-configuration.sh](https://github.com/votingworks/vxsuite-complete-system/blob/v4.0.0-rc2/config/vendor-functions/basic-configuration.sh) — The production machine configuration wizard
+* [https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch/libs/auth#scripts](https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch/libs/auth#scripts) — A summary of the scripts in the authentication lib, many of which are used for production configuration
 * [https://github.com/votingworks/openfips201](https://github.com/votingworks/openfips201) — The applet that we’re installing onto our Java Cards
 
 
