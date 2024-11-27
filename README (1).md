@@ -30,7 +30,7 @@ Even tests which are not explicitly created as regression tests have an anti-reg
 
 While we strive to cover as much as we possibly can with automated tests, there remains significant value in rigorous manual testing of software on actual hardware. We periodically conduct such passes and perform particularly rigorous passes before freezing software for a release.
 
-To organize this process, we make use of checklists. A base set of checklists can be viewed here: [Software QA Checklists](https://github.com/votingworks/docs-vxsuite-v4/blob/main/quality-assurance/testing/internal-testing/Software%20QA%20Checklists.pdf). When performing QA before a release for a particular state or election, we often tweak these base checklists to hone in on the specific circumstances, e.g., using specific adjudication settings and paper ballot lengths.
+To organize this process, we make use of checklists. A base set of checklists can be viewed here: [Software QA Checklists](https://github.com/votingworks/docs-vxsuite-v4/blob/main/quality-assurance/Software%20QA%20Checklists.pdf). When performing QA before a release for a particular state or election, we often tweak these base checklists to hone in on the specific circumstances, e.g., using specific adjudication settings and paper ballot lengths.
 
 ### Safe Concurrency (2.5-B)
 
