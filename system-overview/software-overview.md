@@ -60,10 +60,10 @@ Because all voter selections are recorded on paper, voter-verified, and unmodifi
 
 There are four code repositories relevant to the voting system:
 
-* [vxsuite](https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch) - Core application code
-* [kiosk-browser](https://github.com/votingworks/kiosk-browser/tree/v4.0.0-release-branch) - Generic Electron-based kiosk-mode browser
-* [vxsuite-complete-system](https://github.com/votingworks/vxsuite-complete-system/tree/v4.0.0-rc2) - Links compatible versions of vxsuite and kiosk-browser, and includes the scripts necessary to create a production machine
-* [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.0.0) - Our framework for building VxSuite and managing its dependencies, across versions and environments
+* [vxsuite](https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch) — Core application code
+* [kiosk-browser](https://github.com/votingworks/kiosk-browser/tree/v4.0.0-release-branch) — Generic Electron-based kiosk-mode browser
+* [vxsuite-complete-system](https://github.com/votingworks/vxsuite-complete-system/tree/v4.0.0-rc2) — Links compatible versions of vxsuite and kiosk-browser, and includes the scripts necessary to create a production machine
+* [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.0.0) — Our framework for building VxSuite and managing its dependencies, across versions and environments
 
 ## Key Dependency Chart
 
