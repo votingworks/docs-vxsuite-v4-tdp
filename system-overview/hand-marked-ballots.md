@@ -16,7 +16,7 @@ layout:
 
 VxSuite can tabulate a wide variety of ballot designs as long as they conform to the following requirements:
 
-1. Ballot size much be one of the available system options
+1. Ballot size must be one of the available system options
 2. Ballot must include correctly formatted timing mark borders
 3. Ballot must include an appropriately positioned metadata QR code
 4. Ballot must use a specific bubble shape
