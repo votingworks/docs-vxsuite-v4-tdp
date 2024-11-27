@@ -1,7 +1,7 @@
 ---
 description: >-
-  This document covers supported capabilities and system limits that
-  collectively define the VxSuite Implementation Statement.
+  This document covers supported capabilities and system limits that, alongside
+  the System Overview, constitute the VxSuite Implementation Statement.
 ---
 
 # System Performance & Specifications

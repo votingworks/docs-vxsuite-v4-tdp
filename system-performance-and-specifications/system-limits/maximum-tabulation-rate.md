@@ -1,7 +1,5 @@
 # Maximum Tabulation Rate
 
-##
-
 The maximum tabulation rate for batch-fed scanners is primarily limited by the hardware scanning speed limit for each central scanner model:
 
 * Ricoh fi-8170: 80 sheets per minute
