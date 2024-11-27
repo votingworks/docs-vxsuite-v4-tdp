@@ -41,7 +41,7 @@ This chip is FIPS140-2-certified: [https://csrc.nist.gov/projects/cryptographic-
 
 ### OpenSSL
 
-We use OpenSSL 3.0.9 and install the FIPS provider, per [these instructions](https://github.com/openssl/openssl/blob/master/README-FIPS.md#installing-the-fips-provider).
+We use OpenSSL 3.0.9 and install the FIPS provider, per [these instructions](https://github.com/openssl/openssl/blob/master/README-FIPS.md#installing-the-fips-provider). In the basic configuration wizard run on first boot after imaging, we run the mandatory `openssl fipsinstall` command to ensure that the FIPS provider is configured correctly and OpenSSL is running in FIPS mode.
 
 This provider is FIPS140-2-certified: [https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4282](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4282).
 
