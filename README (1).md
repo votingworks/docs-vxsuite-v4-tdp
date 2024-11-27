@@ -66,7 +66,7 @@ VotingWorks works closely with suppliers to ensure quality components. We requir
 
 VotingWorks component test procedures vary on a component-by-component basis:
 
-* **Custom Manufactured Parts** - Metal and plastic parts manufactured specifically for VotingWorks (e.g. a metal panel in VxScan) are visually inspected and measured against dimensions specifified in their engineering drawings.
+* **Custom Manufactured Parts** - Metal and plastic parts manufactured specifically for VotingWorks (e.g. a metal panel in VxScan) are visually inspected and measured against dimensions specified in their engineering drawings.
 * **Complex Electrical Subassemblies** - Large electrical components, which are often critical components, are tested before being installed in any machine. For example, the embedded scanner in VxScan is tested for motor control and image quality. VotingWorks has command-line interfaces that allow controlling and testing devices outside of a full software installing, simply by connecting them to a development machine.
 
 Smaller or common COTS components, like a simple USB cable or piece of hardware, are visually inspected and their proper operation is covered by the quality assurance done on each individual unit.

@@ -2,8 +2,6 @@
 
 ## Overview
 
-### &#x20;<a href="#laptop" id="laptop"></a>
-
 ### Laptop <a href="#laptop" id="laptop"></a>
 
 VxAdmin and VxCentralScan are both laptops that connect to peripherals as needed. The laptop is a [custom configured HP Elitebook 840 14" G11](vxadmin-and-vxcentralscan-hardware.md#laptop-specification).
@@ -68,7 +66,7 @@ The laptop is a custom configuration of the widely available HP Elitebook 840 14
 | Battery                  | 56Wh Capacity                       |
 | Webcam                   | None                                |
 | Near Field Communication | None                                |
-| WWAN (Celular)           | None                                |
+| WWAN (Cellular)          | None                                |
 | WLAN (Wi-Fi)             | None                                |
 | Fingerprint Sensor       | None                                |
 | Smart Card Reader        | Included                            |
