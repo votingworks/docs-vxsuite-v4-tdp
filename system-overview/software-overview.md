@@ -71,7 +71,7 @@ There are four code repositories relevant to the voting system:
 
 ## Traceability of Procured Software
 
-We take care to ensure that we're pulling authentic/correct versions of dependencies, by verifying against known hashes, checksums, or digital signatures The details of this are covered in [hash-checksum-verification.md](../software-installation/trusted-build/hash-checksum-verification.md "mention").
+We take care to ensure that we're pulling authentic/correct versions of dependencies, by verifying against known hashes, checksums, or digital signatures. The details of this are covered in [hash-checksum-verification-of-dependencies.md](../software-installation/trusted-build/hash-checksum-verification-of-dependencies.md "mention").
 
 ## Software Best Practices
 

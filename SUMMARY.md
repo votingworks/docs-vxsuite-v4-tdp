@@ -59,7 +59,7 @@
     * [Offline Phase](software-installation/trusted-build/offline-phase.md)
     * [Final Configuration](software-installation/trusted-build/final-configuration/README.md)
       * [Secure Boot Signing](software-installation/trusted-build/final-configuration/secure-boot-signing.md)
-    * [Hash/Checksum Verification](software-installation/trusted-build/hash-checksum-verification.md)
+    * [Hash/Checksum Verification of Dependencies](software-installation/trusted-build/hash-checksum-verification-of-dependencies.md)
     * [Virt Manager - Network Access & Troubleshooting](software-installation/trusted-build/virt-manager-network-access-and-troubleshooting.md)
   * [Imaging Machines](software-installation/imaging-machines/README.md)
     * [Preparing USB Drives for Imaging](software-installation/imaging-machines/preparing-usb-drives-for-imaging.md)
