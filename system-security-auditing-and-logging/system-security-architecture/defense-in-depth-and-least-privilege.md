@@ -20,7 +20,7 @@ VxSuite runs a minimal window manager, Openbox, which is built to have very few 
 
 ## Compartmentalization of Permissions and Separation of Auth
 
-All processes that a user can directly interact with in VxSuite run as user `vx-ui`. The processes that access the smartcard reader or perform data processing services run as user `vx-services`.&#x20;
+All processes that a user can directly interact with in VxSuite run as user `vx-ui`. The processes that access the smart card reader or perform data processing services run as user `vx-services`.&#x20;
 
 The `vx-services` Linux user has a set of permissions allowing it to access the scanner, printer, and smart card reader. It is configured, like the root user, to not have a password, so no interactive user can log in as `vx-services` and utilize those privileges for nefarious purposes. The services that run under the `vx-services` user account offer their services over local HTTP, with well-formed semantics as to what actions they allow. The authentication status is checked on the backend, by `vx-services`, so actions can only be taken if a valid authentication session is open.
 
