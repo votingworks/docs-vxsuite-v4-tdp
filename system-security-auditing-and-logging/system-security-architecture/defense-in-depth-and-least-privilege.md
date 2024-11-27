@@ -6,6 +6,18 @@ Beyond the application-level protections and system integrity assurances built t
 
 VxSuite runs a modern, stripped down Linux installation with the minimum number of packages to reduce the attack surface of any unexpected partial penetration. The set of packages is manually curated by our team and specified in our installation manifests when building a base Linux image.
 
+### DEP and ASLR
+
+The Linux OS makes use of data execution prevention (DEP) and address space layout randomization (ASLR). These exploit mitigation strategies provide a low-level layer of protection against a variety of vulnerabilities. We have verified that these mechanisms are active via the following commands:
+
+```
+# For DEP, verify that the nx flag is set on CPUs
+grep -m1 ' nx ' /proc/cpuinfo
+
+# For ASLR, verify that the output of this is 1 or 2, not 0
+cat /proc/sys/kernel/randomize_va_space
+```
+
 ## No Root User Access
 
 Once a VxSuite image is built, access for the root user is shut down and that shutdown is locked in via secure-boot verification of the root partition.&#x20;
