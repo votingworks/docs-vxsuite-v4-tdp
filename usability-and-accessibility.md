@@ -16,8 +16,8 @@ VotingWorks implemented user centered design in the following ways:&#x20;
 
 ## Usability and Accessibility Testing Reports
 
-[VotingWorks Pollworker Testing Report VxSuite](https://github.com/votingworks/docs-vxsuite-v4/blob/main/uat-reports/vxsuite-v4-pollworker-testing-report.pdf)
+### [VotingWorks Pollworker Testing Report VxSuite](https://github.com/votingworks/docs-vxsuite-v4/blob/main/uat-reports/vxsuite-v4-pollworker-testing-report.pdf)
 
-[VotingWorks UAT Report VxSuite](https://github.com/votingworks/docs-vxsuite-v4/blob/main/uat-reports/vxsuite-v4-pollworker-testing-report.pdf)
+### [VotingWorks UAT Report VxSuite](https://github.com/votingworks/docs-vxsuite-v4/blob/main/uat-reports/vxsuite-v4-pollworker-testing-report.pdf)
 
 \
