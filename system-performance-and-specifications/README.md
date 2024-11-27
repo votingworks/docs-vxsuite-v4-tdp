@@ -1,3 +1,9 @@
+---
+description: >-
+  This section summarizes supported capabilities and system limits that
+  collectively define the VxSuite Implementation Statement.
+---
+
 # System Performance & Specifications
 
 ## [supported-voting-variations-and-languages.md](supported-voting-variations-and-languages.md "mention")
