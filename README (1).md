@@ -1,6 +1,6 @@
 # Quality Assurance Manual
 
-VxSuite product quality is nesured via both focused processes on individual aspects of the system, and through overall integration testing that ensure the system is working well end to end.
+VxSuite product quality is ensured through both focused processes on individual aspects of the system and through overall integration testing that ensure the system is working well end-to-end.
 
 ## Quality Assurance Protocols – Software
 
