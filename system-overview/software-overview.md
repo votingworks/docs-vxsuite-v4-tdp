@@ -84,6 +84,10 @@ We also require peer code review of every change ([examples of that process here
 
 Our practices around testing are covered under [#quality-assurance-protocols-software](<../README (1).md#quality-assurance-protocols-software> "mention").
 
+### Failure Recovery
+
+The VotingWorks codebase uses database transactions to ensure that only complete and consistent (and not partial) updates are persisted. For data synced across a machine's internal drive and a connected USB drive, namely CVRs, we detect when data has fallen out of sync after a failure using the Merkle tree hash of the data ([hashing-of-continuously-exported-cast-vote-records.md](../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/hashing-of-continuously-exported-cast-vote-records.md "mention")) and re-sync data as needed.
+
 {% hint style="success" %}
 Through the above best practices, tooling used to enforce those best practices, and peer code review of every change, we guarantee that we meet the following requirements:
 
