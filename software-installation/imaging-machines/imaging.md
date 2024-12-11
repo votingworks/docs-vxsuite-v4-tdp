@@ -4,8 +4,10 @@ First make sure that you've prepared USB drives for imaging, following the instr
 
 1. Power off the machine.
 2. Insert both the vx-iso and image USB drives into the system. If this is a VxMark or a VxScan, connect a keyboard as well. If there aren't enough ports available, use a USB hub as provided by VotingWorks.
-3. Power on the machine. Our machines our configured to auto-boot from a bootable USB drive when connected and should auto-boot to vx-iso. You can navigate vx-iso with the keyboard.
-4. Select "Write an image". This option will be auto-selected in 10 seconds.
+3. Power on the machine to begin booting vx-iso.&#x20;
+   1. The precinct system components (VxMark and VxScan) are to auto-boot from a bootable USB drive when connected and should auto-boot to vx-iso.&#x20;
+   2. The central system components (VxAdmin and VxCentralScan) require entering f9 after powering on to boot to USB. Select the USB drive corresponding to the vx-iso drive.
+4. Select "Write an image". You can navigate vx-iso with the keyboard. This option will be auto-selected in 10 seconds.
 5. If the machine already has Secure Boot keys installed, it should not prompt you to install keys. If it does for some reason, you should reach out to VotingWorks for assistance. Only if you know the keys need to be installed should you opt to install them.
 6. The images on the image USB drive will be displayed. Select the number that identifies the correct image.
 7. Enter 27 for the final expected size of the image in GB.
