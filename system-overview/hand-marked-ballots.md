@@ -74,7 +74,7 @@ For full specifications on how to generate readable QR codes, view the [ballot e
 
 ### Metadata QR Code Placement
 
-The interpreter looks for ballots in the bottom-left corner of the ballot. The detection area is a square whose sides are 1/4 of the ballot width.&#x20;
+The interpreter looks for the QR code in the bottom-left corner of the ballot. The detection area is a square whose sides are 1/4 of the ballot width.&#x20;
 
 <figure><img src="../.gitbook/assets/image (66).png" alt=""><figcaption><p>The highlighted area must contain the metadata QR code</p></figcaption></figure>
 
