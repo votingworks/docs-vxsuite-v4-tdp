@@ -48,7 +48,7 @@ Every ballot must have timing mark borders on both front and back. The timing ma
 | Page Margin (Top, Bottom) | 12pt (1/6 in.) |
 | Page Margin (Left, Right) | 5mm            |
 
-As for number of timing marks, there are always 34 in the top and bottom borders. The number of marks in the left and right borders varies based on the length of the ballot, and should be calculated by the formula **(# inches \* 4) - 3**. For example, a letter-sized ballot (11 inches) should have 41 left and right timing marks whereas a legal-sized ballot (14 inches) should have 53 left and right timing marks.
+As for number of timing marks, there are always 34 in the top and bottom borders, which has a 32 x 39 grid of possible bubble positions inside the timing mark border. The number of marks in the left and right borders varies based on the length of the ballot, and should be calculated by the formula **(# inches \* 4) - 3**. For example, a letter-sized ballot (11 inches) should have 41 left and right timing marks whereas a legal-sized ballot (14 inches) should have 53 left and right timing marks.
 
 The timing marks must be aligned to the margins of the page and evenly spaced.
 
