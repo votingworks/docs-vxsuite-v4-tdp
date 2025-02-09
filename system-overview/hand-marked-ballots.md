@@ -31,8 +31,6 @@ There are six valid ballot sizes. All are 8.5 inches in width, but vary in heigh
 | Letter     | 11"    | 8.5"  |
 | Legal      | 14"    | 8.5"  |
 | Custom 17" | 17"    | 8.5"  |
-| Custom 18" | 18"    | 8.5"  |
-| Custom 21" | 21"    | 8.5"  |
 | Custom 22" | 22"    | 8.5"  |
 
 These lengths correspond to the length specified in the [Ballot Layout](hand-marked-ballots.md) within the election definition.
