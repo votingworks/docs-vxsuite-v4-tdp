@@ -27,9 +27,11 @@ Once the VotingWorks download has completed and been verified, and the VM has be
 
 ## Secure Boot Signing
 
-VotingWorks will boot the VM, attach a virtual device containing our Secure Boot signing keys, and select the option to "Lock the System Down" from the vendor menu. When prompted, VotingWorks will enter the passphrase for the Secure Boot signing keys.
+VotingWorks will boot the VM, change the vendor password, attach a virtual device containing our Secure Boot signing keys, and select the option to "Lock the System Down" from the vendor menu. When prompted, VotingWorks will enter the passphrase for the Secure Boot signing keys.
 
 When the process completes, the lock-down script displays the system hash. This hash will be provided to SLI/EAC for official verification of the image.
+
+Note: The vxmark VM currently requires a slightly modified process. For vxmark, VotingWorks will boot the VM, change the vendor password, then shut the VM down. After verifying it is not in a running state, VotingWorks will boot the VM again and complete the rest of the process as previously described.
 
 ## Transferring a Signed Image from VotingWorks to SLI
 

@@ -23,7 +23,7 @@ cd ~/code/vxsuite-build-system
 ./scripts/tb-clone-images.sh <inventory-name>
 ```
 
-At this point, you should have three separate VMs: `debian-<inventory-name>-<apt-snapshot-date>-<debian-release-name>`, `online`, and `offline`. You can confirm this by running:
+At this point, you should have two separate VMs: `debian-<inventory-name>-<apt-snapshot-date>-<debian-release-name>`and `online`. You can confirm this by running:
 
 ```
 sudo virsh list --all
