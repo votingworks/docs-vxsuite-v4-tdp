@@ -14,13 +14,11 @@ git clone https://github.com/votingworks/vx-iso.git
 cd vx-iso
 ```
 
-To create a vx-iso USB drive, you can follow these instructions: [https://github.com/votingworks/vx-iso/blob/main/README.md#creating-an-install-drive](https://github.com/votingworks/vx-iso/blob/main/README.md#creating-an-install-drive)
+[Follow these instructions](https://github.com/votingworks/docs-vxsuite-v4/blob/main/software-docs/README-vx-iso.md) to create a vx-iso and/or image USB drive.
 
 {% hint style="info" %}
 If this is SLI, we have provided you with vx-iso USB drives so that you don't need to prepare them from scratch.
 {% endhint %}
-
-To create an image USB drive, you can follow these instructions: [https://github.com/votingworks/vx-iso/blob/main/README.md#creating-an-image-with-optional-secure-boot-keys-drive](https://github.com/votingworks/vx-iso/blob/main/README.md#creating-an-image-with-optional-secure-boot-keys-drive)
 
 You'll need access to the relevant images and optionally the VotingWorks Secure Boot **public** keys. Both of these are stored on a private S3 bucket, though they're not sensitive, and VotingWorks can prepare temporary links to grant access to them.
 
