@@ -68,7 +68,7 @@ The log export flow exposed in all VxSuite applications also allows for exportin
 
 ## 15.1-D Logging Event Types Table
 
-A full list of all logs made in the system with a description of each one can be found [here](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/logging/VotingWorksLoggingDocumentation.md). For convenience a table is provided below mapping Table 15-1 from VVSG 2.0 Requirement 15.1-D to the appropriate logs in the VotingWorks system. The details and descriptions provided in Table 15-1 have been simplified for brevity in this table. Some items have been expanded into multiple rows to more precisely specify linked logs.
+A full list of all logs made in the system with a description of each one can be found [here](https://github.com/votingworks/docs-vxsuite-v4/blob/main/software-docs/VotingWorksLoggingDocumentation.md). For convenience a table is provided below mapping Table 15-1 from VVSG 2.0 Requirement 15.1-D to the appropriate logs in the VotingWorks system. The details and descriptions provided in Table 15-1 have been simplified for brevity in this table. Some items have been expanded into multiple rows to more precisely specify linked logs.
 
 #### General System Functions
 
