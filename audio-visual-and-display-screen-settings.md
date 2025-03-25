@@ -15,7 +15,7 @@ The voting system features three electronic display screens - on VxScan, on VxMa
 
 All audio and video devices are tested to be in accordance with the requirements of IEC/UL 62368-1 (8.1-K).
 
-<table><thead><tr><th width="167">Device</th><th>Test Report</th></tr></thead><tbody><tr><td>VxScan</td><td><a href="https://github.com/votingworks/docs-vxsuite-v4/blob/main/quality-assurance/testing/external-testing/Eurofins%20Safety%20Report%20-%2001%20EE%20132954_62368-1.pdf">UL 62368-1 Test Report</a></td></tr><tr><td>VxMark</td><td>Report Pending</td></tr><tr><td>Central Laptops</td><td><a href="https://github.com/votingworks/docs-vxsuite-v4/blob/main/hardware-assets/cots-documentation/central-system/hp-elitebook-840-14in-g11/hp-elitebook-840-14in-g11-datasheet.pdf">UL 62368-1 certified</a></td></tr></tbody></table>
+<table><thead><tr><th width="167">Device</th><th>Test Report</th></tr></thead><tbody><tr><td>VxScan</td><td><a href="https://github.com/votingworks/docs-vxsuite-v4/blob/main/quality-assurance/testing/external-testing/Eurofins%20Safety%20Report%20-%2001%20EE%20132954_62368-1.pdf">UL 62368-1 Test Report</a></td></tr><tr><td>VxMark</td><td>Report Available on Request</td></tr><tr><td>Central Laptops</td><td><a href="https://github.com/votingworks/docs-vxsuite-v4/blob/main/hardware-assets/cots-documentation/central-system/hp-elitebook-840-14in-g11/hp-elitebook-840-14in-g11-datasheet.pdf">UL 62368-1 certified</a></td></tr></tbody></table>
 
 ## Audio-Visual Settings
 
