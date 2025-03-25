@@ -14,6 +14,10 @@ VotingWorks implemented user centered design in the following ways:&#x20;
 * **Multidisciplinary Collaboration**: VotingWorks gathered feedback from not just election officials and voters, but also academics and other interested stakeholders.&#x20;
 * **Usability Testing**: Finally, VotingWorks conducted formal usability and accessibility testing, as required by VVSG 2.0.&#x20;
 
+## Federal Standards for Accessibility
+
+VotingWorks components are all designed and tested to applicable federal standards for accessibility including the version of Section 508 Information and Communication Technology (ICT) Final Standards and Guidelines \[USAB18], in effect as of January 18, 2018, and the WCAG 2.0 Level AA checkpoints \[W3C10] included in that standard
+
 ## Usability and Accessibility Testing Reports
 
 ### [VotingWorks Pollworker Testing Report VxSuite](https://github.com/votingworks/docs-vxsuite-v4/blob/main/uat-reports/vxsuite-v4-pollworker-testing-report.pdf)
