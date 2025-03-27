@@ -1,6 +1,6 @@
 # Reliably Detectable Marks
 
-Marks are determined valid and counted by the system if the amount of darker pixels in the bubble area exceeds a configurable "definite" mark threshold set in the [election-package](../system-overview/election-package/ "mention") system settings file. This mark threshold can be adjusted to have a stricter or looser interpretation of what is considered a valid mark.&#x20;
+Marks are determined valid and counted by the system if the amount of darker pixels in the bubble area exceeds a configurable "definite" mark threshold set in the [election-package](../system-overview/election-package/ "mention") system settings file. This mark threshold can be adjusted to have a stricter or looser interpretation of what is considered a valid mark. Marks are either valid or invalid — the voting system does not process any marks as ambiguous.
 
 The recommended and default threshold is 7%. With this threshold setting, hand marked paper ballot interpretation detects a valid mark per the mark conditions described by VVSG 1.1.6-H.
 
