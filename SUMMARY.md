@@ -66,6 +66,7 @@
     * [Imaging](software-installation/imaging-machines/imaging.md)
     * [Basic Configuration Wizard](software-installation/imaging-machines/basic-configuration-wizard.md)
     * [Verifying the Image Installed on a Machine](software-installation/imaging-machines/verifying-the-image-installed-on-a-machine.md)
+    * [Software Installation Record Creation](software-installation/imaging-machines/software-installation-record-creation.md)
 * [System Operations & Training Manual](https://docs.voting.works/vxsuite-user-manual-v4)
 * [System Inspection & Logic and Accuracy Testing](https://docs.voting.works/vxsuite-user-manual-v4/logic-and-accuracy-pre-election-testing/l-and-a-overview)
 * [System Maintenance Manual](https://docs.voting.works/vxsuite-user-manual-v4/system-maintenance/maintenance-overview)
