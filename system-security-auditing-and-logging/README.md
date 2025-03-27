@@ -8,7 +8,7 @@
 
 ## [auditing.md](auditing.md "mention")
 
-## [logging](logging/ "mention")
+## [logging.md](logging.md "mention")
 
 ## [known-vulnerabilities.md](known-vulnerabilities.md "mention")
 
