@@ -6,7 +6,7 @@ All VxSuite applications use the same framework to log user actions, application
 
 VxSuite applications use a [shared logging library ](https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch/libs/logging)to capture required or otherwise important application log events. The core metadata for each application log event maps roughly to VVSG 2.0 standards, with some additional fields:
 
-* **Log Event ID** - Internal identifier for each event. The full list of log event IDs with descriptions is included in the automatically generated log [documentation](https://github.com/votingworks/docs-vxsuite-v4/blob/main/software-docs/VotingWorksLoggingDocumentation.md).
+* **Log Event ID** - The unique identifier for each event. The full list of log event IDs with descriptions is included in the automatically generated log [documentation](https://github.com/votingworks/docs-vxsuite-v4/blob/main/software-docs/VotingWorksLoggingDocumentation.md).
 * **Log Event Type** - Describes whether the event is a status update or an action, and whether it originated with the user, application, or larger system. The full list of log event types with descriptions is included in the automatically generated log [documentation](https://github.com/votingworks/docs-vxsuite-v4/blob/main/software-docs/VotingWorksLoggingDocumentation.md).
 * **User** - If there was an authenticated user role at the time of a user action, describes the role as `system_administrator`, `election_manager`, `poll_worker` or `vendor`. If no user was authenticated, then `unknown`. If event does not originate from the user but rather automatically from the application or operating system, it will be `system`.&#x20;
 * **Disposition** - For actions that can fail or succeed, `success` or `failure`. Otherwise `na` for not applicable.
@@ -62,9 +62,7 @@ Logs can be exported in CDF format, in which case the `vx-logs.log` file is repl
 
 ## Error Logs
 
-The log export flow exposed in all VxSuite applications also allows for exporting an errors-only version of the logs. This will only export a log file for logs where the disposition is "failure" and covers all software and hardware errors that have occurred on the machine.&#x20;
-
-
+The log export flow exposed in all VxSuite applications also allows for exporting an errors-only version of the logs. This will only export a log file for logs where the disposition is "failure" and covers all software and hardware errors that have occurred on the machine.
 
 ## 15.1-D Logging Event Types Table
 
