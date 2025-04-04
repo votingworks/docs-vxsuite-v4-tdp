@@ -16,6 +16,9 @@ VxSuite supports a wide range of paper for hand-marked paper ballot style printi
 * **Ink:** typical oil-based or soy-based inks are appropriate for printing presses; typical laser toner or inkjet ink are appropriate for smaller printers & copiers.
 * **Folding:** ballots should not be folded through bubbles.
 * **Bleed-through:** bleed through should not be present when using recommend paper weight (105-177 gsm) and marking method (ball point pen).
+* **Margins:** the paper margins listed below are required for proper timing mark interpretation and adequate space for VxCentralScan imprinting outside of the ballot selection area and timing marks:
+  * Left/right: 5mm (0.19685 in)
+  * Top/bottom: 12pt (0.16667 in)
 
 ## Ballot Marking Device Ballots
 
