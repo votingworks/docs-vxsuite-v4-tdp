@@ -20,7 +20,7 @@ Power is controlled by a button in the back left of the machine. When activated,
 
 <figure><img src="../.gitbook/assets/power-labelled.png" alt="" width="375"><figcaption><p>Power controls</p></figcaption></figure>
 
-
+VxMark does not require any direct bodily contact or for the body to be part of any electrical circuit to function.
 
 ### Storage
 
