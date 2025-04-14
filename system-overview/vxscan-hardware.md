@@ -64,6 +64,8 @@ All USB cables ultimately connect to the single board computer. The card reader 
 
 The wiring digram below outlines the power and data connections within the scanner. Black lines indicate power connections, gray lines indicate ground connections, and purple lines indicate data connections, which may also carry low voltage power.
 
+VxScan does not require any direct bodily contact or for the body to be part of any electrical circuit to function.
+
 <figure><img src="../.gitbook/assets/image (64).png" alt=""><figcaption><p>VxScan Wiring Diagram</p></figcaption></figure>
 
 <div><figure><img src="../.gitbook/assets/internals.png" alt="" width="563"><figcaption><p>Wiring components</p></figcaption></figure> <figure><img src="../.gitbook/assets/IMG_1611.jpg" alt="" width="375"><figcaption><p>Voltage warning over power supplies</p></figcaption></figure></div>
