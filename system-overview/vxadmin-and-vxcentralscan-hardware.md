@@ -27,13 +27,11 @@ VxCentralScan connects to a batch scanner for batch scanning. The scanner is eit
 
 Both batch scanners can be used with Ricoh imprinters (not pictured) which allow printing an identifier on each ballot as it's exiting the scanner, which can be useful for certain types of post-election audits.&#x20;
 
-The batch scanner is powered through an Anker Solix C300 LFS (Lithium Ferrite System) UPS (Uninterruptible Power Supply) to ensure that the scanner can operate in variable power environments.&#x20;
+The batch scanner is powered through an APC BN1500M2 UPS (Uninterruptible Power Supply) to ensure that the scanner can operate in variable power environments.&#x20;
 
 The fi-8170 includes an RJ45 (ethernet) port which is blocked by a port blocker because network connectivity is not required by the system.
 
-<figure><img src="../.gitbook/assets/PXL_20241119_215840432.jpg" alt="" width="563"><figcaption><p>VxCentralScan fully connected with mouse, hub, charger, USB cable, scanner, and power backup</p></figcaption></figure>
-
-<figure><img src="../.gitbook/assets/PXL_20241119_215725302.jpg" alt="" width="563"><figcaption><p>VxCentralScan fully connected with mouse, hub, charger, USB cable, scanner, and power backup</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/centralscan.jpg" alt=""><figcaption><p>VxCentralScan fully connected with mouse, hub, charger, USB cable, scanner (fi-8170), and power backup</p></figcaption></figure>
 
 ## Bill of Materials
 
