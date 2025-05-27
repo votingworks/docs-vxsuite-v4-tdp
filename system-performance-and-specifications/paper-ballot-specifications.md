@@ -30,4 +30,4 @@ VxMark requires a specific type of thermal paper ballot stock as required by the
 * **Length:** 13.25"
 * **Corner Cut:** 16mm, 45° cut, top-right of thermal coated side
 
-TF 1467 paper is only provided in one configuration on white paper with a weight of 140gsm and thermally coated on one side. VxMark expects the thermal side to be fully blank and therefore pre-printing attributes such as watermarking, ink, and margins are not applicable. Similarly, these ballots are only to be used with ballot marking devices and attributes specific to hand-marking such as folding and bleed-through are also not applicable.
+TF 1467 paper is only provided in one configuration on white paper with a weight of 140gsm, an opacity greater than 90%, and thermal coating on one side. VxMark expects the thermal side to be fully blank and therefore pre-printing attributes such as watermarking, ink, and margins are not applicable. Similarly, these ballots are only to be used with ballot marking devices and attributes specific to hand-marking such as folding and bleed-through are also not applicable.
