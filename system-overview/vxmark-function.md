@@ -78,6 +78,10 @@ From the poll worker screen a poll worker may choose "Insert Printed Ballot" in 
 **User Manual Reference**: [Voting Sessions](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/voting-sessions "mention")
 {% endhint %}
 
+### Voter Privacy
+
+The voter's choices do not persist on VxMark after the end of the voting session. Other than the increase in the count of printed ballots, the only data that persist after each voting session are the relevant log events for authentication, casting a ballot, invalidating a ballot, and hardware state changes. The voter's selections or any voter actions that may trigger selections (such as touch screen presses, accessible controller presses, PAT input events) are not included in logging or otherwise persisted. After the voting session is complete, their printed ballot is the only record of their selections. Throughout the voting session, the physical privacy shield restricts others' view of the voter's actions and their printed ballot.
+
 ## Display Formats & Interaction Modes
 
 VxMark supports voting sessions in various display formats and interaction modes.
