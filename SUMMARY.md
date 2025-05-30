@@ -74,4 +74,5 @@
 * [Audio Visual & Display Screen Settings](audio-visual-and-display-screen-settings.md)
 * [Quality Assurance Manual](<README (1).md>)
 * [Warranty Model](warranty-model.md)
-* [Public Documents](public-documents.md)
+* [Public Documents](public-documents/README.md)
+  * [Ballot QR Code Data Format](public-documents/ballot-qr-code-data-format.md)
