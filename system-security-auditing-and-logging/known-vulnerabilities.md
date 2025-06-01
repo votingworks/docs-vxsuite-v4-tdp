@@ -6,6 +6,17 @@ VotingWorks' vulnerability disclosure policy is publicly available here: [https:
 
 The public disclosure policy provides instructions on how to report a vulnerability, where to see known vulnerabilities, and the coordinated vulnerability disclosure process VotingWorks follows.
 
+### Patch Management Plan
+
+We handle vulnerabilities using the following coordinated vulnerability disclosure process:
+
+* The reporter reports the vulnerability privately to VotingWorks.
+* VotingWorks works privately with the reporter to understand the vulnerability, with an initial response within 10 business days of receipt of the report.
+* VotingWorks prepares fixes as needed for reported vulnerabilities. Some fixes will be operational, others in software, and others potentially in hardware. Where the issues affect a third-party component, VotingWorks will do its best to coordinate advisories and disclosures with other involved parties.
+* When fixes require certification by the appropriate agencies, notably the Election Assistance Commission, VotingWorks works with these agencies to certify the fixes.
+* VotingWorks privately works with affected jurisdictions to deploy mitigations and fixes.
+* VotingWorks assigns a CVE for the vulnerability and publishes the vulnerability on the disclosure page, giving credit to the reporter if they choose to take credit. VotingWorks reserves the assignment of a CVE to confirmed security issues on products that have not been end-of-life’d.
+
 ## Known Vulnerabilities Not of Concern
 
 Given the protection mechanisms we use to prevent unauthorized software from running on VxSuite components, the simplest way to perform a vulnerability scan is to use Nessus in a host operating system, with VxSuite components running as guest virtual machines (VMs). We turn off our networking blocks on those VMs for the sake of performing a useful vulnerability scan.
