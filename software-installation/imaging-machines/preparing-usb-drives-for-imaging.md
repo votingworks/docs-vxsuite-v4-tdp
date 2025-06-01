@@ -5,7 +5,7 @@ To install an image on a VotingWorks component, i.e., to image a machine, you ne
 * A vx-iso USB drive — [vx-iso](https://github.com/votingworks/vx-iso) is our VotingWorks-specific ISO installer program.
 * An image USB drive — This is an empty USB drive with two partitions, a "Data" partition that can contain as many VotingWorks images as space allows and a "Keys" partition that can optionally contain the VotingWorks Secure Boot public keys, necessary if a machine hasn't had these keys installed yet.
 
-USB drives used as vx-iso drives must be zeroed out before first use. This step will also ensure the USB drive is empty and no longer contains any previous data prior to use as installation media. You can zero out a drive with the following command, substituting `/dev/sdX`with the appropriate path to the USB you are using, e.g. `/dev/sda`&#x20;
+USB drives used as vx-iso drives must be zeroed out before first use. This step will also ensure the USB drive is empty and no longer contains any previous data prior to use as installation media. You can zero out a drive with the following command, substituting `/dev/sdX` with the appropriate path to the USB you are using, e.g. `/dev/sda`&#x20;
 
 ```
 sudo dd if=/dev/zero of=/dev/sdX bs=8M && sudo sync
@@ -59,7 +59,7 @@ Since the signed image file is located in the root user's home directory by defa
 To copy the image to the USB drive, run the following command as the **vx** user:
 
 ```
-sudo cp ~root/vxadmin-signed.img.lz4 && sudo sync
+sudo cp ~root/vxadmin-signed.img.lz4 /media/vx/Data && sudo sync
 ```
 
 Once the copy and sync completes, you can eject the USB drive and remove it. It is now ready to image a machine. Repeat this process with any other USB drives and VotingWorks image files as required.&#x20;
