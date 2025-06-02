@@ -18,7 +18,7 @@ The machine signs that payload with its TPM private key and then bundles the fol
 This combination is displayed as a QR code. Putting this all together, the QR code contains:
 
 ```
-message = 1//shv//<system-hash>#<software-version>#<election-id>#<current-timestamp>
+message = 1//shv1//<system-hash>#<software-version>#<election-id>#<current-timestamp>
 qrCode  = <message>;signature(<message>);<machine-cert>
 ```
 
