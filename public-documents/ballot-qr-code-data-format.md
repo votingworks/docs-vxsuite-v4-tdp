@@ -36,6 +36,10 @@ If the contest does not allow write-ins (`allowWriteIns = false`) then the candi
 
 After the number of write-ins, the write-ins are written in series, with 6 bits containing the length of the write-in, in bytes, and then the write-in itself in however many bytes after that. The bytes are in UTF-8 format.
 
+## QR Code Specifications
+
+HMPB and BMD QR codes are [Model 2 QR codes](https://www.qrcode.com/en/codes/model12.html) with [Level H error correction](https://www.qrcode.com/en/about/error_correction.html).
+
 ## Source Code
 
 The source code and further technical documentation of how ballot QR codes are encoded and decoded can be found in the [ballot-encoder library](https://github.com/votingworks/vxsuite/tree/v4.0.1-release-branch/libs/ballot-encoder).

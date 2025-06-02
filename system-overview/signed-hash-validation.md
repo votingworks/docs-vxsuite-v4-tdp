@@ -35,7 +35,11 @@ After completing the above verification, [https://check.voting.works](https://ch
 | :------------------------------------------------------------------------: | :--------------------------------------------------------------------: |
 | <img src="../.gitbook/assets/machine (1).png" alt="" data-size="original"> | <img src="../.gitbook/assets/web (2).PNG" alt="" data-size="original"> |
 
-### Code Links
+## QR Code Specifications
+
+Signed Hash Validation QR codes are [Model 2 QR codes](https://www.qrcode.com/en/codes/model12.html) with [Level H error correction](https://www.qrcode.com/en/about/error_correction.html).
+
+## Code Links
 
 Refer to the following code links for more details:
 
