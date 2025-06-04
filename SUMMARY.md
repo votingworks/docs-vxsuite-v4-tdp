@@ -32,6 +32,7 @@
     * [Maximum Tabulation Rate](system-performance-and-specifications/system-limits/maximum-tabulation-rate.md)
   * [Paper Ballot Specifications](system-performance-and-specifications/paper-ballot-specifications.md)
   * [Reliably Detectable Marks](system-performance-and-specifications/reliably-detectable-marks.md)
+  * [Safety, Security, Privacy, and Continuity of Operation](system-performance-and-specifications/safety-security-privacy-and-continuity-of-operation.md)
   * [Processing Capabilities](system-performance-and-specifications/processing-capabilities.md)
 * [System Security, Auditing & Logging](system-security-auditing-and-logging/README.md)
   * [System Security Architecture](system-security-auditing-and-logging/software-security.md)
