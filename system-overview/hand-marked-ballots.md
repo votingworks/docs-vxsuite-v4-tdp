@@ -24,7 +24,7 @@ VxSuite can tabulate a wide variety of ballot designs as long as they conform to
 
 ## Ballot Size
 
-There are six valid ballot sizes. All are 8.5 inches in width, but vary in height:
+There are four valid ballot sizes. All are 8.5 inches in width, but vary in height:
 
 | Name       | Length | Width |
 | ---------- | ------ | ----- |

@@ -6,8 +6,6 @@ VxAdmin acts as the election setup hub at the beginning of the election and the 
 
 Only a [system administrator ](user-roles.md#system-administrator-role)can authenticate onto an unconfigured VxAdmin and configure it with an election package from an external system. The election package must be loaded via a USB drive. The election package must be a valid `.zip` [election package](election-package/). If the election package zip file, election definition file, system settings file, or metadata file are not valid, VxAdmin will surface an error to the user.
 
-It's also possible to configure VxAdmin directly from a `.json` [election definition](election-package/#election-definition) file rather than a full election package. The system will use default system settings and include no additional translations for application strings. Uploading a `.json` file directly is not recommended for general use because it means you are unable to customize system settings like ballot adjudication reasons. The option exists for development purposes. VxMark, VxScan, and VxCentralScan _cannot_ be configured from an election definition alone and require a signed election package.
-
 Once VxAdmin is configured, system administrators and election managers can export signed election packages. The exported election package is the same as the imported election package but is accompanied by a digital signature, which ensures that the election package was validated by a certified VxAdmin. The election packages loaded into VxMark, VxScan, and VxCentralScan _must be signed_ and unsigned election packages will be rejected.
 
 {% hint style="info" %}
