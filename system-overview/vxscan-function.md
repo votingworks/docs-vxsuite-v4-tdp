@@ -26,6 +26,8 @@ VxScan scans ballots with an embedded A4/Letter document scanner which produces 
 
 The embedded scanner includes a multi-sheet detector (MSD) which allows the application to reject cases of voters feeding in multiple ballots at a time. The multi-sheet detection must be calibrated at the beginning of an election based on the thickness of the ballot paper. The double sheet detection calibration flow is exposed in the election manager menu. The election manager can choose to disable double sheet detection, but it is enabled by default.
 
+The embedded scanner has image sensors that are calibrated at the factory and generally do not need to be recalibrated. VotingWorks recommends that users do not recalibrate the image sensors unless instructed to do so by VotingWorks support. The image sensor calibration flow is exposed in the system administrator menu.
+
 The scanner's cover can be opened for cleaning, during which scanning will be disabled and the application will show a warning on screen if the polls are open.
 
 {% hint style="info" %}

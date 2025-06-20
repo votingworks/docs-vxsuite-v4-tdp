@@ -46,7 +46,7 @@ CVRs must be loaded from a USB drive. CVRs are exported from VxScan or VxCentral
 
 The CVRs from the scanners are saved to specific directory structure on the USB drive, but exports can be loaded from anywhere on a USB drive's filesystem. When selecting an export manually, the export's `metadata.json` file must be selected by the user.
 
-When loading a full CVR export, each CVR is loaded into VxAdmin's backend store as one `cvrs` record. The CVR record includes a data blob representing the interpreted votes and a series of metadata fields: ballot style, voting method (absentee vs. precinct), batch, scanner, precinct, sheet number within a multi-sheet ballot, and flags for adjudication reasons such as overvotes, undervotes, write-ins, or fully blank ballots. The metadata fields are used later on for filtering or aggregating tallies or ballot counts into groups.
+When loading a full CVR export, each CVR is loaded into VxAdmin's backend store as one `cvrs` record. The CVR record includes a data blob representing the votes as interpreted by the scanner, a data blob representing the mark scores for all bubbles on the ballot (if a hand-marked paper ballot), and a series of metadata fields: ballot style, voting method (absentee vs. precinct), batch, scanner, precinct, sheet number within a multi-sheet ballot, and flags for adjudication reasons such as overvotes, undervotes, write-ins, or fully blank ballots. The metadata fields are used later on for filtering or aggregating tallies or ballot counts into groups.
 
 Each write-in on a CVR will map to a `write-ins` record, whether it is an unmarked write-in or a proper write-in. The ballot images are also each saved as database records. The write-in record links the write-in to its respective CVR, to the ballot images, and eventually to its adjudication result. The write-in adjudication interface essentially iterates through all `write-ins` records on a per contest basis.
 
@@ -74,31 +74,33 @@ Once VxAdmin is in test ballot mode, only test CVRs can be subsequently loaded. 
 
 CVRs can be removed by the user before results are marked as official or can be removed by fully unconfiguring VxAdmin. All CVRs are removed at once. The CVR data in the database along with all its dependent data - write-ins, ballot images, and adjudications - are permanently and irrecoverably deleted from the data store.
 
-## Write-In Adjudication
+## Adjudication
 
-When ballots with write-ins are scanned at VxScan or VxCentralScan, they have not yet been adjudicated. The polls closed report at VxScan treats all write-ins simply as a generic "Write-In" and all unmarked write-ins as undervotes.
+The tally reports from VxScan do not reflect any post-voting adjudication. All write-ins are simply "Write-In", unmarked write-ins are undervotes, and marginal marks are also undervotes.
 
-VxAdmin allows election managers to perform on-screen write-in adjudication. Each contest is adjudicated individually. The election manager can work through the queue of write-ins for that contest. The queue is ordered by least to most recently loaded into VxAdmin. Because multiple write-ins for a single CVR are loaded together, write-ins that appear on the same ballot sheet will appear next to each other in the queue.&#x20;
+VxAdmin allows election managers to perform on-screen adjudication for ballots with write-ins or marginal marks. Each contest (e.g. Mayor) is adjudicated individually. The election manager works through the queue of ballots for that contest.&#x20;
 
-The side of the ballot that the write-in appears on is rendered to the user, with options to zoom out and back in again. In the zoomed in view, the write-in area in question is highlighted. The location of the highlight is taken from the [interpreted ballot layout](cast-vote-records.md#ballot-layouts), which is included in the cast vote record and loaded into VxAdmin alongside the ballot image.
+By default, only ballots with write-ins appear in the queue. If `MarginalMark` is included in the system settings as part of the list of `adminAdjudicationReasons` , ballots with marginal marks will also appear in the queue. A marginal mark is defined as any mark over a bubble which has a score of at least the `marginal`  threshold defined in the system settings but less than the `definite` threshold defined in the system settings. When both write-ins and marginal marks are being adjudicated, they appear in the following order within each contest:
 
-The user can adjudicate the write-in in one of three ways:
+1. Ballots with only write-ins
+2. Ballots with both write-ins and marginal marks
+3. Ballots with only marginal marks
 
-* **Official Candidate**: the list of official candidates for the given contest will be displayed and the write-in can be assigned to any official candidate
-* **Unofficial Candidates**: the list of unofficial candidates defined for the given contest by the election manager will be displayed and the write-in can be assigned to any unofficial candidate
-* **Undervote**: the write-in can be deemed invalid and will be considered in tallies as an undervote
+The side of the ballot that the contest appears on is rendered to the user, with options to zoom out to the full ballot and back in again. When adjudicating a write-in, the write-in is further zoomed in. The location of the highlights are taken from the [interpreted ballot layout](cast-vote-records.md#ballot-layouts), which is included in the cast vote record and loaded into VxAdmin alongside the ballot image.
 
-Adjudications are immediately persisted to the data store. Adjudications can be changed or deselected.
+The user can adjudicate any contest option from marked to unmarked or vice versa. When presented with a marginal mark, the user can choose to leave it as an undervote or adjudicate it as marked. Write-ins can be adjudicated in one of three ways:
+
+* **Official Candidate**: the user can select an official candidate from the list
+* **Unofficial Candidates**: the user can select an unofficial write-in candidate from the list or add a new unofficial write-in candidate
+* **Undervote**: the write-in can be deemed invalid, after which it will be considered as an undervote in tallies
+
+As the user makes changes, captions are used to indicate differences between the original interpreted values and the new adjudicated values. Once the user is done adjudicating a ballot, they save their changes and continue in the queue.
+
+Changes made in adjudication are immediately reflected in tally reports.
 
 ### Unofficial Write-In Candidates
 
 The list of unofficial write-in candidates is created by the election manager as they adjudicate. The interface has an option to add a new write-in candidate and specify their name. That candidate will then be an option for other write-ins for the same contest. If there are no longer any adjudications that reference the unofficial candidates, their name will be removed from the list.
-
-### Invalidating or Validating Marks
-
-In most cases, the adjudication reclassifies a vote for an unadjudicated write-in to a write-in candidate. But in some cases, the adjudication effectively reclassifies a mark as a non-mark or vice versa.
-
-If a marked write-in is adjudicated as an undervote, in addition to updating the associated `write-ins` record, VxAdmin will create a `vote_adjudications` record representing the switch from an indication to a non-indication. If an unmarked write-in is adjudicated for a candidate, VxAdmin will create a `vote_adjudications` record representing the switch from a non-indication to an indication.
 
 {% hint style="info" %}
 **User Manual Reference:** [Write-In Adjudication](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/election-night-guides/write-in-adjudication "mention")
@@ -200,10 +202,10 @@ Results on VxAdmin are considered unofficial until the election manager marks th
 
 Once the results are final and often only after a jurisdiction's specific certification process, the election manager can mark results as official. All reports and result exports will then be labelled as "Official." CVRs can no longer be loaded, write-ins can no longer be adjudicated, and manual tallies can no longer be altered.
 
-There are two ways to exit official results modes:&#x20;
+There are two ways to exit official results mode without unconfiguring VxAdmin:&#x20;
 
-* The system administrator may unconfigure VxAdmin entirely, removing the election configuration in addition to all tallies and adjudications.
-* The election manager may remove _all_ tallies and adjudications at once, leaving the election configuration in place.
+* The system administrator can revert election results back to unofficial, which leaves all election data intact but allows it to be altered again by an election manager
+* The election manager may remove _all_ election data at once, which would require restarting aggregation and adjudication from scratch
 
 ## Printer Management
 

@@ -67,9 +67,7 @@ In these cases, the affected contests will be highlighted on screen to the elect
 
 ## Exporting CVRs
 
-CVRs must be exported onto a USB drive and taken to VxAdmin for aggregation and reporting. The election managers has options to either save CVRs or save a backup. When saving CVRs, ballot images are only included for ballots with write-ins and rejected ballots are not included. A backup is simply a CVR export with images for all ballots and images for rejected ballots.
-
-After ballots are interpreted, their images are saved to disk and their interpretation is stored in VxCentralScan's data store. On export, all CVRs are pulled from the data store, converted to the CVR CDF, and written to the USB drive.&#x20;
+CVRs must be exported onto a USB drive and taken to VxAdmin for aggregation and reporting. After ballots are interpreted, their images are saved to disk and their interpretation is stored in VxCentralScan's data store. On export, all CVRs are pulled from the data store, converted to the CVR CDF, and written to the USB drive.
 
 {% hint style="info" %}
 **User Manual Reference**: [Saving Cast Vote Records (CVRs)](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxcentralscan/scanning-ballots#saving-cast-vote-records-cvrs "mention")

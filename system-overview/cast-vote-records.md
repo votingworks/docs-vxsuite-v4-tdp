@@ -45,8 +45,8 @@ In order to export cast vote records efficiently and without compromising voter 
 The cast vote record export contains a directory for each cast vote record, labelled with its UUID. Each specific cast vote record directory contains:
 
 * **Cast Vote Record Report** - Contains information about the election and the ballot interpretation in the Common Data Format. The information in the report is used as the basis for tabulation by VxAdmin.
-* **Images** - Ballot images to be used in write-in adjudication or auditing
-* **Interpreted Ballot Layouts -** Metadata for the position of ballot features such as contests, contest options, and bubbles in the ballot image. The interpreted layout data is used to properly crop and highlight ballot images for write-in adjudication.
+* **Images** - Ballot images to be used in adjudication or auditing. Included for all ballots.
+* **Interpreted Ballot Layouts -** Metadata for the position of ballot features such as contests, contest options, and bubbles in the ballot image. The interpreted layout data is used to properly crop and highlight ballot images for adjudication. Included for hand marked ballots but not machine marked ballots.
 
 In addition, there is a metadata file that applies to the entire export at the root of the directory, **metadata.json.**
 
@@ -54,15 +54,9 @@ In addition, there is a metadata file that applies to the entire export at the r
 
 The v4 UUID (universally unique identifier) for each cast vote record is generated when the ballot information is first stored in the database in VxScan or VxCentralScan. It is generated with the node package `uuid` which uses the system's underlying FIPS-complaint OpenSSL implementation to generated random bytes.
 
-### Including Ballot Images
+### Rejected Ballots
 
-In VxScan, ballot images and layouts are always included. In VxCentralScan, ballot images and layouts are only included in the cast vote record export if the ballot has write-ins that may require adjudication. When exporting a backup from VxCentralScan, however, ballot images and layouts are included for all ballots.
-
-Layouts are not included for machine marked ballots.
-
-### Including Rejected Ballots
-
-In VxScan, images of rejected ballots are always included. In VxCentralScan, images of rejected ballots are not included in the cast vote record export but are included in the backup. There are no layout files or cast vote record report for rejected ballots because they are often uninterpretable. When rejected ballots are included, they will appear in the directory with the prefix `rejected-`, as in the following example:
+Images of rejected ballots are also included in the cast vote record export. There are no layout files or cast vote record report for rejected ballots because they are often uninterpretable. Rejected ballots will appear in the directory with the prefix `rejected-`, as in the following example:
 
 ```
 - root
@@ -125,10 +119,10 @@ Each cast vote record includes a set of ballot metadata attributes:
 
 #### Ballot Images
 
-The `CVR.BallotImage` attribute exists when there are images accompanying the cast vote record. If it exists, it always contains images for both sides of the ballot. Its attributes are as follows:
+The `CVR.BallotImage` attribute contains information about the images accompanying the cast vote record. It always contains information for both the front and back images of the ballot. Its attributes are as follows:
 
 <table><thead><tr><th width="165">CDF Attribute</th><th>Usage</th></tr></thead><tbody><tr><td>Location</td><td><p>Location of the image file relative to the report, such as:</p><pre><code>file:864a2854-ee26-4223-8097-9633b7bed096-front.jpg
-</code></pre></td></tr><tr><td>Hash.Type</td><td>Fixed to "sha-256"</td></tr><tr><td>Hash.Value</td><td><ul><li><strong>No Images:</strong> Undefined</li><li><strong>Images &#x26; Layouts:</strong> {SHA256 hash of image}-{SHA256 hash of layout}</li><li><strong>Images Only</strong>: SHA256 hash of image</li></ul><p></p></td></tr></tbody></table>
+</code></pre></td></tr><tr><td>Hash.Type</td><td>Fixed to "sha-256"</td></tr><tr><td>Hash.Value</td><td><p></p><ul><li><strong>Images &#x26; Layouts:</strong> {SHA256 hash of image}-{SHA256 hash of layout}</li><li><strong>Images Only</strong>: SHA256 hash of image</li></ul><p></p></td></tr></tbody></table>
 
 Hashes of the ballot image and ballot layout files are included in the cast vote record report so that the hash (and digital signature) of the cast vote record export will reflect any change to the image or layout files.
 
@@ -136,7 +130,7 @@ Hashes of the ballot image and ballot layout files are included in the cast vote
 
 The CDF specification allows detailing multiple versions of the same cast vote record as "snapshots."&#x20;
 
-For hand marked paper ballots, there are both "original" and "modified" snapshots. The "original" snapshot contains mark thresholds for every single bubble on the ballot and is included purely for auditability. The "modified" snapshot contains only the marks that were detected as definite marks and counted as valid or invalid votes.&#x20;
+For hand marked paper ballots, there are both "original" and "modified" snapshots. The "original" snapshot contains mark thresholds for every single bubble on the ballot. The "modified" snapshot contains only the marks that were detected as definite marks and counted as valid or invalid votes.&#x20;
 
 For machine marked ballots, there is only an "original" snapshot.
 
@@ -163,11 +157,11 @@ The `CVRContest` class within each snapshot contains a list of vote records by c
 
 ## Ballot Images
 
-Ballot images are `.jpg` files. They are included in the cast vote record in order to be used for write-in adjudication or auditing. Ballot images are generated by the scanning hardware and then normalized to reduce skew and enforce a consistent orientation. Images from VxCentralScan are in grayscale while images for VxScan are in black and white.
+Ballot images are `.jpg` files. They are included in the cast vote record in order to be used for adjudication and auditing. Ballot images are generated by the scanning hardware and then normalized to reduce skew and enforce a consistent orientation. All images are persisted in black and white to reduce disk space usage.
 
 ## Ballot Layouts
 
-Ballot layouts are JSON files which describe the discovered position of ballot content within interpreted ballots, including where each contest and contest option appears. Although the layout of ballot content within the ballot grid is specified by the election definition, the ballot content may be positioned in a slightly differently location in each scanned ballot image due to offset or skew of the ballot during scanning. As a result, the layouts are included in order to have accurate image highlights and crops for write-in adjudication.
+Ballot layouts are JSON files which describe the discovered position of ballot content within interpreted ballots, including where each contest and contest option appears. Although the layout of ballot content within the ballot grid is specified by the election definition, the ballot content may be positioned in a slightly differently location in each scanned ballot image due to offset or skew of the ballot during scanning. As a result, the layouts are included in order to have accurate image highlights and crops for adjudication.
 
 ## Export Metadata
 
