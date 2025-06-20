@@ -106,18 +106,21 @@ The system settings file contains settings which are not specific to an election
   * `overallSessionTimeLimitHours`- Sets the maximum number of hours for any session, regardless of activity.
   * `startingCardLockoutDurationSeconds` - Sets the number of seconds that the user is locked out from retrying a PIN after the number of failed attempts specified by  `numIncorrectPinAttemptsAllowedBeforeCardLockout`. Each subsequent failed attempt triggers a lockout double the length of the previous lockout.
 * Scanning Thresholds
-  * `definite` - Specifies the percentage of a bubble that needs to be filled in for the tabulators to consider it a mark.
+  * `definite` - Specifies the percentage of a bubble that needs to be filled in for the system to interpret it as a vote.
+  * `marginal` - Specifies the percentage of a bubble that needs to be filled for the system to interpret it as a marginal mark that may need adjudication.
   * `writeInTextArea` - Specifies the percentage of the write-in area that needs to be filled in for the tabulators to consider it a write-in. This is only relevant for jurisdictions that allow unmarked write-ins i.e write-ins without an accompanying mark.
 * Adjudication Reasons
   * `precinctScanAdjudicationReasons` - Specifies the reasons that a ballot scanned at VxScan should be flagged for adjudication. Supported reasons are overvotes, undervotes, blank ballots, or unmarked write-ins.&#x20;
   * `centralScanAdjudicationReasons` - Specifies the reasons that a ballot scanned at VxCentralScan should be flagged for adjudication. Supported reasons are overvotes, undervotes, blank ballots, or unmarked write-ins.&#x20;
+  * `adminAdjudicationReasons` - Specifies the reasons for a ballot to appear in the VxAdmin adjudication queue in addition to write-ins. The only supported reason is marginal marks.
   * `disallowCastingOvervotes` - When set to `true`, scanners will always reject overvoted ballots. When set to `false`, VxScan will allow a voter to choose whether to reject or cast an overvoted ballot, and VxCentralScan will allow an election manager to choose whether to reject or tabulate an overvoted ballot.
   * `allowOfficialBallotsInTestMode` - When set to `true`, official ballots will not be rejected in test mode. The setting is for jurisdictions where testing must take place on official ballots.
 * Other
   * `precinctScanEnableShoeshineMode` - When set to `true`, VxScan will run in "shoeshine mode," which will scan the same ballot repeatedly. Instead of ejecting the ballot after scanning it, VxScan will move it back to the input tray and scan it again. This mode is used only for internal testing and certification testing.
-  * `castVoteRecordsIncludeOriginalSnapshots` - When set to `true`, scanners will include "original" snapshots in the CVR export for each ballot. This includes extra information about the marks on the ballot before contest rules are applied as specified in the CVR CDF. This extra information increases the size of the CVR export, degrading performance.
   * `castVoteRecordsIncludeRedundantMetadata` - When set to `true`, scanners will include election and system metadata in each ballot's CVR as specified in the CVR CDF, rather than just including it once for the entire export. This extra information increases the size of the CVR export, degrading performance.
   * `disableVerticalStreakDetection` - Disables the warning when streaks are detected when scanning ballots (which indicates that the scanner needs to be cleaned). Used as a failsafe in case of erroneous warnings.
+  * `precinctScanEnableBallotAuditIds` - Enables the VxScan feature to read ballot IDs from hand marked paper ballot QR codes, encrypt them, and export them to cast vote records (to be used for post-election auditing).
+  * `minimumDetectedScale` - Specifies the ballot scale threshold beneath which the scanners will reject ballots for not being to scale. The "ballot scale" is the detected size of the ballot timing mark grid relative to the specification defined in [hand-marked-ballots.md](../hand-marked-ballots.md "mention")
 
 The system settings file is optional. If not provided, the following default settings will be used:
 
@@ -131,16 +134,19 @@ The system settings file is optional. If not provided, the following default set
   },
   "markThresholds": {
     "definite": 0.07,
+    "marginal": 0.05,
     "writeInTextArea": 0.05
   },
   "centralScanAdjudicationReasons": [],
   "precinctScanAdjudicationReasons": [],
+  "adminAdjudicationReasons": [],
   "disallowCastingOvervotes": false,
   "allowOfficialBallotsInTestMode": false,
   "precinctScanEnableShoeshineMode": false,
-  "castVoteRecordsIncludeOriginalSnapshots": false,
   "castVoteRecordsIncludeRedundantMetadata": false,
-  "disableVerticalStreakDetection": false
+  "disableVerticalStreakDetection": false,
+  "precinctScanEnableBallotAuditIds": false,
+  "minimumDetectedScale":0.985
 }
 </code></pre>
 

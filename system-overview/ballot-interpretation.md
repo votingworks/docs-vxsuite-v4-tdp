@@ -2,23 +2,23 @@
 
 Ballot interpretation begins with the front and back images of the ballot transmitted from the scanner. Once the images are available to the application, it starts by trying to interpreting the ballot as a [hand marked ballot](hand-marked-ballots.md).
 
+The interpreter first crops the image received from the scanner and converts the grayscale image from the ballot into binary images using [Otsu's method](https://en.wikipedia.org/wiki/Otsu's_method). Otsu's method computes a dynamic black and white threshold that allows the interpreter to filter out differences due to tinted paper or light streaking.
+
+<div><figure><img src="../.gitbook/assets/streak-crossing-marks-grayscale.png" alt=""><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/streak-crossing-marks-grayscale_debug_vertical_streaks.png" alt=""><figcaption></figcaption></figure></div>
+
 Before trying to make sense of the ballot, the interpreter checks the images for vertical streaks. Vertical streaks likely indicate some sort of smudge or debris in the scanner that could interfere with the ballot image. The interpreter looks for columns of black without gaps, excluding the edges of the ballot which may be black simply from the way the scanner creates images.
 
 <div><figure><img src="../.gitbook/assets/33c22b9d-108e-454e-8010-0abea110472b-back_debug_vertical_streaks.png" alt=""><figcaption><p>Vertical streak detected</p></figcaption></figure> <figure><img src="../.gitbook/assets/0db947fd-eb05-4ccb-8c09-ad7aee2e6564-front_debug_vertical_streaks.png" alt=""><figcaption><p>No vertical streak detected</p></figcaption></figure></div>
 
 If a streak is detected, the interpreter exits and surfaces the error to the application which will alert the user.
 
-The interpreter then identifies the timing mark grid. It begins by finding all shapes in the image. It then narrows the list of shapes down to ones that look like timing marks and then further narrows the list down to timing mark shapes that fall along the edges of the image in a line.
+The interpreter then identifies the timing mark grid. It searches for all vertical line segments around the edges of the ballot and joins adjacent line segments to form shapes. The shapes are filtered and scored according to how closely they resemble timing marks. The interpreter then looks for patterns of three timing marks resembling the corners of the grid. If the four corners cannot be identified, the interpreter exits. Once the corners are identified, the interpreter looks for the rest of the timing marks along the lines between the corners.&#x20;
 
-<div><figure><img src="../.gitbook/assets/0db947fd-eb05-4ccb-8c09-ad7aee2e6564-front_debug_contours.png" alt=""><figcaption><p>All shapes</p></figcaption></figure> <figure><img src="../.gitbook/assets/0db947fd-eb05-4ccb-8c09-ad7aee2e6564-front_debug_candidate_timing_marks.png" alt=""><figcaption><p>Timing mark shapes</p></figcaption></figure> <figure><img src="../.gitbook/assets/0db947fd-eb05-4ccb-8c09-ad7aee2e6564-front_debug_partial_timing_marks.png" alt=""><figcaption><p>Timing mark shapes along edges</p></figcaption></figure></div>
+<figure><img src="../.gitbook/assets/452452815-c8912b9b-d3ac-4888-a386-b4fd57749306.png" alt="" width="375"><figcaption></figcaption></figure>
 
-In the example above, the interpreter found all the timing marks correctly. Sometimes, it may not. In that case, it infers any missing timing marks. Once it has all the timing mark borders, it identifies the corners in order to construct a complete timing mark grid. If at any point the interpreter does not have enough information to confidently find the complete mark grid or if the detected grid is too rotated or skewed, it causes the application to reject the ballot.
+Before proceeding with any further interpretation, the interpreter calculates the distance between horizontal timing marks as a measure of the scale of the ballot. The expected distance is based off of the specification for full scale ballots defined in [hand-marked-ballots.md](hand-marked-ballots.md "mention"). If `minimumDetectedScale` is set in the system settings and the detected scale is below that threshold, the interpreter will reject the ballot. Ballots must be printed at full scale to be safely interpretable.
 
-<figure><img src="../.gitbook/assets/0db947fd-eb05-4ccb-8c09-ad7aee2e6564-front_debug_timing_mark_grid (1).png" alt="" width="375"><figcaption><p>Timing mark grid</p></figcaption></figure>
-
-
-
-Next the interpreter will search the bottom left and top right corners of the image for a QR code. Since ballots have QR codes in the bottom left corner, the location of the QR code determines the correct orientation of the ballot and the interpreter can flip the images right-side up if necessary:
+The interpreter will then search the bottom left and top right corners of the image for a QR code. Since ballots have QR codes in the bottom left corner, the location of the QR code determines the correct orientation of the ballot and the interpreter can flip the image right-side up if necessary:
 
 <div><figure><img src="../.gitbook/assets/0db947fd-eb05-4ccb-8c09-ad7aee2e6564-front_debug_qr_code.png" alt="" width="375"><figcaption><p>QR code search</p></figcaption></figure> <figure><img src="../.gitbook/assets/0db947fd-eb05-4ccb-8c09-ad7aee2e6564-front_debug_complete_timing_marks_after_orientation_correction.png" alt="" width="375"><figcaption><p>Correctly oriented ballot</p></figcaption></figure></div>
 
@@ -28,7 +28,7 @@ Now the interpreter inspects the locations of all ballot bubbles to see how fill
 
 <figure><img src="../.gitbook/assets/0db947fd-eb05-4ccb-8c09-ad7aee2e6564-front_debug_scored_bubble_marks.png" alt="" width="375"><figcaption><p>Ballot bubble scores</p></figcaption></figure>
 
-The bubble mark scores are later compared against the definite mark threshold in the system settings and used to determine whether the voter made an indication that should be counted. The recommended default threshold is 7%. Setting too low of a threshold may result in stray marks or ballot folds to be considered as marks. Setting too high of a threshold may result in reasonable voter marks not being detected. While ballot instructions should recommend voters fully fill in the bubbles, at a threshold of 7% the system will detect most voter marks that pass through the bubble.
+The bubble mark scores are later compared against the mark thresholds in the system settings to determine whether the voter made an indication that should be counted. The recommended default definite mark threshold is 7%. Setting too low of a threshold may result in stray marks or ballot folds to be considered as marks. Setting too high of a threshold may result in reasonable voter marks not being detected. While ballot instructions should recommend voters fully fill in the bubbles, at a threshold of 7% the system will detect most voter marks that pass through the bubble.
 
 <div><figure><img src="../.gitbook/assets/validmarks (2).png" alt=""><figcaption><p>Valid Marks</p></figcaption></figure> <figure><img src="../.gitbook/assets/invalidmarksshort.jpg" alt=""><figcaption><p>Invalid Marks</p></figcaption></figure></div>
 
