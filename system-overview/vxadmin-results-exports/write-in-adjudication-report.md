@@ -16,7 +16,7 @@ layout:
 
 The write-in adjudication report includes the results of all write-in adjudication organized by contest:
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt="" width="563"><figcaption><p>Full write-in adjudication report</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (84).png" alt="" width="375"><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (1) (1).png" alt="" width="563"><figcaption><p>Write-in adjudication contest results</p></figcaption></figure>
 
