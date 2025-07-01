@@ -24,7 +24,7 @@ VxSuite can tabulate a wide variety of ballot designs as long as they conform to
 
 ## Ballot Size
 
-There are four valid ballot sizes. All are 8.5 inches in width, but vary in height:
+All supported ballot sizes are 8.5 inches in width, but vary in height:
 
 | Name       | Length | Width |
 | ---------- | ------ | ----- |
@@ -33,7 +33,7 @@ There are four valid ballot sizes. All are 8.5 inches in width, but vary in heig
 | Custom 17" | 17"    | 8.5"  |
 | Custom 22" | 22"    | 8.5"  |
 
-These lengths correspond to the length specified in the [Ballot Layout](hand-marked-ballots.md) within the election definition.
+These lengths correspond to the length specified in the [Ballot Layout](hand-marked-ballots.md) within the election definition. See [paper-ballot-specifications.md](../system-performance-and-specifications/paper-ballot-specifications.md "mention") for more information about ballot specifications.
 
 ## Timing Mark Borders
 
