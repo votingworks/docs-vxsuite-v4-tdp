@@ -46,6 +46,8 @@ The vast majority of the VxMark hardware is the [VSAP (Voting Solutions for All 
 
 <table><thead><tr><th>Manufacturer</th><th width="216">Component</th><th width="175">Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>Smartmatic</td><td>Ballot Marking Device</td><td>VSAP-150</td><td>High</td></tr><tr><td>APC</td><td>Uninterruptible Power Supply</td><td>BN1500M2</td><td>Medium</td></tr><tr><td>HID</td><td>Smart Card Reader</td><td>R31210375-1</td><td>Medium</td></tr><tr><td>LORELEI</td><td>Headphones</td><td>X6</td><td>Low</td></tr><tr><td>Williams Audio Visual</td><td>T-Coil Neckloop</td><td>NKL-001</td><td>Low</td></tr></tbody></table>
 
+The specified neckloop achieves a T4 rating when used with assistive hearing devices that include T4 rated telecoils.
+
 ## Criticality Discussion
 
 The VSAP system provided by LA County is the primary component and the highest criticality component. The entire system runs on it. The embedded computer and the printer-scanner are both responsible for the printing of ballots and the interpretation of ballots. The various interaction interfaces - touchscreen, accessible controller, and PAT input - can all affect voter selections. VotingWorks and Los Angeles County have a robust partnership that includes the sale of the hardware itself, documentation transfer, and alignment on access control and quality assurance procedures.
