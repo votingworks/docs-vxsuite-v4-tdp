@@ -2,7 +2,7 @@
 
 The VotingWorks build system, [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.0.0), utilizes many different tools to install, configure, and build VotingWorks applications. To ensure the integrity of the build system and tools used, all third-party tools are verified against known hashes, checksums, or digital signatures. This appendix provides a description of the mechanism used to verify each tool and any additional resources those tools may be responsible for providing during the build process.
 
-In addition to verifying third-party tools against known hashes, checksums, and digital signatures during the build process, a report of COTS tools, with applicable hashes/checksums, is provided to the VSTL for independent verification and is available [here](https://docs.google.com/spreadsheets/d/15F0AMEbb2yCSeNtaKSd9xUK9o1DSGAW2Bpvphvownw8/edit?usp=sharing). These tools are defined within the [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.0.0) for each release of VotingWorks applications, and only those tools are installed during builds.
+In addition to verifying third-party tools against known hashes, checksums, and digital signatures during the build process, a report of COTS tools, with applicable hashes/checksums, is provided to the VSTL for independent verification and is available [here](https://docs.google.com/spreadsheets/d/1WXHYaF9wiE3pppFPn1L9KRKE97gCeJOVnqv6MYKUv2I/edit?usp=sharing). These tools are defined within the [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.0.0) for each release of VotingWorks applications, and only those tools are installed during builds.
 
 **APT**
 
