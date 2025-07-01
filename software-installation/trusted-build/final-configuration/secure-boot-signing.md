@@ -20,7 +20,7 @@ sudo su -
 Once the SLI upload has completed, VotingWorks will download and verify the hash values of all files. On the VotingWorks secure build machine, while SLI observes:
 
 ```
-sudo /home/vx/code/vxsuite-build-system/scripts/sb-unsigned-download.sh vxadmin
+sudo /home/admin/code/vxsuite-build-system/scripts/sb-unsigned-download.sh vxadmin
 ```
 
 Once the VotingWorks download has completed and been verified, and the VM has been successfully defined, VotingWorks can proceed with its Secure Boot signing process, while SLI observes.
@@ -29,7 +29,7 @@ Once the VotingWorks download has completed and been verified, and the VM has be
 
 VotingWorks will boot the VM, change the vendor password, attach a virtual device containing our Secure Boot signing keys, and select the option to "Lock the System Down" from the vendor menu. When prompted, VotingWorks will enter the passphrase for the Secure Boot signing keys.
 
-When the process completes, the lock-down script displays the system hash. This hash will be provided to SLI/EAC for official verification of the image.
+When the process completes, the lock-down script displays the system hash in SHA256 and Signed Hash Validation (SHV) versions. These hashes will be provided to SLI/EAC for official verification of the image.
 
 Note: The vxmark VM currently requires a slightly modified process. For vxmark, VotingWorks will boot the VM, change the vendor password, then shut the VM down. After verifying it is not in a running state, VotingWorks will boot the VM again and complete the rest of the process as previously described.
 
@@ -38,7 +38,7 @@ Note: The vxmark VM currently requires a slightly modified process. For vxmark, 
 Now that the image has been securely signed, VotingWorks will upload the signed image for SLI to later download. While SLI observes, VotingWorks will run the following command on the VotingWorks secure build machine:
 
 ```
-sudo /home/vx/code/vxsuite-build-system/scripts/sb-signed-upload.sh vxadmin
+sudo /home/admin/code/vxsuite-build-system/scripts/sb-signed-upload.sh vxadmin
 ```
 
 Once this step has completed, SLI can download the files at their convenience. On the SLI build machine:
