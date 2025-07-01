@@ -19,6 +19,7 @@ VxSuite supports a wide range of paper for hand-marked paper ballot style printi
 * **Margins:** the paper margins listed below are required for proper timing mark interpretation and adequate space for VxCentralScan imprinting outside of the ballot selection area and timing marks:
   * Left/right: 5mm (0.19685 in)
   * Top/bottom: 12pt (0.16667 in)
+* **Scale:** 100% — all VotingWorks ballot PDFs must be printed at 100% scale. Any print scale deviation will render the ballot imprecisely.
 * **Print Run Size:** defer to your print vendor's established best practices for quality assurance. In the absence of a vendor recommendation, we recommend that print runs are a consistent size between 500 to 1,000 sheets — consistency eases ballot accounting and the moderate size allows for semi-frequent quality checks.
 
 ## Ballot Marking Device Ballots
