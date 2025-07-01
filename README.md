@@ -14,6 +14,8 @@ layout:
 
 # System Overview
 
+
+
 <figure><img src=".gitbook/assets/image (6).png" alt=""><figcaption><p>Top level system diagram</p></figcaption></figure>
 
 The VotingWorks voting system (a.k.a. **VxSuite**) consists of four primary components:&#x20;
@@ -23,7 +25,9 @@ The VotingWorks voting system (a.k.a. **VxSuite**) consists of four primary comp
 * **VxScan**: precinct scanner
 * **VxCentralScan**: batch scanner
 
-Using VxSuite for an election begins with generating an [election package](system-overview/election-package/) and [hand marked ballots ](system-overview/hand-marked-ballots.md)using an external system.&#x20;
+Voters mark paper ballots by [hand](system-overview/hand-marked-ballots.md) or by using VxMark to [machine mark](system-overview/machine-marked-ballots.md). Ballots are read and counted by tabulating devices (VxScan & VxCentralScan), which create [cast vote records](system-overview/cast-vote-records.md) for adjudication and aggregation on VxAdmin.
+
+An election begins with generating an [election package](system-overview/election-package/) and [hand marked ballots ](system-overview/hand-marked-ballots.md)using an external system.
 
 ## VxAdmin
 
@@ -32,7 +36,7 @@ VxAdmin is where the election administrator performs election setup tasks and ma
 * Exporting a copy of the election package to USB drives with a [digital signature](system-security-auditing-and-logging/system-security-architecture/artifact-authentication/). The election package is used to configure VxMark, VxScan, and VxCentralScan, and it _must_ be digitally signed by VxAdmin.
 * Programming [role-based smart cards](system-overview/user-roles.md) that will be used to authenticate on all machines. While the "System Administrator" role is election-agnostic, the "Election Manager" and "Poll Worker" roles are election-specific and cards must be programmed for every election.
 
-VxAdmin is later used to load, store, and tabulate cast vote records from the scanners. The results are available for review or export in [several results formats](system-overview/vxadmin-results-exports/). Once tabulation is complete, election administrators can mark results as official, after which no new results can be added.
+VxAdmin is later used to load, store, and aggregate cast vote records from the scanners. The results are available for review or export in [several results formats](system-overview/vxadmin-results-exports/). Election administrators can mark results as official, after which no new results can be added.
 
 * [vxadmin-function.md](system-overview/vxadmin-function.md "mention")
 * [vxadmin-and-vxcentralscan-hardware.md](system-overview/vxadmin-and-vxcentralscan-hardware.md "mention")
@@ -54,7 +58,7 @@ The following output modes are supported:
 
 The voter can also adjust the language based on translations included in the election package.&#x20;
 
-After the voter finishes their vote selections, VxMark prints a [machine marked ballot](system-overview/machine-marked-ballots.md) and presents it to the voter. The ballot is scanned (but not cast) so the interpreted results can be presented to the voter on-screen. After reviewing the ballot and confirming their selections, the ballot is cast and ejected into the attached ballot box. At a later time, depending on election procedures, the ballot will be removed from the ballot box and tabulated at one of the system's scanners.
+After the voter finishes their vote selections, VxMark prints a [machine marked ballot](system-overview/machine-marked-ballots.md) and presents it to the voter. The ballot is scanned (but not cast) so the interpreted results can be presented to the voter on-screen. After reviewing the ballot and confirming their selections, the ballot is cast and ejected into the attached ballot box. At a later time, depending on election procedures, the ballot will be removed from the ballot box for tabulation.
 
 * [vxmark-function.md](system-overview/vxmark-function.md "mention")
 * [vxmark-hardware.md](system-overview/vxmark-hardware.md "mention")
