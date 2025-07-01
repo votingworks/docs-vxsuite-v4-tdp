@@ -11,7 +11,7 @@ VxSuite supports a wide range of paper for hand-marked paper ballot style printi
 * **Weight:** 105-177gsm
 * **Coating:** uncoated
 * **Opacity:** >90%
-* **Color:** white or any pastel color >70 brightness (to ensure it binarizes to white when scanned).
+* **Color:** white or any pastel color >=70 brightness. Contrast ratio of printed black text is 21:1 for white paper and will exceed 10:1 on other paper colors of specified brightness.
 * **Watermarking:** none
 * **Ink:** typical oil-based or soy-based inks are appropriate for printing presses; typical laser toner or inkjet ink are appropriate for smaller printers & copiers.
 * **Folding:** ballots should not be folded through bubbles.
@@ -31,4 +31,4 @@ VxMark requires a specific type of thermal paper ballot stock as required by the
 * **Length:** 13.25"
 * **Corner Cut:** 16mm, 45° cut, top-right of thermal coated side
 
-TF 1467 paper is only provided in one configuration on white paper with a weight of 140gsm, an opacity greater than 90%, and thermal coating on one side. VxMark expects the thermal side to be fully blank and therefore pre-printing attributes such as watermarking, ink, and margins are not applicable. Similarly, these ballots are only to be used with ballot marking devices and attributes specific to hand-marking such as folding and bleed-through are also not applicable.
+TF 1467 paper is only provided in one configuration on white paper with a weight of 140gsm, an opacity greater than 90%, and thermal coating on one side. VxMark expects the thermal side to be fully blank and therefore pre-printing attributes such as watermarking, ink, and margins are not applicable. Similarly, these ballots are only to be used with ballot marking devices and attributes specific to hand-marking such as folding and bleed-through are also not applicable. Printed text contrast ratio of blank ink on white paper is 21:1.
