@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Hand Marked Ballots
 
 VxSuite can tabulate a wide variety of ballot designs as long as they conform to the following requirements:
