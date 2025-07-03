@@ -25,6 +25,8 @@ The integrity of the overall system is ensured because:
 
 Thus, if the system boots, it means that the hard drive corresponds, by hashing, to the expected value that we baked into the bootloader+kernel+command-line and signed.
 
+The only time that the system hash is expected to change is after a software update, which involves completely reimaging the machine per the process laid out in [imaging-machines](../../software-installation/imaging-machines/ "mention").
+
 ## Hard Drive Partitioning
 
 Our system is configured so that `/var`, `/tmp`, and `/home` are mounted read-write, and `/` for everything else is mounted read-only. This requires writing logs and other runtime-generated VotingWorks data, e.g., scanned ballot images, to `/var`. Variable system configuration, e.g. timezone information, also needs to be redirected to `/var`. A USB mount point is pre-created at `/media/vx/usb-drive`.
