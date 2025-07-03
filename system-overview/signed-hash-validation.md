@@ -2,7 +2,7 @@
 
 Signed Hash Validation provides end users with a way to verify that a VotingWorks machine is running authentic unmodified VotingWorks software.
 
-The machine preps a payload consisting of the following, with `1//shv//` as a prefix and `#` as a separator:
+The machine preps a payload consisting of the following, with `1//shv1//` as a prefix and `#` as a separator:
 
 * System hash
 * Software version
