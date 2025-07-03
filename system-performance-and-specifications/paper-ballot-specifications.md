@@ -29,7 +29,7 @@ VxMark requires a specific type of thermal paper ballot stock as required by the
 * **Manufacturer:** Mitsubishi
 * **Model:** Thermoscript TF 1467
 * **Width:** 8"
-* **Length:** 13.25"
+* **Length:** 11, 13.25"
 * **Corner Cut:** 16mm, 45° cut, top-right of thermal coated side
 
 TF 1467 paper is only provided in one configuration on white paper with a weight of 140gsm, an opacity greater than 90%, and thermal coating on one side. VxMark expects the thermal side to be fully blank and therefore pre-printing attributes such as watermarking, ink, and margins are not applicable. Similarly, these ballots are only to be used with ballot marking devices and attributes specific to hand-marking such as folding and bleed-through are also not applicable. Printed text contrast ratio of blank ink on white paper is 21:1.
