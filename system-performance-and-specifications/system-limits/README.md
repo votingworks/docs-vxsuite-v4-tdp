@@ -25,8 +25,8 @@
 
 ### VxMark
 
-* VxMark only supports 8" x 13.25" ballots as specified in [paper-ballot-specifications.md](../paper-ballot-specifications.md "mention").
-* VxMark is limited to printing of 50 contest selections before needing to reduce text size to fit a summary ballot on a single sheet. VxMark can print a maximum of 100 contest selections with text-size reduction.
+* VxMark only supports 8" x 11" and 8" x 13.25" ballot sizes as specified in [paper-ballot-specifications.md](../paper-ballot-specifications.md "mention").
+* 11" ballots are limited to 25 contests with 100 maximum combined write-in characters across selections. 13.25" ballots are limited to 30 contests with 90 maximum combined write-in characters across selections.
 * The ballot box supports up to 200 ballots before needing to be cleared.
 * VxMark can activate, mark, verify, and cast up to 20 ballots per hour. Exact rate depends on time spent by user marking and verifying a ballot before casting.
 
