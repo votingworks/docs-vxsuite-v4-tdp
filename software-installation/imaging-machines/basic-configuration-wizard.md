@@ -1,6 +1,8 @@
 # Basic Configuration Wizard
 
-After you've imaged a machine, the machine will boot into a basic configuration wizard. The majority of the steps are self-explanatory, but "Step 1: Set Machine ID" and "Step 4: Create Machine Cert" require some extra clarification.
+If this is the first time that a VotingWorks application has been installed to a machine, the machine will boot into a basic configuration wizard. If the machine has been previously configured with a certified VotingWorks application of the same type, this wizard will be skipped.
+
+The majority of the steps are self-explanatory, but "Step 1: Set Machine ID" and "Step 4: Create Machine Cert" require some extra clarification.
 
 ### Setting Machine ID
 

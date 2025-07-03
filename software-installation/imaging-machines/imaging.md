@@ -12,7 +12,7 @@ First make sure that you've prepared USB drives for imaging, following the instr
 7. The imaging process will begin automatically after 10 seconds.&#x20;
 8. Once imaging completes, remove the USB drive as prompted. The system will reboot automatically after 10 seconds.
 9. After rebooting, the system will perform an automatic encryption of the `var` filesystem. If Secure Boot was not enabled when the image was installed, you'll see a note about needing to enable Secure Boot. The machine will auto-boot you into the BIOS. Once Secure Boot has been enabled and the system reboots, the encryption process should complete successfully.&#x20;
-10. The /var partition should encrypt and expand, followed by a reboot. If this is the first time a VotingWorks application has been installed to a system, you should find yourself in the [Basic Configuration Wizard](basic-configuration-wizard.md). Proceed to that section. If this system has been previously configured with a certified VotingWorks application of the same type, the [Basic Configuration Wizard](basic-configuration-wizard.md) will be skipped.
+10. The /var partition should encrypt and expand, followed by a reboot. If this is the first time that a VotingWorks application has been installed to a machine, you should find yourself in the [Basic Configuration Wizard](basic-configuration-wizard.md). Proceed to that section. If the machine has been previously configured with a certified VotingWorks application of the same type, the [Basic Configuration Wizard](basic-configuration-wizard.md) will be skipped.
 
 Note: VotingWorks system software will be installed to the directory path: `/vx/code/vxsuite`
 
