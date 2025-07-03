@@ -83,6 +83,10 @@ Any `GpUnit` of type `precinct` is mapped to a [Precinct](vxsuite-election-defin
 
 Any `GpUnit` with an associated contest is mapped to a [District](vxsuite-election-definition.md#district-district).
 
+### Ballot Rotation
+
+Ballot rotation is specified by the defined candidate order in each ballot style as opposed to a rule that the voting system should apply to candidates in a given contest. This enables flexibility for jurisdiction-specific ballot rotation rules that can be defined in the source system creating the ballot definition.
+
 ## VxSuite CDF Limitations
 
 Because VxSuite does not utilize any data extensions to the Ballot Definition CDF, some information cannot be included when using the Ballot Definition CDF. The missing information creates some limitations when using the Ballot Definition CDF when compared to the [VxSuite Election Definition](vxsuite-election-definition.md) format:
