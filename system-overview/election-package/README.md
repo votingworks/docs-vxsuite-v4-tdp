@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Election Package
 
 The election package contains all of the information that defines an election. VxAdmin is configured by inserting a USB drive and selecting an election package from the drive.
@@ -145,8 +131,7 @@ The system settings file is optional. If not provided, the following default set
   "precinctScanEnableShoeshineMode": false,
   "castVoteRecordsIncludeRedundantMetadata": false,
   "disableVerticalStreakDetection": false,
-  "precinctScanEnableBallotAuditIds": false,
-  "minimumDetectedScale":0.985
+  "precinctScanEnableBallotAuditIds": false
 }
 </code></pre>
 
