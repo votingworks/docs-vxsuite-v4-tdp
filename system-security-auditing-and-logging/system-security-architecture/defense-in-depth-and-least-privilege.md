@@ -24,7 +24,7 @@ Once a VxSuite image is built, access for the root user is shut down and that sh
 
 ## Narrow Superuser Functions
 
-When a VxSuite function requires superuser access, that access is captured as a minimal shell script, and the appropriate VxSuite Linux user is granted sudo permissions on that shell script alone. For example, on a VxSuite production machine, no user has the ability to call the `mount` command. Instead, when mounting USB drives, we have crafted a shell program that is only capable of mounting and unmounting USB drives at the `/media/usb-drive` mount point, and the `vx-services` user is granted superuser privileges when calling that script only. The full script for this example is available at [https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/usb-drive/scripts/mount.sh](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/usb-drive/scripts/mount.sh).
+When a VxSuite function requires superuser access, that access is captured as a minimal shell script, and the appropriate VxSuite Linux user is granted sudo permissions on that shell script alone. For example, on a VxSuite production machine, no user has the ability to call the `mount` command. Instead, when mounting USB drives, we have crafted a shell program that is only capable of mounting and unmounting USB drives at the `/media/usb-drive` mount point, and the `vx-services` user is granted superuser privileges when calling that script only. The full script for this example is available at [https://github.com/votingworks/vxsuite/blob/v4.0.2/libs/usb-drive/scripts/mount.sh](https://github.com/votingworks/vxsuite/blob/v4.0.2/libs/usb-drive/scripts/mount.sh).
 
 ## Minimal Window Manager
 

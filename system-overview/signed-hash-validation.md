@@ -43,4 +43,4 @@ Signed Hash Validation QR codes are [Model 2 QR codes](https://www.qrcode.com/en
 
 Refer to the following code links for more details:
 
-* [https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/signed\_hash\_validation.ts](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/auth/src/signed_hash_validation.ts)
+* [https://github.com/votingworks/vxsuite/blob/v4.0.2/libs/auth/src/signed\_hash\_validation.ts](https://github.com/votingworks/vxsuite/blob/v4.0.2/libs/auth/src/signed_hash_validation.ts)

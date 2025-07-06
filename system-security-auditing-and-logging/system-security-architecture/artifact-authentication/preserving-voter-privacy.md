@@ -31,4 +31,4 @@ This four-step operation ensures that:
 
 Refer to the following code links for more details:
 
-* [https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/backend/src/cast\_vote\_records/file\_system\_utils.ts](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/backend/src/cast_vote_records/file_system_utils.ts)
+* [https://github.com/votingworks/vxsuite/blob/v4.0.2/libs/backend/src/cast\_vote\_records/file\_system\_utils.ts](https://github.com/votingworks/vxsuite/blob/v4.0.2/libs/backend/src/cast_vote_records/file_system_utils.ts)

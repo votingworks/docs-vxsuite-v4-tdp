@@ -6,7 +6,7 @@ VxSuite product quality is ensured through both focused processes on individual 
 
 ### Automated Unit Tests
 
-VotingWorks code has extensive unit test coverage. All libraries in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch) have near 100% coverage, meaning that almost every single line of code runs whenever testing is run. Across all libraries, there are over 3,000 unit tests which all together include over 10,000 assertions about the software's behavior.
+VotingWorks code has extensive unit test coverage. All libraries in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.0.2) have near 100% coverage, meaning that almost every single line of code runs whenever testing is run. Across all libraries, there are over 3,000 unit tests which all together include over 10,000 assertions about the software's behavior.
 
 Each test always either passes or fails. A test fails if an error is thrown or an assertion fails. An assertion may be something like "the phrase _General Election_ appear on screen" or "there are 56 votes for a specific candidate after loading cast vote records."&#x20;
 
@@ -36,7 +36,7 @@ To organize this process, we make use of checklists. A base set of checklists ca
 
 VxSuite practices safe concurrency by using programming languages that, in their design, avoid the most common dangers of concurrency.&#x20;
 
-Most of the application code, both frontend and backend, is written in TypeScript which compiles to JavaScript executing at runtime. JavaScript is a single-threaded language. While code can execute asynchronously, it cannot execute simultaneously with other code, preventing most instances of unsafe concurrency. We do sometimes make use of a mutex, and our TypeScript mutex implementation is [well-tested](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/utils/src/mutex.test.ts).
+Most of the application code, both frontend and backend, is written in TypeScript which compiles to JavaScript executing at runtime. JavaScript is a single-threaded language. While code can execute asynchronously, it cannot execute simultaneously with other code, preventing most instances of unsafe concurrency. We do sometimes make use of a mutex, and our TypeScript mutex implementation is [well-tested](https://github.com/votingworks/vxsuite/blob/v4.0.2/libs/utils/src/mutex.test.ts).
 
 Performance-critical parts of the application, like image processing for ballot interpretation, are written in [Rust](https://www.rust-lang.org/). Rust was designed specifically to be a memory-safe language alternative to common low-level alternatives like C. It requires that every piece of memory has a single owner responsible for the memory's lifecycle. Unsafe memory operations are prevented by the tooling itself - the compiler and linter - to ensure memory-safe programs. The language is recommended for security critical operations by the White House ([2024 Report](https://www.whitehouse.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf)) and industry leaders. While memory safety and concurrency safety are slightly different things, the two are deeply intertwined, and a memory-safe language avoids most of the pitfalls of unsafe concurrency.
 
