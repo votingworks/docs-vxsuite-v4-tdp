@@ -46,7 +46,7 @@ In the case of specifying a Spanish translation and overriding the English trans
 
 * Voter-facing strings that appear on ballots (contest names, candidate names, the name of the jurisdiction, etc.) are not included in the app strings file because they are already included in the election definition.
 * The language codes in the app strings file are the [IETF language tags](https://www.w3.org/International/articles/language-tags/) for supported VxSuite languages: English, Spanish, Simplified Chinese, and Traditional Chinese.
-* The keys for the various user interface app strings (e.g. `buttonStartVoting`) are defined in VxSuite's [app strings catalog](https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/libs/ui/src/ui_strings/app_strings_catalog/latest.json).
+* The keys for the various user interface app strings (e.g. `buttonStartVoting`) are defined in VxSuite's [app strings catalog](https://github.com/votingworks/vxsuite/blob/v4.0.2/libs/ui/src/ui_strings/app_strings_catalog/latest.json).
 
 The app strings file is optional. If not provided, default English strings will be used.
 

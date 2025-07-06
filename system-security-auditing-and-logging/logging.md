@@ -4,7 +4,7 @@ All VxSuite applications use the same framework to log user actions, application
 
 ## Application Log Events
 
-VxSuite applications use a [shared logging library ](https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch/libs/logging)to capture required or otherwise important application log events. The core metadata for each application log event maps roughly to VVSG 2.0 standards, with some additional fields:
+VxSuite applications use a [shared logging library](https://github.com/votingworks/vxsuite/tree/v4.0.2/libs/logging) to capture required or otherwise important application log events. The core metadata for each application log event maps roughly to VVSG 2.0 standards, with some additional fields:
 
 * **Log Event ID** - The unique identifier for each event. The full list of log event IDs with descriptions is included in the automatically generated log [documentation](https://github.com/votingworks/docs-vxsuite-v4/blob/main/software-docs/VotingWorksLoggingDocumentation.md).
 * **Log Event Type** - Describes whether the event involves an action or a status update, and whether it originated with a user, the application, or the larger system. Log event types can be thought of as categories whereas log event IDs are more specific. Every log event type includes many log event IDs under it. The full list of log event types with descriptions is included in the automatically generated log [documentation](https://github.com/votingworks/docs-vxsuite-v4/blob/main/software-docs/VotingWorksLoggingDocumentation.md).

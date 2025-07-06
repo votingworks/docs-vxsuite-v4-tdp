@@ -18,15 +18,15 @@ All machines are completely disconnected from any network and have network capab
 
 ### kiosk-browser
 
-kiosk-browser is a web browser restricted to rendering a single full-screen application. The code can be found in the [kiosk-browser repository](https://github.com/votingworks/kiosk-browser/tree/v4.0.0-release-branch). It is a thin [Electron](https://www.electronjs.org/) application which uses [Chromium](https://www.chromium.org/chromium-projects/) as its rendering engine. The browser communicates with the frontend server which serves HTML, JavaScript, and assets. The browser also communicates with the backend server which serves application data. Electron enables the browser to access certain operating system APIs - such as open file dialogs - that a lone renderer would not have access to. The browser is launched at startup, with limited privileges, and cannot be exited. Everything a standard (non-vendor) user sees or does is mediated through kiosk-browser.
+kiosk-browser is a web browser restricted to rendering a single full-screen application. The code can be found in the [kiosk-browser repository](https://github.com/votingworks/kiosk-browser/tree/v4.0.2). It is a thin [Electron](https://www.electronjs.org/) application which uses [Chromium](https://www.chromium.org/chromium-projects/) as its rendering engine. The browser communicates with the frontend server which serves HTML, JavaScript, and assets. The browser also communicates with the backend server which serves application data. Electron enables the browser to access certain operating system APIs - such as open file dialogs - that a lone renderer would not have access to. The browser is launched at startup, with limited privileges, and cannot be exited. Everything a standard (non-vendor) user sees or does is mediated through kiosk-browser.
 
 ### Application Frontend Server
 
-The frontend is a [React](https://react.dev/) application served from a [Node.js](https://nodejs.org/en) server. All code for the application frontends are in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch) under `apps/[app-name]/frontend`.&#x20;
+The frontend is a [React](https://react.dev/) application served from a [Node.js](https://nodejs.org/en) server. All code for the application frontends are in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.0.2) under `apps/[app-name]/frontend`.&#x20;
 
 ### Application Backend Server
 
-The application backend is a separate [Node.js](https://nodejs.org/en) server which acts as the core of the entire application in that it manages all persistent data and communication with peripherals. All code for the application backends are in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch) under `apps/[app-name]/backend`. Most code is written in TypeScript but some performance sensitive code, such as interpretation and background daemons, are written in [Rust](https://www.rust-lang.org/) and executed as binaries at runtime.
+The application backend is a separate [Node.js](https://nodejs.org/en) server which acts as the core of the entire application in that it manages all persistent data and communication with peripherals. All code for the application backends are in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.0.2) under `apps/[app-name]/backend`. Most code is written in TypeScript but some performance sensitive code, such as interpretation and background daemons, are written in [Rust](https://www.rust-lang.org/) and executed as binaries at runtime.
 
 #### Application Data Management
 
@@ -60,14 +60,14 @@ Because all voter selections are recorded on paper, voter-verified, and unmodifi
 
 There are four code repositories relevant to the voting system:
 
-* [vxsuite](https://github.com/votingworks/vxsuite/tree/v4.0.0-release-branch) — Core application code
-* [kiosk-browser](https://github.com/votingworks/kiosk-browser/tree/v4.0.0-release-branch) — Generic Electron-based kiosk-mode browser
-* [vxsuite-complete-system](https://github.com/votingworks/vxsuite-complete-system/tree/v4.0.0-rc2) — Links compatible versions of vxsuite and kiosk-browser, and includes the scripts necessary to create a production machine
-* [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.0.0) — Our framework for building VxSuite and managing its dependencies, across versions and environments
+* [vxsuite](https://github.com/votingworks/vxsuite/tree/v4.0.2) — Core application code
+* [kiosk-browser](https://github.com/votingworks/kiosk-browser/tree/v4.0.2) — Generic Electron-based kiosk-mode browser
+* [vxsuite-complete-system](https://github.com/votingworks/vxsuite-complete-system/tree/v4.0.2) — Links compatible versions of vxsuite and kiosk-browser, and includes the scripts necessary to create a production machine
+* [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.0.2) — Our framework for building VxSuite and managing its dependencies, across versions and environments
 
 ## Key Dependency Chart
 
-<table><thead><tr><th width="293">Dependency</th><th>Version</th></tr></thead><tbody><tr><td>Debian</td><td>12.11</td></tr><tr><td>Additional Debian Packages</td><td>See <a href="https://github.com/votingworks/vxsuite-build-system/blob/v4.0.0/inventories/v4.0.0/group_vars/all/packages.yaml">build system package inventory</a></td></tr><tr><td>Node.js</td><td>20.16.0</td></tr><tr><td>pnpm</td><td>8.15.5</td></tr><tr><td>Application Node Packages</td><td>See the relevant <a href="https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/pnpm-lock.yaml">lock file</a></td></tr><tr><td>Rust</td><td>1.86</td></tr><tr><td>Rust Packages</td><td>See the relevant <a href="https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/Cargo.lock">lock file</a></td></tr><tr><td>yarn</td><td>1.22.22</td></tr><tr><td>Electron</td><td>36.4.0</td></tr><tr><td>Chromium</td><td><a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/136.0.7103.149:">136.0.7103.149</a></td></tr><tr><td>Kiosk Browser Node Packages</td><td>See the relevant <a href="https://github.com/votingworks/kiosk-browser/blob/v4.0.0-release-branch/yarn.lock">lock file</a></td></tr></tbody></table>
+<table><thead><tr><th width="293">Dependency</th><th>Version</th></tr></thead><tbody><tr><td>Debian</td><td>12.11</td></tr><tr><td>Additional Debian Packages</td><td>See <a href="https://github.com/votingworks/vxsuite-build-system/blob/v4.0.2/inventories/v4.0.2/group_vars/all/packages.yaml">build system package inventory</a></td></tr><tr><td>Node.js</td><td>20.16.0</td></tr><tr><td>pnpm</td><td>8.15.5</td></tr><tr><td>Application Node Packages</td><td>See the relevant <a href="https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/pnpm-lock.yaml">lock file</a></td></tr><tr><td>Rust</td><td>1.86</td></tr><tr><td>Rust Packages</td><td>See the relevant <a href="https://github.com/votingworks/vxsuite/blob/v4.0.0-release-branch/Cargo.lock">lock file</a></td></tr><tr><td>yarn</td><td>1.22.22</td></tr><tr><td>Electron</td><td>36.4.0</td></tr><tr><td>Chromium</td><td><a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/136.0.7103.149:">136.0.7103.149</a></td></tr><tr><td>Kiosk Browser Node Packages</td><td>See the relevant <a href="https://github.com/votingworks/kiosk-browser/blob/v4.0.0-release-branch/yarn.lock">lock file</a></td></tr></tbody></table>
 
 ## Traceability of Procured Software
 
