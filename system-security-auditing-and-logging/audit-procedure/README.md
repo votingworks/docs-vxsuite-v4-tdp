@@ -18,7 +18,7 @@ To enable a ballot-comparison risk-limiting audit, VxSuite provides:
 
 Then, to run a ballot-comparison risk-limiting audit with VxSuite:
 
-1. scan all ballots with VxCentralScan and the imprinter module on the Ricoh scanner. See [#imprinting](../system-overview/vxcentralscan-function.md#imprinting "mention").
+1. scan all ballots with VxCentralScan and the imprinter module on the Ricoh scanner. See [#imprinting](../../system-overview/vxcentralscan-function.md#imprinting "mention").
 2. store ballots by batch, recording the batch ID displayed on VxCentralScan display. Storing ballots in the order they were scanned is helpful for later retrieval, but not strictly necessary since the sequence numbers printed on the ballots can be used to recover the proper order.
 3. export CVRs from all the VxCentralScan's
 4. use VxAdmin to aggregate CVRs, adjudicate write-ins, and generate final tallies
@@ -28,6 +28,8 @@ Then, to run a ballot-comparison risk-limiting audit with VxSuite:
 8. retrieve the selected ballots by batch ID and sequence number
 9. enter the interpretation of those ballots into the RLA tool
 10. the RLA tool will either declare the audit successful or require an escalation. The RLA tool will ultimately declare the election a success or call into question how ballots were interpreted.
+
+Alternatively, unique identifiers may be added by VxScan — see [vxscan-unique-identifiers.md](vxscan-unique-identifiers.md "mention")for the associated audit procedure.
 
 ## Batch-Comparison Risk-Limiting Audit
 

@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Cast Vote Records
 
 A cast vote record is a record of voter selections based on the system's interpretation of a scanned ballot. Each cast vote record corresponds to a single scanned ballot sheet. Multi-sheet ballots produce multiple cast vote records.

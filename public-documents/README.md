@@ -11,4 +11,4 @@ The VxSuite TDP is open-source and publicly available. The public documents requ
 * Barcodes:&#x20;
   * Ballot QR Code Data Format: [ballot-qr-code-data-format.md](ballot-qr-code-data-format.md "mention")
   * Signed Hash Validation QR Code: [signed-hash-validation.md](../system-overview/signed-hash-validation.md "mention")
-* Audit Implementation: [auditing.md](../system-security-auditing-and-logging/auditing.md "mention")
+* Audit Implementation: [audit-procedure](../system-security-auditing-and-logging/audit-procedure/ "mention")

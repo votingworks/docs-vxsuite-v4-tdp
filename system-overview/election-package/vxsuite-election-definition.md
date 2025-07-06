@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # VxSuite Election Definition
 
 The VxSuite Election Definition is a data format for defining an election that is specific to VxSuite.  It is a JSON file which defines the essential features of an election - metadata, contests, parties, precincts, districts, ballot styles, candidates, and more. In addition to defining that basic structure of the election, the format contains translations for any text which may appear on the ballots and ballot layouts to map the bubbles on each ballot to contest options.
