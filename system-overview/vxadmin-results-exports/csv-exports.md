@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # CSV Exports
 
 Both tally reports and ballot count reports can be exported in comma-separated values (CSV) format.&#x20;

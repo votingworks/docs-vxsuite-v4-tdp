@@ -6,7 +6,7 @@
 
 ## [procedural-and-operational-security.md](procedural-and-operational-security.md "mention")
 
-## [auditing.md](auditing.md "mention")
+## [audit-procedure](audit-procedure/ "mention")
 
 ## [logging.md](logging.md "mention")
 

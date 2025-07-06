@@ -14,7 +14,7 @@ Take following steps to decode a barcode manually and, in the case of a machine-
 
 You may use this process to verify that the encoded information in the ballot QR code matches the information presented on the ballot to human readers.
 
-An easier, recommended approach is to simply scan the ballot(s) at VxScan or VxCentralScan. You can confirm the interpretation (and therefore in most cases, the QR code) is correct by looking at a results report. You can also inspect the [cast-vote-records.md](../system-overview/cast-vote-records.md "mention") exported from the scanner, which contain the images and interpretation for each ballot, to confirm that the metadata and voter selections were encoded and decoded correctly, similar to an [Image Audit](../system-security-auditing-and-logging/auditing.md#image-audits).
+An easier, recommended approach is to simply scan the ballot(s) at VxScan or VxCentralScan. You can confirm the interpretation (and therefore in most cases, the QR code) is correct by looking at a results report. You can also inspect the [cast-vote-records.md](../system-overview/cast-vote-records.md "mention") exported from the scanner, which contain the images and interpretation for each ballot, to confirm that the metadata and voter selections were encoded and decoded correctly, similar to an [Image Audit](../system-security-auditing-and-logging/audit-procedure/#image-audits).
 
 ## HMPB QR Code Data Format
 

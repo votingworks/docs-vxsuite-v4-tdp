@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Write-In Adjudication Report
 
 The write-in adjudication report includes the results of all write-in adjudication organized by contest:
