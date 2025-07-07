@@ -58,29 +58,42 @@ In a yes-no contest, also known as a ballot measure, the voter makes a selection
 
 #### Yes-No Contest Option
 
-<table><thead><tr><th width="145">Attribute</th><th width="120">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique Identifier</td></tr><tr><td><code>label</code></td><td><code>string</code></td><td>Label e.g. "Yes" or "No"</td></tr></tbody></table>
+<table><thead><tr><th width="145">Attribute</th><th width="120">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>label</code></td><td><code>string</code></td><td>Label e.g. "Yes" or "No"</td></tr></tbody></table>
 
 ### County
 
 One and only one county is associated with each election.
 
-<table><thead><tr><th width="159">Attribute</th><th width="152">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique Identifier</td></tr><tr><td><code>name</code></td><td><code>string</code></td><td>Name e.g. "Choctaw County"</td></tr></tbody></table>
+<table><thead><tr><th width="159">Attribute</th><th width="152">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>name</code></td><td><code>string</code></td><td>Name e.g. "Choctaw County"</td></tr></tbody></table>
 
 ### District
 
 Districts are used to define levels at which a contest takes place. For example, an election may have districts defined for the state, county, town, and ward levels. Different contests can be associated with each of those levels.
 
-<table><thead><tr><th width="152">Attribute</th><th width="141">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique Identifier</td></tr><tr><td><code>name</code></td><td><code>string</code></td><td>Name e.g. "State of Mississippi"</td></tr></tbody></table>
+<table><thead><tr><th width="152">Attribute</th><th width="141">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>name</code></td><td><code>string</code></td><td>Name e.g. "State of Mississippi"</td></tr></tbody></table>
 
 ### Party
 
 Parties are used in the data model either to associate candidates with a party, associate ballot styles with a party for a primary, associate contests with a party for a primary
 
-<table><thead><tr><th width="203">Attribute</th><th width="229">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique Identifier</td></tr><tr><td><code>name</code></td><td><code>string</code></td><td>Short name which will appear on the ballot besides candidates e.g. "Republican"</td></tr><tr><td><code>fullName</code></td><td><code>string</code></td><td>Full name which will appear in reports and in the titles of ballots e.g. "Democratic Party"</td></tr><tr><td><code>abbrev</code></td><td><code>string</code></td><td>Abbreviation for a party e.g. "R"</td></tr></tbody></table>
+<table><thead><tr><th width="203">Attribute</th><th width="229">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>name</code></td><td><code>string</code></td><td>Short name which will appear on the ballot besides candidates e.g. "Republican"</td></tr><tr><td><code>fullName</code></td><td><code>string</code></td><td>Full name which will appear in reports and in the titles of ballots e.g. "Democratic Party"</td></tr><tr><td><code>abbrev</code></td><td><code>string</code></td><td>Abbreviation for a party e.g. "R"</td></tr></tbody></table>
 
 ### Precinct
 
-<table><thead><tr><th width="203">Attribute</th><th width="229">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique Identifier</td></tr><tr><td><code>name</code></td><td><code>string</code></td><td>Name e.g. "Fire Station"</td></tr></tbody></table>
+| Attribute     | Type                                                                      | Description                                                                                                                                |
+| ------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`          | `string`                                                                  | Unique identifier                                                                                                                          |
+| `name`        | `string`                                                                  | Name e.g. "Fire Station"                                                                                                                   |
+| `districtIds` | `array` - ID for [District](vxsuite-election-definition.md#district)      | Districts to which the precinct belongs. Not present if `splits` is specified, in which case distrit associations are specified per split. |
+| `splits`      | `array` - [Precinct Split](vxsuite-election-definition.md#precinct-split) | Splits within the precinct. Not present if `districtIds` is specified.                                                                     |
+
+### Precinct Split
+
+| Attribute     | Type                                                                 | Description                                   |
+| ------------- | -------------------------------------------------------------------- | --------------------------------------------- |
+| `id`          | `string`                                                             | Unique identifier                             |
+| `name`        | `string`                                                             | Name e.g. "Precinct Split 1"                  |
+| `districtIds` | `array` - ID for [District](vxsuite-election-definition.md#district) | Districts to which the precinct split belongs |
 
 ## Ballot Strings
 
