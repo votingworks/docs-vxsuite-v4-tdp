@@ -6,7 +6,7 @@ After a voter is done making vote selections with VxMark, the machine will print
 
 ## Ballot Layout
 
-<figure><img src="../.gitbook/assets/image (68).png" alt="" width="375"><figcaption><p>Parts of a VxMark Ballot</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (87).png" alt="" width="375"><figcaption><p>Parts of a VxMark Ballot</p></figcaption></figure>
 
 The ballot displays information about the election, metadata about the ballot, and the voter's selections. The selections are both displayed and encoded in the QR code.&#x20;
 

@@ -11,7 +11,7 @@ VxSuite supports a wide range of paper for hand-marked paper ballot style printi
 * **Weight:** 105-177gsm
 * **Coating:** uncoated
 * **Opacity:** >90%
-* **Color:** white or any pastel color >=70 brightness. Contrast ratio of printed black text is 21:1 for white paper and will exceed 10:1 on other paper colors of specified brightness.
+* **Color:** white or any pastel color ≥70 brightness. Contrast ratio of printed black text is 21:1 for white paper and will exceed 10:1 on other paper colors of specified brightness.
 * **Watermarking:** none
 * **Ink:** typical oil-based or soy-based inks are appropriate for printing presses; typical laser toner or inkjet ink are appropriate for smaller printers & copiers.
 * **Folding:** ballots should not be folded through bubbles.
