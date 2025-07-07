@@ -103,7 +103,7 @@ Changes made in adjudication are immediately reflected in tally reports.
 The list of unofficial write-in candidates is created by the election manager as they adjudicate. The interface has an option to add a new write-in candidate and specify their name. That candidate will then be an option for other write-ins for the same contest. If there are no longer any adjudications that reference the unofficial candidates, their name will be removed from the list.
 
 {% hint style="info" %}
-**User Manual Reference:** [Write-In Adjudication](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/election-night-guides/write-in-adjudication "mention")
+**User Manual Reference:** [Adjudication](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/election-night-guides/adjudication "mention")
 {% endhint %}
 
 ## Manual Tallies

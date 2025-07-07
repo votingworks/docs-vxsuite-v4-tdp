@@ -106,7 +106,6 @@ The system settings file contains settings which are not specific to an election
   * `castVoteRecordsIncludeRedundantMetadata` - When set to `true`, scanners will include election and system metadata in each ballot's CVR as specified in the CVR CDF, rather than just including it once for the entire export. This extra information increases the size of the CVR export, degrading performance.
   * `disableVerticalStreakDetection` - Disables the warning when streaks are detected when scanning ballots (which indicates that the scanner needs to be cleaned). Used as a failsafe in case of erroneous warnings.
   * `precinctScanEnableBallotAuditIds` - Enables the VxScan feature to read ballot IDs from hand marked paper ballot QR codes, encrypt them, and export them to cast vote records (to be used for post-election auditing).
-  * `minimumDetectedScale` - Specifies the ballot scale threshold beneath which the scanners will reject ballots for not being to scale. The "ballot scale" is the detected size of the ballot timing mark grid relative to the specification defined in [hand-marked-ballots.md](../hand-marked-ballots.md "mention")
 
 The system settings file is optional. If not provided, the following default settings will be used:
 
