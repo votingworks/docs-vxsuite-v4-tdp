@@ -87,7 +87,7 @@ The voter's choices do not persist on VxMark after the end of the voting session
 VxMark supports voting sessions in various display formats and interaction modes.
 
 {% hint style="info" %}
-**User Manual Reference:** [Voting Session Language & Settings](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/voting-session-language-and-settings "mention")
+**User Manual Reference:** [Voting Session Language & Accessibility Settings](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/voting-session-language-and-accessibility-settings "mention")
 {% endhint %}
 
 ### Visual and Enhanced Visual Formats
