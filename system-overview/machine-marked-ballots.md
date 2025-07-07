@@ -1,6 +1,6 @@
 # Machine Marked Ballots
 
-After a voter is done making vote selections with VxMark, the machine will print a ballot representing the selections. The voter reviews the ballot, after which it is deposited into the attached ballot box. Eventually, those ballots are scanned at VxScan or VxCentralScan.
+After a voter is done making vote selections with VxMark, the machine will print a ballot representing the selections. The voter reviews the ballot and verifies ballot selections. The ballot is then cast into the attached ballot box.
 
 <figure><img src="../.gitbook/assets/image (67).png" alt="" width="375"><figcaption><p>VxMark Ballot</p></figcaption></figure>
 
