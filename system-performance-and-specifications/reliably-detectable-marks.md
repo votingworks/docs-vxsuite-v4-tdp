@@ -20,5 +20,5 @@ The mark threshold set on a scanner can be checked by an election official at an
 
 ### Marginal Marks
 
-The system also supports setting a marginal mark threshold for flagging ambiguous marks close to but note quite over the definite mark threshold. If a marginal mark threshold is set and marginal mark adjudication is enabled, the definite mark threshold can be increased without having to worry about completely missing marks.
+The system also supports setting a marginal mark threshold for flagging ambiguous marks close to but not quite over the definite mark threshold. If a marginal mark threshold is set and marginal mark adjudication is enabled, the definite mark threshold can be increased without having to worry about completely missing marks.
 
