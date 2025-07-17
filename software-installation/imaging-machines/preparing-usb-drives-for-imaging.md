@@ -37,7 +37,7 @@ Since the signed image file is located in the root user's home directory by defa
 To copy the image to the USB drive, run the following command as the **vx** user:
 
 ```
-sudo cp ~root/vxadmin-signed.img.lz4 /media/vx/Data && sudo sync
+sudo cp ~root/vxadmin-signed.img.lz4 /media/vx/Data/ && sudo sync
 ```
 
 Once the copy and sync completes, you can eject the USB drive and remove it. It is now ready to image a machine. Repeat this process with any other vx-iso USB drives and VotingWorks image files as required.&#x20;
