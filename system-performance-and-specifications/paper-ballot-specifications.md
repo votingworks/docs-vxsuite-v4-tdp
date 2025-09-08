@@ -7,7 +7,7 @@ The following defines the minimal specifications for VxSuite paper stock. Ballot
 VxSuite supports a wide range of paper for hand-marked paper ballot style printing within the following supported specifications:
 
 * **Width**: 8.5"
-* **Length**: 11", 14", 17", 22"
+* **Length**: 11", 14", 17", 19", 22"
 * **Weight:** 105-177gsm
 * **Coating:** uncoated
 * **Opacity:** >90%
