@@ -92,6 +92,6 @@ Ballot rotation is specified by the defined candidate order in each ballot style
 Because VxSuite does not utilize any data extensions to the Ballot Definition CDF, some information cannot be included when using the Ballot Definition CDF. The missing information creates some limitations when using the Ballot Definition CDF when compared to the [VxSuite Election Definition](vxsuite-election-definition.md) format:
 
 * Contest term descriptions (e.g. “2 years”) will always show up in English because there is no field in the CDF for internationalized term descriptions
-* The full party name will be displayed for each candidate on VxMark (e.g. “Democratic Party” instead of “Democrat”) because the CDF only has one attribute for party name. In contrast, the VxSuite format supports two separate fields, one for the full name and one for showing on the ballot.
+* The full party name will be displayed for each candidate on VxMarkScan (e.g. “Democratic Party” instead of “Democrat”) because the CDF only has one attribute for party name. In contrast, the VxSuite format supports two separate fields, one for the full name and one for showing on the ballot.
 * When adjudicating write-ins, the highlighted contest option area will be set to a default because there is no field in the CDF for this parameter.
 * Seal images are not supported in the CDF, so no seal will be shown in association with the election.

@@ -25,13 +25,13 @@ In addition to the processes in [procedural-and-operational-security.md](procedu
 * VxScan triggers a visual & audible alert when a USB drive is removed in an activated state to alert any unauthorized access.
 * VxScan has no exposed ports when the poll worker door is sealed.
 
-## VxMark
+## VxMarkScan
 
-* VxMark transport & storage cases have tamper-evident seal points to detect any unauthorized physical access.
-* VxMark has an adhesive tamper-evident seal behind the touchscreen to detect any unauthorized physical access to the device internals.
-* VxMark ballot box has a tamper-evident seal point to detect any unauthorized access to cast ballots and the printer-scanner.
-* VxMark triggers a visual & audible alert when the printer-scanner and/or printer-scanner cover is opened in an activated state to alert any unauthorized access.
-* VxMark has no exposed ports when the ballot box is attached and sealed. An ethernet port blocker is also installed on the ethernet port accessible when the ballot box is detached.
+* VxMarkScan transport & storage cases have tamper-evident seal points to detect any unauthorized physical access.
+* VxMarkScan has an adhesive tamper-evident seal behind the touchscreen to detect any unauthorized physical access to the device internals.
+* VxMarkScan ballot box has a tamper-evident seal point to detect any unauthorized access to cast ballots and the printer-scanner.
+* VxMarkScan triggers a visual & audible alert when the printer-scanner and/or printer-scanner cover is opened in an activated state to alert any unauthorized access.
+* VxMarkScan has no exposed ports when the ballot box is attached and sealed. An ethernet port blocker is also installed on the ethernet port accessible when the ballot box is detached.
 
 
 

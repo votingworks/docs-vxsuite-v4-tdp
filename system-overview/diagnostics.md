@@ -26,7 +26,7 @@ For precinct equipment, the list of ballot styles will include only those approp
 
 #### Precinct
 
-For precinct equipment - VxScan and VxMark -  the currently configured precinct will be shown, if any.
+For precinct equipment - VxScan and VxMarkScan -  the currently configured precinct will be shown, if any.
 
 #### Mark Thresholds
 
@@ -76,7 +76,7 @@ The user may test the speaker by triggering the chime sound and confirming wheth
 **User Manual Reference**: [VxScan Diagnostics](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxscan/vxscan-diagnostics "mention")
 {% endhint %}
 
-## VxMark Diagnostics
+## VxMarkScan Diagnostics
 
 ### Printer-Scanner
 
@@ -102,5 +102,5 @@ The user may perform a test of the PAT input, which is simply confirms that a PA
 The user may perform a test of the front headphone input by connecting headphones and triggering a chime. The user must indicate whether they heard the chime or not, corresponding to a pass or fail respectively.
 
 {% hint style="info" %}
-**User Manual Reference**: [VxMark Diagnostics](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/vxmark-diagnostics "mention")
+**User Manual Reference**: [VxMarkScan Diagnostics](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/vxmark-diagnostics "mention")
 {% endhint %}

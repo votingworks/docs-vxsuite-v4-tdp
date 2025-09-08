@@ -6,7 +6,7 @@ VxAdmin acts as the election setup hub at the beginning of the election and the 
 
 Only a [system administrator ](user-roles.md#system-administrator-role)can authenticate onto an unconfigured VxAdmin and configure it with an election package from an external system. The election package must be loaded via a USB drive. The election package must be a valid `.zip` [election package](election-package/). If the election package zip file, election definition file, system settings file, or metadata file are not valid, VxAdmin will surface an error to the user.
 
-Once VxAdmin is configured, system administrators and election managers can export signed election packages. The exported election package is the same as the imported election package but is accompanied by a digital signature, which ensures that the election package was validated by a certified VxAdmin. The election packages loaded into VxMark, VxScan, and VxCentralScan _must be signed_ and unsigned election packages will be rejected.
+Once VxAdmin is configured, system administrators and election managers can export signed election packages. The exported election package is the same as the imported election package but is accompanied by a digital signature, which ensures that the election package was validated by a certified VxAdmin. The election packages loaded into VxMarkScan, VxScan, and VxCentralScan _must be signed_ and unsigned election packages will be rejected.
 
 {% hint style="info" %}
 **User Manual References:** [Configure VxAdmin](https://app.gitbook.com/s/D1Q1RPHT4tkPuKCBW89l/central-system-setup/configure-vxadmin "mention") & [Save Election Package](https://app.gitbook.com/s/D1Q1RPHT4tkPuKCBW89l/central-system-setup/save-election-package "mention")
@@ -66,7 +66,7 @@ VxAdmin is always in one of three ballot modes:
 * Test Ballot Mode - test CVRs have been loaded
 * Official Ballot Mode - official CVRs have been loaded
 
-On VxAdmin, the ballot mode is determined by the ballot mode of the imported CVRs. VxAdmin differs in that respect from VxMark, VxScan, and VxCentralScan, where the ballot mode is set directly by the election manager.&#x20;
+On VxAdmin, the ballot mode is determined by the ballot mode of the imported CVRs. VxAdmin differs in that respect from VxMarkScan, VxScan, and VxCentralScan, where the ballot mode is set directly by the election manager.&#x20;
 
 Once VxAdmin is in test ballot mode, only test CVRs can be subsequently loaded. Similarly once VxAdmin is in official ballot mode, only official CVRs can be subsequently loaded.
 
