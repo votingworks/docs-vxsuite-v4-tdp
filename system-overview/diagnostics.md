@@ -14,6 +14,10 @@ Retrieves the current amount of disk space used and disk space available for the
 
 For components with internal batteries - VxAdmin and VxCentralScan - the operating system is polled for battery status. The application will report the current charge level and whether or not the battery is currently charging.
 
+### Uninterruptible Power Supply (UPS)
+
+For components that operate with an external UPS - VxMarkScan, VxScan, and VxCentralScan - there is a test flow for the user to confirm that the UPS is connected and fully charged.
+
 ### Configuration
 
 #### Election Identifier
