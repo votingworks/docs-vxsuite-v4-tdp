@@ -105,7 +105,6 @@ The system settings file contains settings which are not specific to an election
   * `precinctScanEnableShoeshineMode` - When set to `true`, VxScan will run in "shoeshine mode," which will scan the same ballot repeatedly. Instead of ejecting the ballot after scanning it, VxScan will move it back to the input tray and scan it again. This mode is used only for internal testing and certification testing.
   * `castVoteRecordsIncludeRedundantMetadata` - When set to `true`, scanners will include election and system metadata in each ballot's CVR as specified in the CVR CDF, rather than just including it once for the entire export. This extra information increases the size of the CVR export, degrading performance.
   * `disableVerticalStreakDetection` - Disables the warning when streaks are detected when scanning ballots (which indicates that the scanner needs to be cleaned). Used as a failsafe in case of erroneous warnings.
-  * `minimumDetectedScale` - Specifies the ballot scale threshold beneath which the scanners will reject ballots. The "ballot scale" is the detected size of the ballot timing mark grid relative to the specification defined in [hand-marked-ballots.md](../hand-marked-ballots.md "mention").
   * `precinctScanEnableBallotAuditIds` - Enables the VxScan feature to read ballot IDs from hand marked paper ballot QR codes, encrypt them, and export them to cast vote records (to be used for post-election auditing).
 
 The system settings file is optional. If not provided, the following default settings will be used:
@@ -131,7 +130,6 @@ The system settings file is optional. If not provided, the following default set
   "precinctScanEnableShoeshineMode": false,
   "castVoteRecordsIncludeRedundantMetadata": false,
   "disableVerticalStreakDetection": false,
-  "minimumDetectedScale": 0.985,
   "precinctScanEnableBallotAuditIds": false
 }
 </code></pre>
