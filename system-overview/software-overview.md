@@ -129,6 +129,6 @@ All machines allow system administrators and election managers to edit the date,
 
 ### Other Shared Software Patterns
 
-* [ballot-interpretation.md](ballot-interpretation.md "mention")
+* [Broken link](broken-reference "mention")
 * [diagnostics.md](diagnostics.md "mention")
 

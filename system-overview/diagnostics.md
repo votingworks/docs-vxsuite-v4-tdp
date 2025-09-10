@@ -34,7 +34,7 @@ For precinct equipment - VxScan and VxMark -  the currently configured precinct 
 
 #### Mark Thresholds
 
-For scanners - VxScan and VxCentralScan - the currently configured mark and write-in area thresholds will be shown. The thresholds reflect what was set in the [system settings](election-package/#system-settings).
+For scanners - VxScan and VxCentralScan - the currently configured mark and write-in area thresholds will be shown. The thresholds reflect what was set in the [system settings](broken-reference).
 
 ## VxAdmin Diagnostics
 

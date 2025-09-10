@@ -4,7 +4,7 @@ VxMark is the system's ballot marking device. It allows all voters to make selec
 
 ## Configuration
 
-VxMark is configured with a signed [election package](election-package/#election-definition) exported from VxAdmin. The election definition defines the ballot styles that will be available to voters. The election definition also includes the translations defined for text on the ballot, while the [app strings](election-package/#app-strings) file contains the translations for other text shown on screen. The election package's [audio files](election-package/#audio-ids-and-audio-clips) are played for the voter in audio-mode.
+VxMark is configured with a signed [election package](broken-reference) exported from VxAdmin. The election definition defines the ballot styles that will be available to voters. The election definition also includes the translations defined for text on the ballot, while the [app strings](broken-reference) file contains the translations for other text shown on screen. The election package's [audio files](broken-reference) are played for the voter in audio-mode.
 
 {% hint style="info" %}
 **User Manual Reference:** [Configure VxMark](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/configure-vxmark "mention")
