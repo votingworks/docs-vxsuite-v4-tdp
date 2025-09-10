@@ -12,11 +12,13 @@ Before trying to make sense of the ballot, the interpreter checks the images for
 
 If a streak is detected, the interpreter exits and surfaces the error to the application which will alert the user.
 
-The interpreter then identifies the timing mark grid. It searches for all vertical line segments around the edges of the ballot and joins adjacent line segments to form shapes. The shapes are filtered and scored according to how closely they resemble timing marks. The interpreter then looks for patterns of three timing marks resembling the corners of the grid. If the four corners cannot be identified, the interpreter exits. Once the corners are identified, the interpreter looks for the rest of the timing marks along the lines between the corners.&#x20;
+The interpreter then identifies the timing mark grid. It searches for all vertical line segments around the edges of the ballot and joins adjacent line segments to form shapes. The shapes are filtered and scored according to how closely they resemble timing marks. The interpreter then looks for patterns of three timing marks resembling the corners of the grid. If the four corners cannot be identified, the interpreter exits. Once the corners are identified, the interpreter looks for the rest of the timing marks along the lines between the corners.
 
 <figure><img src="../.gitbook/assets/452452815-c8912b9b-d3ac-4888-a386-b4fd57749306.png" alt="" width="375"><figcaption></figcaption></figure>
 
-The interpreter then searches the bottom left and top right corners of the image for a QR code. Since ballots have QR codes in the bottom left corner, the location of the QR code determines the correct orientation of the ballot and the interpreter can flip the image right-side up if necessary:
+Before proceeding with interpretation, the interpreter calculates the distance between horizontal timing marks to verify the scale at which the ballot was printed. The expected distance is derived from the  specifications for [hand-marked-ballots.md](hand-marked-ballots.md "mention"). If the timing marks are too close together, the interpreter rejects the ballot — ballots must be printed at full scale to be interpreted safely.
+
+The interpreter will then search the bottom left and top right corners of the image for a QR code. Since ballots have QR codes in the bottom left corner, the location of the QR code determines the correct orientation of the ballot and the interpreter can flip the image right-side up if necessary:
 
 <div><figure><img src="../.gitbook/assets/0db947fd-eb05-4ccb-8c09-ad7aee2e6564-front_debug_qr_code.png" alt="" width="375"><figcaption><p>QR code search</p></figcaption></figure> <figure><img src="../.gitbook/assets/0db947fd-eb05-4ccb-8c09-ad7aee2e6564-front_debug_complete_timing_marks_after_orientation_correction.png" alt="" width="375"><figcaption><p>Correctly oriented ballot</p></figcaption></figure></div>
 
