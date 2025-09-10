@@ -16,7 +16,9 @@ The interpreter then identifies the timing mark grid. It searches for all vertic
 
 <figure><img src="../.gitbook/assets/452452815-c8912b9b-d3ac-4888-a386-b4fd57749306.png" alt="" width="375"><figcaption></figcaption></figure>
 
-The interpreter then searches the bottom left and top right corners of the image for a QR code. Since ballots have QR codes in the bottom left corner, the location of the QR code determines the correct orientation of the ballot and the interpreter can flip the image right-side up if necessary:
+Before proceeding with any further interpretation, the interpreter calculates the distance between horizontal timing marks as a measure of the scale of the ballot. The expected distance is based off of the specification for full scale ballots defined in [hand-marked-ballots.md](hand-marked-ballots.md "mention"). If `minimumDetectedScale` is set in the system settings and the detected scale is below that threshold, the interpreter will reject the ballot. Ballots must be printed at full scale to be safely interpretable.
+
+The interpreter will then search the bottom left and top right corners of the image for a QR code. Since ballots have QR codes in the bottom left corner, the location of the QR code determines the correct orientation of the ballot and the interpreter can flip the image right-side up if necessary:
 
 <div><figure><img src="../.gitbook/assets/0db947fd-eb05-4ccb-8c09-ad7aee2e6564-front_debug_qr_code.png" alt="" width="375"><figcaption><p>QR code search</p></figcaption></figure> <figure><img src="../.gitbook/assets/0db947fd-eb05-4ccb-8c09-ad7aee2e6564-front_debug_complete_timing_marks_after_orientation_correction.png" alt="" width="375"><figcaption><p>Correctly oriented ballot</p></figcaption></figure></div>
 
