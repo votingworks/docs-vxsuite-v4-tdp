@@ -107,14 +107,14 @@ Examples of instructional ballot text include:
 * "Vote for up to 3",
 * "Official Absentee Ballot"
 
-Although the system does not use the hand marked ballot instructional text for any purpose, it must be included in the election definition for security purposes. When included, it becomes a part of the [ballot hash](./#ballot-hash-and-election-package-hash) and cannot be changed without invalidating older ballots.
+Although the system does not use the hand marked ballot instructional text for any purpose, it must be included in the election definition for security purposes. When included, it becomes a part of the [ballot hash](broken-reference) and cannot be changed without invalidating older ballots.
 
 ### Election-Specific Text
 
 The core data model already includes names and labels. For example, the [Precinct](vxsuite-election-definition.md#precinct) entity already has a `name` attribute. The names within the data model are used by default in the system in reports and administrative menus. The translations for all of these names are within the `ballotStrings` and are important for two main reasons:
 
 1. The language-specific strings are used to accommodate multi-lingual voting on VxMark
-2. Including the translations in the election definition means they are included in the [ballot hash](./#ballot-hash-and-election-package-hash) and cannot be changed without invalidating older ballots.
+2. Including the translations in the election definition means they are included in the [ballot hash](broken-reference) and cannot be changed without invalidating older ballots.
 
 The election-specific `ballotStrings` recognized by the system are the following:
 

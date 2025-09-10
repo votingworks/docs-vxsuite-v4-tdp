@@ -8,7 +8,7 @@ The poll worker role is the lowest privilege role for election day tasks at the 
 
 The poll worker role allows a user to manage the polls on the precinct equipment, VxScan and VxMark. On both devices, the poll worker card is used to open and close polls on election day. On VxMark, the poll worker card is used to enable voter sessions. There are a few other actions enabled by the poll worker card - reprinting reports, powering down the machine, or checking the software hash - but overall the role is quite limited.
 
-All poll worker cards are programmed at VxAdmin and are programmed for a specific election. They must be reprogrammed for every election. Poll worker cards may or may not require PINs depending on the value of `arePollWorkerCardPinsEnabled`  flag in the [system settings](election-package/#system-settings) file within the election package.
+All poll worker cards are programmed at VxAdmin and are programmed for a specific election. They must be reprogrammed for every election. Poll worker cards may or may not require PINs depending on the value of `arePollWorkerCardPinsEnabled`  flag in the [system settings](broken-reference) file within the election package.
 
 The poll worker role has no purpose on the central equipment, VxAdmin and VxCentralScan, and poll worker cards will be ignored on those devices.
 
