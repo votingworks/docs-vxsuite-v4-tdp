@@ -2,13 +2,13 @@
 
 ## Certification of VxSuite Components
 
-VxSuite is composed of individual machines, namely VxAdmin, VxCentralScan, VxMark, and VxScan, as well as smart cards for authentication. Each machine and each smart card has a unique 256-bit ECC private key (or keys in the case of smart cards) stored in tamper-resistant hardware, plus one or more X.509 certificates for the corresponding public key (or keys) with relevant attributes bound.
+VxSuite is composed of individual machines, namely VxAdmin, VxCentralScan, VxMarkScan, and VxScan, as well as smart cards for authentication. Each machine and each smart card has a unique 256-bit ECC private key (or keys in the case of smart cards) stored in tamper-resistant hardware, plus one or more X.509 certificates for the corresponding public key (or keys) with relevant attributes bound.
 
 This means that every VxSuite component can prove its authenticity, notably to any other VxSuite component. For example, a smart card can prove to a VxAdmin that it is a valid election administrator card for a particular election, or a VxScan can export digitally signed cast vote records, which a VxAdmin can then verify are authentic before importing.
 
 Certification relationships work as follows:
 
-* VotingWorks directly certifies the type of every component, i.e., VxAdmin machine, VxCentralScan machine, VxMark machine, VxScan machine, or smart card. This makes it such that only components that are “blessed” by VotingWorks can successfully communicate with each other. This is also important for defense-in-depth and separation of privileges, as one VotingWorks component type cannot act like another, e.g., a VxScan cannot sign an election configuration package like a VxAdmin can. Because machine certificates include a machine ID, it's also the case that, say, VxScan SC01 cannot sign CVRs as VxScan SC02.
+* VotingWorks directly certifies the type of every component, i.e., VxAdmin machine, VxCentralScan machine, VxMarkScan machine, VxScan machine, or smart card. This makes it such that only components that are “blessed” by VotingWorks can successfully communicate with each other. This is also important for defense-in-depth and separation of privileges, as one VotingWorks component type cannot act like another, e.g., a VxScan cannot sign an election configuration package like a VxAdmin can. Because machine certificates include a machine ID, it's also the case that, say, VxScan SC01 cannot sign CVRs as VxScan SC02.
 * VotingWorks further certifies every VxAdmin as bound to a particular jurisdiction, e.g., Warren County, Mississippi. This is important because VxAdmins program smart cards and should not be able to program cards for other jurisdictions.
 * Every smart card, in addition to being certified directly by VotingWorks, is certified by a VxAdmin during card programming. A card’s VxAdmin-issued certificate indicates 1) the jurisdiction that the card is bound to, 2) which user role the card has been programmed for, i.e. system administrator card, election manager card, or poll worker card, and 3) in the case of election manager and poll worker cards, the specific election that the card is bound to.
 
@@ -16,7 +16,7 @@ As a diagram:
 
 <figure><img src="../../.gitbook/assets/security-diagram (1).png" alt=""><figcaption></figcaption></figure>
 
-VxCentralScan, VxMark, and VxScan, unlike VxAdmin, aren’t bound to a jurisdiction by VotingWorks. They’re bound and unbound to jurisdictions as they’re configured and unconfigured by election managers. When an election manager configures a VxCentralScan, VxMark, or VxScan for an election, the machine persists in its datastore the jurisdiction of the election manager card used to unlock it and then only accepts cards from that jurisdiction. When the machine is unconfigured for that election, the machine returns to a jurisdiction-agnostic state. This allows one jurisdiction to lend its unconfigured equipment to another, without giving a jurisdiction any power over machines configured for a different jurisdiction.
+VxCentralScan, VxMarkScan, and VxScan, unlike VxAdmin, aren’t bound to a jurisdiction by VotingWorks. They’re bound and unbound to jurisdictions as they’re configured and unconfigured by election managers. When an election manager configures a VxCentralScan, VxMarkScan, or VxScan for an election, the machine persists in its datastore the jurisdiction of the election manager card used to unlock it and then only accepts cards from that jurisdiction. When the machine is unconfigured for that election, the machine returns to a jurisdiction-agnostic state. This allows one jurisdiction to lend its unconfigured equipment to another, without giving a jurisdiction any power over machines configured for a different jurisdiction.
 
 ## Smart Card Keys and Certificates
 
@@ -41,7 +41,7 @@ Vendor cards can be programmed to be either jurisdiction-specific or jurisdictio
 
 We store our root VotingWorks certificate authority (CA) private key encrypted in a password vault, usable only by a few authorized engineers.
 
-VxAdmin, VxCentralScan, VxMark, and VxScan are all built on devices with a Trusted Platform Module (TPM) 2.0, a chip that ships standard on modern Intel and AMD hardware. The TPM can keep cryptographic material secret inside its tamper-resistant boundary until a certain set of system conditions are met. Only once the TPM determines that the system meets a set of appropriate conditions—correct bootloader, kernel, kernel command line, etc.—does the TPM allow an application to ask it to perform signing operations with its contained secret key.
+VxAdmin, VxCentralScan, VxMarkScan, and VxScan are all built on devices with a Trusted Platform Module (TPM) 2.0, a chip that ships standard on modern Intel and AMD hardware. The TPM can keep cryptographic material secret inside its tamper-resistant boundary until a certain set of system conditions are met. Only once the TPM determines that the system meets a set of appropriate conditions—correct bootloader, kernel, kernel command line, etc.—does the TPM allow an application to ask it to perform signing operations with its contained secret key.
 
 Our smart cards are JCOP 4 Java Cards, version 3.0.5. These Java Cards can generate 256-bit ECC key pairs such that the private key never leaves the card, while the public key is exported. The cards are capable of self-destructing if someone attempts to extract the private key at the hardware level.
 
@@ -70,7 +70,7 @@ Our custom fields are:
 * 1.3.6.1.4.1.59817.3 — Card type = vendor, system-administrator, election-manager, poll-worker, or poll-worker-with-pin (vendor, system administrator, and election manager cards always have PINs)
 * 1.3.6.1.4.1.59817.4 — Election ID = The ID of the election that an election card was programmed for\*
 * 1.3.6.1.4.1.59817.5 — Election date = The date of the election that an election card was programmed for
-* 1.3.6.1.4.1.59817.6 — Machine ID = A VxAdmin, VxCentralScan, VxMark, or VxScan machine ID
+* 1.3.6.1.4.1.59817.6 — Machine ID = A VxAdmin, VxCentralScan, VxMarkScan, or VxScan machine ID
 
 \*This is not the same election ID as displayed in machine footers. The election ID as it pertains to cards is the `id` field in the election definition. The election ID as it pertains to machine footers is actually a hash, specifically `<first-7-digits-of-hash-of-election-json>-<first-7-digits-of-hash-of-election-zip>`. The reason for not using the latter in card certificates is to avoid having to reprogram cards after election package edits for what is conceptually still the same election.
 

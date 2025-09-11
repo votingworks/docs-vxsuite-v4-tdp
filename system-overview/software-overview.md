@@ -2,7 +2,7 @@
 
 VotingWorks software is open-source, which means that the code is free and publicly available. All code written by VotingWorks and almost all dependencies are open-source, with the notable exception of third-party firmware for various hardware components.&#x20;
 
-All system components - VxAdmin, VxCentralScan, VxMark, VxScan - run different application code but have fundamentally the same software architecture. The rest of this document applies to all system components unless otherwise noted.
+All system components - VxAdmin, VxCentralScan, VxMarkScan, VxScan - run different application code but have fundamentally the same software architecture. The rest of this document applies to all system components unless otherwise noted.
 
 ## Operating System
 
@@ -40,7 +40,7 @@ The exact layer between the application backend and the hardware varies by hardw
 
 In many cases VotingWorks has written custom drivers that interface directly with the USB device. In other cases, VotingWorks leverages open-source middleware layers installed as Debian packages:
 
-<table><thead><tr><th width="177">Machine</th><th width="198">Peripheral</th><th>Middleware Source</th></tr></thead><tbody><tr><td>All</td><td>Card reader</td><td><a href="https://pcsclite.apdu.fr/">PCSC lite</a></td></tr><tr><td>VxScan</td><td>Scanner</td><td>VotingWorks</td></tr><tr><td>VxScan</td><td>Printer</td><td>VotingWorks</td></tr><tr><td>VxMark</td><td>Printer-scanner</td><td>VotingWorks</td></tr><tr><td>VxMark</td><td>Accessible controller</td><td>VotingWorks</td></tr><tr><td>VxMark</td><td>PAT (sip and puff)</td><td>VotingWorks</td></tr><tr><td>VxAdmin</td><td>Printer</td><td><a href="https://www.cups.org/">CUPS</a></td></tr><tr><td>VxCentralScan</td><td>Scanner</td><td><a href="http://www.sane-project.org/">SANE</a></td></tr></tbody></table>
+<table><thead><tr><th width="177">Machine</th><th width="198">Peripheral</th><th>Middleware Source</th></tr></thead><tbody><tr><td>All</td><td>Card reader</td><td><a href="https://pcsclite.apdu.fr/">PCSC lite</a></td></tr><tr><td>VxScan</td><td>Scanner</td><td>VotingWorks</td></tr><tr><td>VxScan</td><td>Printer</td><td>VotingWorks</td></tr><tr><td>VxMarkScan</td><td>Printer-scanner</td><td>VotingWorks</td></tr><tr><td>VxMarkScan</td><td>Accessible controller</td><td>VotingWorks</td></tr><tr><td>VxMarkScan</td><td>PAT (sip and puff)</td><td>VotingWorks</td></tr><tr><td>VxAdmin</td><td>Printer</td><td><a href="https://www.cups.org/">CUPS</a></td></tr><tr><td>VxCentralScan</td><td>Scanner</td><td><a href="http://www.sane-project.org/">SANE</a></td></tr></tbody></table>
 
 Firmware for embedded devices such as screens and speakers is bundled with the operating system.
 
@@ -50,7 +50,7 @@ The voting system achieves software independence through the use of independent 
 
 On hand marked paper ballots, voters fill in bubbles next to their selections. Because voter indications are made and reviewed directly by the voter, they are inherently voter-verified. The software interprets the image of the ballot for tabulation but, of course, the paper ballot persists after scanning.
 
-For machine marked paper ballots, voters make selections on screen at VxMark. After the voter has made all their selections, the ballot is printed and presented to the voter. The ballot displays a textual representation of the selections and a QR code with the selections encoded. The voter reviews the ballot and, once accepted, the voter-verified ballot is ejected into the attached ballot box. VxMark's machine marked ballots are not actually tabulated until they are scanned at a scanner.
+For machine marked paper ballots, voters make selections on screen at VxMarkScan. After the voter has made all their selections, the ballot is printed and presented to the voter. The ballot displays a textual representation of the selections and a QR code with the selections encoded. The voter reviews the ballot and, once accepted, the voter-verified ballot is ejected into the attached ballot box. VxMarkScan's machine marked ballots are not actually tabulated until they are scanned at a scanner.
 
 Ballots are never modified by the system after voter verification in any way that could affect voter selections or the ability to perform an audit. The only modification to ballots is the possible use of an imprinter on VxCentralScan, which prints only an identifier along the outside margin of the ballot.
 

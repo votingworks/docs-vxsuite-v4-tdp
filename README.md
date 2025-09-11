@@ -5,11 +5,11 @@
 The VotingWorks voting system (a.k.a. **VxSuite**) consists of four primary components:&#x20;
 
 * **VxAdmin**: election setup and election results manager
-* **VxMark**: ballot-marking device (BMD)
+* **VxMarkScan**: ballot-marking device (BMD)
 * **VxScan**: precinct scanner
 * **VxCentralScan**: batch scanner
 
-Voters mark paper ballots by [hand](system-overview/hand-marked-ballots.md) or by using VxMark to [machine mark](system-overview/machine-marked-ballots.md). Ballots are read and counted by tabulating devices (VxScan & VxCentralScan), which create [cast vote records](system-overview/cast-vote-records.md) for adjudication and aggregation on VxAdmin.
+Voters mark paper ballots by [hand](system-overview/hand-marked-ballots.md) or by using VxMarkScan to [machine mark](system-overview/machine-marked-ballots.md). Ballots are read and counted by tabulating devices (VxScan & VxCentralScan), which create [cast vote records](system-overview/cast-vote-records.md) for adjudication and aggregation on VxAdmin.
 
 An election begins with generating an [election package](broken-reference) and [hand marked ballots ](system-overview/hand-marked-ballots.md)using an external system.
 
@@ -17,7 +17,7 @@ An election begins with generating an [election package](broken-reference) and [
 
 VxAdmin is where the election administrator performs election setup tasks and manages election results. At the beginning of an election, the user configures VxAdmin with an [election package](broken-reference). Once configured, VxAdmin is used for two key election setup tasks:
 
-* Exporting a copy of the election package to USB drives with a [digital signature](system-security-auditing-and-logging/system-security-architecture/artifact-authentication/). The election package is used to configure VxMark, VxScan, and VxCentralScan, and it _must_ be digitally signed by VxAdmin.
+* Exporting a copy of the election package to USB drives with a [digital signature](system-security-auditing-and-logging/system-security-architecture/artifact-authentication/). The election package is used to configure VxMarkScan, VxScan, and VxCentralScan, and it _must_ be digitally signed by VxAdmin.
 * Programming [role-based smart cards](system-overview/user-roles.md) that will be used to authenticate on all machines. While the "System Administrator" role is election-agnostic, the "Election Manager" and "Poll Worker" roles are election-specific and cards must be programmed for every election.
 
 VxAdmin is later used to load, store, and aggregate cast vote records from the scanners. The results are available for review or export in [several results formats](system-overview/vxadmin-results-exports/). Election administrators can mark results as official, after which no new results can be added.
@@ -25,9 +25,9 @@ VxAdmin is later used to load, store, and aggregate cast vote records from the s
 * [vxadmin-function.md](system-overview/vxadmin-function.md "mention")
 * [vxadmin-and-vxcentralscan-hardware.md](system-overview/vxadmin-and-vxcentralscan-hardware.md "mention")
 
-## VxMark
+## VxMarkScan
 
-VxMark is the system's ballot-marking device (BMD) that provides an accessible voting experience. At the beginning of an election, it is configured with an [election package](broken-reference) from VxAdmin. Once configured, a voter can make vote selections in various interaction modes according to their needs.
+VxMarkScan is the system's ballot-marking device (BMD) that provides an accessible voting experience. At the beginning of an election, it is configured with an [election package](system-overview/election-package/) from VxAdmin. Once configured, a voter can make vote selections in various interaction modes according to their needs.
 
 The following input modes are supported:
 
@@ -42,7 +42,7 @@ The following output modes are supported:
 
 The voter can also adjust the language based on translations included in the election package.&#x20;
 
-After the voter finishes their vote selections, VxMark prints a [machine marked ballot](system-overview/machine-marked-ballots.md) and presents it to the voter. The ballot is scanned (but not cast) so the interpreted results can be presented to the voter on-screen. After reviewing the ballot and confirming their selections, the ballot is cast and ejected into the attached ballot box. At a later time, depending on election procedures, the ballot will be removed from the ballot box for tabulation.
+After the voter finishes their vote selections, VxMarkScan prints a [machine marked ballot](system-overview/machine-marked-ballots.md) and presents it to the voter. The ballot is scanned (but not cast) so the interpreted results can be presented to the voter on-screen. After reviewing the ballot and confirming their selections, the ballot is cast and ejected into the attached ballot box. At a later time, depending on election procedures, the ballot will be removed from the ballot box for tabulation.
 
 * [vxmark-function.md](system-overview/vxmark-function.md "mention")
 * [vxmark-hardware.md](system-overview/vxmark-hardware.md "mention")

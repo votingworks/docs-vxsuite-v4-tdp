@@ -2,7 +2,7 @@
 
 The election package contains all of the information that defines an election. VxAdmin is configured by inserting a USB drive and selecting an election package from the drive.
 
-After VxAdmin is configured, the election package can then be digitally signed and exported onto a USB drive in order to configure VxScan, VxCentralScan, and VxMark. The [digital signature](../../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/) verifies that the election package is legitimate. The other devices require that the signature is present. As a result, an election package from outside the system cannot be used to directly configure VxScan, VxCentralScan, or VxMark.
+After VxAdmin is configured, the election package can then be digitally signed and exported onto a USB drive in order to configure VxScan, VxCentralScan, and VxMarkScan. The [digital signature](../../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/) verifies that the election package is legitimate. The other devices require that the signature is present. As a result, an election package from outside the system cannot be used to directly configure VxScan, VxCentralScan, or VxMarkScan.
 
 ## Election Package Contents
 
@@ -23,7 +23,7 @@ The election definition file is required to be present in the election package.
 
 ### App Strings
 
-The app strings file contains all voter-facing strings in the user interface and their translations. For example, at the beginning of the voter flow in VxMark there is a button labelled, by default, "Start Voting." If the voter has set VxMark to another language, however, the button will display the translation for that language specified in the app strings file. Additionally, the default English text can be overridden by specifying a different English value in the app strings file.
+The app strings file contains all voter-facing strings in the user interface and their translations. For example, at the beginning of the voter flow in VxMarkScan there is a button labelled, by default, "Start Voting." If the voter has set VxMarkScan to another language, however, the button will display the translation for that language specified in the app strings file. Additionally, the default English text can be overridden by specifying a different English value in the app strings file.
 
 In the case of specifying a Spanish translation and overriding the English translation for "Start Voting", which has an internal key of `buttonStartVoting`, the following values and overall structure would appear in the app strings file:
 
@@ -156,6 +156,6 @@ If any election content changes, the ballot hash will change, meaning the system
 
 The **election package hash** is the SHA256 hash of the entire election package, which includes both the election definition and all other files. The election package hash is displayed on screen to election managers and system administrators. It allows the user to ascertain which election package was used to configure a machine. The election package hash is _not_ used during ballot scanning.
 
-For example, imagine that an election administrator wants to change the audio clip for candidate's name. The audio clip is not a part of the election definition but it is a part of the election package, so the ballot hash remains the same while the election package hash changes. The election administrator can reconfigure VxMark with an updated election package but does not have to reprint ballots.
+For example, imagine that an election administrator wants to change the audio clip for candidate's name. The audio clip is not a part of the election definition but it is a part of the election package, so the ballot hash remains the same while the election package hash changes. The election administrator can reconfigure VxMarkScan with an updated election package but does not have to reprint ballots.
 
 The **election ID** shown on screen and included in printed reports contains a shortened version of both the ballot hash and the election hash in the format: `{ballot hash}-{election hash}`. For example, with ballot hash `083e2e0afbb19191a4d2850562ddef050ff860b0d61acee15d3bb26954932941` and election hash `db5c379b71accbf991e42ab23d26202f88b2539b6c69b814a0d3c8dc9f4072dc`, the election ID would be: `083e2e0-db5c379`. This enables identification of both the specific election package and election definition that a machine is configured with.
