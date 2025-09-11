@@ -29,6 +29,7 @@
 * 11" ballots are limited to 25 contests with 100 maximum combined write-in characters across selections. 13.25" ballots are limited to 30 contests with 90 maximum combined write-in characters across selections.
 * The ballot box supports up to 200 ballots before needing to be cleared.
 * VxMarkScan can activate, mark, verify, and cast up to 20 ballots per hour. Exact rate depends on time spent by user marking and verifying a ballot before casting.
+* VxMarkScan has a maximum available disk space of 9GB.
 
 ### VxScan
 
@@ -46,19 +47,8 @@ In addition to the design requirements specified in [hand-marked-ballots.md](../
 
 VxSuite hand marked paper ballot interpretation supports fractional grid coordinate positions, which enable bubble positions to be placed anywhere within the timing mark grid. However, the density of bubbles on a given ballot is limited to the total number of timing mark grid intersections to ensure accurate interpretation.
 
-For an 11" ballot, which has a 32 x 39 timing mark grid, the maximum number of ballot positions is 1248 per page or 2496 per sheet. The maximum number of ballot positions increases for longer ballots due to the longer grid.&#x20;
+For an 11" ballot, which has a 32 x 39 timing mark grid, the maximum number of ballot positions is 1248 per page or 2496 per sheet. The maximum number of ballot positions increases for longer ballots due to the longer grid.
 
 **Candidates Per Contest**
 
 The total number of candidates per contest is limited by ballot design requirements restricting contest options to one column and one page (7.3-B.1). Therefore, the maximum number of candidates in a contest is the maximum number of bubble positions in a column. For a 22" ballot, there is a maximum of 83 possible bubble positions in a column. The maximum number of candidates per contest may be lower than 83 when accounting for instructional text and contest information in the ballot design.
-
-
-
-
-
-
-
-
-
-
-
