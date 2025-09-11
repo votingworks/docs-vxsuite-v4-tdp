@@ -22,7 +22,7 @@
   * [VxScan Function](system-overview/vxscan-function.md)
   * [VxScan Hardware](system-overview/vxscan-hardware.md)
   * [VxMarkScan Function](system-overview/vxmark-function.md)
-  * [VxMarkScan Hardware](system-overview/vxmark-hardware.md)
+  * [VxMarkScan Hardware](readme/vxmarkscan-hardware.md)
   * [Ballot Interpretation](system-overview/ballot-interpretation.md)
   * [Diagnostics](system-overview/diagnostics.md)
   * [Signed Hash Validation](system-overview/signed-hash-validation.md)
