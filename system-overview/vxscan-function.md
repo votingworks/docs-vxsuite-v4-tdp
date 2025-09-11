@@ -136,3 +136,5 @@ Tallies for the polls closed report are created by iterating through the data st
 
 For voting paused and voting resumed reports, only a total ballot count is included as opposed to vote tallies.
 
+There are no persistent contest option registers. Contest option counts (as show up in the zero report) are calculated by summing the data across all CVRs at the time the report is generated.
+
