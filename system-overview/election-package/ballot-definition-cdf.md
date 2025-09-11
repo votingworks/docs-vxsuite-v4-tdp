@@ -1,6 +1,6 @@
 # Ballot Definition CDF
 
-The election definition within the election package can be a JSON Ballot Definition CDF Version 1.0 file. The full specification is defined by NIST and can be [accessed on their website](https://www.nist.gov/publications/ballot-definition-common-data-format-specification).&#x20;
+The election definition within the election package can be a JSON Ballot Definition CDF Version 1.0 file. The full specification is defined by NIST and can be [accessed on their website](https://www.nist.gov/publications/ballot-definition-common-data-format-specification).
 
 ## VxSuite CDF Implementation
 
@@ -59,11 +59,9 @@ The exact VxSuite schema is defined as a [JSON schema in the vxsuite repository]
 
 <table><thead><tr><th width="224">CDF Class</th><th>Ignored Attributes</th></tr></thead><tbody><tr><td>BallotDefinition</td><td>IsTest, Notes, OfficeGroup, Person, TestType</td></tr><tr><td>BallotMeasureContest</td><td>Abbreviation, BallotSubTitle, ContStatement, EffectOfAbstain, ExternalIdentifier, HasRotation, InfoUri, OtherType, OtherVoteVariation, PassageThreshold, ProStatement, SequenceOrder, SummaryText, TotalSubUnits, Type, VoteVariation</td></tr><tr><td>BallotMeasureOption</td><td>ExternalIdentifier, SequenceOrder</td></tr><tr><td>BallotStyle</td><td>ImageUri, Purpose</td></tr><tr><td>Candidate</td><td>CampaignSlogan, ContactInformation, ExternalIdentifier, FileDate, IsIncumbent, IsTopTicket, PartyId, PersonId, PreElectionStatus, ReadName</td></tr><tr><td>CandidateContest</td><td>Abbreviation, BallotSubTitle, ExternalIdentifier, HasRotation, NumberElected, NumberRunoff, OtherVoteVariation, RanksAllowed, SequenceOrder, TotalSubUnits, VoteVariation</td></tr><tr><td>CandidateOption</td><td>ExternalIdentifier, SequenceOrder</td></tr><tr><td>Election</td><td>ContactInformation, OtherType</td></tr><tr><td>Office</td><td>ContactInformation, Description, ElectionDistrictId, ExternalIdentifier, FilingDeadline, IsPartisan, OfficeHolderPersonIds</td></tr><tr><td>OrderedContest</td><td>OrderedContestOptionIds</td></tr><tr><td>Party</td><td>Color, ContactInformation, ExternalIdentifier, IsRecognizedParty, LeaderPersonIds, LogoUri, PartyScopeGpUnitIds, Slogan</td></tr><tr><td>ReportingUnit</td><td>AuthorityIds, ContactInformation, ElectionAdministration, ExternalIdentifier, IsDistricted, IsMailOnly, Number, OtherType, PartyRegistration, SpatialDimension, TotalSubUnits, VotersRegistered</td></tr><tr><td>Term</td><td>EndDate, StartDate, Type</td></tr></tbody></table>
 
-
-
 ## VxSuite CDF Conversion
 
-When importing a Ballot Definition CDF file, attributes will be mapped to the [VxSuite Election Definition](vxsuite-election-definition.md)  and used across the system in the exact same way.&#x20;
+When importing a Ballot Definition CDF file, attributes will be mapped to the [VxSuite Election Definition](vxsuite-election-definition.md) and used across the system in the exact same way.
 
 ### Attribute Mappings
 
@@ -85,7 +83,7 @@ Any `GpUnit` with an associated contest is mapped to a [District](vxsuite-electi
 
 ### Ballot Rotation
 
-Ballot rotation is specified by the defined candidate order in each ballot style as opposed to a rule that the voting system should apply to candidates in a given contest. This enables flexibility for jurisdiction-specific ballot rotation rules that can be defined in the source system creating the ballot definition.
+Ballot rotation is specified by the defined candidate and/or contest order in each ballot style as opposed to a rule that the voting system should apply to a given list of candidates and/or contests. The system supports tabulation of ballots with any contest or candidate order. This enables flexibility for jurisdiction-specific ballot rotation rules that can be defined in the source system creating the ballot definition.
 
 ## VxSuite CDF Limitations
 
