@@ -10,7 +10,7 @@ The tally report header contains the following information:
 * **Subtitle** - For primary elections, includes the full party name or "Nonpartisan Contests"
 * **Election Info** - The title, date, and location of the election
 * **Timestamps** - The first timestamp indicates when the poll status changed and the second indicates when the report was printed. In most cases these times are the same, but in some cases the report may be printed later.
-* **Election ID** - The election ID on the report is a concatenation of the [ballot hash and election package hash](election-package/#ballot-hash-and-election-package-hash) and specifies exactly which election definition and election settings that the report corresponds to
+* **Election ID** - The election ID on the report is a concatenation of the [ballot hash and election package hash](broken-reference) and specifies exactly which election definition and election settings that the report corresponds to
 * **Certification Signatures** - The space is provided for poll workers or election officials to sign the report in accordance with local statute.
 
 The ballot counts table provides the count of hand marked vs. machine marked ballots. For elections with multi-sheet ballots, it provides counts per sheet.

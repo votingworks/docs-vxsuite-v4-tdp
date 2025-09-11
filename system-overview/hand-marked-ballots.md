@@ -10,16 +10,9 @@ VxSuite can tabulate a wide variety of ballot designs as long as they conform to
 
 ## Ballot Size
 
-All supported ballot sizes are 8.5 inches in width, but vary in height:
+All supported ballot sizes are 8.5 inches in width, but vary in height as specified in [paper-ballot-specifications.md](../system-performance-and-specifications/paper-ballot-specifications.md "mention").
 
-| Name       | Length | Width |
-| ---------- | ------ | ----- |
-| Letter     | 11"    | 8.5"  |
-| Legal      | 14"    | 8.5"  |
-| Custom 17" | 17"    | 8.5"  |
-| Custom 22" | 22"    | 8.5"  |
-
-These lengths correspond to the length specified in the [Ballot Layout](hand-marked-ballots.md) within the election definition. See [paper-ballot-specifications.md](../system-performance-and-specifications/paper-ballot-specifications.md "mention") for more information about ballot specifications.
+These lengths correspond to the length specified in the [Ballot Layout](hand-marked-ballots.md) within the election definition.
 
 ## Timing Mark Borders
 
@@ -52,7 +45,7 @@ The QR code includes ballot metadata:
 * Test Ballot Flag - indicates whether the ballot is a test ballot or an official ballot
 * Ballot Type (Precinct, Absentee, or Provisional)
 
-In addition, the QR code includes the [ballot hash](election-package/#ballot-hash-and-election-package-hash). The ballot hash ensures that the ballot was generated from the same election definition that will be used to interpret the ballot.
+In addition, the QR code includes the [ballot hash](broken-reference). The ballot hash ensures that the ballot was generated from the same election definition that will be used to interpret the ballot.
 
 For full specifications on how to generate readable QR codes, refer to the [ballot-qr-code-data-format.md](../public-documents/ballot-qr-code-data-format.md "mention").
 

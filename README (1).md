@@ -44,7 +44,7 @@ Despite those protections, unsafe concurrency is technically still possible, as 
 
 In order to catch any other instances of unsafe concurrency, VotingWorks tests software operation at scale in automated tests, as discussed above. In actively developed repositories like those for VxSuite, tests are running hundreds or thousands of times before the software is actually used on a machine. At that scale, intermittent concurrency issues are surfaced in the form of flaky tests. VotingWorks reviews flaky tests weekly and uses them to identify and fix any concurrency issues.
 
-Once software is actually imaged to hardware, VotingWorks tests the software thoroughly and at high volumes. For example on VxScan, the `precinctScanEnableShoeshineMode` flag in the [#system-settings](system-overview/election-package/#system-settings "mention") allows testing the scanner with a repeated scan that is run thousands of times before a release. In addition, VotingWorks attempts to identify edge cases and break the software during testing by performing operations in unusual or rapid succession which may reveal concurrency issues.
+Once software is actually imaged to hardware, VotingWorks tests the software thoroughly and at high volumes. For example on VxScan, the `precinctScanEnableShoeshineMode` flag in the [Broken link](broken-reference "mention") allows testing the scanner with a repeated scan that is run thousands of times before a release. In addition, VotingWorks attempts to identify edge cases and break the software during testing by performing operations in unusual or rapid succession which may reveal concurrency issues.
 
 ## Quality Assurance Protocols – Hardware
 

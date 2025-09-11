@@ -107,7 +107,7 @@ Examples of instructional ballot text include:
 * "Vote for up to 3",
 * "Official Absentee Ballot"
 
-Although the system does not use the hand marked ballot instructional text for any purpose, it must be included in the election definition for security purposes. When included, it becomes a part of the [ballot hash](./#ballot-hash-and-election-package-hash) and cannot be changed without invalidating older ballots.
+Although the system does not use the hand marked ballot instructional text for any purpose, it must be included in the election definition for security purposes. When included, it becomes a part of the [ballot hash](broken-reference) and cannot be changed without invalidating older ballots.
 
 ### Election-Specific Text
 
