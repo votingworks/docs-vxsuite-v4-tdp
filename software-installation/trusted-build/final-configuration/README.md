@@ -1,6 +1,6 @@
 # Final Configuration
 
-We'll now clone the offline VM to prepare images for specific machine types, i.e., VxAdmin, VxCentralScan, VxMark, and VxScan. We'll create one clone/VM per machine type.
+We'll now clone the offline VM to prepare images for specific machine types, i.e., VxAdmin, VxCentralScan, VxMarkScan, and VxScan. We'll create one clone/VM per machine type.
 
 In the following steps, the **vxadmin** VM will be referenced, but these steps can be repeated for each machine type: **vxcentralscan**, **vxmark**, and **vxscan**.
 
@@ -38,7 +38,7 @@ Which machine are we building today?
 
 1. VxAdmin
 2. VxCentralScan
-3. VxMark
+3. VxMarkScan
 4. VxScan
 ```
 

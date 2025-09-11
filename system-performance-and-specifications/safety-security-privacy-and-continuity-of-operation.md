@@ -12,7 +12,7 @@ The system's provisions for security are detailed in the [system-security-auditi
 
 ## Privacy
 
-The provisions for voter privacy on VxScan are described in [preserving-voter-privacy.md](../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/preserving-voter-privacy.md "mention"). The provisions for voter privacy on VxMark are described in [#voter-privacy](../system-overview/vxmark-function.md#voter-privacy "mention").&#x20;
+The provisions for voter privacy on VxScan are described in [preserving-voter-privacy.md](../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/preserving-voter-privacy.md "mention"). The provisions for voter privacy on VxMarkScan are described in [#voter-privacy](../system-overview/vxmark-function.md#voter-privacy "mention").&#x20;
 
 ## Continuity of Operation
 
@@ -25,7 +25,7 @@ The voting system is designed to recover from errors as gracefully as possible. 
 If a machine is damaged to the point of being inoperable, a replacement machine of the same type can be used. For larger customers, VotingWorks recommends that customers buy and maintain their own backup machines. For smaller customers, VotingWorks can provide replacement machines. If a replacement takes place in the middle of an election, users can take the following steps to substitute equipment:
 
 * **VxScan -** Switch to scanning on the replacement VxScan and, at the end of the election, aggregate the cast vote records from both the damaged and replacement VxScans.
-* **VxMark** - Voters should start new voting sessions on the replacement VxMark.
+* **VxMarkScan** - Voters should start new voting sessions on the replacement VxMarkScan.
 * **VxCentralScan** - The document scanner can simply be swapped. If the laptop is damaged and cast vote records were never exported, the scanned ballots should be re-scanned with the replacement laptop.
 * **VxAdmin** - If the laptop is damaged, the laptop should be reconfigured with the election package and any cast vote records should be reloaded from the various USB drives.
 

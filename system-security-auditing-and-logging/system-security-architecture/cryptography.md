@@ -6,7 +6,7 @@ VxSuite v4 contains four distinct cryptographic modules:
 
 * Smart cards
 * VxAdmin / VxCentralScan TPM (same underlying hardware)
-* VxMark TPM
+* VxMarkScan TPM
 * VxScan TPM
 * OpenSSL software
 
@@ -27,9 +27,9 @@ The VxAdmin / VxCentralScan HP uses an NPCT75x TPM 2.0 chip by Nuovoton.
 
 This chip is FIPS140-2-certified: [https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4411](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4411).
 
-### VxMark TPM
+### VxMarkScan TPM
 
-The VxMark board uses an SLB 9665 TPM 2.0 chip by Infineon.
+The VxMarkScan board uses an SLB 9665 TPM 2.0 chip by Infineon.
 
 This chip is FIPS140-2-certified: [https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/2959](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/2959).
 

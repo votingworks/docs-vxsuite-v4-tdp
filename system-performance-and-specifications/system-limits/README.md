@@ -23,12 +23,12 @@
 * The total number of ballots scanned is limited by the total disk space on the laptop (\~200GB). The exact number of ballots depends on ballot size, complexity, and selections made that influence determine the CVR and ballot image sizes.
 * VxCentralScan is limited by the batch scanner maximum tabulation rate: [maximum-tabulation-rate.md](maximum-tabulation-rate.md "mention")
 
-### VxMark
+### VxMarkScan
 
-* VxMark only supports 8" x 11" and 8" x 13.25" ballot sizes as specified in [paper-ballot-specifications.md](../paper-ballot-specifications.md "mention").
+* VxMarkScan only supports 8" x 11" and 8" x 13.25" ballot sizes as specified in [paper-ballot-specifications.md](../paper-ballot-specifications.md "mention").
 * 11" ballots are limited to 25 contests with 100 maximum combined write-in characters across selections. 13.25" ballots are limited to 30 contests with 90 maximum combined write-in characters across selections.
 * The ballot box supports up to 200 ballots before needing to be cleared.
-* VxMark can activate, mark, verify, and cast up to 20 ballots per hour. Exact rate depends on time spent by user marking and verifying a ballot before casting.
+* VxMarkScan can activate, mark, verify, and cast up to 20 ballots per hour. Exact rate depends on time spent by user marking and verifying a ballot before casting.
 
 ### VxScan
 

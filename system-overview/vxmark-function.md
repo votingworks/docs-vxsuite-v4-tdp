@@ -1,44 +1,44 @@
-# VxMark Function
+# VxMarkScan Function
 
-VxMark is the system's ballot marking device. It allows all voters to make selections in various interaction modes, print their ballot, verify their ballot, and cast their ballot independently. VxMark is not a tabulator - the cast ballots must be later tabulated at VxCentralScan.
+VxMarkScan is the system's ballot marking device. It allows all voters to make selections in various interaction modes, print their ballot, verify their ballot, and cast their ballot independently. VxMarkScan is not a tabulator - the cast ballots must be later tabulated at VxCentralScan.
 
 ## Configuration
 
-VxMark is configured with a signed [election package](broken-reference) exported from VxAdmin. The election definition defines the ballot styles that will be available to voters. The election definition also includes the translations defined for text on the ballot, while the [app strings](broken-reference) file contains the translations for other text shown on screen. The election package's [audio files](broken-reference) are played for the voter in audio-mode.
+VxMarkScan is configured with a signed [election package](election-package/#election-definition) exported from VxAdmin. The election definition defines the ballot styles that will be available to voters. The election definition also includes the translations defined for text on the ballot, while the [app strings](election-package/#app-strings) file contains the translations for other text shown on screen. The election package's [audio files](election-package/#audio-ids-and-audio-clips) are played for the voter in audio-mode.
 
 {% hint style="info" %}
-**User Manual Reference:** [Configure VxMark](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/configure-vxmark "mention")
+**User Manual Reference:** [Configure VxMarkScan](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/configure-vxmark "mention")
 {% endhint %}
 
 ### Precinct Selection
 
-VxMark is not fully configured until the election manager selects a precinct for the device. When polls are open, VxMark will only allow marking ballots in the ballot styles for the configured precinct. The election manager may configure VxMark to "All Precincts" in which case all ballot styles are available.
+VxMarkScan is not fully configured until the election manager selects a precinct for the device. When polls are open, VxMarkScan will only allow marking ballots in the ballot styles for the configured precinct. The election manager may configure VxMarkScan to "All Precincts" in which case all ballot styles are available.
 
 If the election definition only has one precinct, the precinct will be automatically selected.
 
-The precinct selection can always be changed on VxMark by an election manager, even while polls are opened.
+The precinct selection can always be changed on VxMarkScan by an election manager, even while polls are opened.
 
 ### Ballot Mode
 
-After initial configuration, VxMark is in test ballot mode. The election manager can toggle between test ballot mode and official ballot mode. In official ballot mode, the ballots printed at VxMark will be official ballots. In test ballot mode, the ballots printed at VxMark will be test ballots.
+After initial configuration, VxMarkScan is in test ballot mode. The election manager can toggle between test ballot mode and official ballot mode. In official ballot mode, the ballots printed at VxMarkScan will be official ballots. In test ballot mode, the ballots printed at VxMarkScan will be test ballots.
 
 Switching between ballot modes clears the printed ballot count and resets the polls to closed. The election manager can switch from test ballot mode to official ballot mode at any time.
 
 ### Unconfiguring
 
-VxMark can be unconfigured by an election manager or system administrator.
+VxMarkScan can be unconfigured by an election manager or system administrator.
 
 ## Polls Management
 
 <figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
-After configuration, polls are initially closed. When polls closed, voting is not allowed on VxMark.&#x20;
+After configuration, polls are initially closed. When polls closed, voting is not allowed on VxMarkScan.&#x20;
 
 Poll workers open the polls to allow voting. Once polls are opened, polls can only return to the initial polls closed state while remaining configured by switching between test and official ballot mode.
 
-Poll workers close the polls when voting should no longer be allowed. Polls are closed until VxMark is unconfigured or switched from one ballot mode to another, with one exception discussed below.
+Poll workers close the polls when voting should no longer be allowed. Polls are closed until VxMarkScan is unconfigured or switched from one ballot mode to another, with one exception discussed below.
 
-VxMark also allows poll workers to pause voting a.k.a. suspend the polls. While voting is paused, no voting sessions can be started. Voting can be resumed, after which the polls are back in the standard polls opened state. Pausing voting might be used in an early voting model between voting days or, in the case of an emergency, to pause voting while the emergency is resolved. The poll worker may chose to close polls directly from voting paused instead of resuming voting.
+VxMarkScan also allows poll workers to pause voting a.k.a. suspend the polls. While voting is paused, no voting sessions can be started. Voting can be resumed, after which the polls are back in the standard polls opened state. Pausing voting might be used in an early voting model between voting days or, in the case of an emergency, to pause voting while the emergency is resolved. The poll worker may chose to close polls directly from voting paused instead of resuming voting.
 
 If the polls have been closed, the only possible way for the polls to be re-opened is if a system administrator resets the polls to paused. Only the system administrator may do this - poll workers and election managers cannot - per the allowance in VVSG 2.0 1.1.7-E. Once polls have been reset to paused by the system administrator, voting may be resumed by a poll worker. The goal of this flow is to allow voting to continue after a poll worker has prematurely closed the polls.
 
@@ -80,11 +80,11 @@ From the poll worker screen a poll worker may choose "Insert Printed Ballot" in 
 
 ### Voter Privacy
 
-The voter's choices do not persist on VxMark after the end of the voting session. Other than the increase in the count of printed ballots, the only data that persist after each voting session are the relevant log events for authentication, casting a ballot, invalidating a ballot, and hardware state changes. The voter's selections or any voter actions that may trigger selections (such as touch screen presses, accessible controller presses, PAT input events) are not included in logging or otherwise persisted. After the voting session is complete, their printed ballot is the only record of their selections. Throughout the voting session, the physical privacy shield restricts others' view of the voter's actions and their printed ballot.
+The voter's choices do not persist on VxMarkScan after the end of the voting session. Other than the increase in the count of printed ballots, the only data that persist after each voting session are the relevant log events for authentication, casting a ballot, invalidating a ballot, and hardware state changes. The voter's selections or any voter actions that may trigger selections (such as touch screen presses, accessible controller presses, PAT input events) are not included in logging or otherwise persisted. After the voting session is complete, their printed ballot is the only record of their selections. Throughout the voting session, the physical privacy shield restricts others' view of the voter's actions and their printed ballot.
 
 ## Display Formats & Interaction Modes
 
-VxMark supports voting sessions in various display formats and interaction modes.
+VxMarkScan supports voting sessions in various display formats and interaction modes.
 
 {% hint style="info" %}
 **User Manual Reference:** [Voting Session Language & Accessibility Settings](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/voting-session-language-and-accessibility-settings "mention")
@@ -119,11 +119,11 @@ Once a voter has used all their votes in a race, the progress button at the bott
 
 Voters usually choose to use the touchscreen to vote. The voter taps buttons to move between contests and through the stages of the voting flow. The voter taps list items on each contest page in order to make selections. Touch areas never overlap and are sized to meet minimums described in VVSG 2.0 7.2-I. Touch areas require that the user's touch begins and ends within the touch area to activate, meaning that dragging a finger across a touch area will not activate the touch area, in order to avoid accidental activation (VVSG 2.0 7.2-H).
 
-When there's more content on a page than can fit on one screen, the voter can scroll through the screen in one of two ways. First, they can tap the "More" button which acts as both the visual indicator that there are more contest options or contests. Second, they can use a swiping motion on the screen to move up or down. Swiping to see more contest options or contests is VxMark's only touch screen gesture. It cannot be used horizontally to navigate between contests or pages and  (VVSG 2.0 7.2-E).
+When there's more content on a page than can fit on one screen, the voter can scroll through the screen in one of two ways. First, they can tap the "More" button which acts as both the visual indicator that there are more contest options or contests. Second, they can use a swiping motion on the screen to move up or down. Swiping to see more contest options or contests is VxMarkScan's only touch screen gesture. It cannot be used horizontally to navigate between contests or pages and  (VVSG 2.0 7.2-E).
 
 ### Audio Tactile Mode - Accessible Controller
 
-VxMark has a permanently attached accessible controller that can be used to navigate the ballot instead of using the touchscreen directly. The left and right buttons are used to navigate between contests and other screens while the up and down buttons are used to navigate between contest options or contests within each screen. The controller has a help button which will navigate to a help interface that explains the function of each button on the controller when pressed.
+VxMarkScan has a permanently attached accessible controller that can be used to navigate the ballot instead of using the touchscreen directly. The left and right buttons are used to navigate between contests and other screens while the up and down buttons are used to navigate between contest options or contests within each screen. The controller has a help button which will navigate to a help interface that explains the function of each button on the controller when pressed.
 
 The currently focused element on screen is highlighted in visual mode or read aloud in audio mode. When navigating through selections on a screen large enough to be scrollable, the screen will automatically scroll to keep the focused element in view.&#x20;
 
@@ -131,7 +131,7 @@ The accessible controller is integrated with the application via a hardware daem
 
 ### Limited Dexterity Mode - PAT Input
 
-VxMark has a PAT (personal assistive technology) input port into which a voter can plug in their own two-switch adaptive input such as a sip-and-puff device. When a PAT input is attached during a voting session, VxMark will enter a calibration flow where the voter will map their two inputs to "move" and "select." Different voters can calibrate their sip & puff devices differently such that sip is "move" for one and "select" for another.
+VxMarkScan has a PAT (personal assistive technology) input port into which a voter can plug in their own two-switch adaptive input such as a sip-and-puff device. When a PAT input is attached during a voting session, VxMarkScan will enter a calibration flow where the voter will map their two inputs to "move" and "select." Different voters can calibrate their sip & puff devices differently such that sip is "move" for one and "select" for another.
 
 Once calibrated, the voter can use the two inputs to navigate through the ballot. The "move" input advance the focus on screen to the next element and the "select" input is the equivalent of a tap in touch interaction mode. Just as with the accessible controller, the currently focused element on screen is highlighted in visual mode or read aloud in audio mode.&#x20;
 
@@ -139,7 +139,7 @@ The PAT input is integrated with the application via a hardware daemon that is a
 
 ### Audio Format
 
-As an alternative to the visual formats, the voter can listen to their ballot in an audio format. VxMark includes a headphone port and headphones which, when attached, will automatically play audio to guide the voter's ballot navigation. The audio includes information about the election, contests, and contest options equivalent to the information displayed on screen in visual mode. The audio also includes prompts and explanations for how to navigate the ballot that are equivalent to the cues in layout and highlighting on screen in visual mode. These instructions include but are not limited to:
+As an alternative to the visual formats, the voter can listen to their ballot in an audio format. VxMarkScan includes a headphone port and headphones which, when attached, will automatically play audio to guide the voter's ballot navigation. The audio includes information about the election, contests, and contest options equivalent to the information displayed on screen in visual mode. The audio also includes prompts and explanations for how to navigate the ballot that are equivalent to the cues in layout and highlighting on screen in visual mode. These instructions include but are not limited to:
 
 * how to start voting
 * how to make selections in a contest
@@ -152,12 +152,12 @@ Blind or visually impaired voters can use the audio track to review their printe
 
 ### Language Support
 
-VxMark supports switching the language for the current voting session to any language supported in the current election package. When the language is changed, all text on the ballot, all text shown on screen, and text read in audio mode to guide the voter will switch to the new language. The language can be changed at any time during a voting session. The language selection resets automatically after each voting session or can be reset by the voter at any time..
+VxMarkScan supports switching the language for the current voting session to any language supported in the current election package. When the language is changed, all text on the ballot, all text shown on screen, and text read in audio mode to guide the voter will switch to the new language. The language can be changed at any time during a voting session. The language selection resets automatically after each voting session or can be reset by the voter at any time..
 
 If a language other than English is set when printing the ballot, the ballot will show all information in both the current language - for the purpose of the voter's review - and in English - for ease of adjudication and audits.
 
 ## Printer Access Control
 
-VxMark's printer and scanner are covered by the printer cover which can be opened at any time in order to clear a paper jam or clean the scanner. In order to prevent unauthorized access, pursuant to VVSG 2.0 12.1-B, VxMark produces a jarring, audible alarm if the printer cover is opened while polls are opened. The alarm should alert a poll worker that something is wrong. A poll worker then inserts their card, which silences the alarm, and follows on screen instructions to close the printer cover.
+VxMarkScan's printer and scanner are covered by the printer cover which can be opened at any time in order to clear a paper jam or clean the scanner. In order to prevent unauthorized access, pursuant to VVSG 2.0 12.1-B, VxMarkScan produces a jarring, audible alarm if the printer cover is opened while polls are opened. The alarm should alert a poll worker that something is wrong. A poll worker then inserts their card, which silences the alarm, and follows on screen instructions to close the printer cover.
 
 Because authentication is required for the poll worker to open the printer cover without triggering an alarm, poll workers are instructed on screen to authenticate when clearing a paper jam. When polls are closed, the alarm is not active, so cleaning and setup can take place without triggering the alarm.

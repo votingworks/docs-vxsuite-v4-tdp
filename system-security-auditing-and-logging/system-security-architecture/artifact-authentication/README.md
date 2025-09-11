@@ -2,7 +2,7 @@
 
 When a VxSuite machine exports data to a USB for another VxSuite machine to import, the first machine digitally signs that data so that the second machine can verify its authenticity. We use this mechanism in two places in particular:
 
-1. To authenticate election definitions/packages — These configuration bundles are exported by VxAdmin and used to configure VxCentralScan, VxMark, and VxScan.
+1. To authenticate election definitions/packages — These configuration bundles are exported by VxAdmin and used to configure VxCentralScan, VxMarkScan, and VxScan.
 2. To authenticate cast vote records — These are exported by VxCentralScan and VxScan and imported by VxAdmin for tabulation.
 
 The exporting machine digitally signs the following message using its TPM private key:

@@ -6,7 +6,7 @@ In the online phase, the build process utilizes a base Debian 12 VM with network
 
 In the offline phase, the build process utilizes a clone of the online VM with network access disabled.&#x20;
 
-In the final configuration phase, the build process utilizes clones of the offline VM to prepare images for specific machine types, i.e., VxAdmin, VxCentralScan, VxMark, and VxScan.
+In the final configuration phase, the build process utilizes clones of the offline VM to prepare images for specific machine types, i.e., VxAdmin, VxCentralScan, VxMarkScan, and VxScan.
 
 After completing the final configuration phase, an unlocked installation image has been created. While this image is not appropriate for production use, it can be used for testing.
 

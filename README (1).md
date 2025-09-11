@@ -92,4 +92,4 @@ We have comprehensive test reports:
 
 ### Production Unit Quality Assurance
 
-Every unit assembled in production is manually tested against a comprehensive checklist to ensure the unit is fully operational. The quality assurance procedures are designed to imitate an election flow and check for any issues found on past units. Checklists for VxAdmin, VxMark, VxScan, and VxCentralScan are public [here in the documentation repository](https://github.com/votingworks/docs-vxsuite-v4/tree/main/quality-assurance/production).
+Every unit assembled in production is manually tested against a comprehensive checklist to ensure the unit is fully operational. The quality assurance procedures are designed to imitate an election flow and check for any issues found on past units. Checklists for VxAdmin, VxMarkScan, VxScan, and VxCentralScan are public [here in the documentation repository](https://github.com/votingworks/docs-vxsuite-v4/tree/main/quality-assurance/production).

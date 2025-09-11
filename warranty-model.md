@@ -6,7 +6,7 @@ layout: editorial
 
 ## Estimated Replacement Rates
 
-| <p><br></p>                    | VxScan (incl ballot box) | VxAdmin  | VxCentralScan | VxMark   |
+| <p><br></p>                    | VxScan (incl ballot box) | VxAdmin  | VxCentralScan | VxMarkScan   |
 | ------------------------------ | ------------------------ | -------- | ------------- | -------- |
 | Estimated Replacement Rate     | 10 years                 | 10 years | 10 years      | 10 years |
 | Estimated Cost Per Replacement | $7,500\*                 | $2,500\* | $2,500\*      | $7,500\* |
