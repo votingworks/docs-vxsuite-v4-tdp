@@ -82,7 +82,9 @@ We assess supplier impact by evaluating how the loss, compromise, or substitutio
 
 ## Supply Chain Risk Management Strategy
 
-Based on the criteria described above, the VotingWorks operations team identifies and prioritizes medium- and high-criticality components. For critical COTS components, we limit our suppliers to reputable and well-established vendors and manufacturers. When assessing whether a supplier is trustworthy, we consider several factors: length of time established; reputation for reliability; degree to which organization and manufacturing is based in the United States; the outcome of previous orders; responsiveness to issues; and their focus on critical business applications. For critical VotingWorks-specific manufactured components, for example any custom cables, we look for domestic-based manufacturers with ISO quality certifications (e.g. ISO 9001) and, where possible, prefer to perform site visits during onboarding.
+VotingWorks follows the NIST SP 800-161 framework to meet the assurance requirements of our supply chain risk management strategy.
+
+Based on the criticality criteria enumerated above, the VotingWorks operations team identifies and prioritizes medium- and high-criticality components. For critical COTS components, we limit our suppliers to reputable and well-established vendors and manufacturers. When assessing whether a supplier is trustworthy, we consider several factors: length of time established; reputation for reliability; degree to which organization and manufacturing is based in the United States; the outcome of previous orders; responsiveness to issues; and their focus on critical business applications. For critical VotingWorks-specific manufactured components, for example any custom cables, we look for domestic-based manufacturers with ISO quality certifications (e.g. ISO 9001) and, where possible, prefer to perform site visits during onboarding.
 
 For each critical component, VotingWorks requires a warranty on defective components and a delivery timeline for all orders. Specifically, contracts with suppliers include language matching or to the effect of:
 
