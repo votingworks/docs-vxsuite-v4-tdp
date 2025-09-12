@@ -12,7 +12,7 @@ VxCentralScan is configured with a signed [election package](broken-reference) e
 
 ### Ballot Mode
 
-After initial configuration, VxCentralScan is in test ballot mode. The election manager can toggle between test ballot mode and official ballot mode. In official ballot mode, only official ballots can be scanned and exported CVRs will be official ballot CVRs. In test ballot mode, only test ballots can be scanned and exported CVRs will be test ballot CVRs. If `allowOfficialBallotsInTestMode` is set in the [system settings](broken-reference), official ballots will be allowed in test mode but exported CVRs will still be test CVRs.
+After initial configuration, VxCentralScan is in test ballot mode. The election manager can toggle between test ballot mode and official ballot mode. In official ballot mode, only official ballots can be scanned and exported CVRs will be official ballot CVRs. In test ballot mode, only test ballots can be scanned and exported CVRs will be test ballot CVRs. If `allowOfficialBallotsInTestMode` is set in the [system settings](election-package/#system-settings), official ballots will be allowed in test mode but exported CVRs will still be test CVRs.
 
 Switching between ballot modes clears all scanned ballot data. The election manager can switch from test ballot mode to official ballot mode at any time. When in official ballot mode after ballots have been scanned, the election manager can only switch back to test ballot mode if the scanned ballot data has been backed up.&#x20;
 
@@ -28,7 +28,7 @@ VxCentralScan is compatible with the Ricoh fi-8170 and Ricoh fi-7600 production 
 
 ### Batch Management
 
-When the user triggers a batch scan, the scanner will start a batch and begin scanning sheets one a time. The scanner will pull the paper through and transfer a scanned image to the application which will then [interpret the ballot](broken-reference) according to the current election definition. If any issues are found with the ballot - either the ballot is incompatible or the marks trigger some adjudication reason - scanning will pause and the election manager will be prompted to remove or tabulate the ballot. When pausing for adjudication, the batch is not yet ended. Once the election manager addresses the ballot, scanning will continue until there are no more ballots in the hopper to be scanned. At that point, the batch will end.
+When the user triggers a batch scan, the scanner will start a batch and begin scanning sheets one a time. The scanner will pull the paper through and transfer a scanned image to the application which will then [interpret the ballot](ballot-interpretation.md) according to the current election definition. If any issues are found with the ballot - either the ballot is incompatible or the marks trigger some adjudication reason - scanning will pause and the election manager will be prompted to remove or tabulate the ballot. When pausing for adjudication, the batch is not yet ended. Once the election manager addresses the ballot, scanning will continue until there are no more ballots in the hopper to be scanned. At that point, the batch will end.
 
 The start time, end time, size, and index of all batches is tracked and displayed to the election manager. If a mistake was made in organizing batches or adjudicating a ballot, election managers can delete any individual batch or delete all batches.
 
@@ -53,7 +53,7 @@ Batch scanning pauses whenever a ballot is not counted for any reason. Sometimes
 * **Wrong Election** - the hash on the ballot does not match the currently configured election
 * **Unreadable** - the ballot image could not be successfully interpreted, possibly because it is not a valid ballot or because the image skew was too great
 
-In other cases, the ballot requires adjudication. The adjudication reasons for VxCentralScan are set in the [system settings](broken-reference) as `centralScanAdjudicationReasons` and map to the following:
+In other cases, the ballot requires adjudication. The adjudication reasons for VxCentralScan are set in the [system settings](election-package/#system-settings) as `centralScanAdjudicationReasons` and map to the following:
 
 * **Overvote** - at least one contest is overvoted
 * **Undervote** - at least one contest is undervoted

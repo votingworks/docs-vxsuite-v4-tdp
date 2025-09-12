@@ -4,10 +4,10 @@ VxMarkScan is the system's ballot marking device. It allows all voters to make s
 
 ## Configuration
 
-VxMarkScan is configured with a signed [election package](election-package/#election-definition) exported from VxAdmin. The election definition defines the ballot styles that will be available to voters. The election definition also includes the translations defined for text on the ballot, while the [app strings](election-package/#app-strings) file contains the translations for other text shown on screen. The election package's [audio files](election-package/#audio-ids-and-audio-clips) are played for the voter in audio-mode.
+VxMarkScan is configured with a signed [election package](../system-overview/election-package/#election-definition) exported from VxAdmin. The election definition defines the ballot styles that will be available to voters. The election definition also includes the translations defined for text on the ballot, while the [app strings](../system-overview/election-package/#app-strings) file contains the translations for other text shown on screen. The election package's [audio files](../system-overview/election-package/#audio-ids-and-audio-clips) are played for the voter in audio-mode.
 
 {% hint style="info" %}
-**User Manual Reference:** [Configure VxMarkScan](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/configure-vxmark "mention")
+**User Manual Reference:** [VxMarkScan](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmarkscan "mention")
 {% endhint %}
 
 ### Precinct Selection
@@ -32,7 +32,7 @@ VxMarkScan can be unconfigured by an election manager or system administrator.
 
 <figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
-After configuration, polls are initially closed. When polls closed, voting is not allowed on VxMarkScan.&#x20;
+After configuration, polls are initially closed. When polls closed, voting is not allowed on VxMarkScan.
 
 Poll workers open the polls to allow voting. Once polls are opened, polls can only return to the initial polls closed state while remaining configured by switching between test and official ballot mode.
 
@@ -43,7 +43,7 @@ VxMarkScan also allows poll workers to pause voting a.k.a. suspend the polls. Wh
 If the polls have been closed, the only possible way for the polls to be re-opened is if a system administrator resets the polls to paused. Only the system administrator may do this - poll workers and election managers cannot - per the allowance in VVSG 2.0 1.1.7-E. Once polls have been reset to paused by the system administrator, voting may be resumed by a poll worker. The goal of this flow is to allow voting to continue after a poll worker has prematurely closed the polls.
 
 {% hint style="info" %}
-**User Manual Reference:** [Open and Close Polls](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/open-and-close-polls "mention")
+**User Manual Reference:** [Open and Close Polls](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmarkscan/open-and-close-polls "mention")
 {% endhint %}
 
 ## Voting Sessions
@@ -58,7 +58,7 @@ If the contest allows write-ins, they may input a write-in name via a virtual ke
 
 After working through the entire ballot, the voter will then review all their selections. Any undervotes will be flagged for the voter (VVSG 2.0 7.3-I) but may be ignored. If the voter does want to make any changes, they can navigate back to any contest, make changes, and return to the review stage (VVSG 2.0 7.3-F). Once the voter is satisfied with their selections, they may print their ballot.
 
-The thermal printer prints a ballot, presents it to the voter, and prompts them to once again review their selections. This final review differs from the initial review in two ways. First, the printed ballot is being physically presented to the user which creates a voter-verified paper trail. Second, the selections being  reviewed are a result of the actual interpretation of the ballot rather than simply the selections made by the voter. As a result, even when a voter is unable to verify their printed paper ballot visually they are still able to verify the ballot through another interaction mode. Once the voter is satisfied with their second round of review, they may cast their ballot which is ejected into the attached ballot box.
+The thermal printer prints a ballot, presents it to the voter, and prompts them to once again review their selections. This final review differs from the initial review in two ways. First, the printed ballot is being physically presented to the user which creates a voter-verified paper trail. Second, the selections being reviewed are a result of the actual interpretation of the ballot rather than simply the selections made by the voter. As a result, even when a voter is unable to verify their printed paper ballot visually they are still able to verify the ballot through another interaction mode. Once the voter is satisfied with their second round of review, they may cast their ballot which is ejected into the attached ballot box.
 
 <figure><img src="../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
 
@@ -70,12 +70,12 @@ It's possible that a voter removes their ballot and does not re-insert it before
 
 If a re-inserted ballot is somehow not compatible with the machine - wrong election, wrong precinct or wrong ballot mode - the user is alerted and the ballot is rejected out the front.
 
-If a poll worker card is inserted during a voting session the poll worker can deactivate the current session and spoil any current ballot.&#x20;
+If a poll worker card is inserted during a voting session the poll worker can deactivate the current session and spoil any current ballot.
 
-From the poll worker screen a poll worker may choose "Insert Printed Ballot" in order to scan a previously printed ballot and start a new voter session at the "Review Ballot" stage of the flow diagram above.&#x20;
+From the poll worker screen a poll worker may choose "Insert Printed Ballot" in order to scan a previously printed ballot and start a new voter session at the "Review Ballot" stage of the flow diagram above.
 
 {% hint style="info" %}
-**User Manual Reference**: [Voting Sessions](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/voting-sessions "mention")
+**User Manual Reference**: [https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/voting-sessions](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/voting-sessions "mention")
 {% endhint %}
 
 ### Voter Privacy
@@ -87,7 +87,7 @@ The voter's choices do not persist on VxMarkScan after the end of the voting ses
 VxMarkScan supports voting sessions in various display formats and interaction modes.
 
 {% hint style="info" %}
-**User Manual Reference:** [Voting Session Language & Accessibility Settings](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/voting-session-language-and-accessibility-settings "mention")
+**User Manual Reference:** [Voting Sessions](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmarkscan/voting-sessions "mention")
 {% endhint %}
 
 ### Visual and Enhanced Visual Formats
@@ -119,13 +119,13 @@ Once a voter has used all their votes in a race, the progress button at the bott
 
 Voters usually choose to use the touchscreen to vote. The voter taps buttons to move between contests and through the stages of the voting flow. The voter taps list items on each contest page in order to make selections. Touch areas never overlap and are sized to meet minimums described in VVSG 2.0 7.2-I. Touch areas require that the user's touch begins and ends within the touch area to activate, meaning that dragging a finger across a touch area will not activate the touch area, in order to avoid accidental activation (VVSG 2.0 7.2-H).
 
-When there's more content on a page than can fit on one screen, the voter can scroll through the screen in one of two ways. First, they can tap the "More" button which acts as both the visual indicator that there are more contest options or contests. Second, they can use a swiping motion on the screen to move up or down. Swiping to see more contest options or contests is VxMarkScan's only touch screen gesture. It cannot be used horizontally to navigate between contests or pages and  (VVSG 2.0 7.2-E).
+When there's more content on a page than can fit on one screen, the voter can scroll through the screen in one of two ways. First, they can tap the "More" button which acts as both the visual indicator that there are more contest options or contests. Second, they can use a swiping motion on the screen to move up or down. Swiping to see more contest options or contests is VxMarkScan's only touch screen gesture. It cannot be used horizontally to navigate between contests or pages and (VVSG 2.0 7.2-E).
 
 ### Audio Tactile Mode - Accessible Controller
 
 VxMarkScan has a permanently attached accessible controller that can be used to navigate the ballot instead of using the touchscreen directly. The left and right buttons are used to navigate between contests and other screens while the up and down buttons are used to navigate between contest options or contests within each screen. The controller has a help button which will navigate to a help interface that explains the function of each button on the controller when pressed.
 
-The currently focused element on screen is highlighted in visual mode or read aloud in audio mode. When navigating through selections on a screen large enough to be scrollable, the screen will automatically scroll to keep the focused element in view.&#x20;
+The currently focused element on screen is highlighted in visual mode or read aloud in audio mode. When navigating through selections on a screen large enough to be scrollable, the screen will automatically scroll to keep the focused element in view.
 
 The accessible controller is integrated with the application via a hardware daemon that is always running. The daemon is continuously listening for input events from the controller. Each event is converted into virtual keyboard presses which are then handled by the frontend rendering agent just as a web browser might handle arrow key inputs.
 
@@ -133,9 +133,9 @@ The accessible controller is integrated with the application via a hardware daem
 
 VxMarkScan has a PAT (personal assistive technology) input port into which a voter can plug in their own two-switch adaptive input such as a sip-and-puff device. When a PAT input is attached during a voting session, VxMarkScan will enter a calibration flow where the voter will map their two inputs to "move" and "select." Different voters can calibrate their sip & puff devices differently such that sip is "move" for one and "select" for another.
 
-Once calibrated, the voter can use the two inputs to navigate through the ballot. The "move" input advance the focus on screen to the next element and the "select" input is the equivalent of a tap in touch interaction mode. Just as with the accessible controller, the currently focused element on screen is highlighted in visual mode or read aloud in audio mode.&#x20;
+Once calibrated, the voter can use the two inputs to navigate through the ballot. The "move" input advance the focus on screen to the next element and the "select" input is the equivalent of a tap in touch interaction mode. Just as with the accessible controller, the currently focused element on screen is highlighted in visual mode or read aloud in audio mode.
 
-The PAT input is integrated with the application via a hardware daemon that is always running. The daemon is continuously listening for input events from an attached device. Each event is converted into virtual keyboard presses which are then handled by the frontend rendering agent just as a web browser might handle `Tab` and `Enter`.&#x20;
+The PAT input is integrated with the application via a hardware daemon that is always running. The daemon is continuously listening for input events from an attached device. Each event is converted into virtual keyboard presses which are then handled by the frontend rendering agent just as a web browser might handle `Tab` and `Enter`.
 
 ### Audio Format
 

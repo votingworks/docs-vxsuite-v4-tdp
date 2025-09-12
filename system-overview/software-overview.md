@@ -1,6 +1,6 @@
 # Software Overview
 
-VotingWorks software is open-source, which means that the code is free and publicly available. All code written by VotingWorks and almost all dependencies are open-source, with the notable exception of third-party firmware for various hardware components.&#x20;
+VotingWorks software is open-source, which means that the code is free and publicly available. All code written by VotingWorks and almost all dependencies are open-source, with the notable exception of third-party firmware for various hardware components.
 
 All system components - VxAdmin, VxCentralScan, VxMarkScan, VxScan - run different application code but have fundamentally the same software architecture. The rest of this document applies to all system components unless otherwise noted.
 
@@ -14,7 +14,7 @@ Due to the extensive security measures, users are limited to using the applicati
 
 <figure><img src="../.gitbook/assets/image (63).png" alt="" width="563"><figcaption><p>Application architecture diagram</p></figcaption></figure>
 
-All machines are completely disconnected from any network and have network capabilities disabled, but the frameworks and architecture employed are borrowed from web-based development. The user interacts with a restricted browser which communicates with a server that provides the web-content and another server that provides application data and hardware status.&#x20;
+All machines are completely disconnected from any network and have network capabilities disabled, but the frameworks and architecture employed are borrowed from web-based development. The user interacts with a restricted browser which communicates with a server that provides the web-content and another server that provides application data and hardware status.
 
 ### kiosk-browser
 
@@ -22,7 +22,7 @@ kiosk-browser is a web browser restricted to rendering a single full-screen appl
 
 ### Application Frontend Server
 
-The frontend is a [React](https://react.dev/) application served from a [Node.js](https://nodejs.org/en) server. All code for the application frontends are in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.0.2) under `apps/[app-name]/frontend`.&#x20;
+The frontend is a [React](https://react.dev/) application served from a [Node.js](https://nodejs.org/en) server. All code for the application frontends are in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.0.2) under `apps/[app-name]/frontend`.
 
 ### Application Backend Server
 
@@ -36,7 +36,7 @@ All application data that persists across restarts is stored or tracked in a [SQ
 
 The hardware peripherals are polled and managed through the application backends. For example when detecting the status of the card reader, the browser polls the backend server which in turn polls the hardware itself and returns a status to the browser. In order to manage changing states of more complex hardware such as scanners, the backends use state machines.
 
-The exact layer between the application backend and the hardware varies by hardware. Some run in-process whereas others run as a separate process with which the backend communicates. For the accessibility peripherals - the accessible controller and the sip-and-puff interface - the backend starts and manages a daemon which surfaces user input directly to the browser as keyboard commands.&#x20;
+The exact layer between the application backend and the hardware varies by hardware. Some run in-process whereas others run as a separate process with which the backend communicates. For the accessibility peripherals - the accessible controller and the sip-and-puff interface - the backend starts and manages a daemon which surfaces user input directly to the browser as keyboard commands.
 
 In many cases VotingWorks has written custom drivers that interface directly with the USB device. In other cases, VotingWorks leverages open-source middleware layers installed as Debian packages:
 
@@ -113,7 +113,7 @@ Only one USB drive can be used at a time and additional USB drives inserted afte
 
 ### Document Creation
 
-All VxSuite components must generate documents for printing or export. VxAdmin and VxScan must generate tally and ballot count reports. All components must generate diagnostic readiness reports.&#x20;
+All VxSuite components must generate documents for printing or export. VxAdmin and VxScan must generate tally and ballot count reports. All components must generate diagnostic readiness reports.
 
 In order to do so, the applications have a headless browser (specifically Chromium) launched by the backend. Exported documents are all defined in terms of HTML (using React), so the headless browser is able to load the documents and render them as PDFs. The PDFs can then be sent to printer or saved to a USB drive.
 
@@ -129,6 +129,5 @@ All machines allow system administrators and election managers to edit the date,
 
 ### Other Shared Software Patterns
 
-* [Broken link](broken-reference "mention")
+* [logging.md](../system-security-auditing-and-logging/logging.md "mention")
 * [diagnostics.md](diagnostics.md "mention")
-

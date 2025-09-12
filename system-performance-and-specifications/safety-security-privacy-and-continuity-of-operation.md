@@ -1,10 +1,10 @@
 # Safety, Security, Privacy, and Continuity of Operation
 
-The following article and linked related articles are intended to cover VVSG 2.0 3.1.2-A.4.&#x20;
+The following article and linked related articles are intended to cover VVSG 2.0 3.1.2-A.4.
 
 ## Safety
 
-Per VVSG 2.0 8.1-K - Eliminating Hazards, devices associated with the voting system are certified in accordance with the requirements of UL 62368-1. See [#eliminating-hazards](../audio-visual-and-display-screen-settings.md#eliminating-hazards "mention").  VxSuite hardware is designed to eliminate hazards from shock, radiation, heat, and mechanical dangers when used and maintained in accordance with the [VxSuite User Manual - v4](https://app.gitbook.com/o/-MG9xpTX0GFiCyXHEhNe/s/JtZutzGTdCzsGITrdiph/ "mention").
+Per VVSG 2.0 8.1-K - Eliminating Hazards, devices associated with the voting system are certified in accordance with the requirements of UL 62368-1. See [#eliminating-hazards](../audio-visual-and-display-screen-settings.md#eliminating-hazards "mention"). VxSuite hardware is designed to eliminate hazards from shock, radiation, heat, and mechanical dangers when used and maintained in accordance with the [VxSuite User Manual - v4](https://app.gitbook.com/o/-MG9xpTX0GFiCyXHEhNe/s/JtZutzGTdCzsGITrdiph/ "mention").
 
 ## Security
 
@@ -12,7 +12,7 @@ The system's provisions for security are detailed in the [system-security-auditi
 
 ## Privacy
 
-The provisions for voter privacy on VxScan are described in [preserving-voter-privacy.md](../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/preserving-voter-privacy.md "mention"). The provisions for voter privacy on VxMarkScan are described in [#voter-privacy](../system-overview/vxmark-function.md#voter-privacy "mention").&#x20;
+The provisions for voter privacy on VxScan are described in [preserving-voter-privacy.md](../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/preserving-voter-privacy.md "mention"). The provisions for voter privacy on VxMarkScan are described in [Broken link](broken-reference "mention").
 
 ## Continuity of Operation
 
