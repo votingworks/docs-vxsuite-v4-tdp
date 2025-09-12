@@ -2,7 +2,7 @@
 
 All VxSuite components have a diagnostics interface accessible to system administrators and election managers that allows a user to monitor or test key components. Diagnostic information is shown to the user and can be exported as a PDF readiness report.
 
-When a test is performed, the system logs the result and creates a diagnostic record which includes the outcome of the diagnostic, pass or fail. The outcome and date of the most recent diagnostic is displayed on the readiness report. One possible use case of the readiness report is to run all diagnostics before an election and then produce a readiness report that confirms all tests passed.&#x20;
+When a test is performed, the system logs the result and creates a diagnostic record which includes the outcome of the diagnostic, pass or fail. The outcome and date of the most recent diagnostic is displayed on the readiness report. One possible use case of the readiness report is to run all diagnostics before an election and then produce a readiness report that confirms all tests passed.
 
 ## Common Diagnostics
 
@@ -30,11 +30,11 @@ For precinct equipment, the list of ballot styles will include only those approp
 
 #### Precinct
 
-For precinct equipment - VxScan and VxMarkScan -  the currently configured precinct will be shown, if any.
+For precinct equipment - VxScan and VxMarkScan - the currently configured precinct will be shown, if any.
 
 #### Mark Thresholds
 
-For scanners - VxScan and VxCentralScan - the currently configured mark and write-in area thresholds will be shown. The thresholds reflect what was set in the [system settings](broken-reference).
+For scanners - VxScan and VxCentralScan - the currently configured mark and write-in area thresholds will be shown. The thresholds reflect what was set in the [system settings](broken-reference/).
 
 ## VxAdmin Diagnostics
 
@@ -62,7 +62,7 @@ The user may perform a test scan, which requires that a blank white sheet of pap
 
 ### Embedded Scanner
 
-The user may perform a test scan, which requires that a blank white sheet of paper be scanned. The scanned image is broken up into small cells and each cell is checked for the percent of black pixels after binarization. If that percent is more than slightly over 0%, that cell is flagged and the entire diagnostic fails. The goal of the diagnostic is catch any defects in the scanned images, such as streaking produced by a dirty scanner.&#x20;
+The user may perform a test scan, which requires that a blank white sheet of paper be scanned. The scanned image is broken up into small cells and each cell is checked for the percent of black pixels after binarization. If that percent is more than slightly over 0%, that cell is flagged and the entire diagnostic fails. The goal of the diagnostic is catch any defects in the scanned images, such as streaking produced by a dirty scanner.
 
 The test scan process is identical to that for VxCentralScan, and the images above apply.
 
@@ -74,7 +74,7 @@ The diagnostics page will also display details about any printer errors if the p
 
 ### Speaker
 
-The user may test the speaker by triggering the chime sound and confirming whether they heard the chime or not.&#x20;
+The user may test the speaker by triggering the chime sound and confirming whether they heard the chime or not.
 
 {% hint style="info" %}
 **User Manual Reference**: [VxScan Diagnostics](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxscan/vxscan-diagnostics "mention")
@@ -106,5 +106,5 @@ The user may perform a test of the PAT input, which is simply confirms that a PA
 The user may perform a test of the front headphone input by connecting headphones and triggering a chime. The user must indicate whether they heard the chime or not, corresponding to a pass or fail respectively.
 
 {% hint style="info" %}
-**User Manual Reference**: [VxMarkScan Diagnostics](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/vxmark-diagnostics "mention")
+**User Manual Reference**: [VxMarkScan Diagnostics](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmarkscan/system-administrator-functions-and-system-diagnostics "mention")
 {% endhint %}

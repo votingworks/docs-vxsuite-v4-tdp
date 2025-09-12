@@ -44,7 +44,7 @@ The voter can also adjust the language based on translations included in the ele
 
 After the voter finishes their vote selections, VxMarkScan prints a [machine marked ballot](system-overview/machine-marked-ballots.md) and presents it to the voter. The ballot is scanned (but not cast) so the interpreted results can be presented to the voter on-screen. After reviewing the ballot and confirming their selections, the ballot is cast and ejected into the attached ballot box. At a later time, depending on election procedures, the ballot will be removed from the ballot box for tabulation.
 
-* [vxmark-function.md](system-overview/vxmark-function.md "mention")
+* [vxmarkscan-function.md](readme/vxmarkscan-function.md "mention")
 * [vxmarkscan-hardware.md](readme/vxmarkscan-hardware.md "mention")
 
 ## VxScan

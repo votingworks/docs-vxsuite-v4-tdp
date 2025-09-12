@@ -40,7 +40,7 @@ VxScan makes noises whenever a ballot is accepted or rejected. The ballot accept
 
 ## Configuration
 
-VxScan is configured with a signed [election package](broken-reference) exported from VxAdmin. The election definition includes the ballot layouts necessary for interpreting ballots and the system settings which indicate what type of ballot issues (e.g. overvotes) require adjudication.&#x20;
+VxScan is configured with a signed [election package](election-package/) exported from VxAdmin. The election definition includes the ballot layouts necessary for interpreting ballots and the system settings which indicate what type of ballot issues (e.g. overvotes) require adjudication.&#x20;
 
 {% hint style="info" %}
 **User Manual Reference:** [Configure VxScan](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxscan/configure-vxscan "mention")
@@ -56,7 +56,7 @@ Once polls are opened and ballots are cast, the precinct can no longer be change
 
 ### Ballot Mode
 
-After initial configuration, VxScan is in test ballot mode. The election manager can toggle between test ballot mode and official ballot mode. In official ballot mode, only official ballots can be scanned and exported CVRs will be official ballot CVRs. In test ballot mode, only test ballots can be scanned and exported CVRs will be test ballot CVRs. If `allowOfficialBallotsInTestMode` is set in the [system settings](broken-reference), official ballots will be allowed in test mode but exported CVRs will still be test CVRs.
+After initial configuration, VxScan is in test ballot mode. The election manager can toggle between test ballot mode and official ballot mode. In official ballot mode, only official ballots can be scanned and exported CVRs will be official ballot CVRs. In test ballot mode, only test ballots can be scanned and exported CVRs will be test ballot CVRs. If `allowOfficialBallotsInTestMode` is set in the [system settings](election-package/#system-settings), official ballots will be allowed in test mode but exported CVRs will still be test CVRs.
 
 Switching between ballot modes clears all scanned ballot data and resets the polls to closed. The election manager can switch from test ballot mode to official ballot mode at any time. When in official ballot mode after ballots have been scanned, the election manager can only switch back to test ballot mode if the CVRs have been synced to the USB drive.
 
@@ -86,11 +86,11 @@ If the polls have been closed, the only possible way for the polls to be re-open
 
 Scanning can begin once VxScan is fully configured and polls are open. If any user authenticates, scanning will be disabled until they remove their card. If CVRs are not synced to the USB drive, or no USB drive is inserted, scanning will be disabled. Scanning will be enabled again once a USB drive with synced CVRs is detected. If the election manager has disabled continuous export then scanning will be enabled without a synced USB drive present.&#x20;
 
-While scanning is enabled, the scanner will grab and scan paper as soon as it is detected. The scanned image will be [interpreted](broken-reference) while the ballot is still being held by the scanner. If the ballot is interpreted successfully and contains no errors, it will be ejected into the ballot box with a chime and the screen will inform the voter that their ballot has been cast.&#x20;
+While scanning is enabled, the scanner will grab and scan paper as soon as it is detected. The scanned image will be [interpreted](ballot-interpretation.md) while the ballot is still being held by the scanner. If the ballot is interpreted successfully and contains no errors, it will be ejected into the ballot box with a chime and the screen will inform the voter that their ballot has been cast.&#x20;
 
 If the ballot cannot be interpreted, it will be rejected toward the voter. Interpretation can fail if the ballot is not a valid [hand marked ballot](hand-marked-ballots.md) or if the ballot enters the scanner at too much of an angle, although the paper path normally prevents significant skew. If the ballot is interpretable but is invalid due to a mismatching election, precinct, or ballot mode, it will also be rejected toward the voter.
 
-If the ballot is interpreted and valid, but contains some voter error, the scanner will hold the ballot out of view while the errors are presented to the voter on screen. The types of errors that are flagged are determined by the `precinctScanAdjudicationReasons` set in the [system settings](broken-reference). Possible options are overvotes, undervotes, and blank ballots. In the case of overvotes or undervotes, the specific list of affected contests will be listed. The voter has the option to return the ballot to themselves or to cast it despite warnings. If there's an overvote and `disallowCastingOvervotes` is set in the system settings, however, the ballot can only be returned.
+If the ballot is interpreted and valid, but contains some voter error, the scanner will hold the ballot out of view while the errors are presented to the voter on screen. The types of errors that are flagged are determined by the `precinctScanAdjudicationReasons` set in the [system settings](election-package/#system-settings). Possible options are overvotes, undervotes, and blank ballots. In the case of overvotes or undervotes, the specific list of affected contests will be listed. The voter has the option to return the ballot to themselves or to cast it despite warnings. If there's an overvote and `disallowCastingOvervotes` is set in the system settings, however, the ballot can only be returned.
 
 If the `precinctScanAdjudicationReasons` includes adjudicating unmarked write-ins, which are marks in the write-in space with the associated bubble unmarked, those unmarked write-ins will be included when determining whether a contest contains an overvote. At the same time, it will be considered an undervote. For example consider a vote for one contest. If the voter only fills in an unmarked write-in, it will be considered an undervote. If the voter fills in a bubble and a separate unmarked write-in, it will be considered an overvote when warning the voter. Warning in both these cases encourages the voter to clarify their ambiguous marks. When it votes are tallied, however, unmarked write-ins are always  considered undervotes at VxScan.
 
@@ -108,7 +108,7 @@ The voter interface can be tuned to be more accessible to different voters:&#x20
 * Contrast mode can be adjusted from the default medium contrast (VVSG 2.0 7.1-C) to a high-contrast white background, high contrast black background, or low contrast (VVSG 2.0 7.1-D)
 * Language can be adjusted to any language supported by the election package
 
-The election package's [app strings](broken-reference) file specifies the translations that will be used to replace all on screen voter messages when the language is switched.
+The election package's [app strings](election-package/#app-strings) file specifies the translations that will be used to replace all on screen voter messages when the language is switched.
 
 After the voter casts their ballots, settings will automatically reset to the default (VVSG 2.0 7.1-A). There is also a voter option to reset settings (VVSG 2.0 7.1-B).
 

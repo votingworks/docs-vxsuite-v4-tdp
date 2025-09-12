@@ -6,10 +6,10 @@ layout: editorial
 
 ## Estimated Replacement Rates
 
-| <p><br></p>                    | VxScan (incl ballot box) | VxAdmin  | VxCentralScan | VxMarkScan   |
-| ------------------------------ | ------------------------ | -------- | ------------- | -------- |
-| Estimated Replacement Rate     | 10 years                 | 10 years | 10 years      | 10 years |
-| Estimated Cost Per Replacement | $7,500\*                 | $2,500\* | $2,500\*      | $7,500\* |
+| <p><br></p>                    | VxScan (incl ballot box) | VxAdmin  | VxCentralScan | VxMarkScan |
+| ------------------------------ | ------------------------ | -------- | ------------- | ---------- |
+| Estimated Replacement Rate     | 10 years                 | 10 years | 10 years      | 10 years   |
+| Estimated Cost Per Replacement | $7,500\*                 | $2,500\* | $2,500\*      | $7,500\*   |
 
 \*Costs quoted here reflect 2024 costs. VotingWorks expects prices to increase over time, in line with US inflation rates.
 
@@ -24,9 +24,3 @@ A sample TRUST Services Agreement is available [here](https://github.com/votingw
 ## Plans for Collecting, Maintaining, and Reporting Data to the EAC to Support and Validate Estimates
 
 VotingWorks will continually collect data on warranty usage at the product level and compile such data into reports. VotingWorks will share this data with the EAC at least every two years.
-
-\
-
-
-
-
