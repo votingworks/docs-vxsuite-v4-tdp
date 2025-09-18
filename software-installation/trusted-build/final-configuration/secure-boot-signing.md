@@ -31,8 +31,6 @@ VotingWorks will boot the VM, change the vendor password, attach a virtual devic
 
 When the process completes, the lock-down script displays the system hash in SHA256 and Signed Hash Validation (SHV) versions. These hashes will be provided to SLI/EAC for official verification of the image.
 
-Note: The vxmark VM currently requires a slightly modified process. For vxmark, VotingWorks will boot the VM, change the vendor password, then shut the VM down. After verifying it is not in a running state, VotingWorks will boot the VM again and complete the rest of the process as previously described.
-
 ## Transferring a Signed Image from VotingWorks to SLI
 
 Now that the image has been securely signed, VotingWorks will upload the signed image for SLI to later download. While SLI observes, VotingWorks will run the following command on the VotingWorks secure build machine:
