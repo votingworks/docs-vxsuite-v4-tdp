@@ -26,9 +26,9 @@
 ### VxMarkScan
 
 * VxMarkScan only supports 8" x 11" and 8" x 13.25" ballot sizes as specified in [paper-ballot-specifications.md](../paper-ballot-specifications.md "mention").&#x20;
-* 11" ballots are limited to 25 contests and 13.25" ballots are limited to 30 contests.
-* VxMarkScan ballot styles are limited to 135 total contest options.
-* VxMarkScan supports up to 90 total contest selections and write-in entries up to 60 characters.
+* VxMarkScan ballot styles are limited to 25 contests.
+* VxMarkScan ballot styles are limited to 135 total contest options, summed across contests.
+* VxMarkScan supports up to 90 total contest selections, summed across contests, and write-in entries up to 60 characters, summed across contests.
 * The ballot box supports up to 200 ballots before needing to be cleared.
 * VxMarkScan can activate, mark, verify, and cast up to 20 ballots per hour. Exact rate depends on time spent by user marking and verifying a ballot before casting.
 * VxMarkScan has a maximum available disk space of 9GB.
