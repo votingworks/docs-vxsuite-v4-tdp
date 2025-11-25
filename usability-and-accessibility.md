@@ -16,7 +16,13 @@ VotingWorks implemented user centered design in the following ways:&#x20;
 
 ## Federal Standards for Accessibility
 
-VotingWorks components are all designed and tested to applicable federal standards for accessibility including the version of Section 508 Information and Communication Technology (ICT) Final Standards and Guidelines \[USAB18], in effect as of January 18, 2018, and the WCAG 2.0 Level AA checkpoints \[W3C10] included in that standard
+VotingWorks components are all designed and tested to applicable federal standards for accessibility including the version of Section 508 Information and Communication Technology (ICT) Final Standards and Guidelines \[USAB18], in effect as of January 18, 2018, and the WCAG 2.0 Level AA checkpoints \[W3C10] included in that standard.
+
+VotingWorks recommends that blind or low vision users of the central system components (VxAdmin, VxCentralScan) should utilize one of the following mobile applications (or equivalent) to navigate the central system applications and associated COTS hardware peripherals (central scanners, printers, mice, etc.):
+
+* Seeing AI (iOS)
+* Lookout (Android)
+* Be My Eyes (iOS / Android)
 
 ## Usability and Accessibility Testing Reports
 
@@ -24,4 +30,4 @@ VotingWorks components are all designed and tested to applicable federal standar
 
 ### [VotingWorks UAT Report VxSuite](https://github.com/votingworks/docs-vxsuite-v4/blob/main/uat-reports/vxsuite-v4-pollworker-testing-report.pdf)
 
-\
+<br>
