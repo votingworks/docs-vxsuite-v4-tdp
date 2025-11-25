@@ -20,9 +20,9 @@ VotingWorks components are all designed and tested to applicable federal standar
 
 VotingWorks recommends that blind or low vision users of the central system components (VxAdmin, VxCentralScan) should utilize one of the following mobile applications (or equivalent) to navigate the central system applications and associated COTS hardware (central scanners, printers, laptops, etc.):
 
+* Be My Eyes (iOS / Android)
 * Seeing AI (iOS)
 * Lookout (Android)
-* Be My Eyes (iOS / Android)
 
 ## Usability and Accessibility Testing Reports
 
