@@ -9,7 +9,7 @@ In order to make the information as compact as possible, information is coded as
 Take following steps to decode a barcode manually and, in the case of a machine-marked ballot, manually verify the encoded selections are correct:
 
 1. Scan the QR code with a smartphone camera or barcode reader. If your smartphone does not automatically detect a value, you may use any freely available QR code scanning app.
-2. Copy and paste the scanned value into a Base64 to binary converter. There are many freely available online, such as [cryptii](https://cryptii.com/pipes/base64-to-binary).
+2. Copy and paste the scanned value into any Base64 to binary converter.
 3. Inspect the binary values and compare them to the encodings described below. In order to make sense of the values, you will need the associated [election definition](../system-overview/election-package/vxsuite-election-definition.md) available for comparison.
 
 You may use this process to verify that the encoded information in the ballot QR code matches the information presented on the ballot to human readers.
