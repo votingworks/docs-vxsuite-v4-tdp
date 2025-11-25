@@ -8,7 +8,7 @@ VxSuite product quality is ensured through both focused processes on individual 
 
 VotingWorks code has extensive unit test coverage. All libraries in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.0.2) have near 100% coverage, meaning that almost every single line of code runs whenever testing is run. Across all libraries, there are over 3,000 unit tests which all together include over 10,000 assertions about the software's behavior.
 
-Each test always either passes or fails. A test fails if an error is thrown or an assertion fails. An assertion may be something like "the phrase _General Election_ appear on screen" or "there are 56 votes for a specific candidate after loading cast vote records."&#x20;
+Each test always either passes or fails. A test fails if an error is thrown or an assertion fails. An assertion may be something like "the phrase _General Election_ appear on screen" or "there are 56 votes for a specific candidate after loading cast vote records."
 
 Whenever changes are made to VotingWorks code, all tests are automatically run as part of a continuous integration (CI) process through CircleCI. Code changes cannot be merged unless all tests pass. A single failing test will prevent changes from being merged. Every test run on CirceCI provides evidence that the software is operating as expected.
 
@@ -34,7 +34,7 @@ To organize this process, we make use of checklists. A base set of checklists ca
 
 ### Safe Concurrency (2.5-B)
 
-VxSuite practices safe concurrency by using programming languages that, in their design, avoid the most common dangers of concurrency.&#x20;
+VxSuite practices safe concurrency by using programming languages that, in their design, avoid the most common dangers of concurrency.
 
 Most of the application code, both frontend and backend, is written in TypeScript which compiles to JavaScript executing at runtime. JavaScript is a single-threaded language. While code can execute asynchronously, it cannot execute simultaneously with other code, preventing most instances of unsafe concurrency. We do sometimes make use of a mutex, and our TypeScript mutex implementation is [well-tested](https://github.com/votingworks/vxsuite/blob/v4.0.2/libs/utils/src/mutex.test.ts).
 
@@ -44,7 +44,7 @@ Despite those protections, unsafe concurrency is technically still possible, as 
 
 In order to catch any other instances of unsafe concurrency, VotingWorks tests software operation at scale in automated tests, as discussed above. In actively developed repositories like those for VxSuite, tests are running hundreds or thousands of times before the software is actually used on a machine. At that scale, intermittent concurrency issues are surfaced in the form of flaky tests. VotingWorks reviews flaky tests weekly and uses them to identify and fix any concurrency issues.
 
-Once software is actually imaged to hardware, VotingWorks tests the software thoroughly and at high volumes. For example on VxScan, the `precinctScanEnableShoeshineMode` flag in the [Broken link](broken-reference "mention") allows testing the scanner with a repeated scan that is run thousands of times before a release. In addition, VotingWorks attempts to identify edge cases and break the software during testing by performing operations in unusual or rapid succession which may reveal concurrency issues.
+Once software is actually imaged to hardware, VotingWorks tests the software thoroughly and at high volumes. For example on VxScan, the `precinctScanEnableShoeshineMode` flag in the system settings allows testing the scanner with a repeated scan that is run thousands of times before a release. In addition, VotingWorks attempts to identify edge cases and break the software during testing by performing operations in unusual or rapid succession which may reveal concurrency issues.
 
 ## Quality Assurance Protocols – Hardware
 
@@ -58,7 +58,7 @@ For components that must be custom-made, for example the VxScan precinct scanner
 * **lab prototypes** – every hardware subsystem – e.g. the VxScan module or the VxBox ballot box – goes through multiple lab prototypes of increasing fidelity. Each prototype is fully functional and is tested with thousands of ballots, through setup and teardown repeatedly. Weaknesses are cataloged and fed into the next lab prototype.
 * **engineering prototype** – once the lab prototype is fully validated, an engineering prototype is designed, tweaked for manufacturing (DFM). The tooling is then built, in order to produce an engineering prototype that is as close as possible to the final product. The tooling is adjusted in minor ways based on tests performed on the engineering prototype.
 
-By the time a VotingWorks hardware subsystem goes to assembly-line production, it has gone through a number of iterations to ensure that the design is high quality. &#x20;
+By the time a VotingWorks hardware subsystem goes to assembly-line production, it has gone through a number of iterations to ensure that the design is high quality.
 
 ### Component Testing & Validation
 
@@ -79,9 +79,9 @@ Our complete assembly work plans are available [in the document repository](http
 
 ### Full System Integration Testing
 
-Many issues only emerge when software is installed on production hardware or when the various components of the system are used together. In order to catch these higher-level system issues, VotingWorks performs full system integration testing before every release.&#x20;
+Many issues only emerge when software is installed on production hardware or when the various components of the system are used together. In order to catch these higher-level system issues, VotingWorks performs full system integration testing before every release.
 
-At VotingWorks locations, VotingWorks testing staff set up the full suite of hardware with the latest software release. The testing procedures are designed to imitate an election flow and test any common corner cases or past issues. Most testing procedures are repeated with multiple election packages and system settings to confirm that there are not issues specific to certain configurations.&#x20;
+At VotingWorks locations, VotingWorks testing staff set up the full suite of hardware with the latest software release. The testing procedures are designed to imitate an election flow and test any common corner cases or past issues. Most testing procedures are repeated with multiple election packages and system settings to confirm that there are not issues specific to certain configurations.
 
 When an issues is found, the issue is immediately escalated to the engineering team for a fix. A new release is created and testing procedures are restarted in full to ensure fixes do not introduce regressions.
 

@@ -11,11 +11,11 @@ The VotingWorks voting system (a.k.a. **VxSuite**) consists of four primary comp
 
 Voters mark paper ballots by [hand](system-overview/hand-marked-ballots.md) or by using VxMarkScan to [machine mark](system-overview/machine-marked-ballots.md). Ballots are read and counted by tabulating devices (VxScan & VxCentralScan), which create [cast vote records](system-overview/cast-vote-records.md) for adjudication and aggregation on VxAdmin. VotingWorks considers read and counted ballots as the same.
 
-An election begins with generating an [election package](broken-reference/) and [hand marked ballots ](system-overview/hand-marked-ballots.md)using an external system.
+An election begins with generating an [election package](system-overview/election-package/) and [hand marked ballots ](system-overview/hand-marked-ballots.md)using an external system.
 
 ## VxAdmin
 
-VxAdmin is where the election administrator performs election setup tasks and manages election results. At the beginning of an election, the user configures VxAdmin with an [election package](broken-reference/). Once configured, VxAdmin is used for two key election setup tasks:
+VxAdmin is where the election administrator performs election setup tasks and manages election results. At the beginning of an election, the user configures VxAdmin with an [election package](system-overview/election-package/). Once configured, VxAdmin is used for two key election setup tasks:
 
 * Exporting a copy of the election package to USB drives with a [digital signature](system-security-auditing-and-logging/system-security-architecture/artifact-authentication/). The election package is used to configure VxMarkScan, VxScan, and VxCentralScan, and it _must_ be digitally signed by VxAdmin.
 * Programming [role-based smart cards](system-overview/user-roles.md) that will be used to authenticate on all machines. While the "System Administrator" role is election-agnostic, the "Election Manager" and "Poll Worker" roles are election-specific and cards must be programmed for every election.
@@ -49,7 +49,7 @@ After the voter finishes their vote selections, VxMarkScan prints a [machine mar
 
 ## VxScan
 
-VxScan is the system's precinct scanner. At the beginning of an election, it is configured with an [election package](broken-reference/) from VxAdmin. The election package specifies the ballot layouts. The polls are opened by a poll worker after which casting ballots is allowed. Opening polls prints [a tally report](system-overview/vxscan-polls-reports.md) which is empty because no ballots have been scanned, a.k.a. the zero report.
+VxScan is the system's precinct scanner. At the beginning of an election, it is configured with an [election package](system-overview/election-package/) from VxAdmin. The election package specifies the ballot layouts. The polls are opened by a poll worker after which casting ballots is allowed. Opening polls prints [a tally report](system-overview/vxscan-polls-reports.md) which is empty because no ballots have been scanned, a.k.a. the zero report.
 
 Voters cast ballots by inserting their ballots into the scanner in any orientation. After interpreting the scanned ballot, the scanner will drop the ballot into the ballot box and inform the voter that their ballot was successfully cast. During voting, VxScan continuously exports [cast vote records](system-overview/cast-vote-records.md) to an attached USB drive.
 
@@ -62,7 +62,7 @@ When polls are closed, the CVR export is completed and a [polls closed report ](
 
 ## VxCentralScan
 
-VxCentralScan is the system's batch scanner, often used to scan absentee or provisional ballots. At the beginning of an election, it is configured with an [election package](broken-reference/) from VxAdmin. The election package specifies the ballot layouts.
+VxCentralScan is the system's batch scanner, often used to scan absentee or provisional ballots. At the beginning of an election, it is configured with an [election package](system-overview/election-package/) from VxAdmin. The election package specifies the ballot layouts.
 
 Ballots are inserted in the batch scanner's hopper and a batch scan is triggered from VxCentralScan. The ballots are scanned and interpreted in succession until the hopper is empty. If a ballot triggers a configured adjudication reason (e.g. it has an overvote), scanning will pause and the ballot will be displayed on screen, at which point the user can choose to tabulate the ballot anyway or remove it, untabulated.
 

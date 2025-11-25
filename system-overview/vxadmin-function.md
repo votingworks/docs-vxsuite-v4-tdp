@@ -4,7 +4,7 @@ VxAdmin acts as the election setup hub at the beginning of the election and the 
 
 ## Configuration and Election Packages
 
-Only a [system administrator ](user-roles.md#system-administrator-role)can authenticate onto an unconfigured VxAdmin and configure it with an election package from an external system. The election package must be loaded via a USB drive. The election package must be a valid `.zip` [election package](broken-reference). If the election package zip file, election definition file, system settings file, or metadata file are not valid, VxAdmin will surface an error to the user.
+Only a [system administrator ](user-roles.md#system-administrator-role)can authenticate onto an unconfigured VxAdmin and configure it with an election package from an external system. The election package must be loaded via a USB drive. The election package must be a valid `.zip` [election-package](election-package/ "mention"). If the election package zip file, election definition file, system settings file, or metadata file are not valid, VxAdmin will surface an error to the user.
 
 Once VxAdmin is configured, system administrators and election managers can export signed election packages. The exported election package is the same as the imported election package but is accompanied by a digital signature, which ensures that the election package was validated by a certified VxAdmin. The election packages loaded into VxMarkScan, VxScan, and VxCentralScan _must be signed_ and unsigned election packages will be rejected.
 
@@ -14,7 +14,7 @@ Once VxAdmin is configured, system administrators and election managers can expo
 
 ## Smart Card Management
 
-Smart cards are used for two-factor authentication on all machines in the system. They can only be programmed at VxAdmin with system administrator privileges.&#x20;
+Smart cards are used for two-factor authentication on all machines in the system. They can only be programmed at VxAdmin with system administrator privileges.
 
 Programming, like authentication, takes place via the laptop's built-in USB card reader. Once a card is inserted, the application is able to detect the card and read and write data by issuing APDUs (application protocol data units) which are the standard form of communication between smart card readers and smart cards.
 
@@ -42,7 +42,7 @@ The core post-election (and pre-election testing) function of VxAdmin is loading
 
 ### Loading CVRs
 
-CVRs must be loaded from a USB drive. CVRs are exported from VxScan or VxCentralScan and are accompanied by a digital signature. CVRs without a digital signature cannot be loaded. CVR exports with digital signatures that do not match the content of the CVR exports cannot be loaded in order to prevent tampering.&#x20;
+CVRs must be loaded from a USB drive. CVRs are exported from VxScan or VxCentralScan and are accompanied by a digital signature. CVRs without a digital signature cannot be loaded. CVR exports with digital signatures that do not match the content of the CVR exports cannot be loaded in order to prevent tampering.
 
 The CVRs from the scanners are saved to specific directory structure on the USB drive, but exports can be loaded from anywhere on a USB drive's filesystem. When selecting an export manually, the export's `metadata.json` file must be selected by the user.
 
@@ -66,7 +66,7 @@ VxAdmin is always in one of three ballot modes:
 * Test Ballot Mode - test CVRs have been loaded
 * Official Ballot Mode - official CVRs have been loaded
 
-On VxAdmin, the ballot mode is determined by the ballot mode of the imported CVRs. VxAdmin differs in that respect from VxMarkScan, VxScan, and VxCentralScan, where the ballot mode is set directly by the election manager.&#x20;
+On VxAdmin, the ballot mode is determined by the ballot mode of the imported CVRs. VxAdmin differs in that respect from VxMarkScan, VxScan, and VxCentralScan, where the ballot mode is set directly by the election manager.
 
 Once VxAdmin is in test ballot mode, only test CVRs can be subsequently loaded. Similarly once VxAdmin is in official ballot mode, only official CVRs can be subsequently loaded.
 
@@ -78,9 +78,9 @@ CVRs can be removed by the user before results are marked as official or can be 
 
 The tally reports from VxScan do not reflect any post-voting adjudication. All write-ins are simply "Write-In", unmarked write-ins are undervotes, and marginal marks are also undervotes.
 
-VxAdmin allows election managers to perform on-screen adjudication for ballots with write-ins or marginal marks. Each contest (e.g. Mayor) is adjudicated individually. The election manager works through the queue of ballots for that contest.&#x20;
+VxAdmin allows election managers to perform on-screen adjudication for ballots with write-ins or marginal marks. Each contest (e.g. Mayor) is adjudicated individually. The election manager works through the queue of ballots for that contest.
 
-By default, only ballots with write-ins appear in the queue. If `MarginalMark` is included in the system settings as part of the list of `adminAdjudicationReasons` , ballots with marginal marks will also appear in the queue. A marginal mark is defined as any mark over a bubble which has a score of at least the `marginal`  threshold defined in the system settings but less than the `definite` threshold defined in the system settings. When both write-ins and marginal marks are being adjudicated, they appear in the following order within each contest:
+By default, only ballots with write-ins appear in the queue. If `MarginalMark` is included in the system settings as part of the list of `adminAdjudicationReasons` , ballots with marginal marks will also appear in the queue. A marginal mark is defined as any mark over a bubble which has a score of at least the `marginal` threshold defined in the system settings but less than the `definite` threshold defined in the system settings. When both write-ins and marginal marks are being adjudicated, they appear in the following order within each contest:
 
 1. Ballots with only write-ins
 2. Ballots with both write-ins and marginal marks
@@ -118,7 +118,7 @@ $$
 \text{total ballots} * \text{votes allowed in contest} = \text{total votes} + \text{total undervotes} + \text{total overvotes}
 $$
 
-The same formula also applies to all results generated from scanned ballots. If a vote for three contest is overvoted, it is considered three overvotes. If the contest tallies entered by the user are incomplete or invalid, the user is presented with warning messages.&#x20;
+The same formula also applies to all results generated from scanned ballots. If a vote for three contest is overvoted, it is considered three overvotes. If the contest tallies entered by the user are incomplete or invalid, the user is presented with warning messages.
 
 In most cases, the ballot count will be the same across all contests. In some jurisdictions it is possible for different contests to have different ballot counts if, for example, someone votes on a ballot without local contests. In these cases, the user can override the ballot count on an individual contest basis.
 
@@ -142,7 +142,7 @@ Filters and groupings are specified by the user directly with the tally report b
 
 #### Group Determination
 
-If there are no groupings specified, there is only one set of tallies. If the precinct grouping is specified, there will be tallies for each precinct. If multiple groupings are specified, the possible resulting groupings need to be calculated. For example, if the precinct and ballot style groupings are both specified, only some combinations are possible because not all ballot styles exist in all precincts. If filters are specified, they may rule out certain groupings. For example, if the precinct grouping is specified but only Precinct A and Precinct B are included by the filter, then the Precinct C grouping will be excluded.&#x20;
+If there are no groupings specified, there is only one set of tallies. If the precinct grouping is specified, there will be tallies for each precinct. If multiple groupings are specified, the possible resulting groupings need to be calculated. For example, if the precinct and ballot style groupings are both specified, only some combinations are possible because not all ballot styles exist in all precincts. If filters are specified, they may rule out certain groupings. For example, if the precinct grouping is specified but only Precinct A and Precinct B are included by the filter, then the Precinct C grouping will be excluded.
 
 If batch or scanner parameters are included, then VxAdmin will not attempt to compute the possible groupings because they may be too numerous. The potential groups will be created opportunistically during tallying.
 
@@ -178,7 +178,7 @@ Manual tallies are then combined with the scanned tallies in one of two ways. Fo
 
 **Reporting**
 
-The final step is for the VxAdmin backend to format the vote tallies into one of [VxAdmin's Results Export Formats](vxadmin-results-exports/) and export the result onto a USB drive or, if it is a PDF document, print it.&#x20;
+The final step is for the VxAdmin backend to format the vote tallies into one of [VxAdmin's Results Export Formats](vxadmin-results-exports/) and export the result onto a USB drive or, if it is a PDF document, print it.
 
 {% hint style="info" %}
 **User Manual Reference:** [Reports](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/election-night-guides/reports "mention")
@@ -198,11 +198,11 @@ The **Ballot Count** is defined in VxSuite as simply the count of first sheets. 
 
 ## Official vs. Unofficial Results
 
-Results on VxAdmin are considered unofficial until the election manager marks them as official. As long as results are unofficial, CVRs can be loaded, write-ins can be adjudicated, and manual tallies can be added and edited. All reports and result exports are labelled as "Unofficial."&#x20;
+Results on VxAdmin are considered unofficial until the election manager marks them as official. As long as results are unofficial, CVRs can be loaded, write-ins can be adjudicated, and manual tallies can be added and edited. All reports and result exports are labelled as "Unofficial."
 
 Once the results are final and often only after a jurisdiction's specific certification process, the election manager can mark results as official. All reports and result exports will then be labelled as "Official." CVRs can no longer be loaded, write-ins can no longer be adjudicated, and manual tallies can no longer be altered.
 
-There are two ways to exit official results mode without unconfiguring VxAdmin:&#x20;
+There are two ways to exit official results mode without unconfiguring VxAdmin:
 
 * The system administrator can revert election results back to unofficial, which leaves all election data intact but allows it to be altered again by an election manager
 * The election manager may remove _all_ election data at once, which would require restarting aggregation and adjudication from scratch
@@ -211,9 +211,8 @@ There are two ways to exit official results mode without unconfiguring VxAdmin:&
 
 VxAdmin can print reports via an attached printer. The supported printer is the HP LaserJet Pro 4001dn. VxAdmin can also export reports as PDFs so, in the event of a printer failure, reports will always be available.
 
-VxAdmin interfaces with the printer through the CUPS, the open-source printing system developed by Apple and installed on our Debian system. When a printer is attached, it is registered with the CUPS server and made available to the application. VxAdmin is able to send print jobs to the printer via CUPS commands. The HP LaserJetPro does not require any additional third-party or in-house driver because it supports the IPP (Internet Printing Protocol) which CUPS then utilizes.&#x20;
+VxAdmin interfaces with the printer through the CUPS, the open-source printing system developed by Apple and installed on our Debian system. When a printer is attached, it is registered with the CUPS server and made available to the application. VxAdmin is able to send print jobs to the printer via CUPS commands. The HP LaserJetPro does not require any additional third-party or in-house driver because it supports the IPP (Internet Printing Protocol) which CUPS then utilizes.
 
 Using IPP, the VxAdmin is also able to poll the detailed status (toner level, jam status, etc.) of the printer for use in the diagnostics interface.
 
 VxAdmin can only connect with one printer at a time and will always connect with with the first attached printer.
-
