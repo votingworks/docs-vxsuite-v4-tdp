@@ -17,7 +17,7 @@ The election package is a zip archive (a `.zip` file). The zip archive contains 
 
 ### Election Definition
 
-The election definition file includes the information that defines the election and ballots, including but not limited to definitions for contests, ballot styles, precincts, parties, multi-lingual ballot translations, and ballot layouts. The system accepts two formats - the [VxSuite Election Definition](vxsuite-election-definition.md) format or the [Ballot Definition CDF](ballot-definition-cdf.md). When using the Ballot Definition CDF, some features are not available.&#x20;
+The election definition file includes the information that defines the election and ballots, including but not limited to definitions for contests, ballot styles, precincts, parties, multi-lingual ballot translations, and ballot layouts. The system accepts two formats - the [VxSuite Election Definition](vxsuite-election-definition.md) format or the [Ballot Definition CDF](ballot-definition-cdf.md). When using the Ballot Definition CDF, some features are not available.
 
 The election definition file is required to be present in the election package.
 
@@ -52,7 +52,7 @@ The app strings file is optional. If not provided, default English strings will 
 
 ### Audio IDs & Audio Clips
 
-The audio IDs file is a JSON file structured identically to the app strings file except that instead of containing text values for each voter string, it contains audio IDs for each voter string. Each audio ID corresponds to an entry in the audio clips file.&#x20;
+The audio IDs file is a JSON file structured identically to the app strings file except that instead of containing text values for each voter string, it contains audio IDs for each voter string. Each audio ID corresponds to an entry in the audio clips file.
 
 ```json
 {
@@ -90,14 +90,14 @@ The system settings file contains settings which are not specific to an election
   * `inactiveSessionTimeLimitMinutes`- Sets the number of minutes after which machines automatically lock due to inactivity.
   * `numIncorrectPinAttemptsAllowedBeforeCardLockout`- Sets the number of times that a PIN can be entered incorrectly before the user has to wait extra time to retry.
   * `overallSessionTimeLimitHours`- Sets the maximum number of hours for any session, regardless of activity.
-  * `startingCardLockoutDurationSeconds` - Sets the number of seconds that the user is locked out from retrying a PIN after the number of failed attempts specified by  `numIncorrectPinAttemptsAllowedBeforeCardLockout`. Each subsequent failed attempt triggers a lockout double the length of the previous lockout.
+  * `startingCardLockoutDurationSeconds` - Sets the number of seconds that the user is locked out from retrying a PIN after the number of failed attempts specified by `numIncorrectPinAttemptsAllowedBeforeCardLockout`. Each subsequent failed attempt triggers a lockout double the length of the previous lockout.
 * Scanning Thresholds
   * `definite` - Specifies the percentage of a bubble that needs to be filled in for the system to interpret it as a vote.
   * `marginal` - Specifies the percentage of a bubble that needs to be filled for the system to interpret it as a marginal mark that may need adjudication.
   * `writeInTextArea` - Specifies the percentage of the write-in area that needs to be filled in for the tabulators to consider it a write-in. This is only relevant for jurisdictions that allow unmarked write-ins i.e write-ins without an accompanying mark.
 * Adjudication Reasons
-  * `precinctScanAdjudicationReasons` - Specifies the reasons that a ballot scanned at VxScan should be flagged for adjudication. Supported reasons are overvotes, undervotes, blank ballots, or unmarked write-ins.&#x20;
-  * `centralScanAdjudicationReasons` - Specifies the reasons that a ballot scanned at VxCentralScan should be flagged for adjudication. Supported reasons are overvotes, undervotes, blank ballots, or unmarked write-ins.&#x20;
+  * `precinctScanAdjudicationReasons` - Specifies the reasons that a ballot scanned at VxScan should be flagged for adjudication. Supported reasons are overvotes, undervotes, blank ballots, or unmarked write-ins.
+  * `centralScanAdjudicationReasons` - Specifies the reasons that a ballot scanned at VxCentralScan should be flagged for adjudication. Supported reasons are overvotes, undervotes, blank ballots, or unmarked write-ins.
   * `adminAdjudicationReasons` - Specifies the reasons for a ballot to appear in the VxAdmin adjudication queue in addition to write-ins. The only supported reason is marginal marks.
   * `disallowCastingOvervotes` - When set to `true`, scanners will always reject overvoted ballots. When set to `false`, VxScan will allow a voter to choose whether to reject or cast an overvoted ballot, and VxCentralScan will allow an election manager to choose whether to reject or tabulate an overvoted ballot.
   * `allowOfficialBallotsInTestMode` - When set to `true`, official ballots will not be rejected in test mode. The setting is for jurisdictions where testing must take place on official ballots.
@@ -159,3 +159,7 @@ The **election package hash** is the SHA256 hash of the entire election package,
 For example, imagine that an election administrator wants to change the audio clip for candidate's name. The audio clip is not a part of the election definition but it is a part of the election package, so the ballot hash remains the same while the election package hash changes. The election administrator can reconfigure VxMarkScan with an updated election package but does not have to reprint ballots.
 
 The **election ID** shown on screen and included in printed reports contains a shortened version of both the ballot hash and the election hash in the format: `{ballot hash}-{election hash}`. For example, with ballot hash `083e2e0afbb19191a4d2850562ddef050ff860b0d61acee15d3bb26954932941` and election hash `db5c379b71accbf991e42ab23d26202f88b2539b6c69b814a0d3c8dc9f4072dc`, the election ID would be: `083e2e0-db5c379`. This enables identification of both the specific election package and election definition that a machine is configured with.
+
+## Ballot Rotation
+
+Ballot rotation is specified by the defined candidate order in each ballot style as opposed to specifying a rule that the voting system should apply to a given list of candidates. The system supports tabulation of ballots with any type of candidate ordering. This enables flexibility for jurisdiction-specific ballot rotation rules that can be defined in the source system creating the ballot definition.
