@@ -1,6 +1,6 @@
 # VxSuite Election Definition
 
-The VxSuite Election Definition is a data format for defining an election that is specific to VxSuite.  It is a JSON file which defines the essential features of an election - metadata, contests, parties, precincts, districts, ballot styles, candidates, and more. In addition to defining that basic structure of the election, the format contains translations for any text which may appear on the ballots and ballot layouts to map the bubbles on each ballot to contest options.
+The VxSuite Election Definition is a data format for defining an election that is specific to VxSuite. It is a JSON file which defines the essential features of an election - metadata, contests, parties, precincts, districts, ballot styles, candidates, and more. In addition to defining that basic structure of the election, the format contains translations for any text which may appear on the ballots and ballot layouts to map the bubbles on each ballot to contest options.
 
 ## Core Election Attributes and Relationships
 
@@ -18,7 +18,7 @@ The ballot layout entity includes basic information about the physical ballots u
 
 <table><thead><tr><th width="223">Attribute</th><th width="196">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>paperSize</code></td><td><code>string</code></td><td>Indicates physical length of the ballot</td></tr><tr><td><code>metadataEncoding</code></td><td><code>string</code></td><td>Indicates how the ballot metadata will be encoded on the ballot</td></tr></tbody></table>
 
-The `paperSize` attribute accepts the following valid options:&#x20;
+The `paperSize` attribute accepts the following valid options:
 
 {% code fullWidth="false" %}
 ```
@@ -26,13 +26,22 @@ letter, legal, custom-8.5x17, custom-8.5x18, custom-8.5x21, custom-8.5x22
 ```
 {% endcode %}
 
-The `metadataEncoding` attribute must be "qr-code".&#x20;
+The `metadataEncoding` attribute must be "qr-code".
 
 ### Ballot Style
 
 Each ballot style corresponds to a single- or multi-sheet ballot. The contests on a ballot style are determined by its associated districts - every contest belonging to an associated district is considered a part of the ballot style. A ballot style may be used in multiple precincts, one ballot style might correspond to multiple ballot PDFs that have identical contest layouts but different precinct labels.
 
-<table><thead><tr><th width="154.33333333333331">Attribute</th><th width="229">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>precincts</code></td><td><code>array</code> - IDs for <a href="vxsuite-election-definition.md#precinct">Precinct</a></td><td>The IDs of all precincts which use the ballot style</td></tr><tr><td><code>districts</code></td><td><code>array</code> - IDs for <a href="vxsuite-election-definition.md#district">District</a></td><td>The IDs of all districts whose contests are included in the ballot style</td></tr><tr><td><code>partyId</code></td><td><code>string</code> - ID for <a href="vxsuite-election-definition.md#party">Party</a></td><td>Optional. The ID of the party to which the ballot belongs, if a primary</td></tr><tr><td><code>languages</code></td><td><code>array</code> - <code>string</code></td><td>Optional. The language codes for the languages covered by the ballot style</td></tr></tbody></table>
+<table><thead><tr><th width="154.33333333333331">Attribute</th><th width="248.0703125">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>precincts</code></td><td><code>array</code> - IDs for <a href="vxsuite-election-definition.md#precinct">Precinct</a></td><td>The IDs of all precincts which use the ballot style</td></tr><tr><td><code>districts</code></td><td><code>array</code> - IDs for <a href="vxsuite-election-definition.md#district">District</a></td><td>The IDs of all districts whose contests are included in the ballot style</td></tr><tr><td><code>partyId</code></td><td><code>string</code> - ID for <a href="vxsuite-election-definition.md#party">Party</a></td><td>Optional. The ID of the party to which the ballot belongs, if a primary</td></tr><tr><td><code>languages</code></td><td><code>array</code> - <code>string</code></td><td>Optional. The language codes for the languages covered by the ballot style</td></tr><tr><td><code>orderedCandidatesByContest</code></td><td><code>map &#x3C;string, array</code> - <code>OrderedCandidateOption></code></td><td><p>Optional. A mapping from contest ID for candidate contests in the ballot style to an ordered list of candidate options that specify the ballot rotation order of candidates for this ballot style. If not specified, candidates will be listed in the order they are defined in the contest object. </p><p></p><p><code>OrderedCandidateOption</code> is specified in more detail in the table below.<br></p></td></tr></tbody></table>
+
+#### OrderedCandidateOption
+
+| Attribute  | Type               | Description                                         |
+| ---------- | ------------------ | --------------------------------------------------- |
+| `id`       | `string`           | Candidate ID                                        |
+| `partyIds` | `array` - `string` | Endorsement party IDs for the giving bubble option. |
+
+A cross-party endorsed candidate may have multiple candidate options associated with the same `id` , but different `partyIds`.&#x20;
 
 ### Contest
 
@@ -44,7 +53,7 @@ There are two types of contests - candidate contests and yes-no contests. Both t
 
 In a candidate contest, the voter makes a selection between pre-defined candidates or write-in options. The following attributes extend the shared [Contest](vxsuite-election-definition.md#contest) attributes:
 
-<table><thead><tr><th width="200">Attribute</th><th width="201">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>seats</code></td><td><code>number</code></td><td>The number of selections a voter can make</td></tr><tr><td><code>candidates</code></td><td><code>array</code> - <a href="vxsuite-election-definition.md#candidate">Candidate</a></td><td>Candidate options for the contest</td></tr><tr><td><code>allowWriteIns</code></td><td><code>boolean</code></td><td>Whether the contest allows write-ins</td></tr><tr><td><code>partyId</code></td><td><code>string</code> - ID for <a href="vxsuite-election-definition.md#party">Party</a></td><td>Optional. The ID of the party to which the contest belongs, if a primary</td></tr><tr><td><code>termDescription</code></td><td><code>string</code></td><td>Optional. Description of the term of the position, such as "For three years" </td></tr></tbody></table>
+<table><thead><tr><th width="200">Attribute</th><th width="201">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>seats</code></td><td><code>number</code></td><td>The number of selections a voter can make</td></tr><tr><td><code>candidates</code></td><td><code>array</code> - <a href="vxsuite-election-definition.md#candidate">Candidate</a></td><td>Candidate options for the contest</td></tr><tr><td><code>allowWriteIns</code></td><td><code>boolean</code></td><td>Whether the contest allows write-ins</td></tr><tr><td><code>partyId</code></td><td><code>string</code> - ID for <a href="vxsuite-election-definition.md#party">Party</a></td><td>Optional. The ID of the party to which the contest belongs, if a primary</td></tr><tr><td><code>termDescription</code></td><td><code>string</code></td><td>Optional. Description of the term of the position, such as "For three years"</td></tr></tbody></table>
 
 #### Candidate
 
@@ -107,7 +116,7 @@ Examples of instructional ballot text include:
 * "Vote for up to 3",
 * "Official Absentee Ballot"
 
-Although the system does not use the hand marked ballot instructional text for any purpose, it must be included in the election definition for security purposes. When included, it becomes a part of the [ballot hash](broken-reference) and cannot be changed without invalidating older ballots.
+Although the system does not use the hand marked ballot instructional text for any purpose, it must be included in the election definition for security purposes. When included, it becomes a part of the [ballot hash](broken-reference/) and cannot be changed without invalidating older ballots.
 
 ### Election-Specific Text
 

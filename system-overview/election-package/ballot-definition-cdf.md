@@ -83,7 +83,7 @@ Any `GpUnit` with an associated contest is mapped to a [District](vxsuite-electi
 
 ### Ballot Rotation
 
-Ballot rotation is specified by the defined candidate and/or contest order in each ballot style as opposed to a rule that the voting system should apply to a given list of candidates and/or contests. The system supports tabulation of ballots with any contest or candidate order. This enables flexibility for jurisdiction-specific ballot rotation rules that can be defined in the source system creating the ballot definition.
+The order of candidates provided in `OrderedContent` on the `BallotStyle` object in the ballot definition CDF will be preserved in the `orderedCandidatesByContest` map for the given `BallotStyle` in the VxSuite election definition.
 
 ## VxSuite CDF Limitations
 
