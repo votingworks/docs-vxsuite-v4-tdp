@@ -34,7 +34,7 @@ For precinct equipment - VxScan and VxMarkScan - the currently configured precin
 
 #### Mark Thresholds
 
-For scanners - VxScan and VxCentralScan - the currently configured mark and write-in area thresholds will be shown. The thresholds reflect what was set in the [system settings](broken-reference/).
+For scanners - VxScan and VxCentralScan - the currently configured mark and write-in area thresholds will be shown. The thresholds reflect what was set in the system settings.
 
 ## VxAdmin Diagnostics
 
@@ -106,5 +106,5 @@ The user may perform a test of the PAT input, which is simply confirms that a PA
 The user may perform a test of the front headphone input by connecting headphones and triggering a chime. The user must indicate whether they heard the chime or not, corresponding to a pass or fail respectively.
 
 {% hint style="info" %}
-**User Manual Reference**: [VxMarkScan Diagnostics](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmarkscan/system-administrator-functions-and-system-diagnostics "mention")
+**User Manual Reference**: [VxMarkScan Diagnostics](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmarkscan/diagnostics "mention")
 {% endhint %}

@@ -4,7 +4,7 @@ VxCentralScan is the system's batch scanner which enable election managers to ef
 
 ## Configuration
 
-VxCentralScan is configured with a signed [election package](broken-reference) exported from VxAdmin. The election definition includes the ballot layouts necessary for interpreting ballots and the system settings which indicate what type of ballot issues (e.g. overvotes) require adjudication. After the election package is loaded by an authenticated election manager, no further configuration is required.
+VxCentralScan is configured with a signed [election-package](election-package/ "mention") exported from VxAdmin. The election definition includes the ballot layouts necessary for interpreting ballots and the system settings which indicate what type of ballot issues (e.g. overvotes) require adjudication. After the election package is loaded by an authenticated election manager, no further configuration is required.
 
 {% hint style="info" %}
 **User Manual Reference:** [Configure VxCentralScan](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxcentralscan/configure-ballot-scanner "mention")
@@ -33,7 +33,7 @@ When the user triggers a batch scan, the scanner will start a batch and begin sc
 The start time, end time, size, and index of all batches is tracked and displayed to the election manager. If a mistake was made in organizing batches or adjudicating a ballot, election managers can delete any individual batch or delete all batches.
 
 {% hint style="info" %}
-**User Manual Reference:** [Scan Ballot Batches](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxcentralscan/scanning-ballots#scan-ballot-batches "mention")
+**User Manual Reference:** [Central Scanning #Scan Ballot Batches](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxcentralscan/scanning-ballots#scan-ballot-batches "mention")
 {% endhint %}
 
 ### Imprinting
@@ -62,7 +62,7 @@ In other cases, the ballot requires adjudication. The adjudication reasons for V
 In these cases, the affected contests will be highlighted on screen to the election manager and they will have the option to remove or tabulate the ballot.&#x20;
 
 {% hint style="info" %}
-**User Manual Reference:** [Adjudicate Ballots](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxcentralscan/scanning-ballots#adjudicate-ballots "mention")
+**User Manual Reference:** [Central Scanning #Adjudicate Ballots](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxcentralscan/scanning-ballots#adjudicate-ballots "mention")
 {% endhint %}
 
 ## Exporting CVRs
@@ -70,6 +70,6 @@ In these cases, the affected contests will be highlighted on screen to the elect
 CVRs must be exported onto a USB drive and taken to VxAdmin for aggregation and reporting. After ballots are interpreted, their images are saved to disk and their interpretation is stored in VxCentralScan's data store. On export, all CVRs are pulled from the data store, converted to the CVR CDF, and written to the USB drive.
 
 {% hint style="info" %}
-**User Manual Reference**: [Saving Cast Vote Records (CVRs)](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxcentralscan/scanning-ballots#saving-cast-vote-records-cvrs "mention")
+**User Manual Reference**: [Central Scanning #Saving Cast Vote Records (CVRs)](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxcentralscan/scanning-ballots#saving-cast-vote-records-cvrs "mention")
 {% endhint %}
 
