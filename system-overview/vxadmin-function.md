@@ -78,13 +78,15 @@ CVRs can be removed by the user before results are marked as official or can be 
 
 The tally reports from VxScan do not reflect any post-voting adjudication. All write-ins are simply "Write-In", unmarked write-ins are undervotes, and marginal marks are also undervotes.
 
-VxAdmin allows election managers to perform on-screen adjudication for ballots with write-ins or marginal marks. Each contest (e.g. Mayor) is adjudicated individually. The election manager works through the queue of ballots for that contest.
+VxAdmin allows election managers to perform on-screen adjudication for ballots with write-ins, marginal marks, overvotes, or undervotes. Each contest (e.g. Mayor) is adjudicated individually. The election manager works through the queue of ballots for that contest.
 
-By default, only ballots with write-ins appear in the queue. If `MarginalMark` is included in the system settings as part of the list of `adminAdjudicationReasons` , ballots with marginal marks will also appear in the queue. A marginal mark is defined as any mark over a bubble which has a score of at least the `marginal` threshold defined in the system settings but less than the `definite` threshold defined in the system settings. When both write-ins and marginal marks are being adjudicated, they appear in the following order within each contest:
+By default, only ballots with write-ins appear in the queue. If `MarginalMark` , `Overvote`, or `Undervote` is included in the system settings as part of the list of `adminAdjudicationReasons` , ballots with any of the specified features will also appear in the queue. A marginal mark is defined as any mark over a bubble which has a score of at least the `marginal` threshold defined in the system settings but less than the `definite` threshold defined in the system settings. When adjudicating ballots for a mix of adjudication reasons, the ballots appear in the following order within each contest:
 
-1. Ballots with only write-ins
-2. Ballots with both write-ins and marginal marks
-3. Ballots with only marginal marks
+1. Ballots with overvotes
+2. Ballots with write-ins
+3. Ballots with both write-ins and marginal marks
+4. Ballots with marginal marks
+5. Ballots with undervotes
 
 The side of the ballot that the contest appears on is rendered to the user, with options to zoom out to the full ballot and back in again. When adjudicating a write-in, the write-in is further zoomed in. The location of the highlights are taken from the [interpreted ballot layout](cast-vote-records.md#ballot-layouts), which is included in the cast vote record and loaded into VxAdmin alongside the ballot image.
 
