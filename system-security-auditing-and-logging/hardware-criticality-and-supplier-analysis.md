@@ -72,7 +72,7 @@ In each article describing the hardware of a specific component, some section wi
 
 * [vxadmin-and-vxcentralscan-hardware.md](../system-overview/vxadmin-and-vxcentralscan-hardware.md "mention")
 * [vxscan-hardware.md](../system-overview/vxscan-hardware.md "mention")
-* [vxmarkscan-hardware.md](../readme/vxmarkscan-hardware.md "mention")
+* [vxmarkscan-hardware.md](../system-overview/vxmarkscan-hardware.md "mention")
 
 We consider the supplier of any critical component a critical supplier.
 
