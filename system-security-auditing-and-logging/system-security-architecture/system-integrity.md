@@ -23,7 +23,7 @@ The integrity of the overall system is ensured because:
   * First, the TPM won’t unseal secrets since a change in the command line changes one of the PCR values, which means that the TPM’s policy check will fail.
   * Second, the system won’t even boot at all because the changed command line invalidates the signature on the bootloader+kernel+command-line, and UEFI will refuse to execute the now-improperly signed bootloader+kernel+command-line.
 
-Thus, if the system boots, it means that the hard drive corresponds, by hashing, to the expected value that we baked into the bootloader+kernel+command-line and signed.
+Thus, if the system boots, it means that the hard drive corresponds, by hashing, to the expected value that we baked into the bootloader+kernel+command-line and signed. If the system does not boot due to a failed cryptographic boot validation, it may be indicative of malware, so the user should make note of the error message and contact VotingWorks.
 
 The only time that the system hash is expected to change is after a software update, which involves completely reimaging the machine per the process laid out in [imaging-machines](../../software-installation/imaging-machines/ "mention").
 
