@@ -2,15 +2,16 @@
 
 ## Election Definition Limits
 
-| Limit Type    | Per        | Value |
-| ------------- | ---------- | ----- |
-| Precincts     | Election   | 1000  |
-| Candidates    | Election   | 1000  |
-| Contests      | Election   | 1000  |
-| Ballot Styles | Election   | 1000  |
-| Candidates    | Contest    | 100   |
-| Vote For      | Contest    | 50    |
-| Characters    | Field Name | 100   |
+| Limit Type    | Per                     | Value  |
+| ------------- | ----------------------- | ------ |
+| Precincts     | Election                | 1,000  |
+| Candidates    | Election                | 1,000  |
+| Contests      | Election                | 1,000  |
+| Ballot Styles | Election                | 1,000  |
+| Candidates    | Contest                 | 100    |
+| Vote For      | Contest                 | 50     |
+| Characters    | Field Name              | 100    |
+| Characters    | Proposition Description | 10,000 |
 
 ## Component Limits
 
