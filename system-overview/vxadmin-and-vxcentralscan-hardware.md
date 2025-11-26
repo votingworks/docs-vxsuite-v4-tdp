@@ -12,6 +12,7 @@ The relevant hardware interfaces are:
 
 * **Smart Card Reader** - Enables reading and writing to smart cards, which is the basis for authentication in VxSuite
 * **USB Ports -** Allows connecting to the peripherals for scanning or printing
+* **HDMI Port -** Allows connecting the laptop to an external display, which is most often used to enlarge the adjudication interfaces when adjudication is performed by a group of people
 
 While not strictly necessary, VxAdmin and VxCentralScan are bundled with a mouse and a USB hub for ease of use. A USB A-B cable is included to connect to the peripherals.
 
