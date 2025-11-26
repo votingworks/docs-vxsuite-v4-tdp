@@ -21,5 +21,5 @@ All audio and video devices are tested to be in accordance with the requirements
 
 The audio-visual settings for the voter experience are described in the [.](./ "mention"):
 
-* [vxmarkscan-function.md](readme/vxmarkscan-function.md "mention")
+* [vxmarkscan-function.md](system-overview/vxmarkscan-function.md "mention")
 * [vxscan-function.md](system-overview/vxscan-function.md "mention")&#x20;
