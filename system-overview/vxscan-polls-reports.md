@@ -22,10 +22,10 @@ As a rule, the sum of the number of votes for all candidates, the number of unde
 <pre><code><strong>candidate votes + undervotes + overvotes = ballots * votes allowed
 </strong></code></pre>
 
-<div><figure><img src="../.gitbook/assets/image (70).png" alt="" width="375"><figcaption><p>Party-specific portion of a polls opened report for a primary</p></figcaption></figure> <figure><img src="../.gitbook/assets/image (72).png" alt="" width="375"><figcaption><p>Polls closed report for a general election in test ballot mode</p></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/por-west-lincoln.png" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/pcr-west-lincoln.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 ## Polls Paused and Resumed Reports
 
 When voting is paused or resumed, VxScan prints a report containing the ballot count. Tally results are never included. The header is structured in the same way as the polls opened and closed reports.
 
-<div><figure><img src="../.gitbook/assets/image (74).png" alt="" width="375"><figcaption><p>Voting paused report</p></figcaption></figure> <figure><img src="../.gitbook/assets/image (75).png" alt="" width="375"><figcaption><p>Voting resumed report</p></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/print-job-2025-11-26T200351.915Z.png" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/print-job-2025-11-26T200343.244Z.png" alt="" width="375"><figcaption></figcaption></figure></div>

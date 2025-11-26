@@ -8,7 +8,7 @@ If there are multi-sheet ballots, the hand marked ballot counts may have sheet c
 
 When grouping is applied in a ballot count report, each group corresponds to a row in the table. In the following example, the ballot counts are grouped by both precinct and voting method:
 
-<figure><img src="../../.gitbook/assets/image (81).png" alt="" width="375"><figcaption><p>Ballot count report</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ballot-count-report-1.png" alt="" width="375"><figcaption><p>Ballot count report</p></figcaption></figure>
 
 The following metadata columns may appear in a ballot count report table in order to specify groupings:
 
@@ -16,4 +16,4 @@ The following metadata columns may appear in a ballot count report table in orde
 
 Filters apply to the entire report. Simple filters are shown in the title, while complex filters are listed in a box below the title.
 
-<figure><img src="../../.gitbook/assets/image (83).png" alt="" width="375"><figcaption><p>Ballot count report with a complex filter</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ballot-count-report-complex-filter-1.png" alt="" width="375"><figcaption><p>Ballot count report with a complex filter</p></figcaption></figure>
