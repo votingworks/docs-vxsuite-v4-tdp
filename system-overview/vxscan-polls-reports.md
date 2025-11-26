@@ -13,7 +13,7 @@ The tally report header contains the following information:
 * **Election ID** - The election ID on the report is a concatenation of the ballot hash and election hash and specifies exactly which election definition and election settings that the report corresponds to
 * **Certification Signatures** - The space is provided for poll workers or election officials to sign the report in accordance with local statute.
 
-The ballot counts table provides the count of hand marked vs. machine marked ballots. For elections with multi-sheet ballots, it provides counts per sheet.
+For elections with multi-sheet ballots, counts per sheet are displayed in addition to the overall ballot count.
 
 Each candidate or contest option appears in a row below the contest header. Because results at VxScan are not yet adjudicated, all write-ins are grouped under the "Write-In" bucket (except unmarked write-ins, which are reported as undervotes until adjudicated at VxAdmin).
 

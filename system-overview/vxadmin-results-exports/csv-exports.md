@@ -32,22 +32,22 @@ The results of write-in adjudication are always included in the CSV exports. All
 The ballot count report CSV is the same as the table presented in the [printed ballot count reports](ballot-count-reports.md). For example:
 
 ```csv
-Precinct,Precinct ID,Voting Method,BMD,HMPB,Total
-West Lincoln,20,Precinct,0,0,0
-West Lincoln,20,Absentee,0,0,0
-East Lincoln,21,Precinct,0,0,0
-East Lincoln,21,Absentee,0,0,0
-South Lincoln,22,Precinct,0,0,0
-South Lincoln,22,Absentee,0,0,0
-North Lincoln,23,Precinct,0,0,0
-North Lincoln,23,Absentee,0,0,0
+Precinct,Precinct ID,Voting Method,Total
+West Lincoln,20,Precinct,0
+West Lincoln,20,Absentee,0
+East Lincoln,21,Precinct,0
+East Lincoln,21,Absentee,0
+South Lincoln,22,Precinct,0
+South Lincoln,22,Absentee,0
+North Lincoln,23,Precinct,0
+North Lincoln,23,Absentee,0
 ```
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2024-10-02 at 8.52.44 AM.png" alt="" width="563"><figcaption><p>Formatted version of the above CSV excerpt</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-11-26 at 1.12.02 PM.png" alt="" width="563"><figcaption><p>Formatted version of the above CSV excerpt</p></figcaption></figure>
 
-The "Precinct", "Precinct ID" and "Voting Method" columns are [metadata fields](csv-exports.md#shared-metadata-structure) that are included because this example export groups results by precinct and voting method. The other fields are standard fields:
+The "Precinct", "Precinct ID" and "Voting Method" columns are [metadata fields](csv-exports.md#shared-metadata-structure) that are included because this example export groups results by precinct and voting method. The "Total" field is a standard field on all ballot count CSV exports, but other ballot or sheet count fields may appear depending on the election and loaded results:
 
-<table><thead><tr><th width="172">Header</th><th>Values</th></tr></thead><tbody><tr><td>BMD</td><td>The count of machine marked ballots</td></tr><tr><td>HMPB</td><td>The count of hand marked paper ballots. In a multi-sheet election, this is just the count of the first sheet</td></tr><tr><td>HMPB Sheet {N}</td><td>The count of a particular ballot sheet. The count of the second sheet of all ballots would be "HMPB Sheet 2"</td></tr><tr><td>Manual</td><td>The count of manually entered ballots</td></tr><tr><td>Total</td><td>The total ballot count</td></tr></tbody></table>
+<table><thead><tr><th width="172">Header</th><th>Values</th></tr></thead><tbody><tr><td>Manual</td><td>The ballot count of manually entered results.</td></tr><tr><td>Scanned</td><td>The count of all ballots loaded as cast vote records. The field appears if there are manual ballots or if the election is multi-sheet. In a multi-sheet election, this is the count of the first sheet. </td></tr><tr><td>Scanned Sheet {N}</td><td>The count of a subsequent ballot sheet. The count of the second sheet of all ballots would be "Scanned Sheet 2".</td></tr><tr><td>Total</td><td>The total ballot count.</td></tr></tbody></table>
 
 ## Shared Metadata Structure
 

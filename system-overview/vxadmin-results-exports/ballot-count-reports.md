@@ -2,9 +2,9 @@
 
 Ballot count reports contain ballot and ballot sheet counts, not contest results.
 
-The ballot counts are broken down by ballot type - "HMPB" (for hand marked ballots), "BMD" (for machine marked ballots), and "manual" (for manually entered results, if applicable).
+If there are multi-sheet ballots in the election, the sheet counts (e.g. "Sheet 1", "Sheet 2") can be added to the report in the ballot count report builder by selecting "Sheet" as a `Report By` dimension. The total ballot count is always defined as the first sheet count.
 
-If there are multi-sheet ballots, the hand marked ballot counts may have sheet counts specified. The ballot count is determined by counting the first sheet of each ballot style.
+If there are manual results, the manual ballot count will always be displayed separately from the scanned ballot count, and the total of the two will also be displayed.
 
 When grouping is applied in a ballot count report, each group corresponds to a row in the table. In the following example, the ballot counts are grouped by both precinct and voting method:
 
