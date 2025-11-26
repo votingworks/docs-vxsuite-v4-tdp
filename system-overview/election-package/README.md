@@ -98,7 +98,7 @@ The system settings file contains settings which are not specific to an election
 * Adjudication Reasons
   * `precinctScanAdjudicationReasons` - Specifies the reasons that a ballot scanned at VxScan should be flagged for adjudication. Supported reasons are overvotes, undervotes, blank ballots, or unmarked write-ins.
   * `centralScanAdjudicationReasons` - Specifies the reasons that a ballot scanned at VxCentralScan should be flagged for adjudication. Supported reasons are overvotes, undervotes, blank ballots, or unmarked write-ins.
-  * `adminAdjudicationReasons` - Specifies the reasons for a ballot to appear in the VxAdmin adjudication queue in addition to write-ins. The only supported reason is marginal marks.
+  * `adminAdjudicationReasons` - Specifies the reasons for a ballot to appear in the VxAdmin adjudication queue in addition to write-ins. Supported reasons are undervotes, overvotes, and marginal marks.
   * `disallowCastingOvervotes` - When set to `true`, scanners will always reject overvoted ballots. When set to `false`, VxScan will allow a voter to choose whether to reject or cast an overvoted ballot, and VxCentralScan will allow an election manager to choose whether to reject or tabulate an overvoted ballot.
   * `allowOfficialBallotsInTestMode` - When set to `true`, official ballots will not be rejected in test mode. The setting is for jurisdictions where testing must take place on official ballots.
 * Other
