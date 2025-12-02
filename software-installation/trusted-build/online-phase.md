@@ -16,7 +16,8 @@ sudo virt-manager
 mkdir ~/code && cd ~/code
 git clone https://github.com/votingworks/vxsuite-build-system
 cd ~/code/vxsuite-build-system
-./scripts/tb-run-online-phase.sh <inventory-name> 
+git checkout <relevant-tag>
+./scripts/tb-run-online-phase.sh <inventory-name>
 ```
 
 * You will be prompted for the sudo password.
