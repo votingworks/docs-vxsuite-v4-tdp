@@ -63,7 +63,7 @@ In a candidate contest, the voter makes a selection between pre-defined candidat
 
 In a yes-no contest, also known as a ballot measure, the voter makes a selection between two options. The following attributes extend the shared [Contest](vxsuite-election-definition.md#contest) attributes:
 
-<table><thead><tr><th width="158">Attribute</th><th width="229">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Contest description</td></tr><tr><td><code>yesOption</code></td><td><a href="vxsuite-election-definition.md#yes-no-contest-option">Yes-No Contest Option</a></td><td>"Yes" option</td></tr><tr><td><code>noOption</code></td><td><a href="vxsuite-election-definition.md#yes-no-contest-option">Yes-No Contest Option</a></td><td>"No" option</td></tr></tbody></table>
+<table><thead><tr><th width="158">Attribute</th><th width="229">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>description</code></td><td><code>string</code></td><td>Contest description</td></tr><tr><td><code>yesOption</code></td><td><a href="vxsuite-election-definition.md#yes-no-contest-option">Yes-No Contest Option</a></td><td>"Yes" option</td></tr><tr><td><code>noOption</code></td><td><a href="vxsuite-election-definition.md#yes-no-contest-option">Yes-No Contest Option</a></td><td>"No" option</td></tr></tbody></table>
 
 #### Yes-No Contest Option
 
