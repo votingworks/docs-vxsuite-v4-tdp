@@ -34,6 +34,7 @@
   * [Reliably Detectable Marks](system-performance-and-specifications/reliably-detectable-marks.md)
   * [Safety, Security, Privacy, and Continuity of Operation](system-performance-and-specifications/safety-security-privacy-and-continuity-of-operation.md)
   * [Processing Capabilities](system-performance-and-specifications/processing-capabilities.md)
+  * [Guidance for Test Labs](system-performance-and-specifications/guidance-for-test-labs.md)
 * [System Security, Auditing & Logging](system-security-auditing-and-logging/README.md)
   * [System Security Architecture](system-security-auditing-and-logging/software-security.md)
     * [Access Control](system-security-auditing-and-logging/system-security-architecture/access-control.md)
