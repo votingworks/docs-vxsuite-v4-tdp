@@ -65,6 +65,14 @@ In a yes-no contest, also known as a ballot measure, the voter makes a selection
 
 <table><thead><tr><th width="158">Attribute</th><th width="229">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>description</code></td><td><code>string</code></td><td>Contest description</td></tr><tr><td><code>yesOption</code></td><td><a href="vxsuite-election-definition.md#yes-no-contest-option">Yes-No Contest Option</a></td><td>"Yes" option</td></tr><tr><td><code>noOption</code></td><td><a href="vxsuite-election-definition.md#yes-no-contest-option">Yes-No Contest Option</a></td><td>"No" option</td></tr></tbody></table>
 
+The `description` field supports rich text formatting, including images. Images are represented using the syntax `<img src=\"` + data URL + `\">`, where an image can be converted to a data URL using [https://www.base64-image.de](https://www.base64-image.de/). For example, if an image after conversion via the aforementioned site yields the data URL `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO1n0X8AAAAASUVORK5CYII=`, the image embedded in a yes-no contest description will look as follows:
+
+{% code overflow="wrap" %}
+```
+"description": "<img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO1n0X8AAAAASUVORK5CYII=\">"
+```
+{% endcode %}
+
 #### Yes-No Contest Option
 
 <table><thead><tr><th width="145">Attribute</th><th width="120">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>label</code></td><td><code>string</code></td><td>Label e.g. "Yes" or "No"</td></tr></tbody></table>
