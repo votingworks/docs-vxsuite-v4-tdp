@@ -16,7 +16,12 @@ sudo virt-manager
 mkdir ~/code && cd ~/code
 git clone https://github.com/votingworks/vxsuite-build-system
 cd ~/code/vxsuite-build-system
-git checkout <relevant-tag>
+
+# Optional step if VotingWorks is doing development work in
+# vxsuite-build-system and the latest code in GitHub differs from the source
+# code provided to the test lab
+git checkout <relevant-vxsuite-build-system-tag>
+
 ./scripts/tb-run-online-phase.sh <inventory-name>
 ```
 
