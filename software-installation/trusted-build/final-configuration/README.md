@@ -20,9 +20,10 @@ sudo virt-manager
 
 3. Double-click the **vxadmin** VM.
 4. Press the start button ▶️.
-5. Once the VM has initialized, log in with username **vx** and password **votingworks**.
-6. To ensure that the console displays correctly, select "View" > "Resize to VM".
-7. In the VM terminal window, run the following commands:
+5. From the menu, select "View" > "Consoles" > "Serial 1". (If you only see a blinking cursor, make the window active by clicking in it, then press Enter. You should see a login prompt.)
+6. Once the VM has initialized, log in with username **vx** and password **votingworks**.
+7. To ensure that the console displays correctly, select "View" > "Resize to VM".
+8. In the VM terminal window, run the following commands:
 
 ```
 cd ~/code/vxsuite-complete-system
