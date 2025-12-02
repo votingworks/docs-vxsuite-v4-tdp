@@ -10,7 +10,7 @@
 | Ballot Styles | Election                | 1,000  |
 | Candidates    | Contest                 | 100    |
 | Vote For      | Contest                 | 50     |
-| Characters    | Field Name              | 100    |
+| Characters    | Name, Title, Label      | 100    |
 | Characters    | Proposition Description | 10,000 |
 
 ## Component Limits
