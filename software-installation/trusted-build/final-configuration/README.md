@@ -56,7 +56,7 @@ Is this additionally an official release image? [y/N]
 ```
 
 12. Set a password for the `vx-vendor` user. This password will not meaningfully be used as the vendor menu on a production image is only accessible via a vendor card.
-13. After the script finishes, the VM will reboot. You will see a white screen displaying “Card Reader Not Detected”. In the VM menu, select "Virtual Machine" > "Shut Down" > "Shut Down". Close the VM window once shutdown is complete.
+13. After the script finishes, the VM will reboot. You will see a console login prompt. In the VM menu, select "Virtual Machine" > "Shut Down" > "Shut Down". Close the VM window once shutdown is complete.
 14. You will now need to perform the [Secure Boot Signing](https://docs.voting.works/vxsuite-tdp-v3.1/trusted-build/final-configuration/secure-boot-signing) process with VotingWorks. Once that process is completed, the VM and corresponding image will be ready for use with Secure Boot.
 
 At this point, you are ready to install the image. You can find those instructions in [Imaging Machines](../../imaging-machines/).
