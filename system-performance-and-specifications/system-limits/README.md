@@ -52,7 +52,7 @@ In addition to the design requirements specified in [hand-marked-ballots.md](../
 
 VxSuite hand marked paper ballot interpretation supports fractional grid coordinate positions, which enable bubble positions to be placed anywhere within the timing mark grid. However, the density of bubbles on a given ballot is limited to the total number of timing mark grid intersections to ensure accurate interpretation.
 
-For an 11" ballot, which has a 32 x 39 timing mark grid, the maximum number of ballot positions is 1248 per page or 2496 per sheet. The maximum number of ballot positions increases for longer ballots due to the longer grid.
+For example, an 11" ballot has a 32 x 39 timing mark grid. The QR code and the footer typically occupy the bottom two rows of bubbles so the usable grid is 32 x 37, giving a maximum number of ballot positions of 1,184 per page or 2,368 per sheet. The maximum number of ballot positions increases for longer ballots due to the longer grid.
 
 **Candidates Per Contest**
 
