@@ -163,3 +163,5 @@ The **election ID** shown on screen and included in printed reports contains a s
 ## Ballot Rotation
 
 Ballot rotation is specified by the defined candidate order in each ballot style as opposed to specifying a rule that the voting system should apply to a given list of candidates. The system supports tabulation of ballots with any type of candidate ordering. This enables flexibility for jurisdiction-specific ballot rotation rules that can be defined in the source system creating the ballot definition.
+
+Election officials can verify their ballot rotation configuration by configuring VxMarkScan, selecting different precincts (and by extension ballot styles), and confirming that the order of candidates differs per precinct as expected.
