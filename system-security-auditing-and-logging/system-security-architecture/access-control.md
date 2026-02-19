@@ -39,7 +39,7 @@ Vendor cards can be programmed to be either jurisdiction-specific or jurisdictio
 
 ### Private Key Storage
 
-We store our root VotingWorks certificate authority (CA) private key encrypted in a password vault, usable only by a few authorized engineers.
+Our root VotingWorks certificate authority (CA) private key is encrypted and stored locally, only available to a few authorized engineers. The encryption passphrase is stored in a cloud password vault, and the key and passphrase are never colocated.
 
 VxAdmin, VxCentralScan, VxMarkScan, and VxScan are all built on devices with a Trusted Platform Module (TPM) 2.0, a chip that ships standard on modern Intel and AMD hardware. The TPM can keep cryptographic material secret inside its tamper-resistant boundary until a certain set of system conditions are met. Only once the TPM determines that the system meets a set of appropriate conditions—correct bootloader, kernel, kernel command line, etc.—does the TPM allow an application to ask it to perform signing operations with its contained secret key.
 
@@ -151,22 +151,3 @@ Refer to the following code links for more details:
 * [https://github.com/votingworks/vxsuite-complete-system/blob/v4.0.2/config/vendor-functions/basic-configuration.sh](https://github.com/votingworks/vxsuite-complete-system/blob/v4.0.2/config/vendor-functions/basic-configuration.sh) — The production machine configuration wizard
 * [https://github.com/votingworks/vxsuite/tree/v4.0.2/libs/auth#scripts](https://github.com/votingworks/vxsuite/tree/v4.0.2/libs/auth#scripts) — A summary of the scripts in the authentication lib, many of which are used for production configuration
 * [https://github.com/votingworks/openfips201](https://github.com/votingworks/openfips201) — The applet that we’re installing onto our Java Cards
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
