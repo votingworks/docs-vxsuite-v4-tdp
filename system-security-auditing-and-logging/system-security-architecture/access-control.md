@@ -78,12 +78,12 @@ Our custom fields are:
 
 X.509 certificates eventually expire. We use the following expiry times:
 
-* Certificates directly issued by VotingWorks: 100 years
-* VxAdmin-issued system administrator card certificates: 5 years
-* VxAdmin-issued election manager and poll worker card certificates: 6 months
-* VotingWorks-issued vendor card certificates: 7 days
+* Certificates directly issued by VotingWorks: 100 years (36,500 days)
+* VxAdmin-issued system administrator card certificates: 5 years (1,825 days)
+* VxAdmin-issued election manager and poll worker card certificates: 6 months (183 days)
+* VotingWorks-issued vendor card certificates: 2 months (60 days)
 
-This means that system administrator cards will automatically expire after 5 years, election manager and poll worker cards will automatically expire after 6 months, and vendor cards will automatically expire after 7 days.
+This means that system administrator cards will automatically expire after 5 years, election manager and poll worker cards will automatically expire after 6 months, and vendor cards will automatically expire after 2 months.
 
 ## Configuration and Authentication Process
 
