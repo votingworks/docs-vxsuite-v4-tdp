@@ -36,7 +36,7 @@ The scanner's cover can be opened for cleaning, during which scanning will be di
 
 ### Audio Management
 
-VxScan makes noises whenever a ballot is accepted or rejected. The ballot accepted sound is a pleasant chime and the ballot rejected sound is a jarring beep. Election managers can toggle sounds on or off.
+VxScan makes noises whenever a ballot is accepted or rejected. The ballot accepted sound is a pleasant chime and the ballot rejected sound is a jarring beep. Election managers can toggle sounds on or off.  When no headphones are plugged into the system, the sound comes out of a speaker.  When headphones are plugged in for voter accessibility, the sound comes out of the headphones.
 
 ## Configuration
 
@@ -121,7 +121,7 @@ Continuous export can be disabled by an election manager if need be, for example
 CVRs can be exported directly from the election manager menu, in which case they export all at once.
 
 {% hint style="info" %}
-**User Manual Reference**: [Saving CVRs](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxscan/additional-vxscan-settings#saving-cvrs "mention")
+**User Manual Reference**: [Additional VxScan Settings #Saving CVRs](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxscan/additional-vxscan-settings#saving-cvrs "mention")
 {% endhint %}
 
 ## Reports
