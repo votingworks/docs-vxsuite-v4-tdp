@@ -36,7 +36,7 @@ The scanner's cover can be opened for cleaning, during which scanning will be di
 
 ### Audio Management
 
-VxScan makes noises whenever a ballot is accepted or rejected. The ballot accepted sound is a pleasant chime and the ballot rejected sound is a jarring beep. Election managers can toggle sounds on or off.  When no headphones are plugged into the system, the sound comes out of a speaker.  When headphones are plugged in for voter accessibility, the sound comes out of the headphones.
+VxScan makes noises whenever a ballot is accepted or rejected. The ballot accepted sound is a pleasant chime and the ballot rejected sound is a jarring beep. Election managers can toggle sounds on or off.  When no headphones are plugged into the front panel headphone jack, the sound comes out of the onboard speaker. When headphones are plugged in for voter accessibility, audio output is routed to the headphones via the single-board computer's audio output.
 
 ## Configuration
 
