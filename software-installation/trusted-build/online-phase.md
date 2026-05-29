@@ -13,9 +13,8 @@ sudo virt-manager
 6. In the VM terminal window, run the following commands:
 
 ```
-mkdir ~/code && cd ~/code
-git clone https://github.com/votingworks/vxsuite-build-system
 cd ~/code/vxsuite-build-system
+git pull
 
 # Optional step if VotingWorks is doing development work in
 # vxsuite-build-system and the latest code in GitHub differs from the source
