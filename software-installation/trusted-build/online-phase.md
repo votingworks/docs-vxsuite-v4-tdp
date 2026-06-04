@@ -14,13 +14,9 @@ sudo virt-manager
 
 ```
 cd ~/code/vxsuite-build-system
+git checkout main
 git pull
-
-# Optional step if VotingWorks is doing development work in
-# vxsuite-build-system and the latest code in GitHub differs from the source
-# code provided to the test lab
-git checkout <relevant-vxsuite-build-system-tag>
-
+git checkout <inventory-name>
 ./scripts/tb-run-online-phase.sh <inventory-name>
 ```
 
