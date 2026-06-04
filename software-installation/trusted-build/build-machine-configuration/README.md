@@ -19,11 +19,14 @@ mkdir ~/code && cd ~/code
 git clone https://github.com/votingworks/vxsuite-build-system
 
 cd ~/code/vxsuite-build-system
+git checkout main
+git pull
+git checkout <inventory-name>
 ./scripts/tb-initialize-build-machine.sh <inventory-name>
 ./scripts/tb-clone-images.sh <inventory-name>
 ```
 
-At this point, you should have two separate VMs: `debian-<inventory-name>-<apt-snapshot-date>-<debian-release-name>`and `online`. You can confirm this by running:
+At this point, you should have two separate VMs: `debian-<inventory-name>-<apt-snapshot-date>-<debian-release-name>` and `online`. You can confirm this by running:
 
 ```
 sudo virsh list --all
