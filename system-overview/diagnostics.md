@@ -26,11 +26,11 @@ If there is an election configured on the machine, it will display the election 
 
 #### Ballot Styles
 
-For precinct equipment, the list of ballot styles will include only those appropriate for the current precinct configuration. For central equipment, the list of ballot styles will be all ballot styles in the election. The languages for each ballot style are also enumerated.
+For polling place equipment, the list of ballot styles will include only those appropriate for the current polling place configuration. For central equipment, the list of ballot styles will be all ballot styles in the election. The languages for each ballot style are also enumerated.
 
-#### Precinct
+#### Polling Place
 
-For precinct equipment - VxScan and VxMarkScan - the currently configured precinct will be shown, if any.
+For polling place equipment - VxScan and VxMarkScan - the currently configured polling place will be shown, if any.
 
 #### Mark Thresholds
 

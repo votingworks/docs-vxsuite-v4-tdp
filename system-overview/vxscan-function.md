@@ -10,7 +10,7 @@ VxScan includes an embedded A4 thermal roll printer which is used to print polls
 
 <table><thead><tr><th width="172">Status</th><th width="282">Meaning</th><th>Effect</th></tr></thead><tbody><tr><td>Ready</td><td>Platen is attached and paper is detected</td><td>Application may print normally</td></tr><tr><td>No Paper</td><td>Platen is attached but no paper is detected</td><td>Printing disabled. A warning will be shown on poll worker screens. </td></tr><tr><td>Cover Open</td><td>Platen is not attached</td><td>Printing disabled. If the polls are open, a warning will be shown.</td></tr><tr><td>Error</td><td>Most likely the printhead has overheated, but other hardware errors are possible. Details available in diagnostics interface.</td><td>Printing disabled. Poll workers will not be able to operate the polls, but election managers and system administrators can still authenticate for diagnostics.</td></tr></tbody></table>
 
-During a polls transition, a polls report is [generated](software-overview.md#document-creation) and gradually sent to the printer. Documents are A4 width but of indefinite length depending on the number of contests on the ballot styles at the precinct. If the printer encounters an error or runs out of paper in the middle of a print, the poll worker will be prompted to wait or to replace the thermal roll in order to continue printing. The previous document will reprint from the beginning. In most cases, poll workers do not have to install the thermal paper roll.&#x20;
+During a polls transition, a polls report is [generated](software-overview.md#document-creation) and gradually sent to the printer. Documents are A4 width but of indefinite length depending on the number of contests on the ballot styles at the polling place. If the printer encounters an error or runs out of paper in the middle of a print, the poll worker will be prompted to wait or to replace the thermal roll in order to continue printing. The previous document will reprint from the beginning. In most cases, poll workers do not have to install the thermal paper roll.&#x20;
 
 Election managers normally install the thermal paper rolls via a guided flow. They will be prompted to remove the platen, install the paper, and re-install the platen. Whenever an election manager installs a thermal paper roll, they are also prompted to print a test page. The main goal of the test print is to ensure that the election manager installed the roll in the correct orientation as it is one-sided and, if reversed, will not print anything.
 
@@ -46,13 +46,13 @@ VxScan is configured with a signed [election package](election-package/) exporte
 **User Manual Reference:** [Configure VxScan](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxscan/configure-vxscan "mention")
 {% endhint %}
 
-### Precinct Selection
+### Polling Place Selection
 
-VxScan is not fully configured until the election manager selects a precinct for the device. When polls are open, VxScan will only accept ballots for the configured precinct. If ballots for other precincts are cast, they will be rejected. The election manager may configure VxScan to "All Precincts" in which case ballots for all precincts will be accepted.&#x20;
+VxScan is not fully configured until the election manager selects a polling place for the device. When polls are open, VxScan will only accept ballots for the precincts within the selected polling place. If ballots for other precincts are cast, they will be rejected.
 
-If the election definition only has one precinct, the precinct will be automatically selected.
+If the election definition only has one polling place, that polling place will be automatically selected.
 
-Once polls are opened and ballots are cast, the precinct can no longer be changed. If polls are opened but ballots have not yet been cast, the precinct can still be changed but it will result in the polls resetting to closed. Resetting the polls to closed forces a poll worker to re-open the polls, which reprints the polls opened report with the new, correct precinct configuration.
+Once polls are opened and ballots are cast, the polling place can no longer be changed. If polls are opened but ballots have not yet been cast, the polling place can still be changed but it will result in the polls resetting to closed. Resetting the polls to closed forces a poll worker to re-open the polls, which reprints the polls opened report with the new, correct polling place configuration.
 
 ### Ballot Mode
 
@@ -70,7 +70,7 @@ VxScan can be unconfigured by an election manager or system administrator. If ba
 
 After configuration, polls are initially closed. When polls closed, ballots cannot be cast.&#x20;
 
-Poll workers open the polls to allow casting ballots. Once polls are opened, polls can only return to the initial polls closed state while remaining configured in two ways. First, switching from test ballot mode to official ballot mode will reset the polls. Second, in cases where the polls are open but no ballots have been cast, the precinct can still be changed which will also reset the polls to closed. Both of these actions can be performed by election managers but not poll workers. While polls are open, ballots can be inserted by voters, scanned, and tabulated.
+Poll workers open the polls to allow casting ballots. Once polls are opened, polls can only return to the initial polls closed state while remaining configured in two ways. First, switching from test ballot mode to official ballot mode will reset the polls. Second, in cases where the polls are open but no ballots have been cast, the polling place can still be changed which will also reset the polls to closed. Both of these actions can be performed by election managers but not poll workers. While polls are open, ballots can be inserted by voters, scanned, and tabulated.
 
 Poll workers close the polls when ballots should no longer be cast. After polls have been closed, the scanner will not accept ballots and the polls cannot be opened again. Polls are closed until VxScan is unconfigured or switched from one ballot mode to another, with one exception discussed below.
 

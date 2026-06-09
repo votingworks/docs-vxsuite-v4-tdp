@@ -1,3 +1,24 @@
+---
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
+---
+
 # VxScan Polls Reports
 
 ## Polls Opened and Closed Reports
@@ -6,7 +27,7 @@ When polls open or close on VxScan, a tally report is printed. The tally report 
 
 The tally report header contains the following information:
 
-* **Title** - Includes the type of the polls report and the name of the precinct, or "All Precincts" if VxScan is configured to accept ballots from all precincts
+* **Title** - Includes the type of the polls report and the name of the polling place
 * **Subtitle** - For primary elections, includes the full party name or "Nonpartisan Contests"
 * **Election Info** - The title, date, and location of the election
 * **Timestamps** - The first timestamp indicates when the poll status changed and the second indicates when the report was printed. In most cases these times are the same, but in some cases the report may be printed later.

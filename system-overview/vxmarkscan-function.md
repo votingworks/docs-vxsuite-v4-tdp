@@ -4,19 +4,19 @@ VxMarkScan is the system's ballot marking device. It allows all voters to make s
 
 ## Configuration
 
-VxMarkScan is configured with a signed [election package](../system-overview/election-package/#election-definition) exported from VxAdmin. The election definition defines the ballot styles that will be available to voters. The election definition also includes the translations defined for text on the ballot, while the [app strings](../system-overview/election-package/#app-strings) file contains the translations for other text shown on screen. The election package's [audio files](../system-overview/election-package/#audio-ids-and-audio-clips) are played for the voter in audio-mode.
+VxMarkScan is configured with a signed [election package](election-package/#election-definition) exported from VxAdmin. The election definition defines the ballot styles that will be available to voters. The election definition also includes the translations defined for text on the ballot, while the [app strings](election-package/#app-strings) file contains the translations for other text shown on screen. The election package's [audio files](election-package/#audio-ids-and-audio-clips) are played for the voter in audio-mode.
 
 {% hint style="info" %}
 **User Manual Reference:** [VxMarkScan](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmarkscan "mention")
 {% endhint %}
 
-### Precinct Selection
+### Polling Place Selection
 
-VxMarkScan is not fully configured until the election manager selects a precinct for the device. When polls are open, VxMarkScan will only allow marking ballots in the ballot styles for the configured precinct. The election manager may configure VxMarkScan to "All Precincts" in which case all ballot styles are available.
+VxMarkScan is not fully configured until the election manager selects a polling place for the device. When polls are open, VxMarkScan will only allow marking ballots in the ballot styles for the precincts within the selected polling place.
 
-If the election definition only has one precinct, the precinct will be automatically selected.
+If the election definition only has one polling place, the polling place will be automatically selected.
 
-The precinct selection can always be changed on VxMarkScan by an election manager, even while polls are opened.
+The polling place selection can always be changed on VxMarkScan by an election manager, even while polls are opened.
 
 ### Ballot Mode
 
