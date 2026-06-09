@@ -17,7 +17,7 @@ The election package is a zip archive (a `.zip` file). The zip archive contains 
 
 ### Election Definition
 
-The election definition file includes the information that defines the election and ballots, including but not limited to definitions for contests, ballot styles, precincts, parties, multi-lingual ballot translations, and ballot layouts. The system accepts two formats - the [VxSuite Election Definition](vxsuite-election-definition.md) format or the [Ballot Definition CDF](ballot-definition-cdf.md). When using the Ballot Definition CDF, some features are not available.
+The election definition file includes the information that defines the election and ballots, including but not limited to definitions for contests, ballot styles, precincts, polling places, parties, multi-lingual ballot translations, and ballot layouts. The system accepts two formats - the [VxSuite Election Definition](vxsuite-election-definition.md) format or the [Ballot Definition CDF](ballot-definition-cdf.md). When using the Ballot Definition CDF, some features are not available.
 
 The election definition file is required to be present in the election package.
 

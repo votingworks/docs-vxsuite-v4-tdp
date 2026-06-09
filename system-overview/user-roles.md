@@ -4,9 +4,9 @@ VxSuite has four authenticated user roles. Authentication is performed with JCOP
 
 ## Poll Worker Role
 
-The poll worker role is the lowest privilege role for election day tasks at the precinct.
+The poll worker role is the lowest privilege role for election day tasks at the polling place.
 
-The poll worker role allows a user to manage the polls on the precinct equipment, VxScan and VxMarkScan. On both devices, the poll worker card is used to open and close polls on election day. On VxMarkScan, the poll worker card is used to enable voter sessions. There are a few other actions enabled by the poll worker card - reprinting reports, powering down the machine, or checking the software hash - but overall the role is quite limited.
+The poll worker role allows a user to manage the polls on the polling place equipment, VxScan and VxMarkScan. On both devices, the poll worker card is used to open and close polls on election day. On VxMarkScan, the poll worker card is used to enable voter sessions. There are a few other actions enabled by the poll worker card - reprinting reports, powering down the machine, or checking the software hash - but overall the role is quite limited.
 
 All poll worker cards are programmed at VxAdmin and are programmed for a specific election. They must be reprogrammed for every election. Poll worker cards may or may not require PINs depending on the value of `arePollWorkerCardPinsEnabled` flag in the system settings file within the election package.
 
@@ -16,7 +16,7 @@ The poll worker role has no purpose on the central equipment, VxAdmin and VxCent
 
 The election manager role is a broad role for election officials to setup and operate the election.
 
-On the precinct equipment, an election manager card is used to configure the machines at the beginning of each election. This includes loading the election package, selecting a precinct for the device, and checking on consumables such as thermal paper for VxScan. At the end of an election, the election manager card can be used to unconfigure machines, re-export results, and export logs. In addition, system functions like setting date and time, turning on and off certain features, and accessing system diagnostics are available to election managers. The election manager card is not usually required at the precinct on election day, however, where the poll worker card should be sufficient for all election day tasks.
+On the polling place equipment, an election manager card is used to configure the machines at the beginning of each election. This includes loading the election package, selecting a polling place for the device, and checking on consumables such as thermal paper for VxScan. At the end of an election, the election manager card can be used to unconfigure machines, re-export results, and export logs. In addition, system functions like setting date and time, turning on and off certain features, and accessing system diagnostics are available to election managers. The election manager card is not usually required at the polling place on election day, however, where the poll worker card should be sufficient for all election day tasks.
 
 On the central equipment, an election manager card is used to access core election management features. On VxAdmin, it is used to load, adjudicate, review, and export results. On VxCentralScan, it is used to operate the scanner and export results.
 
