@@ -1,15 +1,17 @@
 # System Overview
 
-<figure><img src=".gitbook/assets/image (88).png" alt=""><figcaption><p>Top level system diagram</p></figcaption></figure>
+<figure><img src=".gitbook/assets/TDP Diagrams - 4.1.png" alt=""><figcaption><p>Top level system diagram</p></figcaption></figure>
 
-The VotingWorks voting system (a.k.a. **VxSuite**) consists of four primary components:
+The VotingWorks voting system (a.k.a. **VxSuite**) consists of six primary components:
 
 * **VxAdmin**: election setup and election results manager
-* **VxMarkScan**: ballot-marking device (BMD)
+* **VxMark**: tabletop ballot-marking device (BMD)
+* **VxMarkScan**: free-standing ballot-marking device (BMD)
 * **VxScan**: precinct scanner
 * **VxCentralScan**: batch scanner
+* **VxPrint**: ballot-on-demand printer
 
-Voters mark paper ballots by [hand](system-overview/hand-marked-ballots.md) or by using VxMarkScan to [machine mark](system-overview/machine-marked-ballots.md). Ballots are read and counted by tabulating devices (VxScan & VxCentralScan), which create [cast vote records](system-overview/cast-vote-records.md) for adjudication and aggregation on VxAdmin. VotingWorks considers read and counted ballots as the same.
+Voters mark paper ballots (pre-printed or printed on VxPrint) by [hand](system-overview/hand-marked-ballots.md) or by using ballot marking devices (VxMark & VxMarkScan) to [machine mark](system-overview/machine-marked-ballots.md). Ballots are read and counted by tabulating devices (VxScan & VxCentralScan), which create [cast vote records](system-overview/cast-vote-records.md) for adjudication and aggregation on VxAdmin. VotingWorks considers read and counted ballots as the same.
 
 An election begins with generating an [election package](system-overview/election-package/) and [hand marked ballots ](system-overview/hand-marked-ballots.md)using an external system.
 
@@ -17,13 +19,35 @@ An election begins with generating an [election package](system-overview/electio
 
 VxAdmin is where the election administrator performs election setup tasks and manages election results. At the beginning of an election, the user configures VxAdmin with an [election package](system-overview/election-package/). Once configured, VxAdmin is used for two key election setup tasks:
 
-* Exporting a copy of the election package to USB drives with a [digital signature](system-security-auditing-and-logging/system-security-architecture/artifact-authentication/). The election package is used to configure VxMarkScan, VxScan, and VxCentralScan, and it _must_ be digitally signed by VxAdmin.
+* Exporting a copy of the election package to USB drives with a [digital signature](system-security-auditing-and-logging/system-security-architecture/artifact-authentication/). The election package is used to configure VxMark, VxMarkScan, VxPrint, VxScan, and VxCentralScan, and it _must_ be digitally signed by VxAdmin.
 * Programming [role-based smart cards](system-overview/user-roles.md) that will be used to authenticate on all machines. While the "System Administrator" role is election-agnostic, the "Election Manager" and "Poll Worker" roles are election-specific and cards must be programmed for every election.
 
 VxAdmin is later used to load, store, and aggregate cast vote records from the scanners. The results are available for review or export in [several results formats](system-overview/vxadmin-results-exports/). Election administrators can mark results as official, after which no new results can be added.
 
 * [vxadmin-function.md](system-overview/vxadmin-function.md "mention")
 * [vxadmin-and-vxcentralscan-hardware.md](system-overview/vxadmin-and-vxcentralscan-hardware.md "mention")
+
+## VxMark
+
+VxMark is the system's tabletop ballot-marking device (BMD) that provides an accessible voting experience. At the beginning of an election, it is configured with an [election package](system-overview/election-package/) from VxAdmin. Once configured, a voter can make vote selections in various interaction modes according to their needs.
+
+The following input modes are supported:
+
+* Touch, using the touchscreen
+* Tactile, using the accessible controller
+* Limited Dexterity, using a sip-and-puff device or other dual-switch input
+
+The following output modes are supported:
+
+* Visual, with options to change color contrast and text size
+* Audio, with navigation instructions and contest details read to the user over headphones
+
+The voter can also adjust the language based on translations included in the election package.
+
+After the voter finishes their vote selections, VxMark prints a [machine marked ballot](system-overview/machine-marked-ballots.md) on the attached printer. After reviewing the ballot and confirming their selections, the voter takes their ballot and casts it on the VxScan precinct tabulator or inserts their ballot into a ballot box.
+
+* [vxmarkscan-function.md](system-overview/vxmarkscan-function.md "mention")
+* [vxmarkscan-hardware.md](system-overview/vxmarkscan-hardware.md "mention")
 
 ## VxMarkScan
 
@@ -67,6 +91,21 @@ VxCentralScan is the system's batch scanner, often used to scan absentee or prov
 Ballots are inserted in the batch scanner's hopper and a batch scan is triggered from VxCentralScan. The ballots are scanned and interpreted in succession until the hopper is empty. If a ballot triggers a configured adjudication reason (e.g. it has an overvote), scanning will pause and the ballot will be displayed on screen, at which point the user can choose to tabulate the ballot anyway or remove it, untabulated.
 
 After scanning is complete, the user can export the [cast vote records](system-overview/cast-vote-records.md) to a USB drive and take the USB drive to VxAdmin for adjudication, aggregation, and reporting.
+
+* [vxcentralscan-function.md](system-overview/vxcentralscan-function.md "mention")
+* [vxadmin-and-vxcentralscan-hardware.md](system-overview/vxadmin-and-vxcentralscan-hardware.md "mention")
+
+## VxPrint
+
+VxPrint is the ballot-on-demand component for VxSuite. VxPrint is used by poll workers or election managers to print ballots for an election programmed in VxSuite. The three main use cases that VxPrint supports are:
+
+1. Printing ballots on demand at a vote center, which may have too many ballot styles to allow printing ballots in advance;
+2. Printing ballots on demand at a precinct on election day in a jurisdiction where all or most ballots are on demand;
+3. Printing moderate quantities of ballots in advance of an election, as needed, to supplement third-party printed ballots. In smaller jurisdictions, for example, VxPrint may be used to print absentee ballots while the larger quantities of election day ballots are printed by a third-party printer.
+
+VxPrint tracks the quantities printed for each ballot style and allows the user to view and export a ballots printed report at any time.
+
+VxPrint consists of two main pieces of hardware - a commercial off-the-shelf laptop and laser printer. The laser printer is capable of printing any ballot from 11" to 22", which is the maximum length supported by the system.
 
 * [vxcentralscan-function.md](system-overview/vxcentralscan-function.md "mention")
 * [vxadmin-and-vxcentralscan-hardware.md](system-overview/vxadmin-and-vxcentralscan-hardware.md "mention")
