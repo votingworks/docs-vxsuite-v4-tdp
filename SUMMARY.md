@@ -18,7 +18,7 @@
   * [User Roles](system-overview/user-roles.md)
   * [VxAdmin Function](system-overview/vxadmin-function.md)
   * [VxCentralScan Function](system-overview/vxcentralscan-function.md)
-  * [VxAdmin & VxCentralScan Hardware](system-overview/vxadmin-and-vxcentralscan-hardware.md)
+  * [VxAdmin, VxPrint, & VxCentralScan Hardware](system-overview/vxadmin-and-vxcentralscan-hardware.md)
   * [VxScan Function](system-overview/vxscan-function.md)
   * [VxScan Hardware](system-overview/vxscan-hardware.md)
   * [VxMarkScan Function](system-overview/vxmarkscan-function.md)

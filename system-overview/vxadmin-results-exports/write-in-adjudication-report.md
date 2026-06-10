@@ -1,3 +1,24 @@
+---
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
+---
+
 # Write-In Adjudication Report
 
 The write-in adjudication report includes the results of all write-in adjudication organized by contest:
@@ -24,7 +45,4 @@ Before adjudication, write-ins are treated as votes for a generic write-in candi
 
 Unmarked write-ins behave differently in relationship to the tally results because they cannot be considered a valid vote before adjudication. As a result, they are considered undervotes before adjudication. If an unmarked write-in is adjudicated as invalid, then tally results will not change. If an unmarked write-in is adjudicated for a candidate, the unmarked write-in is no longer an undervote and is added to the vote total for that candidate.
 
-Also note that, because the write-in adjudication report includes unmarked write-ins, the "Unadjudicated Write-In" count on tally reports may be less than the "Not Adjudicated" count on the write-in adjudication report. The initial difference is the count of unmarked write-ins.&#x20;
-
-
-
+Also note that, because the write-in adjudication report includes unmarked write-ins, the "Unadjudicated Write-In" count on tally reports may be less than the "Not Adjudicated" count on the write-in adjudication report. The initial difference is the count of unmarked write-ins.

@@ -1,10 +1,10 @@
-# VxAdmin & VxCentralScan Hardware
+# VxAdmin, VxPrint, & VxCentralScan Hardware
 
 ## Overview
 
 ### Laptop <a href="#laptop" id="laptop"></a>
 
-VxAdmin and VxCentralScan are both laptops that connect to peripherals as needed. The laptop is a [custom configured HP Elitebook 840 14" G11](vxadmin-and-vxcentralscan-hardware.md#laptop-specification).
+VxAdmin, VxPrint, and VxCentralScan are laptops which connect to peripherals as needed. The laptop is a [custom configured HP Elitebook 840 14" G11](vxadmin-and-vxcentralscan-hardware.md#laptop-specification).
 
 <div><figure><img src="../.gitbook/assets/840-front.jpg" alt="" width="375"><figcaption><p>Laptop keyboard and screen</p></figcaption></figure> <figure><img src="../.gitbook/assets/840-side.avif" alt="" width="430"><figcaption><p>Laptop ports</p></figcaption></figure></div>
 
@@ -14,13 +14,23 @@ The relevant hardware interfaces are:
 * **USB Ports -** Allows connecting to the peripherals for scanning or printing
 * **HDMI Port -** Allows connecting the laptop to an external display, which is most often used to enlarge the adjudication interfaces when adjudication is performed by a group of people
 
-While not strictly necessary, VxAdmin and VxCentralScan are bundled with a mouse and a USB hub for ease of use. A USB A-B cable is included to connect to the peripherals.
+While not strictly necessary, VxAdmin, VxPrint, and VxCentralScan are bundled with a mouse and a USB hub for ease of use. A USB A-B cable is included to connect to the peripherals.
 
 ### VxAdmin
 
 VxAdmin connects to a printer for the purposes of printing reports. The printer includes an RJ45 (ethernet) port which is blocked by a port blocker because network connectivity is not required by the system.&#x20;
 
 <figure><img src="../.gitbook/assets/PXL_20241119_221005359 (1).jpg" alt="" width="563"><figcaption><p>VxAdmin fully connected with mouse, hub, charger, USB cable, and printer</p></figcaption></figure>
+
+### VxPrint
+
+VxPrint connects to the HP LaserJet Pro 4001dn printer. The printer is duplex, black and white, and capable of printing up 40 pages per minute.
+
+The included printer tray can be extended from letter size to legal size. VotingWorks, in partnership with HP, can provide a tray extender that allows printing up to 22" ballots.
+
+The printer has an ethernet port on the back which is not used for operation of VxPrint, so it is blocked by an RJ45 port blocker.
+
+<figure><img src="../.gitbook/assets/VxPrint-System-Pic-Hardware.webp" alt=""><figcaption><p>VxPrint laptop connected to ballot printer</p></figcaption></figure>
 
 ### VxCentralScan
 
@@ -36,15 +46,15 @@ The fi-8170 includes an RJ45 (ethernet) port which is blocked by a port blocker 
 
 ## Bill of Materials
 
-All components for VxAdmin and VxCentralScan are commercial-off-the-shelf (COTS) components. Data sheets and related documentation are available [in the documentation repository](https://github.com/votingworks/docs-vxsuite-v4/tree/main/hardware-assets/cots-documentation/central-system).
+All components for VxAdmin, VxPrint, and VxCentralScan are commercial-off-the-shelf (COTS) components. Data sheets and related documentation are available [in the documentation repository](https://github.com/votingworks/docs-vxsuite-v4/tree/main/hardware-assets/cots-documentation/central-system).
 
 ### Shared Components (Laptop & Accessories)
 
 <table><thead><tr><th width="152">Manufacturer</th><th width="263">Component</th><th>Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>HP</td><td>Elitebook 840 11" G11 Laptop</td><td>B43P6UP#ABA</td><td>High</td></tr><tr><td>Tripp Lite</td><td>4-Port Ultra-Slim USB Hub</td><td>U360-004-SLIM</td><td>Medium</td></tr><tr><td>Logitech</td><td>B100 Mouse</td><td>910-006061</td><td>Medium</td></tr><tr><td>Monoprice</td><td>USB-A to USB-B 2.0 6ft Cable</td><td>5438</td><td>Medium</td></tr></tbody></table>
 
-### VxAdmin Components (Printer)
+### VxAdmin & VxPrint Components (Printer)
 
-<table><thead><tr><th width="152">Manufacturer</th><th width="263">Component</th><th>Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>HP</td><td>LaserJet Pro 4001dn Printer</td><td>2Z600F#BGJ</td><td>Medium</td></tr><tr><td>Lindy</td><td>RJ45 Port Blocker</td><td>40471</td><td>Low</td></tr></tbody></table>
+<table><thead><tr><th width="152">Manufacturer</th><th width="263">Component</th><th width="167.58465576171875">Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>HP</td><td>LaserJet Pro 4001dn Printer</td><td>2Z600F#BGJ</td><td>Medium</td></tr><tr><td>Lindy</td><td>RJ45 Port Blocker</td><td>40471</td><td>Low</td></tr></tbody></table>
 
 ### VxCentralScan Components (Scanner)
 
@@ -83,5 +93,5 @@ The medium criticality components and the reasons for their classification are a
 * **Tripp Lite Ultra Slim USB Hub** - Manages flow of data between laptop and peripherals.
 * **Logitech B100 Mouse -** Does not directly handle election data but does plug into a USB port, thus it could still pose a USB attack vector.
 * **Monoprice USB A-B Cable -** Manages flow of data between laptop and peripherals.
-* **HP LaserJet Pro 4001dn -** The VxAdmin printer is responsible for printing reports from VxAdmin and therefore handles highly sensitive election information. All reports from VxAdmin can be exported as PDFs and printed elsewhere, so it is not strictly necessary for the operation of the system and thus is not the highest criticality.
+* **HP LaserJet Pro 4001dn -** The VxAdmin & VxPrint printer is responsible for printing reports from VxAdmin and printing ballots from VxPrint and therefore handles highly sensitive election information. All reports from VxAdmin can be exported as PDFs and printed elsewhere, so it is not strictly necessary for the operation of the system and thus is not the highest criticality.
 * **Ricoh fi-760PRB & fi-819PRB** - The imprinters that pair with the Ricoh scanners are not involved in generating ballot data, so they cannot influence the interpretation of ballots when used according to instructions. The imprinted identifiers are important for post-election audits, however, so the imprinters are security-sensitive components.
