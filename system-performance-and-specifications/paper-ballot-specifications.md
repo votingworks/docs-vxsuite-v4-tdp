@@ -4,10 +4,10 @@ The following defines the minimal specifications for VxSuite paper stock. Ballot
 
 ## Hand Marked Ballots
 
-VxSuite supports a wide range of paper for hand-marked paper ballot style printing within the following supported specifications:
+VxSuite supports a wide range of paper for hand-marked bubble ballots. Paper must be within the following supported specifications:
 
 * **Width**: 8.5"
-* **Length**: 11", 14", 17", 19", 22"
+* **Length**: 11", 14", 17", 18", 19", 20", 22"
 * **Weight:** 105-177gsm
 * **Coating:** uncoated
 * **Opacity:** >90%
@@ -24,6 +24,8 @@ VxSuite supports a wide range of paper for hand-marked paper ballot style printi
 
 ## Ballot Marking Device Ballots
 
+### VxMarkScan
+
 VxMarkScan requires a specific type of thermal paper ballot stock as required by the VSAP BMD 150 component:
 
 * **Manufacturer:** Mitsubishi
@@ -33,3 +35,17 @@ VxMarkScan requires a specific type of thermal paper ballot stock as required by
 * **Corner Cut:** 16mm, 45° cut, top-right of thermal coated side
 
 TF 1467 paper is only provided in one configuration on white paper with a weight of 140gsm, an opacity greater than 90%, and thermal coating on one side. VxMarkScan expects the thermal side to be fully blank and therefore pre-printing attributes such as watermarking, ink, and margins are not applicable. Similarly, these ballots are only to be used with ballot marking devices and attributes specific to hand-marking such as folding and bleed-through are also not applicable. Printed text contrast ratio of blank ink on white paper is 21:1.
+
+### VxMark
+
+VxMark uses typical printer paper. Shorter, standard lengths such as letter and legal can usually be bought off-the-shelf. Longer lengths must usually be purchased to size. The paper used must be within the following ranges:
+
+* **Width:** 8.5"
+* **Length**: 11", 14", 17", 18", 19", 20", 22"
+* **Weight:** 105-120gsm, equivalent to 28# or 32# bond paper
+* **Coating:** uncoated
+* **Opacity:** >90%
+* **Color:** white or any pastel color ≥70 brightness. Contrast ratio of printed black text is 21:1 for white paper and will exceed 10:1 on other paper colors of specified brightness.
+
+In short, VxMark has the same paper requirements as hand-marked paper ballots except for the lower maximum paper weight due to the specifications of the laser printer.
+
