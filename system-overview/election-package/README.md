@@ -95,12 +95,13 @@ The system settings file contains settings which are not specific to an election
   * `definite` - Specifies the percentage of a bubble that needs to be filled in for the system to interpret it as a vote.
   * `marginal` - Specifies the percentage of a bubble that needs to be filled for the system to interpret it as a marginal mark that may need adjudication.
   * `writeInTextArea` - Specifies the percentage of the write-in area that needs to be filled in for the tabulators to consider it a write-in. This is only relevant for jurisdictions that allow unmarked write-ins i.e write-ins without an accompanying mark.
-* Adjudication Reasons
+* Adjudication
   * `precinctScanAdjudicationReasons` - Specifies the reasons that a ballot scanned at VxScan should be flagged for adjudication. Supported reasons are overvotes, undervotes, blank ballots, or unmarked write-ins.
   * `centralScanAdjudicationReasons` - Specifies the reasons that a ballot scanned at VxCentralScan should be flagged for adjudication. Supported reasons are overvotes, undervotes, blank ballots, or unmarked write-ins.
   * `adminAdjudicationReasons` - Specifies the reasons for a ballot to appear in the VxAdmin adjudication queue in addition to write-ins. Supported reasons are undervotes, overvotes, and marginal marks.
   * `disallowCastingOvervotes` - When set to `true`, scanners will always reject overvoted ballots. When set to `false`, VxScan will allow a voter to choose whether to reject or cast an overvoted ballot, and VxCentralScan will allow an election manager to choose whether to reject or tabulate an overvoted ballot.
   * `allowOfficialBallotsInTestMode` - When set to `true`, official ballots will not be rejected in test mode. The setting is for jurisdictions where testing must take place on official ballots.
+  * `areWriteInCandidatesQualified` - When set to `true`, write-ins can only be adjudicated for qualified write-ins added by an election manager. When set to `false`, adjudicators can add any unofficial write-in candidate on an ad hoc basis.
 * Other
   * `precinctScanEnableShoeshineMode` - When set to `true`, VxScan will run in "shoeshine mode," which will scan the same ballot repeatedly. Instead of ejecting the ballot after scanning it, VxScan will move it back to the input tray and scan it again. This mode is used only for internal testing and certification testing.
   * `castVoteRecordsIncludeRedundantMetadata` - When set to `true`, scanners will include election and system metadata in each ballot's CVR as specified in the CVR CDF, rather than just including it once for the entire export. This extra information increases the size of the CVR export, degrading performance.
