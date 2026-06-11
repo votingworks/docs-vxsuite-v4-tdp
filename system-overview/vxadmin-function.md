@@ -78,31 +78,26 @@ CVRs can be removed by the user before results are marked as official or can be 
 
 The tally reports from VxScan do not reflect any post-voting adjudication. All write-ins are simply "Write-In", unmarked write-ins are undervotes, and marginal marks are also undervotes.
 
-VxAdmin allows election managers to perform on-screen adjudication for ballots with write-ins, marginal marks, overvotes, or undervotes. Each contest (e.g. Mayor) is adjudicated individually. The election manager works through the queue of ballots for that contest.
+VxAdmin allows election managers to perform on-screen adjudication for blank ballots, write-ins, marginal marks, overvotes, and undervotes. By default, only ballots with write-ins appear in the adjudication queue. If `MarginalMark` , `Overvote`, `Undervote` , or `BlankBallot` is included in the system settings as part of the list of `adminAdjudicationReasons` , ballots with any of the specified features will also appear in the queue.&#x20;
 
-By default, only ballots with write-ins appear in the queue. If `MarginalMark` , `Overvote`, or `Undervote` is included in the system settings as part of the list of `adminAdjudicationReasons` , ballots with any of the specified features will also appear in the queue. A marginal mark is defined as any mark over a bubble which has a score of at least the `marginal` threshold defined in the system settings but less than the `definite` threshold defined in the system settings. When adjudicating ballots for a mix of adjudication reasons, the ballots appear in the following order within each contest:
+* A marginal mark is defined as any mark over a bubble which has a score of at least the `marginal` threshold defined in the system settings but less than the `definite` threshold defined in the system settings.
+* A blank ballot is defined as any ballot where no bubbles crossed the `definite` mark threshold
 
-1. Ballots with overvotes
-2. Ballots with write-ins
-3. Ballots with both write-ins and marginal marks
-4. Ballots with marginal marks
-5. Ballots with undervotes
+The ballots are ordered in the queue by ballot style. For example, all "Precinct 1" ballots would be grouped together and all "Precinct 2" ballots would be grouped together instead of them being intermixed. Within each ballot style, blank ballots are grouped behind non-blank ballots and summary ballots are grouped behind bubble ballots.
 
-The side of the ballot that the contest appears on is rendered to the user, with options to zoom out to the full ballot and back in again. When adjudicating a write-in, the write-in is further zoomed in. The location of the highlights are taken from the [interpreted ballot layout](cast-vote-records.md#ballot-layouts), which is included in the cast vote record and loaded into VxAdmin alongside the ballot image.
+The adjudicator is presented with a full view of the ballot and a list of all contests on the ballot. They may flip the ballot from front to back or vice versa. Contests with issues are highlighted in both the ballot view and in the contest list. The adjudicator selects a contest to zoom in and resolve issues. The user can adjudicate any contest option from marked to unmarked or vice versa. When presented with a marginal mark, the user can choose to leave it as an undervote or adjudicate it as marked. For write-ins, they may adjudicate the write-in for a particular write-in candidate - more information in the next section. As the user makes changes, captions are used to indicate differences between the original interpreted values and the new adjudicated values. Once the adjudicator has resolved all issues on a ballot, they may confirm their changes and move on to the next ballot. Until confirmed, adjudications are "unsaved" and do not affect tabulation.
 
-The user can adjudicate any contest option from marked to unmarked or vice versa. When presented with a marginal mark, the user can choose to leave it as an undervote or adjudicate it as marked. Write-ins can be adjudicated in one of three ways:
+### Write-In Candidates
 
-* **Official Candidate**: the user can select an official candidate from the list
-* **Unofficial Candidates**: the user can select an unofficial write-in candidate from the list or add a new unofficial write-in candidate
-* **Undervote**: the write-in can be deemed invalid, after which it will be considered as an undervote in tallies
+VxAdmin handles write-in candidates differently depending on whether the jurisdiction requires that write-in candidates must be "qualified" for their votes to count.&#x20;
 
-As the user makes changes, captions are used to indicate differences between the original interpreted values and the new adjudicated values. Once the user is done adjudicating a ballot, they save their changes and continue in the queue.
+#### Qualified Write-In Mode
 
-Changes made in adjudication are immediately reflected in tally reports.
+If `areWriteInCandidatesQualified` is true, then adjudicators can only allocate write-ins to qualified candidates or mark write-ins as invalid. The election manager can add qualified candidates at VxAdmin on a per-contest basis. If no qualified candidates are added for a contest, the only option for that contest's write-ins will be "Invalid". All qualified write-ins appear on tally reports regardless of their vote totals.
 
-### Unofficial Write-In Candidates
+#### Open Write-In Mode
 
-The list of unofficial write-in candidates is created by the election manager as they adjudicate. The interface has an option to add a new write-in candidate and specify their name. That candidate will then be an option for other write-ins for the same contest. If there are no longer any adjudications that reference the unofficial candidates, their name will be removed from the list.
+If `areWriteInCandidatesQualified` is false, write-in candidates are added on an ad hoc basis. The adjudicator has the option to add a new unofficial write-in candidate or select any previously added unofficial write-in candidate. The adjudicator may also adjudicate the write-in as "Invalid" or, in jurisdictions that allow it, for an official candidate that is already on the ballot. In open write-in mode, unofficial write-ins only appear on tally reports if they have a winning vote total.
 
 {% hint style="info" %}
 **User Manual Reference:** [Adjudication](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/election-night-guides/adjudication "mention")

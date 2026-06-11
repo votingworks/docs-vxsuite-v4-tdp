@@ -35,7 +35,9 @@ If manual results have been added, they will be included in the tally report alo
 
 ## Write-In Candidate Aggregation
 
-In order to prevent a long list of write-in candidates from making contest results difficult to read, VxAdmin tally reports consolidate write-in candidates if they're not relevant to the contest outcome. Relevant write-ins are included as "\<Name> (Write-In)". Irrelevant write-ins are consolidated as "Write-In" or, if there are relevant write-ins in the list, "Other Write-In". Unadjudicated write-ins are always consolidated as "Unadjudicated Write-In." A write-in is deemed relevant if it has won.
+If VxAdmin is in [Qualified Write-In Mode](../vxadmin-function.md#qualified-write-in-mode), all qualified write-ins will be listed regardless of their vote totals. If VxAdmin is in [Open Write-In Mode](../vxadmin-function.md#open-write-in-mode), write-in candidates will only be explicitly listed if they have a winning vote total. Other write-ins are consolidated as "Write-In" or, if there are explicitly listed write-in candidates, "Other Write-In".&#x20;
+
+Unadjudicated write-ins are always consolidated as "Unadjudicated Write-In."
 
 <div><figure><img src="../../.gitbook/assets/Screen Shot 2024-10-01 at 4.52.26 PM.png" alt="" width="407"><figcaption><p>Before adjudication</p></figcaption></figure> <figure><img src="../../.gitbook/assets/Screen Shot 2024-10-01 at 4.52.31 PM.png" alt="" width="392"><figcaption><p>Adjudication just started</p></figcaption></figure> <figure><img src="../../.gitbook/assets/write-ins-edited.png" alt="" width="399"><figcaption><p>Adjudication almost finished</p></figcaption></figure></div>
 
