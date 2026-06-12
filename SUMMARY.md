@@ -21,6 +21,7 @@
   * [VxAdmin, VxPrint, & VxCentralScan Hardware](system-overview/vxadmin-and-vxcentralscan-hardware.md)
   * [VxScan Function](system-overview/vxscan-function.md)
   * [VxScan Hardware](system-overview/vxscan-hardware.md)
+  * [VxMark Hardware](system-overview/vxmark-hardware.md)
   * [VxMarkScan Function](system-overview/vxmarkscan-function.md)
   * [VxMarkScan Hardware](system-overview/vxmarkscan-hardware.md)
   * [Ballot Interpretation](system-overview/ballot-interpretation.md)
