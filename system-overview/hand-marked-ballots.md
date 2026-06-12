@@ -19,7 +19,9 @@ layout:
     visible: true
 ---
 
-# Hand Marked Ballots
+# Bubble Ballots
+
+Bubble ballots are the primary type of ballot used in VxSuite. All hand-marked ballots are bubble ballots. Some machine-marked ballots are also bubble ballots - VxMark can print bubble ballots marked with the voter's selections.
 
 VxSuite can tabulate a wide variety of ballot designs as long as they conform to the following requirements:
 

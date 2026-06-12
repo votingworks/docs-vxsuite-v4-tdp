@@ -46,11 +46,11 @@ Firmware for embedded devices such as screens and speakers is bundled with the o
 
 ## Software Independence
 
-The voting system achieves software independence through the use of independent voter-verifiable paper records. All ballots are voter-verified paper ballots, either [hand marked ballots](hand-marked-ballots.md) or [machine marked ballots](machine-marked-ballots.md).
+The voting system achieves software independence through the use of independent voter-verifiable paper records. All ballots are voter-verified paper ballots, whether they are hand-marked or printed by a ballot-marking device.
 
-On hand marked paper ballots, voters fill in bubbles next to their selections. Because voter indications are made and reviewed directly by the voter, they are inherently voter-verified. The software interprets the image of the ballot for tabulation but, of course, the paper ballot persists after scanning.
+On hand-marked ballots, voters fill in bubbles next to their selections. Because voter indications are made and reviewed directly by the voter, they are inherently voter-verified. The software interprets the image of the ballot for tabulation but, of course, the paper ballot persists after scanning.
 
-For machine marked paper ballots, voters make selections on screen at VxMarkScan. After the voter has made all their selections, the ballot is printed and presented to the voter. The ballot displays a textual representation of the selections and a QR code with the selections encoded. The voter reviews the ballot and, once accepted, the voter-verified ballot is ejected into the attached ballot box. VxMarkScan's machine marked ballots are not actually tabulated until they are scanned at a scanner.
+On VxMark and VxMarkScan, voters make selections via the touchscreen or an accessible input device. After the voter has made all their selections, the ballot is printed and the voter can verify their physical paper ballot.
 
 Ballots are never modified by the system after voter verification in any way that could affect voter selections or the ability to perform an audit. The only modification to ballots is the possible use of an imprinter on VxCentralScan, which prints only an identifier along the outside margin of the ballot.
 

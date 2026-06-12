@@ -107,6 +107,10 @@ The system settings file contains settings which are not specific to an election
   * `castVoteRecordsIncludeRedundantMetadata` - When set to `true`, scanners will include election and system metadata in each ballot's CVR as specified in the CVR CDF, rather than just including it once for the entire export. This extra information increases the size of the CVR export, degrading performance.
   * `disableVerticalStreakDetection` - Disables the warning when streaks are detected when scanning ballots (which indicates that the scanner needs to be cleaned). Used as a failsafe in case of erroneous warnings.
   * `precinctScanEnableBallotAuditIds` - Enables the VxScan feature to read ballot IDs from hand marked paper ballot QR codes, encrypt them, and export them to cast vote records (to be used for post-election auditing).
+  * `bmdPrintMode` - Determines what type of ballots are printed at VxMark. Options:
+    * &#x20;`bubble_ballot`  - Prints fully marked bubbled ballots onto blank paper.
+    * `marks_on_preprinted_ballot` - Prints only mark onto pre-printed ballots.
+    * `summary` - Prints summary ballots. Default value.
 
 The system settings file is optional. If not provided, the following default settings will be used:
 
