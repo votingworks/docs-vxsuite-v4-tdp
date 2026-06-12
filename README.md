@@ -11,7 +11,7 @@ The VotingWorks voting system (a.k.a. **VxSuite**) consists of six primary compo
 * **VxCentralScan**: batch scanner
 * **VxPrint**: ballot-on-demand printer
 
-Voters mark paper ballots (pre-printed or printed on VxPrint) by [hand](system-overview/hand-marked-ballots.md) or by using ballot marking devices (VxMark & VxMarkScan) to [machine mark](system-overview/machine-marked-ballots.md). Ballots are read and counted by tabulating devices (VxScan & VxCentralScan), which create [cast vote records](system-overview/cast-vote-records.md) for adjudication and aggregation on VxAdmin. VotingWorks considers read and counted ballots as the same.
+Voters mark paper [bubble ballots](system-overview/hand-marked-ballots.md) (pre-printed or printed on VxPrint) by hand or use ballot marking devices (VxMark & VxMarkScan) to mark and print ballots. Ballots are read and counted by tabulating devices (VxScan & VxCentralScan), which create [cast vote records](system-overview/cast-vote-records.md) for adjudication and aggregation on VxAdmin. VotingWorks considers read and counted ballots as the same.
 
 An election begins with generating an [election package](system-overview/election-package/) and [hand marked ballots ](system-overview/hand-marked-ballots.md)using an external system.
 
@@ -44,7 +44,7 @@ The following output modes are supported:
 
 The voter can also adjust the language based on translations included in the election package.
 
-After the voter finishes their vote selections, VxMark prints a [machine marked ballot](system-overview/machine-marked-ballots.md) on the attached printer. After reviewing the ballot and confirming their selections, the voter takes their ballot and casts it on the VxScan precinct tabulator or inserts their ballot into a ballot box.
+After the voter finishes their vote selections, VxMark prints a machine marked ballot on the attached printer. Depending on the jurisdiction's system settings, the printed ballot may be a [bubble ballot](system-overview/hand-marked-ballots.md) or a [summary ballot](system-overview/machine-marked-ballots.md). After reviewing the ballot and confirming their selections, the voter takes their ballot and casts it on VxScan, the precinct tabulator, or inserts their ballot into a ballot box.
 
 * [vxmarkscan-function.md](system-overview/vxmarkscan-function.md "mention")
 * [vxmarkscan-hardware.md](system-overview/vxmarkscan-hardware.md "mention")
@@ -66,7 +66,7 @@ The following output modes are supported:
 
 The voter can also adjust the language based on translations included in the election package.
 
-After the voter finishes their vote selections, VxMarkScan prints a [machine marked ballot](system-overview/machine-marked-ballots.md) and presents it to the voter. The ballot is scanned (but not cast) so the interpreted results can be presented to the voter on-screen. After reviewing the ballot and confirming their selections, the ballot is cast and ejected into the attached ballot box. At a later time, depending on election procedures, the ballot will be removed from the ballot box for tabulation.
+After the voter finishes their vote selections, VxMarkScan prints a [summary ballot](system-overview/machine-marked-ballots.md) and presents it to the voter. The ballot is scanned (but not cast) so the interpreted results can be presented to the voter on-screen. After reviewing the ballot and confirming their selections, the ballot is cast and ejected into the attached ballot box. At a later time, depending on election procedures, the ballot will be removed from the ballot box for tabulation.
 
 * [vxmarkscan-function.md](system-overview/vxmarkscan-function.md "mention")
 * [vxmarkscan-hardware.md](system-overview/vxmarkscan-hardware.md "mention")

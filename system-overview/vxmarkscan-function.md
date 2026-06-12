@@ -1,6 +1,6 @@
 # VxMarkScan Function
 
-VxMarkScan is the system's ballot marking device. It allows all voters to make selections in various interaction modes, print their ballot, verify their ballot, and cast their ballot independently. VxMarkScan is not a tabulator - the cast ballots must be later tabulated at VxCentralScan.
+VxMarkScan is the system's free-standing ballot marking device. It allows all voters to make selections in various interaction modes, print their ballot, verify their ballot, and cast their ballot independently. VxMarkScan is not a tabulator - the cast ballots must be later tabulated at VxCentralScan.
 
 ## Configuration
 

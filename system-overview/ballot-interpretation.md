@@ -1,6 +1,6 @@
 # Ballot Interpretation
 
-Ballot interpretation begins with the front and back images of the ballot transmitted from the scanner. Once the images are available to the application, it starts by trying to interpreting the ballot as a [hand marked ballot](hand-marked-ballots.md).
+Ballot interpretation begins with the front and back images of the ballot transmitted from the scanner. Once the images are available to the application, it starts by trying to interpret the ballot as a [bubble ballot](hand-marked-ballots.md).
 
 The interpreter first crops the image received from the scanner and converts the grayscale image from the ballot into binary images using [Otsu's method](https://en.wikipedia.org/wiki/Otsu's_method). Otsu's method computes a dynamic black and white threshold that allows the interpreter to filter out differences due to tinted paper or light streaking.
 
@@ -16,7 +16,7 @@ The interpreter then identifies the timing mark grid. It searches for all vertic
 
 <figure><img src="../.gitbook/assets/452452815-c8912b9b-d3ac-4888-a386-b4fd57749306.png" alt="" width="375"><figcaption></figcaption></figure>
 
-Before proceeding with interpretation, the interpreter calculates the distance between horizontal timing marks to verify the scale at which the ballot was printed. The expected distance is derived from the  specifications for [hand-marked-ballots.md](hand-marked-ballots.md "mention"). If the timing marks are too close together, the interpreter rejects the ballot — ballots must be printed at full scale to be interpreted safely.
+Before proceeding with interpretation, the interpreter calculates the distance between horizontal timing marks to verify the scale at which the ballot was printed. The expected distance is derived from the specifications for [hand-marked-ballots.md](hand-marked-ballots.md "mention"). If the timing marks are too close together, the interpreter rejects the ballot — ballots must be printed at full scale to be interpreted safely.
 
 The interpreter will then search the bottom left and top right corners of the image for a QR code. Since ballots have QR codes in the bottom left corner, the location of the QR code determines the correct orientation of the ballot and the interpreter can flip the image right-side up if necessary:
 
@@ -38,4 +38,4 @@ After bubbles are scored, the interpreter will then determine the location of th
 
 After all bubbles and write-in areas are scored, interpretation is complete and the images are saved to disk. The votes are inferred from the bubbles based on the mark thresholds and eventually exported to cast vote records.
 
-If interpretation didn't work, one possibility is that the ballot is actually a [machine marked ballot](machine-marked-ballots.md), so the interpreter will then attempt to interpret the ballot as a machine marked ballot. Since votes are encoded into the QR code, the interpreter only has to find the QR code. It searches the entire document for a QR code. By searching the top and bottom half separately, it can infer the orientation of the ballot because machine marked ballots have QR codes in the top right.
+If interpretation didn't work, one possibility is that the ballot is actually a [summary ballot](machine-marked-ballots.md), so the interpreter will then attempt to interpret the ballot as a summary ballot. Since votes are encoded into the QR code, the interpreter only has to find the QR code. It searches the entire document for a QR code. By searching the top and bottom half separately, it can infer the orientation of the ballot because summary ballots have QR codes in the top right.
