@@ -107,6 +107,8 @@ The system settings file contains settings which are not specific to an election
   * `castVoteRecordsIncludeRedundantMetadata` - When set to `true`, scanners will include election and system metadata in each ballot's CVR as specified in the CVR CDF, rather than just including it once for the entire export. This extra information increases the size of the CVR export, degrading performance.
   * `disableVerticalStreakDetection` - Disables the warning when streaks are detected when scanning ballots (which indicates that the scanner needs to be cleaned). Used as a failsafe in case of erroneous warnings.
   * `precinctScanEnableBallotAuditIds` - Enables the VxScan feature to read ballot IDs from hand marked paper ballot QR codes, encrypt them, and export them to cast vote records (to be used for post-election auditing).
+  * `precinctScanEnableWriteInImageReport`  - Enables printing write-in image reports at VxScan after polls are closed.
+  * `precinctScanNumberOfReportCopies`  - The number of polls reports that will be automatically printed at VxScan on polls transitions. When not set, VxScan will default to one. Used to streamline the poll worker flow in jurisdictions where multiple copies are always required.
   * `bmdPrintMode` - Determines what type of ballots are printed at VxMark. Possible values:
     * &#x20;`bubble_ballot`  - Prints fully marked bubbled ballots onto blank paper.
     * `marks_on_preprinted_ballot` - Prints only mark onto pre-printed ballots.

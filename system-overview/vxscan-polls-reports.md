@@ -19,7 +19,7 @@ layout:
     visible: true
 ---
 
-# VxScan Polls Reports
+# VxScan Reports
 
 ## Polls Opened and Closed Reports
 
@@ -43,10 +43,20 @@ As a rule, the sum of the number of votes for all candidates, the number of unde
 <pre><code><strong>candidate votes + undervotes + overvotes = ballots * votes allowed
 </strong></code></pre>
 
-<div><figure><img src="../.gitbook/assets/por-west-lincoln.png" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/pcr-west-lincoln.png" alt="" width="375"><figcaption></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/voting-004-polls-opened-report.png" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/voting-023-polls-closed-report.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
-## Polls Paused and Resumed Reports
+If there were multiple batches, which on VxScan is a result of pausing and resuming voting, the polls closed report will contain a "Batch Summary" table with the sizes and timestamps of the batches.
 
-When voting is paused or resumed, VxScan prints a report containing the ballot count. Tally results are never included. The header is structured in the same way as the polls opened and closed reports.
+## Voting Paused and Resumed Reports
 
-<div><figure><img src="../.gitbook/assets/print-job-2025-11-26T200351.915Z.png" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/print-job-2025-11-26T200343.244Z.png" alt="" width="375"><figcaption></figcaption></figure></div>
+When voting is paused, VxScan prints a voting paused report containing the total ballot count and ballot count of the most recent batch. When voting is resumed, VxScan prints a voting resumed report containing the total ballot count. The full batch history is included in the "Batch Summary" table.
+
+Tally results are never included in polls paused or resumed reports.
+
+<div><figure><img src="../.gitbook/assets/voting-033-voting-resumed-report.png" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/voting-037-voting-paused-report (1).png" alt="" width="375"><figcaption></figcaption></figure></div>
+
+## Write-In Image Reports
+
+If `precinctScanEnableWriteInImageReport` is true in the system settings, poll workers will be able to print write-in image reports from the poll worker menu after polls are closed. For each contest that allows write-ins, the report lists the total number of write-ins and includes an image of each write-in.
+
+<figure><img src="../.gitbook/assets/write-in-report-002-write-in-image-report.png" alt="" width="375"><figcaption></figcaption></figure>

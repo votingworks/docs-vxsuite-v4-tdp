@@ -7,7 +7,7 @@
   * [Bubble Ballots](system-overview/hand-marked-ballots.md)
   * [Summary Ballots](system-overview/machine-marked-ballots.md)
   * [Cast Vote Records](system-overview/cast-vote-records.md)
-  * [VxScan Polls Reports](system-overview/vxscan-polls-reports.md)
+  * [VxScan Reports](system-overview/vxscan-polls-reports.md)
   * [VxAdmin Results Exports](system-overview/vxadmin-results-exports/README.md)
     * [Tally Reports](system-overview/vxadmin-results-exports/tally-reports.md)
     * [Ballot Count Reports](system-overview/vxadmin-results-exports/ballot-count-reports.md)
