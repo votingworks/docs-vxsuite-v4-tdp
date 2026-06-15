@@ -76,6 +76,8 @@ Poll workers close the polls when ballots should no longer be cast. After polls 
 
 VxScan also allows poll workers to pause voting a.k.a. suspend the polls. While voting is paused, the scanner will not accept ballots. Voting can be resumed, after which the polls are back in the standard polls opened state. Pausing voting might be used in an early voting model between voting days or, in the case of an emergency, to pause voting while the emergency is resolved. The poll worker may chose to close polls directly from voting paused instead of resuming voting.
 
+If `electionDayPollsCloseTime` and `disallowClosingPollsBeforeElectionDayPollsCloseTime` are both set, the application will prevent closing the polls before the designated polls close time on election day. In test mode, the poll worker is notified of the polls close time but can always close the polls. The behavior must vary between official and test mode because testing happens before election day.
+
 If the polls have been closed, the only possible way for the polls to be re-opened is if a system administrator resets the polls to paused. Only the system administrator may do this - poll workers and election managers cannot - per the allowance in VVSG 2.0 1.1.7-E. Once polls have been reset to paused by the system administrator, voting may be resumed by a poll worker. The goal of this flow is to allow voting to continue after a poll worker has prematurely closed the polls.
 
 {% hint style="info" %}
