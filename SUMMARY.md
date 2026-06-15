@@ -16,6 +16,7 @@
     * [CDF ERR Export](system-overview/vxadmin-results-exports/cdf-err-export.md)
   * [Software Overview](system-overview/software-overview.md)
   * [User Roles](system-overview/user-roles.md)
+  * [Election and Contest Type Variations](system-overview/election-and-contest-type-variations.md)
   * [VxAdmin Function](system-overview/vxadmin-function.md)
   * [VxCentralScan Function](system-overview/vxcentralscan-function.md)
   * [VxAdmin, VxPrint, & VxCentralScan Hardware](system-overview/vxadmin-and-vxcentralscan-hardware.md)
