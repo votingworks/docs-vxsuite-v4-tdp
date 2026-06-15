@@ -173,9 +173,11 @@ Manual tallies are already aggregated in the sense that each can represent more 
 
 Manual tallies are then combined with the scanned tallies in one of two ways. For most reports, the manual tallies are paired with the scanned tallies but are not immediately added together. Reports can then display the manual and scanned tallies separately in addition to showing the total tallies. For the CDF election results report, however, the manual tallies and scanned tallies are added together because there is not a clear way to represent the difference between them in the CDF.
 
-**Reporting**
+#### **Reporting**
 
 The final step is for the VxAdmin backend to format the vote tallies into one of [VxAdmin's Results Export Formats](vxadmin-results-exports/) and export the result onto a USB drive or, if it is a PDF document, print it.
+
+If `electionDayPollsCloseTime` and `disallowVxAdminTabulationBeforeElectionDayPollsCloseTime` are both set, the application will prevent generating reports until after the polls close time. In test mode, the same restriction does not apply. The behavior must vary between official and test mode because testing happens before election day.
 
 {% hint style="info" %}
 **User Manual Reference:** [Reports](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/election-night-guides/reports "mention")
