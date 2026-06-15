@@ -25,9 +25,7 @@ Both tally reports and ballot count reports can be exported in comma-separated v
 
 ## Tally Report CSV Structure
 
-In the CSV tally report, the vote total for each candidate or contest option is listed in a single row. In addition, there are rows for overvote and undervote totals for a contest.
-
-For example, here is an excerpt of a tally report including the results for one contest:
+For each contest, there is a row for each contest option, a row for undervotes, a row for overvotes, and a row for the total number of ballots cast. For example, here is an excerpt of a tally report including the results for one contest:
 
 ```csv
 Precinct,Precinct ID,Contest,Contest ID,Selection,Selection ID,Total Votes
@@ -36,15 +34,14 @@ West Lincoln,20,Mayor,mayor,Thomas Edison,thomas-edison,0
 West Lincoln,20,Mayor,mayor,Write-In,write-in,0
 West Lincoln,20,Mayor,mayor,Overvotes,overvotes,0
 West Lincoln,20,Mayor,mayor,Undervotes,undervotes,0
+West Lincoln,20,Mayor,mayor,Ballots Cast,ballots-cast,0
 ```
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2024-10-02 at 8.37.43 AM.png" alt=""><figcaption><p>Formatted version of the above CSV excerpt</p></figcaption></figure>
+The "Precinct" and "Precinct ID" columns are [metadata fields](csv-exports.md#shared-metadata-structure) that are included because this example export groups results by precinct. The other columns are standard fields:
 
-The "Precinct" and "Precinct ID" columns are [metadata fields](csv-exports.md#shared-metadata-structure) that are included because this example export groups results by precinct. The other fields are standard fields:
+<table><thead><tr><th width="162">Header</th><th>Values</th></tr></thead><tbody><tr><td>Contest</td><td>The title of the contest</td></tr><tr><td>Contest ID</td><td>The internal identifier of the contest in the election definition</td></tr><tr><td>Selection</td><td>The candidate name for candidate contests, the option label for yes-no contests, or a metadata label like "Overvotes", "Undervotes", or "Ballots Cast"</td></tr><tr><td>Selection ID</td><td>The internal identifier of a contest option or a metadata value i.e. "overvotes", "undervotes", or "ballots-cast"</td></tr><tr><td>Total Votes</td><td>The vote count for the selection. For the "Ballots Cast" row, it is the number of ballots instead.</td></tr></tbody></table>
 
-<table><thead><tr><th width="162">Header</th><th>Values</th></tr></thead><tbody><tr><td>Contest</td><td>The title of the contest</td></tr><tr><td>Contest ID</td><td>The internal identifier of the contest in the election definition</td></tr><tr><td>Selection</td><td>The candidate name for candidate contests, the option label for yes-no contests, or "Overvotes" or "Undervotes"</td></tr><tr><td>Selection ID</td><td>The internal identifier of the contest option, or "overvotes" or "undervotes"</td></tr><tr><td>Total Votes</td><td>The vote count for the selection</td></tr></tbody></table>
-
-If manual results were entered, two additional columns will be added - "Scanned Votes" and "Manual Votes." These columns denote which votes for each selection came from the scanners vs manual entry.
+If manual results were entered, two additional columns will be added - "Scanned Votes" and "Manual Votes." These columns denote which votes for each selection came from the scanners versus manual entry.
 
 The results of write-in adjudication are always included in the CSV exports. All write-in candidates will appear with their adjudicated name and a UUID assigned by VxAdmin. Unadjudicated write-in candidates will appear as "Unadjudicated Write-In" with the ID "write-in". Unlike in the printed reports, write-in candidates are never consolidated.&#x20;
 
