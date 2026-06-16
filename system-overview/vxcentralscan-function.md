@@ -24,7 +24,7 @@ VxCentralScan can be unconfigured by an election manager or system administrator
 
 ### Scanner Management
 
-VxCentralScan is compatible with the Ricoh fi-8170 and Ricoh fi-7600 production scanners. Once either scanner is detected, the user may begin scanning batches. The scanners are controlled via commands provided by the Debian `sane` package ("Scanner Access Now Easy") which creates a uniform API for most commercial scanners. As a result, no scanner-specific drivers are required.
+VxCentralScan is compatible with the Ricoh fi-8170, fi-7600, and fi-8950 production scanners. Once a scanner is detected, the user may begin scanning batches. The scanners are controlled via commands provided by the Debian `sane` package ("Scanner Access Now Easy") which creates a uniform API for most commercial scanners. As a result, no scanner-specific drivers are required.
 
 ### Batch Management
 
@@ -38,7 +38,13 @@ The start time, end time, size, and index of all batches is tracked and displaye
 
 ### Imprinting
 
-Both Ricoh scanners can be used with an optional imprinter - the fi-819PRB for the fi-8170 and the fi-760PRB for the fi-7600. As the ballot exits the scanner, the imprinter prints an identifier on the side margin of the ballot. The identifier is the batch's UUID suffixed with the index of the sheet in the batch e.g. `378f6a69-62d3-4184-a1a7-3a5d90083e21_0000` for the first sheet in a batch. The identifier will appear in the CVR as the `BallotAuditId`. Imprinting allows later reconciling CVRs to ballots such as in ballot comparison audits.
+All of the Ricoh scanners can be used with an optional imprinter:
+
+* The fi-8170 attaches to the fi-819PRB imprinter
+* The fi-7600 attaches to the fi-760PRB imprinter
+* The fi-8950 has the fi-890PRB installed into it
+
+As the ballot exits the scanner, the imprinter prints an identifier on the side margin of the ballot. The identifier is the batch's truncated UUID followed by the index of the sheet within the batch e.g. `378f6a69-3a5d90083e21_0000` for the first sheet in a batch. The identifier will appear in the CVR as the `BallotAuditId` with the full batch ID, e.g. `378f6a69-ad3f-25f2-234f-3a5d90083e21_0000`. Imprinting allows later reconciling CVRs to ballots such as in ballot comparison audits.
 
 #### Batch UUIDs
 
@@ -52,6 +58,7 @@ Batch scanning pauses whenever a ballot is not counted for any reason. Sometimes
 * **Wrong Ballot Mode** - test ballots in official ballot mode or official ballots in test ballot mode
 * **Wrong Election** - the hash on the ballot does not match the currently configured election
 * **Unreadable** - the ballot image could not be successfully interpreted, possibly because it is not a valid ballot or because the image skew was too great
+* **Wrong Precinct** - if VxCentralScan is configured for a particular polling place and the ballot is not a part of that polling place
 
 In other cases, the ballot requires adjudication. The adjudication reasons for VxCentralScan are set in the [system settings](election-package/#system-settings) as `centralScanAdjudicationReasons` and map to the following:
 
@@ -72,4 +79,3 @@ CVRs must be exported onto a USB drive and taken to VxAdmin for aggregation and 
 {% hint style="info" %}
 **User Manual Reference**: [Central Scanning #Saving Cast Vote Records (CVRs)](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxcentralscan/scanning-ballots#saving-cast-vote-records-cvrs "mention")
 {% endhint %}
-
