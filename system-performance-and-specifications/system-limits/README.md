@@ -4,10 +4,10 @@
 
 | Limit Type    | Per                     | Value  |
 | ------------- | ----------------------- | ------ |
-| Precincts     | Election                | 1,000  |
-| Candidates    | Election                | 1,000  |
+| Precincts     | Election                | 2,000  |
+| Candidates    | Election                | 2,000  |
 | Contests      | Election                | 1,000  |
-| Ballot Styles | Election                | 1,000  |
+| Ballot Styles | Election                | 5,000  |
 | Candidates    | Contest                 | 100    |
 | Vote For      | Contest                 | 50     |
 | Characters    | Name, Title, Label      | 100    |
