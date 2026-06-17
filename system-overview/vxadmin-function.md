@@ -206,6 +206,26 @@ There are two ways to exit official results mode without unconfiguring VxAdmin:
 * The system administrator can revert election results back to unofficial, which leaves all election data intact but allows it to be altered again by an election manager
 * The election manager may remove _all_ election data at once, which would require restarting aggregation and adjudication from scratch
 
+## Networking & Multi-Station Adjudication
+
+In order to adjudicate high volumes of ballots, additional adjudication station VxAdmins can be networked to a host VxAdmin. The adjudication station VxAdmins are only permitted to adjudicate ballots and to do basic system workflows such as exporting logs, adjusting the date and time, and performing signed hash validation. Any VxAdmin can be switched between "Host Mode" and "Adjudication Station Mode".
+
+The host VxAdmin is connected to the adjudication stations via an ethernet network switch. In order for the network to be valid, all VxAdmins must have the same software version and there must be only one host VxAdmin. There is zero configuration required other than connecting components via ethernet cables.
+
+The host VxAdmin is able to toggle multi-station adjudication on or off. Adjudication stations may only begin adjudication after it is enabled by the host VxAdmin.
+
+The adjudications stations do not need to be configured individually - they pull their configuration from the host while connected.
+
+Unlike the host VxAdmin, which can navigate forward and backward through the entire queue of ballots needing adjudication, the adjudication stations are simply assigned the next ballot in the queue. After that ballot is adjudicated, the next ballot is assigned. Whenever a ballot is being adjudicated by the host or any adjudication station, it cannot be assigned to another adjudication station and cannot be adjudicated by the host.
+
+<figure><img src="../.gitbook/assets/image (109).png" alt=""><figcaption><p>VxAdmin Network Diagram</p></figcaption></figure>
+
+#### Network Implementation
+
+The networking implementation is a zero-configuration, host-advertised, client-pull model. There is no central registry or manual IP entry; everything is built on mDNS discovery and short-interval polling. The host advertises itself on the local network using `avahi`. When a VxAdmin starts in host mode, it publishes a network service named for its machine ID on its peer port. Adjudication stations discover hosts by browsing to find one and only one host-advertised service, and refuse to proceed if they detect more than one. Once a station finds the host, all communication flows over a dedicated host-to-station API, separate from the API the host's own UI uses: stations register themselves, pull down the election configuration, claim and release ballots from the queue, and submit completed adjudications, all by calling the host — the host never pushes to the stations. Each station runs this exchange on a short polling loop (every couple of seconds), which doubles as a heartbeat: on each cycle it confirms the host is still reachable, learns whether the host currently has multi-station adjudication enabled, and re-syncs the election configuration if it has changed since the last cycle. A station that stops polling simply ages out, at which point the host releases any ballots it was holding so they can be reassigned.
+
+For more details on how networking is set up at the operating system level, see [networking.md](../system-security-auditing-and-logging/system-security-architecture/networking.md "mention").
+
 ## Printer Management
 
 VxAdmin can print reports via an attached printer. The supported printer is the HP LaserJet Pro 4001dn. VxAdmin can also export reports as PDFs so, in the event of a printer failure, reports will always be available.

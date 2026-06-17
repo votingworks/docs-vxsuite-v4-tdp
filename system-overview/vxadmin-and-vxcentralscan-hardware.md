@@ -18,7 +18,7 @@ While not strictly necessary, VxAdmin, VxPrint, and VxCentralScan are bundled wi
 
 ### VxAdmin
 
-VxAdmin connects to a printer for the purposes of printing reports. The printer includes an RJ45 (ethernet) port which is blocked by a port blocker because network connectivity is not required by the system.&#x20;
+VxAdmin connects to a printer for the purposes of printing reports. The printer includes an RJ45 (ethernet) port which is blocked by a port blocker because network connectivity is not required by the printer.&#x20;
 
 <figure><img src="../.gitbook/assets/PXL_20241119_221005359 (1).jpg" alt="" width="563"><figcaption><p>VxAdmin fully connected with mouse, hub, charger, USB cable, and printer</p></figcaption></figure>
 
@@ -40,7 +40,7 @@ Each of the Ricoh scanners can be used with Ricoh imprinters (not pictured) whic
 
 The batch scanner is powered through a Goldenmate 1000VA/600W UPS (Uninterruptible Power Supply) to ensure that the scanner can operate in variable power environments.&#x20;
 
-The fi-8170 and fi-8950 each have an RJ45 (ethernet) port which is blocked by a port blocker because network connectivity is not required by the system.
+The fi-8170 and fi-8950 each have an RJ45 (ethernet) port which is blocked by a port blocker because network connectivity is not required by the scanner.
 
 <figure><img src="../.gitbook/assets/centralscan.jpg" alt=""><figcaption><p>VxCentralScan fully connected with mouse, hub, charger, USB cable, scanner (fi-8170), and power backup</p></figcaption></figure>
 
@@ -55,6 +55,12 @@ All components for VxAdmin, VxPrint, and VxCentralScan are commercial-off-the-sh
 ### VxAdmin & VxPrint Components (Printer)
 
 <table><thead><tr><th width="152">Manufacturer</th><th width="263">Component</th><th width="167.58465576171875">Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>HP</td><td>LaserJet Pro 4001dn Printer</td><td>2Z600F#BGJ</td><td>Medium</td></tr><tr><td>Lindy</td><td>RJ45 Port Blocker</td><td>40471</td><td>Low</td></tr></tbody></table>
+
+### VxAdmin Networking Components
+
+These components are only relevant if the jurisdiction is using multiple VxAdmins networked together for multi-station adjudication.
+
+<table><thead><tr><th width="152">Manufacturer</th><th width="263">Component</th><th width="167.58465576171875">Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>Cisco</td><td>Catalyst 1200-8T-D Switch</td><td>1200-8T-D</td><td>Medium</td></tr><tr><td>Monoprice</td><td>Cat6 Ethernet Patch Cable, Various Lengths</td><td>Varies by length, e.g. 3ft is 9821</td><td>Low</td></tr><tr><td>Startech.com</td><td>USB-C to Ethernet Adapter</td><td>US1GC30B2</td><td>Low</td></tr></tbody></table>
 
 ### VxCentralScan Components (Scanner)
 
@@ -95,3 +101,4 @@ The medium criticality components and the reasons for their classification are a
 * **Monoprice USB A-B Cable -** Manages flow of data between laptop and peripherals.
 * **HP LaserJet Pro 4001dn -** The VxAdmin & VxPrint printer is responsible for printing reports from VxAdmin and printing ballots from VxPrint and therefore handles highly sensitive election information. All reports from VxAdmin can be exported as PDFs and printed elsewhere, so it is not strictly necessary for the operation of the system and thus is not the highest criticality.
 * **Ricoh fi-760PRB, fi-819PRB** **& fi-890PRB** - The imprinters that pair with the Ricoh scanners are not involved in generating ballot data, so they cannot influence the interpretation of ballots when used according to instructions. The imprinted identifiers are important for post-election audits, however, so the imprinters are security-sensitive components.
+* **Cisco Catalyst 1200-8T-D Switch** - Because all data on the network is encrypted and cryptographically verified, there's little concern of data being modified or tampered with in-flight. There are also plenty of COTS alternatives to handle supply issues. The switch is a complex component networked to each VxAdmin, however, so it is considered medium criticality as a potential launching point for network attacks.

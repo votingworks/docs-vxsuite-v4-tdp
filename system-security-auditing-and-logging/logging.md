@@ -114,9 +114,9 @@ A full list of all logs made in the system with a description of each one can be
 
 #### Networking
 
-| System Event                                   | Logging Details                                                                                                                                                      |
-| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Enabling or disabling networking functionality | It is not possible to enable wired or wireless networking. Any attempt to bypass protections in place blocking this will result in an error and a `sudo-action` log. |
+| System Event                                   | Logging Details                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Enabling or disabling networking functionality | <p>Wireless networking is always disabled. Wired networking can be enabled on VxAdmin for multi-station adjudication. Enabling or disabling creates a <code>admin-client-adjudication-toggled</code> event. Related network status events on VxAdmin are <code>admin-network-status</code> events.</p><p></p><p>Any attempt to bypass protections against networking in the other applications will result in an error and a <code>sudo-action</code> log.</p> |
 
 #### Software
 
