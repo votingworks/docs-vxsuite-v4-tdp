@@ -20,7 +20,7 @@ For additional information on how physical, technical, and operational controls 
 * [procedural-and-operational-security.md](procedural-and-operational-security.md "mention")
 * [trusted-build](../software-installation/trusted-build/ "mention")
 
-Please also refer to the [VxSuite User Manual - v4](https://app.gitbook.com/o/-MG9xpTX0GFiCyXHEhNe/s/JtZutzGTdCzsGITrdiph/ "mention"), notably the [Setup Inspection](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/logic-and-accuracy-pre-election-testing/setup-inspection "mention") documentation.
+Please also refer to the [VxSuite User Manual - v4](https://app.gitbook.com/o/-MG9xpTX0GFiCyXHEhNe/s/vh0Xx7zclRU0SsZ9mvKy/ "mention"), notably the [Setup Inspection](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/logic-and-accuracy-pre-election-testing/setup-inspection "mention") documentation.
 
 [Risk Assessment](https://github.com/votingworks/docs-vxsuite-v4/blob/main/risk-assessment/vxsuite-v4-risk-assessment.pdf) \[PDF]
 
