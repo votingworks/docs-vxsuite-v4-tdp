@@ -136,7 +136,7 @@ The voter can adjust volume up and down or speech rate up and down with buttons 
 
 ### Language Support
 
-VxMark supports switching the language for the current voting session to any language supported in the current election package. When the language is changed, all text on the ballot, all text shown on screen, and text read in audio mode to guide the voter will switch to the new language. The language can be changed at any time during a voting session. The language selection resets automatically after each voting session or can be reset by the voter at any time.
+VxMark supports switching the language for the current voting session to any language supported in the current election package. When the language is changed, all text on the ballot, all text shown on screen, and text read in audio mode to guide the voter will switch to the new language. When a right-to-left language such as Arabic is selected, the on-screen layout is mirrored to render right-to-left. The language can be changed at any time during a voting session. The language selection resets automatically after each voting session or can be reset by the voter at any time.
 
 If a language other than English is set when printing a summary ballot, the ballot will show all information in both the current language - for the purpose of the voter's review - and in English - for ease of adjudication and audits.
 
