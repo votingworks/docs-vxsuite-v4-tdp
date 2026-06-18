@@ -36,6 +36,13 @@
 * VxMarkScan can activate, mark, verify, and cast up to 20 ballots per hour. Exact rate depends on time spent by user marking and verifying a ballot before casting.
 * VxMarkScan has a maximum available disk space of 9GB.
 
+### VxMark
+
+* VxMark prints bubble or summary ballots on 8.5" paper from 11" to 22" in length, as specified in [paper-ballot-specifications.md](../paper-ballot-specifications.md "mention").
+* A contest allows voting for **n** out of **m** candidates/choices. On VxMark, for any one contest, **n** is limited to 25 (lower than the general limit), and **m** is limited to 100 (the same as the general limit).
+* Unlike VxMarkScan, VxMark does not impose ballot-style-level limits on the number of contests or on the summed candidates and seats across contests, because VxMark supports multi-page summary ballots with dynamic page splitting.
+* Each VxMark write-in is limited to 40 characters. Unlike VxMarkScan, there is no limit on the total number of write-in characters across all contests on a ballot.
+
 ### VxScan
 
 * The ballot box supports up to 3000 ballots in the main compartment before needing to be cleared.
@@ -43,6 +50,11 @@
 * Total ballots scanned for a given VxScan configuration are limited to 10,000 ballots. This limit is set based on the disk space available on specified external disks to ensure adequate disk space in the case of needing to re-sync CVRs.
 * Ballot tabulation rate depends on election content / ballot length. A typical 11" ballot sheet is scanned and tabulated in 3 seconds.
 * An user can feed a ballot sheet every 10 seconds. At that feeding rate, the maximum tabulation rate is 360 sheets per hour.
+
+### VxPrint
+
+* VxPrint prints bubble ballots on 8.5" paper from 11" to 22" in length, as specified in [paper-ballot-specifications.md](../paper-ballot-specifications.md "mention").
+* VxPrint prints up to 30 letter-sized ballots per minute.
 
 ### Bubble Ballots
 
