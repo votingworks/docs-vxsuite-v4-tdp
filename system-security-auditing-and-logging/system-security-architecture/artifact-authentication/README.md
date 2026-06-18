@@ -2,7 +2,7 @@
 
 When a VxSuite machine exports data to a USB for another VxSuite machine to import, the first machine digitally signs that data so that the second machine can verify its authenticity. We use this mechanism in two places in particular:
 
-1. To authenticate election definitions/packages — These configuration bundles are exported by VxAdmin and used to configure VxCentralScan, VxMarkScan, and VxScan.
+1. To authenticate election definitions/packages — These configuration bundles are exported by VxAdmin and used to configure VxCentralScan, VxMark, VxMarkScan, VxScan, and VxPrint.
 2. To authenticate cast vote records — These are exported by VxCentralScan and VxScan and imported by VxAdmin for tabulation.
 
 The exporting machine digitally signs the following message using its TPM private key:
@@ -21,6 +21,6 @@ If verification fails on the importing machine, the importing machine will refus
 
 Refer to the following code links for more details:
 
-* [https://github.com/votingworks/vxsuite/tree/v4.0.2/libs/auth](https://github.com/votingworks/vxsuite/tree/v4.0.2/libs/auth) — VxSuite authentication lib, a good starting point for all things authentication
-* [https://github.com/votingworks/vxsuite/blob/v4.0.2/libs/auth/src/artifact\_authentication.ts](https://github.com/votingworks/vxsuite/blob/v4.0.2/libs/auth/src/artifact_authentication.ts) —  Artifact authentication logic
-* [https://github.com/votingworks/vxsuite/blob/v4.0.2/libs/auth/src/cryptography.ts](https://github.com/votingworks/vxsuite/blob/v4.0.2/libs/auth/src/cryptography.ts) — OpenSSL commands underlying various authentication and signing operations
+* [https://github.com/votingworks/vxsuite/tree/v4.0.7/libs/auth](https://github.com/votingworks/vxsuite/tree/v4.0.7/libs/auth) — VxSuite authentication lib, a good starting point for all things authentication
+* [https://github.com/votingworks/vxsuite/blob/v4.0.7/libs/auth/src/artifact\_authentication.ts](https://github.com/votingworks/vxsuite/blob/v4.0.7/libs/auth/src/artifact_authentication.ts) —  Artifact authentication logic
+* [https://github.com/votingworks/vxsuite/blob/v4.0.7/libs/auth/src/cryptography.ts](https://github.com/votingworks/vxsuite/blob/v4.0.7/libs/auth/src/cryptography.ts) — OpenSSL commands underlying various authentication and signing operations
