@@ -12,11 +12,11 @@ Retrieves the current amount of disk space used and disk space available for the
 
 ### Battery
 
-For components with internal batteries - VxAdmin and VxCentralScan - the operating system is polled for battery status. The application will report the current charge level and whether or not the battery is currently charging.
+For components with internal batteries - VxAdmin, VxCentralScan, and VxPrint - the operating system is polled for battery status. The application will report the current charge level and whether or not the battery is currently charging.
 
 ### Uninterruptible Power Supply (UPS)
 
-For components that operate with an external UPS - VxMarkScan, VxScan, and VxCentralScan - there is a test flow for the user to confirm that the UPS is connected and fully charged.
+For components that operate with an external UPS - VxMark, VxMarkScan, VxScan, and VxCentralScan - there is a test flow for the user to confirm that the UPS is connected and fully charged.
 
 ### Configuration
 
@@ -30,7 +30,7 @@ For polling place equipment, the list of ballot styles will include only those a
 
 #### Polling Place
 
-For polling place equipment - VxScan and VxMarkScan - the currently configured polling place will be shown, if any.
+For polling place equipment - VxScan, VxMarkScan, VxMark, and VxPrint - the currently configured polling place will be shown, if any.
 
 #### Mark Thresholds
 
@@ -107,4 +107,44 @@ The user may perform a test of the front headphone input by connecting headphone
 
 {% hint style="info" %}
 **User Manual Reference**: [VxMarkScan Diagnostics](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmarkscan/diagnostics "mention")
+{% endhint %}
+
+## VxMark Diagnostics
+
+### Printer
+
+The toner level and any alerts from the attached HP LaserJet printer are displayed, such as sleep mode, paper jams, or hardware malfunctions. The user may perform a test print, which sends a mock document to the printer. The user inspects the printed document and confirms whether the test print was successful or failed.
+
+### Accessible Controller
+
+The user may perform a test of the accessible controller which validates that each button on the controller is producing the expected signal. The flow guides the user through pressing each button.
+
+### PAT Input
+
+The user may perform a test of the PAT input, which simply confirms that a PAT device can be successfully calibrated as it would be during a voting session.
+
+### Headphone Input
+
+The user may test the headphone input by connecting headphones and triggering a chime. The user must indicate whether they heard the chime or not, corresponding to a pass or fail respectively.
+
+### System Audio
+
+The user may test the onboard speaker by triggering audio through the system speakers and confirming whether they heard the audio or not.
+
+### Barcode Reader
+
+The user may test the barcode reader by scanning a barcode. The test passes automatically once a scan is detected during the test.
+
+{% hint style="info" %}
+**User Manual Reference**: [VxMark Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmark/diagnostics "mention")
+{% endhint %}
+
+## VxPrint Diagnostics
+
+### Printer
+
+The toner level and any alerts from the attached HP LaserJet printer are displayed, such as sleep mode, paper jams, or hardware malfunctions. The user may perform a test print, which sends a mock document to the printer. The user inspects the printed document and confirms whether the test print was successful or failed.
+
+{% hint style="info" %}
+User Manual Reference: \[INSERT LINK]
 {% endhint %}
