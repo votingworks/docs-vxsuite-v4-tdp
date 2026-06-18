@@ -4,7 +4,7 @@ The following article and linked related articles are intended to cover VVSG 2.0
 
 ## Safety
 
-Per VVSG 2.0 8.1-K - Eliminating Hazards, devices associated with the voting system are certified in accordance with the requirements of UL 62368-1. See [#eliminating-hazards](../audio-visual-and-display-screen-settings.md#eliminating-hazards "mention"). VxSuite hardware is designed to eliminate hazards from shock, radiation, heat, and mechanical dangers when used and maintained in accordance with the [VxSuite User Manual - v4](https://app.gitbook.com/o/-MG9xpTX0GFiCyXHEhNe/s/JtZutzGTdCzsGITrdiph/ "mention").
+Per VVSG 2.0 8.1-K - Eliminating Hazards, devices associated with the voting system are certified in accordance with the requirements of UL 62368-1. See [#eliminating-hazards](../audio-visual-and-display-screen-settings.md#eliminating-hazards "mention"). VxSuite hardware is designed to eliminate hazards from shock, radiation, heat, and mechanical dangers when used and maintained in accordance with the [VxSuite User Manual - v4](https://app.gitbook.com/o/-MG9xpTX0GFiCyXHEhNe/s/vh0Xx7zclRU0SsZ9mvKy/ "mention").
 
 ## Security
 
@@ -18,7 +18,7 @@ The provisions for voter privacy on VxScan are described in [preserving-voter-pr
 
 ### Error Recovery
 
-The voting system is designed to recover from errors as gracefully as possible. Displayed error messages, as enumerated in the error message sections in the [VxSuite User Manual - v4](https://app.gitbook.com/o/-MG9xpTX0GFiCyXHEhNe/s/JtZutzGTdCzsGITrdiph/ "mention"), are written to guide users to address the error. If the user encounters a recoverable error, the error message will instruct them to how to properly continue operation. For example if a smart card is inserted backward, the message will prompt the user to insert it correctly. If the user encounters an unrecoverable software error, the error message will prompt the user to restart the machine. The vast majority of problematic software states are resolved by a restart. After restarting, operation can continue.
+The voting system is designed to recover from errors as gracefully as possible. Displayed error messages, as enumerated in the error message sections in the [VxSuite User Manual - v4](https://app.gitbook.com/o/-MG9xpTX0GFiCyXHEhNe/s/vh0Xx7zclRU0SsZ9mvKy/ "mention"), are written to guide users to address the error. If the user encounters a recoverable error, the error message will instruct them to how to properly continue operation. For example if a smart card is inserted backward, the message will prompt the user to insert it correctly. If the user encounters an unrecoverable software error, the error message will prompt the user to restart the machine. The vast majority of problematic software states are resolved by a restart. After restarting, operation can continue.
 
 ### Machine Replacement
 
