@@ -29,7 +29,7 @@ VxSuite can tabulate a wide variety of ballot designs as long as they conform to
 2. Ballot must include correctly formatted timing mark borders
 3. Ballot must include an appropriately positioned metadata QR code
 4. Ballot must use a specific bubble shape
-5. Ballot must adhere to [system limits](../system-performance-and-specifications/system-limits/#hand-marked-paper-ballots)
+5. Ballot must adhere to [system limits](../system-performance-and-specifications/system-limits/#bubble-ballots)
 
 ## Ballot Size
 
