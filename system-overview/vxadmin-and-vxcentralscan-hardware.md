@@ -18,7 +18,9 @@ While not strictly necessary, VxAdmin and VxCentralScan are bundled with a mouse
 
 ### VxAdmin
 
-VxAdmin connects to a printer for the purposes of printing reports. The printer includes an RJ45 (ethernet) port which is blocked by a port blocker because network connectivity is not required by the system.&#x20;
+VxAdmin connects to a printer for the purposes of printing reports. The printer includes an RJ45 (ethernet) port which is blocked by a port blocker because network connectivity is not required by the system.
+
+The VxAdmin printer is powered through an APC BN1500M2 UPS (Uninterruptible Power Supply) to ensure that the printer can operate in variable power environments.
 
 <figure><img src="../.gitbook/assets/PXL_20241119_221005359 (1).jpg" alt="" width="563"><figcaption><p>VxAdmin fully connected with mouse, hub, charger, USB cable, and printer</p></figcaption></figure>
 
@@ -26,9 +28,9 @@ VxAdmin connects to a printer for the purposes of printing reports. The printer 
 
 VxCentralScan connects to a batch scanner for batch scanning. The scanner is either the smaller Ricoh fi-8170 or the larger Ricoh fi-7600. Ballots are loaded into the hopper and then, after a scan is triggered from the application, the scanner processes the ballots one-by-one, sending images to the application for interpretation.
 
-Both batch scanners can be used with Ricoh imprinters (not pictured) which allow printing an identifier on each ballot as it's exiting the scanner, which can be useful for certain types of post-election audits.&#x20;
+Both batch scanners can be used with Ricoh imprinters (not pictured) which allow printing an identifier on each ballot as it's exiting the scanner, which can be useful for certain types of post-election audits.
 
-The batch scanner is powered through an APC BN1500M2 UPS (Uninterruptible Power Supply) to ensure that the scanner can operate in variable power environments.&#x20;
+The batch scanner is powered through an APC BN1500M2 UPS (Uninterruptible Power Supply) to ensure that the scanner can operate in variable power environments.
 
 The fi-8170 includes an RJ45 (ethernet) port which is blocked by a port blocker because network connectivity is not required by the system.
 
@@ -44,13 +46,13 @@ All components for VxAdmin and VxCentralScan are commercial-off-the-shelf (COTS)
 
 ### VxAdmin Components (Printer)
 
-<table><thead><tr><th width="152">Manufacturer</th><th width="263">Component</th><th>Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>HP</td><td>LaserJet Pro 4001dn Printer</td><td>2Z600F#BGJ</td><td>Medium</td></tr><tr><td>Lindy</td><td>RJ45 Port Blocker</td><td>40471</td><td>Low</td></tr></tbody></table>
+<table><thead><tr><th width="152">Manufacturer</th><th width="263">Component</th><th>Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>HP</td><td>LaserJet Pro 4001dn Printer</td><td>2Z600F#BGJ</td><td>Medium</td></tr><tr><td>Lindy</td><td>RJ45 Port Blocker</td><td>40471</td><td>Low</td></tr><tr><td>APC</td><td>Uninterruptible Power Supply</td><td>BN1500M2 </td><td>Low</td></tr></tbody></table>
 
 ### VxCentralScan Components (Scanner)
 
 VxCentralScan can be used with either the Ricoh fi-8170 or the Ricoh fi-7600, but does not need both. Each scanner can be paired with one of the two imprinters listed below.
 
-<table><thead><tr><th width="155">Manufacturer</th><th width="303">Component</th><th width="176">Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>Ricoh</td><td>fi-8170 Small Desktop Scanner</td><td>PA03810-B055</td><td>High</td></tr><tr><td>Ricoh</td><td>fi-819PRB Imprinter (for fi-8170)</td><td>PA03810-D201</td><td>Medium</td></tr><tr><td>Ricoh</td><td>fi-7600 Large Desktop Scanner</td><td>PA03740-B505</td><td>High</td></tr><tr><td>Ricoh</td><td>fi-760PRB Imprinter (for fi-7600)</td><td>PA03740-D101</td><td>Medium</td></tr><tr><td>GoldenMate</td><td>Uninterruptible Power Supply</td><td>UPS 1000VA/600W</td><td>Low</td></tr><tr><td>Lindy</td><td>RJ45 Port Blocker</td><td>40471</td><td>Low</td></tr></tbody></table>
+<table><thead><tr><th width="155">Manufacturer</th><th width="314.40692138671875">Component</th><th width="176">Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>Ricoh</td><td>fi-8170 Small Desktop Scanner</td><td>PA03810-B055</td><td>High</td></tr><tr><td>Ricoh</td><td>fi-819PRB Imprinter (for fi-8170)</td><td>PA03810-D201</td><td>Medium</td></tr><tr><td>Ricoh</td><td>fi-7600 Large Desktop Scanner</td><td>PA03740-B505</td><td>High</td></tr><tr><td>Ricoh</td><td>fi-760PRB Imprinter (for fi-7600)</td><td>PA03740-D101</td><td>Medium</td></tr><tr><td>APC</td><td>Uninterruptible Power Supply</td><td>BN1500M2</td><td>Low</td></tr><tr><td>Lindy</td><td>RJ45 Port Blocker</td><td>40471</td><td>Low</td></tr></tbody></table>
 
 ## Laptop Specification
 
@@ -61,7 +63,7 @@ The laptop is a custom configuration of the widely available HP Elitebook 840 14
 | Processor                | Intel® Core™ Ultra 5 Processor 125U |
 | Memory (RAM)             | 8GB (1x8GB) DDR5 5600 SODIMM Memory |
 | Storage (SSD)            | 256GB PCIe NVMe Solid State Drive   |
-| Display                  | 14"  WUXGA UWVA LED (300 nits)      |
+| Display                  | 14" WUXGA UWVA LED (300 nits)       |
 | Battery                  | 56Wh Capacity                       |
 | Webcam                   | None                                |
 | Near Field Communication | None                                |
