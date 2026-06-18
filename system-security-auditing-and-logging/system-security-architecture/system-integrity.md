@@ -4,7 +4,7 @@ The foundation of our system integrity solution is the TPM (described in greater
 
 Our design for system integrity maps closely to that of ChromeOS:
 
-1. The hard drive is partitioned such that executable code lives on the read-only partition `/`, and only `/var` and `/home` are mounted read/write for configuration, logs, and working data like scanned ballot images.
+1. The hard drive is partitioned such that executable code lives on the read-only partition `/`, and only `/var`, `/tmp`, and `/home` are mounted read/write for configuration, logs, and working data like scanned ballot images.
 2. The read-only partition is verified by [dm-verity](https://source.android.com/docs/security/features/verifiedboot/dm-verity), which generates a hash tree of all the raw partition blocks, culminating in a single hash root for the entire read-only filesystem.
 3. The kernel boot command line includes the dm-verity hash root as an argument, ensuring that Linux halts if the read-only partitions are not successfully verified against this hash root.
 4. The BIOS is configured to only boot a properly signed bootloader+kernel+command-line, with public keys managed by VotingWorks and configured in the BIOS as secure boot keys. The bootloader+kernel+command-line that we want is set up as the default boot option in UEFI.
