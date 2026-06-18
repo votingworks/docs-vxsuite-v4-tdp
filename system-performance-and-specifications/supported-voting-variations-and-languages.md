@@ -19,5 +19,7 @@
 * English
 * Spanish
 * Chinese (Simplified & Traditional)
+* Bengali
+* Arabic
 
-Voter-facing content in an election package can be translated to additional left-to-right languages and imported into VxSuite, but is not formally supported or tested by VotingWorks.
+Voter-facing content in an election package can be translated to additional languages and imported into VxSuite, but is not formally supported or tested by VotingWorks.
