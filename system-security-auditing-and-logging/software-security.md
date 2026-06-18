@@ -1,6 +1,6 @@
 ---
 description: >-
-  This section describe the overall system security architecture of VxSuite and
+  This section describes the overall system security architecture of VxSuite and
   the measures taken to thwart attacks on the proper operation of elections on
   VxSuite.
 ---

@@ -1,6 +1,6 @@
 # Procedural and Operational Security
 
-VxSuite can be operated securely using the following these procedures. Some of these procedures are intentionally redundant for defense-in-depth as it is always expected that some operational mistakes are made.
+VxSuite can be operated securely using the following procedures. Some of these procedures are intentionally redundant for defense-in-depth as it is always expected that some operational mistakes are made.
 
 ## Using Proper Equipment
 
@@ -12,10 +12,12 @@ When there are no active elections happening, VxSuite equipment should be physic
 
 * VxAdmin laptop and peripherals should be kept in their case, with numbered seals through both case seal points, preventing the case from being opened without breaking one or both seals.
 * VxCentralScan laptop and peripherals should be kept in their case, with numbered seals through both case seal points, preventing the case from being opened without breaking one or both seals.
+* VxPrint laptop and peripherals should be kept in their case, with numbered seals through both case seal points, preventing the case from being opened without breaking one or both seals.
 * The small Ricoh scanner that works with VxCentralScan should be kept in its supplied soft case, with a numbered seal through the appropriate zipper hole, preventing the case from being opened without breaking the seal.
 * The medium and large Ricoh scanners that work with VxCentralScan should be kept in their supplied manufacturer box, with tamper evident tape along all sides and a numbered sticker seal on the main opening.
 * VxScan should be kept closed with a numbered seal through one of the two seal points, preventing the case from being opened without breaking the seal.
-* VxAdmin, VxCentralScan, VxScan, and the Fujitsu/Ricoh scanner, once sealed, should be kept in a safely locked room or storage area that only authorized election administrators have access to.
+* VxMark should be kept closed in its case with numbered seals through the case seal points, preventing the case from being opened without breaking a seal.
+* VxAdmin, VxCentralScan, VxScan, VxMark, VxPrint, and the Fujitsu/Ricoh scanner, once sealed, should be kept in a safely locked room or storage area that only authorized election administrators have access to.
 * The system admin smart cards should be kept in a safe or locked drawer, separately from VxAdmin. The PIN for the system admin smart card, if recorded on paper, should also be kept locked separate from both VxAdmin and the card.
 
 You may consider occasionally resetting the PIN on the system administrator cards. This can be done using the VxAdmin laptop.

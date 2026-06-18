@@ -44,7 +44,7 @@ The core post-election (and pre-election testing) function of VxAdmin is loading
 
 CVRs must be loaded from a USB drive. CVRs are exported from VxScan or VxCentralScan and are accompanied by a digital signature. CVRs without a digital signature cannot be loaded. CVR exports with digital signatures that do not match the content of the CVR exports cannot be loaded in order to prevent tampering.
 
-The CVRs from the scanners are saved to specific directory structure on the USB drive, but exports can be loaded from anywhere on a USB drive's filesystem. When selecting an export manually, the export's `metadata.json` file must be selected by the user.
+The CVRs from the scanners are saved to a specific directory structure on the USB drive, but exports can be loaded from anywhere on a USB drive's filesystem. When selecting an export manually, the export's `metadata.json` file must be selected by the user.
 
 When loading a full CVR export, each CVR is loaded into VxAdmin's backend store as one `cvrs` record. The CVR record includes a data blob representing the votes as interpreted by the scanner, a data blob representing the mark scores for all bubbles on the ballot (if a hand-marked paper ballot), and a series of metadata fields: ballot style, voting method (absentee vs. precinct), batch, scanner, precinct, sheet number within a multi-sheet ballot, and flags for adjudication reasons such as overvotes, undervotes, write-ins, or fully blank ballots. The metadata fields are used later on for filtering or aggregating tallies or ballot counts into groups.
 
@@ -115,7 +115,7 @@ $$
 \text{total ballots} * \text{votes allowed in contest} = \text{total votes} + \text{total undervotes} + \text{total overvotes}
 $$
 
-The same formula also applies to all results generated from scanned ballots. If a vote for three contest is overvoted, it is considered three overvotes. If the contest tallies entered by the user are incomplete or invalid, the user is presented with warning messages.
+The same formula also applies to all results generated from scanned ballots. If a vote-for-three contest is overvoted, it is considered three overvotes. If the contest tallies entered by the user are incomplete or invalid, the user is presented with warning messages.
 
 In most cases, the ballot count will be the same across all contests. In some jurisdictions it is possible for different contests to have different ballot counts if, for example, someone votes on a ballot without local contests. In these cases, the user can override the ballot count on an individual contest basis.
 
@@ -214,7 +214,7 @@ The host VxAdmin is connected to the adjudication stations via an ethernet netwo
 
 The host VxAdmin is able to toggle multi-station adjudication on or off. Adjudication stations may only begin adjudication after it is enabled by the host VxAdmin.
 
-The adjudications stations do not need to be configured individually - they pull their configuration from the host while connected.
+The adjudication stations do not need to be configured individually - they pull their configuration from the host while connected.
 
 Unlike the host VxAdmin, which can navigate forward and backward through the entire queue of ballots needing adjudication, the adjudication stations are simply assigned the next ballot in the queue. After that ballot is adjudicated, the next ballot is assigned. Whenever a ballot is being adjudicated by the host or any adjudication station, it cannot be assigned to another adjudication station and cannot be adjudicated by the host.
 
@@ -230,8 +230,8 @@ For more details on how networking is set up at the operating system level, see 
 
 VxAdmin can print reports via an attached printer. The supported printer is the HP LaserJet Pro 4001dn. VxAdmin can also export reports as PDFs so, in the event of a printer failure, reports will always be available.
 
-VxAdmin interfaces with the printer through the CUPS, the open-source printing system developed by Apple and installed on our Debian system. When a printer is attached, it is registered with the CUPS server and made available to the application. VxAdmin is able to send print jobs to the printer via CUPS commands. The HP LaserJetPro does not require any additional third-party or in-house driver because it supports the IPP (Internet Printing Protocol) which CUPS then utilizes.
+VxAdmin interfaces with the printer through CUPS, the open-source printing system developed by Apple and installed on our Debian system. When a printer is attached, it is registered with the CUPS server and made available to the application. VxAdmin is able to send print jobs to the printer via CUPS commands. The HP LaserJet Pro does not require any additional third-party or in-house driver because it supports the IPP (Internet Printing Protocol) which CUPS then utilizes.
 
 Using IPP, the VxAdmin is also able to poll the detailed status (toner level, jam status, etc.) of the printer for use in the diagnostics interface.
 
-VxAdmin can only connect with one printer at a time and will always connect with with the first attached printer.
+VxAdmin can only connect with one printer at a time and will always connect with the first attached printer.

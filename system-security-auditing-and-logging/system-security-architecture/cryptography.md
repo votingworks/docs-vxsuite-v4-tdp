@@ -2,12 +2,12 @@
 
 ## Cryptographic Modules
 
-VxSuite v4 contains four distinct cryptographic modules:
+VxSuite v4 contains five distinct cryptographic modules:
 
 * Smart cards
-* VxAdmin / VxCentralScan TPM (same underlying hardware)
+* VxAdmin / VxCentralScan / VxPrint TPM (same underlying hardware)
 * VxMarkScan TPM
-* VxScan TPM
+* VxScan / VxMark TPM
 * OpenSSL software
 
 All of the above are FIPS-compliant.
@@ -21,9 +21,9 @@ These smart cards are FIPS140-2-certified:\
 
 The applet that we run on the cards, [OpenFIPS201](https://github.com/votingworks/OpenFIPS201), is an implementation of the NIST 201 PIV protocol, which sits on top of FIPS140 cryptography. In the applet, all cryptographic operations are handled by the Java Card operating system, implemented by the NXP JCOP 4 card.
 
-### VxAdmin / VxCentralScan TPM
+### VxAdmin / VxCentralScan / VxPrint TPM
 
-The VxAdmin / VxCentralScan HP uses an NPCT75x TPM 2.0 chip by Nuovoton.
+The VxAdmin / VxCentralScan / VxPrint HP laptop uses an NPCT75x TPM 2.0 chip by Nuvoton.
 
 This chip is FIPS140-2-certified: [https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4411](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4411).
 
@@ -33,9 +33,9 @@ The VxMarkScan board uses an SLB 9665 TPM 2.0 chip by Infineon.
 
 This chip is FIPS140-2-certified: [https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/2959](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/2959).
 
-### VxScan TPM
+### VxScan / VxMark TPM
 
-The VxScan board uses an SLB 9670 TPM 2.0 chip by Infineon.
+The VxScan and VxMark boards use an SLB 9670 TPM 2.0 chip by Infineon.
 
 This chip is FIPS140-2-certified: [https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3492](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3492).
 
@@ -48,7 +48,7 @@ This provider is FIPS140-2-certified: [https://csrc.nist.gov/projects/cryptograp
 FIPS-compliance of all OpenSSL operations is guaranteed as follows:
 
 * **FIPS compliance via hardware modules:** For relevant operations, OpenSSL outsources cryptographic operations to the TPM 2.0 chip, and as noted above, all of our TPM 2.0 chips are FIPS-compliant.
-* **FIPS compliance via software modules:** For all other operations, OpenSSL uses the FIPS provider. Our [OpenSSL config](https://github.com/votingworks/vxsuite-build-system/blob/v4.0.2/playbooks/trusted_build/files/openssl-3.0.9.cnf) guarantees this.
+* **FIPS compliance via software modules:** For all other operations, OpenSSL uses the FIPS provider. Our [OpenSSL config](https://github.com/votingworks/vxsuite-build-system/blob/v4.0.4/playbooks/trusted_build/files/openssl-3.0.9.cnf) guarantees this.
 
 ## Authentication vs. Encryption
 
