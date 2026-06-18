@@ -12,7 +12,7 @@ The system's provisions for security are detailed in the [system-security-auditi
 
 ## Privacy
 
-The provisions for voter privacy on VxScan are described in [preserving-voter-privacy.md](../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/preserving-voter-privacy.md "mention"). The provisions for voter privacy on VxMarkScan are described in [Broken link](/broken/pages/aCjqkzRflt37c8Qg81IX#voter-privacy "mention").
+The provisions for voter privacy on VxScan are described in [preserving-voter-privacy.md](../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/preserving-voter-privacy.md "mention"). The provisions for voter privacy on VxMarkScan are described in [vxmarkscan-function.md](../system-overview/vxmarkscan-function.md#voter-privacy "mention"). The provisions for voter privacy on VxMark are described in [vxmark-function.md](../system-overview/vxmark-function.md#voter-privacy "mention").
 
 ## Continuity of Operation
 
