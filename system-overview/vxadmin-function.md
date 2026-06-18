@@ -21,7 +21,7 @@ Programming, like authentication, takes place via the laptop's built-in USB card
 For extensive details on the authentication scheme, see the [access control documentation](../system-security-auditing-and-logging/system-security-architecture/access-control.md).
 
 {% hint style="info" %}
-**User Manual Reference:** [Smart Cards and User Roles](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxadmin-system-setup/programming-cards "mention")
+**User Manual Reference:** [Smart Cards and User Roles](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxadmin-system-setup/programming-cards "mention")
 {% endhint %}
 
 ## USB Formatting
@@ -33,7 +33,7 @@ VxAdmin includes a utility to format USB drives to be compatible with the system
 Improperly formatted USB drives can only be detected and reformatted if there is _some_ partition already existing, so a USB drive without any partitions cannot be reformatted using VxAdmin.
 
 {% hint style="info" %}
-**User Manual Reference:** [USB Formatting](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxadmin-system-setup/usb-formatting "mention")
+**User Manual Reference:** [USB Formatting](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxadmin-system-setup/usb-formatting "mention")
 {% endhint %}
 
 ## CVR Management
@@ -55,7 +55,7 @@ If an error is found when loading any single CVR in a CVR export, the entire exp
 VxAdmin allows loading CVR exports that have already been partially loaded. For example, imagine that VxCentralScan exports CVRs after scanning 5 ballots and then again after scanning 10 ballots. If we first load the 5 CVR export and then the 10 CVR export, the 10 CVR export will successfully load but will ignore the CVRs that have already been imported.
 
 {% hint style="info" %}
-**User Manual Reference:** [Tally Results](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/election-night-guides/tally-results "mention")
+**User Manual Reference:** [Tally Results](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-night-guides/tally-results "mention")
 {% endhint %}
 
 ### Ballot Mode
@@ -100,7 +100,7 @@ If `areWriteInCandidatesQualified` is true, then adjudicators can only allocate 
 If `areWriteInCandidatesQualified` is false, write-in candidates are added on an ad hoc basis. The adjudicator has the option to add a new unofficial write-in candidate or select any previously added unofficial write-in candidate. The adjudicator may also adjudicate the write-in as "Invalid" or, in jurisdictions that allow it, for an official candidate that is already on the ballot. In open write-in mode, unofficial write-ins only appear on tally reports if they have a winning vote total.
 
 {% hint style="info" %}
-**User Manual Reference:** [Adjudication](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/election-night-guides/adjudication "mention")
+**User Manual Reference:** [Adjudication](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-night-guides/adjudication "mention")
 {% endhint %}
 
 ## Manual Tallies
@@ -122,7 +122,7 @@ In most cases, the ballot count will be the same across all contests. In some ju
 Unofficial write-in candidates can also be allocated votes in manual tallies and new unofficial write-in candidates can be added directly from the manual tallies interface.
 
 {% hint style="info" %}
-**User Manual Reference**: [Manual Tallies](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/election-night-guides/manual-tallies "mention")
+**User Manual Reference**: [Manual Tallies](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-night-guides/manual-tallies "mention")
 {% endhint %}
 
 ## Tallying & Reports
@@ -180,7 +180,7 @@ The final step is for the VxAdmin backend to format the vote tallies into one of
 If `electionDayPollsCloseTime` and `disallowVxAdminTabulationBeforeElectionDayPollsCloseTime` are both set, the application will prevent generating reports until after the polls close time. In test mode, the same restriction does not apply. The behavior must vary between official and test mode because testing happens before election day.
 
 {% hint style="info" %}
-**User Manual Reference:** [Reports](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/election-night-guides/reports "mention")
+**User Manual Reference:** [Reports](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-night-guides/reports "mention")
 {% endhint %}
 
 ### Ballot Count Tallying
