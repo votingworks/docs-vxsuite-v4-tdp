@@ -22,7 +22,7 @@ The `paperSize` attribute accepts the following valid options:
 
 {% code fullWidth="false" %}
 ```
-letter, legal, custom-8.5x17, custom-8.5x18, custom-8.5x21, custom-8.5x22
+letter, legal, custom-8.5x17, custom-8.5x18, custom-8.5x19, custom-8.5x20, custom-8.5x22
 ```
 {% endcode %}
 
@@ -32,14 +32,14 @@ The `metadataEncoding` attribute must be "qr-code".
 
 Each ballot style corresponds to a single- or multi-sheet ballot. The contests on a ballot style are determined by its associated districts - every contest belonging to an associated district is considered a part of the ballot style. A ballot style may be used in multiple precincts, one ballot style might correspond to multiple ballot PDFs that have identical contest layouts but different precinct labels.
 
-<table><thead><tr><th width="154.33333333333331">Attribute</th><th width="248.0703125">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>precincts</code></td><td><code>array</code> - IDs for <a href="vxsuite-election-definition.md#precinct">Precinct</a></td><td>The IDs of all precincts which use the ballot style</td></tr><tr><td><code>districts</code></td><td><code>array</code> - IDs for <a href="vxsuite-election-definition.md#district">District</a></td><td>The IDs of all districts whose contests are included in the ballot style</td></tr><tr><td><code>partyId</code></td><td><code>string</code> - ID for <a href="vxsuite-election-definition.md#party">Party</a></td><td>Optional. The ID of the party to which the ballot belongs, if a primary</td></tr><tr><td><code>languages</code></td><td><code>array</code> - <code>string</code></td><td>Optional. The language codes for the languages covered by the ballot style</td></tr><tr><td><code>orderedCandidatesByContest</code></td><td><code>map &#x3C;string, array</code> - <code>OrderedCandidateOption></code></td><td><p>Optional. A mapping from contest ID for candidate contests in the ballot style to an ordered list of candidate options that specify the ballot rotation order of candidates for this ballot style. If not specified, candidates will be listed in the order they are defined in the contest object. </p><p></p><p><code>OrderedCandidateOption</code> is specified in more detail in the table below.<br></p></td></tr></tbody></table>
+<table><thead><tr><th width="154.33333333333331">Attribute</th><th width="248.0703125">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>groupId</code></td><td><code>string</code></td><td>Identifier grouping ballot styles that are identical except for language</td></tr><tr><td><code>precincts</code></td><td><code>array</code> - IDs for <a href="vxsuite-election-definition.md#precinct">Precinct</a></td><td>The IDs of all precincts which use the ballot style</td></tr><tr><td><code>districts</code></td><td><code>array</code> - IDs for <a href="vxsuite-election-definition.md#district">District</a></td><td>The IDs of all districts whose contests are included in the ballot style</td></tr><tr><td><code>partyId</code></td><td><code>string</code> - ID for <a href="vxsuite-election-definition.md#party">Party</a></td><td>Optional. The ID of the party to which the ballot belongs, if a primary</td></tr><tr><td><code>languages</code></td><td><code>array</code> - <code>string</code></td><td>Optional. The language codes for the languages covered by the ballot style</td></tr><tr><td><code>orderedCandidatesByContest</code></td><td><code>map &#x3C;string, array</code> - <code>OrderedCandidateOption></code></td><td><p>Optional. A mapping from contest ID for candidate contests in the ballot style to an ordered list of candidate options that specify the ballot rotation order of candidates for this ballot style. If not specified, candidates will be listed in the order they are defined in the contest object. </p><p></p><p><code>OrderedCandidateOption</code> is specified in more detail in the table below.<br></p></td></tr></tbody></table>
 
 #### OrderedCandidateOption
 
 | Attribute  | Type               | Description                                         |
 | ---------- | ------------------ | --------------------------------------------------- |
 | `id`       | `string`           | Candidate ID                                        |
-| `partyIds` | `array` - `string` | Endorsement party IDs for the giving bubble option. |
+| `partyIds` | `array` - `string` | Endorsement party IDs for the given bubble option. |
 
 A cross-party endorsed candidate may have multiple candidate options associated with the same `id` , but different `partyIds`.&#x20;
 
@@ -97,7 +97,7 @@ Districts are used to define levels at which a contest takes place. For example,
 
 ### Party
 
-Parties are used in the data model either to associate candidates with a party, associate ballot styles with a party for a primary, associate contests with a party for a primary
+Parties are used in the data model to associate candidates with a party, to associate ballot styles with a party for a primary, and to associate contests with a party for a primary.
 
 <table><thead><tr><th width="203">Attribute</th><th width="229">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>name</code></td><td><code>string</code></td><td>Short name which will appear on the ballot besides candidates e.g. "Republican"</td></tr><tr><td><code>fullName</code></td><td><code>string</code></td><td>Full name which will appear in reports and in the titles of ballots e.g. "Democratic Party"</td></tr><tr><td><code>abbrev</code></td><td><code>string</code></td><td>Abbreviation for a party e.g. "R"</td></tr></tbody></table>
 
@@ -116,7 +116,7 @@ Parties are used in the data model either to associate candidates with a party, 
 | ------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | `id`          | `string`                                                                  | Unique identifier                                                                                                                          |
 | `name`        | `string`                                                                  | Name e.g. "Precinct 45"                                                                                                                    |
-| `districtIds` | `array` - ID for [District](vxsuite-election-definition.md#district)      | Districts to which the precinct belongs. Not present if `splits` is specified, in which case distrit associations are specified per split. |
+| `districtIds` | `array` - ID for [District](vxsuite-election-definition.md#district)      | Districts to which the precinct belongs. Not present if `splits` is specified, in which case district associations are specified per split. |
 | `splits`      | `array` - [Precinct Split](vxsuite-election-definition.md#precinct-split) | Splits within the precinct. Not present if `districtIds` is specified.                                                                     |
 
 ### Precinct Split
@@ -167,6 +167,7 @@ The election-specific `ballotStrings` recognized by the system are the following
 | Party Names           | `partyName`          | key-value pairs, [Party](vxsuite-election-definition.md#party) IDs mapped to their short names                      |
 | Polling Place Names   | `pollingPlaceName`   | key-value pairs, [Polling Place](vxsuite-election-definition.md#polling-place) IDs mapped to names                  |
 | Precinct Names        | `precinctName`       | key-value pairs, [Precinct](vxsuite-election-definition.md#precinct) IDs mapped to names                            |
+| Precinct Split Names  | `precinctSplitName`  | key-value pairs, [Precinct Split](vxsuite-election-definition.md#precinct-split) IDs mapped to names                |
 | State Name            | `stateName`          | `string`                                                                                                            |
 
 ### Example
@@ -176,9 +177,9 @@ The election-specific `ballotStrings` recognized by the system are the following
   "ballotStrings": {
     "en": {
        ...
-      "candidateNames": {
+      "candidateName": {
          "john-doe": "John Doe",
-         "jane-doe": "Jane Doe".
+         "jane-doe": "Jane Doe",
          ...
       },
       "electionTitle": "General Election",
@@ -187,9 +188,9 @@ The election-specific `ballotStrings` recognized by the system are the following
     }
     "es-US": {
       ...
-      "candidateNames": {
+      "candidateName": {
          "john-doe": "John Doe",
-         "jane-doe": "Jane Doe".
+         "jane-doe": "Jane Doe",
          ...
       },
       "electionTitle": "Elecciones generales",
@@ -239,4 +240,4 @@ In some jurisdictions, a write-in can only be counted if the associated bubble i
 
 ## Examples
 
-Election definition examples are located in the `vxsuite` repository, such as [here](https://github.com/votingworks/vxsuite/blob/v4.0.2/libs/hmpb/fixtures/vx-general-election/letter/election.json).
+Election definition examples are located in the `vxsuite` repository, such as [here](https://github.com/votingworks/vxsuite/blob/v4.0.7/libs/hmpb/fixtures/vx-general-election/letter/election.json).
