@@ -201,7 +201,7 @@ The election-specific `ballotStrings` recognized by the system are the following
 }
 ```
 
-The language codes used are the [IETF language tags](https://www.w3.org/International/articles/language-tags/) for supported VxSuite languages: English, Spanish, Simplified Chinese, and Traditional Chinese.
+The language codes used are [IETF language tags](https://www.w3.org/International/articles/language-tags/).
 
 ## Grid Layouts
 
