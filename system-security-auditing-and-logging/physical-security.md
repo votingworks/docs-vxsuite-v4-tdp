@@ -2,21 +2,14 @@
 
 In addition to the processes in [procedural-and-operational-security.md](procedural-and-operational-security.md "mention"), VxSuite employs the following physical security controls for each component.
 
-## VxAdmin & VxPrint
+## VxAdmin, VxCentralScan & VxPrint
 
-VxAdmin and VxPrint use the same laptop and printer hardware and share the same physical security controls.
+VxAdmin, VxCentralScan, and VxPrint use the same laptop hardware and share the same physical security controls.
 
-* VxAdmin and VxPrint laptops are stored and transported in a case with two tamper-evident seal points to detect any unauthorized physical access.
-* VxAdmin and VxPrint laptops have a tamper evident adhesive seal on the laptop itself to detect any unauthorized physical access to the laptop internals.
-* VxAdmin and VxPrint laptops' BIOS configurations do not allow the machine to boot if the laptop itself is opened without entering a vendor-only password & returning the device to VotingWorks.
-* VxAdmin and VxPrint have no exposed ports that are not used for voting system operations. Their printers have an ethernet port blocker installed.
-
-## VxCentralScan
-
-* VxCentralScan laptops are stored and transported in a case with two tamper-evident seal points to detect any unauthorized physical access.
-* VxCentralScan laptops have a tamper evident adhesive seal on the laptop itself to detect any unauthorized physical access to the laptop internals.
-* VxCentralScan laptops BIOS configurations do not allow the machine to boot if the laptop itself is opened without entering a vendor-only password & returning the device to VotingWorks.
-* VxCentralScan has no exposed ports that are not used for voting system operations. VxCentralScan's attached batch-scanner (fi-8170) has an ethernet port blocker installed.
+* VxAdmin, VxCentralScan, and VxPrint laptops are stored and transported in a case with two tamper-evident seal points to detect any unauthorized physical access.
+* VxAdmin, VxCentralScan, and VxPrint laptops have a tamper evident adhesive seal on the laptop itself to detect any unauthorized physical access to the laptop internals.
+* VxAdmin, VxCentralScan, and VxPrint laptops' BIOS configurations do not allow the machine to boot if the laptop itself is opened without entering a vendor-only password & returning the device to VotingWorks.
+* VxAdmin, VxCentralScan, and VxPrint have no exposed ports that are not used for voting system operations. The VxAdmin and VxPrint printers and the VxCentralScan batch scanner each have an ethernet port blocker installed.
 
 ## VxScan
 
