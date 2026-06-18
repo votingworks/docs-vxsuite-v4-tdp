@@ -1,6 +1,6 @@
 # System Overview
 
-<figure><img src=".gitbook/assets/TDP Diagrams - 4.1 (1).png" alt=""><figcaption><p>Top level system diagram</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (114).png" alt=""><figcaption><p>Top-level system diagram</p></figcaption></figure>
 
 The VotingWorks voting system (a.k.a. **VxSuite**) consists of six primary components:
 
@@ -13,13 +13,13 @@ The VotingWorks voting system (a.k.a. **VxSuite**) consists of six primary compo
 
 Voters mark paper [bubble ballots](system-overview/hand-marked-ballots.md) (pre-printed or printed on VxPrint) by hand or use ballot marking devices (VxMark & VxMarkScan) to mark and print ballots. Ballots are read and counted by tabulating devices (VxScan & VxCentralScan), which create [cast vote records](system-overview/cast-vote-records.md) for adjudication and aggregation on VxAdmin. VotingWorks considers read and counted ballots as the same.
 
-An election begins with generating an [election package](system-overview/election-package/) and [hand marked ballots ](system-overview/hand-marked-ballots.md)using an external system.
+An election begins with generating an [election package](system-overview/election-package/) and [bubble ballots](system-overview/hand-marked-ballots.md) using an external system.
 
 ## VxAdmin
 
 VxAdmin is where the election administrator performs election setup tasks and manages election results. At the beginning of an election, the user configures VxAdmin with an [election package](system-overview/election-package/). Once configured, VxAdmin is used for two key election setup tasks:
 
-* Exporting a copy of the election package to USB drives with a [digital signature](system-security-auditing-and-logging/system-security-architecture/artifact-authentication/). The election package is used to configure VxMark, VxMarkScan, VxPrint, VxScan, and VxCentralScan, and it _must_ be digitally signed by VxAdmin.
+* Exporting a copy of the election package to USB drives with a [digital signature](system-security-auditing-and-logging/system-security-architecture/artifact-authentication/). The election package is used to configure VxMark, VxMarkScan, VxPrint, VxScan, and VxCentralScan, and it **must** be digitally signed by VxAdmin.
 * Programming [role-based smart cards](system-overview/user-roles.md) that will be used to authenticate on all machines. While the "System Administrator" role is election-agnostic, the "Election Manager" and "Poll Worker" roles are election-specific and cards must be programmed for every election.
 
 VxAdmin is later used to load, store, and aggregate cast vote records from the scanners. The results are available for review or export in [several results formats](system-overview/vxadmin-results-exports/). Election administrators can mark results as official, after which no new results can be added.
@@ -44,14 +44,14 @@ The following output modes are supported:
 
 The voter can also adjust the language based on translations included in the election package.
 
-After the voter finishes their vote selections, VxMark prints a machine marked ballot on the attached printer. Depending on the jurisdiction's system settings, the printed ballot may be a [bubble ballot](system-overview/hand-marked-ballots.md) or a [summary ballot](system-overview/machine-marked-ballots.md). After reviewing the ballot and confirming their selections, the voter takes their ballot and casts it on VxScan, the precinct tabulator, or inserts their ballot into a ballot box.
+After the voter finishes their vote selections, VxMark prints a machine marked ballot via the connected COTS printer. Depending on the jurisdiction's system settings, the printed ballot may be a [bubble ballot](system-overview/hand-marked-ballots.md) or a [summary ballot](system-overview/machine-marked-ballots.md). After reviewing the ballot and confirming their selections, the voter takes their ballot and casts it on VxScan, the precinct tabulator, or inserts their ballot into a ballot box.
 
-* [vxmarkscan-function.md](system-overview/vxmarkscan-function.md "mention")
-* [vxmarkscan-hardware.md](system-overview/vxmarkscan-hardware.md "mention")
+* [vxmark-function.md](system-overview/vxmark-function.md "mention")
+* [vxmark-hardware.md](system-overview/vxmark-hardware.md "mention")
 
 ## VxMarkScan
 
-VxMarkScan is the system's ballot-marking device (BMD) that provides an accessible voting experience. At the beginning of an election, it is configured with an [election package](system-overview/election-package/) from VxAdmin. Once configured, a voter can make vote selections in various interaction modes according to their needs.
+VxMarkScan is the system's free-standing ballot-marking device (BMD) that provides an accessible voting experience. At the beginning of an election, it is configured with an [election package](system-overview/election-package/) from VxAdmin. Once configured, a voter can make vote selections in various interaction modes according to their needs.
 
 The following input modes are supported:
 
@@ -77,9 +77,9 @@ VxScan is the system's precinct scanner. At the beginning of an election, it is 
 
 Voters cast ballots by inserting their ballots into the scanner in any orientation. After interpreting the scanned ballot, the scanner will drop the ballot into the ballot box and inform the voter that their ballot was successfully cast. During voting, VxScan continuously exports [cast vote records](system-overview/cast-vote-records.md) to an attached USB drive.
 
-If the election is [configured to support second-chance voting](broken-reference/) and the ballot triggers a configured adjudication reason (e.g. it has an overvote), the scanner will hold the ballot while the voter is notified of the issues on their ballot. The voter then chooses whether to cast their ballot or return it to update or spoil.
+If the election is configured to support second-chance voting and the ballot triggers a configured adjudication reason (e.g. it has an overvote), the scanner will hold the ballot while the voter is notified of the issues on their ballot. The voter then chooses whether to cast their ballot or return their ballot in order to update or spoil it.
 
-When polls are closed, the CVR export is completed and a [polls closed report ](system-overview/vxscan-polls-reports.md)prints. The polls closed report includes the vote tallies of all ballots cast at the scanner while polls were open. Unlike the vote tallies eventually exported from VxAdmin, the vote tallies at VxScan do not contain any post-voting adjudication information such as write-in adjudication. The CVR export on the USB drive is then taken to VxAdmin for adjudication, aggregation, and reporting.
+When polls are closed, the CVR export is completed and a [polls closed report](system-overview/vxscan-polls-reports.md) prints. The polls closed report includes the vote tallies of all ballots cast at the scanner while polls were open. Unlike the vote tallies eventually exported from VxAdmin, the vote tallies at VxScan do not contain any post-voting adjudication information such as write-in adjudication. The CVR export on the USB drive is then taken to VxAdmin for adjudication, aggregation, and reporting.
 
 * [vxscan-function.md](system-overview/vxscan-function.md "mention")
 * [vxscan-hardware.md](system-overview/vxscan-hardware.md "mention")
@@ -88,7 +88,7 @@ When polls are closed, the CVR export is completed and a [polls closed report ](
 
 VxCentralScan is the system's batch scanner, often used to scan absentee or provisional ballots. At the beginning of an election, it is configured with an [election package](system-overview/election-package/) from VxAdmin. The election package specifies the ballot layouts.
 
-Ballots are inserted in the batch scanner's hopper and a batch scan is triggered from VxCentralScan. The ballots are scanned and interpreted in succession until the hopper is empty. If a ballot triggers a configured adjudication reason (e.g. it has an overvote), scanning will pause and the ballot will be displayed on screen, at which point the user can choose to tabulate the ballot anyway or remove it, untabulated.
+Ballots are inserted in the batch scanner's hopper and a batch scan is triggered from VxCentralScan. The ballots are scanned and interpreted in succession until the hopper is empty. If a ballot triggers a configured adjudication reason (e.g. it has an overvote), scanning will pause and the ballot will be displayed on screen, at which point the user can choose to tabulate the ballot anyway or remove it without tabulating.
 
 After scanning is complete, the user can export the [cast vote records](system-overview/cast-vote-records.md) to a USB drive and take the USB drive to VxAdmin for adjudication, aggregation, and reporting.
 
@@ -103,9 +103,9 @@ VxPrint is the ballot-on-demand component for VxSuite. VxPrint is used by poll w
 2. Printing ballots on demand at a precinct on election day in a jurisdiction where all or most ballots are on demand;
 3. Printing moderate quantities of ballots in advance of an election, as needed, to supplement third-party printed ballots. In smaller jurisdictions, for example, VxPrint may be used to print absentee ballots while the larger quantities of election day ballots are printed by a third-party printer.
 
-VxPrint tracks the quantities printed for each ballot style and allows the user to view and export a ballots printed report at any time.
+VxPrint tracks the quantities printed for each ballot style and allows the user to view and export a "Ballots Printed Report" at any time.
 
-VxPrint consists of two main pieces of hardware - a commercial off-the-shelf laptop and laser printer. The laser printer is capable of printing any ballot from 11" to 22", which is the maximum length supported by the system.
+VxPrint consists of two main pieces of hardware - a commercial off-the-shelf laptop and laser printer. The laser printer is capable of printing any ballot from 11" to 22" long, which is the maximum length supported by the system.
 
-* [vxcentralscan-function.md](system-overview/vxcentralscan-function.md "mention")
+* \[PLACEHOLDER]
 * [vxadmin-and-vxcentralscan-hardware.md](system-overview/vxadmin-and-vxcentralscan-hardware.md "mention")
