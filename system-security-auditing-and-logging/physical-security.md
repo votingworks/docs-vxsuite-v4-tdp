@@ -2,12 +2,14 @@
 
 In addition to the processes in [procedural-and-operational-security.md](procedural-and-operational-security.md "mention"), VxSuite employs the following physical security controls for each component.
 
-## VxAdmin
+## VxAdmin & VxPrint
 
-* VxAdmin laptops are stored and transported in a case with two tamper-evident seal points to detect any unauthorized physical access.
-* VxAdmin laptops have a tamper evident adhesive seal on the laptop itself to detect any unauthorized physical access to the laptop internals.
-* VxAdmin laptops BIOS configurations do not allow the machine to boot if the laptop itself is opened without entering a vendor-only password & returning the device to VotingWorks.
-* VxAdmin has no exposed ports that are not used for voting system operations. VxAdmin's printer has an ethernet port blocker installed.
+VxAdmin and VxPrint use the same laptop and printer hardware and share the same physical security controls.
+
+* VxAdmin and VxPrint laptops are stored and transported in a case with two tamper-evident seal points to detect any unauthorized physical access.
+* VxAdmin and VxPrint laptops have a tamper evident adhesive seal on the laptop itself to detect any unauthorized physical access to the laptop internals.
+* VxAdmin and VxPrint laptops' BIOS configurations do not allow the machine to boot if the laptop itself is opened without entering a vendor-only password & returning the device to VotingWorks.
+* VxAdmin and VxPrint have no exposed ports that are not used for voting system operations. Their printers have an ethernet port blocker installed.
 
 ## VxCentralScan
 
@@ -24,6 +26,12 @@ In addition to the processes in [procedural-and-operational-security.md](procedu
 * VxScan's ballot box has a seal point for each ballot storage area (main & auxiliary compartments) to detect any unauthorized access to cast ballots.
 * VxScan triggers a visual & audible alert when a USB drive is removed in an activated state to alert any unauthorized access.
 * VxScan has no USB or data ports exposed when the poll worker door is sealed. Two 3.5 mm audio jacks on the front of the case provide headphone output and PAT input for voter accessibility. These jacks carry only analog audio and switch signals and do not provide access to system data or configuration.
+
+## VxMark
+
+* VxMark is stored and transported in a case that is sealed on the exterior with tamper-evident seal points to detect any unauthorized physical access.
+* VxMark has two interior adhesive tamper-evident seals on its panels to detect any unauthorized access to the device internals.
+* When VxMark is in use, a seal is placed on the slider covering the USB port to detect any unauthorized access to the port.
 
 ## VxMarkScan
 
