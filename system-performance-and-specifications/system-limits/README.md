@@ -44,7 +44,7 @@
 * Ballot tabulation rate depends on election content / ballot length. A typical 11" ballot sheet is scanned and tabulated in 3 seconds.
 * An user can feed a ballot sheet every 10 seconds. At that feeding rate, the maximum tabulation rate is 360 sheets per hour.
 
-### Hand Marked Paper Ballots
+### Bubble Ballots
 
 In addition to the design requirements specified in [hand-marked-ballots.md](../../system-overview/hand-marked-ballots.md "mention"), ballots are constrained by the following limits.
 
