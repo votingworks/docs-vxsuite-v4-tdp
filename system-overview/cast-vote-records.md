@@ -59,7 +59,7 @@ In addition, there is a metadata file that applies to the entire export at the r
 
 #### CVR UUIDs
 
-The v4 UUID (universally unique identifier) for each cast vote record is generated when the ballot information is first stored in the database in VxScan or VxCentralScan. It is generated with the node package `uuid` which uses the system's underlying FIPS-complaint OpenSSL implementation to generated random bytes.
+The v4 UUID (universally unique identifier) for each cast vote record is generated when the ballot information is first stored in the database in VxScan or VxCentralScan. It is generated with the node package `uuid` which uses the system's underlying FIPS-compliant OpenSSL implementation to generate random bytes.
 
 ### Rejected Ballots
 
@@ -78,7 +78,7 @@ Images of rejected ballots are also included in the cast vote record export. The
 
 ### CDF Implementation
 
-VxSuite does not use any data extensions beyond the NIST specification, but some fields are made required that are not required in the original NIST specification. The two specifications can be compared by comparing the [NIST JSON schema](https://github.com/usnistgov/CastVoteRecords/blob/master/NIST_V0_cast_vote_records.json) with the [VxSuite JSON schema](https://github.com/votingworks/vxsuite/blob/v4.0.2/libs/types/src/cdf/cast-vote-records/vx-schema.json). The additionally required fields are listed in a table below.
+VxSuite does not use any data extensions beyond the NIST specification, but some fields are made required that are not required in the original NIST specification. The two specifications can be compared by comparing the [NIST JSON schema](https://github.com/usnistgov/CastVoteRecords/blob/master/NIST_V0_cast_vote_records.json) with the [VxSuite JSON schema](https://github.com/votingworks/vxsuite/blob/v4.0.7/libs/types/src/cdf/cast-vote-records/vx-schema.json). The additionally required fields are listed in a table below.
 
 Because VxAdmin requires a VxSuite digital signature on all imported cast vote records, it's not possible to import a cast vote record from outside of VxSuite. The goal of using CDF is to help external systems consume VxSuite cast vote records for audit or analysis.
 
@@ -141,7 +141,7 @@ For bubble ballots, there are both "original" and "interpreted" snapshots. The "
 
 For summary ballots, there is only an "original" snapshot.
 
-The snapshot is referenced in the `CVR.CurrentSnapshotId` field by it's identifier, which will be the unique identifier of the cast vote record along with its type, such as&#x20;
+The snapshot is referenced in the `CVR.CurrentSnapshotId` field by its identifier, which will be the unique identifier of the cast vote record along with its type, such as&#x20;
 
 ```
 864a2854-ee26-4223-8097-9633b7bed096-interpreted
@@ -168,17 +168,17 @@ Ballot images are `.jpg` files. They are included in the cast vote record in ord
 
 ## Ballot Layouts
 
-Ballot layouts are JSON files which describe the discovered position of ballot content within interpreted ballots, including where each contest and contest option appears. Although the layout of ballot content within the ballot grid is specified by the election definition, the ballot content may be positioned in a slightly differently location in each scanned ballot image due to offset or skew of the ballot during scanning. As a result, the layouts are included in order to have accurate image highlights and crops for adjudication.
+Ballot layouts are JSON files which describe the discovered position of ballot content within interpreted ballots, including where each contest and contest option appears. Although the layout of ballot content within the ballot grid is specified by the election definition, the ballot content may be positioned in a slightly different location in each scanned ballot image due to offset or skew of the ballot during scanning. As a result, the layouts are included in order to have accurate image highlights and crops for adjudication.
 
 ## Export Metadata
 
 The metadata file includes data that applies to all cast vote records in the export. There is only one per export. The relevant attributes are:
 
-<table><thead><tr><th width="301">Attribute</th><th>Usage</th></tr></thead><tbody><tr><td>arePollsClosed</td><td>For VxScan exports, the flag indicates whether polls where closed at the time of export. If polls were not closed, that may indicate an incomplete export</td></tr><tr><td>castVoteRecordReportMetadata</td><td>The <a href="cast-vote-records.md#cast-vote-record-report">cast vote record report</a> without any specific cast vote record data. In other words, only data about the election and its contests</td></tr><tr><td>castVoteRecordRootHash</td><td>A hash of all cast vote record files in the export. Including the hash here, which rolls up into the digital signature, ensures that cast vote records cannot be added or removed from the export</td></tr><tr><td>batchManifest</td><td>The list of batches on the originating scanner, see below</td></tr></tbody></table>
+<table><thead><tr><th width="301">Attribute</th><th>Usage</th></tr></thead><tbody><tr><td>arePollsClosed</td><td>For VxScan exports, the flag indicates whether polls were closed at the time of export. If polls were not closed, that may indicate an incomplete export</td></tr><tr><td>castVoteRecordReportMetadata</td><td>The <a href="cast-vote-records.md#cast-vote-record-report">cast vote record report</a> without any specific cast vote record data. In other words, only data about the election and its contests</td></tr><tr><td>castVoteRecordRootHash</td><td>A hash of all cast vote record files in the export. Including the hash here, which rolls up into the digital signature, ensures that cast vote records cannot be added or removed from the export</td></tr><tr><td>batchManifest</td><td>The list of batches on the originating scanner, see below</td></tr></tbody></table>
 
 ### Batch Manifest
 
 Each cast vote record is associated with a batch via its `BatchId` metadata field. The CDF doesn't have a place within the cast vote record report to include batch metadata, so it is included here.
 
-<table><thead><tr><th width="231">Attribute</th><th>Usage</th></tr></thead><tbody><tr><td>id</td><td>The UUID of the batch generated by the scanner</td></tr><tr><td>label</td><td>The label for the batch</td></tr><tr><td>batchNumber</td><td>The sequential number of the batch, e.g. 2 for the second batch</td></tr><tr><td>startTime</td><td>The time a batch was started in ISO 8601 format</td></tr><tr><td>endTime</td><td>The time a batch ended in ISO 8601 format</td></tr><tr><td>sheetCount</td><td>The number of sheets (i.e. cast vote records) in a batch</td></tr><tr><td>scannerId</td><td>The serial number of the scanner</td></tr><tr><td>pollingPlaceId</td><td>The UUID of the batch's polling place.</td></tr></tbody></table>
+<table><thead><tr><th width="231">Attribute</th><th>Usage</th></tr></thead><tbody><tr><td>id</td><td>The UUID of the batch generated by the scanner</td></tr><tr><td>label</td><td>The label for the batch</td></tr><tr><td>batchNumber</td><td>The sequential number of the batch, e.g. 2 for the second batch</td></tr><tr><td>startTime</td><td>The time a batch was started in ISO 8601 format</td></tr><tr><td>endTime</td><td>The time a batch ended in ISO 8601 format</td></tr><tr><td>sheetCount</td><td>The number of sheets (i.e. cast vote records) in a batch</td></tr><tr><td>scannerId</td><td>The serial number of the scanner</td></tr><tr><td>ballotCastingMode</td><td>The casting mode of the batch, either "early_voting" or "election_day". Optional.</td></tr><tr><td>pollingPlaceId</td><td>The UUID of the batch's polling place.</td></tr></tbody></table>
 

@@ -8,7 +8,7 @@ The poll worker role is the lowest privilege role for election day tasks at the 
 
 The poll worker role allows a user to manage the polls on the polling place equipment, VxScan and VxMarkScan. On both devices, the poll worker card is used to open and close polls on election day. On VxMarkScan, the poll worker card is used to enable voter sessions. There are a few other actions enabled by the poll worker card - reprinting reports, powering down the machine, or checking the software hash - but overall the role is quite limited.
 
-All poll worker cards are programmed at VxAdmin and are programmed for a specific election. They must be reprogrammed for every election. Poll worker cards may or may not require PINs depending on the value of `arePollWorkerCardPinsEnabled` flag in the system settings file within the election package.
+All poll worker cards are programmed at VxAdmin and are programmed for a specific election. They must be reprogrammed for every election. Poll worker cards may or may not require PINs depending on the value of the `arePollWorkerCardPinsEnabled` flag in the system settings file within the election package.
 
 The poll worker role has no purpose on the central equipment, VxAdmin and VxCentralScan, and poll worker cards will be ignored on those devices.
 
@@ -20,7 +20,7 @@ On the polling place equipment, an election manager card is used to configure th
 
 On the central equipment, an election manager card is used to access core election management features. On VxAdmin, it is used to load, adjudicate, review, and export results. On VxCentralScan, it is used to operate the scanner and export results.
 
-All election manager cards are programmed at VxAdmin and are programmed for a specific election. They must be reprogrammed for every election. They alway have PINs, which change after reprogramming the cards for a new election.
+All election manager cards are programmed at VxAdmin and are programmed for a specific election. They must be reprogrammed for every election. They always have PINs, which change after reprogramming the cards for a new election.
 
 ## System Administrator Role
 

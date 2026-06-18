@@ -2,13 +2,13 @@
 
 This risk assessment reviews threats and vulnerabilities identified in:
 
-* VxSuite hardware, including VxCentralScan, VxAdmin, vxMark, and VxScan. Also included are any items and peripherals needed to operate the equipment listed above (e.g., USB drives, scanners, printers).
+* VxSuite hardware, including VxAdmin, VxCentralScan, VxMark, VxMarkScan, VxScan, and VxPrint. Also included are any items and peripherals needed to operate the equipment listed above (e.g., USB drives, scanners, printers).
 * VxSuite software and source code
 * VotingWorks internal communication and operation support systems.
 
 This assessment was conducted following the framework outlined in NIST Special Publication 800-30 - Guide for Conducting Risk assessments.
 
-For additional information on how physical, technical, and operational controls work together to meet the requirements of **VVSG 14.1-C.1-4,** please refer to , specifically:
+For additional information on how physical, technical, and operational controls work together to meet the requirements of **VVSG 14.1-C.1-4,** please refer to the following:
 
 * [access-control.md](system-security-architecture/access-control.md "mention")
 * [artifact-authentication](system-security-architecture/artifact-authentication/ "mention")

@@ -29,13 +29,13 @@ VxSuite can tabulate a wide variety of ballot designs as long as they conform to
 2. Ballot must include correctly formatted timing mark borders
 3. Ballot must include an appropriately positioned metadata QR code
 4. Ballot must use a specific bubble shape
-5. Ballot must adhere to [system limits](../system-performance-and-specifications/system-limits/#hand-marked-paper-ballots)
+5. Ballot must adhere to [system limits](../system-performance-and-specifications/system-limits/#bubble-ballots)
 
 ## Ballot Size
 
 All supported ballot sizes are 8.5 inches in width, but vary in height as specified in [paper-ballot-specifications.md](../system-performance-and-specifications/paper-ballot-specifications.md "mention").
 
-These lengths correspond to the length specified in the [Ballot Layout](hand-marked-ballots.md) within the election definition.
+These lengths correspond to the length specified in the [Ballot Layout](election-package/vxsuite-election-definition.md#ballot-layout) within the election definition.
 
 ## Timing Mark Borders
 
@@ -50,7 +50,7 @@ Every ballot must have timing mark borders on both front and back. The timing ma
 | Page Margin (Top, Bottom) | 12pt (1/6 in.) |
 | Page Margin (Left, Right) | 5mm            |
 
-As for number of timing marks, there are always 34 in the top and bottom borders, which has a 32 x 39 grid of possible bubble positions inside the timing mark border. The number of marks in the left and right borders varies based on the length of the ballot, and should be calculated by the formula **(# inches \* 4) - 3**. For example, a letter-sized ballot (11 inches) should have 41 left and right timing marks whereas a legal-sized ballot (14 inches) should have 53 left and right timing marks.
+As for number of timing marks, there are always 34 in the top and bottom borders, yielding a grid that is always 32 bubble positions wide. The number of rows depends on the ballot length; for example, a letter-sized ballot has a 32 x 39 grid of possible bubble positions inside the timing mark border. The number of marks in the left and right borders varies based on the length of the ballot, and should be calculated by the formula **(# inches \* 4) - 3**. For example, a letter-sized ballot (11 inches) should have 41 left and right timing marks whereas a legal-sized ballot (14 inches) should have 53 left and right timing marks.
 
 The timing marks must be aligned to the margins of the page and evenly spaced.
 
@@ -86,7 +86,7 @@ In order to be interpreted correctly, bubbles must meet the following dimensions
 | -------------- | ------------- |
 | Width          | 0.20"         |
 | Height         | 0.13"         |
-| Border Radius  | 0.7"          |
+| Border Radius  | 0.07"         |
 | Line Thickness | 1px (0.265mm) |
 
 <figure><img src="../.gitbook/assets/Screen Shot 2024-09-26 at 11.59.35 AM.png" alt="" width="563"><figcaption><p>Bubble example (not to scale)</p></figcaption></figure>

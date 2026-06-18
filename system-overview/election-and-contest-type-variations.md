@@ -2,7 +2,7 @@
 
 ## Election Types
 
-VxSuite supports general and primary elections. A general election is one in which there is a single ballot style for each geopolitical subdivision, with contests that are not specific to a party. A standard primary election is one in which there is distinct a ballot style per party for each geopolitical subdivision. The primaries run on VxSuite may be either "open" or "closed" depending on how voters procedurally choose their party. The majority of elections run on VxSuite are one of these two types of elections, so the majority of the technical data package and user manual are focused on them.
+VxSuite supports general and primary elections. A general election is one in which there is a single ballot style for each geopolitical subdivision, with contests that are not specific to a party. A standard primary election is one in which there is a distinct ballot style per party for each geopolitical subdivision. The primaries run on VxSuite may be either "open" or "closed" depending on how voters procedurally choose their party. The majority of elections run on VxSuite are one of these two types of elections, so the majority of the technical data package and user manual are focused on them.
 
 There is one additional supported election type, which VotingWorks calls a "consolidated ballot open primary." In a consolidated ballot open primary, there is only one ballot style per geopolitical subdivision, as in a general. Each ballot style contains the races from all parties in the primary, however, and the voter chooses to vote in one of them. Consolidated primary ballots mean that the secret ballot includes the voters' choice of party.
 
@@ -14,7 +14,7 @@ The purpose of this section is to indicate the ways in which consolidated ballot
 
 #### Bubble Ballots & Voter Warnings
 
-Consolidated primary ballots can require voters to indicate their party choice explicitly in a "party preference contest" or require voters to indicate their party by simply voting in that their party's contests. VxSuite does not currently support party preference contests, so the choice of party is always indicated by the votes themselves.
+Consolidated primary ballots can require voters to indicate their party choice explicitly in a "party preference contest" or require voters to indicate their party by simply voting in their party's contests. VxSuite does not currently support party preference contests, so the choice of party is always indicated by the votes themselves.
 
 The voter may only vote in one party's contests. Voting in more than one party's contests is considered **crossover voting** and invalidates all votes in partisan contests. Votes in nonpartisan contests are always counted regardless of crossover voting.
 
@@ -65,7 +65,7 @@ In a "straight party contest", the voter may select no more than one party. For 
 
 #### Tabulation
 
-If the straight party contest is undervoted or overvoted, tabulation for all other contests behaves normally. If there is a valid vote in the straight party contest, then straight party rules are applied to all partisan contests. In the general election context, "partisan contests" are defined as any contest with party-associated candidates. Nonpartisan contests would be ballot measures or nonpartisan candidates races such as many judicial or local races.
+If the straight party contest is undervoted or overvoted, tabulation for all other contests behaves normally. If there is a valid vote in the straight party contest, then straight party rules are applied to all partisan contests. In the general election context, "partisan contests" are defined as any contest with party-associated candidates. Nonpartisan contests would be ballot measures or nonpartisan candidate races such as many judicial or local races.
 
 Jurisdictions tabulate straight party contests in different ways, but the two main ways are "inclusive" and "exclusive" straight party voting. Voters are always allowed to vote directly in partisan races to override their straight party vote. In "exclusive" straight party voting, any direct vote in a partisan candidate contest invalidates the straight party vote for that contest. A contest cannot have both direct and indirect votes. In "inclusive" straight party voting, a direct vote does not necessarily invalidate straight party voting if it's still applicable to the contest. A contest _can_ have both direct and indirect votes. VxSuite currently supports only the "inclusive" style of tabulation for straight party contest.
 

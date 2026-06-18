@@ -4,4 +4,4 @@ The voter turnout report shows the turnout of the election by precinct. The turn
 
 <figure><img src="../../.gitbook/assets/image (111).png" alt="" width="375"><figcaption></figcaption></figure>
 
-The number of registered voters per precinct is pulled from the `registeredVoterCounts.json` in the election package. If the file is not included in the election package, the report will not be available on VxAdmin.
+The number of registered voters per precinct is pulled from the `registeredVotersCounts.json` in the election package. If the file is not included in the election package, the report will not be available on VxAdmin.

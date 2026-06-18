@@ -4,10 +4,10 @@ VxMark is the system's tabletop ballot marking device. It allows all voters to m
 
 ## Configuration
 
-VxMark is configured with a signed [election package](https://docs.voting.works/vxsuite-tdp-v4/system-overview/election-package) exported from VxAdmin. The election definition defines the ballot styles that will be available to voters. The election definition also includes the translations defined for text on the ballot, while the [app strings](https://docs.voting.works/vxsuite-tdp-v4/system-overview/election-package#app-strings) file contains the translations for other text shown on screen. The election package's [audio files](https://docs.voting.works/vxsuite-tdp-v4/system-overview/election-package#audio-ids-and-audio-clips) are played for the voter in audio-mode.
+VxMark is configured with a signed [election package](election-package/#election-definition) exported from VxAdmin. The election definition defines the ballot styles that will be available to voters. The election definition also includes the translations defined for text on the ballot, while the [app strings](election-package/#app-strings) file contains the translations for other text shown on screen. The election package's [audio files](election-package/#audio-ids-and-audio-clips) are played for the voter in audio-mode.
 
 {% hint style="info" %}
-**User Manual Reference:** [VxMarkScan](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmarkscan "mention")
+**User Manual Reference:** [Configure VxMark](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmark/configure-vxmark "mention")
 {% endhint %}
 
 ### Polling Place Selection
@@ -32,18 +32,18 @@ VxMark can be unconfigured by an election manager or system administrator. Uncon
 
 <figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
-After configuration, polls are initially closed. When polls closed, voting is not allowed on VxMark.
+After configuration, polls are initially closed. When polls are closed, voting is not allowed on VxMark.
 
 Poll workers open the polls to allow voting. Once polls are opened, polls can only return to the initial polls closed state while remaining configured by switching between test and official ballot mode.
 
 Poll workers close the polls when voting should no longer be allowed. Polls are closed until VxMark is unconfigured or switched from one ballot mode to another, with one exception discussed below.
 
-VxMark also allows poll workers to pause voting a.k.a. suspend the polls. While voting is paused, no voting sessions can be started. Voting can be resumed, after which the polls are back in the standard polls opened state. Pausing voting might be used in an early voting model between voting days or, in the case of an emergency, to pause voting while the emergency is resolved. The poll worker may chose to close polls directly from voting paused instead of resuming voting.
+VxMark also allows poll workers to pause voting a.k.a. suspend the polls. While voting is paused, no voting sessions can be started. Voting can be resumed, after which the polls are back in the standard polls opened state. Pausing voting might be used in an early voting model between voting days or, in the case of an emergency, to pause voting while the emergency is resolved. The poll worker may choose to close polls directly from voting paused instead of resuming voting.
 
 If the polls have been closed, the only possible way for the polls to be re-opened is if a system administrator resets the polls to paused. Only the system administrator may do this - poll workers and election managers cannot - per the allowance in VVSG 2.0 1.1.7-E. Once polls have been reset to paused by the system administrator, voting may be resumed by a poll worker. The goal of this flow is to allow voting to continue after a poll worker has prematurely closed the polls.
 
 {% hint style="info" %}
-**User Manual Reference:** [Open and Close Polls](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmarkscan/open-and-close-polls "mention")
+**User Manual Reference:** [Open and Close Polls](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmark/open-and-close-polls "mention")
 {% endhint %}
 
 ## Voting Sessions
@@ -52,7 +52,7 @@ When polls are opened, poll workers can enable voting sessions on behalf of vote
 
 The voter navigates through the contests on their ballot style sequentially, with controls to advance to the next contest or go back to the previous contest. The contest information presented to the voter includes the contest title, the contest district, the number of selections allowed, the number of selections remaining, the contest options, the candidates' parties if applicable, and the descriptions of any ballot measures (VVSG 2.0 7.3-C).
 
-Voters may leave contests blank or undervoted. If the voter attempts to mark an overvote, by default, they will be presented a warning and instructed to deselect another selection if they want to make the new selection (VVSG 2.0 7.3-H). Previous selections are never automatically deselected. The system can be configured to allow overvotes, if necessary.
+Voters may leave contests blank or undervoted but are prevented from overvoting contests. If the voter attempts to mark an overvote, they will be presented a warning and instructed to deselect another selection if they want to make the new selection (VVSG 2.0 7.3-H). Previous selections are never automatically deselected.
 
 If the contest allows write-ins, the voter may input a write-in name via a virtual keyboard.
 
@@ -61,7 +61,7 @@ After working through the entire ballot, the voter will then review all their se
 In order to have a voter-verified paper trail, the voter should always review their printed ballot. If they find a mistake in their ballot that they want to correct, they must vote again in a new voting session. The previously printed ballot must be voided or spoiled.
 
 {% hint style="info" %}
-**User Manual Reference**: [https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/voting-sessions](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/voting-sessions "mention")
+**User Manual Reference**: [Voting Sessions](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmark/voting-sessions "mention")
 {% endhint %}
 
 ### Voter Privacy
@@ -73,7 +73,7 @@ The voter's choices do not persist on VxMark after the end of the voting session
 VxMark supports voting sessions in various display formats and interaction modes.
 
 {% hint style="info" %}
-**User Manual Reference:** [Voting Sessions](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmarkscan/voting-sessions "mention")
+**User Manual Reference:** [Voting Sessions](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmark/voting-sessions "mention")
 {% endhint %}
 
 ### Visual and Enhanced Visual Formats
@@ -85,7 +85,7 @@ The voting session begins in visual mode with the following default settings:
 
 The voter can update the **Text Size** to Small, Medium, Large, or Extra-Large, which map to the four discrete text sizes defined in VVSG 2.0 7.1-G. Changing the text size changes the size of all informational elements including buttons, icons, and layout (VVSG 2.0 7.1-H) because all such elements are sized relative to the base font size. The font is always sans-serif (VVSG 2.0 7.1-J).
 
-If there's too much content on a page to fit all on screen at once, which happens most commonly in large or extra-large text size, the interface introduces a large "More" button to indicate there are more contest option to scroll through. The interface never lays out content in a way which requires horizontal scrolling.
+If there's too much content on a page to fit all on screen at once, which happens most commonly in large or extra-large text size, the interface introduces a large "More" button to indicate there are more contest options to scroll through. The interface never lays out content in a way which requires horizontal scrolling.
 
 The voter can update the **Contrast** from medium contrast to low contrast, high contrast with black background, or high contrast with white background corresponding to the contrast options specified in VVSG 2.0 7.1-D. The contrast changes apply to all elements on screen.
 
@@ -105,7 +105,7 @@ Once a voter has used all their votes in a race, the progress button at the bott
 
 Voters usually choose to use the touchscreen to vote. The voter taps buttons to move between contests and through the stages of the voting flow. The voter taps list items on each contest page in order to make selections. Touch areas never overlap and are sized to meet minimums described in VVSG 2.0 7.2-I. Touch areas require that the user's touch begins and ends within the touch area to activate, meaning that dragging a finger across a touch area will not activate the touch area, in order to avoid accidental activation (VVSG 2.0 7.2-H).
 
-When there's more content on a page than can fit on one screen, the voter can scroll through the screen in one of two ways. First, they can tap the "More" button which acts as both the visual indicator that there are more contest options or contests. Second, they can use a swiping motion on the screen to move up or down. Swiping to see more contest options or contests is VxMark's only touch screen gesture. It cannot be used horizontally to navigate between contests or pages and (VVSG 2.0 7.2-E).
+When there's more content on a page than can fit on one screen, the voter can scroll through the screen in one of two ways. First, they can tap the "More" button which acts as both the visual indicator that there are more contest options or contests. Second, they can use a swiping motion on the screen to move up or down. Swiping to see more contest options or contests is VxMark's only touch screen gesture. It cannot be used horizontally to navigate between contests or pages (VVSG 2.0 7.2-E).
 
 ### Audio Tactile Mode - Accessible Controller
 
@@ -119,7 +119,7 @@ The accessible controller works by sending keyboard events to the application. T
 
 VxMark has a PAT (personal assistive technology) input port into which a voter can plug in their own two-switch adaptive input such as a sip-and-puff device. When a PAT input is attached during a voting session, VxMark will enter a calibration flow where the voter will map their two inputs to "move" and "select."
 
-Once calibrated, the voter can use the two inputs to navigate through the ballot. The "move" input advance the focus on screen to the next element and the "select" input is the equivalent of a tap in touch interaction mode. Just as with the accessible controller, the currently focused element on screen is highlighted in visual mode or read aloud in audio mode.
+Once calibrated, the voter can use the two inputs to navigate through the ballot. The "move" input advances the focus on screen to the next element and the "select" input is the equivalent of a tap in touch interaction mode. Just as with the accessible controller, the currently focused element on screen is highlighted in visual mode or read aloud in audio mode.
 
 The PAT input is integrated with the application via an X-keys USB switch. The X-keys device listens to signals from the PAT jack and converts them to keyboard events that are sent to the application. The X-keys behavior is programmed by VotingWorks during production.
 
@@ -156,8 +156,8 @@ If the printed ovals are slightly offset from the bubble, an election manager ca
 
 VxMark prints ballots via an attached printer. The supported printer is the HP LaserJet Pro 4001dn. VxMark can also export reports as PDFs so, in the event of a printer failure, reports will always be available.
 
-VxMark interfaces with the printer through the CUPS, the open-source printing system developed by Apple and installed on our Debian system. When a printer is attached, it is registered with the CUPS server and made available to the application. VxMark is able to send print jobs to the printer via CUPS commands. The HP LaserJet Pro does not require any additional third-party or in-house driver because it supports the IPP (Internet Printing Protocol) which CUPS then utilizes.
+VxMark interfaces with the printer through CUPS, the open-source printing system developed by Apple and installed on our Debian system. When a printer is attached, it is registered with the CUPS server and made available to the application. VxMark is able to send print jobs to the printer via CUPS commands. The HP LaserJet Pro does not require any additional third-party or in-house driver because it supports the IPP (Internet Printing Protocol) which CUPS then utilizes.
 
 Using IPP, the VxMark is also able to poll the detailed status (toner level, jam status, etc.) of the printer for use in the diagnostics interface.
 
-VxMark can only connect with one printer at a time and will always connect with with the first attached printer.
+VxMark can only connect with one printer at a time and will always connect with the first attached printer.

@@ -28,7 +28,7 @@ VotingWorks recommends that blind or low vision users of the central system comp
 
 ### [VotingWorks Pollworker Testing Report VxSuite](https://github.com/votingworks/docs-vxsuite-v4/blob/main/uat-reports/vxsuite-v4-pollworker-testing-report.pdf)
 
-### [VotingWorks UAT Report VxSuite](https://github.com/votingworks/docs-vxsuite-v4/blob/main/uat-reports/vxsuite-v4-pollworker-testing-report.pdf)
+### [VotingWorks UAT Report VxSuite](https://github.com/votingworks/docs-vxsuite-v4/blob/main/uat-reports/vxsuite-v4-uat-report.pdf)
 
 ### [VotingWorks UAT Report VxScan with PAT & Audio Jacks](https://github.com/votingworks/docs-vxsuite-v4/blob/main/uat-reports/vxsuite-v4-uat-report-vxscan-with-jacks.pdf)
 

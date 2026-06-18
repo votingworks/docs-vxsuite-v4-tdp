@@ -48,7 +48,7 @@ In the case of specifying a Spanish translation and overriding the English trans
 
 * Voter-facing strings that appear on ballots (contest names, candidate names, the name of the jurisdiction, etc.) are not included in the app strings file because they are already included in the election definition.
 * The language codes in the app strings file are [IETF language tags](https://www.w3.org/International/articles/language-tags/).
-* The keys for the various user interface app strings (e.g. `buttonStartVoting`) are defined in VxSuite's [app strings catalog](https://github.com/votingworks/vxsuite/blob/v4.0.2/libs/ui/src/ui_strings/app_strings_catalog/latest.json).
+* The keys for the various user interface app strings (e.g. `buttonStartVoting`) are defined in VxSuite's [app strings catalog](https://github.com/votingworks/vxsuite/blob/v4.0.7/libs/ui/src/ui_strings/app_strings_catalog/latest.json).
 
 The app strings file is optional. If not provided, default English strings will be used.
 
@@ -115,9 +115,9 @@ VxAdmin uses these counts to produce voter turnout reports, which compare ballot
 
 The registered voter counts file is optional. If it is not provided, voter turnout reports cannot be generated.
 
-### System Setting
+### System Settings
 
-\[INSERT LINK]
+[system-settings.md](system-settings.md "mention")
 
 ### Metadata
 

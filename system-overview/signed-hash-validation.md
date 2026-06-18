@@ -37,10 +37,10 @@ After completing the above verification, [https://check.voting.works](https://ch
 
 ## QR Code Specifications
 
-Signed Hash Validation QR codes are [Model 2 QR codes](https://www.qrcode.com/en/codes/model12.html) with [Level H error correction](https://www.qrcode.com/en/about/error_correction.html).
+Signed Hash Validation QR codes are [Model 2 QR codes](https://www.qrcode.com/en/codes/model12.html) with [Level M error correction](https://www.qrcode.com/en/about/error_correction.html).
 
 ## Code Links
 
 Refer to the following code links for more details:
 
-* [https://github.com/votingworks/vxsuite/blob/v4.0.2/libs/auth/src/signed\_hash\_validation.ts](https://github.com/votingworks/vxsuite/blob/v4.0.2/libs/auth/src/signed_hash_validation.ts)
+* [https://github.com/votingworks/vxsuite/blob/v4.0.7/libs/auth/src/signed\_hash\_validation.ts](https://github.com/votingworks/vxsuite/blob/v4.0.7/libs/auth/src/signed_hash_validation.ts)

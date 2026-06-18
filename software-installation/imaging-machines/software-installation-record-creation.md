@@ -13,7 +13,7 @@ When installing VotingWorks applications that will be used in one or more electi
 
 To satisfy the above requirements, VotingWorks recommends following these best practices related to each requirement.&#x20;
 
-3.1.4-I.1 - We recommend using the machine ID for this record, e.g. `SC-11-004` If necessary, appending the install date and time can further ensure uniqueness, e.g. `SC-11-004-20250325-1300`
+3.1.4-I.1 - We recommend using the machine ID for this record, e.g. `SC-11-004`. If necessary, appending the install date and time can further ensure uniqueness, e.g. `SC-11-004-20250325-1300`
 
 3.1.4-I.2 - This should be the machine ID + the system drive the application was installed to. For example, a machine identified as `SC-11-004` with the VotingWorks application installed to the `/dev/nvme0n1` drive would use the record: `SC-11-004-dev-nvme0n1`
 

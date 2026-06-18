@@ -10,7 +10,7 @@ The sheet per minute rate is reduced by the need to interpret ballot images. Bal
 
 * Ballot type - summary ballots are slower to interpret than hand marked paper ballots.
 * Sheet length - shorter (such as 11") ballots are faster to interpret than longer (such as 22") ballots.
-* Ballot content - ballots with more contests and contests selections are slower to interpret.
+* Ballot content - ballots with more contests and contest selections are slower to interpret.
 
 Taking these limitations into consideration, batch scanners can be expected to scan at approximately 80% of the rates listed above.
 
