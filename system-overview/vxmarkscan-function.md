@@ -32,13 +32,13 @@ VxMarkScan can be unconfigured by an election manager or system administrator.
 
 <figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
-After configuration, polls are initially closed. When polls closed, voting is not allowed on VxMarkScan.
+After configuration, polls are initially closed. When polls are closed, voting is not allowed on VxMarkScan.
 
 Poll workers open the polls to allow voting. Once polls are opened, polls can only return to the initial polls closed state while remaining configured by switching between test and official ballot mode.
 
 Poll workers close the polls when voting should no longer be allowed. Polls are closed until VxMarkScan is unconfigured or switched from one ballot mode to another, with one exception discussed below.
 
-VxMarkScan also allows poll workers to pause voting a.k.a. suspend the polls. While voting is paused, no voting sessions can be started. Voting can be resumed, after which the polls are back in the standard polls opened state. Pausing voting might be used in an early voting model between voting days or, in the case of an emergency, to pause voting while the emergency is resolved. The poll worker may chose to close polls directly from voting paused instead of resuming voting.
+VxMarkScan also allows poll workers to pause voting a.k.a. suspend the polls. While voting is paused, no voting sessions can be started. Voting can be resumed, after which the polls are back in the standard polls opened state. Pausing voting might be used in an early voting model between voting days or, in the case of an emergency, to pause voting while the emergency is resolved. The poll worker may choose to close polls directly from voting paused instead of resuming voting.
 
 If the polls have been closed, the only possible way for the polls to be re-opened is if a system administrator resets the polls to paused. Only the system administrator may do this - poll workers and election managers cannot - per the allowance in VVSG 2.0 1.1.7-E. Once polls have been reset to paused by the system administrator, voting may be resumed by a poll worker. The goal of this flow is to allow voting to continue after a poll worker has prematurely closed the polls.
 
@@ -99,7 +99,7 @@ The voting session begins in visual mode with the following default settings:
 
 The voter can update the **Text Size** to Small, Medium, Large, or Extra-Large, which map to the four discrete text sizes defined in VVSG 2.0 7.1-G. Changing the text size changes the size of all informational elements including buttons, icons, and layout (VVSG 2.0 7.1-H) because all such elements are sized relative to the base font size. The font is always sans-serif (VVSG 2.0 7.1-J).
 
-If there's too much content on a page to fit all on screen at once, which happens most commonly in large or extra-large text size, the interface introduces a large "More" button to indicate there are more contest option to scroll through. The interface never lays out content in a way which requires horizontal scrolling.
+If there's too much content on a page to fit all on screen at once, which happens most commonly in large or extra-large text size, the interface introduces a large "More" button to indicate there are more contest options to scroll through. The interface never lays out content in a way which requires horizontal scrolling.
 
 The voter can update the **Contrast** from medium contrast to low contrast, high contrast with black background, or high contrast with white background corresponding to the contrast options specified in VVSG 2.0 7.1-D. The contrast changes apply to all elements on screen.
 
@@ -119,7 +119,7 @@ Once a voter has used all their votes in a race, the progress button at the bott
 
 Voters usually choose to use the touchscreen to vote. The voter taps buttons to move between contests and through the stages of the voting flow. The voter taps list items on each contest page in order to make selections. Touch areas never overlap and are sized to meet minimums described in VVSG 2.0 7.2-I. Touch areas require that the user's touch begins and ends within the touch area to activate, meaning that dragging a finger across a touch area will not activate the touch area, in order to avoid accidental activation (VVSG 2.0 7.2-H).
 
-When there's more content on a page than can fit on one screen, the voter can scroll through the screen in one of two ways. First, they can tap the "More" button which acts as both the visual indicator that there are more contest options or contests. Second, they can use a swiping motion on the screen to move up or down. Swiping to see more contest options or contests is VxMarkScan's only touch screen gesture. It cannot be used horizontally to navigate between contests or pages and (VVSG 2.0 7.2-E).
+When there's more content on a page than can fit on one screen, the voter can scroll through the screen in one of two ways. First, they can tap the "More" button which acts as both the visual indicator that there are more contest options or contests. Second, they can use a swiping motion on the screen to move up or down. Swiping to see more contest options or contests is VxMarkScan's only touch screen gesture. It cannot be used horizontally to navigate between contests or pages (VVSG 2.0 7.2-E).
 
 ### Audio Tactile Mode - Accessible Controller
 
@@ -133,7 +133,7 @@ The accessible controller is integrated with the application via a hardware daem
 
 VxMarkScan has a PAT (personal assistive technology) input port into which a voter can plug in their own two-switch adaptive input such as a sip-and-puff device. When a PAT input is attached during a voting session, VxMarkScan will enter a calibration flow where the voter will map their two inputs to "move" and "select." Different voters can calibrate their sip & puff devices differently such that sip is "move" for one and "select" for another.
 
-Once calibrated, the voter can use the two inputs to navigate through the ballot. The "move" input advance the focus on screen to the next element and the "select" input is the equivalent of a tap in touch interaction mode. Just as with the accessible controller, the currently focused element on screen is highlighted in visual mode or read aloud in audio mode.
+Once calibrated, the voter can use the two inputs to navigate through the ballot. The "move" input advances the focus on screen to the next element and the "select" input is the equivalent of a tap in touch interaction mode. Just as with the accessible controller, the currently focused element on screen is highlighted in visual mode or read aloud in audio mode.
 
 The PAT input is integrated with the application via a hardware daemon that is always running. The daemon is continuously listening for input events from an attached device. Each event is converted into virtual keyboard presses which are then handled by the frontend rendering agent just as a web browser might handle `Tab` and `Enter`.
 
@@ -152,7 +152,7 @@ Blind or visually impaired voters can use the audio track to review their printe
 
 ### Language Support
 
-VxMarkScan supports switching the language for the current voting session to any language supported in the current election package. When the language is changed, all text on the ballot, all text shown on screen, and text read in audio mode to guide the voter will switch to the new language. The language can be changed at any time during a voting session. The language selection resets automatically after each voting session or can be reset by the voter at any time..
+VxMarkScan supports switching the language for the current voting session to any language supported in the current election package. When the language is changed, all text on the ballot, all text shown on screen, and text read in audio mode to guide the voter will switch to the new language. The language can be changed at any time during a voting session. The language selection resets automatically after each voting session or can be reset by the voter at any time.
 
 If a language other than English is set when printing the ballot, the ballot will show all information in both the current language - for the purpose of the voter's review - and in English - for ease of adjudication and audits.
 
