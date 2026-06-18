@@ -107,5 +107,5 @@ VxPrint tracks the quantities printed for each ballot style and allows the user 
 
 VxPrint consists of two main pieces of hardware - a commercial off-the-shelf laptop and laser printer. The laser printer is capable of printing any ballot from 11" to 22" long, which is the maximum length supported by the system.
 
-* \[PLACEHOLDER]
+* [vxprint-function.md](system-overview/vxprint-function.md "mention")
 * [vxadmin-and-vxcentralscan-hardware.md](system-overview/vxadmin-and-vxcentralscan-hardware.md "mention")
