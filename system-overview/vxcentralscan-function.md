@@ -4,7 +4,7 @@ VxCentralScan is the system's batch scanner which enables election managers to e
 
 ## Configuration
 
-VxCentralScan is configured with a signed [election-package](election-package/ "mention") exported from VxAdmin. The election definition includes the ballot layouts necessary for interpreting ballots and the system settings which indicate what type of ballot issues (e.g. overvotes) require adjudication. After the election package is loaded by an authenticated election manager, no further configuration is required.
+VxCentralScan is configured with a signed [election-package](election-package/ "mention") exported from VxAdmin. The election definition includes the ballot layouts necessary for interpreting ballots and the system settings which indicate what type of ballot issues (e.g. overvotes) require adjudication. After the election package is loaded by an authenticated election manager, VxCentralScan's polling place is configured. If the election has exactly one absentee polling place, VxCentralScan selects it automatically and no further action is required; otherwise the election manager must select a polling place before scanning. The selected polling place determines which ballots VxCentralScan will accept: ballots outside it cause VxCentralScan to stop and refuse to tabulate them (see [Ballot Issues & Adjudication](#ballot-issues-and-adjudication)). The polling place cannot be changed once ballots have been scanned.
 
 {% hint style="info" %}
 **User Manual Reference:** [Configure VxCentralScan](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxcentralscan/configure-ballot-scanner "mention")
