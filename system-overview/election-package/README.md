@@ -2,16 +2,18 @@
 
 The election package contains all of the information that defines an election. VxAdmin is configured by inserting a USB drive and selecting an election package from the drive.
 
-After VxAdmin is configured, the election package can then be digitally signed and exported onto a USB drive in order to configure VxScan, VxCentralScan, and VxMarkScan. The [digital signature](../../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/) verifies that the election package is legitimate. The other devices require that the signature is present. As a result, an election package from outside the system cannot be used to directly configure VxScan, VxCentralScan, or VxMarkScan.
+After VxAdmin is configured, the election package can then be digitally signed and exported onto a USB drive in order to configure the other system components. The [digital signature](../../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/) verifies that the election package is legitimate. The other devices require that the signature is present. As a result, an election package from outside the system cannot be used to directly configure VxScan, VxMark, VxMarkScan, VxCentralScan, or VxPrint.
 
 ## Election Package Contents
 
-The election package is a zip archive (a `.zip` file). The zip archive contains 6 files:
+The election package is a zip archive (a `.zip` file). The zip archive has the following content:
 
 * Election Definition (`election.json`)
 * App Strings (`appStrings.json`)
 * Audio IDs (`audioIds.json`)
 * Audio Clips (`audioClips.jsonl`)
+* Ballots (`ballots.jsonl`)
+* Registered Voter Counts (`registeredVotersCounts.json`)
 * System Settings (`systemSettings.json`)
 * Metadata (`metadata.json`)
 
@@ -23,7 +25,7 @@ The election definition file is required to be present in the election package.
 
 ### App Strings
 
-The app strings file contains all voter-facing strings in the user interface and their translations. For example, at the beginning of the voter flow in VxMarkScan there is a button labelled, by default, "Start Voting." If the voter has set VxMarkScan to another language, however, the button will display the translation for that language specified in the app strings file. Additionally, the default English text can be overridden by specifying a different English value in the app strings file.
+The app strings file contains all voter-facing strings in the user interface and their translations. For example, at the beginning of the voter flow in VxMark there is a button labelled, by default, "Start Voting." If the voter has set VxMark to another language, however, the button will display the translation for that language specified in the app strings file. Additionally, the default English text can be overridden by specifying a different English value in the app strings file.
 
 In the case of specifying a Spanish translation and overriding the English translation for "Start Voting", which has an internal key of `buttonStartVoting`, the following values and overall structure would appear in the app strings file:
 
@@ -81,69 +83,41 @@ Together, the two files allow specifying audio playback for any text read to a v
 
 The audio IDs and audio clips files are optional. If they are not provided, audio playback will be disabled.
 
-### System Settings
+### Ballots
 
-The system settings file contains settings which are not specific to an election definition but do impact machine behavior.
+The ballots file contains pre-rendered ballot PDFs, one per unique combination of ballot style, precinct, ballot type (precinct or absentee), and ballot mode (official or test). It is a [JSONL](https://jsonlines.org/) file in which each line is a JSON object describing one ballot, with the PDF itself encoded in base 64. For example, a single line would appear as:
 
-* Authentication Settings
-  * `arePollWorkerCardPinsEnabled` - When set to `true`, poll worker cards are created with PINs which are then required when authenticating.
-  * `inactiveSessionTimeLimitMinutes`- Sets the number of minutes after which machines automatically lock due to inactivity.
-  * `numIncorrectPinAttemptsAllowedBeforeCardLockout`- Sets the number of times that a PIN can be entered incorrectly before the user has to wait extra time to retry.
-  * `overallSessionTimeLimitHours`- Sets the maximum number of hours for any session, regardless of activity.
-  * `startingCardLockoutDurationSeconds` - Sets the number of seconds that the user is locked out from retrying a PIN after the number of failed attempts specified by `numIncorrectPinAttemptsAllowedBeforeCardLockout`. Each subsequent failed attempt triggers a lockout double the length of the previous lockout.
-* Scanning Thresholds
-  * `definite` - Specifies the percentage of a bubble that needs to be filled in for the system to interpret it as a vote.
-  * `marginal` - Specifies the percentage of a bubble that needs to be filled for the system to interpret it as a marginal mark that may need adjudication.
-  * `writeInTextArea` - Specifies the percentage of the write-in area that needs to be filled in for the tabulators to consider it a write-in. This is only relevant for jurisdictions that allow unmarked write-ins i.e write-ins without an accompanying mark.
-* Adjudication
-  * `precinctScanAdjudicationReasons` - Specifies the reasons that a ballot scanned at VxScan should be flagged for adjudication. Supported reasons are overvotes, undervotes, blank ballots, or unmarked write-ins.
-  * `centralScanAdjudicationReasons` - Specifies the reasons that a ballot scanned at VxCentralScan should be flagged for adjudication. Supported reasons are overvotes, undervotes, blank ballots, or unmarked write-ins.
-  * `adminAdjudicationReasons` - Specifies the reasons for a ballot to appear in the VxAdmin adjudication queue in addition to write-ins. Supported reasons are undervotes, overvotes, and marginal marks.
-  * `disallowCastingOvervotes` - When set to `true`, scanners will always reject overvoted ballots. When set to `false`, VxScan will allow a voter to choose whether to reject or cast an overvoted ballot, and VxCentralScan will allow an election manager to choose whether to reject or tabulate an overvoted ballot.
-  * `allowOfficialBallotsInTestMode` - When set to `true`, official ballots will not be rejected in test mode. The setting is for jurisdictions where testing must take place on official ballots.
-  * `areWriteInCandidatesQualified` - When set to `true`, write-ins can only be adjudicated for qualified write-ins added by an election manager. When set to `false`, adjudicators can add any unofficial write-in candidate on an ad hoc basis.
-* Other
-  * `precinctScanEnableShoeshineMode` - When set to `true`, VxScan will run in "shoeshine mode," which will scan the same ballot repeatedly. Instead of ejecting the ballot after scanning it, VxScan will move it back to the input tray and scan it again. This mode is used only for internal testing and certification testing.
-  * `castVoteRecordsIncludeRedundantMetadata` - When set to `true`, scanners will include election and system metadata in each ballot's CVR as specified in the CVR CDF, rather than just including it once for the entire export. This extra information increases the size of the CVR export, degrading performance.
-  * `disableVerticalStreakDetection` - Disables the warning when streaks are detected when scanning ballots (which indicates that the scanner needs to be cleaned). Used as a failsafe in case of erroneous warnings.
-  * `precinctScanEnableBallotAuditIds` - Enables the VxScan feature to read ballot IDs from hand marked paper ballot QR codes, encrypt them, and export them to cast vote records (to be used for post-election auditing).
-  * `precinctScanEnableWriteInImageReport`  - Enables printing write-in image reports at VxScan after polls are closed.
-  * `precinctScanNumberOfReportCopies`  - The number of polls reports that will be automatically printed at VxScan on polls transitions. When not set, VxScan will default to one. Used to streamline the poll worker flow in jurisdictions where multiple copies are always required.
-  * `bmdPrintMode` - Determines what type of ballots are printed at VxMark. Possible values:
-    * &#x20;`bubble_ballot`  - Prints fully marked bubbled ballots onto blank paper.
-    * `marks_on_preprinted_ballot` - Prints only mark onto pre-printed ballots.
-    * `summary` - Prints summary ballots. Default value.
-  * Polls Close Time Settings
-    * `electionDayPollsCloseTime` - Time value. Indicates when polls close on election day. Before the polls close time, the default poll worker screen will be the full poll worker menu. After the polls close time, the default poll worker screen will be the guided "Close Polls" flow. The time is a time only, rather than a timestamp, and is always interpreted in local time.
-    * `disallowClosingPollsBeforeElectionDayPollsCloseTime` - If used in combination with `electionDayPollsCloseTime`, will fully disable the "Close Polls" option until the `electionDayPollsCloseTime`.&#x20;
-    * `disallowVxAdminTabulationBeforeElectionDayPollsCloseTime` - If used in combination with `electionDayPollsCloseTime`, will disable tabulation (i.e. generating reports) until the `electionDayPollsCloseTime`.
+```json
+{ "ballotStyleId": "1_en", "precinctId": "precinct-1", "ballotType": "precinct", "ballotMode": "official", "encodedBallot": "JVBERi0xLj..." }
+```
 
-The system settings file is optional. If not provided, the following default settings will be used:
+These pre-rendered ballots allow VxMark and VxPrint to produce printed ballots without rendering them on the device.
 
-<pre class="language-json"><code class="lang-json"><strong>{
-</strong>  "auth": {
-    "arePollWorkerCardPinsEnabled": false,
-    "inactiveSessionTimeLimitMinutes": 30,
-    "numIncorrectPinAttemptsAllowedBeforeCardLockout": 5,
-    "overallSessionTimeLimitHours": 12,
-    "startingCardLockoutDurationSeconds": 15
-  },
-  "markThresholds": {
-    "definite": 0.07,
-    "marginal": 0.05,
-    "writeInTextArea": 0.05
-  },
-  "centralScanAdjudicationReasons": [],
-  "precinctScanAdjudicationReasons": [],
-  "adminAdjudicationReasons": [],
-  "disallowCastingOvervotes": false,
-  "allowOfficialBallotsInTestMode": false,
-  "precinctScanEnableShoeshineMode": false,
-  "castVoteRecordsIncludeRedundantMetadata": false,
-  "disableVerticalStreakDetection": false,
-  "precinctScanEnableBallotAuditIds": false
+The ballots file is optional. It is required when using VxPrint or when using VxMark configured to print full-faced ballots.
+
+### Registered Voter Counts
+
+The registered voter counts file records the number of registered voters in each precinct, or in each split for precincts that are divided into splits. A precinct without splits maps directly to a count, while a precinct with splits maps to a count per split:
+
+```json
+{
+  "precinct-1": 1200,
+  "precinct-2": {
+    "splits": {
+      "precinct-2-split-a": 450,
+      "precinct-2-split-b": 375
+    }
+  }
 }
-</code></pre>
+```
+
+VxAdmin uses these counts to produce voter turnout reports, which compare ballots cast against registered voters to calculate turnout. Counts must be provided for all precincts or not at all.
+
+The registered voter counts file is optional. If it is not provided, voter turnout reports cannot be generated.
+
+### System Setting
+
+\[INSERT LINK]
 
 ### Metadata
 
