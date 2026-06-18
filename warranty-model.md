@@ -15,7 +15,7 @@ layout: editorial
 
 ## Estimated Warranty Types and Costs
 
-VotingWorks requires all voting equipment customers to purchase our Technology Repair, Upgrade, Support and Training (“Trust”) Services. TRUST Services will cover warranty for all products purchased. Average annual cost of TRUST Services will not exceed 5% of the equipment purchase price for years 1-10.
+VotingWorks requires all voting equipment customers to purchase our Technology Repair, Upgrade, Support and Training (“TRUST”) Services. TRUST Services will cover warranty for all products purchased. Average annual cost of TRUST Services will not exceed 5% of the equipment purchase price for years 1-10.
 
 ## Associated Replacement Policies, Services, and Available Maintenance Agreements
 
