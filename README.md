@@ -1,6 +1,6 @@
 # System Overview
 
-<figure><img src=".gitbook/assets/image (114).png" alt=""><figcaption><p>Top-level system diagram</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (115).png" alt=""><figcaption><p>Top-level system diagram</p></figcaption></figure>
 
 The VotingWorks voting system (a.k.a. **VxSuite**) consists of six primary components:
 
