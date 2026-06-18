@@ -52,8 +52,8 @@ User Manual Reference: \[INSERT LINK]
 
 The supported printer is the HP LaserJet Pro 4001dn.&#x20;
 
-VxPrint interfaces with the printer through the CUPS, the open-source printing system developed by Apple and installed on our Debian system. When a printer is attached, it is registered with the CUPS server and made available to the application. VxPrint is able to send print jobs to the printer via CUPS commands. The HP LaserJetPro does not require any additional third-party or in-house driver because it supports the IPP (Internet Printing Protocol) which CUPS then utilizes.
+VxPrint interfaces with the printer through CUPS, the open-source printing system developed by Apple and installed on our Debian system. When a printer is attached, it is registered with the CUPS server and made available to the application. VxPrint is able to send print jobs to the printer via CUPS commands. The HP LaserJet Pro does not require any additional third-party or in-house driver because it supports the IPP (Internet Printing Protocol) which CUPS then utilizes.
 
 Using IPP, VxPrint is also able to poll the detailed status (toner level, jam status, etc.) of the printer for use in the diagnostics interface.
 
-VxPrint can only connect with one printer at a time and will always connect with with the first attached printer.
+VxPrint can only connect with one printer at a time and will always connect with the first attached printer.

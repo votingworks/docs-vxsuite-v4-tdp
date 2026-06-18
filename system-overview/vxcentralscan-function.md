@@ -1,6 +1,6 @@
 # VxCentralScan Function
 
-VxCentralScan is the system's batch scanner which enable election managers to efficiently scan large batches of ballots.
+VxCentralScan is the system's batch scanner which enables election managers to efficiently scan large batches of ballots.
 
 ## Configuration
 
@@ -48,7 +48,7 @@ As the ballot exits the scanner, the imprinter prints an identifier on the side 
 
 #### Batch UUIDs
 
-The v4 UUID (universally unique identifier) for each batch is generated when the batch is first created. It is generated with the node package `uuid` which uses the system's underlying FIPS-complaint OpenSSL implementation to generated random bytes.
+The v4 UUID (universally unique identifier) for each batch is generated when the batch is first created. It is generated with the node package `uuid` which uses the system's underlying FIPS-compliant OpenSSL implementation to generate random bytes.
 
 ## Ballot Issues & Adjudication
 
