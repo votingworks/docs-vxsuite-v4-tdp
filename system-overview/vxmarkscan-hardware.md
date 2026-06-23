@@ -16,7 +16,7 @@ The primary modification made by VotingWorks to the original Smartmatic hardware
 
 <figure><img src="../.gitbook/assets/PXL_20241119_204113175 (1).jpg" alt="" width="375"><figcaption><p>Smart card insert</p></figcaption></figure>
 
-Power is controlled by a button in the back left of the machine. When activated, an LED will illuminate the power button. Between the power button and the power port is an additional headphone input which is not used by VxMarkScan.
+Power is controlled by a button in the back left of the machine. When activated, an LED will illuminate the power button. Between the power button and the power port is an additional headphone input which is not used by VxMarkScan. A power block plugs into the power port, and the power block plugs into the APC backup UPS, which is plugged into a standard power outlet.
 
 <figure><img src="../.gitbook/assets/power-labelled.png" alt="" width="375"><figcaption><p>Power controls</p></figcaption></figure>
 
@@ -44,7 +44,7 @@ Assembly instructions are covered in the user manual under [VxMarkScan Hardware 
 
 The vast majority of the VxMarkScan hardware is the [VSAP (Voting Solutions for All People) ](https://www.lavote.gov/vsap/home)Ballot Marking Device (Model 150) developed by Los Angeles County, manufactured by Smartmatic, and purchased through Los Angeles County. In addition, VotingWorks includes a few peripherals or COTS components added through modification. Documentation for these components can be found in [the documentation repository](https://github.com/votingworks/docs-vxsuite-v4/tree/main/hardware-assets/cots-documentation/mark) or in the separately provided Los Angeles County documentation.
 
-<table><thead><tr><th>Manufacturer</th><th width="216">Component</th><th width="175">Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>Smartmatic</td><td>Ballot Marking Device</td><td>VSAP-150</td><td>High</td></tr><tr><td>APC</td><td>Uninterruptible Power Supply</td><td>BN1500M2</td><td>Low</td></tr><tr><td>HID</td><td>Smart Card Reader</td><td>R31210375-1</td><td>Medium</td></tr><tr><td>LORELEI</td><td>Headphones</td><td>X6</td><td>Low</td></tr><tr><td>Williams Audio Visual</td><td>T-Coil Neckloop</td><td>NKL-001</td><td>Low</td></tr></tbody></table>
+<table><thead><tr><th>Manufacturer</th><th width="216">Component</th><th width="175">Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>Smartmatic</td><td>Ballot Marking Device</td><td>VSAP-150</td><td>High</td></tr><tr><td>APC</td><td>Uninterruptible Power Supply (UPS)</td><td>BN1500M2</td><td>Low</td></tr><tr><td>HID</td><td>Smart Card Reader</td><td>R31210375-1</td><td>Medium</td></tr><tr><td>LORELEI</td><td>Headphones</td><td>X6</td><td>Low</td></tr><tr><td>Williams Audio Visual</td><td>T-Coil Neckloop</td><td>NKL-001</td><td>Low</td></tr></tbody></table>
 
 The specified neckloop achieves a T4 rating when used with assistive hearing devices that include T4 rated telecoils.
 
