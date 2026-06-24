@@ -13,7 +13,7 @@ The election package is a zip archive (a `.zip` file). The zip archive has the f
 * Audio IDs (`audioIds.json`)
 * Audio Clips (`audioClips.jsonl`)
 * Ballots (`ballots.jsonl`)
-* Registered Voter Counts (`registeredVotersCounts.json`)
+* Registered Voter Counts (`registeredVoterCounts.json`)
 * System Settings (`systemSettings.json`)
 * Metadata (`metadata.json`)
 
