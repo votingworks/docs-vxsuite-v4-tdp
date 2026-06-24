@@ -34,14 +34,14 @@ The system settings file contains settings which are not specific to an election
 * `precinctScanEnableShoeshineMode` - When set to `true`, VxScan will run in "shoeshine mode," which will scan the same ballot repeatedly. Instead of ejecting the ballot after scanning it, VxScan will move it back to the input tray and scan it again. This mode is used only for internal testing and certification testing.
 * `castVoteRecordsIncludeRedundantMetadata` - When set to `true`, scanners will include election and system metadata in each ballot's CVR as specified in the CVR CDF, rather than just including it once for the entire export. This extra information increases the size of the CVR export, degrading performance.
 * `precinctScanEnableBallotAuditIds` - Enables the VxScan feature to read ballot IDs from hand marked paper ballot QR codes, encrypt them, and export them to cast vote records (to be used for post-election auditing).
-* `precinctScanEnableWriteInImageReport`  - Enables printing write-in image reports at VxScan after polls are closed.
-* `precinctScanNumberOfReportCopies`  - The number of polls reports that will be automatically printed at VxScan on polls transitions. When not set, VxScan will default to one. Used to streamline the poll worker flow in jurisdictions where multiple copies are always required.
+* `precinctScanEnableWriteInImageReport` - Enables printing write-in image reports at VxScan after polls are closed.
+* `precinctScanNumberOfReportCopies` - The number of polls reports that will be automatically printed at VxScan on polls transitions. When not set, VxScan will default to one. Used to streamline the poll worker flow in jurisdictions where multiple copies are always required.
 * `bmdPrintMode` - Determines what type of ballots are printed at VxMark. Possible values:
-  * &#x20;`bubble_ballot`  - Prints fully marked bubbled ballots onto blank paper.
+  * `bubble_ballot` - Prints fully marked bubbled ballots onto blank paper.
   * `marks_on_preprinted_ballot` - Prints only marks onto pre-printed ballots.
   * `summary` - Prints summary ballots. Default value.
+* `enableEarlyVoting` - Enables early voting features on VxScan and VxAdmin, e.g., setting a ballot casting mode of "Early Voting" on VxScan and tabulating early voting results separately on VxAdmin.
 * Polls Close Time Settings
   * `electionDayPollsCloseTime` - Time value. Indicates when polls close on election day. Before the polls close time, the default poll worker screen will be the full poll worker menu. After the polls close time, the default poll worker screen will be the guided "Close Polls" flow. The time is a time only, rather than a timestamp, and is always interpreted in local time.
-  * `disallowClosingPollsBeforeElectionDayPollsCloseTime` - If used in combination with `electionDayPollsCloseTime`, will fully disable the "Close Polls" option until the `electionDayPollsCloseTime`.&#x20;
+  * `disallowClosingPollsBeforeElectionDayPollsCloseTime` - If used in combination with `electionDayPollsCloseTime`, will fully disable the "Close Polls" option until the `electionDayPollsCloseTime`.
   * `disallowVxAdminTabulationBeforeElectionDayPollsCloseTime` - If used in combination with `electionDayPollsCloseTime`, will disable tabulation (i.e. generating reports) until the `electionDayPollsCloseTime`.
-
