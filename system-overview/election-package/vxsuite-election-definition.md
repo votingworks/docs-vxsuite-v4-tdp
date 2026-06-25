@@ -10,7 +10,7 @@ The VxSuite Election Definition is a data format for defining an election that i
 
 The `Election` entity is the top-level entity that contains all other entities.
 
-<table><thead><tr><th width="199">Attribute</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>ballotLayout</code></td><td><a href="vxsuite-election-definition.md#ballot-layout">Ballot Layout</a></td><td>Physical ballot metadata</td></tr><tr><td><code>ballotStrings</code></td><td><code>array</code> - <a href="vxsuite-election-definition.md#ballot-strings">Ballot Strings</a></td><td><a href="vxsuite-election-definition.md#ballot-strings">See Ballot Strings Section</a></td></tr><tr><td><code>ballotStyles</code></td><td><code>array</code> - <a href="vxsuite-election-definition.md#ballot-style">Ballot Style</a></td><td>All ballot styles</td></tr><tr><td><code>contests</code></td><td><code>array</code> - <a href="vxsuite-election-definition.md#contest">Contest</a></td><td>All contests</td></tr><tr><td><code>gridLayouts</code></td><td><code>array</code> - <a href="vxsuite-election-definition.md#grid-layouts">Grid Layouts</a></td><td><a href="vxsuite-election-definition.md#grid-layouts">See Grid Layouts Section</a></td></tr><tr><td><code>county</code></td><td><a href="vxsuite-election-definition.md#county">County</a></td><td>County metadata</td></tr><tr><td><code>date</code></td><td><code>string</code> - YYYY-MM-DD</td><td>Date of the election</td></tr><tr><td><code>districts</code></td><td><code>array</code> - <a href="vxsuite-election-definition.md#district">District</a></td><td>All districts</td></tr><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>parties</code></td><td><code>array</code> - <a href="vxsuite-election-definition.md#party">Party</a></td><td>All parties</td></tr><tr><td><code>pollingPlaces</code></td><td><code>array</code> - <a href="vxsuite-election-definition.md#polling-place">Polling Place</a></td><td>All polling places</td></tr><tr><td><code>precincts</code></td><td><code>array</code> - <a href="vxsuite-election-definition.md#precinct">Precinct</a></td><td>All precincts</td></tr><tr><td><code>seal</code></td><td><code>string</code> - SVG file format</td><td>Seal for the election</td></tr><tr><td><code>state</code></td><td><code>string</code></td><td>Name of the state</td></tr><tr><td><code>title</code></td><td><code>string</code></td><td>Title of the election</td></tr><tr><td><code>type</code></td><td><code>string</code> - "general", "closed-primary", or "open-primary"</td><td>Type of the election</td></tr></tbody></table>
+<table><thead><tr><th width="199">Attribute</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>ballotLayout</code></td><td><a href="vxsuite-election-definition.md#ballot-layout">Ballot Layout</a></td><td>Physical ballot metadata</td></tr><tr><td><code>ballotStrings</code></td><td><code>array</code> - <a href="vxsuite-election-definition.md#ballot-strings">Ballot Strings</a></td><td><a href="vxsuite-election-definition.md#ballot-strings">See Ballot Strings Section</a></td></tr><tr><td><code>ballotStyles</code></td><td><code>array</code> - <a href="vxsuite-election-definition.md#ballot-style">Ballot Style</a></td><td>All ballot styles</td></tr><tr><td><code>contests</code></td><td><code>array</code> - <a href="vxsuite-election-definition.md#contest">Contest</a></td><td>All contests</td></tr><tr><td><code>jurisdiction</code></td><td><a href="vxsuite-election-definition.md#jurisdiction">Jurisdiction</a></td><td>Jurisdiction metadata</td></tr><tr><td><code>date</code></td><td><code>string</code> - YYYY-MM-DD</td><td>Date of the election</td></tr><tr><td><code>districts</code></td><td><code>array</code> - <a href="vxsuite-election-definition.md#district">District</a></td><td>All districts</td></tr><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>parties</code></td><td><code>array</code> - <a href="vxsuite-election-definition.md#party">Party</a></td><td>All parties</td></tr><tr><td><code>pollingPlaces</code></td><td><code>array</code> - <a href="vxsuite-election-definition.md#polling-place">Polling Place</a></td><td>All polling places</td></tr><tr><td><code>precincts</code></td><td><code>array</code> - <a href="vxsuite-election-definition.md#precinct">Precinct</a></td><td>All precincts</td></tr><tr><td><code>seal</code></td><td><code>string</code> - SVG file format</td><td>Seal for the election</td></tr><tr><td><code>state</code></td><td><code>string</code></td><td>Name of the state</td></tr><tr><td><code>title</code></td><td><code>string</code></td><td>Title of the election</td></tr><tr><td><code>type</code></td><td><code>string</code> - "general", "closed-primary", or "open-primary"</td><td>Type of the election</td></tr></tbody></table>
 
 ### Ballot Layout
 
@@ -32,22 +32,22 @@ The `metadataEncoding` attribute must be "qr-code".
 
 Each ballot style corresponds to a single- or multi-sheet ballot. The contests on a ballot style are determined by its associated districts - every contest belonging to an associated district is considered a part of the ballot style. A ballot style may be used in multiple precincts, one ballot style might correspond to multiple ballot PDFs that have identical contest layouts but different precinct labels.
 
-<table><thead><tr><th width="154.33333333333331">Attribute</th><th width="248.0703125">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>groupId</code></td><td><code>string</code></td><td>Identifier grouping ballot styles that are identical except for language</td></tr><tr><td><code>precincts</code></td><td><code>array</code> - IDs for <a href="vxsuite-election-definition.md#precinct">Precinct</a></td><td>The IDs of all precincts which use the ballot style</td></tr><tr><td><code>districts</code></td><td><code>array</code> - IDs for <a href="vxsuite-election-definition.md#district">District</a></td><td>The IDs of all districts whose contests are included in the ballot style</td></tr><tr><td><code>partyId</code></td><td><code>string</code> - ID for <a href="vxsuite-election-definition.md#party">Party</a></td><td>Optional. The ID of the party to which the ballot belongs, if a primary</td></tr><tr><td><code>languages</code></td><td><code>array</code> - <code>string</code></td><td>Optional. The language codes for the languages covered by the ballot style</td></tr><tr><td><code>orderedCandidatesByContest</code></td><td><code>map &#x3C;string, array</code> - <code>OrderedCandidateOption></code></td><td><p>Optional. A mapping from contest ID for candidate contests in the ballot style to an ordered list of candidate options that specify the ballot rotation order of candidates for this ballot style. If not specified, candidates will be listed in the order they are defined in the contest object. </p><p></p><p><code>OrderedCandidateOption</code> is specified in more detail in the table below.<br></p></td></tr></tbody></table>
+<table><thead><tr><th width="154.33333333333331">Attribute</th><th width="248.0703125">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>groupId</code></td><td><code>string</code></td><td>Identifier grouping ballot styles that are identical except for language</td></tr><tr><td><code>precincts</code></td><td><code>array</code> - IDs for <a href="vxsuite-election-definition.md#precinct">Precinct</a></td><td>The IDs of all precincts which use the ballot style</td></tr><tr><td><code>districts</code></td><td><code>array</code> - IDs for <a href="vxsuite-election-definition.md#district">District</a></td><td>The IDs of all districts whose contests are included in the ballot style</td></tr><tr><td><code>partyId</code></td><td><code>string</code> - ID for <a href="vxsuite-election-definition.md#party">Party</a></td><td>Optional. The ID of the party to which the ballot belongs, if a primary</td></tr><tr><td><code>languages</code></td><td><code>array</code> - <code>string</code></td><td>The language codes for the languages covered by the ballot style</td></tr><tr><td><code>orderedCandidatesByContest</code></td><td><code>map &#x3C;string, array</code> - <code>OrderedCandidateOption></code></td><td><p>Optional. A mapping from contest ID for candidate contests in the ballot style to an ordered list of candidate options that specify the ballot rotation order of candidates for this ballot style. If not specified, candidates will be listed in the order they are defined in the contest object.</p><p><code>OrderedCandidateOption</code> is specified in more detail in the table below.</p></td></tr><tr><td><code>ballotPositions</code></td><td><code>array</code> - <code>SheetPositions</code></td><td>The grid positions (bubble centers and bounding boxes) of every contest and option on this ballot style's bubble ballot, organized by sheet. Absent for ballot styles that have not been laid out (e.g., summary-ballot-only or draft elections). These are described in greater detail under  <a data-mention href="vxsuite-election-definition.md#bubble-ballot-grid-positions">#bubble-ballot-grid-positions</a>.</td></tr></tbody></table>
 
 #### OrderedCandidateOption
 
-| Attribute  | Type               | Description                                         |
-| ---------- | ------------------ | --------------------------------------------------- |
-| `id`       | `string`           | Candidate ID                                        |
+| Attribute  | Type               | Description                                        |
+| ---------- | ------------------ | -------------------------------------------------- |
+| `id`       | `string`           | Candidate ID                                       |
 | `partyIds` | `array` - `string` | Endorsement party IDs for the given bubble option. |
 
-A cross-party endorsed candidate may have multiple candidate options associated with the same `id` , but different `partyIds`.&#x20;
+A cross-party endorsed candidate may have multiple candidate options associated with the same `id` , but different `partyIds`.
 
 ### Contest
 
 There are two types of contests - candidate contests and yes-no contests. Both types share core attributes:
 
-<table><thead><tr><th width="172">Attribute</th><th width="229">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>districtId</code></td><td><code>string</code> - ID for <a href="vxsuite-election-definition.md#district">District</a></td><td>The associated district of the contest such as a state, county, or ward</td></tr><tr><td><code>title</code></td><td><code>string</code></td><td>Title of the contest</td></tr><tr><td><code>type</code></td><td><code>string</code> - "candidate",  "yesno", or "straight-party"</td><td>Type of the contest</td></tr></tbody></table>
+<table><thead><tr><th width="172">Attribute</th><th width="229">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>districtId</code></td><td><code>string</code> - ID for <a href="vxsuite-election-definition.md#district">District</a></td><td>The associated district of the contest such as a state, county, or ward</td></tr><tr><td><code>title</code></td><td><code>string</code></td><td>Title of the contest</td></tr><tr><td><code>type</code></td><td><code>string</code> - "candidate", "yesno", or "straight-party"</td><td>Type of the contest</td></tr></tbody></table>
 
 #### Candidate Contest
 
@@ -83,9 +83,9 @@ In a [straight party contest](../election-and-contest-type-variations.md#straigh
 
 <table><thead><tr><th width="145">Attribute</th><th width="120">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>optionIds</code></td><td><code>array</code> - ID for <a href="vxsuite-election-definition.md#party">Party</a></td><td>An ordered list of IDs of the parties that should appear in the contest</td></tr></tbody></table>
 
-### County
+### Jurisdiction
 
-One and only one county is associated with each election.
+One and only one jurisdiction is associated with each election.
 
 <table><thead><tr><th width="159">Attribute</th><th width="152">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>name</code></td><td><code>string</code></td><td>Name e.g. "Choctaw County"</td></tr></tbody></table>
 
@@ -112,12 +112,12 @@ Parties are used in the data model to associate candidates with a party, to asso
 
 ### Precinct
 
-| Attribute     | Type                                                                      | Description                                                                                                                                |
-| ------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`          | `string`                                                                  | Unique identifier                                                                                                                          |
-| `name`        | `string`                                                                  | Name e.g. "Precinct 45"                                                                                                                    |
+| Attribute     | Type                                                                      | Description                                                                                                                                 |
+| ------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`          | `string`                                                                  | Unique identifier                                                                                                                           |
+| `name`        | `string`                                                                  | Name e.g. "Precinct 45"                                                                                                                     |
 | `districtIds` | `array` - ID for [District](vxsuite-election-definition.md#district)      | Districts to which the precinct belongs. Not present if `splits` is specified, in which case district associations are specified per split. |
-| `splits`      | `array` - [Precinct Split](vxsuite-election-definition.md#precinct-split) | Splits within the precinct. Not present if `districtIds` is specified.                                                                     |
+| `splits`      | `array` - [Precinct Split](vxsuite-election-definition.md#precinct-split) | Splits within the precinct. Not present if `districtIds` is specified.                                                                      |
 
 ### Precinct Split
 
@@ -204,39 +204,69 @@ The election-specific `ballotStrings` recognized by the system are the following
 
 The language codes used are [IETF language tags](https://www.w3.org/International/articles/language-tags/).
 
-## Grid Layouts
+## Bubble Ballot Grid Positions
 
-Grid layouts describe where the bubbles and write-in areas exist on each ballot style. They must correspond exactly to the ballots used for the election in order for interpretation to succeed. For more information on the acceptable ballot format and its relationship to grid coordinates, see [Hand Marked Ballots](../hand-marked-ballots.md).
+We define an abstract grid using the timing marks on the outer edges of the ballot. We then use this grid to define bubble positions and other bounding boxes relevant to ballot interpretation and adjudication UIs.
 
-<figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption><p>Relationship of grid layouts to other entities in the election definition</p></figcaption></figure>
+These are defined on a per-ballot-style basis under each ballot style's `sheetPositions` field.
 
-`gridLayouts` is an `array` which contains entities with the following attributes:
+#### SheetPositions
 
-<table><thead><tr><th width="316">Attribute</th><th width="166">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>ballotStyleId</code></td><td><code>string</code>, ID for <a href="vxsuite-election-definition.md#ballot-style">Ballot Style</a></td><td>Identifies the ballot style</td></tr><tr><td><code>optionBoundsFromTargetMark</code></td><td><a href="vxsuite-election-definition.md#outset">Outset</a></td><td>Describes where the entire contest option area sits relative to the bubble</td></tr><tr><td><code>gridPositions</code></td><td><a href="vxsuite-election-definition.md#grid-position">Grid Position</a></td><td>Describes bubble and write-in positions on the ballot</td></tr></tbody></table>
+A tuple of two `ContestPosition` arrays, the first for the front of a sheet and the second for the back of a sheet.
 
-### Outset
+#### ContestPosition
 
-The `optionBoundsFromTargetMark` field specifies an `Outset` entity. The purpose is to give the distance from the bubble to edges of the entire contest option e.g. the area that includes the bubble, the corresponding candidate's name, and some padding. The system uses this area during write-in-adjudication to highlight specific contest options for review.
+| Attribute   | Type                              | Description                                         |
+| ----------- | --------------------------------- | --------------------------------------------------- |
+| `contestId` | `string`                          | Contest ID                                          |
+| `bounds`    | `GridRect`                        | The bounding box of the contest in grid coordinates |
+| `options`   | `array` - `ContestOptionPosition` | Grid position information for the contest options   |
 
-<table><thead><tr><th width="143">Attribute</th><th width="104">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>top</code></td><td><code>number</code></td><td>Distance from center of bubble to top of option bounds</td></tr><tr><td><code>right</code></td><td><code>number</code></td><td>Distance from center of bubble to right of option bounds</td></tr><tr><td><code>bottom</code></td><td><code>number</code></td><td>Distance from center of bubble to bottom of option bounds</td></tr><tr><td><code>left</code></td><td><code>number</code></td><td>Distance between center of bubble to left of option bounds</td></tr></tbody></table>
+#### ContestOptionPosition
 
-### Grid Position
+One of `OptionPosition` or `WriteInPosition`.
 
-Grid positions are defined positions on the ballot corresponding to bubbles that can be marked by a voter. The `row` and `column` coordinates of each grid position denote where the bubble is printed within the abstract "grid" created by the timing marks on the outer edges of the ballot. There are two types of positions - a standard option position corresponding to a candidate or option in the election definition or a write-in position corresponding to a write-in bubble and area on the ballot.
+#### OptionPosition
 
-#### Option Grid Position
+| Attribute      | Type                | Description                                                      |
+| -------------- | ------------------- | ---------------------------------------------------------------- |
+| `type`         | `string` - "option" | Indicates that this is a standard (non-write-in) option position |
+| `bubbleCenter` | `GridPoint`         | The bubble center in grid coordinates                            |
+| `bounds`       | `GridRect`          | The bounding box of the option in grid coordinates               |
+| `optionId`     | `string`            | Candidate ID                                                     |
+| `partyIds`     | `array` - `string`  | Endorsement party IDs for the given bubble option                |
 
-<table><thead><tr><th width="171">Attribute</th><th width="234">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><code>string</code> - "option"</td><td>Indicates this is a standard option position</td></tr><tr><td><code>sheetNumber</code></td><td><code>number</code></td><td>1-indexed sheet number within the ballot style</td></tr><tr><td><code>side</code></td><td><code>string</code> - "front" or "back"</td><td>Indicates side of the sheet</td></tr><tr><td><code>column</code></td><td><code>number</code></td><td>Column position of the bubble in the timing mark grid</td></tr><tr><td><code>row</code></td><td><code>number</code></td><td>Row position of the bubble in the timing mark grid</td></tr><tr><td><code>contestId</code></td><td><code>string</code> - ID of <a href="vxsuite-election-definition.md#contest">Contest</a></td><td>Contest identifier</td></tr><tr><td><code>optionId</code></td><td><code>string</code> - ID of <a href="vxsuite-election-definition.md#candidate">Candidate</a> or<a href="vxsuite-election-definition.md#yes-no-contest-option"> Yes-No Contest Option</a></td><td>Option identifier</td></tr></tbody></table>
+#### WriteInPosition
 
-#### Write-In Grid Position
+| Attribute      | Type                  | Description                                                                                                               |
+| -------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `type`         | `string` - "write-in" | Indicates that this is a write-in option position                                                                         |
+| `bubbleCenter` | `GridPoint`           | The bubble center in grid coordinates                                                                                     |
+| `bounds`       | `GridRect`            | The bounding box of the option in grid coordinates                                                                        |
+| `writeInIndex` | `number`              | The zero-indexed index of the write-in within the contest. Always 0 for a vote-for-1. 0 or 1 for a vote-for-2, and so on. |
+| `writeInArea`  | `GridRect`            | The area within the option bounds to consider for unmarked write-in detection\* in grid coordinates                       |
 
-<table><thead><tr><th width="174">Attribute</th><th width="237">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><code>string</code> - "write-in"</td><td>Indicates this is a write-in option position</td></tr><tr><td><code>sheetNumber</code></td><td><code>number</code></td><td>1-indexed sheet number within the ballot style</td></tr><tr><td><code>side</code></td><td><code>string</code> - "front" or "back"</td><td>Indicates side of the sheet</td></tr><tr><td><code>column</code></td><td><code>number</code></td><td>Column position of the bubble in the timing mark grid</td></tr><tr><td><code>row</code></td><td><code>number</code></td><td>Row position of the bubble in the timing mark grid</td></tr><tr><td><code>contestId</code></td><td><code>string</code> - ID of <a href="vxsuite-election-definition.md#contest">Contest</a></td><td>Contest identifier</td></tr><tr><td><code>writeInIndex</code></td><td><code>number</code></td><td>An index of the write-in position within the list of write-in positions for a contest (zero-indexed)</td></tr><tr><td><code>writeInArea</code></td><td><a href="vxsuite-election-definition.md#rectangle">Rectangle</a></td><td>Area of the ballot to scan for a write-in</td></tr></tbody></table>
+\*In some jurisdictions, a write-in can only be counted if the associated bubble is filled in as for any other option. In other jurisdictions, a write-in must be counted even if the bubble is not filled. The `writeInArea` is used for the latter unmarked write-in detection.
 
-In some jurisdictions, a write-in can only be counted if the associated bubble is filled in as for any other option. In other jurisdictions, a write-in must be counted even if the bubble is not filled. In order to detect these write-ins, a `writeInArea` is defined for each write-in grid position. The `Rectangle` specifies the area.
+#### GridRect
 
-#### Rectangle
+| Attribute | Type     | Description                                      |
+| --------- | -------- | ------------------------------------------------ |
+| `row`     | `number` | Row start of a rectangle in timing mark units    |
+| `column`  | `number` | Column start of a rectangle in timing mark units |
+| `width`   | `number` | Width of a rectangle in timing mark units        |
+| `height`  | `number` | Height of a rectangle in timing mark units       |
 
-<table><thead><tr><th width="143">Attribute</th><th width="104">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>x</code></td><td><code>number</code></td><td>Column start of the rectangle</td></tr><tr><td><code>y</code></td><td><code>number</code></td><td>Row start of the rectangle</td></tr><tr><td><code>width</code></td><td><code>number</code></td><td>Width of the rectangle</td></tr><tr><td><code>height</code></td><td><code>number</code></td><td>Height of the rectangle</td></tr></tbody></table>
+Decimal values are supported. 2.25 means 2 and a quarter timing marks.
+
+#### GridPoint
+
+| Attribute | Type     | Description                                  |
+| --------- | -------- | -------------------------------------------- |
+| `row`     | `number` | Row index of a point in timing mark units    |
+| `column`  | `number` | Column index of a point in timing mark units |
+
+Decimal values are supported. 2.25 means 2 and a quarter timing marks.
 
 ## Examples
 
