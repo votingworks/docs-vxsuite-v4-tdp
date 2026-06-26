@@ -59,11 +59,14 @@ In a candidate contest, the voter makes a selection between pre-defined candidat
 
 <table><thead><tr><th width="196">Attribute</th><th width="207">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>name</code></td><td><code>string</code></td><td>Name as it appears on the ballot</td></tr><tr><td><code>partyIds</code></td><td><code>array</code> - ID for <a href="vxsuite-election-definition.md#party">Party</a></td><td>Optional. The IDs of the parties associated with the candidate. The party name will appear next to the candidate</td></tr></tbody></table>
 
-#### Yes-No Contest
+#### Ballot Measure Contest
 
-In a yes-no contest, also known as a ballot measure, the voter makes a selection between two options. The following attributes extend the shared [Contest](vxsuite-election-definition.md#contest) attributes:
+In a ballot measure contest, the voter is presented text and makes a selection between two (or more) options in response, the most common options being "Yes" and "No." The following attributes extend the shared [Contest](vxsuite-election-definition.md#contest) attributes:
 
-<table><thead><tr><th width="158">Attribute</th><th width="229">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>description</code></td><td><code>string</code></td><td>Contest description</td></tr><tr><td><code>yesOption</code></td><td><a href="vxsuite-election-definition.md#yes-no-contest-option">Yes-No Contest Option</a></td><td>"Yes" option</td></tr><tr><td><code>noOption</code></td><td><a href="vxsuite-election-definition.md#yes-no-contest-option">Yes-No Contest Option</a></td><td>"No" option</td></tr></tbody></table>
+| Attribute     | Type                                                                                                    | Description         |
+| ------------- | ------------------------------------------------------------------------------------------------------- | ------------------- |
+| `description` | `string`                                                                                                | Contest description |
+| `options`     | `array` - [Ballot Measure Contest Option](vxsuite-election-definition.md#ballot-measure-contest-option) | Contest options     |
 
 The `description` field supports rich text formatting, including images. Images are represented using the syntax `<img src=\"` + data URL + `\">`, where an image can be converted to a data URL using [https://www.base64-image.de](https://www.base64-image.de/). For example, if an image after conversion via the aforementioned site yields the data URL `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO1n0X8AAAAASUVORK5CYII=`, the image embedded in a yes-no contest description will look as follows:
 
@@ -73,9 +76,9 @@ The `description` field supports rich text formatting, including images. Images 
 ```
 {% endcode %}
 
-#### Yes-No Contest Option
+#### Ballot Measure Contest Option
 
-<table><thead><tr><th width="145">Attribute</th><th width="120">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>label</code></td><td><code>string</code></td><td>Label e.g. "Yes" or "No"</td></tr></tbody></table>
+<table><thead><tr><th width="145">Attribute</th><th width="120">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>label</code></td><td><code>string</code></td><td>Label, e.g., "Yes" or "No"</td></tr></tbody></table>
 
 #### Straight Party Contest
 
