@@ -4,17 +4,17 @@
 
 VxSuite supports general and primary elections. A general election is one in which there is a single ballot style for each geopolitical subdivision, with contests that are not specific to a party. A standard primary election is one in which there is a distinct ballot style per party for each geopolitical subdivision. The primaries run on VxSuite may be either "open" or "closed" depending on how voters procedurally choose their party. The majority of elections run on VxSuite are one of these two types of elections, so the majority of the technical data package and user manual are focused on them.
 
-There is one additional supported election type, which VotingWorks calls a "consolidated ballot open primary." In a consolidated ballot open primary, there is only one ballot style per geopolitical subdivision, as in a general. Each ballot style contains the races from all parties in the primary, however, and the voter chooses to vote in one of them. Consolidated primary ballots mean that the secret ballot includes the voters' choice of party.
+There is one additional supported election type, which VotingWorks calls a "combined ballot primary." In a combined ballot primary, there is only one ballot style per geopolitical subdivision, as in a general. Each ballot style contains the races from all parties in the primary, however, and the voter chooses to vote in one of them. Combined primary ballots mean that the secret ballot includes the voters' choice of party.
 
-### Consolidated Ballot Open Primaries
+### Combined Ballot Primaries
 
-The purpose of this section is to indicate the ways in which consolidated ballot open primaries behave distinctly from other types of elections.
+The purpose of this section is to indicate the ways in which combined ballot primaries behave distinctly from other types of elections.
 
-<figure><img src="../.gitbook/assets/open-primary-ballot.png" alt="" width="375"><figcaption><p>Consolidated Primary Ballot</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/open-primary-ballot.png" alt="" width="375"><figcaption><p>Combined Primary Ballot</p></figcaption></figure>
 
 #### Bubble Ballots & Voter Warnings
 
-Consolidated primary ballots can require voters to indicate their party choice explicitly in a "party preference contest" or require voters to indicate their party by simply voting in their party's contests. VxSuite does not currently support party preference contests, so the choice of party is always indicated by the votes themselves.
+Combined primary ballots can require voters to indicate their party choice explicitly in a "party preference contest" or require voters to indicate their party by simply voting in their party's contests. VxSuite does not currently support party preference contests, so the choice of party is always indicated by the votes themselves.
 
 The voter may only vote in one party's contests. Voting in more than one party's contests is considered **crossover voting** and invalidates all votes in partisan contests. Votes in nonpartisan contests are always counted regardless of crossover voting.
 
@@ -22,9 +22,9 @@ Both VxScan and VxCentralScan warn when crossover voting is detected. VxScan sho
 
 #### Ballot Marking Device Experience
 
-VxMark and VxMarkScan have unique voting flows for consolidated primary ballots. The voting flow does not allow crossover voting, similar to not allowing overvotes.
+VxMark and VxMarkScan have unique voting flows for combined primary ballots. The voting flow does not allow crossover voting, similar to not allowing overvotes.
 
-The first selection a voter makes on VxMark for a consolidated primary ballot is a party selection. After the voter selects a party, they continue on to vote in that party's contests. They will not be presented the contests of any other party. After the partisan contests, all voters are presented with any nonpartisan contests in the ballot style.
+The first selection a voter makes on VxMark for a combined primary ballot is a party selection. After the voter selects a party, they continue on to vote in that party's contests. They will not be presented the contests of any other party. After the partisan contests, all voters are presented with any nonpartisan contests in the ballot style.
 
 Voters may navigate back to change their party at any time. When the party is changed, any and all previously selected votes are cleared.
 
@@ -32,11 +32,11 @@ Summary ballots include all contests for all parties for consistency with the bu
 
 #### Tabulation
 
-The results and reports for a consolidated ballot open primary are structured in the same way as a standard primary - tally reports are split into party sections and, if there are nonpartisan races, there will be a separate nonpartisan section.
+The results and reports for a combined ballot open primary are structured in the same way as a standard primary - tally reports are split into party sections and, if there are nonpartisan races, there will be a separate nonpartisan section.
 
-With a consolidated primary ballot, however, the party of the ballot is not determined by the ballot style. The party of the ballot is determined at the time of tabulation by the interpreted or adjudicated votes on the ballot. If there are no votes for any partisan contests or if there is crossover voting, the ballot will not count toward any party's primary.
+With a combined primary ballot, however, the party of the ballot is not determined by the ballot style. The party of the ballot is determined at the time of tabulation by the interpreted or adjudicated votes on the ballot. If there are no votes for any partisan contests or if there is crossover voting, the ballot will not count toward any party's primary.
 
-In tally reports for consolidated ballot primary elections, the ballot count of the party sections may sum up to less than the ballot count of the nonpartisan contests section. Ballots that are crossover voted or contain no votes in partisan contests account for the difference. In ballot count reports at VxAdmin, those ballots are grouped under "No Party".
+In tally reports for combined ballot primary elections, the ballot count of the party sections may sum up to less than the ballot count of the nonpartisan contests section. Ballots that are crossover voted or contain no votes in partisan contests account for the difference. In ballot count reports at VxAdmin, those ballots are grouped under "No Party".
 
 A partisan contest is only considered undervoted if the ballot is for the given party. For example, a ballot with votes for Republicans will not contribute to the undervote count in the Democratic primary.
 
@@ -44,9 +44,9 @@ Another consequence of the fact that the party of the ballot is determined at th
 
 #### Limitations
 
-* Consolidated primary ballots cannot span multiple sheets because, without unique identifiers, it is not possible to prevent crossover voting across sheets
-* VxSuite supports consolidated primary ballots with two or three parties
-* Manual tally entry is not supported when using consolidated primary ballots
+* Combined primary ballots cannot span multiple sheets because, without unique identifiers, it is not possible to prevent crossover voting across sheets
+* VxSuite supports combined primary ballots with two or three parties
+* Manual tally entry is not supported when using combined primary ballots
 
 ## Contest Types
 
@@ -78,18 +78,18 @@ The examples below are intended to express how straight party tabulation works. 
 
 | Straight Party Contest Vote                                               | Candidate Contest Vote                                                    | Outcome                                                                                                                                            |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="../.gitbook/assets/image (91).png" alt="" data-size="original"> | ![](<../.gitbook/assets/image (92).png>)                                  | A vote is counted toward the Democratic candidate. The straight party vote generates an indirect vote.                                             |
-| <img src="../.gitbook/assets/image (93).png" alt="" data-size="original"> | <img src="../.gitbook/assets/image (97).png" alt="" data-size="original"> | A vote is counted toward the Democratic candidate. Voters may vote directly for candidates even if it is redundant with their straight party vote. |
-| <img src="../.gitbook/assets/image (94).png" alt="" data-size="original"> | <img src="../.gitbook/assets/image (98).png" alt="" data-size="original"> | A vote is counted toward the Republican candidate. The direct vote takes priority over the straight party vote.                                    |
+| <img src="../.gitbook/assets/image (89).png" alt="" data-size="original"> | ![](<../.gitbook/assets/image (92).png>)                                  | A vote is counted toward the Democratic candidate. The straight party vote generates an indirect vote.                                             |
+| <img src="../.gitbook/assets/image (89).png" alt="" data-size="original"> | <img src="../.gitbook/assets/image (97).png" alt="" data-size="original"> | A vote is counted toward the Democratic candidate. Voters may vote directly for candidates even if it is redundant with their straight party vote. |
+| <img src="../.gitbook/assets/image (89).png" alt="" data-size="original"> | <img src="../.gitbook/assets/image (98).png" alt="" data-size="original"> | A vote is counted toward the Republican candidate. The direct vote takes priority over the straight party vote.                                    |
 
 **Vote for N (N > 1), Straight Party Tabulation Examples**
 
 | Straight Party Contest Vote                                                | Candidate Contest Vote                                                     | Outcome                                                                                                                                                                                                                                                       |
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <img src="../.gitbook/assets/image (99).png" alt="" data-size="original">  | <img src="../.gitbook/assets/image (100).png" alt="" data-size="original"> | A vote is counted toward each of the Republican candidates. The straight party vote generated multiple indirect votes.                                                                                                                                        |
-| <img src="../.gitbook/assets/image (103).png" alt="" data-size="original"> | <img src="../.gitbook/assets/image (104).png" alt="" data-size="original"> | A vote is counted toward each of the Republican candidates. One is a direct vote and one is an indirect vote generated by the straight party vote.                                                                                                            |
-| <img src="../.gitbook/assets/image (101).png" alt="" data-size="original"> | <img src="../.gitbook/assets/image (105).png" alt="" data-size="original"> | One vote is counted toward the marked Democratic candidate and one vote is left unused, so the contest ends up undervoted. The straight party vote could not be applied because the tabulator would have had to choose between the two Republican candidates. |
-| <img src="../.gitbook/assets/image (107).png" alt="" data-size="original"> | <img src="../.gitbook/assets/image (108).png" alt="" data-size="original"> | One vote is counted toward the marked Republican candidate and one vote is also counted toward the U.S. Taxpayers candidate. Because there is only one candidate for U.S. Taxpayers, the one remaining vote could apply.                                      |
+| <img src="../.gitbook/assets/image (99).png" alt="" data-size="original">  | <img src="../.gitbook/assets/image (104).png" alt="" data-size="original"> | A vote is counted toward each of the Republican candidates. One is a direct vote and one is an indirect vote generated by the straight party vote.                                                                                                            |
+| <img src="../.gitbook/assets/image (99).png" alt="" data-size="original">  | <img src="../.gitbook/assets/image (105).png" alt="" data-size="original"> | One vote is counted toward the marked Democratic candidate and one vote is left unused, so the contest ends up undervoted. The straight party vote could not be applied because the tabulator would have had to choose between the two Republican candidates. |
+| <img src="../.gitbook/assets/image (107).png" alt="" data-size="original"> | <img src="../.gitbook/assets/image (104).png" alt="" data-size="original"> | One vote is counted toward the marked Republican candidate and one vote is also counted toward the U.S. Taxpayers candidate. Because there is only one candidate for U.S. Taxpayers, the one remaining vote could apply.                                      |
 
 #### Ballot Marking Device Experience
 
