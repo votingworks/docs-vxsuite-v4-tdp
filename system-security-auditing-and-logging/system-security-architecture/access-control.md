@@ -29,7 +29,7 @@ As described above, programmed smart cards have two certificates, one issued by 
 
 We’ve taken inspiration from the NIST Personal Identity Verification (PIV) standard but haven’t strictly adhered to it. Our use case differs from the PIV standard in a number of ways, most notably in that cards are certified by two entities (VotingWorks and VxSuite), rather than just one. We also don’t need VxSuite smart cards to be interoperable with other PIV systems.
 
-The recommended access control policy by role for system administrator, election manager, and poll worker cards is documented in the user manual ([Smart Cards and User Roles](https://docs.voting.works/vxsuite-user-manual-v4/vxadmin-system-setup/programming-cards)). Deviating from this recommended access control policy can result in a violation of the principle of least privilege and users gaining access to voting system functionality that is not intended for them. For example, a poll worker could have access to unconfiguring a voting machine if provided a smart card programmed for a different role.
+The recommended access control policy by role for system administrator, election manager, and poll worker cards is documented in the user manual ([Smart Cards and User Roles](https://docs.voting.works/vxsuite-user-manual-v4.1/vxadmin-system-setup/programming-cards)). Deviating from this recommended access control policy can result in a violation of the principle of least privilege and users gaining access to voting system functionality that is not intended for them. For example, a poll worker could have access to unconfiguring a voting machine if provided a smart card programmed for a different role.
 
 ### Vendor Cards
 

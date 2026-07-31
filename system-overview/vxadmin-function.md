@@ -9,7 +9,7 @@ Only a [system administrator ](user-roles.md#system-administrator-role)can authe
 Once VxAdmin is configured, system administrators and election managers can export signed election packages. The exported election package is the same as the imported election package but is accompanied by a digital signature, which ensures that the election package was validated by a certified VxAdmin. The election packages loaded into VxMarkScan, VxScan, and VxCentralScan _must be signed_ and unsigned election packages will be rejected.
 
 {% hint style="info" %}
-**User Manual References:** [Configure VxAdmin](https://app.gitbook.com/s/D1Q1RPHT4tkPuKCBW89l/central-system-setup/configure-vxadmin "mention") & [Save Election Package](https://app.gitbook.com/s/D1Q1RPHT4tkPuKCBW89l/central-system-setup/save-election-package "mention")
+**User Manual References:** [Configure VxAdmin](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxadmin-system-setup/configure-vxadmin "mention") & [Save Election Package](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxadmin-system-setup/save-election-package "mention")
 {% endhint %}
 
 ## Smart Card Management
