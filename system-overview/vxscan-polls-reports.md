@@ -53,7 +53,7 @@ When voting is paused, VxScan prints a voting paused report containing the total
 
 Tally results are never included in polls paused or resumed reports.
 
-<div><figure><img src="../.gitbook/assets/voting-033-voting-resumed-report.png" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/voting-037-voting-paused-report (1).png" alt="" width="375"><figcaption></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/voting-033-voting-resumed-report.png" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/voting-037-voting-paused-report.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 ## Write-In Image Reports
 
