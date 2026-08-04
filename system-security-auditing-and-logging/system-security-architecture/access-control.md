@@ -14,7 +14,7 @@ Certification relationships work as follows:
 
 As a diagram:
 
-<figure><img src="../../.gitbook/assets/security-diagram (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/security-diagram.png" alt=""><figcaption></figcaption></figure>
 
 VxCentralScan, VxMark, VxMarkScan, VxScan, and VxPrint, unlike VxAdmin, aren’t bound to a jurisdiction by VotingWorks. They’re bound and unbound to jurisdictions as they’re configured and unconfigured by election managers. When an election manager configures a VxCentralScan, VxMark, VxMarkScan, VxScan, or VxPrint for an election, the machine persists in its datastore the jurisdiction of the election manager card used to unlock it and then only accepts cards from that jurisdiction. When the machine is unconfigured for that election, the machine returns to a jurisdiction-agnostic state. This allows one jurisdiction to lend its unconfigured equipment to another, without giving a jurisdiction any power over machines configured for a different jurisdiction.
 

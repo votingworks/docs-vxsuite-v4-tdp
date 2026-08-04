@@ -67,7 +67,7 @@ The wiring diagram below outlines the power and data connections within the ball
 
 VxMark does not require any direct bodily contact or for the body to be part of any electrical circuit to function.
 
-<figure><img src="../.gitbook/assets/vxmark-electricaldiagram.webp" alt=""><figcaption><p>VxMark Wiring Diagram</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/TDP Diagrams v4.1 - VxMark - Rev. A.0.png" alt=""><figcaption><p>VxMark Wiring Diagram</p></figcaption></figure>
 
 ## COTS Components
 
