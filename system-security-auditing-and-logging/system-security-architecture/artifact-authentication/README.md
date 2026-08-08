@@ -21,6 +21,6 @@ If verification fails on the importing machine, the importing machine will refus
 
 Refer to the following code links for more details:
 
-* [https://github.com/votingworks/vxsuite/tree/v4.0.7/libs/auth](https://github.com/votingworks/vxsuite/tree/v4.0.7/libs/auth) — VxSuite authentication lib, a good starting point for all things authentication
-* [https://github.com/votingworks/vxsuite/blob/v4.0.7/libs/auth/src/artifact\_authentication.ts](https://github.com/votingworks/vxsuite/blob/v4.0.7/libs/auth/src/artifact_authentication.ts) —  Artifact authentication logic
-* [https://github.com/votingworks/vxsuite/blob/v4.0.7/libs/auth/src/cryptography.ts](https://github.com/votingworks/vxsuite/blob/v4.0.7/libs/auth/src/cryptography.ts) — OpenSSL commands underlying various authentication and signing operations
+* [https://github.com/votingworks/vxsuite/tree/v4.1.0/libs/auth](https://github.com/votingworks/vxsuite/tree/v4.1.0/libs/auth) — VxSuite authentication lib, a good starting point for all things authentication
+* [https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/auth/src/artifact\_authentication.ts](https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/auth/src/artifact_authentication.ts) —  Artifact authentication logic
+* [https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/auth/src/cryptography.ts](https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/auth/src/cryptography.ts) — OpenSSL commands underlying various authentication and signing operations
