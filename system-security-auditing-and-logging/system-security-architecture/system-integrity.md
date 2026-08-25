@@ -12,7 +12,7 @@ Our design for system integrity maps closely to that of ChromeOS:
 
 As a diagram:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-06-30 at 9.55.02 AM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-06-30 at 9.55.02 AM.png" alt=""><figcaption></figcaption></figure>
 
 The integrity of the overall system is ensured because:
 
@@ -48,6 +48,3 @@ Every VotingWorks machine’s BIOS is configured with VotingWorks secure boot pu
 ## Mounting USB Drives
 
 When mounting USB drives, VxSuite always mounts them using standard Linux mount configuration options that makes files on the USB drive **NOT executable**. This further protects from any unauthorized software running, even in a transient fashion.
-
-
-

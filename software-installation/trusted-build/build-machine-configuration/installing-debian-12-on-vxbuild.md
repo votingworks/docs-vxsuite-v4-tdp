@@ -34,80 +34,80 @@ dd if=/path/to/debian-12.8.0-amd64-netinst.iso of=/dev/sda bs=4M && sync
 2. After powering VxBuild on, begin pressing F12 until it enters the boot menu. Boot the system from the USB install drive.
 3. You will be presented with the following screen. Select "Graphical install" and press enter.
 
-<figure><img src="../../../.gitbook/assets/image-1.png" alt="" width="320"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/0.png" alt="" width="320"><figcaption></figcaption></figure>
 
 4. Select your preferred language and click "Continue".
 
-<figure><img src="../../../.gitbook/assets/image-2.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/1.png" alt="" width="375"><figcaption></figcaption></figure>
 
 5. Select your location and click "Continue".
 
-<figure><img src="../../../.gitbook/assets/image-3.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/2.png" alt="" width="375"><figcaption></figcaption></figure>
 
 6. Select your keyboard layout and click "Continue".
 
-<figure><img src="../../../.gitbook/assets/image-4.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/3.png" alt="" width="375"><figcaption></figcaption></figure>
 
 7. Select your network device (may differ from screenshot) and click "Continue".
 
-<figure><img src="../../../.gitbook/assets/image-5.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/4.png" alt="" width="375"><figcaption></figcaption></figure>
 
 8. If using a wired connection, it will configure automatically.
 9. If using a wireless connection, select a network, select WPA/WPA2 PSK, and click "Continue". Enter your wireless network password and click "Continue".
 
-<figure><img src="../../../.gitbook/assets/image-6.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/5.png" alt="" width="375"><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image-7.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/6.png" alt="" width="375"><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image-8.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/7.png" alt="" width="375"><figcaption></figcaption></figure>
 
 10. Enter "VxBuild" for the hostname and click "Continue".
 
-<figure><img src="../../../.gitbook/assets/image-9.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/8.png" alt="" width="375"><figcaption></figcaption></figure>
 
 11. Leave the domain name blank and click "Continue".
 
-<figure><img src="../../../.gitbook/assets/image-10.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/9.png" alt="" width="375"><figcaption></figcaption></figure>
 
 12. Set the root user password and click "Continue".
 
-<figure><img src="../../../.gitbook/assets/image-11.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/10.png" alt="" width="375"><figcaption></figcaption></figure>
 
 13. Enter "Vx" for the full name for the new user and click "Continue".
 
-<figure><img src="../../../.gitbook/assets/image-12 (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/11.png" alt="" width="375"><figcaption></figcaption></figure>
 
 14. Enter "vx" as the username and click "Continue".
 
-<figure><img src="../../../.gitbook/assets/image-13.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/12.png" alt="" width="375"><figcaption></figcaption></figure>
 
 15. Enter a password for the "vx" user and click Continue.
 
-<figure><img src="../../../.gitbook/assets/image-14.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/13.png" alt="" width="375"><figcaption></figcaption></figure>
 
 16. Select your timezone and click "Continue".
 
-<figure><img src="../../../.gitbook/assets/image-15.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/14.png" alt="" width="375"><figcaption></figcaption></figure>
 
 17. Select "Guided - use entire disk" and click "Continue".
 
-<figure><img src="../../../.gitbook/assets/image-16.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/15.png" alt="" width="375"><figcaption></figcaption></figure>
 
 18. Select the "/dev/nvme0n1" disk and click "Continue".
 
-<figure><img src="../../../.gitbook/assets/image-17.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/16.png" alt="" width="375"><figcaption></figcaption></figure>
 
 19. Select "All files in one partition" and click "Continue".
 
-<figure><img src="../../../.gitbook/assets/image-18.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/17.png" alt="" width="375"><figcaption></figcaption></figure>
 
 20. Select "Finish partitioning and write changes to disk" and click "Continue".
 
-<figure><img src="../../../.gitbook/assets/image-19.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/18.png" alt="" width="375"><figcaption></figcaption></figure>
 
 21. Select "Yes" and click "Continue".
 
-<figure><img src="../../../.gitbook/assets/image-20.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/19.png" alt="" width="375"><figcaption></figcaption></figure>
 
 22. The base OS installation will now begin. During the installation you will be asked to answer questions related to package management.
 23. Select "United States" and click "Continue".
