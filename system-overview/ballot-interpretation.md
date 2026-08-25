@@ -16,7 +16,7 @@ The interpreter then identifies the timing mark grid. It searches for all vertic
 
 <figure><img src="../.gitbook/assets/452452815-c8912b9b-d3ac-4888-a386-b4fd57749306.png" alt="" width="375"><figcaption></figcaption></figure>
 
-Before proceeding with interpretation, the interpreter calculates the distance between horizontal timing marks to verify the scale at which the ballot was printed. The expected distance is derived from the  specifications for [hand-marked-ballots.md](hand-marked-ballots.md "mention"). If the timing marks are too close together, the interpreter rejects the ballot — ballots must be printed at full scale to be interpreted safely.
+Before proceeding with interpretation, the interpreter calculates the distance between horizontal timing marks to verify the scale at which the ballot was printed. The expected distance is derived from the specifications for [hand-marked-ballots.md](hand-marked-ballots.md "mention"). If the timing marks are too close together, the interpreter rejects the ballot — ballots must be printed at full scale to be interpreted safely.
 
 The interpreter will then search the bottom left and top right corners of the image for a QR code. Since ballots have QR codes in the bottom left corner, the location of the QR code determines the correct orientation of the ballot and the interpreter can flip the image right-side up if necessary:
 
@@ -30,7 +30,7 @@ Now the interpreter inspects the locations of all ballot bubbles to see how fill
 
 The bubble mark scores are later compared against the mark thresholds in the system settings to determine whether the voter made an indication that should be counted. The recommended default definite mark threshold is 7%. Setting too low of a threshold may result in stray marks or ballot folds to be considered as marks. Setting too high of a threshold may result in reasonable voter marks not being detected. While ballot instructions should recommend voters fully fill in the bubbles, at a threshold of 7% the system will detect most voter marks that pass through the bubble.
 
-<div><figure><img src="../.gitbook/assets/validmarks (2).png" alt=""><figcaption><p>Valid Marks</p></figcaption></figure> <figure><img src="../.gitbook/assets/invalidmarksshort.jpg" alt=""><figcaption><p>Invalid Marks</p></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/validmarks (1).png" alt=""><figcaption><p>Valid Marks</p></figcaption></figure> <figure><img src="../.gitbook/assets/invalidmarksshort.jpg" alt=""><figcaption><p>Invalid Marks</p></figcaption></figure></div>
 
 After bubbles are scored, the interpreter will then determine the location of the contest options relative to the grid. The write-in areas are defined in the election definition relative to the contest option areas. The write-in areas are then scored, similarly to the bubbles. This step only occurs in jurisdictions allowing unmarked (unbubbled) write-ins because otherwise a write-in is valid based only on the bubble. Write-in areas that cross the write-in area threshold set in the system settings will be shown in the write-in adjudication flow in VxAdmin. The system's default write-in area threshold is 5%.
 

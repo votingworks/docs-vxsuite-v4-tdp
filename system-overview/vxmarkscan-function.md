@@ -4,7 +4,7 @@ VxMarkScan is the system's ballot marking device. It allows all voters to make s
 
 ## Configuration
 
-VxMarkScan is configured with a signed [election package](../system-overview/election-package/#election-definition) exported from VxAdmin. The election definition defines the ballot styles that will be available to voters. The election definition also includes the translations defined for text on the ballot, while the [app strings](../system-overview/election-package/#app-strings) file contains the translations for other text shown on screen. The election package's [audio files](../system-overview/election-package/#audio-ids-and-audio-clips) are played for the voter in audio-mode.
+VxMarkScan is configured with a signed [election package](election-package/#election-definition) exported from VxAdmin. The election definition defines the ballot styles that will be available to voters. The election definition also includes the translations defined for text on the ballot, while the [app strings](election-package/#app-strings) file contains the translations for other text shown on screen. The election package's [audio files](election-package/#audio-ids-and-audio-clips) are played for the voter in audio-mode.
 
 {% hint style="info" %}
 **User Manual Reference:** [VxMarkScan](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmarkscan "mention")
@@ -75,7 +75,7 @@ If a poll worker card is inserted during a voting session the poll worker can de
 From the poll worker screen a poll worker may choose "Insert Printed Ballot" in order to scan a previously printed ballot and start a new voter session at the "Review Ballot" stage of the flow diagram above.
 
 {% hint style="info" %}
-**User Manual Reference**: [https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/voting-sessions](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmark/voting-sessions "mention")
+**User Manual Reference**: [Voting Sessions](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxmarkscan/voting-sessions "mention")
 {% endhint %}
 
 ### Voter Privacy
