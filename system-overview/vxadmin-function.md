@@ -72,13 +72,13 @@ Once VxAdmin is in test ballot mode, only test CVRs can be subsequently loaded. 
 
 ### Removing CVRs
 
-CVRs can be removed by the user before results are marked as official or can be removed by fully unconfiguring VxAdmin. All CVRs are removed at once. The CVR data in the database along with all its dependent data - write-ins, ballot images, and adjudications - are permanently and irrecoverably deleted from the data store.
+CVR imports can be removed by the user before results are marked as official. The user can delete individual CVR imports or can delete all CVRs imports at once. The CVR data in the database along with all its dependent data - write-ins, ballot images, and adjudications - are permanently and irrecoverably deleted from the data store. If results have been marked as official, the only way to remove CVR imports is by unconfiguring VxAdmin.
 
 ## Adjudication
 
 The tally reports from VxScan do not reflect any post-voting adjudication. All write-ins are simply "Write-In", unmarked write-ins are undervotes, and marginal marks are also undervotes.
 
-VxAdmin allows election managers to perform on-screen adjudication for blank ballots, write-ins, marginal marks, overvotes, and undervotes. By default, only ballots with write-ins appear in the adjudication queue. If `MarginalMark` , `Overvote`, `Undervote` , or `BlankBallot` is included in the system settings as part of the list of `adminAdjudicationReasons` , ballots with any of the specified features will also appear in the queue.&#x20;
+VxAdmin allows election managers to perform on-screen adjudication for blank ballots, write-ins, marginal marks, overvotes, and undervotes. By default, only ballots with write-ins appear in the adjudication queue. If `MarginalMark` , `Overvote`, `Undervote` , or `BlankBallot` is included in the system settings as part of the list of `adminAdjudicationReasons` , ballots with any of the specified features will also appear in the queue.
 
 * A marginal mark is defined as any mark over a bubble which has a score of at least the `marginal` threshold defined in the system settings but less than the `definite` threshold defined in the system settings.
 * A blank ballot is defined as any ballot where no bubbles crossed the `definite` mark threshold
@@ -89,7 +89,7 @@ The adjudicator is presented with a full view of the ballot and a list of all co
 
 ### Write-In Candidates
 
-VxAdmin handles write-in candidates differently depending on whether the jurisdiction requires that write-in candidates must be "qualified" for their votes to count.&#x20;
+VxAdmin handles write-in candidates differently depending on whether the jurisdiction requires that write-in candidates must be "qualified" for their votes to count.
 
 #### Qualified Write-In Mode
 
