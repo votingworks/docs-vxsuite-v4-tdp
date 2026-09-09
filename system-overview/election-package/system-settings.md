@@ -22,6 +22,7 @@ The system settings file contains settings which are not specific to an election
 * `centralScanAdjudicationReasons` - Specifies the reasons that a ballot scanned at VxCentralScan should be flagged for adjudication. Supported reasons are overvotes, undervotes, blank ballots, or unmarked write-ins.
 * `adminAdjudicationReasons` - Specifies the reasons for a ballot to appear in the VxAdmin adjudication queue in addition to write-ins. Supported reasons are undervotes, overvotes, marginal marks, and blank ballots.
 * `areWriteInCandidatesQualified` - When set to `true`, write-ins can only be adjudicated for qualified write-ins added by an election manager. When set to `false`, adjudicators can add any unofficial write-in candidate on an ad hoc basis.
+* `limitAdminAdjudicationToFlaggedContests` - When set to `true`, a contest can only be adjudicated if it was flagged by the election package's adjudication reasons. For example if the flag is set to `true` and undervotes are not included in `adminAdjudicationReasons`, then an undervoted contest could not be edited by the user.
 
 ## Scanning Settings
 
