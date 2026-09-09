@@ -84,7 +84,7 @@ Because VxAdmin requires a VxSuite digital signature on all imported cast vote r
 
 #### VxSuite Required Fields
 
-<table><thead><tr><th width="219">CDF Class</th><th>Additionally Required Attributes</th></tr></thead><tbody><tr><td>CVR</td><td>BallotStyleId, BallotStyleUnitId, BatchId, CreatingDeviceId, UniqueId</td></tr><tr><td>CVRContest</td><td>CVRContestSelection</td></tr><tr><td>CVRContestSelection</td><td><ul><li>ContestSelectionId </li><li>SelectionPosition is limited to length 1</li></ul></td></tr><tr><td>CVRSnapshot</td><td>CVRContest</td></tr></tbody></table>
+<table><thead><tr><th width="219">CDF Class</th><th>Additionally Required Attributes</th></tr></thead><tbody><tr><td>CVR</td><td>BallotStyleId, BallotStyleUnitId, BatchId, CreatingDeviceId, UniqueId</td></tr><tr><td>CVRContest</td><td>CVRContestSelection</td></tr><tr><td>CVRContestSelection</td><td><ul><li>ContestSelectionId</li><li>SelectionPosition is limited to length 1</li></ul></td></tr><tr><td>CVRSnapshot</td><td>CVRContest</td></tr></tbody></table>
 
 ### Report Metadata
 
@@ -114,9 +114,9 @@ The list of parties in the cast vote record report is mapped directly from the [
 
 #### CastVoteRecordReport.Election
 
-The `Election` class has values mapped to it directly from the [election definition](election-package/vxsuite-election-definition.md): &#x20;
+The `Election` class has values mapped to it directly from the [election definition](election-package/vxsuite-election-definition.md):
 
-<table><thead><tr><th width="314">CDF Attribute</th><th>Usage</th></tr></thead><tbody><tr><td>@id</td><td>The election's ballot hash</td></tr><tr><td>Name</td><td>The title of the election</td></tr><tr><td>ElectionScopeId</td><td>Fixed to "election-state"</td></tr><tr><td>Candidate.@id</td><td>The candidate identifier from the election definition</td></tr><tr><td>Candidate.Name</td><td>The candidate name</td></tr><tr><td>Contest.@id</td><td>The contest identifier from the election definition</td></tr><tr><td>Contest.Name</td><td>The contest title</td></tr><tr><td>CandidateContest.VotesAllowed</td><td>The contest's number of seats</td></tr><tr><td>CandidateContest.PrimaryPartyId</td><td>The party identifier of the associated party, if a primary contest</td></tr><tr><td>CandidateSelection.@id</td><td>The candidate identifier from the election definition</td></tr><tr><td>CandidateSelection.CandidateIds</td><td>The candidate identifier from the election definition</td></tr><tr><td>CandidateSelection.IsWriteIn</td><td>Whether the selection represents a write-in bubble</td></tr><tr><td>BallotMeasureSelection.@id</td><td>The option identifier  from the election definition</td></tr><tr><td>BallotMeasureSelection.Selection</td><td>The option label that appeared on the ballot</td></tr></tbody></table>
+<table><thead><tr><th width="314">CDF Attribute</th><th>Usage</th></tr></thead><tbody><tr><td>@id</td><td>The election's ballot hash</td></tr><tr><td>Name</td><td>The title of the election</td></tr><tr><td>ElectionScopeId</td><td>Fixed to "election-state"</td></tr><tr><td>Candidate.@id</td><td>The candidate identifier from the election definition</td></tr><tr><td>Candidate.Name</td><td>The candidate name</td></tr><tr><td>Contest.@id</td><td>The contest identifier from the election definition</td></tr><tr><td>Contest.Name</td><td>The contest title</td></tr><tr><td>CandidateContest.VotesAllowed</td><td>The contest's number of seats</td></tr><tr><td>CandidateContest.PrimaryPartyId</td><td>The party identifier of the associated party, if a primary contest</td></tr><tr><td>CandidateSelection.@id</td><td>The candidate identifier from the election definition</td></tr><tr><td>CandidateSelection.CandidateIds</td><td>The candidate identifier from the election definition</td></tr><tr><td>CandidateSelection.IsWriteIn</td><td>Whether the selection represents a write-in bubble</td></tr><tr><td>BallotMeasureSelection.@id</td><td>The option identifier from the election definition</td></tr><tr><td>BallotMeasureSelection.Selection</td><td>The option label that appeared on the ballot</td></tr></tbody></table>
 
 ### Cast Vote Record Attributes
 
@@ -129,19 +129,19 @@ Each cast vote record includes a set of ballot metadata attributes:
 The `CVR.BallotImage` attribute contains information about the images accompanying the cast vote record. It always contains information for both the front and back images of the ballot. Its attributes are as follows:
 
 <table><thead><tr><th width="165">CDF Attribute</th><th>Usage</th></tr></thead><tbody><tr><td>Location</td><td><p>Location of the image file relative to the report, such as:</p><pre><code>file:864a2854-ee26-4223-8097-9633b7bed096-front.jpg
-</code></pre></td></tr><tr><td>Hash.Type</td><td>Fixed to "sha-256"</td></tr><tr><td>Hash.Value</td><td><p></p><ul><li><strong>Images &#x26; Layouts:</strong> {SHA256 hash of image}-{SHA256 hash of layout}</li><li><strong>Images Only</strong>: SHA256 hash of image</li></ul><p></p></td></tr></tbody></table>
+</code></pre></td></tr><tr><td>Hash.Type</td><td>Fixed to "sha-256"</td></tr><tr><td>Hash.Value</td><td><ul><li><strong>Images &#x26; Layouts:</strong> {SHA256 hash of image}-{SHA256 hash of layout}</li><li><strong>Images Only</strong>: SHA256 hash of image</li></ul></td></tr></tbody></table>
 
 Hashes of the ballot image and ballot layout files are included in the cast vote record report so that the hash (and digital signature) of the cast vote record export will reflect any change to the image or layout files.
 
 #### Snapshots
 
-The CDF specification allows detailing multiple versions of the same cast vote record as "snapshots."&#x20;
+The CDF specification allows detailing multiple versions of the same cast vote record as "snapshots."
 
-For bubble ballots, there are both "original" and "interpreted" snapshots. The "original" snapshot contains mark thresholds for every single bubble on the ballot. The "interpreted" snapshot contains only the marks that were detected as definite marks and counted as valid or invalid votes.&#x20;
+For bubble ballots, there are both "original" and "interpreted" snapshots. The "original" snapshot contains mark thresholds for every single bubble on the ballot. The "interpreted" snapshot contains only the marks that were detected as definite marks and counted as valid or invalid votes.
 
 For summary ballots, there is only an "original" snapshot.
 
-The snapshot is referenced in the `CVR.CurrentSnapshotId` field by its identifier, which will be the unique identifier of the cast vote record along with its type, such as&#x20;
+The snapshot is referenced in the `CVR.CurrentSnapshotId` field by its identifier, which will be the unique identifier of the cast vote record along with its type, such as
 
 ```
 864a2854-ee26-4223-8097-9633b7bed096-interpreted
@@ -180,5 +180,4 @@ The metadata file includes data that applies to all cast vote records in the exp
 
 Each cast vote record is associated with a batch via its `BatchId` metadata field. The CDF doesn't have a place within the cast vote record report to include batch metadata, so it is included here.
 
-<table><thead><tr><th width="231">Attribute</th><th>Usage</th></tr></thead><tbody><tr><td>id</td><td>The UUID of the batch generated by the scanner</td></tr><tr><td>label</td><td>The label for the batch</td></tr><tr><td>batchNumber</td><td>The sequential number of the batch, e.g. 2 for the second batch</td></tr><tr><td>startTime</td><td>The time a batch was started in ISO 8601 format</td></tr><tr><td>endTime</td><td>The time a batch ended in ISO 8601 format</td></tr><tr><td>sheetCount</td><td>The number of sheets (i.e. cast vote records) in a batch</td></tr><tr><td>scannerId</td><td>The serial number of the scanner</td></tr><tr><td>ballotCastingMode</td><td>The casting mode of the batch, either "early_voting" or "election_day". Optional.</td></tr><tr><td>pollingPlaceId</td><td>The UUID of the batch's polling place.</td></tr></tbody></table>
-
+<table><thead><tr><th width="231">Attribute</th><th>Usage</th></tr></thead><tbody><tr><td>id</td><td>The UUID of the batch generated by the scanner</td></tr><tr><td>label</td><td>The label for the batch</td></tr><tr><td>batchNumber</td><td>The sequential number of the batch, e.g. 2 for the second batch</td></tr><tr><td>startTime</td><td>The time a batch was started in ISO 8601 format</td></tr><tr><td>endTime</td><td>The time a batch ended in ISO 8601 format</td></tr><tr><td>sheetCount</td><td>The number of sheets (i.e. cast vote records) in a batch</td></tr><tr><td>scannerId</td><td>The serial number of the scanner</td></tr><tr><td>scannerMachineType</td><td>The type of scanner - "precinct" for VxScan and "central" for VxCentralScan.</td></tr><tr><td>ballotCastingMode</td><td>The casting mode of the batch, either "early_voting" or "election_day". Optional.</td></tr><tr><td>pollingPlaceId</td><td>The UUID of the batch's polling place.</td></tr></tbody></table>
