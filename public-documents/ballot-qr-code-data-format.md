@@ -42,4 +42,4 @@ HMPB and BMD QR codes are [Model 2 QR codes](https://www.qrcode.com/en/codes/mod
 
 ## Source Code
 
-The source code and further technical documentation of how ballot QR codes are encoded and decoded can be found in the [ballot-encoder library](https://github.com/votingworks/vxsuite/tree/v4.0.1-release-branch/libs/ballot-encoder).
+The source code and further technical documentation of how ballot QR codes are encoded and decoded can be found in the [ballot-encoder library](https://github.com/votingworks/vxsuite/tree/v4.0.7/libs/ballot-encoder).
