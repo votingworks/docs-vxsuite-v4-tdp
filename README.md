@@ -53,7 +53,7 @@ VxScan is the system's precinct scanner. At the beginning of an election, it is 
 
 Voters cast ballots by inserting their ballots into the scanner in any orientation. After interpreting the scanned ballot, the scanner will drop the ballot into the ballot box and inform the voter that their ballot was successfully cast. During voting, VxScan continuously exports [cast vote records](system-overview/cast-vote-records.md) to an attached USB drive.
 
-If the election is [configured to support second-chance voting](https://github.com/votingworks/docs-vxsuite-v4-tdp/blob/v4.0-release-branch/broken-reference/README.md) and the ballot triggers a configured adjudication reason (e.g. it has an overvote), the scanner will hold the ballot while the voter is notified of the issues on their ballot. The voter then chooses whether to cast their ballot or return it to update or spoil.
+If the election is configured to support second-chance voting and the ballot triggers a configured adjudication reason (e.g. it has an overvote), the scanner will hold the ballot while the voter is notified of the issues on their ballot. The voter then chooses whether to cast their ballot or return it to update or spoil.
 
 When polls are closed, the CVR export is completed and a [polls closed report ](system-overview/vxscan-polls-reports.md)prints. The polls closed report includes the vote tallies of all ballots cast at the scanner while polls were open. Unlike the vote tallies eventually exported from VxAdmin, the vote tallies at VxScan do not contain any post-voting adjudication information such as write-in adjudication. The CVR export on the USB drive is then taken to VxAdmin for adjudication, aggregation, and reporting.
 
