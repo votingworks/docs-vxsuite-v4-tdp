@@ -4,7 +4,7 @@ VxCentralScan is the system's batch scanner which enables election managers to e
 
 ## Configuration
 
-VxCentralScan is configured with a signed [election-package](election-package/ "mention") exported from VxAdmin. The election definition includes the ballot layouts necessary for interpreting ballots and the system settings which indicate what type of ballot issues (e.g. overvotes) require adjudication. After the election package is loaded by an authenticated election manager, VxCentralScan's polling place is configured. If the election has exactly one absentee polling place, VxCentralScan selects it automatically and no further action is required; otherwise the election manager must select a polling place before scanning. The selected polling place determines which ballots VxCentralScan will accept: ballots outside it cause VxCentralScan to stop and refuse to tabulate them (see [Ballot Issues & Adjudication](#ballot-issues-and-adjudication)). The polling place cannot be changed once ballots have been scanned.
+VxCentralScan is configured with a signed [election-package](election-package/ "mention") exported from VxAdmin. The election definition includes the ballot layouts necessary for interpreting ballots and the system settings which indicate what type of ballot issues (e.g. overvotes) require adjudication. After the election package is loaded by an authenticated election manager, VxCentralScan's polling place is configured. If the election has exactly one absentee polling place, VxCentralScan selects it automatically and no further action is required; otherwise the election manager must select a polling place before scanning. The selected polling place determines which ballots VxCentralScan will accept: ballots outside it cause VxCentralScan to stop and refuse to tabulate them (see [Ballot Issues & Adjudication](vxcentralscan-function.md#ballot-issues-and-adjudication)). The polling place cannot be changed once ballots have been scanned.
 
 {% hint style="info" %}
 **User Manual Reference:** [Configure VxCentralScan](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/configure-ballot-scanner "mention")
@@ -14,7 +14,7 @@ VxCentralScan is configured with a signed [election-package](election-package/ "
 
 After initial configuration, VxCentralScan is in test ballot mode. The election manager can toggle between test ballot mode and official ballot mode. In official ballot mode, only official ballots can be scanned and exported CVRs will be official ballot CVRs. In test ballot mode, only test ballots can be scanned and exported CVRs will be test ballot CVRs. If `allowOfficialBallotsInTestMode` is set in the [system settings](election-package/#system-settings), official ballots will be allowed in test mode but exported CVRs will still be test CVRs.
 
-Switching between ballot modes clears all scanned ballot data. The election manager can switch from test ballot mode to official ballot mode at any time. When in official ballot mode after ballots have been scanned, the election manager can only switch back to test ballot mode if the scanned ballot data has been backed up.&#x20;
+Switching between ballot modes clears all scanned ballot data. The election manager can switch from test ballot mode to official ballot mode at any time. When in official ballot mode after ballots have been scanned, the election manager can only switch back to test ballot mode if the scanned ballot data has been backed up.
 
 ### Unconfiguring
 
@@ -54,7 +54,7 @@ The v4 UUID (universally unique identifier) for each batch is generated when the
 
 Batch scanning pauses whenever a ballot is not counted for any reason. Sometimes the ballot was not interpreted or cannot be accepted, in which case the ballot must be removed:
 
-* **Vertical Streaks Detected** - the scanner may require cleaning&#x20;
+* **Vertical Streaks Detected** - the scanner may require cleaning
 * **Wrong Ballot Mode** - test ballots in official ballot mode or official ballots in test ballot mode
 * **Wrong Election** - the hash on the ballot does not match the currently configured election
 * **Unreadable** - the ballot image could not be successfully interpreted, possibly because it is not a valid ballot or because the image skew was too great
@@ -64,9 +64,10 @@ In other cases, the ballot requires adjudication. The adjudication reasons for V
 
 * **Overvote** - at least one contest is overvoted
 * **Undervote** - at least one contest is undervoted
+* **Marginal Mark** - at least one contest contains one or more marginal marks
 * **Blank** - all contests are blank
 
-In these cases, the affected contests will be highlighted on screen to the election manager and they will have the option to remove or tabulate the ballot.&#x20;
+In these cases, the affected contests will be highlighted on screen to the election manager and they will have the option to remove or tabulate the ballot.
 
 {% hint style="info" %}
 **User Manual Reference:** [Central Scanning #Adjudicate Ballots](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/scanning-ballots#adjudicate-ballots "mention")
