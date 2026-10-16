@@ -8,9 +8,9 @@ VxScan is the system's precinct scanner into which voters cast their ballots dir
 
 VxScan includes an embedded A4 thermal roll printer which is used to print polls reports. The application communicates with the printer via a custom driver developed by VotingWorks. The application is regularly polling the printer for status, which is one of the following:
 
-<table><thead><tr><th width="172">Status</th><th width="282">Meaning</th><th>Effect</th></tr></thead><tbody><tr><td>Ready</td><td>Platen is attached and paper is detected</td><td>Application may print normally</td></tr><tr><td>No Paper</td><td>Platen is attached but no paper is detected</td><td>Printing disabled. A warning will be shown on poll worker screens. </td></tr><tr><td>Cover Open</td><td>Platen is not attached</td><td>Printing disabled. If the polls are open, a warning will be shown.</td></tr><tr><td>Error</td><td>Most likely the printhead has overheated, but other hardware errors are possible. Details available in diagnostics interface.</td><td>Printing disabled. Poll workers will not be able to operate the polls, but election managers and system administrators can still authenticate for diagnostics.</td></tr></tbody></table>
+<table><thead><tr><th width="172">Status</th><th width="282">Meaning</th><th>Effect</th></tr></thead><tbody><tr><td>Ready</td><td>Platen is attached and paper is detected</td><td>Application may print normally</td></tr><tr><td>No Paper</td><td>Platen is attached but no paper is detected</td><td>Printing disabled. A warning will be shown on poll worker screens.</td></tr><tr><td>Cover Open</td><td>Platen is not attached</td><td>Printing disabled. If the polls are open, a warning will be shown.</td></tr><tr><td>Error</td><td>Most likely the printhead has overheated, but other hardware errors are possible. Details available in diagnostics interface.</td><td>Printing disabled. Poll workers will not be able to operate the polls, but election managers and system administrators can still authenticate for diagnostics.</td></tr></tbody></table>
 
-During a polls transition, a polls report is [generated](software-overview.md#document-creation) and gradually sent to the printer. Documents are A4 width but of indefinite length depending on the number of contests on the ballot styles at the polling place. If the printer encounters an error or runs out of paper in the middle of a print, the poll worker will be prompted to wait or to replace the thermal roll in order to continue printing. The previous document will reprint from the beginning. In most cases, poll workers do not have to install the thermal paper roll.&#x20;
+During a polls transition, a polls report is [generated](software-overview.md#document-creation) and gradually sent to the printer. Documents are A4 width but of indefinite length depending on the number of contests on the ballot styles at the polling place. If the printer encounters an error or runs out of paper in the middle of a print, the poll worker will be prompted to wait or to replace the thermal roll in order to continue printing. The previous document will reprint from the beginning. In most cases, poll workers do not have to install the thermal paper roll.
 
 Election managers normally install the thermal paper rolls via a guided flow. They will be prompted to remove the platen, install the paper, and re-install the platen. Whenever an election manager installs a thermal paper roll, they are also prompted to print a test page. The main goal of the test print is to ensure that the election manager installed the roll in the correct orientation as it is one-sided and, if reversed, will not print anything.
 
@@ -36,11 +36,11 @@ The scanner's cover can be opened for cleaning, during which scanning will be di
 
 ### Audio Management
 
-VxScan makes noises whenever a ballot is accepted or rejected. The ballot accepted sound is a pleasant chime and the ballot rejected sound is a jarring beep. Election managers can toggle sounds on or off.  When no headphones are plugged into the front panel headphone jack, the sound comes out of the onboard speaker. When headphones are plugged in for voter accessibility, audio output is routed to the headphones via the single-board computer's audio output.
+VxScan makes noises whenever a ballot is accepted or rejected. The ballot accepted sound is a pleasant chime and the ballot rejected sound is a jarring beep. Election managers can toggle sounds on or off. When no headphones are plugged into the front panel headphone jack, the sound comes out of the onboard speaker. When headphones are plugged in for voter accessibility, audio output is routed to the headphones via the single-board computer's audio output.
 
 ## Configuration
 
-VxScan is configured with a signed [election package](election-package/) exported from VxAdmin. The election definition includes the ballot layouts necessary for interpreting ballots and the system settings which indicate what type of ballot issues (e.g. overvotes) require adjudication.&#x20;
+VxScan is configured with a signed [election package](election-package/) exported from VxAdmin. The election definition includes the ballot layouts necessary for interpreting ballots and the system settings which indicate what type of ballot issues (e.g. overvotes) require adjudication.
 
 {% hint style="info" %}
 **User Manual Reference:** [Configure VxScan](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxscan/configure-vxscan "mention")
@@ -68,7 +68,7 @@ VxScan can be unconfigured by an election manager or system administrator. If ba
 
 <figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
-After configuration, polls are initially closed. When polls are closed, ballots cannot be cast.&#x20;
+After configuration, polls are initially closed. When polls are closed, ballots cannot be cast.
 
 Poll workers open the polls to allow casting ballots. Once polls are opened, polls can only return to the initial polls closed state while remaining configured in two ways. First, switching from test ballot mode to official ballot mode will reset the polls. Second, in cases where the polls are open but no ballots have been cast, the polling place can still be changed which will also reset the polls to closed. Both of these actions can be performed by election managers but not poll workers. While polls are open, ballots can be inserted by voters, scanned, and tabulated.
 
@@ -86,13 +86,13 @@ If the polls have been closed, the only possible way for the polls to be re-open
 
 ## Scanning
 
-Scanning can begin once VxScan is fully configured and polls are open. If any user authenticates, scanning will be disabled until they remove their card. If CVRs are not synced to the USB drive, or no USB drive is inserted, scanning will be disabled. Scanning will be enabled again once a USB drive with synced CVRs is detected. If the election manager has disabled continuous export then scanning will be enabled without a synced USB drive present.&#x20;
+Scanning can begin once VxScan is fully configured and polls are open. If any user authenticates, scanning will be disabled until they remove their card. If CVRs are not synced to the USB drive, or no USB drive is inserted, scanning will be disabled. Scanning will be enabled again once a USB drive with synced CVRs is detected. If the election manager has disabled continuous export then scanning will be enabled without a synced USB drive present.
 
-While scanning is enabled, the scanner will grab and scan paper as soon as it is detected. The scanned image will be [interpreted](ballot-interpretation.md) while the ballot is still being held by the scanner. If the ballot is interpreted successfully and contains no errors, it will be ejected into the ballot box with a chime and the screen will inform the voter that their ballot has been cast.&#x20;
+While scanning is enabled, the scanner will grab and scan paper as soon as it is detected. The scanned image will be [interpreted](ballot-interpretation.md) while the ballot is still being held by the scanner. If the ballot is interpreted successfully and contains no errors, it will be ejected into the ballot box with a chime and the screen will inform the voter that their ballot has been cast.
 
 If the ballot cannot be interpreted, it will be rejected toward the voter. Interpretation can fail if the ballot is not a valid [hand marked ballot](hand-marked-ballots.md) or if the ballot enters the scanner at too much of an angle, although the paper path normally prevents significant skew. If the ballot is interpretable but is invalid due to a mismatching election, precinct, or ballot mode, it will also be rejected toward the voter.
 
-If the ballot is interpreted and valid, but contains some voter error, the scanner will hold the ballot out of view while the errors are presented to the voter on screen. The types of errors that are flagged are determined by the `precinctScanAdjudicationReasons` set in the [system settings](election-package/#system-settings). Possible options are overvotes, undervotes, and blank ballots. In the case of overvotes or undervotes, the specific list of affected contests will be listed. The voter has the option to return the ballot to themselves or to cast it despite warnings. If there's an overvote and `disallowCastingOvervotes` is set in the system settings, however, the ballot can only be returned.
+If the ballot is interpreted and valid, but contains some voter error, the scanner will hold the ballot out of view while the errors are presented to the voter on screen. The types of errors that are flagged are determined by the `precinctScanAdjudicationReasons` set in the [system settings](election-package/#system-settings). Possible options are overvotes, undervotes, marginal marks, and blank ballots. In the case of overvotes, undervotes, or marginal marks, the affected contests will be listed. The voter has the option to return the ballot to themselves or to cast it despite warnings. If there's an overvote and `disallowCastingOvervotes` is set in the system settings, however, the ballot can only be returned.
 
 If the `precinctScanAdjudicationReasons` includes adjudicating unmarked write-ins, which are marks in the write-in space with the associated bubble unmarked, those unmarked write-ins will be included when determining whether a contest contains an overvote. At the same time, it will be considered an undervote. For example consider a vote for one contest. If the voter only fills in an unmarked write-in, it will be considered an undervote. If the voter fills in a bubble and a separate unmarked write-in, it will be considered an overvote when warning the voter. Warning in both these cases encourages the voter to clarify their ambiguous marks. When votes are tallied, however, unmarked write-ins are always considered undervotes at VxScan.
 
@@ -104,7 +104,7 @@ Once the ballot is cast, whether immediately after interpretation or after the v
 
 ### Visual Settings
 
-The voter interface can be tuned to be more accessible to different voters:&#x20;
+The voter interface can be tuned to be more accessible to different voters:
 
 * Text size can be adjusted to four different sizes (VVSG 2.0 7.1-G)
 * Contrast mode can be adjusted from the default medium contrast (VVSG 2.0 7.1-C) to a high-contrast white background, high contrast black background, or low contrast (VVSG 2.0 7.1-D)
@@ -130,15 +130,14 @@ CVRs can be exported directly from the election manager menu, in which case they
 
 When polls are opened, polls are closed, voting is paused, or voting is resumed, VxScan prints a report via the thermal printer. The number of copies printed automatically is determined by the system settings. The poll worker always has the option to print additional copies.
 
-The most recent polls report can be printed as long as no ballots have since been cast. For example, the polls opened report can be printed as long as zero ballots have been cast. The polls closed report can be printed indefinitely, because no ballots can be cast after polls are closed. Reports will have both the timestamp of the polls transition and of the report printed, so reports printed at a later time are distinguishable.&#x20;
+The most recent polls report can be printed as long as no ballots have since been cast. For example, the polls opened report can be printed as long as zero ballots have been cast. The polls closed report can be printed indefinitely, because no ballots can be cast after polls are closed. Reports will have both the timestamp of the polls transition and of the report printed, so reports printed at a later time are distinguishable.
 
 For examples of all VxScan reports, see [vxscan-polls-reports.md](vxscan-polls-reports.md "mention").
 
-For polls opened and polls closed reports, the vote interpretations of all ballots are tallied together. In the case of polls opened reports, the tallies should always be zero, forming a zero report. It is impossible to have any ballots scanned already at the time polls are opened, because the scanner is disabled until polls are opened. Pursuant to VVSG 2.0 1.1.3-B, however, in the impossible event that non-zero totals are detected on the machine when the poll worker attempts to open the polls, an error will be presented to the poll worker, and logged, and they will be unable to open the polls.&#x20;
+For polls opened and polls closed reports, the vote interpretations of all ballots are tallied together. In the case of polls opened reports, the tallies should always be zero, forming a zero report. It is impossible to have any ballots scanned already at the time polls are opened, because the scanner is disabled until polls are opened. Pursuant to VVSG 2.0 1.1.3-B, however, in the impossible event that non-zero totals are detected on the machine when the poll worker attempts to open the polls, an error will be presented to the poll worker, and logged, and they will be unable to open the polls.
 
 Tallies for the polls closed report are created by iterating through the data store's table of cast vote records and forming totals of votes for contest options, undervotes, overvotes, and total ballots cast. The process is the same as on VxAdmin but with far fewer steps because there are no write-in adjudication results to consider and no manual tallies. All marked write-ins are grouped as a generic "Write-In" count in reports. All unmarked write-ins are considered as undervotes.
 
 For voting paused and voting resumed reports, only a total ballot count is included as opposed to vote tallies.
 
 There are no persistent contest option registers. Contest option counts (as show up in the zero report) are calculated by summing the data across all CVRs at the time the report is generated.
-
