@@ -28,9 +28,9 @@ VxCentralScan is compatible with the Ricoh fi-8170, fi-7600, and fi-8950 product
 
 ### Batch Management
 
-When the user triggers a batch scan, the scanner will start a batch and begin scanning sheets one a time. The scanner will pull the paper through and transfer a scanned image to the application which will then [interpret the ballot](ballot-interpretation.md) according to the current election definition. If any issues are found with the ballot - either the ballot is incompatible or the marks trigger some adjudication reason - scanning will pause and the election manager will be prompted to remove or tabulate the ballot. When pausing for adjudication, the batch is not yet ended. Once the election manager addresses the ballot, scanning will continue until there are no more ballots in the hopper to be scanned. At that point, the batch will end.
+When the user triggers a batch scan, the scanner will start a batch and begin scanning sheets one at a time. The scanner pulls each sheet through and transfers a scanned image to the application which will then [interpret the ballot](ballot-interpretation.md) according to the current election definition. Scanning continues until the hopper is empty, at which point the user will choose to either continue the batch, save the batch, or discard the batch. The option to "continue the batch" would typically be used if the batch is too large for the hopper and needs to be loaded in parts. If the interpreter hits a ballot issue or adjudication reason, enumerated below, the user will choose between continuing the batch or discarding the batch.
 
-The start time, end time, size, and index of all batches is tracked and displayed to the election manager. If a mistake was made in organizing batches or adjudicating a ballot, election managers can delete any individual batch or delete all batches.
+The start time, end time, size, and index of all batches is tracked and displayed on the batch history page. If a mistake was made in organizing batches or adjudicating a ballot, election managers can delete any individual batch or delete all batches.
 
 {% hint style="info" %}
 **User Manual Reference:** [Central Scanning #Scan Ballot Batches](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/scanning-ballots#scan-ballot-batches "mention")
@@ -55,9 +55,9 @@ The v4 UUID (universally unique identifier) for each batch is generated when the
 Batch scanning pauses whenever a ballot is not counted for any reason. Sometimes the ballot was not interpreted or cannot be accepted, in which case the ballot must be removed:
 
 * **Vertical Streaks Detected** - the scanner may require cleaning
+* **Unreadable** - the ballot image could not be successfully interpreted, possibly because it is not a valid ballot or because the image skew was too great
 * **Wrong Ballot Mode** - test ballots in official ballot mode or official ballots in test ballot mode
 * **Wrong Election** - the hash on the ballot does not match the currently configured election
-* **Unreadable** - the ballot image could not be successfully interpreted, possibly because it is not a valid ballot or because the image skew was too great
 * **Wrong Precinct** - if VxCentralScan is configured for a particular polling place and the ballot is not a part of that polling place
 
 In other cases, the ballot requires adjudication. The adjudication reasons for VxCentralScan are set in the [system settings](election-package/#system-settings) as `centralScanAdjudicationReasons` and map to the following:
@@ -70,7 +70,7 @@ In other cases, the ballot requires adjudication. The adjudication reasons for V
 In these cases, the affected contests will be highlighted on screen to the election manager and they will have the option to remove or tabulate the ballot.
 
 {% hint style="info" %}
-**User Manual Reference:** [Central Scanning #Adjudicate Ballots](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/scanning-ballots#adjudicate-ballots "mention")
+**User Manual Reference:** [adjudicate-ballots](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/scanning-ballots#adjudicate-ballots "mention")
 {% endhint %}
 
 ## Exporting CVRs
