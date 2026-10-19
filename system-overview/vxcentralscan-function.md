@@ -58,6 +58,8 @@ All of the Ricoh scanners can be used with an optional imprinter:
 
 As the ballot exits the scanner, the imprinter prints an identifier on the side margin of the ballot. The identifier is the batch's truncated UUID followed by the index of the sheet within the batch e.g. `378f6a69-3a5d90083e21_0000` for the first sheet in a batch. The identifier will appear in the CVR as the `BallotAuditId` with the full batch ID, e.g. `378f6a69-ad3f-25f2-234f-3a5d90083e21_0000`. Imprinting allows later reconciling CVRs to ballots such as in ballot comparison audits.
 
+Imprinting is enabled by default but can be disabled by an election manager. Imprinting only occurs when an imprinter is detected and imprinting is also enabled.
+
 ## Ballot Issues & Adjudication
 
 Batch scanning pauses whenever a ballot is not counted for any reason. Sometimes the ballot was not interpreted or cannot be accepted, in which case the ballot must be removed:
