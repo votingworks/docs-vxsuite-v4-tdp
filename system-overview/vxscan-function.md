@@ -64,6 +64,13 @@ Switching between ballot modes clears all scanned ballot data and resets the pol
 
 VxScan can be unconfigured by an election manager or system administrator. If ballots have been scanned in official ballot mode, an election manager can only unconfigure the machine after scanned ballot data has synced to a USB drive. System administrators can unconfigure the machine at any time.
 
+### Lifetime Scan Count
+
+VxScan maintains a lifetime scan count that gives the number of ballot sheets accepted throughout the scanner's lifetime. The count does not reset when the scanner is re-configured or when the software is updated. Other details of the lifetime scan count:
+
+* The count does not include rejected and removed ballots e.g. unreadable ballots or ballots returned to the voter
+* The count includes ballots scanned in both official and test mode
+
 ## Polls Management
 
 <figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
