@@ -20,6 +20,14 @@ Switching between ballot modes clears all scanned ballot data. The election mana
 
 VxCentralScan can be unconfigured by an election manager or system administrator. If ballots have been scanned in official ballot mode, an election manager can only unconfigure the machine after scanned ballot data has been backed up. System administrators can unconfigure the machine at any time.
 
+### Lifetime Scan Count
+
+VxCentralScan maintains a lifetime scan count that gives the number of ballot sheets accepted throughout the scanner's lifetime. The count does not reset when the scanner is re-configured or when the software is updated. Other details of the lifetime scan count:
+
+* The count does not include rejected and removed ballots e.g. unreadable ballots or ballots removed for manual adjudication
+* If a batch is scanned but discarded rather than saved, those scans will still contribute toward the lifetime scan count
+* The count includes ballots scanned in both official and test mode
+
 ## Batch Scanning
 
 ### Scanner Management
@@ -36,6 +44,10 @@ The start time, end time, size, and index of all batches is tracked and displaye
 **User Manual Reference:** [Central Scanning #Scan Ballot Batches](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/scanning-ballots#scan-ballot-batches "mention")
 {% endhint %}
 
+#### Batch UUIDs
+
+The v4 UUID (universally unique identifier) for each batch is generated when the batch is first created. It is generated with the node package `uuid` which uses the system's underlying FIPS-compliant OpenSSL implementation to generate random bytes.
+
 ### Imprinting
 
 All of the Ricoh scanners can be used with an optional imprinter:
@@ -45,10 +57,6 @@ All of the Ricoh scanners can be used with an optional imprinter:
 * The fi-8950 has the fi-890PRB installed into it
 
 As the ballot exits the scanner, the imprinter prints an identifier on the side margin of the ballot. The identifier is the batch's truncated UUID followed by the index of the sheet within the batch e.g. `378f6a69-3a5d90083e21_0000` for the first sheet in a batch. The identifier will appear in the CVR as the `BallotAuditId` with the full batch ID, e.g. `378f6a69-ad3f-25f2-234f-3a5d90083e21_0000`. Imprinting allows later reconciling CVRs to ballots such as in ballot comparison audits.
-
-#### Batch UUIDs
-
-The v4 UUID (universally unique identifier) for each batch is generated when the batch is first created. It is generated with the node package `uuid` which uses the system's underlying FIPS-compliant OpenSSL implementation to generate random bytes.
 
 ## Ballot Issues & Adjudication
 
@@ -78,5 +86,5 @@ In these cases, the affected contests will be highlighted on screen to the elect
 CVRs must be exported onto a USB drive and taken to VxAdmin for aggregation and reporting. After ballots are interpreted, their images are saved to disk and their interpretation is stored in VxCentralScan's data store. On export, all CVRs are pulled from the data store, converted to the CVR CDF, and written to the USB drive.
 
 {% hint style="info" %}
-**User Manual Reference**: [Central Scanning #Saving Cast Vote Records (CVRs)](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/scanning-ballots#saving-cast-vote-records-cvrs "mention")
+**User Manual Reference**: [saving-cast-vote-records-cvrs](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/scanning-ballots#saving-cast-vote-records-cvrs "mention")
 {% endhint %}
