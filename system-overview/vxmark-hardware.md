@@ -37,7 +37,7 @@ The display is a 15" HD (1920 x 1080) touchscreen, specifically the [Elo 1504LS]
 
 ### Accessible Controller & Headphones
 
-The accessible controller sits to the right of the display, either in its cradle or beside VxMark outside of its case. It is the commercially available [Storm AudioNav 9-Key Keypad](https://github.com/votingworks/docs-vxsuite-v4/blob/c3708afd846808afb7249ef1c11d099a86d1e15a/hardware-assets/cots-documentation/mark/Storm-Interfaces-AudioNav-EF-Datasheet.pdf). Four keys navigate directionally (up, down, left, right), one key is used to make selections, a pair of keys are used to control audio volume, and another pair of keys are used to control audio playback speed.
+The accessible controller sits to the right of the display, either in its cradle or beside VxMark outside of its case. It is the commercially available [Storm AudioNav 9-Key Keypad](https://github.com/votingworks/docs-vxsuite-v4/blob/c3708afd846808afb7249ef1c11d099a86d1e15a/hardware-assets/cots-documentation/mark/Storm-Interfaces-AudioNav-EF-Datasheet.pdf). Four keys navigate directionally (up, down, left, right), one key is used to make selections, a pair of keys are used to control audio volume, one key pauses and resumes audio, and one key opens the controller help interface.
 
 <figure><img src="../.gitbook/assets/vxmark-ati.webp" alt="" width="188"><figcaption><p>VxMark Accessible Controller</p></figcaption></figure>
 

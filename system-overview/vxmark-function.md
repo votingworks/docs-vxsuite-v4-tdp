@@ -109,7 +109,7 @@ When there's more content on a page than can fit on one screen, the voter can sc
 
 ### Audio Tactile Mode - Accessible Controller
 
-VxMark has a permanently attached accessible controller that can be used to navigate the ballot instead of using the touchscreen directly. The left and right buttons are used to navigate between contests and other screens while the up and down buttons are used to navigate between contest options or contests within each screen.
+VxMark has a permanently attached accessible controller that can be used to navigate the ballot instead of using the touchscreen directly. The left and right buttons are used to navigate between contests and other screens while the up and down buttons are used to navigate between contest options or contests within each screen. The controller has a help button which will navigate to a help interface that explains the function of each button on the controller when pressed.
 
 The currently focused element on screen is highlighted in visual mode or read aloud in audio mode. When navigating through selections on a screen large enough to be scrollable, the screen will automatically scroll to keep the focused element in view.
 
@@ -132,7 +132,7 @@ As an alternative to the visual formats, the voter can listen to their ballot in
 * how to navigate the review screens
 * how to use the accessible controller
 
-The voter can adjust volume up and down or speech rate up and down with buttons on the accessible controller. Volume and rate defaults and options are calibrated according to VVSG 2.0 7.1-K.
+The voter can adjust volume up and down with buttons on the accessible controller and adjust speech rate from the on-screen audio settings. Volume and rate defaults and options are calibrated according to VVSG 2.0 7.1-K. The voter can also pause and resume audio with a button on the accessible controller.
 
 ### Language Support
 
