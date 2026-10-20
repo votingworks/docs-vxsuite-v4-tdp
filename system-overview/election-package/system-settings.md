@@ -14,7 +14,7 @@ The system settings file contains settings which are not specific to an election
 
 * `definite` - Specifies the percentage of a bubble that needs to be filled in for the system to interpret it as a vote.
 * `marginal` - Specifies the percentage of a bubble that needs to be filled for the system to interpret it as a marginal mark that may need adjudication.
-* `writeInTextArea` - Specifies the percentage of the write-in area that needs to be filled in for the tabulators to consider it a write-in. This is only relevant for jurisdictions that allow unmarked write-ins i.e. write-ins without an accompanying mark.
+* `writeInAreaMm2` - Specifies the area in mm² of the write-in area that needs to be filled in for the tabulators to consider it a write-in. This is only relevant for jurisdictions that allow unmarked write-ins i.e. write-ins without an accompanying mark.
 
 ## Adjudication Settings
 
