@@ -29,6 +29,7 @@ The system settings file contains settings which are not specific to an election
 * `disallowCastingOvervotes` - When set to `true`, scanners will always reject overvoted ballots. When set to `false`, VxScan will allow a voter to choose whether to reject or cast an overvoted ballot, and VxCentralScan will allow an election manager to choose whether to reject or tabulate an overvoted ballot.
 * `allowOfficialBallotsInTestMode` - When set to `true`, official ballots will not be rejected in test mode. The setting is for jurisdictions where testing must take place on official ballots.
 * `disableVerticalStreakDetection` - Disables the warning when streaks are detected when scanning ballots (which indicates that the scanner needs to be cleaned). Used as a failsafe in case of erroneous warnings.
+* `ballotImageBitDepth` - Bit depth of the ballot images saved by VxScan and VxCentralScan when scanning hand-marked paper ballots. Supported values are `1`, `2`, and `8`. `1` saves pure black and white images. `2` (the default) adds two gray levels so light marks such as pencil remain visible during adjudication. `8` preserves the full grayscale scan.
 
 ## Other Settings
 

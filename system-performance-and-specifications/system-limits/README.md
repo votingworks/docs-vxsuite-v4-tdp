@@ -17,11 +17,11 @@
 
 ### VxAdmin
 
-* The total number of CVRs that can be imported is limited by the total disk space on the laptop (\~200GB). The exact number of CVRs depends ballot size, ballot selections, tabulator used (VxScan or VxCentralScan), and other factors that determine expected CVR size.
+* The total number of CVRs that can be imported is limited by the total disk space on the laptop (\~200GB). The exact number of CVRs depends on ballot size, ballot selections, tabulator used (VxScan or VxCentralScan), the configured ballot image bit depth, and other factors that determine expected CVR size.
 
 ### VxCentralScan
 
-* The total number of ballots scanned is limited by the total disk space on the laptop (\~200GB). The exact number of ballots depends on ballot size, complexity, and selections made that influence determine the CVR and ballot image sizes.
+* The total number of ballots scanned is limited by the total disk space on the laptop (\~200GB). The exact number of ballots depends on ballot size, complexity, selections made, and the configured ballot image bit depth, which determine the CVR and ballot image sizes.
 * VxCentralScan is limited by the batch scanner maximum tabulation rate: [maximum-tabulation-rate.md](maximum-tabulation-rate.md "mention")
 
 ### VxMarkScan
