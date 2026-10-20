@@ -42,7 +42,8 @@ The system settings file contains settings which are not specific to an election
   * `marks_on_preprinted_ballot` - Prints only marks onto pre-printed ballots.
   * `summary` - Prints summary ballots. Default value.
 * `enableEarlyVoting` - Enables early voting features on VxScan and VxAdmin, e.g., setting a ballot casting mode of "Early Voting" on VxScan and tabulating early voting results separately on VxAdmin.
-* Polls Close Time Settings
+* `shouldTransliterateCandidateNames` - For languages that are not written with a variant of the Latin alphabet, shows candidate names transliterated into that language's character set. The feature requires that transliterated candidate names are included in the `ballotStrings` in the election definition.
+* Polls Close Time&#x20;
   * `electionDayPollsCloseTime` - Time value. Indicates when polls close on election day. Before the polls close time, the default poll worker screen will be the full poll worker menu. After the polls close time, the default poll worker screen will be the guided "Close Polls" flow. The time is a time only, rather than a timestamp, and is always interpreted in local time.
   * `disallowClosingPollsBeforeElectionDayPollsCloseTime` - If used in combination with `electionDayPollsCloseTime`, will fully disable the "Close Polls" option until the `electionDayPollsCloseTime`.
   * `disallowVxAdminTabulationBeforeElectionDayPollsCloseTime` - If used in combination with `electionDayPollsCloseTime`, will disable tabulation (i.e. generating reports) until the `electionDayPollsCloseTime`.
