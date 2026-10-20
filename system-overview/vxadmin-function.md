@@ -228,10 +228,10 @@ For more details on how networking is set up at the operating system level, see 
 
 ## Printer Management
 
-VxAdmin can print reports via an attached printer. The supported printer is the HP LaserJet Pro 4001dn. VxAdmin can also export reports as PDFs so, in the event of a printer failure, reports will always be available.
+VxAdmin prints reports via an attached printer. The supported printer is the HP LaserJet Pro 4001dn. All reports are also available as PDFs so, in the event of a printer failure, reports will still be available.
 
 VxAdmin interfaces with the printer through CUPS, the open-source printing system developed by Apple and installed on our Debian system. When a printer is attached, it is registered with the CUPS server and made available to the application. VxAdmin is able to send print jobs to the printer via CUPS commands. The HP LaserJet Pro does not require any additional third-party or in-house driver because it supports the IPP (Internet Printing Protocol) which CUPS then utilizes.
 
-Using IPP, the VxAdmin is also able to poll the detailed status (toner level, jam status, etc.) of the printer for use in the diagnostics interface.
+When a print job is submitted via CUPS, CUPS sends it to the printer using the IPP protocol. VxAdmin waits until CUPS reports it has successfully sent the entire job to the printer, at which point it logs success. If the printer is disconnected before CUPS can send the entire job, VxAdmin will log the failure. In these cases it's possible that the printer still prints an incomplete document or error code. Whenever the printer is disconnected, any pending jobs are cancelled to avoid unexpected prints on reconnection.
 
-VxAdmin can only connect with one printer at a time and will always connect with the first attached printer.
+Note that VxAdmin can only connect with one printer at a time and will always connect with the first attached printer.

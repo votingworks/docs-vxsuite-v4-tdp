@@ -144,20 +144,24 @@ If a language other than English is set when printing a summary ballot, the ball
 
 VxMark can be configured to print one of two types of ballots: summary or bubble ballots. The print mode setting can be changed in the [election-package](election-package/ "mention").
 
-Summary ballots list all the voter's selections and contain a QR code with the selections encoded. The format is detailed in [machine-marked-ballots.md](machine-marked-ballots.md "mention") in the VxSuite technical data package. Summary ballots are only printed on-demand.  This is the default print mode for VxMark.
+Summary ballots list all the voter's selections and contain a QR code with the selections encoded. The format is detailed in [machine-marked-ballots.md](machine-marked-ballots.md "mention") in the VxSuite technical data package. Summary ballots are only printed on-demand. This is the default print mode for VxMark.
 
-VxMark can alternatively be configured to print [hand-marked-ballots.md](hand-marked-ballots.md "mention") in two modes:  print and mark entire ballot or mark selections on pre-printed ballots. The print and mark entire ballot mode uses a blank sheet of paper to print the entire ballot and mark the bubbles with the voters' selections. The mark selections on pre-printed ballots mode marks bubbles with voters' selections onto pre-printed ballots loaded in the printer.
+VxMark can alternatively be configured to print [hand-marked-ballots.md](hand-marked-ballots.md "mention") in two modes: print and mark entire ballot or mark selections on pre-printed ballots. The print and mark entire ballot mode uses a blank sheet of paper to print the entire ballot and mark the bubbles with the voters' selections. The mark selections on pre-printed ballots mode marks bubbles with voters' selections onto pre-printed ballots loaded in the printer.
 
-The positions of each bubble, for each ballot style, are included in the election package. Those positions are used by VxMark to print ovals over the bubbles for each of the voter's selections. Using bubble ballots allows VxMark's machine-marked ballots to match the hand-marked paper ballots. Note that pre-printed bubble ballots must be inserted into the printer in the correct orientation for the bubbles to be properly filled.&#x20;
+The positions of each bubble, for each ballot style, are included in the election package. Those positions are used by VxMark to print ovals over the bubbles for each of the voter's selections. Using bubble ballots allows VxMark's machine-marked ballots to match the hand-marked paper ballots. Note that pre-printed bubble ballots must be inserted into the printer in the correct orientation for the bubbles to be properly filled.
 
 If the printed ovals are slightly offset from the bubble, an election manager can adjust the positioning of the ovals, in half millimeter increments, to the left, right, up or down.
 
 ## Printer Management
 
-VxMark prints ballots via an attached printer. The supported printer is the HP LaserJet Pro 4001dn. VxMark can also export reports as PDFs so, in the event of a printer failure, reports will always be available.
+VxMark prints ballots via an attached printer. The supported printer is the HP LaserJet Pro 4001dn. VxMark exports reports as PDFs so, in the event of a printer failure, reports will always be available.
 
 VxMark interfaces with the printer through CUPS, the open-source printing system developed by Apple and installed on our Debian system. When a printer is attached, it is registered with the CUPS server and made available to the application. VxMark is able to send print jobs to the printer via CUPS commands. The HP LaserJet Pro does not require any additional third-party or in-house driver because it supports the IPP (Internet Printing Protocol) which CUPS then utilizes.
 
-Using IPP, the VxMark is also able to poll the detailed status (toner level, jam status, etc.) of the printer for use in the diagnostics interface.
+When a print job is submitted via CUPS, CUPS sends it to the printer using the IPP protocol. VxMark waits until CUPS reports it has successfully sent the entire job to the printer, at which point it logs success and increments the ballots printed count. If the printer is disconnected before CUPS can send the entire job, VxMark will log the failure and display an error message on screen. In these cases it's possible that the printer still prints an incomplete document or error code. Whenever the printer is disconnected, any pending jobs are cancelled to avoid unexpected prints on reconnection.
 
-VxMark can only connect with one printer at a time and will always connect with the first attached printer.
+If the printer is disconnected or is in a state that would prevent it from printing (e.g. it's jammed, there's no paper, or the paper tray is open) while polls are open, VxMark blocks a voting session from starting or continuing. If one of these blocking issues is hit while a voter's ballot is printing, that issue may be easily recoverable without loss of the ballot (e.g. by just loading more paper) or may have created an unusable ballot (e.g. a jammed incomplete print) that must be spoiled. The error message directs the voter toward poll worker help to assess and resolve the issue.&#x20;
+
+If the printer detects low toner, a warning is displayed but printing is not blocked.
+
+Note that VxMark can only connect with one printer at a time and will always connect with the first attached printer.

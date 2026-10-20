@@ -16,7 +16,7 @@ The election manager can choose to select a polling place for the device. The se
 
 ### Ballot Mode
 
-The election manager can toggle between official ballot mode and test ballot mode. In official ballot mode, the ballots printed at VxPrint are official ballots; in test ballot mode, they are test ballots. Switching between ballot modes clears the count of printed ballots. After configuration, VxPrint is in official ballot mode by default.&#x20;
+The election manager can toggle between official ballot mode and test ballot mode. In official ballot mode, the ballots printed at VxPrint are official ballots; in test ballot mode, they are test ballots. Switching between ballot modes clears the count of printed ballots. After configuration, VxPrint is in official ballot mode by default.
 
 ### Unconfiguring
 
@@ -32,7 +32,7 @@ Once VxPrint is configured, an election manager or poll worker can print ballots
 * **Ballot type** — precinct or absentee (election managers only)
 * **Number of copies** (election managers only)
 
-VxPrint then prints the requested ballot(s) on the connected COTS printer. It records a running count of how many ballots have been printed, broken down by these attributes, for the current ballot mode.&#x20;
+VxPrint then prints the requested ballot(s) on the connected COTS printer. It records a running count of how many ballots have been printed, broken down by these attributes, for the current ballot mode.
 
 The supported printer is the HP LaserJet Pro 4001dn. VxPrint must be connected to a printer before it can print.
 
@@ -50,10 +50,10 @@ VxPrint can produce a ballots printed report summarizing how many ballots have b
 
 ## Printer Management
 
-The supported printer is the HP LaserJet Pro 4001dn.&#x20;
+VxPrint prints ballots via an attached printer. The supported printer is the HP LaserJet Pro 4001dn. VxPrint exports reports as PDFs so, in the event of a printer failure, reports will always be available.
 
 VxPrint interfaces with the printer through CUPS, the open-source printing system developed by Apple and installed on our Debian system. When a printer is attached, it is registered with the CUPS server and made available to the application. VxPrint is able to send print jobs to the printer via CUPS commands. The HP LaserJet Pro does not require any additional third-party or in-house driver because it supports the IPP (Internet Printing Protocol) which CUPS then utilizes.
 
-Using IPP, VxPrint is also able to poll the detailed status (toner level, jam status, etc.) of the printer for use in the diagnostics interface.
+When a print job is submitted via CUPS, CUPS sends it to the printer using the IPP protocol. VxPrint waits until CUPS reports it has successfully sent the entire job to the printer, at which point it logs success and increments the ballots printed count. If the printer is disconnected before CUPS can send the entire job, VxPrint will log the failure and display an error message. In these cases it's possible that the printer still prints an incomplete document or error code. Whenever the printer is disconnected, any pending jobs are cancelled to avoid unexpected prints on reconnection.
 
-VxPrint can only connect with one printer at a time and will always connect with the first attached printer.
+Note that VxPrint can only connect with one printer at a time and will always connect with the first attached printer.
