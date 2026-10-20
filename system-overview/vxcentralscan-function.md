@@ -1,6 +1,6 @@
 # VxCentralScan Function
 
-VxCentralScan is the system's batch scanner which enables election managers to efficiently scan large batches of ballots.
+VxCentralScan is the system's batch scanner which allows efficiently scanning large batches of ballots.
 
 ## Configuration
 

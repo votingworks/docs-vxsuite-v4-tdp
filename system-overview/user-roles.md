@@ -4,13 +4,19 @@ VxSuite has four authenticated user roles. Authentication is performed with JCOP
 
 ## Poll Worker Role
 
-The poll worker role is the lowest privilege role for election day tasks at the polling place.
+The poll worker role is the lowest privilege role for tasks at the polling place. Since poll worker cards are scoped to a specific election, they can only be used on a device once an election manager has already configured it.
 
-The poll worker role allows a user to manage the polls on the polling place equipment, VxScan and VxMarkScan. On both devices, the poll worker card is used to open and close polls on election day. On VxMarkScan, the poll worker card is used to enable voter sessions. There are a few other actions enabled by the poll worker card - reprinting reports, powering down the machine, or checking the software hash - but overall the role is quite limited.
+The poll worker role allows a user to operate all polling place equipment. By device:
+
+* VxScan: open and close polls, pause and resume voting, reprint reports
+* VxMark & VxMarkScan: open and close polls, pause and resume voting, activate voting sessions
+* VxPrint: print ballots for the configured polling place
+
+On all devices, the poll worker role can check the software hash and, for devices without a power button, power down the device.&#x20;
+
+The poll worker role has no privileges on VxAdmin and cannot be used to unlock the device. VxCentralScan has no poll worker role by default, but if `centralScanEnablePollWorkerRole` is set to `true` in the system settings, poll workers will be able to operate the scanner but will not not be able to delete or export data.
 
 All poll worker cards are programmed at VxAdmin and are programmed for a specific election. They must be reprogrammed for every election. Poll worker cards may or may not require PINs depending on the value of the `arePollWorkerCardPinsEnabled` flag in the system settings file within the election package.
-
-The poll worker role has no purpose on the central equipment, VxAdmin and VxCentralScan, and poll worker cards will be ignored on those devices.
 
 ## Election Manager Role
 
