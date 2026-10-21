@@ -147,7 +147,7 @@ The purpose of computing the groups when possible, rather than always creating g
 
 **CVR Aggregation**
 
-The CVRs are pulled from the data store one by one and their vote data is added into an ongoing tally of ballots, contest option votes, overvotes, and undervotes. If the tallies are being grouped, the CVR will be added into the group that matches its metadata e.g. a CVR from a Precinct A ballot will be added to the Precinct A group.
+The CVRs are pulled from the data store one by one and their vote data is added into an ongoing tally of ballots, contest option votes, overvotes, and undervotes. If the tallies are being grouped, the CVR will be added into the group that matches its metadata e.g. a CVR from a Precinct A ballot will be added to the Precinct A group. If `countCentralScanBallotsOnlyAfterAdjudication` is enabled in the system settings, CVRs from VxCentralScan that still require adjudication are skipped.
 
 At this step in the process, the data does not contain any of the adjudication details from write-in adjudication.
 

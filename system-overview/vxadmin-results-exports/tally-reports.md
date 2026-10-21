@@ -4,6 +4,8 @@
 
 The basic structure of the tally reports printed from VxAdmin is similar to the [polls opened and closed reports](../vxscan-polls-reports.md) printed from VxScan.
 
+If `countCentralScanBallotsOnlyAfterAdjudication` is enabled in the system settings, tally reports exclude ballots scanned on VxCentralScan that have not yet been adjudicated.
+
 <figure><img src="../../.gitbook/assets/admin-full-election-report 2.png" alt="" width="375"><figcaption><p>Full election tally report</p></figcaption></figure>
 
 ## Filtered and Grouped Reports
