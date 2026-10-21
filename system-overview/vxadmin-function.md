@@ -218,6 +218,8 @@ The adjudication stations do not need to be configured individually - they pull 
 
 Unlike the host VxAdmin, which can navigate forward and backward through the entire queue of ballots needing adjudication, the adjudication stations are simply assigned the next ballot in the queue. After that ballot is adjudicated, the next ballot is assigned. Whenever a ballot is being adjudicated by the host or any adjudication station, it cannot be assigned to another adjudication station and cannot be adjudicated by the host.
 
+An adjudication station cannot skip a ballot. Instead, it can escalate the ballot to the host for election manager review, which discards any unsaved changes, releases the station's claim, and assigns the station the next ballot in the queue. Escalated ballots are flagged on the host, which can work through them as a separate queue or encounter them in the main queue, where they remain in their original position. The host cannot escalate ballots and resolves an escalated ballot by adjudicating it.
+
 <figure><img src="../.gitbook/assets/image (109).png" alt=""><figcaption><p>VxAdmin Network Diagram</p></figcaption></figure>
 
 #### Network Implementation
