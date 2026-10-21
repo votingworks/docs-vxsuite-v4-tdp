@@ -27,8 +27,6 @@ If there are multi-sheet ballots in the election, the sheet counts (e.g. "Sheet 
 
 If there are manual results, the manual ballot count will always be displayed separately from the scanned ballot count, and the total of the two will also be displayed.
 
-If `countCentralScanBallotsOnlyAfterAdjudication` is enabled in the system settings, ballot count reports still include VxCentralScan ballots that have not yet been adjudicated. The report can be filtered or grouped by reporting status to separate counted ballots from those not yet counted.
-
 When grouping is applied in a ballot count report, each group corresponds to a row in the table. In the following example, the ballot counts are grouped by both precinct and voting method:
 
 <figure><img src="../../.gitbook/assets/ballot-count-report-1.png" alt="" width="375"><figcaption><p>Ballot count report</p></figcaption></figure>
