@@ -256,10 +256,6 @@ The user can cancel during the first two phases. A canceled or failed restore em
 
 Because a backup drive is removable media outside VxAdmin's control, the restore treats its contents as untrusted. Every file is read at most once and only up to the size the manifest promises, and nothing is parsed from the drive until its signature or hash has been checked.
 
-### Logging
-
-Saving a backup logs `backup-create-init` and `backup-create-complete`. Entering restore mode logs `admin-restore-mode-scheduled` when it is requested and `admin-restore-mode-entered` on the following boot. Restoring logs `backup-restore-init` and `backup-restore-complete`, with `backup-restore-machine-mismatch` when the backup was created by a different machine and `backup-restore-interrupted` when a partial restore is discarded at startup.
-
 ## Networking & Multi-Station Adjudication
 
 In order to adjudicate high volumes of ballots, additional adjudication station VxAdmins can be networked to a host VxAdmin. The adjudication station VxAdmins are only permitted to adjudicate ballots and to do basic system workflows such as exporting logs, adjusting the date and time, and performing signed hash validation. Any VxAdmin can be switched between "Host Mode" and "Adjudication Station Mode".
