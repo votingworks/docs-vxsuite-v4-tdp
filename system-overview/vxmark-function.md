@@ -64,6 +64,25 @@ In order to have a voter-verified paper trail, the voter should always review th
 **User Manual Reference**: [Voting Sessions](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmark/voting-sessions "mention")
 {% endhint %}
 
+### Barcode Ballot Activation
+
+If `bmdEnableQrBallotActivation` is enabled in the system settings, a poll worker can activate a voting session by scanning a barcode with VxMark's barcode scanner instead of selecting the ballot style on screen. The barcode encodes the voter's ballot style and is expected to be produced by an external system such as an electronic poll book.
+
+A scan starts a voting session only when a poll worker is authenticated, the polls are open, and no voting session is in progress, and only if the encoded ballot style is available at the configured polling place. A scan under any other conditions, or one that does not identify a valid ballot style, is ignored and logged. Requiring an authenticated poll worker means a barcode cannot start a session on its own, which guards against a barcode being reused. When a scan is accepted, VxMark plays a confirmation sound and begins the voting session exactly as if the poll worker had selected the ballot style, including the language encoded in the ballot style.
+
+An election manager can set the Barcode Activation Mode to "Voting Session", the default, or "Print Ballot". The "Print Ballot" option is available only when [#blank-ballot-printing](vxmark-function.md#blank-ballot-printing "mention") is enabled. In "Print Ballot" mode, a scan opens the blank ballot printing screen with the ballot style and precinct pre-selected. The poll worker must still select "Print Ballot" to print, and VxMark returns to the poll worker menu afterward so that one scanned barcode cannot print more than one ballot.
+
+#### Ballot Style Barcode Format
+
+The barcode is a QR code containing a JSON object with the following fields:
+
+* `bId` - The ballot style ID as defined in the election definition. Ballot style IDs include the ballot language, so the language is selected along with the ballot style.
+* `pId` - The precinct ID as defined in the election definition. Optional. If omitted, VxMark uses the first precinct of the ballot style that the configured polling place covers. If provided, the precinct must use the ballot style and be covered by the polling place.
+
+For example, `{"bId":"12_en","pId":"23"}` activates the English ballot style `12` for precinct `23`.
+
+This format is subject to change while electronic poll book integrations are developed.
+
 ### Voter Privacy
 
 The voter's choices do not persist on VxMark after the end of the voting session. Other than the increase in the count of printed ballots, the only data that persist after each voting session are the relevant log events for authentication, printing a ballot, invalidating a ballot, and hardware state changes. The voter's selections or any voter actions that may trigger selections (such as touch screen presses, accessible controller presses, PAT input events) are not included in logging or otherwise persisted. After the voting session is complete, their printed ballot is the only record of their selections.
@@ -155,6 +174,8 @@ If the printed ovals are slightly offset from the bubble, an election manager ca
 ### Blank Ballot Printing
 
 If `allowPrintingBlankBallotsFromVxMark` is enabled in the system settings, poll workers can print blank ballots from VxMark while polls are open. The poll worker selects a ballot style from those available at the configured polling place and, if the ballot style is available in more than one language, a language. VxMark prints the pre-rendered ballot from the election package's [ballots file](election-package/#ballots) for that ballot style, precinct, and ballot mode, so the election package must include pre-rendered ballots. As with full-faced bubble ballot printing, test ballot mode is only available when the election package includes test ballots. Blank ballots are included in the printed ballot count and logged with the same print events as voted ballots.
+
+When the Barcode Activation Mode is set to "Print Ballot", scanning a ballot style barcode opens this screen with the ballot style and precinct pre-selected. See [#barcode-ballot-activation](vxmark-function.md#barcode-ballot-activation "mention").
 
 ## Printer Management
 
