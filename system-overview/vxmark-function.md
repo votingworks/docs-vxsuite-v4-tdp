@@ -81,8 +81,6 @@ The barcode is a QR code containing a JSON object with the following fields:
 
 For example, `{"bId":"12_en","pId":"23"}` activates the English ballot style `12` for precinct `23`.
 
-This format is subject to change while electronic poll book integrations are developed.
-
 ### Voter Privacy
 
 The voter's choices do not persist on VxMark after the end of the voting session. Other than the increase in the count of printed ballots, the only data that persist after each voting session are the relevant log events for authentication, printing a ballot, invalidating a ballot, and hardware state changes. The voter's selections or any voter actions that may trigger selections (such as touch screen presses, accessible controller presses, PAT input events) are not included in logging or otherwise persisted. After the voting session is complete, their printed ballot is the only record of their selections.
