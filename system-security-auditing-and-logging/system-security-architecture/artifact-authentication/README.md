@@ -1,9 +1,10 @@
 # Artifact Authentication
 
-When a VxSuite machine exports data to a USB for another VxSuite machine to import, the first machine digitally signs that data so that the second machine can verify its authenticity. We use this mechanism in two places in particular:
+When a VxSuite machine exports data to a USB for another VxSuite machine to import, the first machine digitally signs that data so that the second machine can verify its authenticity. We use this mechanism in three places in particular:
 
 1. To authenticate election definitions/packages — These configuration bundles are exported by VxAdmin and used to configure VxCentralScan, VxMark, VxMarkScan, VxScan, and VxPrint.
 2. To authenticate cast vote records — These are exported by VxCentralScan and VxScan and imported by VxAdmin for tabulation.
+3. To authenticate VxAdmin backups — The backup's manifest, which lists every backed-up file with its hash, is signed when the backup is saved and verified when it is restored. The signature file lives inside the backup directory next to the manifest it signs. See [#backup-and-restore](../../../system-overview/vxadmin-function.md#backup-and-restore "mention").
 
 The exporting machine digitally signs the following message using its TPM private key:
 

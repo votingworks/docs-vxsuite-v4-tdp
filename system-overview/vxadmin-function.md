@@ -26,9 +26,9 @@ For extensive details on the authentication scheme, see the [access control docu
 
 ## USB Formatting
 
-VxSuite components require USB drives to be formatted with a FAT32 partition. The majority of USB drives are sold pre-formatted as FAT32, but some come in other formats. If an improperly formatted USB drive is inserted into a VxSuite component, it will be treated as if there is no USB drive.
+VxSuite components require data USB drives to be formatted with a single FAT32 or exFAT partition. The majority of USB drives are sold pre-formatted as FAT32, but some come in other formats. If an improperly formatted USB drive is inserted into a VxSuite component, it will be treated as if there is no USB drive. On VxAdmin, a drive formatted with an ext4 partition is treated as a backup drive rather than a data drive; see [#backup-and-restore](vxadmin-function.md#backup-and-restore "mention").
 
-VxAdmin includes a utility to format USB drives to be compatible with the system. The utility is available only to system administrators. It will rewrite the partition table on the drive to include a single partition with a FAT32 formatted filesystem that takes up all available space on the drive. The reformatting clears the USB drive and is thus a destructive action. If a USB drive is already correctly formatted, the feature can be used to clear its data. VxAdmin applies a new label to the reformatted USB drive in the form of **VxUSB-00000**, where the 0's can be any random alphanumeric characters.
+VxAdmin includes a utility to format USB drives to be compatible with the system. The utility is available only to system administrators. It will rewrite the partition table on the drive to include a single partition with an exFAT formatted filesystem that takes up all available space on the drive. exFAT is used rather than FAT32 so that files larger than 4 GB, such as large election packages, can be saved. The reformatting clears the USB drive and is thus a destructive action. If a USB drive is already correctly formatted, the feature can be used to clear its data. VxAdmin applies a new label to the reformatted USB drive in the form of **VxUSB-00000**, where the 0's can be any random alphanumeric characters.
 
 Improperly formatted USB drives can only be detected and reformatted if there is _some_ partition already existing, so a USB drive without any partitions cannot be reformatted using VxAdmin.
 
@@ -205,6 +205,56 @@ There are two ways to exit official results mode without unconfiguring VxAdmin:
 
 * The system administrator can revert election results back to unofficial, which leaves all election data intact but allows it to be altered again by an election manager
 * The election manager may remove _all_ election data at once, which would require restarting aggregation and adjudication from scratch
+
+## Backup and Restore
+
+A VxAdmin in host mode can save a complete backup of its election data to a backup USB drive, and an unconfigured VxAdmin can be restored from that backup. Restoring is intended for recovering from a failed or replaced laptop: the restored machine holds the same election, cast vote records, ballot images, adjudications, and manual tallies as the machine that saved the backup.
+
+### Backup Drives
+
+VxAdmin distinguishes backup drives from data drives by their filesystem. A drive with a FAT32 or exFAT partition is a data drive, used for election packages, cast vote records, reports, and logs. A drive with an ext4 partition is a backup drive. Both may be connected at the same time, and VxAdmin tracks each separately, so a backup can be saved while a data drive remains inserted. The backup and restore flows only ever read from or write to the backup drive.
+
+ext4 is required because replacing a previous backup relies on an atomic directory exchange that FAT filesystems do not support. VxAdmin's USB formatting utility produces data drives only; it does not format backup drives.
+
+### Backup Contents
+
+A backup is a directory on the backup drive at `vxadmin-backups/<election folder name>/`, where the election folder name is the same one used for election packages and cast vote records on data drives. It contains:
+
+* `workspace/` - a copy of the election data: a snapshot of the election database, every ballot image referenced by that snapshot, and the election package for the current election.
+* `manifest.json` - the backup manifest, which records the manifest format version, the VxAdmin software version, the machine ID, the creation time, the election's ID, title, date, jurisdiction, and state, the number of cast vote records, and the path, size, and SHA-256 hash of every file under `workspace/`.
+* `manifest.json.vxsig` - the manifest's digital signature, produced with the machine's TPM key as described in [artifact-authentication](../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/ "mention"). Only the manifest is signed; every other file in the backup is covered by its hash within the manifest, so signing the manifest authenticates the whole backup.
+
+A backup drive holds at most one backup per election. Saving a new backup of the same election replaces the previous one. Backups of different elections coexist on the same drive.
+
+### Saving a Backup
+
+System administrators and election managers can save a backup from the Election screen while VxAdmin is configured. Before saving, VxAdmin shows the details of the last backup of the current election already on the drive, if any. The machine can be locked while a backup is in progress and the backup continues in the background.
+
+The backup proceeds in three phases shown to the user as preparing, saving files, and finishing:
+
+1. **Preparing.** VxAdmin confirms it is in host mode and configured, that the backup drive is mounted and supports the final exchange, and that the internal disk has room for a database snapshot. It then snapshots the database using SQLite's online backup API, which produces a consistent copy without blocking the running application. The ballot images and election package to include are enumerated from the snapshot rather than the live database, so a change made during the backup cannot leave the backup internally inconsistent. These files are staged with hard links, so staging consumes no additional disk space beyond the snapshot. Finally, VxAdmin checks that the backup drive has room for the staged files.
+2. **Saving files.** Each staged file is streamed to an in-progress directory on the backup drive, hashed as it is written, and recorded in the manifest. The manifest and its signature are written last.
+3. **Finishing.** The in-progress directory is flushed to the drive, then exchanged atomically with the previous backup of the same election, if one exists, and the drive is flushed again. The previous backup is therefore replaced only once the new one is complete and on disk, and the drive never holds a partially written backup in the backup's place.
+
+The user can cancel a backup during the first two phases. A canceled or failed backup's in-progress directory is discarded and the previous backup is left untouched.
+
+### Restore Mode
+
+Restoring replaces the entire contents of VxAdmin's workspace, so it is not performed by the running application. Instead, VxAdmin restarts into restore mode, a reduced version of the application that serves no election data and offers only the restore. A system administrator starts the process from the unconfigured Election screen by selecting "Restore from Backup", which schedules restore mode for the next boot and restarts the machine. Restore mode can only be entered from an unconfigured host-mode VxAdmin.
+
+In restore mode, every screen carries a Restore Mode banner with a button to exit by restarting normally. Because the machine is unconfigured, only system administrators can unlock it. Once unlocked, VxAdmin prompts for a backup drive and lists every backup on it, showing each backup's election, jurisdiction, state, cast vote record count, and the machine and time that created it. Backups that cannot be read are listed separately.
+
+### Restoring a Backup
+
+After the user selects a backup and confirms, the restore proceeds in three phases shown as preparing, restoring files, and finishing:
+
+1. **Preparing.** VxAdmin verifies the manifest's signature and reads the manifest from a private copy taken during verification, so the bytes it acts on are the bytes whose signature was checked. It then checks that the manifest version and software version match this machine's software, and that the signing machine's jurisdiction, taken from its certificate, matches this machine's jurisdiction. A backup signed by a different VxAdmin in the same jurisdiction is accepted and logged, since moving a backup between machines is how failed hardware is replaced. A backup from another jurisdiction is refused. VxAdmin then confirms the workspace is unconfigured, confirms the internal disk has room for the backup, empties the workspace, and marks a restore as in progress.
+2. **Restoring files.** Each file listed in the manifest is copied from the backup drive into the workspace and verified against its size and hash as it lands. A file that does not match fails the restore.
+3. **Finishing.** VxAdmin opens the restored database to confirm it holds the election the manifest promised, flushes the restored files to disk, and clears the in-progress marker.
+
+The user can cancel during the first two phases. A canceled or failed restore empties the workspace, so VxAdmin is left either fully restored or unconfigured, never in between. If a restore is interrupted by a power loss, the in-progress marker causes the next boot to discard what was left behind, log the interruption, and start unconfigured. On completion the user is prompted to restart; VxAdmin then starts normally, configured with the restored election.
+
+Because a backup drive is removable media outside VxAdmin's control, the restore treats its contents as untrusted. Every file is read at most once and only up to the size the manifest promises, and nothing is parsed from the drive until its signature or hash has been checked.
 
 ## Networking & Multi-Station Adjudication
 
