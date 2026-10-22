@@ -39,6 +39,7 @@ The system settings file contains settings which are not specific to an election
   * `marks_on_preprinted_ballot` - Prints only marks onto pre-printed ballots.
   * `summary` - Prints summary ballots. Default value.
 * `allowPrintingBlankBallotsFromVxMark` - When set to `true`, poll workers can print blank ballots from VxMark while polls are open. Blank ballots are printed from the pre-rendered ballots in the election package, so the election package must include the ballots file.
+* `bmdEnableQrBallotActivation` - When set to `true`, a poll worker can start a voting session on VxMark, or print a blank ballot, by scanning a barcode that encodes the voter's ballot style. See [#barcode-ballot-activation](../vxmark-function.md#barcode-ballot-activation "mention").
 
 ## Other Settings
 

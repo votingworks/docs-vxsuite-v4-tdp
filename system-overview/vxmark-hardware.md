@@ -49,7 +49,7 @@ The PAT input is on the front of the case to the right of the screen. It is comp
 
 ### Barcode Scanner
 
-The barcode scanner, the Honeywell [CM4680SR-BW0](https://github.com/votingworks/docs-vxsuite-v4/blob/c3708afd846808afb7249ef1c11d099a86d1e15a/hardware-assets/cots-documentation/mark/Honeywell-CM4680-SR-BarcodeReader-Datasheet.pdf), allows voters to activate their own ballot styles if provided the proper barcode by the jurisdiction, typically through an electronic poll book.
+The barcode scanner, the Honeywell [CM4680SR-BW0](https://github.com/votingworks/docs-vxsuite-v4/blob/c3708afd846808afb7249ef1c11d099a86d1e15a/hardware-assets/cots-documentation/mark/Honeywell-CM4680-SR-BarcodeReader-Datasheet.pdf), allows a poll worker to activate a voting session, or print a blank ballot, by scanning a barcode that encodes the voter's ballot style, typically produced by an electronic poll book. See [#barcode-ballot-activation](vxmark-function.md#barcode-ballot-activation "mention").
 
 <figure><img src="../.gitbook/assets/vxmark-barcodescanner.webp" alt="" width="188"><figcaption></figcaption></figure>
 
@@ -90,7 +90,7 @@ The medium criticality components and the reasons for their classification are a
 
 * **USB Cables, Hub, and Switch -** USB cables connect to the computer and carry sensitive election data, so they are medium criticality. The attack vectors are difficult, however, and all cables can be produced by alternate manufacturers.
 * **Power Cables & Power Supplies** - Power supplies and cables can affect the reliability of the equipment in initially difficult to detect ways, and are thus medium criticality, but they generally cannot corrupt election data in a targeted or undetectable way.
-* **Barcode Reader** - The barcode reader is included for features that will be implemented in the future such as ballot activation by barcode. Since the barcode reader can be used to print a ballot which is a security concern, the barcode reader and its supplier are considered critical.
+* **Barcode Reader** - The barcode reader activates voting sessions and, when enabled, ballot printing from scanned barcodes. Since the barcode reader can be used to print a ballot, which is a security concern, the barcode reader and its supplier are considered critical.
 * **Pelican Case** - The Pelican case cannot meaningfully affect the operation of the software, but its sole supplier is Pelican. Since the equipment is designed around the particular case, the case and its supplier are considered critical.
 * **Smart Card Reader -** The smart card reader is responsible for communicating with smart cards to manage authentication, and is thus a critical component.
 * **Audio Tactile Controller & Headphones -** These components are required for use of the VxMark audio-tactile voting interface.
