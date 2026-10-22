@@ -152,6 +152,10 @@ The positions of each bubble, for each ballot style, are included in the electio
 
 If the printed ovals are slightly offset from the bubble, an election manager can adjust the positioning of the ovals, in half millimeter increments, to the left, right, up or down.
 
+### Blank Ballot Printing
+
+If `allowPrintingBlankBallotsFromVxMark` is enabled in the system settings, poll workers can print blank ballots from VxMark while polls are open. The poll worker selects a ballot style from those available at the configured polling place and, if the ballot style is available in more than one language, a language. VxMark prints the pre-rendered ballot from the election package's [ballots file](election-package/#ballots) for that ballot style, precinct, and ballot mode, so the election package must include pre-rendered ballots. As with full-faced bubble ballot printing, test ballot mode is only available when the election package includes test ballots. Blank ballots are included in the printed ballot count and logged with the same print events as voted ballots.
+
 ## Printer Management
 
 VxMark prints ballots via an attached printer. The supported printer is the HP LaserJet Pro 4001dn. VxMark exports reports as PDFs so, in the event of a printer failure, reports will always be available.
