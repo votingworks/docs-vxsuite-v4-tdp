@@ -18,7 +18,7 @@
 ### VxAdmin
 
 * The total number of CVRs that can be imported is limited by the total disk space on the laptop (\~200GB). The exact number of CVRs depends on ballot size, ballot selections, tabulator used (VxScan or VxCentralScan), the configured ballot image bit depth, and other factors that determine expected CVR size.
-* The number of elections a backup drive can hold is limited by the capacity of the drive. Each backup contains the election's CVRs and ballot images, so its size depends on the same factors. As a point of reference, for a jurisdiction with a turnout of 250,000 voters per election, single-sheet ballots, and standard system settings, a 1TB drive should hold at least 10 elections. Backup drive specifications are listed in the user manual's [Supply List](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/miscellaneous/supply-list#backup-drives "mention").
+* The number of elections a backup drive can hold is limited by the capacity of the drive. Each backup contains the election's CVRs and ballot images, so its size depends on the same factors. As a point of reference, for a jurisdiction with a turnout of 250,000 voters per election, single-sheet ballots, and standard system settings, a 1TB drive should hold at least 10 elections. Backup drive specifications are listed in the user manual's [Supply List](https://docs.voting.works/vxsuite-user-manual-v4.1/miscellaneous/supply-list#backup-drives).
 
 ### VxCentralScan
 
