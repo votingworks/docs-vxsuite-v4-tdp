@@ -214,7 +214,7 @@ A VxAdmin in host mode can save a complete backup of its election data to a back
 
 VxAdmin distinguishes backup drives from data drives by their filesystem. A drive with a FAT32 or exFAT partition is a data drive, used for election packages, cast vote records, reports, and logs. A drive with an ext4 partition is a backup drive. Both may be connected at the same time, and VxAdmin tracks each separately, so a backup can be saved while a data drive remains inserted. The backup and restore flows only ever read from or write to the backup drive.
 
-ext4 is required because replacing a previous backup relies on an atomic directory exchange that FAT filesystems do not support. VxAdmin's USB formatting utility produces data drives only; it does not format backup drives.
+ext4 is required because replacing a previous backup relies on an atomic directory exchange that FAT filesystems do not support. VxAdmin's USB formatting utility produces data drives only; it does not format backup drives. Backup drives are prepared by VotingWorks. Drive specifications and capacity guidance are in the user manual's [Supply List](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/miscellaneous/supply-list#backup-drives "mention").
 
 ### Backup Contents
 
