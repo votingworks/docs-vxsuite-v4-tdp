@@ -16,8 +16,8 @@ sudo virt-manager
 cd ~/code/vxsuite-build-system
 git checkout main
 git pull
-git checkout <inventory-name>
-./scripts/tb-run-online-phase.sh <inventory-name>
+git checkout <version>
+./scripts/tb-run-online-phase.sh stable
 ```
 
 * You will be prompted for the sudo password.

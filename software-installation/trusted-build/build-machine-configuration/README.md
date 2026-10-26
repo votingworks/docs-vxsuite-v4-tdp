@@ -11,7 +11,7 @@
 
 Debian 12 will need to be installed on the build machine. You can find detailed instructions for that process under [Installing Debian 12 on VxBuild](installing-debian-12-on-vxbuild.md). Once that is complete, we can install the VotingWorks build system, [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.1.0).
 
-Throughout the rest of this document, substitute `<inventory-name>` with the inventory provided by VotingWorks.
+Throughout the rest of this document, substitute `<version>` with the version string provided by VotingWorks, e.g., `v4.1.1`.
 
 ```
 sudo apt install -y git
@@ -21,12 +21,12 @@ git clone https://github.com/votingworks/vxsuite-build-system
 cd ~/code/vxsuite-build-system
 git checkout main
 git pull
-git checkout <inventory-name>
-./scripts/tb-initialize-build-machine.sh <inventory-name>
-./scripts/tb-clone-images.sh <inventory-name>
+git checkout <version>
+./scripts/tb-initialize-build-machine.sh stable
+./scripts/tb-clone-images.sh stable
 ```
 
-At this point, you should have two separate VMs: `debian-<inventory-name>-<apt-snapshot-date>-<debian-release-name>` and `online`. You can confirm this by running:
+At this point, you should have two separate VMs: `debian-<version>-<apt-snapshot-date>-<debian-release-name>` and `online`. You can confirm this by running:
 
 ```
 sudo virsh list --all

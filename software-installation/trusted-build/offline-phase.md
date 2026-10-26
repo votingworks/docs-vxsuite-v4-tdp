@@ -29,7 +29,7 @@ ping -c2 google.com
 
 ```
 cd ~/code/vxsuite-build-system
-./scripts/tb-run-offline-phase.sh <inventory-name>
+./scripts/tb-run-offline-phase.sh stable
 ```
 
 9. Once the offline phase completes, the base VotingWorks application has been built. You can now shut down the offline VM:
