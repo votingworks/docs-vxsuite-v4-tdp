@@ -14,13 +14,13 @@ On the SLI build machine:
 
 ```
 sudo su -
-/home/vx/code/vxsuite-build-system/scripts/sb-unsigned-upload.sh vxadmin
+/home/vx/code/vxsuite-build-system/scripts/sb-unsigned-upload.sh vxadmin <version>
 ```
 
 Once the SLI upload has completed, VotingWorks will download and verify the hash values of all files. On the VotingWorks secure build machine, while SLI observes:
 
 ```
-sudo /home/admin/code/vxsuite-build-system/scripts/sb-unsigned-download.sh vxadmin
+sudo /home/admin/code/vxsuite-build-system/scripts/sb-unsigned-download.sh vxadmin <version>
 ```
 
 Once the VotingWorks download has completed and been verified, and the VM has been successfully defined, VotingWorks can proceed with its Secure Boot signing process, while SLI observes.
@@ -36,14 +36,14 @@ When the process completes, the lock-down script displays the system hash in SHA
 Now that the image has been securely signed, VotingWorks will upload the signed image for SLI to later download. While SLI observes, VotingWorks will run the following command on the VotingWorks secure build machine:
 
 ```
-sudo /home/admin/code/vxsuite-build-system/scripts/sb-signed-upload.sh vxadmin
+sudo /home/admin/code/vxsuite-build-system/scripts/sb-signed-upload.sh vxadmin <version>
 ```
 
 Once this step has completed, SLI can download the files at their convenience. On the SLI build machine:
 
 ```
 sudo su -
-/home/vx/code/vxsuite-build-system/scripts/sb-signed-download.sh vxadmin
+/home/vx/code/vxsuite-build-system/scripts/sb-signed-download.sh vxadmin <version>
 ```
 
 Once SLI has completed the download, and hashes have been validated, the compressed image and signature can be provided to EAC for official use. At any point after submission to EAC, election officials and VotingWorks can verify the image hash as described under [verifying-the-image-installed-on-a-machine.md](../../imaging-machines/verifying-the-image-installed-on-a-machine.md "mention").
