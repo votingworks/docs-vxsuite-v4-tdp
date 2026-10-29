@@ -20,8 +20,6 @@ git checkout <version>
 ./scripts/tb-run-online-phase.sh stable
 ```
 
-* You will be prompted for the sudo password.
-
 7. The online phase will take awhile to complete. Once it finishes, you can shut down the online VM:
 
 ```
