@@ -4,7 +4,7 @@
 
 VxMark consists of two main components - the tabletop ballot marking device and the attached printer - which are connected together during setup.
 
-<figure><img src="../.gitbook/assets/vxmark-overviewimage.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/VxMark-FrontView (2).jpeg" alt=""><figcaption></figcaption></figure>
 
 ### Ballot Marking Device
 
@@ -16,11 +16,11 @@ The tabletop ballot marking device is built into a customized Pelican 1485 Air c
 
 Additional cuts are made into the case for the nameplate attachment, PAT input jack, barcode reader, and the spring-loaded back compartment which houses the USB and AC power cables.
 
-<figure><img src="../.gitbook/assets/vxmark-display.webp" alt="" width="375"><figcaption><p>VxMark Unit</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/LaidDownScreen-VxMark (2).jpeg" alt="" width="375"><figcaption><p>VxMark Unit</p></figcaption></figure>
 
 The case is opened by pressing the buttons on each case latch and then lifting the lid. In the picture below you can see the card reader, USB port, headphone storage, and display arm storage. The ATI handset is located in front of the USB port.
 
-<figure><img src="../.gitbook/assets/vxmark-overheadview-labeled.webp" alt=""><figcaption><p>VxMark Overhead View</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/VxMark-TopDown (1).jpeg" alt=""><figcaption><p>VxMark Overhead View</p></figcaption></figure>
 
 ### Printer
 
@@ -33,25 +33,27 @@ The printer is the [HP LaserJet Pro 4001dn](https://github.com/votingworks/docs-
 
 The display is a 15" HD (1920 x 1080) touchscreen, specifically the [Elo 1504LS](https://github.com/votingworks/docs-vxsuite-v4/blob/c3708afd846808afb7249ef1c11d099a86d1e15a/hardware-assets/cots-documentation/mark/Elo-1504LS-Touchscreen-Datasheet.pdf). It can be tilted forward or backward by a voter based on their preferences. The screen includes an embedded speaker which is used for machine chimes and alerts. The screen rotates horizontally and then tips all the way back into the case for storage.
 
-<figure><img src="../.gitbook/assets/vxmark-display.webp" alt="" width="375"><figcaption><p>VxMark Display</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/LaidDownScreen-VxMark (1).jpeg" alt="" width="375"><figcaption><p>VxMark Display</p></figcaption></figure>
 
-### Accessible Controller & Headphones
+### Accessible Controller
 
 The accessible controller sits to the right of the display, either in its cradle or beside VxMark outside of its case. It is the commercially available [Storm AudioNav 9-Key Keypad](https://github.com/votingworks/docs-vxsuite-v4/blob/c3708afd846808afb7249ef1c11d099a86d1e15a/hardware-assets/cots-documentation/mark/Storm-Interfaces-AudioNav-EF-Datasheet.pdf). Four keys navigate directionally (up, down, left, right), one key is used to make selections, a pair of keys are used to control audio volume, one key pauses and resumes audio, and one key opens the controller help interface.
 
-<figure><img src="../.gitbook/assets/vxmark-ati.webp" alt="" width="188"><figcaption><p>VxMark Accessible Controller</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/StormNavUpdatedImage (1).jpeg" alt="" width="188"><figcaption><p>VxMark Accessible Controller</p></figcaption></figure>
 
-The headphones plug directly into the 3.5mm audio jack on the accessible controller. Any standard headphones can be used if a voter prefers, but note that the default volume levels were calibrated for the headphones that were provided with VxMark. Voting session audio plays through the headphones and only through the headphones. The volume and rate adjustments will have no impact on system sounds played over the speakers.
+### Headphone & PAT Inputs
 
-### PAT Input
+The Headphone and PAT inputs are located on the front of the case to the right of the screen.  Both inputs accept 3.5mm audio plugs.
 
-The PAT input is on the front of the case to the right of the screen. It is compatible with any PAT (Personal Assistive Technology) device such as a sip-and-puff.
+Any standard headphones can be used if a voter prefers, but note that the default volume levels were calibrated for the headphones that were provided with VxMark. Voting session audio plays through the headphones and only through the headphones. The volume and rate adjustments will have no impact on system sounds played over the speakers.
+
+The PAT input is compatible with any PAT (Personal Assistive Technology) device such as a sip-and-puff.
 
 ### Barcode Scanner
 
 The barcode scanner, the Honeywell [CM4680SR-BW0](https://github.com/votingworks/docs-vxsuite-v4/blob/c3708afd846808afb7249ef1c11d099a86d1e15a/hardware-assets/cots-documentation/mark/Honeywell-CM4680-SR-BarcodeReader-Datasheet.pdf), allows a poll worker to activate a voting session, or print a blank ballot, by scanning a barcode that encodes the voter's ballot style, typically produced by an electronic poll book. See [#barcode-ballot-activation](vxmark-function.md#barcode-ballot-activation "mention").
 
-<figure><img src="../.gitbook/assets/vxmark-barcodescanner.webp" alt="" width="188"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/VxMark-FrontPorts-BarcodeReader (1).jpeg" alt="" width="188"><figcaption></figcaption></figure>
 
 ## Electronic Subcomponents
 
