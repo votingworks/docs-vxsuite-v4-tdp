@@ -19,7 +19,7 @@ In addition to the full election report, VxAdmin exports reports filtered or gro
 
 When a report is grouped, the report is broken up into multiple sections each with their own filter. For example, if you were to group by "Voting Method," the resulting report would have a section filtered for precinct ballots only and a section filtered for absentee ballots only:
 
-<div><figure><img src="../../.gitbook/assets/tally-report-grouped-1.png" alt="" width="375"><figcaption><p>First part of a grouped tally report</p></figcaption></figure> <figure><img src="../../.gitbook/assets/tally-report-grouped-2.png" alt="" width="375"><figcaption><p>Second part of a grouped tally report</p></figcaption></figure></div>
+<div><figure><img src="../../.gitbook/assets/vxadmin-tally-report-by-voting-method.png" alt="" width="375"><figcaption><p>First part of a grouped tally report</p></figcaption></figure> <figure><img src="../../.gitbook/assets/vxadmin-tally-report-by-voting-method-page2.png" alt="" width="375"><figcaption><p>Second part of a grouped tally report</p></figcaption></figure></div>
 
 The filter for a given report section is indicated in the title of the report. If the report has more than one filter applied to it, the full details of the filter will be specified in a box below the title:
 
