@@ -43,7 +43,7 @@ As a rule, the sum of the number of votes for all candidates, the number of unde
 <pre><code><strong>candidate votes + undervotes + overvotes = ballots * votes allowed
 </strong></code></pre>
 
-<div><figure><img src="../.gitbook/assets/voting-004-polls-opened-report.png" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/voting-023-polls-closed-report.png" alt="" width="375"><figcaption></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/vxscan-polls-opened-report.png" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/vxscan-polls-closed-report-printed.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 If there were multiple batches, which on VxScan is a result of pausing and resuming voting, the polls closed report will contain a "Batch Summary" table with the sizes and timestamps of the batches.
 
@@ -53,10 +53,10 @@ When voting is paused, VxScan prints a voting paused report containing the total
 
 Tally results are never included in polls paused or resumed reports.
 
-<div><figure><img src="../.gitbook/assets/voting-033-voting-resumed-report.png" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/voting-037-voting-paused-report.png" alt="" width="375"><figcaption></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/vxscan-voting-resumed-report.png" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/vxscan-voting-paused-report.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 ## Write-In Image Reports
 
 If `precinctScanEnableWriteInImageReport` is true in the system settings, poll workers will be able to print write-in image reports from the poll worker menu after polls are closed. For each contest that allows write-ins, the report lists the total number of write-ins and includes an image of each write-in.
 
-<figure><img src="../.gitbook/assets/write-in-report-002-write-in-image-report.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/vxscan-write-in-image-report.png" alt="" width="375"><figcaption></figcaption></figure>
