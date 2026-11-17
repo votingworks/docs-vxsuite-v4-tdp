@@ -134,7 +134,7 @@ Smart card authentication involves the following steps:
 
 ### Session Time Limits
 
-Machines automatically lock after they have been left idle for 30 minutes and also automatically lock after 12 hours, even if the user has been active. The user is warned before the machine locks. System administrators can select shorter time limits.
+Machines automatically lock after they have been left idle for a set time and after a set overall session time, even if the user has been active. The user is warned before the machine locks. Both limits are system settings: the idle limit can be 10, 15, 20, or 30 minutes or 6 hours, and the overall limit 1 to 12 hours.
 
 These time limits do not apply to unauthenticated screens like the "Insert Your Ballot" screen on VxScan.
 
