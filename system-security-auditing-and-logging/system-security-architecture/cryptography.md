@@ -19,7 +19,7 @@ VxSuite v4 uses NXP JCOP 4 Java Cards, specifically the [NXP JCOP 4 Java Card 3.
 These smart cards are FIPS 140-2-certified:\
 [NIST CMVP certificate #3746](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3746).
 
-The applet that runs on the cards, [OpenFIPS201](https://github.com/votingworks/OpenFIPS201), is an implementation of the NIST 201 Personal Identity Verification (PIV) protocol, which sits on top of FIPS 140 cryptography. In the applet, all cryptographic operations are handled by the Java Card operating system, implemented by the NXP JCOP 4 card.
+The applet that runs on the cards, [OpenFIPS201](https://github.com/votingworks/OpenFIPS201), is an implementation of the FIPS 201 Personal Identity Verification (PIV) standard, which sits on top of FIPS 140 cryptography. In the applet, all cryptographic operations are handled by the Java Card operating system, implemented by the NXP JCOP 4 card.
 
 ### VxAdmin / VxCentralScan / VxPrint TPM
 
