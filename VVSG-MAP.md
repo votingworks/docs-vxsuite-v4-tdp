@@ -10,6 +10,10 @@ missing in Notes), **None**. `um:` = the user manual repo; other paths are
 this repo. "ext" = a file in `votingworks/docs-vxsuite-v4` linked from the
 page, not checked.
 
+Test labs treat the user manual as part of the TDP. Partial and None rows
+are known: leave them unless a test lab raises one. **Accepted** marks a
+row a lab has accepted as it is.
+
 ## Guideline 3.1 — System Documentation
 
 The TDP's outline is Guideline 3.1: 3.1.1–3.1.4 here, 3.1.5–3.1.7 in the
@@ -32,7 +36,7 @@ manuals.
 | --- | --- | --- | --- |
 | 3.1.2-A System performance documentation | system-limits/; maximum-tabulation-rate.md; supported-voting-variations-and-languages.md; safety-security-privacy-and-continuity-of-operation.md (item 4); paper-ballot-specifications.md | Partial | Item 3 (reliability, maintainability, availability, portability) none; item 5 (standards) scattered |
 | 3.1.2-B Maximum tabulation rate | system-limits/maximum-tabulation-rate.md | Full | |
-| 3.1.2-C Reliably detectable marks | reliably-detectable-marks.md; system-settings.md; ballot-interpretation.md | Partial | Item 2: the page says no marks are ambiguous, then describes marginal-mark adjudication (see the term note in `STYLE.md`) |
+| 3.1.2-C Reliably detectable marks | reliably-detectable-marks.md; system-settings.md; ballot-interpretation.md | Full | Marginal marks are VVSG's ambiguous marks (see the term note in `STYLE.md`) |
 | 3.1.2-D Processing capabilities | processing-capabilities.md → README.md, system-settings.md | Partial | Settings not classed as extension / bypassable / opt-in / opt-out |
 
 ### 3.1.3 System Security
@@ -49,9 +53,9 @@ manuals.
 | Requirement | Page(s) | Coverage | Notes |
 | --- | --- | --- | --- |
 | 3.1.4-A Software installation documentation | software-installation.md and children; software-overview.md | Partial | Installed software only as a dependency chart plus lock files |
-| 3.1.4-B Software information | software-overview.md; ext COTS report | Partial | No per-item table (name, version, manufacturer, contact, type, docs, files, election-specific) |
-| 3.1.4-C Software location information | imaging.md; system-integrity.md | Partial | One install path; no per-item locations or storage part numbers |
-| 3.1.4-D Election specific software identification | — | None | |
+| 3.1.4-B Software information | software-overview.md → vxsuite-build-system inventories; ext COTS report | Accepted | Per-item detail lives in the build system's inventories |
+| 3.1.4-C Software location information | imaging.md; system-integrity.md; vxsuite-build-system inventories | Accepted | As 3.1.4-B |
+| 3.1.4-D Election specific software identification | vxsuite-build-system inventories | Accepted | As 3.1.4-B |
 | 3.1.4-E Installation software and hardware | build-machine-configuration/; preparing-usb-drives-for-imaging.md; imaging.md | Full | |
 | 3.1.4-F Software installation procedures | trusted-build/; imaging-machines/ | Full | |
 | 3.1.4-G Baseline image creation | trusted-build/README.md; secure-boot-signing.md | Full | |
@@ -128,7 +132,7 @@ manuals.
 | 4.1-E Event code documentation | logging.md; ext logging documentation | Full | |
 | 4.2-B Public documented manufacturer formats | public-documents/; election-package/; csv-exports.md | Full | |
 | 5.1-F Accessibility documentation | um: accessibility settings pages; usability-and-accessibility.md; function pages | Partial | No recommended accessibility procedures |
-| 7.2-O Inactivity alerts | — | None | Voter inactivity time not documented |
+| 7.2-O Inactivity alerts | vxmark-function.md; vxmarkscan-function.md (Voting Sessions) | Full | 5 minutes, then 45 seconds to respond |
 | 7.2-P Floor space | — | None | No wheelchair clear-space guidance |
 | 7.3-O Instructions for election workers | um: election day guides and checklists | Full | |
 | 8.1-H Sanitized headphones | um: sanitizing headphones include | Full | |
@@ -143,7 +147,7 @@ manuals.
 | 14.1-B Addressing and accepting risk | ext risk assessment | Unchecked | |
 | 14.1-C Security architecture description | risk-assessment.md → security architecture pages | Full | |
 | 14.1-D Procedural and operational security | procedural-and-operational-security.md; um:setup-inspection.md | Full | |
-| 14.2-F Secure configuration and hardening | defense-in-depth-and-least-privilege.md; system-integrity.md | None | No named baseline (STIG, CIS) or documented deviations |
+| 14.2-F Secure configuration and hardening | defense-in-depth-and-least-privilege.md; system-integrity.md | Accepted | No configuration surface ("no config"), so no named baseline |
 | 14.2-J Vulnerability management | known-vulnerabilities.md | Full | Dependency monitoring thin |
 | 14.3-A Supply chain risk management strategy | hardware-criticality-and-supplier-analysis.md | Partial | No compromise response; hardware only |
 | 14.3-B Criticality analysis | hardware-criticality-and-supplier-analysis.md; hardware pages | Full | |

@@ -1,6 +1,6 @@
 # Reliably Detectable Marks
 
-Marks are determined valid and counted by the system if the amount of darker pixels in the bubble area exceeds a configurable "definite" mark threshold set in the [election-package](../system-overview/election-package/ "mention") system settings file. This mark threshold can be adjusted to have a stricter or looser interpretation of what is considered a valid mark. On both VxScan and VxCentralScan, the voting system does not process any marks as ambiguous. All marks are either valid or invalid.
+Marks are determined valid and counted by the system if the amount of darker pixels in the bubble area exceeds a configurable "definite" mark threshold set in the [election-package](../system-overview/election-package/ "mention") system settings file. This mark threshold can be adjusted to have a stricter or looser interpretation of what is considered a valid mark. On both VxScan and VxCentralScan, a mark is either valid or invalid unless a marginal mark threshold is also set. In that case, a mark between the marginal and definite mark thresholds is a marginal mark (an ambiguous mark in VVSG 2.0 terms) and can be flagged for adjudication; see [Marginal Marks](#marginal-marks).
 
 The recommended definite mark threshold is 7%. With this threshold setting, bubble ballot interpretation detects a valid mark per the mark conditions described by VVSG 2.0 1.1.6-H.
 
