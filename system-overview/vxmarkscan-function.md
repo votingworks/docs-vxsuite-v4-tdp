@@ -58,6 +58,8 @@ If the contest allows write-ins, they may input a write-in name via a virtual ke
 
 After working through the entire ballot, the voter will then review all their selections. Any undervotes will be flagged for the voter (VVSG 2.0 7.3-I) but may be ignored. If the voter does want to make any changes, they can navigate back to any contest, make changes, and return to the review stage (VVSG 2.0 7.3-F). Once the voter is satisfied with their selections, they may print their ballot.
 
+If there is no voter activity for 5 minutes during a voting session, the screen alerts the voter that the station has been inactive and asks whether they are still voting. If the voter does not respond within 45 seconds, the voting session ends and the ballot is cleared (VVSG 2.0 7.2-O).
+
 The thermal printer prints a ballot, presents it to the voter, and prompts them to once again review their selections. This final review differs from the initial review in two ways. First, the printed ballot is being physically presented to the user which creates a voter-verified paper trail. Second, the selections being reviewed are a result of the actual interpretation of the ballot rather than simply the selections made by the voter. As a result, even when a voter is unable to verify their printed paper ballot visually they are still able to verify the ballot through another interaction mode. Once the voter is satisfied with their second round of review, they may cast their ballot which is ejected into the attached ballot box.
 
 <figure><img src="../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>

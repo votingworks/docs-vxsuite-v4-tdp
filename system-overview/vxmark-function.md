@@ -58,6 +58,8 @@ If the contest allows write-ins, the voter may input a write-in name via a virtu
 
 After working through the entire ballot, the voter will then review all their selections. Any undervotes will be flagged for the voter (VVSG 2.0 7.3-I) but may be ignored. If the voter does want to make any changes, they can navigate back to any contest, make changes, and return to the review stage (VVSG 2.0 7.3-F). Once the voter is satisfied with their selections, they may print their ballot.
 
+If there is no voter activity for 5 minutes during a voting session, the screen alerts the voter that the station has been inactive and asks whether they are still voting. If the voter does not respond within 45 seconds, the voting session ends and the ballot is cleared (VVSG 2.0 7.2-O).
+
 In order to have a voter-verified paper trail, the voter should always review their printed ballot. If they find a mistake in their ballot that they want to correct, they must vote again in a new voting session. The previously printed ballot must be voided or spoiled.
 
 {% hint style="info" %}

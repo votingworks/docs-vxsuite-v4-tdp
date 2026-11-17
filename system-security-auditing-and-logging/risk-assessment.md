@@ -8,7 +8,7 @@ This risk assessment reviews threats and vulnerabilities identified in:
 
 This assessment was conducted following the framework outlined in NIST SP 800-30, Guide for Conducting Risk Assessments.
 
-For additional information on how physical, technical, and operational controls work together to meet the requirements of **VVSG 14.1-C.1-4,** see the following:
+For additional information on how physical, technical, and operational controls work together to meet the requirements of VVSG 2.0 14.1-C.1–4, see the following:
 
 * [access-control.md](system-security-architecture/access-control.md "mention")
 * [artifact-authentication](system-security-architecture/artifact-authentication/ "mention")
