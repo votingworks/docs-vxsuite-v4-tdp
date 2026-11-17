@@ -68,7 +68,7 @@ In a ballot measure contest, the voter is presented text and makes a selection b
 | `description` | `string`                                                                                                | Contest description |
 | `options`     | `array` - [Ballot Measure Contest Option](vxsuite-election-definition.md#ballot-measure-contest-option) | Contest options     |
 
-The `description` field supports rich text formatting, including images. Images are represented using the syntax `<img src=\"` + data URL + `\">`, where an image can be converted to a data URL using [https://www.base64-image.de](https://www.base64-image.de/). For example, if an image after conversion via the aforementioned site yields the data URL `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO1n0X8AAAAASUVORK5CYII=`, the image embedded in a ballot measure contest description appears as follows:
+The `description` field supports rich text formatting, including images. Images are represented using the syntax `<img src=\"` + data URL + `\">`, where an image can be converted to a data URL using an online tool such as the [Base64 Image Encoder](https://www.base64-image.de/). For example, if an image after conversion via the aforementioned site yields the data URL `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO1n0X8AAAAASUVORK5CYII=`, the image embedded in a ballot measure contest description appears as follows:
 
 {% code overflow="wrap" %}
 ```
@@ -213,11 +213,11 @@ VxSuite defines an abstract grid using the timing marks on the outer edges of th
 
 These are defined on a per-ballot-style basis under each ballot style's `sheetPositions` field.
 
-#### SheetPositions
+### SheetPositions
 
 A tuple of two `ContestPosition` arrays, the first for the front of a sheet and the second for the back of a sheet.
 
-#### ContestPosition
+### ContestPosition
 
 | Attribute   | Type                              | Description                                         |
 | ----------- | --------------------------------- | --------------------------------------------------- |
@@ -225,11 +225,11 @@ A tuple of two `ContestPosition` arrays, the first for the front of a sheet and 
 | `bounds`    | `GridRect`                        | The bounding box of the contest in grid coordinates |
 | `options`   | `array` - `ContestOptionPosition` | Grid position information for the contest options   |
 
-#### ContestOptionPosition
+### ContestOptionPosition
 
 One of `OptionPosition` or `WriteInPosition`.
 
-#### OptionPosition
+### OptionPosition
 
 | Attribute      | Type                | Description                                                      |
 | -------------- | ------------------- | ---------------------------------------------------------------- |
@@ -239,7 +239,7 @@ One of `OptionPosition` or `WriteInPosition`.
 | `optionId`     | `string`            | Candidate ID                                                     |
 | `partyIds`     | `array` - `string`  | Endorsement party IDs for the given bubble option                |
 
-#### WriteInPosition
+### WriteInPosition
 
 | Attribute      | Type                  | Description                                                                                                               |
 | -------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -251,7 +251,7 @@ One of `OptionPosition` or `WriteInPosition`.
 
 \*In some jurisdictions, a write-in can only be counted if the associated bubble is filled in as for any other option. In other jurisdictions, a write-in must be counted even if the bubble is not filled. The `writeInArea` is used for the latter unmarked write-in detection.
 
-#### GridRect
+### GridRect
 
 | Attribute | Type     | Description                                      |
 | --------- | -------- | ------------------------------------------------ |
@@ -262,7 +262,7 @@ One of `OptionPosition` or `WriteInPosition`.
 
 Decimal values are supported. 2.25 means 2 and a quarter timing marks.
 
-#### GridPoint
+### GridPoint
 
 | Attribute | Type     | Description                                  |
 | --------- | -------- | -------------------------------------------- |
@@ -273,4 +273,4 @@ Decimal values are supported. 2.25 means 2 and a quarter timing marks.
 
 ## Examples
 
-Election definition examples are located in the `vxsuite` repository, such as [here](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/hmpb/fixtures/vx-general-election/letter-en/election.json).
+Election definition examples are located in the `vxsuite` repository, such as the [letter-size English general election example](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/hmpb/fixtures/vx-general-election/letter-en/election.json).

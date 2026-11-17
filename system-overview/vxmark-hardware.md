@@ -26,8 +26,8 @@ The case is opened by pressing the buttons on each case latch and then lifting t
 
 The printer is the [HP LaserJet Pro 4001dn](https://github.com/votingworks/docs-vxsuite-v4/blob/c3708afd846808afb7249ef1c11d099a86d1e15a/hardware-assets/cots-documentation/mark/HP-LaserJet-Pro-4001dn-Datasheet.pdf), which prints double-sided black-and-white pages up to legal length (14 in.). The printer connects to VxMark via the USB cable in VxMark's back compartment. VxMark is compatible with a variety of other HP printers and extensions:
 
-* Extended Input Tray - If a jurisdiction wishes to print on ballots longer than 14 in., VotingWorks can provide a custom printer tray supporting up to 22 in. ballots.
-* High Volume Input Tray - A larger input tray is available for jurisdictions where every voter uses VxMark.
+* **Extended Input Tray:** If a jurisdiction wishes to print on ballots longer than 14 in., VotingWorks can provide a custom printer tray supporting up to 22 in. ballots.
+* **High Volume Input Tray:** A larger input tray is available for jurisdictions where every voter uses VxMark.
 
 ### Display
 
@@ -83,16 +83,16 @@ The specified neckloop achieves a T4 rating when used with assistive hearing dev
 
 As listed in the COTS table above, the high criticality components are as follows:
 
-* **Aaeon UP Squared Pro 7000 Computer** - As the computer which facilitates accessible ballot marking, ballot review, and ballot printing, the single board computer is a highly critical component. VotingWorks partners with Aaeon, Inc. and their production in Taiwan to ensure the trustworthy production and quality of each single board computer.
-* **Solid State Drive -** The solid state drive is the storage medium for all sensitive election data.
-* **HP LaserJet Pro 4001dn Printer -** The HP LaserJet Printer is the means for printing ballots and reports.
-* **ELO Touch 15 in. LCD Touchscreen -** The Elo touchscreen is responsible for rendering election data and correctly handling user touches. It is a custom component from a single manufacturer and therefore has high criticality.
+* **Aaeon UP Squared Pro 7000 Computer:** As the computer which facilitates accessible ballot marking, ballot review, and ballot printing, the single board computer is a highly critical component. VotingWorks partners with Aaeon, Inc. and their production in Taiwan to ensure the trustworthy production and quality of each single board computer.
+* **Solid State Drive:** The solid state drive is the storage medium for all sensitive election data.
+* **HP LaserJet Pro 4001dn Printer:** The HP LaserJet Printer is the means for printing ballots and reports.
+* **ELO Touch 15 in. LCD Touchscreen:** The Elo touchscreen is responsible for rendering election data and correctly handling user touches. It is a custom component from a single manufacturer and therefore has high criticality.
 
 The medium criticality components and the reasons for their classification are as follows:
 
-* **USB Cables, Hub, and Switch -** USB cables connect to the computer and carry sensitive election data, so they are medium criticality. The attack vectors are difficult, however, and all cables can be produced by alternate manufacturers.
-* **Power Cables & Power Supplies** - Power supplies and cables can affect the reliability of the equipment in initially difficult to detect ways, and are thus medium criticality, but they generally cannot corrupt election data in a targeted or undetectable way.
-* **Barcode Reader** - The barcode reader activates voting sessions and, when enabled, ballot printing from scanned barcodes. Since the barcode reader can be used to print a ballot, which is a security concern, the barcode reader and its supplier are considered critical.
-* **Pelican Case** - The Pelican case cannot meaningfully affect the operation of the software, but its sole supplier is Pelican. Since the equipment is designed around the particular case, the case and its supplier are considered critical.
-* **Smart Card Reader -** The smart card reader is responsible for communicating with smart cards to manage authentication, and is thus a critical component.
-* **Audio Tactile Controller & Headphones -** These components are required for use of the VxMark audio-tactile voting interface.
+* **USB Cables, Hub, and Switch:** USB cables connect to the computer and carry sensitive election data, so they are medium criticality. The attack vectors are difficult, however, and all cables can be produced by alternate manufacturers.
+* **Power Cables & Power Supplies:** Power supplies and cables can affect the reliability of the equipment in initially difficult to detect ways, and are thus medium criticality, but they generally cannot corrupt election data in a targeted or undetectable way.
+* **Barcode Reader:** The barcode reader activates voting sessions and, when enabled, ballot printing from scanned barcodes. Since the barcode reader can be used to print a ballot, which is a security concern, the barcode reader and its supplier are considered critical.
+* **Pelican Case:** The Pelican case cannot meaningfully affect the operation of the software, but its sole supplier is Pelican. Since the equipment is designed around the particular case, the case and its supplier are considered critical.
+* **Smart Card Reader:** The smart card reader is responsible for communicating with smart cards to manage authentication, and is thus a critical component.
+* **Audio Tactile Controller & Headphones:** These components are required for use of the VxMark audio-tactile voting interface.

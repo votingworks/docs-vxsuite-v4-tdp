@@ -44,7 +44,7 @@ A seal point or hinge may be more critical than an interior panel because, if it
 
 ## Impacts on Security, Privacy, and Performance
 
-Each subcomponent's impact on security is mainly determined by its [#relationship-to-sensitive-election-data](hardware-criticality-and-supplier-analysis.md#relationship-to-sensitive-election-data "mention"), as described above. The lowest impact on security would come from a subcomponent that cannot affect election data at all. The highest impact on security would come from a subcomponent that can affect election data in difficult-to-detect ways via well-known attack vectors. Subcomponents that do not handle data can also have impacts on security if they're a part of a device's physical security measures.
+Each subcomponent's impact on security is mainly determined by its [#relationship-to-sensitive-election-data](hardware-criticality-and-supplier-analysis.md#relationship-to-sensitive-election-data "mention"), as described above. The lowest impact on security would come from a subcomponent that cannot affect election data at all. The highest impact on security would come from a subcomponent that can affect election data in difficult-to-detect ways via well-known attack vectors. Subcomponents that do not handle data can also have impacts on security if they are a part of a device's physical security measures.
 
 Only subcomponents of the precinct components have a meaningful impact on voter privacy because all voter data is anonymized beyond the precinct system. Any subcomponent that the voter directly uses as part of the voter session or any subcomponent that is used to store vote data could affect voter privacy if compromised.
 

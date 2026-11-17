@@ -1,6 +1,6 @@
 # Ballot Definition CDF
 
-The election definition within the election package can be a JSON Ballot Definition Common Data Format (CDF) Version 1.0 file. The full specification is defined by the National Institute of Standards and Technology (NIST) and can be [accessed on their website](https://www.nist.gov/publications/ballot-definition-common-data-format-specification).
+The election definition within the election package can be a JSON Ballot Definition Common Data Format (CDF) Version 1.0 file. The full specification is defined by the National Institute of Standards and Technology (NIST) and is available in the [NIST Ballot Definition Common Data Format Specification](https://www.nist.gov/publications/ballot-definition-common-data-format-specification).
 
 ## VxSuite CDF Implementation
 

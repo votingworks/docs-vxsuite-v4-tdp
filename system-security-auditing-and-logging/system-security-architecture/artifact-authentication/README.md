@@ -18,10 +18,10 @@ The importing machine parses the above and verifies that the signing machine cer
 
 If verification fails on the importing machine, the importing machine will refuse to import the artifact. This provides protection against data tampering and/or corruption as data is transferred from one machine to another via USB drive.
 
-### Code Links
+## Code Links
 
 Refer to the following code links for more details:
 
-* [https://github.com/votingworks/vxsuite/tree/v4.1.1/libs/auth](https://github.com/votingworks/vxsuite/tree/v4.1.1/libs/auth) — VxSuite authentication lib, a good starting point for all things authentication
-* [https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/artifact\_authentication.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/artifact_authentication.ts) —  Artifact authentication logic
-* [https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/cryptography.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/cryptography.ts) — OpenSSL commands underlying various authentication and signing operations
+* [libs/auth](https://github.com/votingworks/vxsuite/tree/v4.1.1/libs/auth) — VxSuite authentication lib, a good starting point for all things authentication
+* [libs/auth/src/artifact\_authentication.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/artifact_authentication.ts) —  Artifact authentication logic
+* [libs/auth/src/cryptography.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/cryptography.ts) — OpenSSL commands underlying various authentication and signing operations

@@ -2,7 +2,7 @@
 
 ## Vulnerability Disclosure Policy
 
-VotingWorks' vulnerability disclosure policy is publicly available here: [https://github.com/votingworks/vxsuite/security/policy](https://github.com/votingworks/vxsuite/security/policy)
+VotingWorks' vulnerability disclosure policy is publicly available in the [VxSuite security policy](https://github.com/votingworks/vxsuite/security/policy).
 
 The public disclosure policy provides instructions on how to report a vulnerability, where to see known vulnerabilities, and the coordinated vulnerability disclosure process VotingWorks follows.
 

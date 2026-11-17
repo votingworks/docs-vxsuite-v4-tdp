@@ -12,7 +12,7 @@ Each test always either passes or fails. A test fails if an error is thrown or a
 
 Whenever changes are made to VotingWorks code, all tests are automatically run as part of a continuous integration (CI) process through CircleCI. Code changes cannot be merged unless all tests pass. A single failing test will prevent changes from being merged. Every test run on CircleCI provides evidence that the software is operating as expected.
 
-Test runs are public information available via CircleCI. For example, tests running in `vxsuite` are tracked [here](https://app.circleci.com/pipelines/github/votingworks/vxsuite).
+Test runs are public information available via CircleCI. For example, tests running in `vxsuite` are tracked in the [vxsuite CircleCI pipelines](https://app.circleci.com/pipelines/github/votingworks/vxsuite).
 
 If tests are flaky, meaning that they usually pass but occasionally don't, VotingWorks investigates and fixes the underlying issue. Flaky tests are automatically reported by the CircleCI tooling. VotingWorks reviews new flaky tests on a weekly basis.
 
@@ -54,9 +54,9 @@ VotingWorks uses large-scale commercial off-the-shelf (COTS) hardware wherever p
 
 For components that must be custom-made, for example the VxScan precinct scanner module and the ballot box, VotingWorks has followed the industry-standard multi-phase design process to catch quality issues early, long before committing to large production runs. In particular:
 
-* **design prototyping** – every individual hardware component is prototyped using 3D-printing and laser-cut parts in order to validate computer-aided design (CAD) models, in particular when managing a paper path.
-* **lab prototypes** – every hardware subsystem – e.g., the VxScan module or the VxBox ballot box – goes through multiple lab prototypes of increasing fidelity. Each prototype is fully functional and is tested with thousands of ballots, through setup and teardown repeatedly. Weaknesses are cataloged and fed into the next lab prototype.
-* **engineering prototype** – once the lab prototype is fully validated, an engineering prototype is designed and tweaked following design for manufacturing (DFM) principles. The tooling is then built, in order to produce an engineering prototype that is as close as possible to the final product. The tooling is adjusted in minor ways based on tests performed on the engineering prototype.
+* **Design prototyping:** every individual hardware component is prototyped using 3D-printing and laser-cut parts in order to validate computer-aided design (CAD) models, in particular when managing a paper path.
+* **Lab prototypes:** every hardware subsystem – e.g., the VxScan module or the VxBox ballot box – goes through multiple lab prototypes of increasing fidelity. Each prototype is fully functional and is tested with thousands of ballots, through setup and teardown repeatedly. Weaknesses are cataloged and fed into the next lab prototype.
+* **Engineering prototype:** once the lab prototype is fully validated, an engineering prototype is designed and tweaked following design for manufacturing (DFM) principles. The tooling is then built, in order to produce an engineering prototype that is as close as possible to the final product. The tooling is adjusted in minor ways based on tests performed on the engineering prototype.
 
 By the time a VotingWorks hardware subsystem goes to assembly-line production, it has gone through a number of iterations to ensure that the design is high quality.
 
@@ -66,8 +66,8 @@ VotingWorks works closely with suppliers to ensure quality components. VotingWor
 
 VotingWorks component test procedures vary on a component-by-component basis:
 
-* **Custom Manufactured Parts** - Metal and plastic parts manufactured specifically for VotingWorks (e.g., a metal panel in VxScan) are visually inspected and measured against dimensions specified in their engineering drawings.
-* **Complex Electrical Subassemblies** - Large electrical components, which are often critical components, are tested before being installed in any machine. For example, the embedded scanner in VxScan is tested for motor control and image quality. VotingWorks has command-line interfaces that allow controlling and testing devices outside of a full software installation by connecting them to a development machine.
+* **Custom Manufactured Parts:** Metal and plastic parts manufactured specifically for VotingWorks (e.g., a metal panel in VxScan) are visually inspected and measured against dimensions specified in their engineering drawings.
+* **Complex Electrical Subassemblies:** Large electrical components, which are often critical components, are tested before being installed in any machine. For example, the embedded scanner in VxScan is tested for motor control and image quality. VotingWorks has command-line interfaces that allow controlling and testing devices outside of a full software installation by connecting them to a development machine.
 
 Smaller or common COTS components, like a simple USB cable or piece of hardware, are visually inspected and their proper operation is covered by the quality assurance done on each individual unit.
 
@@ -92,4 +92,4 @@ VotingWorks publishes the following test reports:
 
 ### Production Unit Quality Assurance
 
-Every unit assembled in production is manually tested against a comprehensive checklist to ensure the unit is fully operational. The quality assurance procedures are designed to imitate an election flow and check for any issues found on past units. Checklists for VxAdmin, VxMarkScan, VxScan, and VxCentralScan are public [here in the documentation repository](https://github.com/votingworks/docs-vxsuite-v4/tree/main/quality-assurance/production).
+Every unit assembled in production is manually tested against a comprehensive checklist to ensure the unit is fully operational. The quality assurance procedures are designed to imitate an election flow and check for any issues found on past units. Checklists for VxAdmin, VxMarkScan, VxScan, and VxCentralScan are public in the [production QA checklists in the documentation repository](https://github.com/votingworks/docs-vxsuite-v4/tree/main/quality-assurance/production).

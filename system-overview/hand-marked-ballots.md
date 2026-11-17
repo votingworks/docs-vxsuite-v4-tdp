@@ -62,10 +62,10 @@ The ballot must include a QR code which contains key metadata about the ballot.
 
 The QR code includes ballot metadata:
 
-* Precinct Index - corresponds to a precinct in the election definition
-* Ballot Style Index - corresponds to a ballot style in the election definition
-* Page Number - page number within the ballot style
-* Test Ballot Flag - indicates whether the ballot is a test ballot or an official ballot
+* **Precinct Index:** corresponds to a precinct in the election definition
+* **Ballot Style Index:** corresponds to a ballot style in the election definition
+* **Page Number:** page number within the ballot style
+* **Test Ballot Flag:** indicates whether the ballot is a test ballot or an official ballot
 * Ballot Type (Precinct, Absentee, or Provisional)
 
 In addition, the QR code includes the ballot hash. The ballot hash allows the scanner to check that the ballot was generated from the same election definition that is used to interpret the ballot.
@@ -97,11 +97,11 @@ The timing mark borders define an abstract grid that VxSuite uses to assign coor
 
 <figure><img src="../.gitbook/assets/image (27).png" alt="" width="563"><figcaption></figcaption></figure>
 
-**Notes:**
-
+{% hint style="info" %}
 * Coordinates correspond to the _center_ of each timing mark
 * Coordinates specify the _center_ of each bubble
 * Fractional coordinates are allowed
+{% endhint %}
 
 ## Complete Example
 

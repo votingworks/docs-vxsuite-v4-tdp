@@ -4,12 +4,12 @@
 
 The VotingWorks voting system (also known as **VxSuite**) consists of six primary components:
 
-* **VxAdmin**: election setup and election results manager
-* **VxMark**: tabletop ballot-marking device (BMD)
-* **VxMarkScan**: free-standing ballot-marking device (BMD)
-* **VxScan**: precinct scanner
-* **VxCentralScan**: batch scanner
-* **VxPrint**: ballot-on-demand printer
+* **VxAdmin:** election setup and election results manager
+* **VxMark:** tabletop ballot-marking device (BMD)
+* **VxMarkScan:** free-standing ballot-marking device (BMD)
+* **VxScan:** precinct scanner
+* **VxCentralScan:** batch scanner
+* **VxPrint:** ballot-on-demand printer
 
 Voters mark paper [bubble ballots](system-overview/hand-marked-ballots.md) (pre-printed or printed on VxPrint) by hand or use ballot-marking devices (VxMark & VxMarkScan) to mark and print ballots. Ballots are read and counted by tabulating devices (VxScan & VxCentralScan), which create [cast vote records](system-overview/cast-vote-records.md) for adjudication and aggregation on VxAdmin. VotingWorks considers read and counted ballots as the same.
 

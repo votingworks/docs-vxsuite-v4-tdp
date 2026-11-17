@@ -14,36 +14,36 @@ All of the above are Federal Information Processing Standards (FIPS) compliant.
 
 ### Smart Cards
 
-VxSuite v4 uses NXP JCOP 4 Java Cards, specifically this model: [https://www.cardlogix.com/product/nxp-jcop-4-java-card-3-0-5-classic](https://www.cardlogix.com/product/nxp-jcop-4-java-card-3-0-5-classic).
+VxSuite v4 uses NXP JCOP 4 Java Cards, specifically the [NXP JCOP 4 Java Card 3.0.5 Classic](https://www.cardlogix.com/product/nxp-jcop-4-java-card-3-0-5-classic).
 
-These smart cards are FIPS140-2-certified:\
-[https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3746](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3746).
+These smart cards are FIPS 140-2-certified:\
+[NIST CMVP certificate #3746](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3746).
 
-The applet that runs on the cards, [OpenFIPS201](https://github.com/votingworks/OpenFIPS201), is an implementation of the NIST 201 Personal Identity Verification (PIV) protocol, which sits on top of FIPS140 cryptography. In the applet, all cryptographic operations are handled by the Java Card operating system, implemented by the NXP JCOP 4 card.
+The applet that runs on the cards, [OpenFIPS201](https://github.com/votingworks/OpenFIPS201), is an implementation of the NIST 201 Personal Identity Verification (PIV) protocol, which sits on top of FIPS 140 cryptography. In the applet, all cryptographic operations are handled by the Java Card operating system, implemented by the NXP JCOP 4 card.
 
 ### VxAdmin / VxCentralScan / VxPrint TPM
 
 The VxAdmin / VxCentralScan / VxPrint HP laptop uses an NPCT75x TPM 2.0 chip by Nuvoton.
 
-This chip is FIPS140-2-certified: [https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4411](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4411).
+This chip is FIPS 140-2-certified: [NIST CMVP certificate #4411](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4411).
 
 ### VxMarkScan TPM
 
 The VxMarkScan board uses an SLB 9665 TPM 2.0 chip by Infineon.
 
-This chip is FIPS140-2-certified: [https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/2959](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/2959).
+This chip is FIPS 140-2-certified: [NIST CMVP certificate #2959](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/2959).
 
 ### VxScan / VxMark TPM
 
 The VxScan and VxMark boards use an SLB 9670 TPM 2.0 chip by Infineon.
 
-This chip is FIPS140-2-certified: [https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3492](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3492).
+This chip is FIPS 140-2-certified: [NIST CMVP certificate #3492](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3492).
 
 ### OpenSSL
 
-VxSuite uses OpenSSL 3.0.9 with the FIPS provider installed, per [these instructions](https://github.com/votingworks/docs-vxsuite-v4/blob/main/software-docs/README-FIPS.md). In the basic configuration wizard run on first boot after imaging, the mandatory `openssl fipsinstall` command runs to ensure that the FIPS provider is configured correctly and OpenSSL is running in FIPS mode.
+VxSuite uses OpenSSL 3.0.9 with the FIPS provider installed, per the [VxSuite FIPS installation instructions](https://github.com/votingworks/docs-vxsuite-v4/blob/main/software-docs/README-FIPS.md). In the basic configuration wizard run on first boot after imaging, the mandatory `openssl fipsinstall` command runs to ensure that the FIPS provider is configured correctly and OpenSSL is running in FIPS mode.
 
-This provider is FIPS140-2-certified: [https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4282](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4282).
+This provider is FIPS 140-2-certified: [NIST CMVP certificate #4282](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4282).
 
 FIPS compliance of all OpenSSL operations is achieved as follows:
 

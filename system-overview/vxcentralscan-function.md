@@ -64,18 +64,18 @@ Imprinting is enabled by default but can be disabled by an election manager. Imp
 
 Batch scanning pauses whenever a ballot is not counted for any reason. Sometimes the ballot was not interpreted or cannot be accepted, in which case the ballot must be removed:
 
-* **Vertical Streaks Detected** - the scanner may require cleaning
-* **Unreadable** - the ballot image could not be successfully interpreted, possibly because it is not a valid ballot or because the image skew was too great
-* **Wrong Ballot Mode** - test ballots in official ballot mode or official ballots in test ballot mode
-* **Wrong Election** - the hash on the ballot does not match the currently configured election
-* **Wrong Precinct** - if VxCentralScan is configured for a particular polling place and the ballot is not a part of that polling place
+* **Vertical Streaks Detected:** the scanner may require cleaning
+* **Unreadable:** the ballot image could not be successfully interpreted, possibly because it is not a valid ballot or because the image skew was too great
+* **Wrong Ballot Mode:** test ballots in official ballot mode or official ballots in test ballot mode
+* **Wrong Election:** the hash on the ballot does not match the currently configured election
+* **Wrong Precinct:** if VxCentralScan is configured for a particular polling place and the ballot is not a part of that polling place
 
 In other cases, the ballot requires adjudication. The adjudication reasons for VxCentralScan are set in the [system settings](election-package/#system-settings) as `centralScanAdjudicationReasons` and map to the following:
 
-* **Overvote** - at least one contest is overvoted
-* **Undervote** - at least one contest is undervoted
-* **Marginal Mark** - at least one contest contains one or more marginal marks
-* **Blank** - all contests are blank
+* **Overvote:** at least one contest is overvoted
+* **Undervote:** at least one contest is undervoted
+* **Marginal Mark:** at least one contest contains one or more marginal marks
+* **Blank:** all contests are blank
 
 In these cases, the affected contests will be highlighted on screen to the election manager and they will have the option to remove or tabulate the ballot.
 

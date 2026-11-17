@@ -49,7 +49,7 @@ Store all L\&A'ed equipment, with recorded seal numbers, in a secure location un
 
 Ensure that seals on equipment are untouched and appropriately numbered since L\&A.
 
-### Opening The Polls
+### Opening the Polls
 
 After setting up VxScan on the ballot box and opening the polls, ensure that:
 

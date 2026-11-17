@@ -1,6 +1,6 @@
 # VxPrint Function
 
-VxPrint is the system's on-demand ballot printer. It prints blank official and test ballots for voters at the polling place, using the pre-rendered ballots included in the election package. VxPrint is not a marking device or a tabulator — voters mark the ballots it prints by hand, and those ballots are later cast and tabulated at VxScan or VxCentralScan.
+VxPrint is the system's on-demand ballot printer. It prints blank official and test ballots for voters at the polling place, using the pre-rendered ballots included in the election package. VxPrint is not a marking device or a tabulator—voters mark the ballots it prints by hand, and those ballots are later cast and tabulated at VxScan or VxCentralScan.
 
 ## Configuration
 
@@ -26,11 +26,11 @@ VxPrint can be unconfigured by an election manager or system administrator.
 
 Once VxPrint is configured, an election manager or poll worker can print ballots. The operator selects the attributes of the ballot to print:
 
-* **Precinct** — and the **split**, if the precinct is divided into splits
-* **Party** — for closed primary elections only
-* **Language** — for multilingual elections only
-* **Ballot type** — precinct or absentee (election managers only)
-* **Number of copies** (election managers only)
+* **Precinct and split:** the precinct and, if the precinct is divided into splits, the split
+* **Party:** for closed primary elections only
+* **Language:** for multilingual elections only
+* **Ballot type:** precinct or absentee (election managers only)
+* **Number of copies:** election managers only
 
 VxPrint then prints the requested ballot(s) on the connected commercial off-the-shelf (COTS) printer. It records a running count of how many ballots have been printed, broken down by these attributes, for the current ballot mode.
 
@@ -56,4 +56,6 @@ VxPrint interfaces with the printer through CUPS, the open-source printing syste
 
 When a print job is submitted via CUPS, CUPS sends it to the printer using IPP. VxPrint waits until CUPS reports it has successfully sent the entire job to the printer, at which point it logs success and increments the ballots printed count. If the printer is disconnected before CUPS can send the entire job, VxPrint logs the failure and displays an error message. In these cases, the printer may still print an incomplete document or error code. Whenever the printer is disconnected, any pending jobs are cancelled to avoid unexpected prints on reconnection.
 
-Note that VxPrint can only connect with one printer at a time and always connects with the first attached printer.
+{% hint style="info" %}
+VxPrint can only connect with one printer at a time and always connects with the first attached printer.
+{% endhint %}

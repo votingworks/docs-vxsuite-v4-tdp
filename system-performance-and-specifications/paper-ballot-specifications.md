@@ -6,8 +6,8 @@ The following defines the minimal specifications for VxSuite paper stock. Ballot
 
 VxSuite supports a wide range of paper for hand-marked bubble ballots. Paper must be within the following supported specifications:
 
-* **Width**: 8.5 in.
-* **Length**: 11, 14, 17, 18, 19, 20, or 22 in.
+* **Width:** 8.5 in.
+* **Length:** 11, 14, 17, 18, 19, 20, or 22 in.
 * **Weight:** 105–177 gsm
 * **Coating:** uncoated
 * **Opacity:** >90%
@@ -19,7 +19,7 @@ VxSuite supports a wide range of paper for hand-marked bubble ballots. Paper mus
 * **Margins:** the paper margins listed below are required for proper timing mark interpretation and adequate space for VxCentralScan imprinting outside of the ballot selection area and timing marks:
   * Left/right: 5 mm (0.19685 in.)
   * Top/bottom: 12 pt (0.16667 in.)
-* **Scale:** 100% — all VotingWorks ballot PDFs must be printed at 100% scale. Any print scale deviation will render the ballot imprecisely.
+* **Scale:** 100%—all VotingWorks ballot PDFs must be printed at 100% scale. Any print scale deviation will render the ballot imprecisely.
 * **Print Run Size:** follow the print vendor's established best practices for quality assurance. In the absence of a vendor recommendation, VotingWorks recommends that print runs are a consistent size of 500–1,000 sheets — consistency eases ballot accounting and the moderate size allows for semi-frequent quality checks.
 
 ## Ballot-Marking Device Ballots
@@ -41,7 +41,7 @@ TF 1467 paper is only provided in one configuration on white paper with a weight
 VxMark uses typical printer paper. Shorter, standard lengths such as letter and legal can usually be bought off-the-shelf. Longer lengths must usually be purchased to size. The paper used must be within the following ranges:
 
 * **Width:** 8.5 in.
-* **Length**: 11, 14, 17, 18, 19, 20, or 22 in.
+* **Length:** 11, 14, 17, 18, 19, 20, or 22 in.
 * **Weight:** 105–120 gsm, equivalent to 28# or 32# bond paper
 * **Coating:** uncoated
 * **Opacity:** >90%

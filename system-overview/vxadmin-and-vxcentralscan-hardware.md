@@ -10,9 +10,9 @@ VxAdmin, VxPrint, and VxCentralScan are laptops which connect to peripherals as 
 
 The relevant hardware interfaces are:
 
-* **Smart Card Reader** - Enables reading and writing to smart cards, which is the basis for authentication in VxSuite
-* **USB Ports -** Allows connecting to the peripherals for scanning or printing
-* **HDMI Port -** Allows connecting the laptop to an external display, which is most often used to enlarge the adjudication interfaces when adjudication is performed by a group of people
+* **Smart Card Reader:** Enables reading and writing to smart cards, which is the basis for authentication in VxSuite
+* **USB Ports:** Allows connecting to the peripherals for scanning or printing
+* **HDMI Port:** Allows connecting the laptop to an external display, which is most often used to enlarge the adjudication interfaces when adjudication is performed by a group of people
 
 While not strictly necessary, VxAdmin, VxPrint, and VxCentralScan are bundled with a mouse and a USB hub for ease of use. A USB A-B cable is included to connect to the peripherals.
 
@@ -95,14 +95,14 @@ The laptop is a custom configuration of the widely available HP Elitebook 840 14
 
 As listed in the bill of materials above, the high criticality components are as follows:
 
-* **HP Elitebook 840 14" G11** - As the processor and data store for ballot data and other tallies, the laptops are one of the most critical components in the entire system. HP is the only manufacturer. VotingWorks is an official original equipment manufacturer (OEM) partner of HP in order to work closely together to ensure the quality and configuration of the laptops.
-* **Ricoh fi-8170, fi-7600, & fi-8950** - As the source of ballot images for VxCentralScan, the Ricoh scanners are highly sensitive and critical components.
+* **HP Elitebook 840 14" G11:** As the processor and data store for ballot data and other tallies, the laptops are one of the most critical components in the entire system. HP is the only manufacturer. VotingWorks is an official original equipment manufacturer (OEM) partner of HP in order to work closely together to ensure the quality and configuration of the laptops.
+* **Ricoh fi-8170, fi-7600, & fi-8950:** As the source of ballot images for VxCentralScan, the Ricoh scanners are highly sensitive and critical components.
 
 The medium criticality components and the reasons for their classification are as follows:
 
-* **Tripp Lite Ultra Slim USB Hub** - Manages flow of data between laptop and peripherals.
-* **Logitech B100 Mouse -** Does not directly handle election data but does plug into a USB port, thus it could still pose a USB attack vector.
-* **Monoprice USB A-B Cable -** Manages flow of data between laptop and peripherals.
-* **HP LaserJet Pro 4001dn -** The VxAdmin & VxPrint printer is responsible for printing reports from VxAdmin and printing ballots from VxPrint and therefore handles highly sensitive election information. All reports from VxAdmin can be exported as PDFs and printed elsewhere, so it is not strictly necessary for the operation of the system and thus is not the highest criticality.
-* **Ricoh fi-760PRB, fi-819PRB** **& fi-890PRB** - The imprinters that pair with the Ricoh scanners are not involved in generating ballot data, so they cannot influence the interpretation of ballots when used according to instructions. The imprinted identifiers are important for post-election audits, however, so the imprinters are security-sensitive components.
-* **Cisco Catalyst 1200-8T-D Switch** - Because all data on the network is encrypted and cryptographically verified, data modified or tampered with in transit fails verification. Many COTS alternatives are also available to handle supply issues. The switch is a complex component networked to each VxAdmin, however, so it is considered medium criticality as a potential launching point for network attacks.
+* **Tripp Lite Ultra Slim USB Hub:** Manages flow of data between laptop and peripherals.
+* **Logitech B100 Mouse:** Does not directly handle election data but does plug into a USB port, thus it could still pose a USB attack vector.
+* **Monoprice USB A-B Cable:** Manages flow of data between laptop and peripherals.
+* **HP LaserJet Pro 4001dn:** The VxAdmin & VxPrint printer is responsible for printing reports from VxAdmin and printing ballots from VxPrint and therefore handles highly sensitive election information. All reports from VxAdmin can be exported as PDFs and printed elsewhere, so it is not strictly necessary for the operation of the system and thus is not the highest criticality.
+* **Ricoh fi-760PRB, fi-819PRB & fi-890PRB:** The imprinters that pair with the Ricoh scanners are not involved in generating ballot data, so they cannot influence the interpretation of ballots when used according to instructions. The imprinted identifiers are important for post-election audits, however, so the imprinters are security-sensitive components.
+* **Cisco Catalyst 1200-8T-D Switch:** Because all data on the network is encrypted and cryptographically verified, data modified or tampered with in transit fails verification. Many COTS alternatives are also available to handle supply issues. The switch is a complex component networked to each VxAdmin, however, so it is considered medium criticality as a potential launching point for network attacks.

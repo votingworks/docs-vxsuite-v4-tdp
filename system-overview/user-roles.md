@@ -1,6 +1,6 @@
 # User Roles
 
-VxSuite has four authenticated user roles. Authentication is performed with JCOP4 Java Cards, a security-oriented type of smart card. Each card is programmed with a single role and, in most cases, a personal identification number (PIN) for two-factor authentication. Details of the authentication system can be found here: [access-control.md](../system-security-auditing-and-logging/system-security-architecture/access-control.md "mention").
+VxSuite has four authenticated user roles. Authentication is performed with JCOP4 Java Cards, a security-oriented type of smart card. Each card is programmed with a single role and, in most cases, a personal identification number (PIN) for two-factor authentication. Details of the authentication system are in [access-control.md](../system-security-auditing-and-logging/system-security-architecture/access-control.md "mention").
 
 ## Poll Worker Role
 
@@ -34,7 +34,7 @@ The system administrator role is a powerful role for initial election setup and 
 
 On VxAdmin, a system administrator card is necessary to initially load an election package from an external system. System administrators can then program poll worker cards and election manager cards for a specific election. In that sense, the system administrator role is the gatekeeper for loading elections and creating users, and is strictly necessary for every election.
 
-On all devices, the system administrator role allows accessing a menu with powerful system actions. Many actions are shared with election managers - unconfiguring a machine or setting the date and time. Others are unique to the system administrator. For example, on precinct devices a system administrator can reset polls from a "closed" state to a "paused" state in case a poll worker accidentally closes polls prematurely.
+On all devices, the system administrator role allows accessing a menu with powerful system actions. Many actions are shared with election managers, such as unconfiguring a machine or setting the date and time. Others are unique to the system administrator. For example, on precinct devices a system administrator can reset polls from a "closed" state to a "paused" state in case a poll worker accidentally closes polls prematurely.
 
 Additional system administrator cards can be programmed by a system administrator at VxAdmin. System administrator cards always have PINs. Because a system administrator card is necessary to program cards or set up elections to begin with, at least one pre-programmed card is initially provided with the voting system to bootstrap the jurisdiction's authentication.
 

@@ -2,7 +2,7 @@
 
 VotingWorks software is open-source, which means that the code is free and publicly available. All code written by VotingWorks and almost all dependencies are open-source, with the notable exception of third-party firmware for various hardware components.
 
-All system components - VxAdmin, VxCentralScan, VxMark, VxMarkScan, VxScan, VxPrint - run different application code but have fundamentally the same software architecture. The rest of this document applies to all system components unless otherwise noted.
+All system components (VxAdmin, VxCentralScan, VxMark, VxMarkScan, VxScan, and VxPrint) run different application code but have fundamentally the same software architecture. The rest of this document applies to all system components unless otherwise noted.
 
 ## Operating System
 
@@ -18,7 +18,7 @@ All machines are completely disconnected from any external network, but the fram
 
 ### kiosk-browser
 
-kiosk-browser is a web browser restricted to rendering a single full-screen application. The code can be found in the [kiosk-browser repository](https://github.com/votingworks/kiosk-browser/tree/v4.1.1). It is a thin [Electron](https://www.electronjs.org/) application which uses [Chromium](https://www.chromium.org/Home/) as its rendering engine. The browser communicates with the frontend server which serves HTML, JavaScript, and assets. The browser also communicates with the backend server which serves application data. Electron enables the browser to access certain operating system APIs - such as open file dialogs - that a lone renderer would not have access to. The browser is launched at startup, with limited privileges, and cannot be exited. Everything a standard (non-vendor) user sees or does is mediated through kiosk-browser.
+kiosk-browser is a web browser restricted to rendering a single full-screen application. The code can be found in the [kiosk-browser repository](https://github.com/votingworks/kiosk-browser/tree/v4.1.1). It is a thin [Electron](https://www.electronjs.org/) application which uses [Chromium](https://www.chromium.org/Home/) as its rendering engine. The browser communicates with the frontend server which serves HTML, JavaScript, and assets. The browser also communicates with the backend server which serves application data. Electron enables the browser to access certain operating system APIs, such as open file dialogs, that a lone renderer would not have access to. The browser is launched at startup, with limited privileges, and cannot be exited. Everything a standard (non-vendor) user sees or does is mediated through kiosk-browser.
 
 ### Application Frontend Server
 
@@ -36,7 +36,7 @@ All application data that persists across restarts is stored or tracked in a [SQ
 
 The hardware peripherals are polled and managed through the application backends. For example when detecting the status of the card reader, the browser polls the backend server which in turn polls the hardware itself and returns a status to the browser. In order to manage changing states of more complex hardware such as scanners, the backends use state machines.
 
-The exact layer between the application backend and the hardware varies by hardware. Some run in-process whereas others run as a separate process with which the backend communicates. For the accessibility peripherals - the accessible controller and the sip-and-puff interface - the backend starts and manages a daemon which surfaces user input directly to the browser as keyboard commands.
+The exact layer between the application backend and the hardware varies by hardware. Some run in-process whereas others run as a separate process with which the backend communicates. For the accessibility peripherals (the accessible controller and the sip-and-puff interface), the backend starts and manages a daemon which surfaces user input directly to the browser as keyboard commands.
 
 In many cases VotingWorks has written custom drivers that interface directly with the USB device. In other cases, VotingWorks leverages open-source middleware layers installed as Debian packages:
 
@@ -60,10 +60,10 @@ Because all voter selections are recorded on paper, voter-verified, and unmodifi
 
 There are four code repositories relevant to the voting system:
 
-* [vxsuite](https://github.com/votingworks/vxsuite/tree/v4.1.1) — Core application code
-* [kiosk-browser](https://github.com/votingworks/kiosk-browser/tree/v4.1.1) — Generic Electron-based kiosk-mode browser
-* [vxsuite-complete-system](https://github.com/votingworks/vxsuite-complete-system/tree/v4.1.1) — Links compatible versions of vxsuite and kiosk-browser, and includes the scripts necessary to create a production machine
-* [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.1.1) — The VotingWorks framework for building VxSuite and managing its dependencies, across versions and environments
+* **[vxsuite](https://github.com/votingworks/vxsuite/tree/v4.1.1):** Core application code
+* **[kiosk-browser](https://github.com/votingworks/kiosk-browser/tree/v4.1.1):** Generic Electron-based kiosk-mode browser
+* **[vxsuite-complete-system](https://github.com/votingworks/vxsuite-complete-system/tree/v4.1.1):** Links compatible versions of vxsuite and kiosk-browser, and includes the scripts necessary to create a production machine
+* **[vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.1.1):** The VotingWorks framework for building VxSuite and managing its dependencies, across versions and environments
 
 ## Key Dependency Chart
 
@@ -75,12 +75,12 @@ VotingWorks verifies that dependencies are authentic and the correct versions by
 
 ## Software Best Practices
 
-The VotingWorks codebase is written in TypeScript and Rust, two widely used languages with well established coding conventions. VotingWorks uses automatic code linters to enforce these conventions. Details about VotingWorks' best practices and the tooling used to enforce them can be found here:
+The VotingWorks codebase is written in TypeScript and Rust, two widely used languages with well established coding conventions. VotingWorks uses automatic code linters to enforce these conventions. Details about VotingWorks' best practices and the tooling used to enforce them are in the following documents:
 
 * [TypeScript best practices and tooling](https://github.com/votingworks/docs-vxsuite-v4/blob/main/software-docs/best-practices/typescript.md)
 * [Rust best practices and tooling](https://github.com/votingworks/docs-vxsuite-v4/blob/main/software-docs/best-practices/rust.md)
 
-VotingWorks also requires peer code review of every change ([examples of that process here](https://github.com/votingworks/vxsuite/pulls?q=is%3Apr+is%3Aclosed)), and for larger changes and features, the team holds architecture discussions to arrive at the best solution given the constraints.
+VotingWorks also requires peer code review of every change ([examples of reviewed pull requests in the vxsuite repository](https://github.com/votingworks/vxsuite/pulls?q=is%3Apr+is%3Aclosed)), and for larger changes and features, the team holds architecture discussions to arrive at the best solution given the constraints.
 
 VotingWorks' testing practices are covered under [#quality-assurance-protocols-software](<../README (1).md#quality-assurance-protocols-software> "mention").
 
@@ -88,15 +88,15 @@ VotingWorks' testing practices are covered under [#quality-assurance-protocols-s
 
 The VotingWorks codebase uses database transactions to ensure that only complete and consistent (and not partial) updates are persisted. For data synced across a machine's internal drive and a connected USB drive, namely cast vote records (CVRs), the system detects when data has fallen out of sync after a failure using the Merkle tree hash of the data ([hashing-of-continuously-exported-cast-vote-records.md](../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/hashing-of-continuously-exported-cast-vote-records.md "mention")) and re-sync data as needed.
 
-{% hint style="success" %}
-Through the above best practices, tooling used to enforce those best practices, and peer code review of every change, VotingWorks meets the following requirements:
+{% hint style="info" %}
+Through the above best practices, tooling used to enforce those best practices, and peer code review of every change, VotingWorks meets the following VVSG 2.0 requirements:
 
-* 2.3: Voting system logic is clear, meaningful, and well-structured
-* 2.4: Voting system structure is modular, scalable, and robust
-* 2.5: The voting system supports system processes and data with integrity
-* 2.6: The voting system handles errors robustly and gracefully recovers from failure
+* Voting system logic is clear, meaningful, and well-structured (VVSG 2.0 2.3)
+* Voting system structure is modular, scalable, and robust (VVSG 2.0 2.4)
+* The voting system supports system processes and data with integrity (VVSG 2.0 2.5)
+* The voting system handles errors robustly and gracefully recovers from failure (VVSG 2.0 2.6)
 
-Much of 2.5 is additionally covered under [system-integrity.md](../system-security-auditing-and-logging/system-security-architecture/system-integrity.md "mention").
+Much of VVSG 2.0 2.5 is additionally covered under [system-integrity.md](../system-security-auditing-and-logging/system-security-architecture/system-integrity.md "mention").
 {% endhint %}
 
 ## Common Software Functions

@@ -1,10 +1,10 @@
 # Safety, Security, Privacy, and Continuity of Operation
 
-The following article and linked related articles are intended to cover VVSG 2.0 3.1.2-A.4.
+The following article and linked related articles are intended to cover the documentation of safety, security, privacy, and continuity of operation (VVSG 2.0 3.1.2-A.4).
 
 ## Safety
 
-Per VVSG 2.0 8.1-K - Eliminating Hazards, devices associated with the voting system are certified in accordance with the requirements of UL 62368-1. See [#eliminating-hazards](../audio-visual-and-display-screen-settings.md#eliminating-hazards "mention"). VxSuite hardware is designed to eliminate hazards from shock, radiation, heat, and mechanical dangers when used and maintained in accordance with the [VxSuite User Manual - v4](https://app.gitbook.com/o/-MG9xpTX0GFiCyXHEhNe/s/vh0Xx7zclRU0SsZ9mvKy/ "mention").
+To eliminate hazards (VVSG 2.0 8.1-K), devices associated with the voting system are certified in accordance with the requirements of UL 62368-1. See [#eliminating-hazards](../audio-visual-and-display-screen-settings.md#eliminating-hazards "mention"). VxSuite hardware is designed to eliminate hazards from shock, radiation, heat, and mechanical dangers when used and maintained in accordance with the [VxSuite User Manual - v4](https://app.gitbook.com/o/-MG9xpTX0GFiCyXHEhNe/s/vh0Xx7zclRU0SsZ9mvKy/ "mention").
 
 ## Security
 
@@ -24,10 +24,10 @@ The voting system is designed to recover from errors as gracefully as possible. 
 
 If a machine is damaged to the point of being inoperable, a replacement machine of the same type can be used. For larger customers, VotingWorks recommends that customers buy and maintain their own backup machines. For smaller customers, VotingWorks can provide replacement machines. If a replacement takes place in the middle of an election, users can take the following steps to substitute equipment:
 
-* **VxScan -** Switch to scanning on the replacement VxScan and, at the end of the election, aggregate the cast vote records from both the damaged and replacement VxScans.
-* **VxMarkScan** - Voters should start new voting sessions on the replacement VxMarkScan.
-* **VxCentralScan** - The document scanner can be replaced. If the laptop is damaged and cast vote records were never exported, the scanned ballots should be re-scanned with the replacement laptop.
-* **VxAdmin** - If a backup was saved, the replacement laptop can be restored from it as described in [Backup and Restore](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxadmin-system-setup/backup-and-restore "mention"). Otherwise, the laptop should be reconfigured with the election package and any cast vote records should be reloaded from the various USB drives.
+* **VxScan:** Switch to scanning on the replacement VxScan and, at the end of the election, aggregate the cast vote records from both the damaged and replacement VxScans.
+* **VxMarkScan:** Voters should start new voting sessions on the replacement VxMarkScan.
+* **VxCentralScan:** The document scanner can be replaced. If the laptop is damaged and cast vote records were never exported, the scanned ballots should be re-scanned with the replacement laptop.
+* **VxAdmin:** If a backup was saved, the replacement laptop can be restored from it as described in [Backup and Restore](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxadmin-system-setup/backup-and-restore "mention"). Otherwise, the laptop should be reconfigured with the election package and any cast vote records should be reloaded from the various USB drives.
 
 ### Paper Processes
 

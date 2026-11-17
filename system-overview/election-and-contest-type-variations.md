@@ -32,7 +32,7 @@ Summary ballots include all contests for all parties for consistency with the bu
 
 #### Tabulation
 
-The results and reports for a combined ballot open primary are structured in the same way as a standard primary - tally reports are split into party sections and, if there are nonpartisan races, there will be a separate nonpartisan section.
+The results and reports for a combined ballot open primary are structured in the same way as a standard primary: tally reports are split into party sections and, if there are nonpartisan races, there will be a separate nonpartisan section.
 
 With a combined primary ballot, however, the party of the ballot is not determined by the ballot style. The party of the ballot is determined at the time of tabulation by the interpreted or adjudicated votes on the ballot. If there are no votes for any partisan contests or if there is crossover voting, the ballot will not count toward any party's primary.
 
@@ -74,7 +74,7 @@ The examples below are intended to express how straight party tabulation works. 
 1. All valid, direct votes are counted
 2. If the number of remaining votes is greater than or equal to the number of candidates with the selected party, indirect votes are awarded to those candidates.
 
-**Vote for 1, Straight Party Tabulation Examples**
+##### Vote for 1, Straight Party Tabulation Examples
 
 | Straight Party Contest Vote                                               | Candidate Contest Vote                                                    | Outcome                                                                                                                                            |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -82,7 +82,7 @@ The examples below are intended to express how straight party tabulation works. 
 | <img src="../.gitbook/assets/image (89).png" alt="" data-size="original"> | <img src="../.gitbook/assets/image (97).png" alt="" data-size="original"> | A vote is counted toward the Democratic candidate. Voters may vote directly for candidates even if it is redundant with their straight party vote. |
 | <img src="../.gitbook/assets/image (89).png" alt="" data-size="original"> | <img src="../.gitbook/assets/image (98).png" alt="" data-size="original"> | A vote is counted toward the Republican candidate. The direct vote takes priority over the straight party vote.                                    |
 
-**Vote for N (N > 1), Straight Party Tabulation Examples**
+##### Vote for N (N > 1), Straight Party Tabulation Examples
 
 | Straight Party Contest Vote                                                | Candidate Contest Vote                                                     | Outcome                                                                                                                                                                                                                                                       |
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

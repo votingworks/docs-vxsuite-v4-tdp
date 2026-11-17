@@ -6,7 +6,7 @@ This risk assessment reviews threats and vulnerabilities identified in:
 * VxSuite software and source code
 * VotingWorks internal communication and operation support systems.
 
-This assessment was conducted following the framework outlined in NIST Special Publication 800-30 - Guide for Conducting Risk assessments.
+This assessment was conducted following the framework outlined in NIST SP 800-30, Guide for Conducting Risk Assessments.
 
 For additional information on how physical, technical, and operational controls work together to meet the requirements of **VVSG 14.1-C.1-4,** see the following:
 

@@ -53,5 +53,5 @@ The system settings file contains settings which are not specific to an election
 * `centralScanEnablePollWorkerRole` - Enables the poll worker role in VxCentralScan. When enabled, poll workers can unlock VxCentralScan and operate the scanner. They cannot delete batches or export cast vote records.
 * Polls Close Time
   * `electionDayPollsCloseTime` - Time value. Indicates when polls close on election day. Before the polls close time, the default poll worker screen is the full poll worker menu. After the polls close time, the default poll worker screen is the guided "Close Polls" flow. The time is a time only, rather than a timestamp, and is always interpreted in local time.
-  * `disallowClosingPollsBeforeElectionDayPollsCloseTime` - If used in combination with `electionDayPollsCloseTime`, fully disables the "Close Polls" option until the `electionDayPollsCloseTime`.
+  * `disallowClosingPollsBeforeElectionDayPollsCloseTime` - If used in combination with `electionDayPollsCloseTime`, fully disables the `Close Polls` option until the `electionDayPollsCloseTime`.
   * `disallowVxAdminTabulationBeforeElectionDayPollsCloseTime` - If used in combination with `electionDayPollsCloseTime`, disables tabulation (i.e., generating reports) until the `electionDayPollsCloseTime`.

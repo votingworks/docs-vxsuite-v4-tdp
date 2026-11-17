@@ -85,7 +85,7 @@ VxScan also allows poll workers to pause voting, also called suspending the poll
 
 If `electionDayPollsCloseTime` and `disallowClosingPollsBeforeElectionDayPollsCloseTime` are both set, VxScan prevents closing the polls before the designated polls close time on election day. In test ballot mode, the poll worker is notified of the polls close time but can always close the polls. The behavior differs between official ballot mode and test ballot mode because testing happens before election day.
 
-If the polls have been closed, they can be re-opened only if a system administrator resets the polls to paused. Only the system administrator may do this - poll workers and election managers cannot - per the allowance in VVSG 2.0 1.1.7-E. Once polls have been reset to paused by the system administrator, voting may be resumed by a poll worker. The goal of this flow is to allow voting to continue after a poll worker has prematurely closed the polls.
+If the polls have been closed, they can be re-opened only if a system administrator resets the polls to paused. Only the system administrator may do this—poll workers and election managers cannot—as VVSG 2.0 allows (VVSG 2.0 1.1.7-E). Once polls have been reset to paused by the system administrator, voting may be resumed by a poll worker. The goal of this flow is to allow voting to continue after a poll worker has prematurely closed the polls.
 
 {% hint style="info" %}
 **User Manual Reference:** [Opening Polls](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-day-guides/opening-polls "mention"), [Closing Polls](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-day-guides/closing-polls "mention"), [Additional Poll Worker Actions](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxscan/additional-poll-worker-actions "mention")
@@ -141,7 +141,7 @@ The most recent polls report can be printed as long as no ballots have since bee
 
 For examples of all VxScan reports, see [vxscan-polls-reports.md](vxscan-polls-reports.md "mention").
 
-For polls opened and polls closed reports, the vote interpretations of all ballots are tallied together. In the case of polls opened reports, the tallies are zero, forming a zero report, because the scanner is disabled until polls are opened and so no ballots can have been scanned. Pursuant to VVSG 2.0 1.1.3-B, however, if non-zero totals are detected on the machine when the poll worker attempts to open the polls, an error is presented to the poll worker and logged, and the poll worker cannot open the polls.
+For polls opened and polls closed reports, the vote interpretations of all ballots are tallied together. In the case of polls opened reports, the tallies are zero, forming a zero report, because the scanner is disabled until polls are opened and so no ballots can have been scanned. However, if non-zero totals are detected on the machine when the poll worker attempts to open the polls, an error is presented to the poll worker and logged, and the poll worker cannot open the polls (VVSG 2.0 1.1.3-B).
 
 Tallies for the polls closed report are created by iterating through the stored cast vote records and forming totals of votes for contest options, undervotes, overvotes, and total ballots cast. The process is the same as on VxAdmin but with far fewer steps because there are no write-in adjudication results to consider and no manual tallies. All marked write-ins are grouped as a generic "Write-In" count in reports. All unmarked write-ins are considered as undervotes.
 

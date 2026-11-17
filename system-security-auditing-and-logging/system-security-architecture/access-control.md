@@ -16,7 +16,7 @@ As a diagram:
 
 <figure><img src="../../.gitbook/assets/security-diagram.png" alt=""><figcaption></figcaption></figure>
 
-VxCentralScan, VxMark, VxMarkScan, VxScan, and VxPrint, unlike VxAdmin, are not bound to a jurisdiction by VotingWorks. They are bound and unbound to jurisdictions as they’re configured and unconfigured by election managers. When an election manager configures a VxCentralScan, VxMark, VxMarkScan, VxScan, or VxPrint for an election, the machine persists in its datastore the jurisdiction of the election manager card used to unlock it and then only accepts cards from that jurisdiction. When the machine is unconfigured for that election, the machine returns to a jurisdiction-agnostic state. This allows one jurisdiction to lend its unconfigured equipment to another, without giving a jurisdiction any power over machines configured for a different jurisdiction.
+VxCentralScan, VxMark, VxMarkScan, VxScan, and VxPrint, unlike VxAdmin, are not bound to a jurisdiction by VotingWorks. They are bound and unbound to jurisdictions as they are configured and unconfigured by election managers. When an election manager configures a VxCentralScan, VxMark, VxMarkScan, VxScan, or VxPrint for an election, the machine persists in its datastore the jurisdiction of the election manager card used to unlock it and then only accepts cards from that jurisdiction. When the machine is unconfigured for that election, the machine returns to a jurisdiction-agnostic state. This allows one jurisdiction to lend its unconfigured equipment to another, without giving a jurisdiction any power over machines configured for a different jurisdiction.
 
 ## Smart Card Keys and Certificates
 
@@ -24,7 +24,7 @@ As described above, programmed smart cards have two certificates, one issued by 
 
 * The private key slot associated with the card’s VotingWorks-issued certificate is not PIN-gated, so anyone can immediately verify that a card is a VotingWorks-certified card.
 * The private key slot associated with the card’s VxAdmin-issued certificate is PIN-gated, so authentication requires PIN entry.
-* The card’s VxAdmin-issued certificate, on the other hand, is not PIN-gated, so it is possible for a VotingWorks machine to know the card’s type and which election it’s bound to even before a PIN is entered. This allows the machine to display error messages like “election mismatch” immediately after card insertion and before PIN entry.
+* The card’s VxAdmin-issued certificate, on the other hand, is not PIN-gated, so it is possible for a VotingWorks machine to know the card’s type and which election it is bound to even before a PIN is entered. This allows the machine to display error messages like "election mismatch" immediately after card insertion and before PIN entry.
   * This does mean that an attacker could load a fake certificate onto a card such that the machine, at worst, displays an incorrect error message, but nothing more. Authentication would still fail as the public key in the certificate would not match the private key on the card. VxSuite does not fully trust the information in this certificate until authentication is complete.
 
 VxSuite takes inspiration from the NIST Personal Identity Verification (PIV) standard but does not strictly adhere to it. The VxSuite use case differs from the PIV standard in a number of ways, most notably in that cards are certified by two entities (VotingWorks and VxAdmin), rather than just one. VxSuite smart cards also do not need to be interoperable with other PIV systems.
@@ -61,7 +61,7 @@ Existing X.509 fields like Organization, Organizational Unit, and Serial Number 
 
 Instead, VxSuite uses custom fields. VotingWorks has registered with the Internet Assigned Numbers Authority (IANA) for a VotingWorks enterprise object identifier (OID), which is effectively a prefix for OIDs of the form 1.3.6.1.4.1.32473.123, where 1.3.6.1.4.1.32473 is the enterprise OID for an example organization, and 123 is the 123rd field defined by that organization.
 
-The VotingWorks IANA-assigned Private Enterprise Number (PEN) is 59817, which means that the enterprise OID, fully-prefixed, is 1.3.6.1.4.1.59817. See [https://www.iana.org/assignments/enterprise-numbers/?q=59817](https://www.iana.org/assignments/enterprise-numbers/?q=59817).
+The VotingWorks IANA-assigned Private Enterprise Number (PEN) is 59817, which means that the enterprise OID, fully-prefixed, is 1.3.6.1.4.1.59817. See the [IANA Private Enterprise Number registry entry](https://www.iana.org/assignments/enterprise-numbers/?q=59817).
 
 The custom fields are:
 
@@ -136,18 +136,18 @@ Smart card authentication involves the following steps:
 
 Machines automatically lock after they have been left idle for 30 minutes and also automatically lock after 12 hours, even if the user has been active. The user is warned before the machine locks. System administrators can select shorter time limits.
 
-These time limits do not apply to unauthenticated screens like the “Insert Your Ballot” screen on VxScan.
+These time limits do not apply to unauthenticated screens like the "Insert Your Ballot" screen on VxScan.
 
 ### Code Links
 
 Refer to the following code links for more details:
 
-* [https://github.com/votingworks/vxsuite/tree/v4.1.1/libs/auth](https://github.com/votingworks/vxsuite/tree/v4.1.1/libs/auth) — VxSuite authentication lib, a good starting point for all things authentication
-* [https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/dipped\_smart\_card\_auth.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/dipped_smart_card_auth.ts) — High-level authentication state management for VxAdmin and VxCentralScan
-* [https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/inserted\_smart\_card\_auth.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/inserted_smart_card_auth.ts) — High-level authentication state management for VxScan
-* [https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/java\_card.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/java_card.ts) — Java Card implementation
-* [https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/certs.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/certs.ts) — Certificate configuration
-* [https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/cryptography.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/cryptography.ts) — OpenSSL commands underlying various authentication and signing operations
-* [https://github.com/votingworks/vxsuite-complete-system/blob/v4.1.1/config/vendor-functions/basic-configuration.sh](https://github.com/votingworks/vxsuite-complete-system/blob/v4.1.1/config/vendor-functions/basic-configuration.sh) — The production machine configuration wizard
-* [https://github.com/votingworks/vxsuite/tree/v4.1.1/libs/auth#scripts](https://github.com/votingworks/vxsuite/tree/v4.1.1/libs/auth#scripts) — A summary of the scripts in the authentication lib, many of which are used for production configuration
-* [https://github.com/votingworks/openfips201](https://github.com/votingworks/openfips201) — The applet installed on VxSuite Java Cards
+* [libs/auth](https://github.com/votingworks/vxsuite/tree/v4.1.1/libs/auth) — VxSuite authentication lib, a good starting point for all things authentication
+* [libs/auth/src/dipped\_smart\_card\_auth.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/dipped_smart_card_auth.ts) — High-level authentication state management for VxAdmin and VxCentralScan
+* [libs/auth/src/inserted\_smart\_card\_auth.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/inserted_smart_card_auth.ts) — High-level authentication state management for VxScan
+* [libs/auth/src/java\_card.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/java_card.ts) — Java Card implementation
+* [libs/auth/src/certs.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/certs.ts) — Certificate configuration
+* [libs/auth/src/cryptography.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/cryptography.ts) — OpenSSL commands underlying various authentication and signing operations
+* [vxsuite-complete-system/config/vendor-functions/basic-configuration.sh](https://github.com/votingworks/vxsuite-complete-system/blob/v4.1.1/config/vendor-functions/basic-configuration.sh) — The production machine configuration wizard
+* [libs/auth scripts](https://github.com/votingworks/vxsuite/tree/v4.1.1/libs/auth#scripts) — A summary of the scripts in the authentication lib, many of which are used for production configuration
+* [OpenFIPS201](https://github.com/votingworks/openfips201) — The applet installed on VxSuite Java Cards
