@@ -48,7 +48,7 @@ In the case of specifying a Spanish translation and overriding the English trans
 
 * Voter-facing strings that appear on ballots (contest names, candidate names, the name of the jurisdiction, etc.) are not included in the app strings file because they are already included in the election definition.
 * The language codes in the app strings file are [IETF language tags](https://www.w3.org/International/articles/language-tags/).
-* The keys for the various user interface app strings (e.g. `buttonStartVoting`) are defined in VxSuite's [app strings catalog](https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/ui/src/ui_strings/app_strings_catalog/latest.json).
+* The keys for the various user interface app strings (e.g., `buttonStartVoting`) are defined in VxSuite's [app strings catalog](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/ui/src/ui_strings/app_strings_catalog/latest.json).
 
 The app strings file is optional. If not provided, default English strings will be used.
 
@@ -135,7 +135,7 @@ In future software versions, the `"version"` value will be used to differentiate
 
 There are two hashes for each election which are both critical to operation and security of each election.
 
-The **ballot hash** is the SHA256 hash of the election definition file and represents a snapshot of all election-specific data which determines the ballot, including contest definitions and ballot layout. Ballots must include a machine-readable version of the ballot hash (e.g. a QR code or a pattern of timing marks). When a ballot is scanned, the scanner checks to make sure the ballot has the expected ballot hash. The ballot hash from the ballot must match the ballot hash from the scanner's configured election definition.
+The **ballot hash** is the SHA256 hash of the election definition file and represents a snapshot of all election-specific data which determines the ballot, including contest definitions and ballot layout. Ballots must include a machine-readable version of the ballot hash (e.g., a QR code or a pattern of timing marks). When a ballot is scanned, the scanner checks to make sure the ballot has the expected ballot hash. The ballot hash from the ballot must match the ballot hash from the scanner's configured election definition.
 
 If any election content changes, the ballot hash will change, meaning the system will consider it to be a new election definition, and any ballots with a different ballot hash will not scan. The system's strict checking of the ballot hash prevents situations where a change to the election definition leads to ballots being miscounted (for example, if the order of two candidates is swapped). As a result, any changes to the election definition require reprinting all ballots.
 

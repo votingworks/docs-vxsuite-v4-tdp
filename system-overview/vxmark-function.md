@@ -61,7 +61,7 @@ After working through the entire ballot, the voter will then review all their se
 In order to have a voter-verified paper trail, the voter should always review their printed ballot. If they find a mistake in their ballot that they want to correct, they must vote again in a new voting session. The previously printed ballot must be voided or spoiled.
 
 {% hint style="info" %}
-**User Manual Reference**: [Voting Sessions](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmark/voting-sessions "mention")
+**User Manual Reference:** [Voting Sessions](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmark/voting-sessions "mention")
 {% endhint %}
 
 ### Barcode Ballot Activation
@@ -183,7 +183,7 @@ VxMark interfaces with the printer through CUPS, the open-source printing system
 
 When a print job is submitted via CUPS, CUPS sends it to the printer using the IPP protocol. VxMark waits until CUPS reports it has successfully sent the entire job to the printer, at which point it logs success and increments the ballots printed count. If the printer is disconnected before CUPS can send the entire job, VxMark will log the failure and display an error message on screen. In these cases it's possible that the printer still prints an incomplete document or error code. Whenever the printer is disconnected, any pending jobs are cancelled to avoid unexpected prints on reconnection.
 
-If the printer is disconnected or is in a state that would prevent it from printing (e.g. it's jammed, there's no paper, or the paper tray is open) while polls are open, VxMark blocks a voting session from starting or continuing. If one of these blocking issues is hit while a voter's ballot is printing, that issue may be easily recoverable without loss of the ballot (e.g. by just loading more paper) or may have created an unusable ballot (e.g. a jammed incomplete print) that must be spoiled. The error message directs the voter toward poll worker help to assess and resolve the issue.&#x20;
+If the printer is disconnected or is in a state that would prevent it from printing (e.g., it's jammed, there's no paper, or the paper tray is open) while polls are open, VxMark blocks a voting session from starting or continuing. If one of these blocking issues is hit while a voter's ballot is printing, that issue may be easily recoverable without loss of the ballot (e.g., by just loading more paper) or may have created an unusable ballot (e.g., a jammed incomplete print) that must be spoiled. The error message directs the voter toward poll worker help to assess and resolve the issue.
 
 If the printer detects low toner, a warning is displayed but printing is not blocked.
 

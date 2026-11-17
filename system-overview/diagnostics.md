@@ -55,7 +55,7 @@ The user may perform a test scan, which requires that a blank white sheet of pap
 <div><figure><img src="../.gitbook/assets/3d3eeff3-0eda-48fd-be9d-8edda7abdd2d-front_debug_diagnostic.png" alt=""><figcaption><p>Passed</p></figcaption></figure> <figure><img src="../.gitbook/assets/0dc29646-3c6a-4abd-9d2d-ae1b03a3b4ad-front_debug_diagnostic.png" alt=""><figcaption><p>Failed</p></figcaption></figure></div>
 
 {% hint style="info" %}
-**User Manual Reference**: [VxCentralScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/vxcentralscan-diagnostics "mention")
+**User Manual Reference:** [VxCentralScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/vxcentralscan-diagnostics "mention")
 {% endhint %}
 
 ## VxScan Diagnostics
@@ -77,7 +77,7 @@ The diagnostics page will also display details about any printer errors if the p
 The user may test the speaker by triggering the chime sound and confirming whether they heard the chime or not.
 
 {% hint style="info" %}
-**User Manual Reference**: [VxScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxscan/vxscan-diagnostics "mention")
+**User Manual Reference:** [VxScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxscan/vxscan-diagnostics "mention")
 {% endhint %}
 
 ## VxMarkScan Diagnostics
@@ -106,7 +106,7 @@ The user may perform a test of the PAT input, which simply confirms that a PAT d
 The user may perform a test of the front headphone input by connecting headphones and triggering a chime. The user must indicate whether they heard the chime or not, corresponding to a pass or fail respectively.
 
 {% hint style="info" %}
-**User Manual Reference**: [VxMarkScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmarkscan/diagnostics "mention")
+**User Manual Reference:** [VxMarkScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmarkscan/diagnostics "mention")
 {% endhint %}
 
 ## VxMark Diagnostics
@@ -136,7 +136,7 @@ The user may test the onboard speaker by triggering audio through the system spe
 The user may test the barcode reader by scanning a barcode. The test passes automatically once a scan is detected during the test.
 
 {% hint style="info" %}
-**User Manual Reference**: [VxMark Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmark/diagnostics "mention")
+**User Manual Reference:** [VxMark Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmark/diagnostics "mention")
 {% endhint %}
 
 ## VxPrint Diagnostics

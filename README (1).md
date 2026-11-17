@@ -6,7 +6,7 @@ VxSuite product quality is ensured through both focused processes on individual 
 
 ### Automated Unit Tests
 
-VotingWorks code has extensive unit test coverage. All libraries in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.1.0) have near 100% coverage, meaning that almost every single line of code runs whenever testing is run. Across all libraries, there are over 3,000 unit tests which all together include over 10,000 assertions about the software's behavior.
+VotingWorks code has extensive unit test coverage. All libraries in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.1.1) have near 100% coverage, meaning that almost every single line of code runs whenever testing is run. Across all libraries, there are over 3,000 unit tests which all together include over 10,000 assertions about the software's behavior.
 
 Each test always either passes or fails. A test fails if an error is thrown or an assertion fails. An assertion may be something like "the phrase _General Election_ appear on screen" or "there are 56 votes for a specific candidate after loading cast vote records."
 
@@ -36,7 +36,7 @@ To organize this process, we make use of checklists. A base set of checklists ca
 
 VxSuite practices safe concurrency by using programming languages that, in their design, avoid the most common dangers of concurrency.
 
-Most of the application code, both frontend and backend, is written in TypeScript which compiles to JavaScript executing at runtime. JavaScript is a single-threaded language. While code can execute asynchronously, it cannot execute simultaneously with other code, preventing most instances of unsafe concurrency. We do sometimes make use of a mutex, and our TypeScript mutex implementation is [well-tested](https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/utils/src/mutex.test.ts).
+Most of the application code, both frontend and backend, is written in TypeScript which compiles to JavaScript executing at runtime. JavaScript is a single-threaded language. While code can execute asynchronously, it cannot execute simultaneously with other code, preventing most instances of unsafe concurrency. We do sometimes make use of a mutex, and our TypeScript mutex implementation is [well-tested](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/utils/src/mutex.test.ts).
 
 Performance-critical parts of the application, like image processing for ballot interpretation, are written in [Rust](https://www.rust-lang.org/). Rust was designed specifically to be a memory-safe language alternative to common low-level alternatives like C. It requires that every piece of memory has a single owner responsible for the memory's lifecycle. Unsafe memory operations are prevented by the tooling itself - the compiler and linter - to ensure memory-safe programs. The language is recommended for security critical operations by the White House ([2024 Report](https://bidenwhitehouse.archives.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf)) and industry leaders. While memory safety and concurrency safety are slightly different things, the two are deeply intertwined, and a memory-safe language avoids most of the pitfalls of unsafe concurrency.
 
@@ -55,7 +55,7 @@ VotingWorks uses large-scale COTS hardware wherever possible, including laptops,
 For components that must be custom-made, for example the VxScan precinct scanner module and the ballot box, we have followed the industry-standard multi-phase design process to ensure that quality issues are caught early, long before we've committed to large production runs. In particular:
 
 * **design prototyping** – every individual hardware component is prototyped using 3D-printing and laser-cut parts in order to validate CAD designs, in particular when managing a paper path.
-* **lab prototypes** – every hardware subsystem – e.g. the VxScan module or the VxBox ballot box – goes through multiple lab prototypes of increasing fidelity. Each prototype is fully functional and is tested with thousands of ballots, through setup and teardown repeatedly. Weaknesses are cataloged and fed into the next lab prototype.
+* **lab prototypes** – every hardware subsystem – e.g., the VxScan module or the VxBox ballot box – goes through multiple lab prototypes of increasing fidelity. Each prototype is fully functional and is tested with thousands of ballots, through setup and teardown repeatedly. Weaknesses are cataloged and fed into the next lab prototype.
 * **engineering prototype** – once the lab prototype is fully validated, an engineering prototype is designed, tweaked for manufacturing (DFM). The tooling is then built, in order to produce an engineering prototype that is as close as possible to the final product. The tooling is adjusted in minor ways based on tests performed on the engineering prototype.
 
 By the time a VotingWorks hardware subsystem goes to assembly-line production, it has gone through a number of iterations to ensure that the design is high quality.
@@ -66,7 +66,7 @@ VotingWorks works closely with suppliers to ensure quality components. We requir
 
 VotingWorks component test procedures vary on a component-by-component basis:
 
-* **Custom Manufactured Parts** - Metal and plastic parts manufactured specifically for VotingWorks (e.g. a metal panel in VxScan) are visually inspected and measured against dimensions specified in their engineering drawings.
+* **Custom Manufactured Parts** - Metal and plastic parts manufactured specifically for VotingWorks (e.g., a metal panel in VxScan) are visually inspected and measured against dimensions specified in their engineering drawings.
 * **Complex Electrical Subassemblies** - Large electrical components, which are often critical components, are tested before being installed in any machine. For example, the embedded scanner in VxScan is tested for motor control and image quality. VotingWorks has command-line interfaces that allow controlling and testing devices outside of a full software installing, simply by connecting them to a development machine.
 
 Smaller or common COTS components, like a simple USB cable or piece of hardware, are visually inspected and their proper operation is covered by the quality assurance done on each individual unit.

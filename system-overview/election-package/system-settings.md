@@ -14,7 +14,7 @@ The system settings file contains settings which are not specific to an election
 
 * `definite` - Specifies the percentage of a bubble that needs to be filled in for the system to interpret it as a vote.
 * `marginal` - Specifies the percentage of a bubble that needs to be filled for the system to interpret it as a marginal mark that may need adjudication.
-* `writeInAreaMm2` - Specifies the area in mm² of the write-in area that needs to be filled in for the tabulators to consider it a write-in. This is only relevant for jurisdictions that allow unmarked write-ins i.e. write-ins without an accompanying mark.
+* `writeInAreaMm2` - Specifies the area in mm² of the write-in area that needs to be filled in for the tabulators to consider it a write-in. This is only relevant for jurisdictions that allow unmarked write-ins i.e., write-ins without an accompanying mark.
 
 ## Adjudication Settings
 
@@ -51,7 +51,7 @@ The system settings file contains settings which are not specific to an election
 * `enableEarlyVoting` - Enables early voting features on VxScan and VxAdmin, e.g., setting a ballot casting mode of "Early Voting" on VxScan and tabulating early voting results separately on VxAdmin.
 * `shouldTransliterateCandidateNames` - For languages that are not written with a variant of the Latin alphabet, shows candidate names transliterated into that language's character set. The feature requires that transliterated candidate names are included in the `ballotStrings` in the election definition.
 * `centralScanEnablePollWorkerRole` - Enables the poll worker role in VxCentralScan. When enabled, poll workers can unlock VxCentralScan and operate the scanner. They cannot delete batches or export cast vote records.
-* Polls Close Time&#x20;
+* Polls Close Time
   * `electionDayPollsCloseTime` - Time value. Indicates when polls close on election day. Before the polls close time, the default poll worker screen will be the full poll worker menu. After the polls close time, the default poll worker screen will be the guided "Close Polls" flow. The time is a time only, rather than a timestamp, and is always interpreted in local time.
   * `disallowClosingPollsBeforeElectionDayPollsCloseTime` - If used in combination with `electionDayPollsCloseTime`, will fully disable the "Close Polls" option until the `electionDayPollsCloseTime`.
-  * `disallowVxAdminTabulationBeforeElectionDayPollsCloseTime` - If used in combination with `electionDayPollsCloseTime`, will disable tabulation (i.e. generating reports) until the `electionDayPollsCloseTime`.
+  * `disallowVxAdminTabulationBeforeElectionDayPollsCloseTime` - If used in combination with `electionDayPollsCloseTime`, will disable tabulation (i.e., generating reports) until the `electionDayPollsCloseTime`.

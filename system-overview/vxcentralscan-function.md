@@ -4,7 +4,7 @@ VxCentralScan is the system's batch scanner which allows efficiently scanning la
 
 ## Configuration
 
-VxCentralScan is configured with a signed [election-package](election-package/ "mention") exported from VxAdmin. The election definition includes the ballot layouts necessary for interpreting ballots and the system settings which indicate what type of ballot issues (e.g. overvotes) require adjudication. After the election package is loaded by an authenticated election manager, VxCentralScan's polling place is configured. If the election has exactly one absentee polling place, VxCentralScan selects it automatically and no further action is required; otherwise the election manager must select a polling place before scanning. The selected polling place determines which ballots VxCentralScan will accept: ballots outside it cause VxCentralScan to stop and refuse to tabulate them (see [Ballot Issues & Adjudication](vxcentralscan-function.md#ballot-issues-and-adjudication)). The polling place cannot be changed once ballots have been scanned.
+VxCentralScan is configured with a signed [election-package](election-package/ "mention") exported from VxAdmin. The election definition includes the ballot layouts necessary for interpreting ballots and the system settings which indicate what type of ballot issues (e.g., overvotes) require adjudication. After the election package is loaded by an authenticated election manager, VxCentralScan's polling place is configured. If the election has exactly one absentee polling place, VxCentralScan selects it automatically and no further action is required; otherwise the election manager must select a polling place before scanning. The selected polling place determines which ballots VxCentralScan will accept: ballots outside it cause VxCentralScan to stop and refuse to tabulate them (see [Ballot Issues & Adjudication](vxcentralscan-function.md#ballot-issues-and-adjudication)). The polling place cannot be changed once ballots have been scanned.
 
 {% hint style="info" %}
 **User Manual Reference:** [Configure VxCentralScan](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/configure-ballot-scanner "mention")
@@ -24,7 +24,7 @@ VxCentralScan can be unconfigured by an election manager or system administrator
 
 VxCentralScan maintains a lifetime scan count that gives the number of ballot sheets accepted throughout the scanner's lifetime. The count does not reset when the scanner is re-configured or when the software is updated. Other details of the lifetime scan count:
 
-* The count does not include rejected and removed ballots e.g. unreadable ballots or ballots removed for manual adjudication
+* The count does not include rejected and removed ballots e.g., unreadable ballots or ballots removed for manual adjudication
 * If a batch is scanned but discarded rather than saved, those scans will still contribute toward the lifetime scan count
 * The count includes ballots scanned in both official and test mode
 
@@ -56,7 +56,7 @@ All of the Ricoh scanners can be used with an optional imprinter:
 * The fi-7600 attaches to the fi-760PRB imprinter
 * The fi-8950 has the fi-890PRB installed into it
 
-As the ballot exits the scanner, the imprinter prints an identifier on the side margin of the ballot. The identifier is the batch's truncated UUID followed by the index of the sheet within the batch e.g. `378f6a69-3a5d90083e21_0000` for the first sheet in a batch. The identifier will appear in the CVR as the `BallotAuditId` with the full batch ID, e.g. `378f6a69-ad3f-25f2-234f-3a5d90083e21_0000`. Imprinting allows later reconciling CVRs to ballots such as in ballot comparison audits.
+As the ballot exits the scanner, the imprinter prints an identifier on the side margin of the ballot. The identifier is the batch's truncated UUID followed by the index of the sheet within the batch e.g., `378f6a69-3a5d90083e21_0000` for the first sheet in a batch. The identifier will appear in the CVR as the `BallotAuditId` with the full batch ID, e.g., `378f6a69-ad3f-25f2-234f-3a5d90083e21_0000`. Imprinting allows later reconciling CVRs to ballots such as in ballot comparison audits.
 
 Imprinting is enabled by default but can be disabled by an election manager. Imprinting only occurs when an imprinter is detected and imprinting is also enabled.
 
@@ -88,5 +88,5 @@ In these cases, the affected contests will be highlighted on screen to the elect
 CVRs must be exported onto a USB drive and taken to VxAdmin for aggregation and reporting. After ballots are interpreted, their images are saved to disk and their interpretation is stored in VxCentralScan's data store. On export, all CVRs are pulled from the data store, converted to the CVR CDF, and written to the USB drive.
 
 {% hint style="info" %}
-**User Manual Reference**: [saving-cast-vote-records-cvrs](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/scanning-ballots#saving-cast-vote-records-cvrs "mention")
+**User Manual Reference:** [saving-cast-vote-records-cvrs](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/scanning-ballots#saving-cast-vote-records-cvrs "mention")
 {% endhint %}

@@ -20,7 +20,7 @@ Any component that processes election data is at least medium criticality becaus
 
 ### Ability to Find Alternative Suppliers
 
-Most components can be or already are manufactured by multiple manufacturers. Standard screws can be purchased from various suppliers. Custom plastic or sheet metal components can be molded or cut by any number of manufacturers. Even power cables, simple USB cables, or something like a computer mouse can easily be replaced by an equivalent.&#x20;
+Most components can be or already are manufactured by multiple manufacturers. Standard screws can be purchased from various suppliers. Custom plastic or sheet metal components can be molded or cut by any number of manufacturers. Even power cables, simple USB cables, or something like a computer mouse can easily be replaced by an equivalent.
 
 Some essential VxSuite components are unique to a single supplier or a small set of suppliers, however, making them at least medium criticality. When there is a single supplier, the product cannot be built as designed without the support of that supplier. Additionally, a single supplier creates a direct possible supply chain attack vector.
 
@@ -60,7 +60,7 @@ VotingWorks assesses the criticality of each subcomponent when documenting the b
 2. **Is the subcomponent responsible for generating or modifying highly sensitive election data?**
    1. **Yes** → High
    2. **No** → Continue
-3. **Do either of the following apply? The unavailability of the subcomponent would force minor software and/or hardware changes OR the subcomponent connects over USB to the host operating system.** &#x20;
+3. **Do either of the following apply? The unavailability of the subcomponent would force minor software and/or hardware changes OR the subcomponent connects over USB to the host operating system.**
    1. **Yes** → Medium
    2. **No** → Low
 
@@ -85,7 +85,7 @@ We assess supplier impact by evaluating how the loss, compromise, or substitutio
 
 VotingWorks follows the NIST SP 800-161 framework to meet the assurance requirements of our supply chain risk management strategy.
 
-Based on the criticality criteria enumerated above, the VotingWorks operations team identifies and prioritizes medium- and high-criticality components. For critical COTS components, we limit our suppliers to reputable and well-established vendors and manufacturers. When assessing whether a supplier is trustworthy, we consider several factors: length of time established; reputation for reliability; degree to which organization and manufacturing is based in the United States; the outcome of previous orders; responsiveness to issues; and their focus on critical business applications. For critical VotingWorks-specific manufactured components, for example any custom cables, we look for domestic-based manufacturers with ISO quality certifications (e.g. ISO 9001) and, where possible, prefer to perform site visits during onboarding.
+Based on the criticality criteria enumerated above, the VotingWorks operations team identifies and prioritizes medium- and high-criticality components. For critical COTS components, we limit our suppliers to reputable and well-established vendors and manufacturers. When assessing whether a supplier is trustworthy, we consider several factors: length of time established; reputation for reliability; degree to which organization and manufacturing is based in the United States; the outcome of previous orders; responsiveness to issues; and their focus on critical business applications. For critical VotingWorks-specific manufactured components, for example any custom cables, we look for domestic-based manufacturers with ISO quality certifications (e.g., ISO 9001) and, where possible, prefer to perform site visits during onboarding.
 
 For each critical component, VotingWorks requires a warranty on defective components and a delivery timeline for all orders. Specifically, contracts with suppliers include language matching or to the effect of:
 

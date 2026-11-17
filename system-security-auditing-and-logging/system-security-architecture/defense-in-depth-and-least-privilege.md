@@ -20,11 +20,11 @@ cat /proc/sys/kernel/randomize_va_space
 
 ## No Root User Access
 
-Once a VxSuite image is built, access for the root user is shut down and that shutdown is locked in via secure-boot verification of the root partition.&#x20;
+Once a VxSuite image is built, access for the root user is shut down and that shutdown is locked in via secure-boot verification of the root partition.
 
 ## Narrow Superuser Functions
 
-When a VxSuite function requires superuser access, that access is captured as a minimal shell script, and the appropriate VxSuite Linux user is granted sudo permissions on that shell script alone. For example, on a VxSuite production machine, no user has the ability to call the `mount` command. Instead, when mounting USB drives, we have crafted a shell program that is only capable of mounting and unmounting USB drives at the `/media/vx/usb-drive` mount point, and the `vx-services` user is granted superuser privileges when calling that script only. The full script for this example is available at [https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/usb-drive/scripts/mount.sh](https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/usb-drive/scripts/mount.sh).
+When a VxSuite function requires superuser access, that access is captured as a minimal shell script, and the appropriate VxSuite Linux user is granted sudo permissions on that shell script alone. For example, on a VxSuite production machine, no user has the ability to call the `mount` command. Instead, when mounting USB drives, we have crafted a shell program that is only capable of mounting and unmounting USB drives at the `/media/vx/usb-drive` mount point, and the `vx-services` user is granted superuser privileges when calling that script only. The full script for this example is available at [https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/usb-drive/scripts/mount.sh](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/usb-drive/scripts/mount.sh).
 
 ## Minimal Window Manager
 
@@ -32,7 +32,7 @@ VxSuite runs a minimal window manager, Openbox, which is built to have very few 
 
 ## Compartmentalization of Permissions and Separation of Auth
 
-All processes that a user can directly interact with in VxSuite run as user `vx-ui`. The processes that access the smart card reader or perform data processing services run as user `vx-services`.&#x20;
+All processes that a user can directly interact with in VxSuite run as user `vx-ui`. The processes that access the smart card reader or perform data processing services run as user `vx-services`.
 
 The `vx-services` Linux user has a set of permissions allowing it to access the scanner, printer, and smart card reader. It is configured, like the root user, to not have a password, so no interactive user can log in as `vx-services` and utilize those privileges for nefarious purposes. The services that run under the `vx-services` user account offer their services over local HTTP, with well-formed semantics as to what actions they allow. The authentication status is checked on the backend, by `vx-services`, so actions can only be taken if a valid authentication session is open.
 

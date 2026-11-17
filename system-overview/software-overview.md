@@ -18,15 +18,15 @@ All machines are completely disconnected from any external network, but the fram
 
 ### kiosk-browser
 
-kiosk-browser is a web browser restricted to rendering a single full-screen application. The code can be found in the [kiosk-browser repository](https://github.com/votingworks/kiosk-browser/tree/v4.1.0). It is a thin [Electron](https://www.electronjs.org/) application which uses [Chromium](https://www.chromium.org/Home/) as its rendering engine. The browser communicates with the frontend server which serves HTML, JavaScript, and assets. The browser also communicates with the backend server which serves application data. Electron enables the browser to access certain operating system APIs - such as open file dialogs - that a lone renderer would not have access to. The browser is launched at startup, with limited privileges, and cannot be exited. Everything a standard (non-vendor) user sees or does is mediated through kiosk-browser.
+kiosk-browser is a web browser restricted to rendering a single full-screen application. The code can be found in the [kiosk-browser repository](https://github.com/votingworks/kiosk-browser/tree/v4.1.1). It is a thin [Electron](https://www.electronjs.org/) application which uses [Chromium](https://www.chromium.org/Home/) as its rendering engine. The browser communicates with the frontend server which serves HTML, JavaScript, and assets. The browser also communicates with the backend server which serves application data. Electron enables the browser to access certain operating system APIs - such as open file dialogs - that a lone renderer would not have access to. The browser is launched at startup, with limited privileges, and cannot be exited. Everything a standard (non-vendor) user sees or does is mediated through kiosk-browser.
 
 ### Application Frontend Server
 
-The frontend is a [React](https://react.dev/) application served from a [Node.js](https://nodejs.org/en) server. All code for the application frontends are in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.1.0) under `apps/[app-name]/frontend`.
+The frontend is a [React](https://react.dev/) application served from a [Node.js](https://nodejs.org/en) server. All code for the application frontends are in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.1.1) under `apps/[app-name]/frontend`.
 
 ### Application Backend Server
 
-The application backend is a separate [Node.js](https://nodejs.org/en) server which acts as the core of the entire application in that it manages all persistent data and communication with peripherals. All code for the application backends are in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.1.0) under `apps/[app-name]/backend`. Most code is written in TypeScript but some performance sensitive code, such as interpretation and background daemons, are written in [Rust](https://www.rust-lang.org/) and executed as binaries at runtime.
+The application backend is a separate [Node.js](https://nodejs.org/en) server which acts as the core of the entire application in that it manages all persistent data and communication with peripherals. All code for the application backends are in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.1.1) under `apps/[app-name]/backend`. Most code is written in TypeScript but some performance sensitive code, such as interpretation and background daemons, are written in [Rust](https://www.rust-lang.org/) and executed as binaries at runtime.
 
 #### Application Data Management
 
@@ -60,10 +60,10 @@ Because all voter selections are recorded on paper, voter-verified, and unmodifi
 
 There are four code repositories relevant to the voting system:
 
-* [vxsuite](https://github.com/votingworks/vxsuite/tree/v4.1.0) — Core application code
-* [kiosk-browser](https://github.com/votingworks/kiosk-browser/tree/v4.1.0) — Generic Electron-based kiosk-mode browser
-* [vxsuite-complete-system](https://github.com/votingworks/vxsuite-complete-system/tree/v4.1.0) — Links compatible versions of vxsuite and kiosk-browser, and includes the scripts necessary to create a production machine
-* [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.1.0) — Our framework for building VxSuite and managing its dependencies, across versions and environments
+* [vxsuite](https://github.com/votingworks/vxsuite/tree/v4.1.1) — Core application code
+* [kiosk-browser](https://github.com/votingworks/kiosk-browser/tree/v4.1.1) — Generic Electron-based kiosk-mode browser
+* [vxsuite-complete-system](https://github.com/votingworks/vxsuite-complete-system/tree/v4.1.1) — Links compatible versions of vxsuite and kiosk-browser, and includes the scripts necessary to create a production machine
+* [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.1.1) — Our framework for building VxSuite and managing its dependencies, across versions and environments
 
 ## Key Dependency Chart
 
@@ -124,7 +124,7 @@ The date and time is set on the machine during initial configuration before the 
 All machines allow system administrators and election managers to edit the date, time, and time zone in order to address clock drift or, in rare cases, to set up machines for use in a part of the jurisdiction with different time settings.
 
 {% hint style="info" %}
-**User Manual Reference**: [Setting Date & Time](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/miscellaneous/setting-date-and-time "mention")
+**User Manual Reference:** [Setting Date & Time](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/miscellaneous/setting-date-and-time "mention")
 {% endhint %}
 
 ### Other Shared Software Patterns

@@ -74,8 +74,8 @@ VxCentralScan is only meant to be accessed by authorized election administrators
 
 Unsealing the poll worker door is required to extract the USB drive after polls are closed. Ensure the seal number matches the expected value. Once the polls are closed and the USB drive is removed, take care to secure the chain of custody of the USB drive. VxScan should be closed up and sealed.
 
-## After an Election&#x20;
+## After an Election
 
 Pack up all components in their respective cases and apply seals. Record those seals.
 
-Additionally, any auditing or review of audit logs should be completed immediately after exporting those logs from a device to a USB drive. If there is a concern about a break in the administrative chain of custody, the user should re-export the logs to a USB from the machine and can compare the original export with the re-export to determine the logs have not been tampered with while on the USB. The logs maintained on the system are unalterable and should be pulled and reviewed in one process to ensure that chain of custody is maintained.&#x20;
+Additionally, any auditing or review of audit logs should be completed immediately after exporting those logs from a device to a USB drive. If there is a concern about a break in the administrative chain of custody, the user should re-export the logs to a USB from the machine and can compare the original export with the re-export to determine the logs have not been tampered with while on the USB. The logs maintained on the system are unalterable and should be pulled and reviewed in one process to ensure that chain of custody is maintained.

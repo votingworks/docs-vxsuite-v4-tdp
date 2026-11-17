@@ -40,7 +40,7 @@ VxScan makes noises whenever a ballot is accepted or rejected. The ballot accept
 
 ## Configuration
 
-VxScan is configured with a signed [election package](election-package/) exported from VxAdmin. The election definition includes the ballot layouts necessary for interpreting ballots and the system settings which indicate what type of ballot issues (e.g. overvotes) require adjudication.
+VxScan is configured with a signed [election package](election-package/) exported from VxAdmin. The election definition includes the ballot layouts necessary for interpreting ballots and the system settings which indicate what type of ballot issues (e.g., overvotes) require adjudication.
 
 {% hint style="info" %}
 **User Manual Reference:** [Configure VxScan](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxscan/configure-vxscan "mention")
@@ -68,7 +68,7 @@ VxScan can be unconfigured by an election manager or system administrator. If ba
 
 VxScan maintains a lifetime scan count that gives the number of ballot sheets accepted throughout the scanner's lifetime. The count does not reset when the scanner is re-configured or when the software is updated. Other details of the lifetime scan count:
 
-* The count does not include rejected and removed ballots e.g. unreadable ballots or ballots returned to the voter
+* The count does not include rejected and removed ballots e.g., unreadable ballots or ballots returned to the voter
 * The count includes ballots scanned in both official and test mode
 
 ## Polls Management
@@ -106,7 +106,7 @@ If the `precinctScanAdjudicationReasons` includes adjudicating unmarked write-in
 Once the ballot is cast, whether immediately after interpretation or after the voter confirms to cast a ballot with errors, the image and interpretation are both saved to disk and exported to the inserted USB drive as a CDF CVR. The sheet count shown on screen will increment accordingly.
 
 {% hint style="info" %}
-**User Manual Reference**: [Assisting Voters](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-day-guides/assisting-voters "mention")
+**User Manual Reference:** [Assisting Voters](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-day-guides/assisting-voters "mention")
 {% endhint %}
 
 ### Visual Settings
@@ -130,7 +130,7 @@ Continuous export can be disabled by an election manager if need be, for example
 CVRs can be exported directly from the election manager menu, in which case they export all at once.
 
 {% hint style="info" %}
-**User Manual Reference**: [Additional VxScan Settings #Saving CVRs](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxscan/additional-vxscan-settings#saving-cvrs "mention")
+**User Manual Reference:** [Additional VxScan Settings #Saving CVRs](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxscan/additional-vxscan-settings#saving-cvrs "mention")
 {% endhint %}
 
 ## Reports

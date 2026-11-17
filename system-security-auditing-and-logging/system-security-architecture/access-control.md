@@ -10,7 +10,7 @@ Certification relationships work as follows:
 
 * VotingWorks directly certifies the type of every component, i.e., VxAdmin machine, VxCentralScan machine, VxMark machine, VxMarkScan machine, VxScan machine, VxPrint machine, or smart card. This makes it such that only components that are “blessed” by VotingWorks can successfully communicate with each other. This is also important for defense-in-depth and separation of privileges, as one VotingWorks component type cannot act like another, e.g., a VxScan cannot sign an election configuration package like a VxAdmin can. Because machine certificates include a machine ID, it's also the case that, say, VxScan SC01 cannot sign CVRs as VxScan SC02.
 * VotingWorks further certifies every VxAdmin as bound to a particular jurisdiction, e.g., Warren County, Mississippi. This is important because VxAdmins program smart cards and should not be able to program cards for other jurisdictions.
-* Every smart card, in addition to being certified directly by VotingWorks, is certified by a VxAdmin during card programming. A card’s VxAdmin-issued certificate indicates 1) the jurisdiction that the card is bound to, 2) which user role the card has been programmed for, i.e. system administrator card, election manager card, or poll worker card, and 3) in the case of election manager and poll worker cards, the specific election that the card is bound to.
+* Every smart card, in addition to being certified directly by VotingWorks, is certified by a VxAdmin during card programming. A card’s VxAdmin-issued certificate indicates 1) the jurisdiction that the card is bound to, 2) which user role the card has been programmed for, i.e., system administrator card, election manager card, or poll worker card, and 3) in the case of election manager and poll worker cards, the specific election that the card is bound to.
 
 As a diagram:
 
@@ -49,7 +49,7 @@ Our smart cards are JCOP 4 Java Cards, version 3.0.5. These Java Cards can gener
 
 Vendor cards, system administrator cards, and election manager cards always have PINs. Poll worker cards do not have PINs by default but can if the system administrator enables them.
 
-PINs are auto-generated random 6-digit numbers, guaranteed not to be weak (e.g. not 11111, 123456, 121212).
+PINs are auto-generated random 6-digit numbers, guaranteed not to be weak (e.g., not 11111, 123456, 121212).
 
 After 5 incorrect PIN attempts, users have to wait 15 seconds before they can try again. For every incorrect PIN attempt after that, the wait time doubles (15 seconds → 30 seconds → 60 seconds and so on). After 15 incorrect PIN attempts, the card is completely locked and has to be reprogrammed. System administrators can adjust the number of incorrect PIN attempts allowed without lockout as well as the starting lockout duration. The number of incorrect PIN attempts is stored on the card in a tamper-resistant location (as opposed to on the machine), meaning that taking a card to another machine to gain extra attempts will not work. Removing and reinserting a card restarts the lockout timer.
 
@@ -142,12 +142,12 @@ These time limits do not apply to unauthenticated screens like the “Insert You
 
 Refer to the following code links for more details:
 
-* [https://github.com/votingworks/vxsuite/tree/v4.1.0/libs/auth](https://github.com/votingworks/vxsuite/tree/v4.1.0/libs/auth) — VxSuite authentication lib, a good starting point for all things authentication
-* [https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/auth/src/dipped\_smart\_card\_auth.ts](https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/auth/src/dipped_smart_card_auth.ts) — High-level authentication state management for VxAdmin and VxCentralScan
-* [https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/auth/src/inserted\_smart\_card\_auth.ts](https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/auth/src/inserted_smart_card_auth.ts) — High-level authentication state management for VxScan
-* [https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/auth/src/java\_card.ts](https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/auth/src/java_card.ts) — Java Card implementation
-* [https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/auth/src/certs.ts](https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/auth/src/certs.ts) — Certificate configuration
-* [https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/auth/src/cryptography.ts](https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/auth/src/cryptography.ts) — OpenSSL commands underlying various authentication and signing operations
-* [https://github.com/votingworks/vxsuite-complete-system/blob/v4.1.0/config/vendor-functions/basic-configuration.sh](https://github.com/votingworks/vxsuite-complete-system/blob/v4.1.0/config/vendor-functions/basic-configuration.sh) — The production machine configuration wizard
-* [https://github.com/votingworks/vxsuite/tree/v4.1.0/libs/auth#scripts](https://github.com/votingworks/vxsuite/tree/v4.1.0/libs/auth#scripts) — A summary of the scripts in the authentication lib, many of which are used for production configuration
+* [https://github.com/votingworks/vxsuite/tree/v4.1.1/libs/auth](https://github.com/votingworks/vxsuite/tree/v4.1.1/libs/auth) — VxSuite authentication lib, a good starting point for all things authentication
+* [https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/dipped\_smart\_card\_auth.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/dipped_smart_card_auth.ts) — High-level authentication state management for VxAdmin and VxCentralScan
+* [https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/inserted\_smart\_card\_auth.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/inserted_smart_card_auth.ts) — High-level authentication state management for VxScan
+* [https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/java\_card.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/java_card.ts) — Java Card implementation
+* [https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/certs.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/certs.ts) — Certificate configuration
+* [https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/cryptography.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/cryptography.ts) — OpenSSL commands underlying various authentication and signing operations
+* [https://github.com/votingworks/vxsuite-complete-system/blob/v4.1.1/config/vendor-functions/basic-configuration.sh](https://github.com/votingworks/vxsuite-complete-system/blob/v4.1.1/config/vendor-functions/basic-configuration.sh) — The production machine configuration wizard
+* [https://github.com/votingworks/vxsuite/tree/v4.1.1/libs/auth#scripts](https://github.com/votingworks/vxsuite/tree/v4.1.1/libs/auth#scripts) — A summary of the scripts in the authentication lib, many of which are used for production configuration
 * [https://github.com/votingworks/openfips201](https://github.com/votingworks/openfips201) — The applet that we’re installing onto our Java Cards

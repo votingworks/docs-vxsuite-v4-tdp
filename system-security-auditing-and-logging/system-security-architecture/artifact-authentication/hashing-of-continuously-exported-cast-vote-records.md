@@ -10,7 +10,7 @@ To perform continuous export while also keeping signatures, i.e., authenticity i
 
 <figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-Assuming every CVR has a random UUID, e.g. 4d6a9dad-e6d6-4a29-89bc-9ab915012b73, we can specifically use the following structure:
+Assuming every CVR has a random UUID, e.g., 4d6a9dad-e6d6-4a29-89bc-9ab915012b73, we can specifically use the following structure:
 
 ```
 <cvr-directory-name>.vxsig ← Signature on root-hash.txt
@@ -28,7 +28,7 @@ Assuming every CVR has a random UUID, e.g. 4d6a9dad-e6d6-4a29-89bc-9ab915012b73,
 
 ### In Practice
 
-We don’t actually have to 1) use a nested directory structure on the USB or 2) store all intermediate hashes on the USB. We can store the structure and intermediate hashes on the machine in a database table, e.g.
+We don’t actually have to 1) use a nested directory structure on the USB or 2) store all intermediate hashes on the USB. We can store the structure and intermediate hashes on the machine in a database table, e.g.,
 
 | CVR ID Prefix 1 | CVR ID Prefix 2 | CVR ID                               | Hash                                      |
 | --------------- | --------------- | ------------------------------------ | ----------------------------------------- |
@@ -80,4 +80,4 @@ Whenever a machine imports a CVR directory, it authenticates the CVRs by 1) veri
 
 Refer to the following code links for more details:
 
-* [https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/auth/src/cast\_vote\_record\_hashes.ts](https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/auth/src/cast_vote_record_hashes.ts) — CVR hashing logic, including the Merkle tree implementation
+* [https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/cast\_vote\_record\_hashes.ts](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/auth/src/cast_vote_record_hashes.ts) — CVR hashing logic, including the Merkle tree implementation

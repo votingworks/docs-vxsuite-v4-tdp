@@ -12,7 +12,7 @@ The poll worker role allows a user to operate all polling place equipment. By de
 * VxMark & VxMarkScan: open and close polls, pause and resume voting, activate voting sessions
 * VxPrint: print ballots for the configured polling place
 
-On all devices, the poll worker role can check the software hash and, for devices without a power button, power down the device.&#x20;
+On all devices, the poll worker role can check the software hash and, for devices without a power button, power down the device.
 
 The poll worker role has no privileges on VxAdmin and cannot be used to unlock the device. VxCentralScan has no poll worker role by default, but if `centralScanEnablePollWorkerRole` is set to `true` in the system settings, poll workers will be able to operate the scanner but will not be able to delete or export data.
 

@@ -122,7 +122,7 @@ In most cases, the ballot count will be the same across all contests. In some ju
 Unofficial write-in candidates can also be allocated votes in manual tallies and new unofficial write-in candidates can be added directly from the manual tallies interface.
 
 {% hint style="info" %}
-**User Manual Reference**: [Manual Tallies](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-night-guides/manual-tallies "mention")
+**User Manual Reference:** [Manual Tallies](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-night-guides/manual-tallies "mention")
 {% endhint %}
 
 ## Tallying & Reports
@@ -147,7 +147,7 @@ The purpose of computing the groups when possible, rather than always creating g
 
 **CVR Aggregation**
 
-The CVRs are pulled from the data store one by one and their vote data is added into an ongoing tally of ballots, contest option votes, overvotes, and undervotes. If the tallies are being grouped, the CVR will be added into the group that matches its metadata e.g. a CVR from a Precinct A ballot will be added to the Precinct A group. If `countCentralScanBallotsOnlyAfterAdjudication` is enabled in the system settings, CVRs from VxCentralScan that still require adjudication are skipped.
+The CVRs are pulled from the data store one by one and their vote data is added into an ongoing tally of ballots, contest option votes, overvotes, and undervotes. If the tallies are being grouped, the CVR will be added into the group that matches its metadata e.g., a CVR from a Precinct A ballot will be added to the Precinct A group. If `countCentralScanBallotsOnlyAfterAdjudication` is enabled in the system settings, CVRs from VxCentralScan that still require adjudication are skipped.
 
 At this step in the process, the data does not contain any of the adjudication details from write-in adjudication.
 
@@ -173,7 +173,7 @@ Manual tallies are already aggregated in the sense that each can represent more 
 
 Manual tallies are then combined with the scanned tallies in one of two ways. For most reports, the manual tallies are paired with the scanned tallies but are not immediately added together. Reports can then display the manual and scanned tallies separately in addition to showing the total tallies. For the CDF election results report, however, the manual tallies and scanned tallies are added together because there is not a clear way to represent the difference between them in the CDF.
 
-#### **Reporting**
+#### Reporting
 
 The final step is for the VxAdmin backend to format the vote tallies into one of [VxAdmin's Results Export Formats](vxadmin-results-exports/) and export the result onto a USB drive or, if it is a PDF document, print it.
 

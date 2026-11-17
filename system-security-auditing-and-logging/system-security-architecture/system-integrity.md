@@ -29,7 +29,7 @@ The only time that the system hash is expected to change is after a software upd
 
 ## Hard Drive Partitioning
 
-Our system is configured so that `/var`, `/tmp`, and `/home` are mounted read-write, and `/` for everything else is mounted read-only. This requires writing logs and other runtime-generated VotingWorks data, e.g., scanned ballot images, to `/var`. Variable system configuration, e.g. timezone information, also needs to be redirected to `/var`. A USB mount point is pre-created at `/media/vx/usb-drive`.
+Our system is configured so that `/var`, `/tmp`, and `/home` are mounted read-write, and `/` for everything else is mounted read-only. This requires writing logs and other runtime-generated VotingWorks data, e.g., scanned ballot images, to `/var`. Variable system configuration, e.g., timezone information, also needs to be redirected to `/var`. A USB mount point is pre-created at `/media/vx/usb-drive`.
 
 ## Protecting Critical Read-Write Data
 

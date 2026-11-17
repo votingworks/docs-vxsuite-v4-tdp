@@ -21,7 +21,7 @@ layout:
 
 # VxAdmin Results Exports
 
-VxAdmin supports a variety of results exports.&#x20;
+VxAdmin supports a variety of results exports.
 
 [Tally reports](tally-reports.md) contain contest results for the full election or a specific subset of ballots. They can be printed directly from VxAdmin, exported as PDFs, or exported in [CSV format](csv-exports.md#tally-report-csv-structure). In addition, full election results can be exported as an [Election Results Reporting CDF](cdf-err-export.md) JSON file.
 

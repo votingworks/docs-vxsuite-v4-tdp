@@ -90,26 +90,26 @@ In a [straight party contest](../election-and-contest-type-variations.md#straigh
 
 One and only one jurisdiction is associated with each election.
 
-<table><thead><tr><th width="159">Attribute</th><th width="152">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>name</code></td><td><code>string</code></td><td>Name e.g. "Choctaw County"</td></tr></tbody></table>
+<table><thead><tr><th width="159">Attribute</th><th width="152">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>name</code></td><td><code>string</code></td><td>Name e.g., "Choctaw County"</td></tr></tbody></table>
 
 ### District
 
 Districts are used to define levels at which a contest takes place. For example, an election may have districts defined for the state, county, town, and ward levels. Different contests can be associated with each of those levels.
 
-<table><thead><tr><th width="152">Attribute</th><th width="141">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>name</code></td><td><code>string</code></td><td>Name e.g. "State of Mississippi"</td></tr></tbody></table>
+<table><thead><tr><th width="152">Attribute</th><th width="141">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>name</code></td><td><code>string</code></td><td>Name e.g., "State of Mississippi"</td></tr></tbody></table>
 
 ### Party
 
 Parties are used in the data model to associate candidates with a party, to associate ballot styles with a party for a primary, and to associate contests with a party for a primary.
 
-<table><thead><tr><th width="203">Attribute</th><th width="229">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>name</code></td><td><code>string</code></td><td>Short name which will appear on the ballot besides candidates e.g. "Republican"</td></tr><tr><td><code>fullName</code></td><td><code>string</code></td><td>Full name which will appear in reports and in the titles of ballots e.g. "Democratic Party"</td></tr><tr><td><code>abbrev</code></td><td><code>string</code></td><td>Abbreviation for a party e.g. "R"</td></tr></tbody></table>
+<table><thead><tr><th width="203">Attribute</th><th width="229">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>name</code></td><td><code>string</code></td><td>Short name which will appear on the ballot besides candidates e.g., "Republican"</td></tr><tr><td><code>fullName</code></td><td><code>string</code></td><td>Full name which will appear in reports and in the titles of ballots e.g., "Democratic Party"</td></tr><tr><td><code>abbrev</code></td><td><code>string</code></td><td>Abbreviation for a party e.g., "R"</td></tr></tbody></table>
 
 ### Polling Place
 
 | Attribute   | Type                                                       | Description                                                                                                                                                                                                                                                                                                         |
 | ----------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `id`        | `string`                                                   | Unique identifier                                                                                                                                                                                                                                                                                                   |
-| `name`      | `string`                                                   | Name e.g. "Fire Station"                                                                                                                                                                                                                                                                                            |
+| `name`      | `string`                                                   | Name e.g., "Fire Station"                                                                                                                                                                                                                                                                                            |
 | `precincts` | `map <string, PollingPlacePrecinct>`                       | List of all precinct IDs that compose the polling place. Each precinct ID maps to either `{ type: 'whole' }` , which indicates that the whole precinct is part of the polling place, or `{ type: 'partial', splitIds: string[] }` , which indicates which splits from a precinct are included in the polling place. |
 | `type`      | `string` - "absentee", "early\_voting", or "election\_day" | Indicates the type of polling place and thus how it will be used in the election.                                                                                                                                                                                                                                   |
 
@@ -118,7 +118,7 @@ Parties are used in the data model to associate candidates with a party, to asso
 | Attribute     | Type                                                                      | Description                                                                                                                                 |
 | ------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | `id`          | `string`                                                                  | Unique identifier                                                                                                                           |
-| `name`        | `string`                                                                  | Name e.g. "Precinct 45"                                                                                                                     |
+| `name`        | `string`                                                                  | Name e.g., "Precinct 45"                                                                                                                     |
 | `districtIds` | `array` - ID for [District](vxsuite-election-definition.md#district)      | Districts to which the precinct belongs. Not present if `splits` is specified, in which case district associations are specified per split. |
 | `splits`      | `array` - [Precinct Split](vxsuite-election-definition.md#precinct-split) | Splits within the precinct. Not present if `districtIds` is specified.                                                                      |
 
@@ -127,7 +127,7 @@ Parties are used in the data model to associate candidates with a party, to asso
 | Attribute     | Type                                                                 | Description                                   |
 | ------------- | -------------------------------------------------------------------- | --------------------------------------------- |
 | `id`          | `string`                                                             | Unique identifier                             |
-| `name`        | `string`                                                             | Name e.g. "Precinct Split 1"                  |
+| `name`        | `string`                                                             | Name e.g., "Precinct Split 1"                  |
 | `districtIds` | `array` - ID for [District](vxsuite-election-definition.md#district) | Districts to which the precinct split belongs |
 
 ## Ballot Strings
@@ -273,4 +273,4 @@ Decimal values are supported. 2.25 means 2 and a quarter timing marks.
 
 ## Examples
 
-Election definition examples are located in the `vxsuite` repository, such as [here](https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/hmpb/fixtures/vx-general-election/letter-en/election.json).
+Election definition examples are located in the `vxsuite` repository, such as [here](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/hmpb/fixtures/vx-general-election/letter-en/election.json).

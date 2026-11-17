@@ -77,7 +77,7 @@ VxScan is the system's precinct scanner. At the beginning of an election, it is 
 
 Voters cast ballots by inserting their ballots into the scanner in any orientation. After interpreting the scanned ballot, the scanner will drop the ballot into the ballot box and inform the voter that their ballot was successfully cast. During voting, VxScan continuously exports [cast vote records](system-overview/cast-vote-records.md) to an attached USB drive.
 
-If the election is configured to support second-chance voting and the ballot triggers a configured adjudication reason (e.g. it has an overvote), the scanner will hold the ballot while the voter is notified of the issues on their ballot. The voter then chooses whether to cast their ballot or return their ballot in order to update or spoil it.
+If the election is configured to support second-chance voting and the ballot triggers a configured adjudication reason (e.g., it has an overvote), the scanner will hold the ballot while the voter is notified of the issues on their ballot. The voter then chooses whether to cast their ballot or return their ballot in order to update or spoil it.
 
 When polls are closed, the CVR export is completed and a [polls closed report](system-overview/vxscan-polls-reports.md) prints. The polls closed report includes the vote tallies of all ballots cast at the scanner while polls were open. Unlike the vote tallies eventually exported from VxAdmin, the vote tallies at VxScan do not contain any post-voting adjudication information such as write-in adjudication. The CVR export on the USB drive is then taken to VxAdmin for adjudication, aggregation, and reporting.
 
@@ -88,7 +88,7 @@ When polls are closed, the CVR export is completed and a [polls closed report](s
 
 VxCentralScan is the system's batch scanner, often used to scan absentee or provisional ballots. At the beginning of an election, it is configured with an [election package](system-overview/election-package/) from VxAdmin. The election package specifies the ballot layouts.
 
-Ballots are inserted in the batch scanner's hopper and a batch scan is triggered from VxCentralScan. The ballots are scanned and interpreted in succession until the hopper is empty. If a ballot triggers a configured adjudication reason (e.g. it has an overvote), scanning will pause and the ballot will be displayed on screen, at which point the user can choose to tabulate the ballot anyway or remove it without tabulating.
+Ballots are inserted in the batch scanner's hopper and a batch scan is triggered from VxCentralScan. The ballots are scanned and interpreted in succession until the hopper is empty. If a ballot triggers a configured adjudication reason (e.g., it has an overvote), scanning will pause and the ballot will be displayed on screen, at which point the user can choose to tabulate the ballot anyway or remove it without tabulating.
 
 After scanning is complete, the user can export the [cast vote records](system-overview/cast-vote-records.md) to a USB drive and take the USB drive to VxAdmin for adjudication, aggregation, and reporting.
 

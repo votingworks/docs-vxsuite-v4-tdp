@@ -35,7 +35,7 @@ If manual results have been added, they will be included in the tally report alo
 
 ## Write-In Candidate Aggregation
 
-If VxAdmin is in [Qualified Write-In Mode](../vxadmin-function.md#qualified-write-in-mode), all qualified write-ins will be listed regardless of their vote totals. If VxAdmin is in [Open Write-In Mode](../vxadmin-function.md#open-write-in-mode), write-in candidates will only be explicitly listed if they have a winning vote total. Other write-ins are consolidated as "Write-In" or, if there are explicitly listed write-in candidates, "Other Write-In".&#x20;
+If VxAdmin is in [Qualified Write-In Mode](../vxadmin-function.md#qualified-write-in-mode), all qualified write-ins will be listed regardless of their vote totals. If VxAdmin is in [Open Write-In Mode](../vxadmin-function.md#open-write-in-mode), write-in candidates will only be explicitly listed if they have a winning vote total. Other write-ins are consolidated as "Write-In" or, if there are explicitly listed write-in candidates, "Other Write-In".
 
 Unadjudicated write-ins are always consolidated as "Unadjudicated Write-In."
 
