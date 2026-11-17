@@ -32,7 +32,7 @@ All election manager cards are programmed at VxAdmin and are programmed for a sp
 
 The system administrator role is a powerful role for initial election setup and machine management. Unlike the poll worker and election manager roles, they are not tied to specific elections.
 
-On VxAdmin, a system administrator card is necessary to initially load an election package from an external system. System administrators can then program poll worker cards and election manager cards for a specific election. In that sense, the system administrator role is the gatekeeper for loading elections and creating users, and is strictly necessary for every election.
+On VxAdmin, a system administrator card is necessary to initially create an election or load an election package from an external system. Only system administrators can create, edit, proof, and finalize an election on VxAdmin. System administrators can then program poll worker cards and election manager cards for a specific election. In that sense, the system administrator role is the gatekeeper for creating and loading elections and creating users, and is strictly necessary for every election.
 
 On all devices, the system administrator role allows accessing a menu with powerful system actions. Many actions are shared with election managers, such as unconfiguring a machine or setting the date and time. Others are unique to the system administrator. For example, on precinct devices a system administrator can reset polls from a "closed" state to a "paused" state in case a poll worker accidentally closes polls prematurely.
 

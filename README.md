@@ -4,7 +4,7 @@
 
 The VotingWorks voting system (also known as **VxSuite**) consists of six primary components:
 
-* **VxAdmin:** election setup and election results manager
+* **VxAdmin:** election design, election setup, and election results manager
 * **VxMark:** tabletop ballot-marking device (BMD)
 * **VxMarkScan:** free-standing ballot-marking device (BMD)
 * **VxScan:** precinct scanner
@@ -13,11 +13,11 @@ The VotingWorks voting system (also known as **VxSuite**) consists of six primar
 
 Voters mark paper [bubble ballots](system-overview/hand-marked-ballots.md) (pre-printed or printed on VxPrint) by hand or use ballot-marking devices (VxMark & VxMarkScan) to mark and print ballots. Ballots are read and counted by tabulating devices (VxScan & VxCentralScan), which create [cast vote records](system-overview/cast-vote-records.md) for adjudication and aggregation on VxAdmin. VotingWorks considers read and counted ballots as the same.
 
-An election begins with generating an [election package](system-overview/election-package/) and [bubble ballots](system-overview/hand-marked-ballots.md) using an external system.
+An election begins with generating an [election package](system-overview/election-package/) and [bubble ballots](system-overview/hand-marked-ballots.md), either on VxAdmin or using an external system.
 
 ## VxAdmin
 
-VxAdmin is where the election administrator performs election setup tasks and manages election results. At the beginning of an election, the user configures VxAdmin with an [election package](system-overview/election-package/). Once configured, VxAdmin is used for two key election setup tasks:
+VxAdmin is where the election administrator performs election setup tasks and manages election results. At the beginning of an election, the user either creates the election on VxAdmin, defining its districts, precincts, contests, translations, and audio, proofing its ballots, and finalizing it, or configures VxAdmin with an [election package](system-overview/election-package/) from an external system. Once configured, VxAdmin is used for two key election setup tasks:
 
 * Exporting a copy of the election package to USB drives with a [digital signature](system-security-auditing-and-logging/system-security-architecture/artifact-authentication/). The election package is used to configure VxMark, VxMarkScan, VxPrint, VxScan, and VxCentralScan, and it **must** be digitally signed by VxAdmin.
 * Programming [role-based smart cards](system-overview/user-roles.md) that will be used to authenticate on all machines. While the "System Administrator" role is election-agnostic, the "Election Manager" and "Poll Worker" roles are election-specific and cards must be programmed for every election.
