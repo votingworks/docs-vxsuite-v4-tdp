@@ -11,13 +11,19 @@ does and how, so a reviewer can understand and verify it.
 
 ## Structure
 
-- The TDP's pages and sections follow the VVSG 2.0 documentation
-  requirements, and a short page may exist only to answer a requirement.
-  Check any change to the page structure against those requirements.
-- Most changes edit existing pages: add new material to the page that covers
-  its area. A reorganization (adding, merging, moving or renaming pages) can
-  be proposed when it is well motivated; it must keep every requirement
-  answered and every link working.
+- The TDP's outline is VVSG 2.0 Guideline 3.1: System Overview (3.1.1),
+  System Performance & Specifications (3.1.2), System Security, Auditing &
+  Logging (3.1.3) and Software Installation (3.1.4). Operations, maintenance
+  and training (3.1.5–3.1.7) are in the user manual, which test labs treat
+  as part of the TDP. Many page titles are requirement titles ("Maximum
+  Tabulation Rate" is 3.1.2-B), and a short page may exist only to answer
+  one. `VVSG-MAP.md` maps every documentation requirement to the page that
+  answers it. Check any change to the page structure against it.
+- Most changes edit existing pages: put new material on the page
+  `VVSG-MAP.md` names for its requirement. A reorganization (adding, merging,
+  moving or renaming pages) can be proposed when it is well motivated; it
+  must keep every requirement answered and every link working, and update
+  `VVSG-MAP.md`.
 - A file name that no longer matches its page title is fine
   (`hand-marked-ballots.md` is "Bubble Ballots"); renaming a file only for
   that breaks links for no reader-visible gain.
@@ -92,6 +98,12 @@ VxPrint, VxScan, VxSuite. Use these terms, not the alternatives:
 | tamper-evident | tamper evident |
 | USB drive | USB (as a noun) |
 
+Mark terms differ from VVSG 2.0's: a VxSuite **marginal mark** (below the
+definite mark threshold, flagged for adjudication) is what VVSG calls an
+*ambiguous* mark, and a VxSuite **invalid mark** is what VVSG calls a
+*marginal* mark. Use the VxSuite terms, and give the VVSG term in
+parentheses where a page answers a VVSG mark requirement.
+
 Expand an abbreviation on its first use on each page, as "Term (ABBR)", e.g.,
 "cast vote record (CVR)". Product names are never expanded.
 
@@ -154,7 +166,10 @@ Never edit GitBook's `width` attributes by hand.
 - Prose says "VxSuite" unless the version is the point.
 
 **Standards**: cite VVSG inline in parentheses with its version, "(VVSG 2.0
-7.3-H)"; NIST publications as "NIST SP 800-161".
+7.3-H)"; an item of a requirement as ".N", a sub-item as ".N.x" ("VVSG 2.0
+7.3-B.1", "8.1-A.2.b"), a range with an en dash ("14.1-C.1–4"). Cite only
+IDs that exist in VVSG 2.0, not test assertion IDs. NIST publications as
+"NIST SP 800-161".
 
 **Figures**: GitBook figure markup, never Markdown images:
 
