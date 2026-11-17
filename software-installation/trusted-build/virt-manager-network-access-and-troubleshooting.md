@@ -10,10 +10,10 @@ Any VM cloned from this offline VM will also have a disabled network since those
 
 ### Troubleshooting <a href="#troubleshooting" id="troubleshooting"></a>
 
-Virt Manager uses a local bridge network to connect to VMs. If you receive an error when starting a VM that says "Error starting domain: Cannot get interface MTU on 'virbr0': No such device", run the following command in the terminal on the build machine:
+Virt Manager uses a local bridge network to connect to VMs. If starting a VM fails with the error "Error starting domain: Cannot get interface MTU on 'virbr0': No such device", run the following command in the terminal on the build machine:
 
 ```
 sudo virsh net-start default
 ```
 
-You should now be able to return to the VM and start it without issue.
+The VM can then be started.

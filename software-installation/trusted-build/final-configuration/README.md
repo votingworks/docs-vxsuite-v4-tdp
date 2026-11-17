@@ -1,8 +1,8 @@
 # Final Configuration
 
-We'll now clone the offline virtual machine (VM) to prepare images for specific machine types, i.e., VxAdmin, VxCentralScan, VxMark, VxMarkScan, VxScan, and VxPrint. We'll create one clone/VM per machine type.
+In the final configuration phase, the offline virtual machine (VM) is cloned to prepare images for specific machine types, i.e., VxAdmin, VxCentralScan, VxMark, VxMarkScan, VxScan, and VxPrint, with one clone per machine type.
 
-In the following steps, the **vxadmin** VM will be referenced, but these steps can be repeated for each machine type: **vxcentralscan**, **vxmark**, **vxmarkscan**, **vxprint**, and **vxscan**.
+In the following steps, the **vxadmin** VM is used as the example; repeat these steps for each machine type: **vxcentralscan**, **vxmark**, **vxmarkscan**, **vxprint**, and **vxscan**.
 
 1. To clone the offline VM, run the following command on the build machine:
 
@@ -20,7 +20,7 @@ sudo virt-manager
 
 3. Double-click the **vxadmin** VM.
 4. Press the start button ▶️.
-5. From the menu, select "View" > "Consoles" > "Serial 1". (If you only see a blinking cursor, make the window active by clicking in it, then press Enter. You should see a login prompt.)
+5. From the menu, select "View" > "Consoles" > "Serial 1". If only a blinking cursor appears, click in the window to make it active, then press Enter. A login prompt appears.
 6. Once the VM has initialized, log in with username **vx** and password **votingworks**.
 7. To ensure that the console displays correctly, select "View" > "Resize to VM".
 8. In the VM terminal window, run the following commands:
@@ -30,7 +30,7 @@ cd ~/code/vxsuite-complete-system
 ./setup-machine.sh
 ```
 
-9. You will be guided through several prompts.
+9. The script displays several prompts.
 10. Select the number of the machine type that you intend to build.
 
 ```
@@ -63,8 +63,8 @@ Is this additionally an official release image? [y/N]
 Are you sure? [y/N]
 ```
 
-14. Set a password for the `vx-vendor` user. This password will not meaningfully be used as the vendor menu on a production image is only accessible via a vendor card.
-15. After the script finishes, the VM will reboot. You will see a console login prompt. In the VM menu, select "Virtual Machine" > "Shut Down" > "Shut Down". Close the VM window once shutdown is complete.
-16. You will now need to perform the [Secure Boot Signing](secure-boot-signing.md) process with VotingWorks. Once that process is completed, the VM and corresponding image will be ready for use with Secure Boot.
+14. Set a password for the `vx-vendor` user. This password is not used in practice, because the vendor menu on a production image is accessible only with a vendor card.
+15. After the script finishes, the VM reboots and a console login prompt appears. In the VM menu, select "Virtual Machine" > "Shut Down" > "Shut Down". Close the VM window once shutdown is complete.
+16. Perform the [Secure Boot Signing](secure-boot-signing.md) process with VotingWorks. When that process is complete, the VM and corresponding image are ready for use with Secure Boot.
 
-At this point, you are ready to install the image. You can find those instructions in [Imaging Machines](../../imaging-machines/).
+The image is then ready to install, as described in [Imaging Machines](../../imaging-machines/).

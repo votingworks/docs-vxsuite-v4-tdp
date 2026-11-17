@@ -20,7 +20,7 @@ git checkout <version>
 ./scripts/tb-run-online-phase.sh stable
 ```
 
-7. The online phase will take a while to complete. Once it finishes, you can shut down the online VM:
+7. The online phase takes a while to complete. When it finishes, shut down the online VM:
 
 ```
 sudo shutdown -h now
