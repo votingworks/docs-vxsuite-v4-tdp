@@ -6,7 +6,7 @@
 
 VxAdmin, VxPrint, and VxCentralScan are laptops which connect to peripherals as needed. The laptop is a [custom configured HP Elitebook 840 14" G11](vxadmin-and-vxcentralscan-hardware.md#laptop-specification).
 
-<div><figure><img src="../.gitbook/assets/840-front.jpg" alt="" width="375"><figcaption><p>Laptop keyboard and screen</p></figcaption></figure> <figure><img src="../.gitbook/assets/840-side.avif" alt="" width="430"><figcaption><p>Laptop ports</p></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/840-front.jpg" alt="HP EliteBook 840 laptop open, showing the keyboard and screen" width="375"><figcaption><p>Laptop keyboard and screen</p></figcaption></figure> <figure><img src="../.gitbook/assets/840-side.avif" alt="Left and right sides of the HP EliteBook 840 showing its HDMI, USB, and other ports" width="430"><figcaption><p>Laptop ports</p></figcaption></figure></div>
 
 The relevant hardware interfaces are:
 
@@ -22,7 +22,7 @@ VxAdmin connects to a printer for the purposes of printing reports. The printer 
 
 The VxAdmin printer is powered through an APC BN1500M2 uninterruptible power supply (UPS) to ensure that the printer can operate in variable power environments.
 
-<figure><img src="../.gitbook/assets/PXL_20241119_221005359 (1).jpg" alt="" width="563"><figcaption><p>VxAdmin fully connected with mouse, hub, charger, USB cable, and printer</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/PXL_20241119_221005359 (1).jpg" alt="VxAdmin laptop connected through a USB hub to an HP LaserJet printer, with mouse and charger" width="563"><figcaption><p>VxAdmin fully connected with mouse, hub, charger, USB cable, and printer</p></figcaption></figure>
 
 ### VxPrint
 
@@ -34,7 +34,7 @@ The printer has an Ethernet port on the back which is not used for operation of 
 
 The VxPrint printer is powered through an APC BN1500M2 UPS to ensure that the printer can operate in variable power environments.
 
-<figure><img src="../.gitbook/assets/VxPrint-System-Pic-Hardware.webp" alt=""><figcaption><p>VxPrint laptop connected to ballot printer</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/VxPrint-System-Pic-Hardware.webp" alt="VxPrint laptop on the lock screen connected to an HP LaserJet Pro 4001dn printing a ballot"><figcaption><p>VxPrint laptop connected to ballot printer</p></figcaption></figure>
 
 ### VxCentralScan
 
@@ -46,7 +46,7 @@ The fi-8170 and fi-8950 each have an RJ45 (Ethernet) port which is blocked by a 
 
 The batch scanner is powered through an APC BN1500M2 UPS to ensure that the scanner can operate in variable power environments.
 
-<figure><img src="../.gitbook/assets/centralscan.jpg" alt=""><figcaption><p>VxCentralScan fully connected with mouse, hub, charger, USB cable, scanner (fi-8170), and power backup</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/centralscan.jpg" alt="VxCentralScan laptop with mouse and USB hub beside an APC UPS and Ricoh fi-8170 batch scanner"><figcaption><p>VxCentralScan fully connected with mouse, hub, charger, USB cable, scanner (fi-8170), and power backup</p></figcaption></figure>
 
 ## Bill of Materials
 

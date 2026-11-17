@@ -2,13 +2,13 @@
 
 Summary ballots are printed by ballot-marking devices (BMDs). VxMarkScan only prints summary ballots whereas VxMark can be configured to print either [hand-marked-ballots.md](hand-marked-ballots.md "mention") or summary ballots. Summary ballots show the voter's selections in an easy-to-read format, omitting their non-selections. The QR code encodes the voter's choices and is used to tabulate the ballot.
 
-<figure><img src="../.gitbook/assets/summary-ballot.png" alt="" width="375"><figcaption><p>Summary Ballot</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/summary-ballot.png" alt="Printed summary ballot listing each contest with the voter's selection, with a QR code at top right" width="375"><figcaption><p>Summary ballot</p></figcaption></figure>
 
 ## Ballot Layout
 
 Summary ballots are always one-sided. On VxMarkScan they are limited to a single page but on VxMark they may be multiple pages in a large election.
 
-<figure><img src="../.gitbook/assets/image (87).png" alt="" width="375"><figcaption><p>Parts of a Summary Ballot</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (87).png" alt="Summary ballot annotated with election seal, ballot title, election metadata, ballot metadata, QR code, contest title, selection and party" width="375"><figcaption><p>Parts of a summary ballot</p></figcaption></figure>
 
 The ballot displays information about the election, metadata about the ballot, and the voter's selections. The selections are both displayed and encoded in the QR code.
 
@@ -20,7 +20,7 @@ In VxMarkScan, there is extra white space at the top of the ballot so that all o
 
 If VxMark or VxMarkScan is being used in a language other than English, the resulting ballot is multi-lingual and feature the other language. All pieces of text that appear on the summary ballot may have translations specified in the [election definition's ballot strings](election-package/vxsuite-election-definition.md#ballot-strings), which are then used when printing the ballot.
 
-<figure><img src="../.gitbook/assets/image (69).png" alt="" width="375"><figcaption><p>English/Chinese VxMarkScan Ballot</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (69).png" alt="Summary ballot printed in Simplified Chinese with English translations beside each contest title and selection" width="375"><figcaption><p>English/Chinese VxMarkScan ballot</p></figcaption></figure>
 
 ## QR Code
 

@@ -33,7 +33,7 @@ After completing the above verification, the site displays a success indicator a
 
 |                                 Machine UX                                 |                                 Web UX                                 |
 | :------------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-| <img src="../.gitbook/assets/machine (1).png" alt="" data-size="original"> | <img src="../.gitbook/assets/web (2).PNG" alt="" data-size="original"> |
+| <img src="../.gitbook/assets/machine (1).png" alt="Signed Hash Validation modal on the machine with QR code, system hash, version, machine ID, election ID, date and time" data-size="original"> | <img src="../.gitbook/assets/web (2).PNG" alt="check.voting.works on a phone showing a green check and the same system hash, machine ID, election ID and timestamp" data-size="original"> |
 
 ## QR Code Specifications
 
