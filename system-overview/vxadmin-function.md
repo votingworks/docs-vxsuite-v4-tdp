@@ -6,7 +6,7 @@ VxAdmin acts as the election setup hub at the beginning of the election and the 
 
 Only a [system administrator ](user-roles.md#system-administrator-role)can authenticate onto an unconfigured VxAdmin and configure it with an election package from an external system. The election package must be loaded via a USB drive. The election package must be a valid `.zip` [election-package](election-package/ "mention"). If the election package zip file, election definition file, system settings file, or metadata file are not valid, VxAdmin will surface an error to the user.
 
-Once VxAdmin is configured, system administrators and election managers can export signed election packages. The exported election package is the same as the imported election package but is accompanied by a digital signature, which ensures that the election package was validated by a certified VxAdmin. The election packages loaded into VxMarkScan, VxScan, and VxCentralScan _must be signed_ and unsigned election packages will be rejected.
+Once VxAdmin is configured, system administrators and election managers can export signed election packages. The exported election package is the same as the imported election package but is accompanied by a digital signature, which ensures that the election package was validated by a certified VxAdmin. The election packages loaded into VxCentralScan, VxMark, VxMarkScan, VxPrint, and VxScan _must be signed_ and unsigned election packages will be rejected.
 
 {% hint style="info" %}
 **User Manual References:** [Configure VxAdmin](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxadmin-system-setup/configure-vxadmin "mention") & [Save Election Package](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxadmin-system-setup/save-election-package "mention")

@@ -37,7 +37,7 @@ For convenience, VotingWorks has deployed a proof-of-concept tool for this step 
 
 ## Comparing Derandomized IDs to Physical Ballots
 
-Auditors can use the the public [ballot-qr-code-data-format.md](../../public-documents/ballot-qr-code-data-format.md "mention") to identify the original serial number encoded on a given paper ballot and map that to the CVR for that ballot based on file name. The ballot selections on the physical ballot can then be compared to the selections recorded in the CVR.
+Auditors can use the public [ballot-qr-code-data-format.md](../../public-documents/ballot-qr-code-data-format.md "mention") to identify the original serial number encoded on a given paper ballot and map that to the CVR for that ballot based on file name. The ballot selections on the physical ballot can then be compared to the selections recorded in the CVR.
 
 For convenience, VotingWorks has implemented a QR code scanning website meant to be accessed on a smartphone: [https://vx-hmpb-qr-decoder.pages.dev](https://vx-hmpb-qr-decoder.pages.dev/). When pointed at a valid VotingWorks paper ballot QR code, the website will display the parsed contents of that QR code, including the ballot serial number. The website refers to the ballot serial number, if present, as the "Ballot ID" as you can see in the screenshot below.
 
