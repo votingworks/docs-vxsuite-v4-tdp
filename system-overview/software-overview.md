@@ -105,7 +105,7 @@ Subsequent articles will describe the particular software design of each applica
 
 ### USB Management
 
-All VxSuite components require a USB drive at some point in their operation for configuration or for the import or export of results. The application polls for attached USB drives multiple times per second. If a USB drive with a FAT32 partition is detected, the application will attempt to mount the USB drive to a known mount point. Once mounted, the USB drive will be available for use by the application.
+All VxSuite components require a USB drive at some point in their operation for configuration or for the import or export of results. The application polls for attached USB drives multiple times per second. If a USB drive with a FAT32 or exFAT partition is detected, the application attempts to mount it at a known mount point. Once mounted, the USB drive is available to the application.
 
 The USB drive should be ejected before removing it. Most critical operations also sync the data to the USB drive before allowing the user to continue, however, so removing the USB drive without ejecting normally does not cause problems.
 

@@ -11,11 +11,16 @@ does and how, so a reviewer can understand and verify it.
 
 ## Structure
 
-- The TDP's pages and sections follow the VVSG 2.0 documentation requirements.
-  A short page may exist only to answer a requirement. Never delete, merge,
-  rename or move a page; add new material to the page that covers its area.
-- Keep file names as they are, even where they no longer match the title
-  (`hand-marked-ballots.md` is "Bubble Ballots"). Renaming breaks links.
+- The TDP's pages and sections follow the VVSG 2.0 documentation
+  requirements, and a short page may exist only to answer a requirement.
+  Check any change to the page structure against those requirements.
+- Most changes edit existing pages: add new material to the page that covers
+  its area. A reorganization (adding, merging, moving or renaming pages) can
+  be proposed when it is well motivated; it must keep every requirement
+  answered and every link working.
+- A file name that no longer matches its page title is fine
+  (`hand-marked-ballots.md` is "Bubble Ballots"); renaming a file only for
+  that breaks links for no reader-visible gain.
 - One H1 per page, identical to the page's title in `SUMMARY.md`.
 - A content page opens with one sentence that defines its subject or states
   its scope: "VxScan is the system's precinct scanner into which voters cast
@@ -35,7 +40,7 @@ does and how, so a reviewer can understand and verify it.
   "VxScan can be unconfigured by an election manager or system administrator."
   Not "we" or "our". Procedures use the imperative.
 - Plain and neutral. No contractions, asides or casual phrasing ("That's ok",
-  "heads up", "blessed", "a pleasant chime").
+  "heads up", "a pleasant chime").
 - State the mechanism, not an absolute. Write "Kiosk mode prevents access to
   the operating system by…", not "which is not possible". Use "guarantee",
   "impossible" or "unalterable" only for a claim a test lab can verify.

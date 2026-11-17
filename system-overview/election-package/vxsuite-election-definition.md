@@ -45,7 +45,7 @@ A cross-party endorsed candidate may have multiple candidate options associated 
 
 ### Contest
 
-There are two types of contests: candidate contests and ballot measure contests. Both types share core attributes:
+There are three types of contests: candidate contests, ballot measure contests, and straight-party contests. All three share core attributes:
 
 <table><thead><tr><th width="172">Attribute</th><th width="229">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>districtId</code></td><td><code>string</code> - ID for <a href="vxsuite-election-definition.md#district">District</a></td><td>The associated district of the contest such as a state, county, or ward</td></tr><tr><td><code>title</code></td><td><code>string</code></td><td>Title of the contest</td></tr><tr><td><code>type</code></td><td><code>string</code> - "candidate", "yesno", or "straight-party"</td><td>Type of the contest</td></tr></tbody></table>
 
