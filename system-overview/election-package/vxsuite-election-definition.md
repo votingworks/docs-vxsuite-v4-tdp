@@ -159,7 +159,7 @@ The election-specific `ballotStrings` recognized by the system are the following
 | Ballot Style IDs      | `ballotStyleId`      | key-value pairs, [Ballot Style](vxsuite-election-definition.md#ballot-style) IDs mapped to names                    |
 | Candidate Names       | `candidateName`      | key-value pairs, [Candidate](vxsuite-election-definition.md#candidate) IDs mapped to names                          |
 | Contest Descriptions  | `contestDescription` | key-value pairs, [Contest](vxsuite-election-definition.md#contest) IDs mapped to descriptions                       |
-| Contest Option Labels | `contestOptionLabel` | key-value pairs, [Ballot Measure Contest Option](vxsuite-election-definition.md#yes-no-contest-option) IDs mapped to labels |
+| Contest Option Labels | `contestOptionLabel` | key-value pairs, [Ballot Measure Contest Option](vxsuite-election-definition.md#ballot-measure-contest-option) IDs mapped to labels |
 | Contest Terms         | `contestTerm`        | key-value pairs, [Contest](vxsuite-election-definition.md#contest) IDs mapped to term descriptions                  |
 | Contest Titles        | `contestTitle`       | key-value pairs, [Contest](vxsuite-election-definition.md#contest) IDs mapped to titles                             |
 | County Name           | `countyName`         | `string`                                                                                                            |
@@ -211,7 +211,7 @@ The language codes used are [IETF language tags](https://www.w3.org/Internationa
 
 VxSuite defines an abstract grid using the timing marks on the outer edges of the ballot and uses this grid to define bubble positions and other bounding boxes relevant to ballot interpretation and adjudication UIs.
 
-These are defined on a per-ballot-style basis under each ballot style's `sheetPositions` field.
+These are defined on a per-ballot-style basis under each ballot style's `ballotPositions` field.
 
 ### SheetPositions
 
