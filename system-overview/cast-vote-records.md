@@ -102,13 +102,13 @@ Only one `ReportingDevice` is ever listed:
 
 #### CastVoteRecordReport.Party
 
-The list of parties in the cast vote record report is mapped directly from the [Party](election-package/vxsuite-election-definition.md#party-party) list in the election definition:
+The list of parties in the cast vote record report is mapped directly from the [Party](election-package/vxsuite-election-definition.md#party) list in the election definition:
 
 <table><thead><tr><th width="203">CDF Attribute</th><th>Usage</th></tr></thead><tbody><tr><td>@id</td><td>The party identifier from the election definition</td></tr><tr><td>Name</td><td>The full name of the party, e.g. "Democratic Party"</td></tr><tr><td>Abbreviation</td><td>The abbreviation of the party, e.g. "R"</td></tr></tbody></table>
 
 #### CastVoteRecordReport.GpUnit
 
-`GpUnit`s are created for each [Precinct](election-package/vxsuite-election-definition.md#precinct-precinct) in the election, for the [County](election-package/vxsuite-election-definition.md#county-county), and for the state:
+`GpUnit`s are created for each [Precinct](election-package/vxsuite-election-definition.md#precinct) in the election, for the [Jurisdiction](election-package/vxsuite-election-definition.md#jurisdiction), and for the state:
 
 <table><thead><tr><th width="211">CDF Attribute</th><th>Usage</th></tr></thead><tbody><tr><td>@id</td><td><ul><li><strong>Precinct</strong>: The precinct identifier from the election definition</li><li><strong>County</strong>: Fixed to "election-county"</li><li><strong>State:</strong> Fixed to "election-state"</li></ul></td></tr><tr><td>Type</td><td><ul><li><strong>Precinct:</strong> "precinct"</li><li><strong>County</strong> or <strong>State:</strong> "other"</li></ul></td></tr><tr><td>Name</td><td>The precinct, county, or state name</td></tr></tbody></table>
 

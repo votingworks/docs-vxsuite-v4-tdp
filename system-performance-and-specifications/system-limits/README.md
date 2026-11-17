@@ -50,7 +50,7 @@
 * The ballot box auxiliary compartment supports up to 100 ballots before needing to be cleared. Ballots longer than 19" must be folded.
 * Total ballots scanned for a given VxScan configuration are limited to 10,000 ballots. This limit is set based on the disk space available on specified external disks to ensure adequate disk space in the case of needing to re-sync CVRs.
 * Ballot tabulation rate depends on election content / ballot length. A typical 11" ballot sheet is scanned and tabulated in 3 seconds.
-* An user can feed a ballot sheet every 10 seconds. At that feeding rate, the maximum tabulation rate is 360 sheets per hour.
+* A user can feed a ballot sheet every 10 seconds. At that feeding rate, the maximum tabulation rate is 360 sheets per hour.
 
 ### VxPrint
 
