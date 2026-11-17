@@ -8,13 +8,13 @@ description: >-
 
 ## Ballot-Comparison Risk-Limiting Audit
 
-In a **ballot-comparison risk-limiting audit**, the goal is to compare, for a random sample of the cast ballots, the paper ballot and the corresponding cast-vote record. The specifics of sample selection and risk-limit calculation are out of scope for this document – VotingWorks Arlo or other RLA tool may be used for this purpose.
+In a **ballot-comparison risk-limiting audit**, the goal is to compare, for a random sample of the cast ballots, the paper ballot and the corresponding cast vote record (CVR). The specifics of sample selection and risk-limit calculation are out of scope for this document – VotingWorks Arlo or another risk-limiting audit (RLA) tool may be used for this purpose.
 
 To enable a ballot-comparison risk-limiting audit, VxSuite provides:
 
 * imprinting of ballots on VxCentralScan, with a unique identifier of the form\
   `<BATCH-ID>_<SEQUENCE-NUM>`
-* cast-vote records including the field `BallotAuditId` which matches the imprinted identifier
+* cast vote records including the field `BallotAuditId` which matches the imprinted identifier
 
 Then, to run a ballot-comparison risk-limiting audit with VxSuite:
 
@@ -33,7 +33,7 @@ Alternatively, unique identifiers may be added by VxScan — see [vxscan-unique-
 
 ## Batch-Comparison Risk-Limiting Audit
 
-In a **batch-comparison risk-limiting audit**, the goal is to compare, for a random sample of ballot batches, the hand tally of that batch with the corresponding batch tally. The specifics of sample selection and risk-limit calculation are out of scope for this document – VotingWorks Arlo or other RLA tool may be used for this purpose.
+In a **batch-comparison risk-limiting audit**, the goal is to compare, for a random sample of ballot batches, the hand tally of that batch with the corresponding batch tally. The specifics of sample selection and risk-limit calculation are out of scope for this document – VotingWorks Arlo or another RLA tool may be used for this purpose.
 
 To enable a batch-comparison risk-limiting audit, VxSuite provides:
 
@@ -42,7 +42,7 @@ To enable a batch-comparison risk-limiting audit, VxSuite provides:
 
 Then, to run a batch-comparison risk-limiting audit with VxSuite:
 
-1. scan ballots either with VxScan or VxCentralScan. No need to use imprinting for VxCentralScan.
+1. scan ballots either with VxScan or VxCentralScan. Imprinting is not needed on VxCentralScan.
 2. store ballots by batch – where a batch in VxCentralScan is indicated by the batch ID on screen, and a batch in VxScan is the entire set of ballots scanned by a single VxScan over the course of the election. Order of the ballots need not be maintained in either case.
 3. export CVRs from all VxCentralScans and gather the CVRs on USB drives from all VxScans
 4. use VxAdmin to aggregate CVRs, adjudicate write-ins, and generate final tallies
@@ -58,8 +58,8 @@ Then, to run a batch-comparison risk-limiting audit with VxSuite:
 
 In an **image audit**, various risk-limiting audit procedures are used, but instead of physically retrieving the ballots to audit, the scanned image of the ballot is used.
 
-VxSuite supports image audits very simply – every VxScan and VxCentralScan produces images of the scanned ballots that can be immediately associated with the interpreted CVR. Thus, the protocols defined above for ballot-comparison and batch-comparison audits can be used, with the following simplification:
+VxSuite supports image audits directly: every VxScan and VxCentralScan produces images of the scanned ballots that can be immediately associated with the interpreted CVR. Thus, the protocols defined above for ballot-comparison and batch-comparison audits can be used, with the following simplification:
 
 * imprinting is unnecessary
-* instead of "retrieving a ballot", simply look up the image files corresponding to the CVR ID and interpret on screen
+* instead of "retrieving a ballot", look up the image files corresponding to the CVR ID and interpret on screen
 

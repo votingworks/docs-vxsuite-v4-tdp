@@ -20,7 +20,7 @@ The voter may only vote in one party's contests. Voting in more than one party's
 
 Both VxScan and VxCentralScan warn when crossover voting is detected. VxScan shows a message to the voter and gives them the option to return or cast their ballot. VxCentralScan stops on crossover voted ballots, presents the ballot image and message to the operator, and gives them the option to tabulate or remove the ballot. The user experience on both components is nearly the same as the user experience for overvotes if overvote adjudication is turned on in the system settings.
 
-#### Ballot Marking Device Experience
+#### Ballot-Marking Device Experience
 
 VxMark and VxMarkScan have unique voting flows for combined primary ballots. The voting flow does not allow crossover voting, similar to not allowing overvotes.
 
@@ -32,7 +32,7 @@ Summary ballots include all contests for all parties for consistency with the bu
 
 #### Tabulation
 
-The results and reports for a combined ballot open primary are structured in the same way as a standard primary - tally reports are split into party sections and, if there are nonpartisan races, there will be a separate nonpartisan section.
+The results and reports for a combined ballot open primary are structured in the same way as a standard primary: tally reports are split into party sections and, if there are nonpartisan races, there will be a separate nonpartisan section.
 
 With a combined primary ballot, however, the party of the ballot is not determined by the ballot style. The party of the ballot is determined at the time of tabulation by the interpreted or adjudicated votes on the ballot. If there are no votes for any partisan contests or if there is crossover voting, the ballot will not count toward any party's primary.
 
@@ -44,7 +44,7 @@ Another consequence of the fact that the party of the ballot is determined at th
 
 #### Limitations
 
-* Combined primary ballots cannot span multiple sheets because, without unique identifiers, it is not possible to prevent crossover voting across sheets
+* Combined primary ballots cannot span multiple sheets because, without unique identifiers linking a ballot's sheets, the system cannot prevent crossover voting across sheets
 * VxSuite supports combined primary ballots with two or three parties
 * Manual tally entry is not supported when using combined primary ballots
 
@@ -53,7 +53,7 @@ Another consequence of the fact that the party of the ballot is determined at th
 The two most common supported contest types are:
 
 * N-of-M contests, which are typically candidate contests
-* Yes-No contests, also known as ballot propositions or ballot measures
+* Ballot measure contests, also known as ballot propositions
 
 VxSuite additionally supports straight party voting.
 
@@ -67,14 +67,14 @@ In a "straight party contest", the voter may select no more than one party. For 
 
 If the straight party contest is undervoted or overvoted, tabulation for all other contests behaves normally. If there is a valid vote in the straight party contest, then straight party rules are applied to all partisan contests. In the general election context, "partisan contests" are defined as any contest with party-associated candidates. Nonpartisan contests would be ballot measures or nonpartisan candidate races such as many judicial or local races.
 
-Jurisdictions tabulate straight party contests in different ways, but the two main ways are "inclusive" and "exclusive" straight party voting. Voters are always allowed to vote directly in partisan races to override their straight party vote. In "exclusive" straight party voting, any direct vote in a partisan candidate contest invalidates the straight party vote for that contest. A contest cannot have both direct and indirect votes. In "inclusive" straight party voting, a direct vote does not necessarily invalidate straight party voting if it's still applicable to the contest. A contest _can_ have both direct and indirect votes. VxSuite currently supports only the "inclusive" style of tabulation for straight party contest.
+Jurisdictions tabulate straight party contests in different ways, but the two main ways are "inclusive" and "exclusive" straight party voting. Voters are always allowed to vote directly in partisan races to override their straight party vote. In "exclusive" straight party voting, any direct vote in a partisan candidate contest invalidates the straight party vote for that contest. A contest cannot have both direct and indirect votes. In "inclusive" straight party voting, a direct vote does not necessarily invalidate straight party voting if it is still applicable to the contest. A contest _can_ have both direct and indirect votes. VxSuite currently supports only the "inclusive" style of tabulation for straight party contest.
 
 The examples below are intended to express how straight party tabulation works. In short, inclusive straight party voting means that in each contest:
 
 1. All valid, direct votes are counted
 2. If the number of remaining votes is greater than or equal to the number of candidates with the selected party, indirect votes are awarded to those candidates.
 
-**Vote for 1, Straight Party Tabulation Examples**
+##### Vote for 1, Straight Party Tabulation Examples
 
 | Straight Party Contest Vote                                               | Candidate Contest Vote                                                    | Outcome                                                                                                                                            |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -82,7 +82,7 @@ The examples below are intended to express how straight party tabulation works. 
 | <img src="../.gitbook/assets/image (89).png" alt="" data-size="original"> | <img src="../.gitbook/assets/image (97).png" alt="" data-size="original"> | A vote is counted toward the Democratic candidate. Voters may vote directly for candidates even if it is redundant with their straight party vote. |
 | <img src="../.gitbook/assets/image (89).png" alt="" data-size="original"> | <img src="../.gitbook/assets/image (98).png" alt="" data-size="original"> | A vote is counted toward the Republican candidate. The direct vote takes priority over the straight party vote.                                    |
 
-**Vote for N (N > 1), Straight Party Tabulation Examples**
+##### Vote for N (N > 1), Straight Party Tabulation Examples
 
 | Straight Party Contest Vote                                                | Candidate Contest Vote                                                     | Outcome                                                                                                                                                                                                                                                       |
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -91,14 +91,14 @@ The examples below are intended to express how straight party tabulation works. 
 | <img src="../.gitbook/assets/image (99).png" alt="" data-size="original">  | <img src="../.gitbook/assets/image (105).png" alt="" data-size="original"> | One vote is counted toward the marked Democratic candidate and one vote is left unused, so the contest ends up undervoted. The straight party vote could not be applied because the tabulator would have had to choose between the two Republican candidates. |
 | <img src="../.gitbook/assets/image (107).png" alt="" data-size="original"> | <img src="../.gitbook/assets/image (104).png" alt="" data-size="original"> | One vote is counted toward the marked Republican candidate and one vote is also counted toward the U.S. Taxpayers candidate. Because there is only one candidate for U.S. Taxpayers, the one remaining vote could apply.                                      |
 
-#### Ballot Marking Device Experience
+#### Ballot-Marking Device Experience
 
 On VxMark and VxMarkScan, the straight party contest itself behaves like any other contest. The voter can always choose to leave it blank but they are prevented from overvoting it.
 
-If a selection is made in the straight party contest, affected contests will show an indication of which candidates are receiving indirect votes via the straight party vote. As on a paper ballot, BMD voters can make direct votes in affected contests which will be tabulated according to the rules described above. As on a paper ballot, BMD voters can only cancel out a straight party vote by making other selections directly.
+If a selection is made in the straight party contest, affected contests will show an indication of which candidates are receiving indirect votes via the straight party vote. As on a paper ballot, ballot-marking device (BMD) voters can make direct votes in affected contests which will be tabulated according to the rules described above. As on a paper ballot, BMD voters can only cancel out a straight party vote by making other selections directly.
 
 Summary ballots show "no selection" for contests where straight party votes will generate votes in tabulation for consistency with the bubble ballot.
 
 #### Limitations
 
-Ballots with straight party contests cannot span multiple sheets because, without unique identifiers, it is not possible to apply straight party votes across sheets.
+Ballots with straight party contests cannot span multiple sheets because, without unique identifiers linking a ballot's sheets, the system cannot apply straight party votes across sheets.

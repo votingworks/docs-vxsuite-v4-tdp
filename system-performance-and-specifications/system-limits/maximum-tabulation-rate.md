@@ -8,9 +8,9 @@ The maximum tabulation rate for batch-fed scanners is primarily limited by the h
 
 The sheet per minute rate is reduced by the need to interpret ballot images. Ballot interpretation speed varies based on the following ballot variables:
 
-* Ballot type - summary ballots are slower to interpret than hand marked paper ballots.
-* Sheet length - shorter (such as 11") ballots are faster to interpret than longer (such as 22") ballots.
-* Ballot content - ballots with more contests and contest selections are slower to interpret.
+* **Ballot type:** summary ballots are slower to interpret than bubble ballots.
+* **Sheet length:** shorter (such as 11 in.) ballots are faster to interpret than longer (such as 22 in.) ballots.
+* **Ballot content:** ballots with more contests and contest selections are slower to interpret.
 
 Taking these limitations into consideration, batch scanners can be expected to scan at approximately 80% of the rates listed above.
 
@@ -22,7 +22,7 @@ In addition to the sheet per minute rate of a given batch, the maximum tabulatio
 
 Finally, the maximum tabulation rate over the course of a day is limited by the daily volume limitations of each central scanner:
 
-* Ricoh fi-8170: 10,000 sheets/day
-* Ricoh fi-7600: 44,000 sheets/day
-* Ricoh fi-8950: 130,000 sheets/day
+* Ricoh fi-8170: 10,000 sheets per day
+* Ricoh fi-7600: 44,000 sheets per day
+* Ricoh fi-8950: 130,000 sheets per day
 

@@ -1,10 +1,10 @@
 # VxMark Function
 
-VxMark is the system's tabletop ballot marking device. It allows all voters to make selections in various interaction modes, review their ballot, and print their ballot.
+VxMark is the system's tabletop ballot-marking device (BMD). It allows all voters to make selections in various interaction modes, review their ballot, and print their ballot.
 
 ## Configuration
 
-VxMark is configured with a signed [election package](election-package/#election-definition) exported from VxAdmin. The election definition defines the ballot styles that will be available to voters. The election definition also includes the translations defined for text on the ballot, while the [app strings](election-package/#app-strings) file contains the translations for other text shown on screen. The election package's [audio files](election-package/#audio-ids-and-audio-clips) are played for the voter in audio-mode.
+VxMark is configured with a signed [election package](election-package/#election-definition) exported from VxAdmin. The election definition defines the ballot styles that will be available to voters. The election definition also includes the translations defined for text on the ballot, while the [app strings](election-package/#app-strings) file contains the translations for other text shown on screen. The election package's [audio files](election-package/#audio-ids-and-audio-clips) are played for the voter in audio mode.
 
 {% hint style="info" %}
 **User Manual Reference:** [Configure VxMark](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmark/configure-vxmark "mention")
@@ -38,9 +38,9 @@ Poll workers open the polls to allow voting. Once polls are opened, polls can on
 
 Poll workers close the polls when voting should no longer be allowed. Polls are closed until VxMark is unconfigured or switched from one ballot mode to another, with one exception discussed below.
 
-VxMark also allows poll workers to pause voting a.k.a. suspend the polls. While voting is paused, no voting sessions can be started. Voting can be resumed, after which the polls are back in the standard polls opened state. Pausing voting might be used in an early voting model between voting days or, in the case of an emergency, to pause voting while the emergency is resolved. The poll worker may choose to close polls directly from voting paused instead of resuming voting.
+VxMark also allows poll workers to pause voting, also called suspending the polls. While voting is paused, no voting sessions can be started. Voting can be resumed, after which the polls are back in the standard polls opened state. Pausing voting might be used in an early voting model between voting days or, in the case of an emergency, to pause voting while the emergency is resolved. The poll worker may choose to close polls directly from voting paused instead of resuming voting.
 
-If the polls have been closed, the only possible way for the polls to be re-opened is if a system administrator resets the polls to paused. Only the system administrator may do this - poll workers and election managers cannot - per the allowance in VVSG 2.0 1.1.7-E. Once polls have been reset to paused by the system administrator, voting may be resumed by a poll worker. The goal of this flow is to allow voting to continue after a poll worker has prematurely closed the polls.
+If the polls have been closed, they can be re-opened only if a system administrator resets the polls to paused. Only the system administrator may do this—poll workers and election managers cannot—as VVSG 2.0 allows (VVSG 2.0 1.1.7-E). Once polls have been reset to paused by the system administrator, voting may be resumed by a poll worker. The goal of this flow is to allow voting to continue after a poll worker has prematurely closed the polls.
 
 {% hint style="info" %}
 **User Manual Reference:** [Open and Close Polls](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmark/open-and-close-polls "mention")
@@ -61,7 +61,7 @@ After working through the entire ballot, the voter will then review all their se
 In order to have a voter-verified paper trail, the voter should always review their printed ballot. If they find a mistake in their ballot that they want to correct, they must vote again in a new voting session. The previously printed ballot must be voided or spoiled.
 
 {% hint style="info" %}
-**User Manual Reference**: [Voting Sessions](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmark/voting-sessions "mention")
+**User Manual Reference:** [Voting Sessions](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmark/voting-sessions "mention")
 {% endhint %}
 
 ### Barcode Ballot Activation
@@ -70,20 +70,20 @@ If `bmdEnableQrBallotActivation` is enabled in the system settings, a poll worke
 
 A scan starts a voting session only when a poll worker is authenticated, the polls are open, and no voting session is in progress, and only if the encoded ballot style is available at the configured polling place. A scan under any other conditions, or one that does not identify a valid ballot style, is ignored and logged. Requiring an authenticated poll worker means a barcode cannot start a session on its own, which guards against a barcode being reused. When a scan is accepted, VxMark plays a confirmation sound and begins the voting session exactly as if the poll worker had selected the ballot style, including the language encoded in the ballot style.
 
-An election manager can set the Barcode Activation Mode to "Voting Session", the default, or "Print Ballot". The "Print Ballot" option is available only when [#blank-ballot-printing](vxmark-function.md#blank-ballot-printing "mention") is enabled. In "Print Ballot" mode, a scan opens the blank ballot printing screen with the ballot style and precinct pre-selected. The poll worker must still select "Print Ballot" to print, and VxMark returns to the poll worker menu afterward so that one scanned barcode cannot print more than one ballot.
+An election manager can set the Barcode Activation Mode to "Voting Session", the default, or "Print Ballot". The "Print Ballot" option is available only when [#blank-ballot-printing](vxmark-function.md#blank-ballot-printing "mention") is enabled. In "Print Ballot" mode, a scan opens the blank ballot printing screen with the ballot style and precinct pre-selected. The poll worker must still select `Print Ballot` to print, and VxMark returns to the poll worker menu afterward so that one scanned barcode cannot print more than one ballot.
 
 #### Ballot Style Barcode Format
 
 The barcode is a QR code containing a JSON object with the following fields:
 
-* `bId` - The ballot style ID as defined in the election definition. Ballot style IDs include the ballot language, so the language is selected along with the ballot style.
-* `pId` - The precinct ID as defined in the election definition. Optional. If omitted, VxMark uses the first precinct of the ballot style that the configured polling place covers. If provided, the precinct must use the ballot style and be covered by the polling place.
+* **`bId`:** The ballot style ID as defined in the election definition. Ballot style IDs include the ballot language, so the language is selected along with the ballot style.
+* **`pId`:** The precinct ID as defined in the election definition. Optional. If omitted, VxMark uses the first precinct of the ballot style that the configured polling place covers. If provided, the precinct must use the ballot style and be covered by the polling place.
 
 For example, `{"bId":"12_en","pId":"23"}` activates the English ballot style `12` for precinct `23`.
 
 ### Voter Privacy
 
-The voter's choices do not persist on VxMark after the end of the voting session. Other than the increase in the count of printed ballots, the only data that persist after each voting session are the relevant log events for authentication, printing a ballot, invalidating a ballot, and hardware state changes. The voter's selections or any voter actions that may trigger selections (such as touch screen presses, accessible controller presses, PAT input events) are not included in logging or otherwise persisted. After the voting session is complete, their printed ballot is the only record of their selections.
+The voter's choices do not persist on VxMark after the end of the voting session. Other than the increase in the count of printed ballots, the only data that persist after each voting session are the relevant log events for authentication, printing a ballot, invalidating a ballot, and hardware state changes. The voter's selections or any voter actions that may trigger selections (such as touch screen presses, accessible controller presses, personal assistive technology (PAT) input events) are not included in logging or otherwise persisted. After the voting session is complete, their printed ballot is the only record of their selections.
 
 ## Display Formats & Interaction Modes
 
@@ -97,14 +97,14 @@ VxMark supports voting sessions in various display formats and interaction modes
 
 The voting session begins in visual mode with the following default settings:
 
-* **Text Size** - Medium, which corresponds to between 14pt - 16pt, meeting the default text size requirement specified in VVSG 2.0 7.1-G.
-* **Contrast** - Medium, which is at least a 10:1 contrast for all informational elements, meeting the default contrast requirement specified in VVSG 2.0 7.1-C
+* **Text Size:** Medium, which corresponds to 14–16 pt, meeting the default text size requirement (VVSG 2.0 7.1-G).
+* **Contrast:** Medium, which is at least a 10:1 contrast for all informational elements, meeting the default contrast requirement (VVSG 2.0 7.1-C)
 
-The voter can update the **Text Size** to Small, Medium, Large, or Extra-Large, which map to the four discrete text sizes defined in VVSG 2.0 7.1-G. Changing the text size changes the size of all informational elements including buttons, icons, and layout (VVSG 2.0 7.1-H) because all such elements are sized relative to the base font size. The font is always sans-serif (VVSG 2.0 7.1-J).
+The voter can update the **Text Size** to Small, Medium, Large, or Extra-Large, which map to the four required discrete text sizes (VVSG 2.0 7.1-G). Changing the text size changes the size of all informational elements including buttons, icons, and layout (VVSG 2.0 7.1-H) because all such elements are sized relative to the base font size. The font is always sans-serif (VVSG 2.0 7.1-J).
 
-If there's too much content on a page to fit all on screen at once, which happens most commonly in large or extra-large text size, the interface introduces a large "More" button to indicate there are more contest options to scroll through. The interface never lays out content in a way which requires horizontal scrolling.
+If there is too much content on a page to fit all on screen at once, which happens most commonly in large or extra-large text size, the interface introduces a large `More` button to indicate there are more contest options to scroll through. The interface never lays out content in a way which requires horizontal scrolling.
 
-The voter can update the **Contrast** from medium contrast to low contrast, high contrast with black background, or high contrast with white background corresponding to the contrast options specified in VVSG 2.0 7.1-D. The contrast changes apply to all elements on screen.
+The voter can update the **Contrast** from medium contrast to low contrast, high contrast with black background, or high contrast with white background corresponding to the required contrast options (VVSG 2.0 7.1-D). The contrast changes apply to all elements on screen.
 
 In addition to text, color and icons are used on screen to guide voters. In conformance with color conventions (VVSG 2.0 7.1-E), red indicates danger, yellow indicates warning, and green indicates success. For example, choosing to spoil one's ballot is a red button. Purple is generally used as the primary color to indicate the recommended next step. In high contrast modes, the interface is entirely black and white to support the 20:1 contrast ratios. Icons are used on buttons to provide an additional visual cue, but are always paired with text (VVSG 2.0 7.3-L).
 
@@ -120,9 +120,9 @@ Once a voter has used all their votes in a race, the progress button at the bott
 
 ### Touch Interaction Mode
 
-Voters usually choose to use the touchscreen to vote. The voter taps buttons to move between contests and through the stages of the voting flow. The voter taps list items on each contest page in order to make selections. Touch areas never overlap and are sized to meet minimums described in VVSG 2.0 7.2-I. Touch areas require that the user's touch begins and ends within the touch area to activate, meaning that dragging a finger across a touch area will not activate the touch area, in order to avoid accidental activation (VVSG 2.0 7.2-H).
+Voters usually choose to use the touchscreen to vote. The voter taps buttons to move between contests and through the stages of the voting flow. The voter taps list items on each contest page in order to make selections. Touch areas never overlap and are sized to meet the required minimums (VVSG 2.0 7.2-I). Touch areas require that the user's touch begins and ends within the touch area to activate, meaning that dragging a finger across a touch area will not activate the touch area, in order to avoid accidental activation (VVSG 2.0 7.2-H).
 
-When there's more content on a page than can fit on one screen, the voter can scroll through the screen in one of two ways. First, they can tap the "More" button which acts as both the visual indicator that there are more contest options or contests. Second, they can use a swiping motion on the screen to move up or down. Swiping to see more contest options or contests is VxMark's only touch screen gesture. It cannot be used horizontally to navigate between contests or pages (VVSG 2.0 7.2-E).
+When there is more content on a page than can fit on one screen, the voter can scroll through the screen in one of two ways. First, they can tap the `More` button which acts as both the visual indicator that there are more contest options or contests. Second, they can use a swiping motion on the screen to move up or down. Swiping to see more contest options or contests is VxMark's only touch screen gesture. It cannot be used horizontally to navigate between contests or pages (VVSG 2.0 7.2-E).
 
 ### Audio Tactile Mode - Accessible Controller
 
@@ -134,7 +134,7 @@ The accessible controller works by sending keyboard events to the application. T
 
 ### Limited Dexterity Mode - PAT Input
 
-VxMark has a PAT (personal assistive technology) input port into which a voter can plug in their own two-switch adaptive input such as a sip-and-puff device. When a PAT input is attached during a voting session, VxMark will enter a calibration flow where the voter will map their two inputs to "move" and "select."
+VxMark has a PAT input port into which a voter can plug in their own two-switch adaptive input such as a sip-and-puff device. When a PAT input is attached during a voting session, VxMark will enter a calibration flow where the voter will map their two inputs to "move" and "select."
 
 Once calibrated, the voter can use the two inputs to navigate through the ballot. The "move" input advances the focus on screen to the next element and the "select" input is the equivalent of a tap in touch interaction mode. Just as with the accessible controller, the currently focused element on screen is highlighted in visual mode or read aloud in audio mode.
 
@@ -149,25 +149,25 @@ As an alternative to the visual formats, the voter can listen to their ballot in
 * how to navigate the review screens
 * how to use the accessible controller
 
-The voter can adjust volume up and down with buttons on the accessible controller and adjust speech rate from the on-screen audio settings. Volume and rate defaults and options are calibrated according to VVSG 2.0 7.1-K. The voter can also pause and resume audio with a button on the accessible controller.
+The voter can adjust volume up and down with buttons on the accessible controller and adjust speech rate from the on-screen audio settings. Volume and rate defaults and options are calibrated to meet the volume and rate requirements (VVSG 2.0 7.1-K). The voter can also pause and resume audio with a button on the accessible controller.
 
 ### Language Support
 
 VxMark supports switching the language for the current voting session to any language supported in the current election package. When the language is changed, all text on the ballot, all text shown on screen, and text read in audio mode to guide the voter will switch to the new language. When a right-to-left language such as Arabic is selected, the on-screen layout is mirrored to render right-to-left. The language can be changed at any time during a voting session. The language selection resets automatically after each voting session or can be reset by the voter at any time.
 
-If a language other than English is set when printing a summary ballot, the ballot will show all information in both the current language - for the purpose of the voter's review - and in English - for ease of adjudication and audits.
+If a language other than English is set when printing a summary ballot, the ballot will show all information in both the current language, for the purpose of the voter's review, and in English, for ease of adjudication and audits.
 
 ## Ballots & Ballot Settings
 
 VxMark can be configured to print one of two types of ballots: summary or bubble ballots. The print mode setting can be changed in the [election-package](election-package/ "mention").
 
-Summary ballots list all the voter's selections and contain a QR code with the selections encoded. The format is detailed in [machine-marked-ballots.md](machine-marked-ballots.md "mention") in the VxSuite technical data package. Summary ballots are only printed on-demand. This is the default print mode for VxMark.
+Summary ballots list all the voter's selections and contain a QR code with the selections encoded. The format is detailed in [machine-marked-ballots.md](machine-marked-ballots.md "mention") in the VxSuite technical data package. Summary ballots are only printed on-demand.
 
 VxMark can alternatively be configured to print [hand-marked-ballots.md](hand-marked-ballots.md "mention") in two modes: print and mark entire ballot or mark selections on pre-printed ballots. The print and mark entire ballot mode uses a blank sheet of paper to print the entire ballot and mark the bubbles with the voters' selections. The mark selections on pre-printed ballots mode marks bubbles with voters' selections onto pre-printed ballots loaded in the printer.
 
-The positions of each bubble, for each ballot style, are included in the election package. Those positions are used by VxMark to print ovals over the bubbles for each of the voter's selections. Using bubble ballots allows VxMark's machine-marked ballots to match the hand-marked paper ballots. Note that pre-printed bubble ballots must be inserted into the printer in the correct orientation for the bubbles to be properly filled.
+The positions of each bubble, for each ballot style, are included in the election package. Those positions are used by VxMark to print ovals over the bubbles for each of the voter's selections. Using bubble ballots allows ballots marked by VxMark to match bubble ballots marked by hand. Note that pre-printed bubble ballots must be inserted into the printer in the correct orientation for the bubbles to be properly filled.
 
-If the printed ovals are slightly offset from the bubble, an election manager can adjust the positioning of the ovals, in half millimeter increments, to the left, right, up or down.
+If the printed ovals are slightly offset from the bubble, an election manager can adjust the positioning of the ovals, in 0.5 mm increments, to the left, right, up or down.
 
 ### Blank Ballot Printing
 
@@ -179,12 +179,14 @@ When the Barcode Activation Mode is set to "Print Ballot", scanning a ballot sty
 
 VxMark prints ballots via an attached printer. The supported printer is the HP LaserJet Pro 4001dn. VxMark exports reports as PDFs so, in the event of a printer failure, reports will always be available.
 
-VxMark interfaces with the printer through CUPS, the open-source printing system developed by Apple and installed on our Debian system. When a printer is attached, it is registered with the CUPS server and made available to the application. VxMark is able to send print jobs to the printer via CUPS commands. The HP LaserJet Pro does not require any additional third-party or in-house driver because it supports the IPP (Internet Printing Protocol) which CUPS then utilizes.
+VxMark interfaces with the printer through CUPS, the open-source printing system developed by Apple and installed on the VxSuite Debian operating system. When a printer is attached, it is registered with the CUPS server and made available to the application. VxMark is able to send print jobs to the printer via CUPS commands. The HP LaserJet Pro does not require any additional third-party or in-house driver because it supports the Internet Printing Protocol (IPP), which CUPS then utilizes.
 
-When a print job is submitted via CUPS, CUPS sends it to the printer using the IPP protocol. VxMark waits until CUPS reports it has successfully sent the entire job to the printer, at which point it logs success and increments the ballots printed count. If the printer is disconnected before CUPS can send the entire job, VxMark will log the failure and display an error message on screen. In these cases it's possible that the printer still prints an incomplete document or error code. Whenever the printer is disconnected, any pending jobs are cancelled to avoid unexpected prints on reconnection.
+When a print job is submitted via CUPS, CUPS sends it to the printer using IPP. VxMark waits until CUPS reports it has successfully sent the entire job to the printer, at which point it logs success and increments the ballots printed count. If the printer is disconnected before CUPS can send the entire job, VxMark logs the failure and displays an error message on screen. In these cases, the printer may still print an incomplete document or error code. Whenever the printer is disconnected, any pending jobs are cancelled to avoid unexpected prints on reconnection.
 
-If the printer is disconnected or is in a state that would prevent it from printing (e.g. it's jammed, there's no paper, or the paper tray is open) while polls are open, VxMark blocks a voting session from starting or continuing. If one of these blocking issues is hit while a voter's ballot is printing, that issue may be easily recoverable without loss of the ballot (e.g. by just loading more paper) or may have created an unusable ballot (e.g. a jammed incomplete print) that must be spoiled. The error message directs the voter toward poll worker help to assess and resolve the issue.&#x20;
+If the printer is disconnected or is in a state that would prevent it from printing (e.g., it is jammed, there is no paper, or the paper tray is open) while polls are open, VxMark blocks a voting session from starting or continuing. If one of these blocking issues is hit while a voter's ballot is printing, that issue may be easily recoverable without loss of the ballot (e.g., by loading more paper) or may have created an unusable ballot (e.g., a jammed incomplete print) that must be spoiled. The error message directs the voter toward poll worker help to assess and resolve the issue.
 
 If the printer detects low toner, a warning is displayed but printing is not blocked.
 
-Note that VxMark can only connect with one printer at a time and will always connect with the first attached printer.
+{% hint style="info" %}
+VxMark can only connect with one printer at a time and always connects with the first attached printer.
+{% endhint %}

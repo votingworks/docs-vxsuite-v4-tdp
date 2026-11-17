@@ -2,16 +2,16 @@
 
 <figure><img src=".gitbook/assets/image (115).png" alt=""><figcaption><p>Top-level system diagram</p></figcaption></figure>
 
-The VotingWorks voting system (a.k.a. **VxSuite**) consists of six primary components:
+The VotingWorks voting system (also known as **VxSuite**) consists of six primary components:
 
-* **VxAdmin**: election setup and election results manager
-* **VxMark**: tabletop ballot-marking device (BMD)
-* **VxMarkScan**: free-standing ballot-marking device (BMD)
-* **VxScan**: precinct scanner
-* **VxCentralScan**: batch scanner
-* **VxPrint**: ballot-on-demand printer
+* **VxAdmin:** election setup and election results manager
+* **VxMark:** tabletop ballot-marking device (BMD)
+* **VxMarkScan:** free-standing ballot-marking device (BMD)
+* **VxScan:** precinct scanner
+* **VxCentralScan:** batch scanner
+* **VxPrint:** ballot-on-demand printer
 
-Voters mark paper [bubble ballots](system-overview/hand-marked-ballots.md) (pre-printed or printed on VxPrint) by hand or use ballot marking devices (VxMark & VxMarkScan) to mark and print ballots. Ballots are read and counted by tabulating devices (VxScan & VxCentralScan), which create [cast vote records](system-overview/cast-vote-records.md) for adjudication and aggregation on VxAdmin. VotingWorks considers read and counted ballots as the same.
+Voters mark paper [bubble ballots](system-overview/hand-marked-ballots.md) (pre-printed or printed on VxPrint) by hand or use ballot-marking devices (VxMark & VxMarkScan) to mark and print ballots. Ballots are read and counted by tabulating devices (VxScan & VxCentralScan), which create [cast vote records](system-overview/cast-vote-records.md) for adjudication and aggregation on VxAdmin. VotingWorks considers read and counted ballots as the same.
 
 An election begins with generating an [election package](system-overview/election-package/) and [bubble ballots](system-overview/hand-marked-ballots.md) using an external system.
 
@@ -44,7 +44,7 @@ The following output modes are supported:
 
 The voter can also adjust the language based on translations included in the election package.
 
-After the voter finishes their vote selections, VxMark prints a machine marked ballot via the connected COTS printer. Depending on the jurisdiction's system settings, the printed ballot may be a [bubble ballot](system-overview/hand-marked-ballots.md) or a [summary ballot](system-overview/machine-marked-ballots.md). After reviewing the ballot and confirming their selections, the voter takes their ballot and casts it on VxScan, the precinct tabulator, or inserts their ballot into a ballot box.
+After the voter finishes their vote selections, VxMark prints a ballot via the connected commercial off-the-shelf (COTS) printer. Depending on the jurisdiction's system settings, the printed ballot may be a [bubble ballot](system-overview/hand-marked-ballots.md) or a [summary ballot](system-overview/machine-marked-ballots.md). After reviewing the ballot and confirming their selections, the voter takes their ballot and casts it on VxScan, the precinct tabulator, or inserts their ballot into a ballot box.
 
 * [vxmark-function.md](system-overview/vxmark-function.md "mention")
 * [vxmark-hardware.md](system-overview/vxmark-hardware.md "mention")
@@ -73,11 +73,11 @@ After the voter finishes their vote selections, VxMarkScan prints a [summary bal
 
 ## VxScan
 
-VxScan is the system's precinct scanner. At the beginning of an election, it is configured with an [election package](system-overview/election-package/) from VxAdmin. The election package specifies the ballot layouts. The polls are opened by a poll worker after which casting ballots is allowed. Opening polls prints [a tally report](system-overview/vxscan-polls-reports.md) which is empty because no ballots have been scanned, a.k.a. the zero report.
+VxScan is the system's precinct scanner. At the beginning of an election, it is configured with an [election package](system-overview/election-package/) from VxAdmin. The election package specifies the ballot layouts. The polls are opened by a poll worker after which casting ballots is allowed. Opening polls prints [a tally report](system-overview/vxscan-polls-reports.md) which is empty because no ballots have been scanned, also known as the zero report.
 
-Voters cast ballots by inserting their ballots into the scanner in any orientation. After interpreting the scanned ballot, the scanner will drop the ballot into the ballot box and inform the voter that their ballot was successfully cast. During voting, VxScan continuously exports [cast vote records](system-overview/cast-vote-records.md) to an attached USB drive.
+Voters cast ballots by inserting their ballots into the scanner in any orientation. After interpreting the scanned ballot, the scanner drops the ballot into the ballot box and informs the voter that their ballot was successfully cast. During voting, VxScan continuously exports [cast vote records](system-overview/cast-vote-records.md) (CVRs) to an attached USB drive.
 
-If the election is configured to support second-chance voting and the ballot triggers a configured adjudication reason (e.g. it has an overvote), the scanner will hold the ballot while the voter is notified of the issues on their ballot. The voter then chooses whether to cast their ballot or return their ballot in order to update or spoil it.
+If the election is configured to support second-chance voting and the ballot triggers a configured adjudication reason (e.g., it has an overvote), the scanner holds the ballot while the voter is notified of the issues on their ballot. The voter then chooses whether to cast their ballot or return their ballot in order to update or spoil it.
 
 When polls are closed, the CVR export is completed and a [polls closed report](system-overview/vxscan-polls-reports.md) prints. The polls closed report includes the vote tallies of all ballots cast at the scanner while polls were open. Unlike the vote tallies eventually exported from VxAdmin, the vote tallies at VxScan do not contain any post-voting adjudication information such as write-in adjudication. The CVR export on the USB drive is then taken to VxAdmin for adjudication, aggregation, and reporting.
 
@@ -88,7 +88,7 @@ When polls are closed, the CVR export is completed and a [polls closed report](s
 
 VxCentralScan is the system's batch scanner, often used to scan absentee or provisional ballots. At the beginning of an election, it is configured with an [election package](system-overview/election-package/) from VxAdmin. The election package specifies the ballot layouts.
 
-Ballots are inserted in the batch scanner's hopper and a batch scan is triggered from VxCentralScan. The ballots are scanned and interpreted in succession until the hopper is empty. If a ballot triggers a configured adjudication reason (e.g. it has an overvote), scanning will pause and the ballot will be displayed on screen, at which point the user can choose to tabulate the ballot anyway or remove it without tabulating.
+Ballots are inserted in the batch scanner's hopper and a batch scan is triggered from VxCentralScan. The ballots are scanned and interpreted in succession until the hopper is empty. If a ballot triggers a configured adjudication reason (e.g., it has an overvote), scanning pauses and the ballot is displayed on screen, at which point the user can choose to tabulate the ballot anyway or remove it without tabulating.
 
 After scanning is complete, the user can export the [cast vote records](system-overview/cast-vote-records.md) to a USB drive and take the USB drive to VxAdmin for adjudication, aggregation, and reporting.
 
@@ -105,7 +105,7 @@ VxPrint is the ballot-on-demand component for VxSuite. VxPrint is used by poll w
 
 VxPrint tracks the quantities printed for each ballot style and allows the user to view and export a "Ballots Printed Report" at any time.
 
-VxPrint consists of two main pieces of hardware - a commercial off-the-shelf laptop and laser printer. The laser printer is capable of printing any ballot from 11" to 22" long, which is the maximum length supported by the system.
+VxPrint consists of two main pieces of hardware - a COTS laptop and laser printer. The laser printer is capable of printing any ballot from 11 in. to 22 in. long, which is the maximum length supported by the system.
 
 * [vxprint-function.md](system-overview/vxprint-function.md "mention")
 * [vxadmin-and-vxcentralscan-hardware.md](system-overview/vxadmin-and-vxcentralscan-hardware.md "mention")

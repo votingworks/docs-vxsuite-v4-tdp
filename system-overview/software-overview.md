@@ -2,13 +2,13 @@
 
 VotingWorks software is open-source, which means that the code is free and publicly available. All code written by VotingWorks and almost all dependencies are open-source, with the notable exception of third-party firmware for various hardware components.
 
-All system components - VxAdmin, VxCentralScan, VxMark, VxMarkScan, VxScan, VxPrint - run different application code but have fundamentally the same software architecture. The rest of this document applies to all system components unless otherwise noted.
+All system components (VxAdmin, VxCentralScan, VxMark, VxMarkScan, VxScan, and VxPrint) run different application code but have fundamentally the same software architecture. The rest of this document applies to all system components unless otherwise noted.
 
 ## Operating System
 
 The system uses [Debian](https://www.debian.org/) 12 as the base operating system. Debian is a free and open source Linux distribution developed by the Debian Project. The operating system is first installed with the minimally required dependencies and then any additional packages required by the system are installed during build time.
 
-Due to the extensive security measures, users are limited to using the application software and will not have access to Debian's typical set of features.
+Because of the system's security measures, users are limited to using the application software and do not have access to Debian's typical set of features.
 
 ## Application Architecture
 
@@ -18,15 +18,15 @@ All machines are completely disconnected from any external network, but the fram
 
 ### kiosk-browser
 
-kiosk-browser is a web browser restricted to rendering a single full-screen application. The code can be found in the [kiosk-browser repository](https://github.com/votingworks/kiosk-browser/tree/v4.1.0). It is a thin [Electron](https://www.electronjs.org/) application which uses [Chromium](https://www.chromium.org/Home/) as its rendering engine. The browser communicates with the frontend server which serves HTML, JavaScript, and assets. The browser also communicates with the backend server which serves application data. Electron enables the browser to access certain operating system APIs - such as open file dialogs - that a lone renderer would not have access to. The browser is launched at startup, with limited privileges, and cannot be exited. Everything a standard (non-vendor) user sees or does is mediated through kiosk-browser.
+kiosk-browser is a web browser restricted to rendering a single full-screen application. The code can be found in the [kiosk-browser repository](https://github.com/votingworks/kiosk-browser/tree/v4.1.1). It is a thin [Electron](https://www.electronjs.org/) application which uses [Chromium](https://www.chromium.org/Home/) as its rendering engine. The browser communicates with the frontend server which serves HTML, JavaScript, and assets. The browser also communicates with the backend server which serves application data. Electron enables the browser to access certain operating system APIs, such as open file dialogs, that a lone renderer would not have access to. The browser is launched at startup, with limited privileges, and cannot be exited. Everything a standard (non-vendor) user sees or does is mediated through kiosk-browser.
 
 ### Application Frontend Server
 
-The frontend is a [React](https://react.dev/) application served from a [Node.js](https://nodejs.org/en) server. All code for the application frontends are in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.1.0) under `apps/[app-name]/frontend`.
+The frontend is a [React](https://react.dev/) application served from a [Node.js](https://nodejs.org/en) server. All code for the application frontends are in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.1.1) under `apps/[app-name]/frontend`.
 
 ### Application Backend Server
 
-The application backend is a separate [Node.js](https://nodejs.org/en) server which acts as the core of the entire application in that it manages all persistent data and communication with peripherals. All code for the application backends are in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.1.0) under `apps/[app-name]/backend`. Most code is written in TypeScript but some performance sensitive code, such as interpretation and background daemons, are written in [Rust](https://www.rust-lang.org/) and executed as binaries at runtime.
+The application backend is a separate [Node.js](https://nodejs.org/en) server which acts as the core of the entire application in that it manages all persistent data and communication with peripherals. All code for the application backends are in the [vxsuite repository](https://github.com/votingworks/vxsuite/tree/v4.1.1) under `apps/[app-name]/backend`. Most code is written in TypeScript but some performance sensitive code, such as interpretation and background daemons, are written in [Rust](https://www.rust-lang.org/) and executed as binaries at runtime.
 
 #### Application Data Management
 
@@ -36,7 +36,7 @@ All application data that persists across restarts is stored or tracked in a [SQ
 
 The hardware peripherals are polled and managed through the application backends. For example when detecting the status of the card reader, the browser polls the backend server which in turn polls the hardware itself and returns a status to the browser. In order to manage changing states of more complex hardware such as scanners, the backends use state machines.
 
-The exact layer between the application backend and the hardware varies by hardware. Some run in-process whereas others run as a separate process with which the backend communicates. For the accessibility peripherals - the accessible controller and the sip-and-puff interface - the backend starts and manages a daemon which surfaces user input directly to the browser as keyboard commands.
+The exact layer between the application backend and the hardware varies by hardware. Some run in-process whereas others run as a separate process with which the backend communicates. For the accessibility peripherals (the accessible controller and the sip-and-puff interface), the backend starts and manages a daemon which surfaces user input directly to the browser as keyboard commands.
 
 In many cases VotingWorks has written custom drivers that interface directly with the USB device. In other cases, VotingWorks leverages open-source middleware layers installed as Debian packages:
 
@@ -48,7 +48,7 @@ Firmware for embedded devices such as screens and speakers is bundled with the o
 
 The voting system achieves software independence through the use of independent voter-verifiable paper records. All ballots are voter-verified paper ballots, whether they are hand-marked or printed by a ballot-marking device.
 
-On hand-marked ballots, voters fill in bubbles next to their selections. Because voter indications are made and reviewed directly by the voter, they are inherently voter-verified. The software interprets the image of the ballot for tabulation but, of course, the paper ballot persists after scanning.
+On bubble ballots, voters fill in bubbles next to their selections. Because voter indications are made and reviewed directly by the voter, they are inherently voter-verified. The software interprets the image of the ballot for tabulation, but the paper ballot persists after scanning.
 
 On VxMark and VxMarkScan, voters make selections via the touchscreen or an accessible input device. After the voter has made all their selections, the ballot is printed and the voter can verify their physical paper ballot.
 
@@ -60,10 +60,10 @@ Because all voter selections are recorded on paper, voter-verified, and unmodifi
 
 There are four code repositories relevant to the voting system:
 
-* [vxsuite](https://github.com/votingworks/vxsuite/tree/v4.1.0) — Core application code
-* [kiosk-browser](https://github.com/votingworks/kiosk-browser/tree/v4.1.0) — Generic Electron-based kiosk-mode browser
-* [vxsuite-complete-system](https://github.com/votingworks/vxsuite-complete-system/tree/v4.1.0) — Links compatible versions of vxsuite and kiosk-browser, and includes the scripts necessary to create a production machine
-* [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.1.0) — Our framework for building VxSuite and managing its dependencies, across versions and environments
+* **[vxsuite](https://github.com/votingworks/vxsuite/tree/v4.1.1):** Core application code
+* **[kiosk-browser](https://github.com/votingworks/kiosk-browser/tree/v4.1.1):** Generic Electron-based kiosk-mode browser
+* **[vxsuite-complete-system](https://github.com/votingworks/vxsuite-complete-system/tree/v4.1.1):** Links compatible versions of vxsuite and kiosk-browser, and includes the scripts necessary to create a production machine
+* **[vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.1.1):** The VotingWorks framework for building VxSuite and managing its dependencies, across versions and environments
 
 ## Key Dependency Chart
 
@@ -71,32 +71,32 @@ There are four code repositories relevant to the voting system:
 
 ## Traceability of Procured Software
 
-We take care to ensure that we're pulling authentic/correct versions of dependencies, by verifying against known hashes, checksums, or digital signatures. The details of this are covered in [hash-checksum-verification-of-dependencies.md](../software-installation/trusted-build/hash-checksum-verification-of-dependencies.md "mention").
+VotingWorks verifies that dependencies are authentic and the correct versions by checking them against known hashes, checksums, or digital signatures. The details are covered in [hash-checksum-verification-of-dependencies.md](../software-installation/trusted-build/hash-checksum-verification-of-dependencies.md "mention").
 
 ## Software Best Practices
 
-The VotingWorks codebase is written in TypeScript and Rust, two widely used languages with well established coding conventions. We make use of automatic code linters to enforce these conventions. Details about our best practices and tooling used to enforce those best practices can be found here:
+The VotingWorks codebase is written in TypeScript and Rust, two widely used languages with well established coding conventions. VotingWorks uses automatic code linters to enforce these conventions. Details about VotingWorks' best practices and the tooling used to enforce them are in the following documents:
 
 * [TypeScript best practices and tooling](https://github.com/votingworks/docs-vxsuite-v4/blob/main/software-docs/best-practices/typescript.md)
 * [Rust best practices and tooling](https://github.com/votingworks/docs-vxsuite-v4/blob/main/software-docs/best-practices/rust.md)
 
-We also require peer code review of every change ([examples of that process here](https://github.com/votingworks/vxsuite/pulls?q=is%3Apr+is%3Aclosed)), and for larger changes and features, we hold architecture discussions as a team to land on the best possible solutions given the constraints.
+VotingWorks also requires peer code review of every change ([examples of reviewed pull requests in the vxsuite repository](https://github.com/votingworks/vxsuite/pulls?q=is%3Apr+is%3Aclosed)), and for larger changes and features, the team holds architecture discussions to arrive at the best solution given the constraints.
 
-Our practices around testing are covered under [#quality-assurance-protocols-software](<../README (1).md#quality-assurance-protocols-software> "mention").
+VotingWorks' testing practices are covered under [#quality-assurance-protocols-software](<../README (1).md#quality-assurance-protocols-software> "mention").
 
 ### Failure Recovery
 
-The VotingWorks codebase uses database transactions to ensure that only complete and consistent (and not partial) updates are persisted. For data synced across a machine's internal drive and a connected USB drive, namely CVRs, we detect when data has fallen out of sync after a failure using the Merkle tree hash of the data ([hashing-of-continuously-exported-cast-vote-records.md](../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/hashing-of-continuously-exported-cast-vote-records.md "mention")) and re-sync data as needed.
+The VotingWorks codebase uses database transactions to ensure that only complete and consistent (and not partial) updates are persisted. For data synced across a machine's internal drive and a connected USB drive, namely cast vote records (CVRs), the system detects when data has fallen out of sync after a failure using the Merkle tree hash of the data ([hashing-of-continuously-exported-cast-vote-records.md](../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/hashing-of-continuously-exported-cast-vote-records.md "mention")) and re-sync data as needed.
 
-{% hint style="success" %}
-Through the above best practices, tooling used to enforce those best practices, and peer code review of every change, we guarantee that we meet the following requirements:
+{% hint style="info" %}
+Through the above best practices, tooling used to enforce those best practices, and peer code review of every change, VotingWorks meets the following VVSG 2.0 requirements:
 
-* 2.3: Voting system logic is clear, meaningful, and well-structured
-* 2.4: Voting system structure is modular, scalable, and robust
-* 2.5: The voting system supports system processes and data with integrity
-* 2.6: The voting system handles errors robustly and gracefully recovers from failure
+* Voting system logic is clear, meaningful, and well-structured (VVSG 2.0 2.3)
+* Voting system structure is modular, scalable, and robust (VVSG 2.0 2.4)
+* The voting system supports system processes and data with integrity (VVSG 2.0 2.5)
+* The voting system handles errors robustly and gracefully recovers from failure (VVSG 2.0 2.6)
 
-Much of 2.5 is additionally covered under [system-integrity.md](../system-security-auditing-and-logging/system-security-architecture/system-integrity.md "mention").
+Much of VVSG 2.0 2.5 is additionally covered under [system-integrity.md](../system-security-auditing-and-logging/system-security-architecture/system-integrity.md "mention").
 {% endhint %}
 
 ## Common Software Functions
@@ -105,15 +105,15 @@ Subsequent articles will describe the particular software design of each applica
 
 ### USB Management
 
-All VxSuite components require a USB drive at some point in their operation for configuration or for the import or export of results. The application is polling for attached USB drives multiple times per second. If a USB drive with a FAT32 partition is detected, the application will attempt to mount the USB drive to a known mount point. Once mounted, the USB drive will be available for use by the application.
+All VxSuite components require a USB drive at some point in their operation for configuration or for the import or export of results. The application polls for attached USB drives multiple times per second. If a USB drive with a FAT32 or exFAT partition is detected, the application attempts to mount it at a known mount point. Once mounted, the USB drive is available to the application.
 
-The USB drive should be ejected before removing it. Most critical operations also make sure to sync the data to the USB drive before allowing the user to continue, however, so removing the USB drive without ejecting will normally not result in problems.
+The USB drive should be ejected before removing it. Most critical operations also sync the data to the USB drive before allowing the user to continue, however, so removing the USB drive without ejecting normally does not cause problems.
 
 Only one USB drive can be used at a time and additional USB drives inserted after the first USB drive will be ignored.
 
 ### Document Creation
 
-All VxSuite components must generate documents for printing or export. VxAdmin and VxScan must generate tally and ballot count reports. All components must generate diagnostic readiness reports.
+All VxSuite components generate documents for printing or export. VxAdmin and VxScan generate tally and ballot count reports. All components generate diagnostic readiness reports.
 
 In order to do so, the applications have a headless browser (specifically Chromium) launched by the backend. Exported documents are all defined in terms of HTML (using React), so the headless browser is able to load the documents and render them as PDFs. The PDFs can then be sent to printer or saved to a USB drive.
 
@@ -124,7 +124,7 @@ The date and time is set on the machine during initial configuration before the 
 All machines allow system administrators and election managers to edit the date, time, and time zone in order to address clock drift or, in rare cases, to set up machines for use in a part of the jurisdiction with different time settings.
 
 {% hint style="info" %}
-**User Manual Reference**: [Setting Date & Time](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/miscellaneous/setting-date-and-time "mention")
+**User Manual Reference:** [Setting Date & Time](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/miscellaneous/setting-date-and-time "mention")
 {% endhint %}
 
 ### Other Shared Software Patterns

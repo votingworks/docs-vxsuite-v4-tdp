@@ -5,8 +5,8 @@
 ### Supported Contest Types
 
 * N-of-M contests, which are typically candidate contests
-* Yes-No contests, also known as ballot propositions or ballot measures
-* Straight party contests, in which the voter chooses a party. Candidates of the selected party receive "indirect votes" even if no "direct vote" (i.e. mark) was made for those candidates.
+* Ballot measure contests, also known as ballot propositions or yes-no contests
+* Straight party contests, in which the voter chooses a party. Candidates of the selected party receive "indirect votes" even if no "direct vote" (i.e., mark) was made for those candidates.
 
 ### Supported Election Types
 

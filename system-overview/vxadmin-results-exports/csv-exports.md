@@ -21,11 +21,11 @@ layout:
 
 # CSV Exports
 
-Both tally reports and ballot count reports can be exported in comma-separated values (CSV) format.&#x20;
+Both tally reports and ballot count reports can be exported in comma-separated values (CSV) format.
 
 ## Tally Report CSV Structure
 
-For each contest, there is a row for each contest option, a row for undervotes, a row for overvotes, and a row for the total number of ballots cast. For example, here is an excerpt of a tally report including the results for one contest:
+For each contest, there is a row for each contest option, a row for undervotes, a row for overvotes, and a row for the total number of ballots cast. For example, the following is an excerpt of a tally report including the results for one contest:
 
 ```csv
 Precinct,Precinct ID,Contest,Contest ID,Selection,Selection ID,Total Votes
@@ -39,11 +39,11 @@ West Lincoln,20,Mayor,mayor,Ballots Cast,ballots-cast,0
 
 The "Precinct" and "Precinct ID" columns are [metadata fields](csv-exports.md#shared-metadata-structure) that are included because this example export groups results by precinct. The other columns are standard fields:
 
-<table><thead><tr><th width="162">Header</th><th>Values</th></tr></thead><tbody><tr><td>Contest</td><td>The title of the contest</td></tr><tr><td>Contest ID</td><td>The internal identifier of the contest in the election definition</td></tr><tr><td>Selection</td><td>The candidate name for candidate contests, the option label for yes-no contests, or a metadata label like "Overvotes", "Undervotes", or "Ballots Cast"</td></tr><tr><td>Selection ID</td><td>The internal identifier of a contest option or a metadata value i.e. "overvotes", "undervotes", or "ballots-cast"</td></tr><tr><td>Total Votes</td><td>The vote count for the selection. For the "Ballots Cast" row, it is the number of ballots instead.</td></tr></tbody></table>
+<table><thead><tr><th width="162">Header</th><th>Values</th></tr></thead><tbody><tr><td>Contest</td><td>The title of the contest</td></tr><tr><td>Contest ID</td><td>The internal identifier of the contest in the election definition</td></tr><tr><td>Selection</td><td>The candidate name for candidate contests, the option label for ballot measure contests, or a metadata label like "Overvotes", "Undervotes", or "Ballots Cast"</td></tr><tr><td>Selection ID</td><td>The internal identifier of a contest option or a metadata value i.e., "overvotes", "undervotes", or "ballots-cast"</td></tr><tr><td>Total Votes</td><td>The vote count for the selection. For the "Ballots Cast" row, it is the number of ballots instead.</td></tr></tbody></table>
 
-If manual results were entered, two additional columns will be added - "Scanned Votes" and "Manual Votes." These columns denote which votes for each selection came from the scanners versus manual entry.
+If manual results were entered, two additional columns are added - "Scanned Votes" and "Manual Votes." These columns denote which votes for each selection came from the scanners versus manual entry.
 
-The results of write-in adjudication are always included in the CSV exports. All write-in candidates will appear with their adjudicated name and a UUID assigned by VxAdmin. Unadjudicated write-in candidates will appear as "Unadjudicated Write-In" with the ID "write-in". Unlike in the printed reports, write-in candidates are never consolidated.&#x20;
+The results of write-in adjudication are always included in the CSV exports. All write-in candidates appear with their adjudicated name and a universally unique identifier (UUID) assigned by VxAdmin. Unadjudicated write-in candidates appear as "Unadjudicated Write-In" with the ID "write-in". Unlike in the printed reports, write-in candidates are never consolidated.
 
 ## Ballot Count Report CSV Structure
 
@@ -69,14 +69,14 @@ The "Precinct", "Precinct ID" and "Voting Method" columns are [metadata fields](
 
 ## Shared Metadata Structure
 
-Any filters or groupings which apply to each row will be indicated in the row itself by metadata columns. For example, in the example export above, the "Precinct" column lists which precinct group each row represents.
+Any filters or groupings which apply to each row are indicated in the row itself by metadata columns. For example, in the example export above, the "Precinct" column lists which precinct group each row represents.
 
-If a row is filtered by a single attribute value (e.g. represents one precinct rather than multiple precincts) then the following basic metadata fields are used:
+If a row is filtered by a single attribute value (e.g., represents one precinct rather than multiple precincts) then the following basic metadata fields are used:
 
-<table><thead><tr><th width="173">Header</th><th>Value</th></tr></thead><tbody><tr><td>Precinct</td><td>The name of the precinct</td></tr><tr><td>Precinct ID</td><td>The identifier of the precinct from the election definition</td></tr><tr><td>Party</td><td>The short name of the party e.g. "Republican". Included by default if the ballot style is included, in a primary.</td></tr><tr><td>Party ID</td><td>The identifier of the party from the election definition</td></tr><tr><td>Ballot Style ID</td><td>The identifier of the ballot style</td></tr><tr><td>Voting Method</td><td>"Absentee", "Precinct", or "Provisional"</td></tr><tr><td>Scanner ID</td><td>The serial number of the scanner. Included by default if the batch is included.</td></tr><tr><td>Batch</td><td>The label of the scanned batch</td></tr><tr><td>Batch ID</td><td>The scanner-assigned UUID of the scanned batch</td></tr><tr><td>Reporting Status</td><td>"Counted" or "Not Counted". Only available in ballot count reports if <code>countCentralScanBallotsOnlyAfterAdjudication</code> is enabled</td></tr></tbody></table>
+<table><thead><tr><th width="173">Header</th><th>Value</th></tr></thead><tbody><tr><td>Precinct</td><td>The name of the precinct</td></tr><tr><td>Precinct ID</td><td>The identifier of the precinct from the election definition</td></tr><tr><td>Party</td><td>The short name of the party e.g., "Republican". Included by default if the ballot style is included, in a primary.</td></tr><tr><td>Party ID</td><td>The identifier of the party from the election definition</td></tr><tr><td>Ballot Style ID</td><td>The identifier of the ballot style</td></tr><tr><td>Voting Method</td><td>"Absentee", "Precinct", or "Provisional"</td></tr><tr><td>Scanner ID</td><td>The serial number of the scanner. Included by default if the batch is included.</td></tr><tr><td>Batch</td><td>The label of the scanned batch</td></tr><tr><td>Batch ID</td><td>The scanner-assigned UUID of the scanned batch</td></tr><tr><td>Reporting Status</td><td>"Counted" or "Not Counted". Only available in ballot count reports if <code>countCentralScanBallotsOnlyAfterAdjudication</code> is enabled</td></tr></tbody></table>
 
 If a row is filtered by multiple attribute values, the following columns may be used:
 
 <table><thead><tr><th width="236">Header</th><th>Value</th></tr></thead><tbody><tr><td>Included Precincts</td><td>The precinct identifiers separated by commas</td></tr><tr><td>Included Parties</td><td>The party identifiers separated by commas</td></tr><tr><td>Included Ballot Styles</td><td>The ballot style identifiers separated by commas</td></tr><tr><td>Included Voting Methods</td><td>The voting method labels ("Precinct", "Absentee", or "Provisional") separated by commas</td></tr><tr><td>Included Scanners</td><td>The scanner serial numbers separated by commas</td></tr><tr><td>Included Batches</td><td>The batch identifiers separated by commas</td></tr></tbody></table>
 
-In cases as above, where a row value includes comma-separated values, those values will be wrapped in quotation marks per typical CSV formatting in order to allow consumers to properly differentiate columns.
+In cases as above, where a row value includes comma-separated values, those values are wrapped in quotation marks per typical CSV formatting in order to allow consumers to properly differentiate columns.
