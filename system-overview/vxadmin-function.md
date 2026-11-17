@@ -46,9 +46,9 @@ CVRs must be loaded from a USB drive. CVRs are exported from VxScan or VxCentral
 
 The CVRs from the scanners are saved to a specific directory structure on the USB drive, but exports can be loaded from anywhere on a USB drive's filesystem. When selecting an export manually, the export's `metadata.json` file must be selected by the user.
 
-When loading a full CVR export, each CVR is loaded into VxAdmin's backend store as one `cvrs` record. The CVR record includes a data blob representing the votes as interpreted by the scanner, a data blob representing the mark scores for all bubbles on the ballot (if a bubble ballot), and a series of metadata fields: ballot style, voting method (absentee vs. precinct), batch, scanner, precinct, sheet number within a multi-sheet ballot, and flags for adjudication reasons such as overvotes, undervotes, write-ins, or fully blank ballots. The metadata fields are used later on for filtering or aggregating tallies or ballot counts into groups.
+When a full CVR export is loaded, VxAdmin stores each CVR with the votes as interpreted by the scanner, the mark scores for all bubbles on the ballot (if a bubble ballot), and a series of metadata fields: ballot style, voting method (absentee vs. precinct), batch, scanner, precinct, sheet number within a multi-sheet ballot, and flags for adjudication reasons such as overvotes, undervotes, write-ins, or fully blank ballots. The metadata fields are used later on for filtering or aggregating tallies or ballot counts into groups.
 
-Each write-in on a CVR will map to a `write-ins` record, whether it is an unmarked write-in or a proper write-in. The ballot images are also each saved as database records. The write-in record links the write-in to its respective CVR, to the ballot images, and eventually to its adjudication result. The write-in adjudication interface essentially iterates through all `write-ins` records on a per contest basis.
+VxAdmin also stores each write-in on a CVR, whether it is an unmarked write-in or a marked write-in, along with the ballot images. Each stored write-in is linked to its CVR, to the ballot images, and eventually to its adjudication result. Write-in adjudication works through the stored write-ins contest by contest.
 
 If an error is found when loading any single CVR in a CVR export, the entire export is rejected and a message is surfaced to the user. CVRs can be rejected for a variety of reasons: authentication failed; a file is incorrectly formatted; a CVR is not for a currently valid election, precinct, ballot style, or contest; a CVR with an identical ID has been loaded with different data. In everyday use of the system, these errors are rare, because VxAdmin does not allow loading CVR files from elections with mismatched metadata.
 
@@ -72,7 +72,7 @@ Once VxAdmin is in test ballot mode, only test CVRs can be subsequently loaded. 
 
 ### Removing CVRs
 
-CVR imports can be removed by the user before results are marked as official. The user can delete individual CVR imports or can delete all CVRs imports at once. The CVR data in the database along with all its dependent data - write-ins, ballot images, and adjudications - are permanently and irrecoverably deleted from the data store. If results have been marked as official, the only way to remove CVR imports is by unconfiguring VxAdmin.
+CVR imports can be removed by the user before results are marked as official. The user can delete individual CVR imports or can delete all CVRs imports at once. The CVR data and all of its dependent data (write-ins, ballot images, and adjudications) are permanently and irrecoverably deleted from VxAdmin. If results have been marked as official, the only way to remove CVR imports is by unconfiguring VxAdmin.
 
 ## Adjudication
 
@@ -155,7 +155,7 @@ CVR aggregation is the most computationally expensive step in the vote tallying 
 
 **Write-In Adjudication Aggregation**
 
-The write-in adjudication records are summarized from the data store and their adjudication statuses are added into an ongoing tally of write-ins for official candidates, write-ins for unofficial candidates, invalid write-ins, and unadjudicated write-ins. They are filtered and grouped according to the same parameters as the CVRs.
+The write-in adjudications are summarized and their adjudication statuses are added into an ongoing tally of write-ins for official candidates, write-ins for unofficial candidates, invalid write-ins, and unadjudicated write-ins. They are filtered and grouped according to the same parameters as the CVRs.
 
 {% hint style="info" %}
 The write-in adjudication report is simply the results of the write-in adjudication aggregation step, without filter or group, formatted into a PDF.
@@ -185,7 +185,7 @@ If `electionDayPollsCloseTime` and `disallowVxAdminTabulationBeforeElectionDayPo
 
 ### Ballot Count Tallying
 
-Ballot counts are tallied as part of the vote tallying flow described above, but there is a separate tallying path that _only_ calculates the ballot counts. It is used when generating ballot count reports and exports from VxAdmin. It follows the same steps as vote tallying, but is more efficient because it can use the underlying SQLite database to generate tallies rather than iterating through each CVR one-by-one.
+Ballot counts are tallied as part of the vote tallying flow described above, but there is a separate tallying path that _only_ calculates the ballot counts. It is used when generating ballot count reports and exports from VxAdmin. It follows the same steps as vote tallying, but is more efficient because it can compute the counts directly in the database rather than iterating through each CVR one by one.
 
 <figure><img src="../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 

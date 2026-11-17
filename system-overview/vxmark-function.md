@@ -161,7 +161,7 @@ If a language other than English is set when printing a summary ballot, the ball
 
 VxMark can be configured to print one of two types of ballots: summary or bubble ballots. The print mode setting can be changed in the [election-package](election-package/ "mention").
 
-Summary ballots list all the voter's selections and contain a QR code with the selections encoded. The format is detailed in [machine-marked-ballots.md](machine-marked-ballots.md "mention") in the VxSuite technical data package. Summary ballots are only printed on-demand. This is the default print mode for VxMark.
+Summary ballots list all the voter's selections and contain a QR code with the selections encoded. The format is detailed in [machine-marked-ballots.md](machine-marked-ballots.md "mention") in the VxSuite technical data package. Summary ballots are only printed on-demand.
 
 VxMark can alternatively be configured to print [hand-marked-ballots.md](hand-marked-ballots.md "mention") in two modes: print and mark entire ballot or mark selections on pre-printed ballots. The print and mark entire ballot mode uses a blank sheet of paper to print the entire ballot and mark the bubbles with the voters' selections. The mark selections on pre-printed ballots mode marks bubbles with voters' selections onto pre-printed ballots loaded in the printer.
 

@@ -32,7 +32,7 @@ VxCentralScan maintains a lifetime scan count that gives the number of ballot sh
 
 ### Scanner Management
 
-VxCentralScan is compatible with the Ricoh fi-8170, fi-7600, and fi-8950 production scanners. Once a scanner is detected, the user may begin scanning batches. The scanners are controlled via commands provided by Scanner Access Now Easy (SANE), installed as the Debian `sane` package, which creates a uniform API for most commercial scanners. As a result, no scanner-specific drivers are required.
+VxCentralScan is compatible with the Ricoh fi-8170, fi-7600, and fi-8950 production scanners. Once a scanner is detected, the user may begin scanning batches. The scanners are controlled via commands provided by Scanner Access Now Easy (SANE), installed as a Debian package, which creates a uniform API for most commercial scanners. As a result, no scanner-specific drivers are required.
 
 ### Batch Management
 
@@ -46,7 +46,7 @@ The start time, end time, size, and index of all batches is tracked and displaye
 
 #### Batch UUIDs
 
-The version 4 universally unique identifier (UUID) for each batch is generated when the batch is first created. It is generated with the node package `uuid` which uses the system's underlying OpenSSL implementation, which is compliant with the Federal Information Processing Standards (FIPS), to generate random bytes.
+The version 4 universally unique identifier (UUID) for each batch is generated when the batch is first created. It is generated from random bytes produced by the system's underlying OpenSSL implementation, which is compliant with the Federal Information Processing Standards (FIPS).
 
 ### Imprinting
 

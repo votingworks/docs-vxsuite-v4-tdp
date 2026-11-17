@@ -47,11 +47,11 @@ VxSuite smart cards are JCOP 4 Java Cards, version 3.0.5. These Java Cards can g
 
 ### Smart Card PINs
 
-Vendor cards, system administrator cards, and election manager cards always have PINs. Poll worker cards do not have PINs by default but can if the system administrator enables them.
+Vendor cards, system administrator cards, and election manager cards always have PINs. Poll worker cards have PINs only if the system administrator enables poll worker card PINs.
 
 PINs are auto-generated random 6-digit numbers, generated to exclude weak PINs (e.g., not 11111, 123456, 121212).
 
-After 5 incorrect PIN attempts, users have to wait 15 seconds before they can try again. For every incorrect PIN attempt after that, the wait time doubles (15 seconds → 30 seconds → 60 seconds and so on). After 15 incorrect PIN attempts, the card is completely locked and has to be reprogrammed. System administrators can adjust the number of incorrect PIN attempts allowed without lockout as well as the starting lockout duration. The number of incorrect PIN attempts is stored on the card in a tamper-resistant location (as opposed to on the machine), so taking a card to another machine does not provide extra attempts. Removing and reinserting a card restarts the lockout timer.
+After a set number of incorrect PIN attempts, users have to wait for a starting lockout duration before they can try again. For every incorrect PIN attempt after that, the wait time doubles. After 15 incorrect PIN attempts, the card is completely locked and has to be reprogrammed. System administrators can adjust the number of incorrect PIN attempts allowed without lockout as well as the starting lockout duration. The number of incorrect PIN attempts is stored on the card in a tamper-resistant location (as opposed to on the machine), so taking a card to another machine does not provide extra attempts. Removing and reinserting a card restarts the lockout timer.
 
 ### Certificate Format
 

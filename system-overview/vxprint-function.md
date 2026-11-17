@@ -16,7 +16,7 @@ The election manager can choose to select a polling place for the device. The se
 
 ### Ballot Mode
 
-The election manager can toggle between official ballot mode and test ballot mode. In official ballot mode, the ballots printed at VxPrint are official ballots; in test ballot mode, they are test ballots. Switching between ballot modes clears the count of printed ballots. After configuration, VxPrint is in official ballot mode by default.
+The election manager can toggle between official ballot mode and test ballot mode. In official ballot mode, the ballots printed at VxPrint are official ballots; in test ballot mode, they are test ballots. Switching between ballot modes clears the count of printed ballots. After configuration, VxPrint is in official ballot mode.
 
 ### Unconfiguring
 

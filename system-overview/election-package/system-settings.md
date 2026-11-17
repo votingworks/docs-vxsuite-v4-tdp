@@ -30,14 +30,14 @@ The system settings file contains settings which are not specific to an election
 * `disallowCastingOvervotes` - When set to `true`, scanners always reject overvoted ballots. When set to `false`, VxScan allows a voter to choose whether to reject or cast an overvoted ballot, and VxCentralScan allows an election manager to choose whether to reject or tabulate an overvoted ballot.
 * `allowOfficialBallotsInTestMode` - When set to `true`, official ballots are not rejected in test ballot mode. The setting is for jurisdictions where testing must take place on official ballots.
 * `disableVerticalStreakDetection` - Disables the warning when streaks are detected when scanning ballots (which indicates that the scanner needs to be cleaned). Used as a failsafe in case of erroneous warnings.
-* `ballotImageBitDepth` - Bit depth of the ballot images saved by VxScan and VxCentralScan when scanning bubble ballots. Supported values are `1`, `2`, and `8`. `1` saves pure black and white images. `2` (the default) adds two gray levels so light marks such as pencil remain visible during adjudication. `8` preserves the full grayscale scan.
+* `ballotImageBitDepth` - Bit depth of the ballot images saved by VxScan and VxCentralScan when scanning bubble ballots. Supported values are `1`, `2`, and `8`. `1` saves pure black and white images. `2` adds two gray levels so light marks such as pencil remain visible during adjudication. `8` preserves the full grayscale scan.
 
 ## VxMark Settings
 
 * `bmdPrintMode` - Determines what type of ballots are printed at VxMark. Possible values:
   * `bubble_ballot` - Prints fully marked bubbled ballots onto blank paper.
   * `marks_on_preprinted_ballot` - Prints only marks onto pre-printed ballots.
-  * `summary` - Prints summary ballots. Default value.
+  * `summary` - Prints summary ballots.
 * `allowPrintingBlankBallotsFromVxMark` - When set to `true`, poll workers can print blank ballots from VxMark while polls are open. Blank ballots are printed from the pre-rendered ballots in the election package, so the election package must include the ballots file.
 * `bmdEnableQrBallotActivation` - When set to `true`, a poll worker can start a voting session on VxMark, or print a blank ballot, by scanning a barcode that encodes the voter's ballot style. See [#barcode-ballot-activation](../vxmark-function.md#barcode-ballot-activation "mention").
 
@@ -47,7 +47,7 @@ The system settings file contains settings which are not specific to an election
 * `castVoteRecordsIncludeRedundantMetadata` - When set to `true`, scanners include election and system metadata in each ballot's cast vote record (CVR) as specified in the CVR Common Data Format (CDF), rather than just including it once for the entire export. This extra information increases the size of the CVR export, degrading performance.
 * `precinctScanEnableBallotAuditIds` - Enables the VxScan feature to read ballot IDs from bubble ballot QR codes, encrypt them, and export them to cast vote records (to be used for post-election auditing).
 * `precinctScanEnableWriteInImageReport` - Enables printing write-in image reports at VxScan after polls are closed.
-* `precinctScanNumberOfReportCopies` - The number of polls reports that VxScan automatically prints on polls transitions. When not set, VxScan will default to one. Used to streamline the poll worker flow in jurisdictions where multiple copies are always required.
+* `precinctScanNumberOfReportCopies` - The number of polls reports that VxScan automatically prints on polls transitions. Used to streamline the poll worker flow in jurisdictions where multiple copies are always required.
 * `enableEarlyVoting` - Enables early voting features on VxScan and VxAdmin, e.g., setting a ballot casting mode of "Early Voting" on VxScan and tabulating early voting results separately on VxAdmin.
 * `shouldTransliterateCandidateNames` - For languages that are not written with a variant of the Latin alphabet, shows candidate names transliterated into that language's character set. The feature requires that transliterated candidate names are included in the `ballotStrings` in the election definition.
 * `centralScanEnablePollWorkerRole` - Enables the poll worker role in VxCentralScan. When enabled, poll workers can unlock VxCentralScan and operate the scanner. They cannot delete batches or export cast vote records.

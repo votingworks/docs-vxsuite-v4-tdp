@@ -143,7 +143,7 @@ For examples of all VxScan reports, see [vxscan-polls-reports.md](vxscan-polls-r
 
 For polls opened and polls closed reports, the vote interpretations of all ballots are tallied together. In the case of polls opened reports, the tallies are zero, forming a zero report, because the scanner is disabled until polls are opened and so no ballots can have been scanned. Pursuant to VVSG 2.0 1.1.3-B, however, if non-zero totals are detected on the machine when the poll worker attempts to open the polls, an error is presented to the poll worker and logged, and the poll worker cannot open the polls.
 
-Tallies for the polls closed report are created by iterating through the data store's table of cast vote records and forming totals of votes for contest options, undervotes, overvotes, and total ballots cast. The process is the same as on VxAdmin but with far fewer steps because there are no write-in adjudication results to consider and no manual tallies. All marked write-ins are grouped as a generic "Write-In" count in reports. All unmarked write-ins are considered as undervotes.
+Tallies for the polls closed report are created by iterating through the stored cast vote records and forming totals of votes for contest options, undervotes, overvotes, and total ballots cast. The process is the same as on VxAdmin but with far fewer steps because there are no write-in adjudication results to consider and no manual tallies. All marked write-ins are grouped as a generic "Write-In" count in reports. All unmarked write-ins are considered as undervotes.
 
 For voting paused and voting resumed reports, only a total ballot count is included as opposed to vote tallies.
 
