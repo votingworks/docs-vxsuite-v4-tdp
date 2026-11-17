@@ -46,13 +46,20 @@ does and how, so a reviewer can understand and verify it.
 - Also describe, at the level of concept, the mechanisms behind result
   integrity and security, even where users never see them: ballot
   interpretation, tabulation and adjudication, cast vote record handling,
-  authentication and access control, cryptography, logging, and software
-  integrity. Describe them by what happens and in what order.
+  authentication and access control, cryptography, logging, software
+  integrity (including how USB drives are handled), and networking (what
+  connections are possible and how they are protected, not how features
+  such as multi-station adjudication use them). Describe them by what
+  happens and in what order.
 - Do not name internals: database tables, packages, functions, variables. A
   name that is part of an interface is fine: an election package file, a
   setting key, a log event ID, a CDF attribute, a file path on the machine.
   Test: if a refactor that changes no behavior would make the sentence false,
   it is too deep.
+- Name a third-party component only when a standard the system claims
+  depends on it (OpenSSL and its FIPS validation for cryptography) or it is
+  security-sensitive in itself. Otherwise describe what it does ("a
+  consistent copy of the database, taken while the application runs").
 - Do not state default values for system settings; they vary by state. Name
   the setting and what it does. Fixed behavior is not a default and is
   stated ("After configuration, VxScan is in test ballot mode"). A value
