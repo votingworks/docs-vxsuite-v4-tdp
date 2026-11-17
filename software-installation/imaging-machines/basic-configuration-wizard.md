@@ -4,11 +4,11 @@ If this is the first time that a VotingWorks application has been installed to a
 
 Most of the steps are self-explanatory; "Step 1: Set Machine ID" and "Step 4: Create Machine Cert" are explained below.
 
-### Setting Machine ID
+## Setting Machine ID
 
 The machine ID must be unique for each machine. Many machines have a physical placard on them indicating the machine ID. Use that ID here.
 
-### Creating Machine Cert
+## Creating Machine Cert
 
 On VxAdmin, the wizard first prompts for a jurisdiction:
 
@@ -19,7 +19,7 @@ Enter a jurisdiction ({state-2-letter-abbreviation}.{county-town-etc}, e.g., ca.
 {% endcode %}
 
 {% hint style="info" %}
-SLI should use co.sli
+SLI should use `co.sli`.
 {% endhint %}
 
 Then, on all machines, the wizard displays this prompt:
@@ -42,10 +42,10 @@ Remove the USB drive, take it to VxCertifier, and bring it back to this machine 
 
 Because the machine is certified at a facility other than a VotingWorks facility, the USB drive cannot be taken to VxCertifier, the VotingWorks certification terminal. Use the following remote certification process instead:
 
-1. Remove the VxCertifier USB drive and find the "csr-\<machine-id>.pem" file inside the "certs/" directory on it.
+1. Remove the VxCertifier USB drive and find the `csr-<machine-id>.pem` file inside the `certs/` directory on it.
 2. Share that file with VotingWorks. This file does not contain any private information, so it can be shared over the internet, e.g., via email.
-3. Wait for VotingWorks to prepare a certificate from this file and send it back as a "cert-\<machine-id>.pem" file. This file also does not contain any private information, so it can be shared over the internet.
-4. Copy the "cert-\<machine-id>.pem" file onto the VxCertifier USB drive, in the same "certs/" directory that contained the "csr-\<machine-id>.pem" file.
+3. Wait for VotingWorks to prepare a certificate from this file and send it back as a `cert-<machine-id>.pem` file. This file also does not contain any private information, so it can be shared over the internet.
+4. Copy the `cert-<machine-id>.pem` file onto the VxCertifier USB drive, in the same `certs/` directory that contained the `csr-<machine-id>.pem` file.
 5. Re-insert the USB drive into the machine and press Enter. The wizard continues.
 
 On VxAdmin, the last step is to program the first system administrator card. Record the displayed PIN. On other machines, no steps remain. The machine then reboots into the application.

@@ -13,18 +13,18 @@ When installing VotingWorks applications that will be used in one or more electi
 
 To satisfy these requirements, VotingWorks recommends the following practices for each requirement:
 
-3.1.4-I.1 - VotingWorks recommends using the machine ID for this record, e.g., `SC-11-004`. If necessary, appending the install date and time can further ensure uniqueness, e.g. `SC-11-004-20250325-1300`
+**3.1.4-I.1:** VotingWorks recommends using the machine ID for this record, e.g., `SC-11-004`. If necessary, appending the install date and time can further ensure uniqueness, e.g. `SC-11-004-20250325-1300`
 
-3.1.4-I.2 - This should be the machine ID plus the system drive the application was installed to. For example, a machine identified as `SC-11-004` with the VotingWorks application installed to the `/dev/nvme0n1` drive would use the record: `SC-11-004-dev-nvme0n1`
+**3.1.4-I.2:** This should be the machine ID plus the system drive the application was installed to. For example, a machine identified as `SC-11-004` with the VotingWorks application installed to the `/dev/nvme0n1` drive would use the record: `SC-11-004-dev-nvme0n1`
 
-3.1.4-I.3 - As described.
+**3.1.4-I.3:** As described.
 
-3.1.4-I.4 - As described.
+**3.1.4-I.4:** As described.
 
-3.1.4-I.5 - Include physical copies of the technical data package (TDP) install instructions or a link to the TDP install instructions for this release.
+**3.1.4-I.5:** Include physical copies of the technical data package (TDP) install instructions or a link to the TDP install instructions for this release.
 
-3.1.4-I.6 - This is the U.S. Election Assistance Commission (EAC) Certification Number, which can be found on the Certificate of Conformance for this VotingWorks application release.
+**3.1.4-I.6:** This is the U.S. Election Assistance Commission (EAC) Certification Number, which can be found on the Certificate of Conformance for this VotingWorks application release.
 
-3.1.4-I.7 - Include a physical copy of the commercial off-the-shelf (COTS) Report or a link to the COTS Report that can be found in the [hash-checksum-verification-of-dependencies.md](../trusted-build/hash-checksum-verification-of-dependencies.md "mention")documentation, specific to each VotingWorks application release.
+**3.1.4-I.7:** Include a physical copy of the commercial off-the-shelf (COTS) Report or a link to the COTS Report that can be found in the [hash-checksum-verification-of-dependencies.md](../trusted-build/hash-checksum-verification-of-dependencies.md "mention") documentation, specific to each VotingWorks application release.
 
-3.1.4-I.8 - VotingWorks recommends using the serial number of the hardware device the VotingWorks application is being installed to. If that is not available, the same identifier used in 3.1.4-I.1 is recommended.&#x20;
+**3.1.4-I.8:** VotingWorks recommends using the serial number of the hardware device the VotingWorks application is being installed to. If that is not available, the same identifier used in 3.1.4-I.1 is recommended.

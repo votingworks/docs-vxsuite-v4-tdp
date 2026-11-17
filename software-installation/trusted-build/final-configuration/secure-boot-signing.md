@@ -6,7 +6,9 @@ To finalize an image for production use, it is necessary to sign the image with 
 
 Once SLI has created a Trusted Build image, the image and its virtual machine (VM) definition (an XML file) must be securely provided to VotingWorks. To transfer the image and definition, SLI uploads them to a shared S3 bucket accessible only to SLI and VotingWorks. This access is controlled via identity and access management (IAM) permission policies.
 
-NOTE: This page uses a Trusted Build image named **vxadmin** as the example. Replace that with the appropriate image name, as necessary.
+{% hint style="info" %}
+This page uses a Trusted Build image named `vxadmin` as the example. Replace that with the appropriate image name, as necessary.
+{% endhint %}
 
 Once SLI has configured its S3 access and created a Trusted Build image, SLI uploads the image and its configuration file. Hashes of each file are generated so that SLI and VotingWorks can confirm files were not modified during the upload or download phases.
 
@@ -27,7 +29,7 @@ Once the VotingWorks download has completed and been verified, and the VM has be
 
 ## Secure Boot Signing
 
-VotingWorks boots the VM, changes the vendor password, attaches a virtual device containing its Secure Boot signing keys, and selects the option to "Lock the System Down" from the vendor menu. When prompted, VotingWorks enters the passphrase for the Secure Boot signing keys.
+VotingWorks boots the VM, changes the vendor password, attaches a virtual device containing its Secure Boot signing keys, and selects the option to `Lock the System Down` from the vendor menu. When prompted, VotingWorks enters the passphrase for the Secure Boot signing keys.
 
 When the process completes, the lock-down script displays the system hash in SHA256 and Signed Hash Validation (SHV) versions. These hashes are provided to SLI and the U.S. Election Assistance Commission (EAC) for official verification of the image.
 

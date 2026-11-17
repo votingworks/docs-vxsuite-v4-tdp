@@ -2,26 +2,26 @@
 
 1. Open virt-manager:
 
-```
-sudo virt-manager
-```
+   ```
+   sudo virt-manager
+   ```
 
-2. Double-click the **online** virtual machine (VM).
+2. Double-click the `online` virtual machine (VM).
 3. Press the start button ▶️.
-4. Once the VM has initialized, log in with username **vx** and password **votingworks**.
-5. To ensure that the console displays correctly, select "View" > "Resize to VM".
+4. Once the VM has initialized, log in with username `vx` and password `votingworks`.
+5. To ensure that the console displays correctly, select `View` > `Resize to VM`.
 6. In the VM terminal window, run the following commands:
 
-```
-cd ~/code/vxsuite-build-system
-git checkout main
-git pull
-git checkout <version>
-./scripts/tb-run-online-phase.sh stable
-```
+   ```
+   cd ~/code/vxsuite-build-system
+   git checkout main
+   git pull
+   git checkout <version>
+   ./scripts/tb-run-online-phase.sh stable
+   ```
 
 7. The online phase takes a while to complete. When it finishes, shut down the online VM:
 
-```
-sudo shutdown -h now
-```
+   ```
+   sudo shutdown -h now
+   ```

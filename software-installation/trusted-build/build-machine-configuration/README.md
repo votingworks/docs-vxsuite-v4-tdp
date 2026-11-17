@@ -9,9 +9,11 @@
 
 ## Build Machine Configuration <a href="#build-machine-configuration" id="build-machine-configuration"></a>
 
-Debian 12 must be installed on the build machine, as described under [Installing Debian 12 on VxBuild](installing-debian-12-on-vxbuild.md). After that, install the VotingWorks build system, [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.1.0), with the commands below.
+Debian 12 must be installed on the build machine, as described under [Installing Debian 12 on VxBuild](installing-debian-12-on-vxbuild.md).
 
 Throughout the rest of this document, substitute `<version>` with the version string provided by VotingWorks, e.g., `v4.1.1`.
+
+To install the VotingWorks build system, [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.1.0), run the following commands:
 
 ```
 sudo apt install -y git

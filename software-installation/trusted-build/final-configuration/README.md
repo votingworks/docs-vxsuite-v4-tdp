@@ -2,69 +2,74 @@
 
 In the final configuration phase, the offline virtual machine (VM) is cloned to prepare images for specific machine types, i.e., VxAdmin, VxCentralScan, VxMark, VxMarkScan, VxScan, and VxPrint, with one clone per machine type.
 
-In the following steps, the **vxadmin** VM is used as the example; repeat these steps for each machine type: **vxcentralscan**, **vxmark**, **vxmarkscan**, **vxprint**, and **vxscan**.
+In the following steps, the `vxadmin` VM is used as the example; repeat these steps for each machine type: `vxcentralscan`, `vxmark`, `vxmarkscan`, `vxprint`, and `vxscan`.
 
 1. To clone the offline VM, run the following command on the build machine:
 
-```
-sudo virt-clone -o offline -n vxadmin --auto-clone
-```
+   ```
+   sudo virt-clone -o offline -n vxadmin --auto-clone
+   ```
 
-* This command creates a byte-for-byte clone of the offline VM, along with all settings, including network functionality disabled at the VM level.
+   This command creates a byte-for-byte clone of the offline VM, along with all settings, including network functionality disabled at the VM level.
 
 2. Open virt-manager if not already open:
 
-```
-sudo virt-manager
-```
+   ```
+   sudo virt-manager
+   ```
 
-3. Double-click the **vxadmin** VM.
+3. Double-click the `vxadmin` VM.
 4. Press the start button ▶️.
-5. From the menu, select "View" > "Consoles" > "Serial 1". If only a blinking cursor appears, click in the window to make it active, then press Enter. A login prompt appears.
-6. Once the VM has initialized, log in with username **vx** and password **votingworks**.
-7. To ensure that the console displays correctly, select "View" > "Resize to VM".
+5. From the menu, select `View` > `Consoles` > `Serial 1`. If only a blinking cursor appears, click in the window to make it active, then press Enter. A login prompt appears.
+6. Once the VM has initialized, log in with username `vx` and password `votingworks`.
+7. To ensure that the console displays correctly, select `View` > `Resize to VM`.
+
+{% hint style="warning" %}
+The `setup-machine.sh` script is destructive: it overwrites the existing configuration of the VM it runs in.
+{% endhint %}
+
 8. In the VM terminal window, run the following commands:
 
-```
-cd ~/code/vxsuite-complete-system
-./setup-machine.sh
-```
+   ```
+   cd ~/code/vxsuite-complete-system
+   ./setup-machine.sh
+   ```
 
 9. The script displays several prompts.
 10. Select the number of the machine type that you intend to build.
 
-```
-Welcome to VxSuite. THIS IS A DESTRUCTIVE SCRIPT. Ctrl-C right now if you don't know for sure what you're doing.
-Which machine are we building today?
+    ```
+    Welcome to VxSuite. THIS IS A DESTRUCTIVE SCRIPT. Ctrl-C right now if you don't know for sure what you're doing.
+    Which machine are we building today?
 
-1. VxAdmin
-2. VxCentralScan
-3. VxMark
-4. VxMarkScan
-5. VxPrint
-6. VxScan
-```
+    1. VxAdmin
+    2. VxCentralScan
+    3. VxMark
+    4. VxMarkScan
+    5. VxPrint
+    6. VxScan
+    ```
 
-11. Type "N" when asked whether this image is for quality assurance (QA).
+11. Type `N` when asked whether this image is for quality assurance (QA).
 
-```
-Is this image for QA, where you want sudo privileges, terminal access via TTY2, and the ability to record screengrabs? [y/N]
-```
+    ```
+    Is this image for QA, where you want sudo privileges, terminal access via TTY2, and the ability to record screengrabs? [y/N]
+    ```
 
-12. Type "y" when asked whether this is an official release image.
+12. Type `y` when asked whether this is an official release image.
 
-```
-Is this additionally an official release image? [y/N]
-```
+    ```
+    Is this additionally an official release image? [y/N]
+    ```
 
-13. Type "y" when asked to confirm.
+13. Type `y` when asked to confirm.
 
-```
-Are you sure? [y/N]
-```
+    ```
+    Are you sure? [y/N]
+    ```
 
 14. Set a password for the `vx-vendor` user. This password is not used in practice, because the vendor menu on a production image is accessible only with a vendor card.
-15. After the script finishes, the VM reboots and a console login prompt appears. In the VM menu, select "Virtual Machine" > "Shut Down" > "Shut Down". Close the VM window once shutdown is complete.
+15. After the script finishes, the VM reboots and a console login prompt appears. In the VM menu, select `Virtual Machine` > `Shut Down` > `Shut Down`. Close the VM window once shutdown is complete.
 16. Perform the [Secure Boot Signing](secure-boot-signing.md) process with VotingWorks. When that process is complete, the VM and corresponding image are ready for use with Secure Boot.
 
 The image is then ready to install, as described in [Imaging Machines](../../imaging-machines/).

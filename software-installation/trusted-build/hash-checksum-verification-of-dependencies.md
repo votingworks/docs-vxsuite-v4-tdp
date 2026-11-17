@@ -2,9 +2,9 @@
 
 The VotingWorks build system, [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.1.0), utilizes many different tools to install, configure, and build VotingWorks applications. To ensure the integrity of the build system and tools used, all third-party tools are verified against known hashes, checksums, or digital signatures. This page describes the mechanism used to verify each tool and any additional resources those tools may be responsible for providing during the build process.
 
-In addition to verifying third-party tools against known hashes, checksums, and digital signatures during the build process, a report of commercial off-the-shelf (COTS) tools, with applicable hashes/checksums, is provided to the voting system test laboratory (VSTL) for independent verification and is available [here](https://github.com/votingworks/docs-vxsuite-v4/tree/main/software-docs/cots-software). These tools are defined within the [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.1.0) for each release of VotingWorks applications, and only those tools are installed during builds.
+In addition to verifying third-party tools against known hashes, checksums, and digital signatures during the build process, a report of commercial off-the-shelf (COTS) tools, with applicable hashes/checksums, is provided to the voting system test laboratory (VSTL) for independent verification and is available in the [COTS software reports](https://github.com/votingworks/docs-vxsuite-v4/tree/main/software-docs/cots-software). These tools are defined within the [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.1.0) for each release of VotingWorks applications, and only those tools are installed during builds.
 
-**APT**
+## APT
 
 Debian's package manager, apt, is built on a secure framework described here: [SecureApt](https://wiki.debian.org/SecureApt).
 
@@ -12,44 +12,44 @@ The VotingWorks build process relies on this fundamental tool to install many of
 
 To further ensure that consistent versions of dependencies and transitive dependencies are used, the build process pulls from an apt snapshot hosted by VotingWorks.
 
-**pip**
+## pip
 
 Python's package manager, pip, does not verify package integrity by default. However, secure installation is possible via the method described here: [pip: Secure installs](https://pip.pypa.io/en/stable/topics/secure-installs/).
 
 The VotingWorks build process implements the above method in the [tb-install-ansible.sh](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.0/scripts/tb-install-ansible.sh) script. The required packages are listed, along with their hash, in unique requirements files based on the operating system version and architecture. For an example, see the [Debian 12 x86 pip requirements](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.0/scripts/pip_deb12_x86_64_requirements.txt).
 
-**RubyGems**
+## RubyGems
 
 Ruby's package manager, gem, does not verify package integrity by default. However, the official gem repository provides SHA256 checksums for hosted packages. For an example, see [FPM 1.15.1](https://rubygems.org/gems/fpm/versions/1.15.1).
 
 The VotingWorks build process requires the version and SHA256 checksum for any installed gems. Once the gem file has been downloaded, it is checked against this checksum to verify its integrity. The checksum verification is in the rubygems playbook, [rubygems.yaml](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.0/playbooks/trusted_build/rubygems.yaml).
 
-**Rust**
+## Rust
 
 By default, Rust is installed over an active internet connection. Since that method is not available during the offline phase of the VotingWorks build process, the build process uses a standalone, offline installer binary provided by Rust. To verify the integrity of the installer, the downloaded file is verified against the officially published checksum that can be found in each version's official manifest. The checksum verification is in the rust playbook, [rust.yaml](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.0/playbooks/trusted_build/rust.yaml).
 
-**Cargo**
+## Cargo
 
 Cargo is the Rust package manager. It provides secure installs via the combination of a manifest listing packages and their versions, along with a lock file containing the checksum for each package. That method is described here: [Cargo.toml vs. Cargo.lock](https://doc.rust-lang.org/cargo/guide/cargo-toml-vs-cargo-lock.html).
 
-**Node**
+## Node
 
 Node is typically installed via package managers like apt, or via a direct install from a specific version. The build process does not install Node via apt, because it uses an explicit Node version. Instead, it downloads the appropriate installer from the official Node repository. That downloaded file is then checked against the officially provided checksum. The checksum verification is in the node playbook, [node.yaml](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.0/playbooks/trusted_build/node.yaml).
 
-**npm**
+## npm
 
 npm is the default Node package manager. It is installed as part of the Node install previously described.
 
 Packages installed via npm are checked against the officially provided checksums for each package. The checksum verification is in the node playbook, [node.yaml](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.0/playbooks/trusted_build/node.yaml).
 
-**pnpm**
+## pnpm
 
 pnpm is another package manager for the Node ecosystem. It is installed via npm as previously described to ensure its integrity.
 
-Packages installed via pnpm use a lockfile: pnpm-lock.yaml. This lockfile includes the version and checksum to verify integrity when packages are installed during the build process. In addition, the VotingWorks build process explicitly requires the use of `--frozen-lockfile` to ensure that only the packages explicitly required are installed.
+Packages installed via pnpm use a lockfile: `pnpm-lock.yaml`. This lockfile includes the version and checksum to verify integrity when packages are installed during the build process. In addition, the VotingWorks build process explicitly requires the use of `--frozen-lockfile` to ensure that only the packages explicitly required are installed.
 
-**Yarn**
+## Yarn
 
 Yarn is another package manager for the Node ecosystem. It is installed via npm as previously described to ensure its integrity.
 
-Packages installed via yarn use a lockfile: yarn.lock. This lockfile includes the version and checksum to verify integrity when packages are installed during the build process. In addition, the VotingWorks build process explicitly requires the use of `--frozen-lockfile` to ensure that only the packages explicitly required are installed.
+Packages installed via yarn use a lockfile: `yarn.lock`. This lockfile includes the version and checksum to verify integrity when packages are installed during the build process. In addition, the VotingWorks build process explicitly requires the use of `--frozen-lockfile` to ensure that only the packages explicitly required are installed.
