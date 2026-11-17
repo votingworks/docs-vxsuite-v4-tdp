@@ -20,4 +20,4 @@ The system hash can also be computed from outside the application, using a vx-is
 2. Power the machine on. The machine will auto-boot from the vx-iso USB drive.
 3. If the machine in question does not have a keyboard, connect a keyboard.
 4. Select the option to "Compute System Hash". This runs an open-source script that itself uses standard, non-proprietary, open-source tools to compute a system hash. The script source code is available at this public URL: [https://github.com/votingworks/vx-iso/blob/main/live-build/includes.chroot/usr/local/bin/compute-system-hash.sh](https://github.com/votingworks/vx-iso/blob/main/live-build/includes.chroot/usr/local/bin/compute-system-hash.sh). A snapshot of the script source code has also been included for the test lab under `software-docs/compute-system-hash.sh`.
-5. The hash will be displayed in base64 format. Check this hash against the EAC-published hash for the target software image.
+5. The hash will be displayed in base64 format. Check this hash against the hash published by the U.S. Election Assistance Commission (EAC) for the target software image.

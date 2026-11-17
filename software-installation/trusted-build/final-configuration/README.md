@@ -1,6 +1,6 @@
 # Final Configuration
 
-We'll now clone the offline VM to prepare images for specific machine types, i.e., VxAdmin, VxCentralScan, VxMark, VxMarkScan, VxScan, and VxPrint. We'll create one clone/VM per machine type.
+We'll now clone the offline virtual machine (VM) to prepare images for specific machine types, i.e., VxAdmin, VxCentralScan, VxMark, VxMarkScan, VxScan, and VxPrint. We'll create one clone/VM per machine type.
 
 In the following steps, the **vxadmin** VM will be referenced, but these steps can be repeated for each machine type: **vxcentralscan**, **vxmark**, **vxmarkscan**, **vxprint**, and **vxscan**.
 
@@ -45,7 +45,7 @@ Which machine are we building today?
 6. VxScan
 ```
 
-11. Type "N" when asked whether this image is for QA.
+11. Type "N" when asked whether this image is for quality assurance (QA).
 
 ```
 Is this image for QA, where you want sudo privileges, terminal access via TTY2, and the ability to record screengrabs? [y/N]

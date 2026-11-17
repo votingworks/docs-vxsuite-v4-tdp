@@ -21,10 +21,10 @@ To satisfy the above requirements, VotingWorks recommends following these best p
 
 3.1.4-I.4 - As described.
 
-3.1.4-I.5 - Include physical copies of the TDP install instructions or a link to the TDP install instructions for this release.
+3.1.4-I.5 - Include physical copies of the technical data package (TDP) install instructions or a link to the TDP install instructions for this release.
 
-3.1.4-I.6 - This is the EAC Certification Number, which can be found on the Certificate of Conformance for this VotingWorks application release.
+3.1.4-I.6 - This is the U.S. Election Assistance Commission (EAC) Certification Number, which can be found on the Certificate of Conformance for this VotingWorks application release.
 
-3.1.4-I.7 - Include a physical copy of the COTS Report or a link to the COTS Report that can be found in the [hash-checksum-verification-of-dependencies.md](../trusted-build/hash-checksum-verification-of-dependencies.md "mention")documentation, specific to each VotingWorks application release.
+3.1.4-I.7 - Include a physical copy of the commercial off-the-shelf (COTS) Report or a link to the COTS Report that can be found in the [hash-checksum-verification-of-dependencies.md](../trusted-build/hash-checksum-verification-of-dependencies.md "mention")documentation, specific to each VotingWorks application release.
 
 3.1.4-I.8 - We recommend using the serial number of the hardware device the VotingWorks application is being installed to. If that is not available, the same identifier used in 3.1.4-I.1 is recommended.&#x20;

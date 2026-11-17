@@ -1,6 +1,6 @@
 # Offline Phase
 
-1. To create the **offline** VM with networking disabled, run the following command on the build machine:
+1. To create the **offline** virtual machine (VM) with networking disabled, run the following command on the build machine:
 
 ```
 cd ~/code/vxsuite-build-system

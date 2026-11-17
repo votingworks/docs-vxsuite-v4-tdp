@@ -109,7 +109,7 @@ dd if=/path/to/debian-12.8.0-amd64-netinst.iso of=/dev/sda bs=4M && sync
 
 <figure><img src="../../../.gitbook/assets/19.png" alt="" width="375"><figcaption></figcaption></figure>
 
-22. The base OS installation will now begin. During the installation you will be asked to answer questions related to package management.
+22. The base operating system installation will now begin. During the installation you will be asked to answer questions related to package management.
 23. Select "United States" and click "Continue".
 24. Select "deb.debian.org" and click "Continue".
 25. Leave the proxy information blank and click "Continue".

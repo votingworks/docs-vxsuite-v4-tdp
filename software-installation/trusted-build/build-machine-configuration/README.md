@@ -3,9 +3,9 @@
 ## Build Machine Requirements <a href="#build-machine-requirements" id="build-machine-requirements"></a>
 
 * Operating system: Debian 12
-* RAM: 8GB minimum
+* RAM: 8 GB minimum
 * Chip: x86-64 / amd64 CPU architecture, Intel i5 or higher
-* Storage: 250GB minimum
+* Storage: 250 GB minimum
 
 ## Build Machine Configuration <a href="#build-machine-configuration" id="build-machine-configuration"></a>
 
@@ -26,7 +26,7 @@ git checkout <version>
 ./scripts/tb-clone-images.sh stable
 ```
 
-At this point, you should have two separate VMs: `debian-<version>-<apt-snapshot-date>-<debian-release-name>` and `online`. You can confirm this by running:
+At this point, you should have two separate virtual machines (VMs): `debian-<version>-<apt-snapshot-date>-<debian-release-name>` and `online`. You can confirm this by running:
 
 ```
 sudo virsh list --all

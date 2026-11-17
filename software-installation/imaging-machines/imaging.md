@@ -5,7 +5,7 @@ First make sure that you've prepared USB drives for imaging, following the instr
 1. Power off the machine.
 2. Insert the vx-iso USB drive into the system. If this is a VxMarkScan or a VxScan, connect a keyboard as well. If there aren't enough ports available, use a USB hub as provided by VotingWorks.
 3. Power on the machine to begin booting vx-iso.&#x20;
-   1. By default, VotingWorks systems should boot from the USB. If not, you will need to select the USB drive from a BIOS or Boot Menu. For central system components, you can access the Boot Menu by pressing F9 during the boot sequence. For other components, please reach out to VotingWorks for assistance.
+   1. By default, VotingWorks systems should boot from the USB drive. If not, you will need to select the USB drive from a BIOS or Boot Menu. For central system components, you can access the Boot Menu by pressing F9 during the boot sequence. For other components, please reach out to VotingWorks for assistance.
 4. Select "Install Image". You can navigate vx-iso with the keyboard. This option will be auto-selected after 30 seconds.
 5. If the machine already has Secure Boot keys installed, it should not prompt you to install keys. If it does for some reason, you should reach out to VotingWorks for assistance. Only if you know the keys need to be installed should you opt to install them.
 6. The application image(s) on the vx-iso USB drive will be displayed. Select the number that identifies the correct image. In the event there is only one image, it will be automatically selected.

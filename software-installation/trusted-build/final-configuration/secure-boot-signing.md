@@ -4,7 +4,7 @@ To finalize an image for production use, it's necessary to sign the image with t
 
 ## Transferring an Unsigned Image from SLI to VotingWorks
 
-Once SLI has created a Trusted Build image, the image and its VM definition (an XML file) must be securely provided to VotingWorks. To transfer the image and definition, SLI will upload to a shared S3 bucket only accessible to SLI and VotingWorks. This access is controlled via IAM permission policies.
+Once SLI has created a Trusted Build image, the image and its virtual machine (VM) definition (an XML file) must be securely provided to VotingWorks. To transfer the image and definition, SLI will upload to a shared S3 bucket only accessible to SLI and VotingWorks. This access is controlled via identity and access management (IAM) permission policies.
 
 NOTE: For documentation purposes, we will use a Trusted Build image named **vxadmin**. Replace that with the appropriate image name, as necessary.
 
@@ -29,7 +29,7 @@ Once the VotingWorks download has completed and been verified, and the VM has be
 
 VotingWorks will boot the VM, change the vendor password, attach a virtual device containing our Secure Boot signing keys, and select the option to "Lock the System Down" from the vendor menu. When prompted, VotingWorks will enter the passphrase for the Secure Boot signing keys.
 
-When the process completes, the lock-down script displays the system hash in SHA256 and Signed Hash Validation (SHV) versions. These hashes will be provided to SLI/EAC for official verification of the image.
+When the process completes, the lock-down script displays the system hash in SHA256 and Signed Hash Validation (SHV) versions. These hashes will be provided to SLI and the U.S. Election Assistance Commission (EAC) for official verification of the image.
 
 ## Transferring a Signed Image from VotingWorks to SLI
 

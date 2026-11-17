@@ -6,7 +6,7 @@
 sudo virt-manager
 ```
 
-2. Double-click the **online** VM.
+2. Double-click the **online** virtual machine (VM).
 3. Press the start button ▶️.
 4. Once the VM has initialized, log in with username **vx** and password **votingworks**.
 5. To ensure that the console displays correctly, select "View" > "Resize to VM".
