@@ -161,7 +161,9 @@ Never edit GitBook's `width` attributes by hand.
 - Whole pages by GitBook mention links; sections by relative links with an
   anchor.
 - Source code pinned to the release tag the TDP documents (currently
-  `v4.1.1`), never `main`.
+  `v4.1.1`), never `main`. Links into `docs-vxsuite-v4` (datasheets,
+  reports, risk assessment) stay on `main`: that repository has no release
+  tags.
 - Descriptive link text, not "here" or a bare URL.
 - Prose says "VxSuite" unless the version is the point.
 
