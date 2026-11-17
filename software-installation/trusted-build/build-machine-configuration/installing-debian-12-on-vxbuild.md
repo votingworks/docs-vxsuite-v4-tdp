@@ -42,72 +42,72 @@ At the time of writing, the latest stable release is 12.8. If using a newer vers
 2. After powering VxBuild on, begin pressing F12 until it enters the boot menu. Boot the system from the USB install drive.
 3. The following screen appears. Select `Graphical install` and press Enter.
 
-<figure><img src="../../../.gitbook/assets/0.png" alt="" width="320"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/0.png" alt="Debian 12 installer boot menu with 'Graphical install' highlighted" width="375"><figcaption></figcaption></figure>
 
 4. Select your preferred language and click `Continue`.
 
-<figure><img src="../../../.gitbook/assets/1.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/1.png" alt="Debian installer 'Select a language' screen with English selected" width="375"><figcaption></figcaption></figure>
 
 5. Select your location and click `Continue`.
 
-<figure><img src="../../../.gitbook/assets/2.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/2.png" alt="Debian installer 'Select your location' screen with United States selected" width="375"><figcaption></figcaption></figure>
 
 6. Select your keyboard layout and click `Continue`.
 
-<figure><img src="../../../.gitbook/assets/3.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/3.png" alt="Debian installer 'Configure the keyboard' screen with American English selected" width="375"><figcaption></figcaption></figure>
 
 7. Select your network device (it may differ from the screenshot) and click `Continue`.
 
-<figure><img src="../../../.gitbook/assets/4.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/4.png" alt="Debian installer network interface list with the wireless adapter selected" width="375"><figcaption></figcaption></figure>
 
 8. If using a wired connection, the network configures automatically.
 9. If using a wireless connection, select a network, select `WPA/WPA2 PSK`, and click `Continue`. Enter your wireless network password and click `Continue`.
 
-<figure><img src="../../../.gitbook/assets/5.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/5.png" alt="Debian installer list of wireless networks to use during installation" width="375"><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/6.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/6.png" alt="Debian installer wireless network type choice with WPA/WPA2 PSK selected" width="375"><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/7.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/7.png" alt="Debian installer prompt for the WPA/WPA2 wireless passphrase" width="375"><figcaption></figcaption></figure>
 
 10. Enter `VxBuild` for the hostname and click `Continue`.
 
-<figure><img src="../../../.gitbook/assets/8.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/8.png" alt="Debian installer hostname prompt with VxBuild entered" width="375"><figcaption></figcaption></figure>
 
 11. Leave the domain name blank and click `Continue`.
 
-<figure><img src="../../../.gitbook/assets/9.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/9.png" alt="Debian installer domain name prompt left blank" width="375"><figcaption></figcaption></figure>
 
 12. Set the root user password and click `Continue`.
 
-<figure><img src="../../../.gitbook/assets/10.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/10.png" alt="Debian installer screen for setting and confirming the root password" width="375"><figcaption></figcaption></figure>
 
 13. Enter `Vx` for the full name for the new user and click `Continue`.
 
-<figure><img src="../../../.gitbook/assets/11.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/11.png" alt="Debian installer full name prompt for the new user with Vx entered" width="375"><figcaption></figcaption></figure>
 
 14. Enter `vx` as the username and click `Continue`.
 
-<figure><img src="../../../.gitbook/assets/12.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/12.png" alt="Debian installer username prompt with vx entered" width="375"><figcaption></figcaption></figure>
 
 15. Enter a password for the `vx` user and click `Continue`.
 
-<figure><img src="../../../.gitbook/assets/13.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/13.png" alt="Debian installer screen for setting and confirming the vx user password" width="375"><figcaption></figcaption></figure>
 
 16. Select your timezone and click `Continue`.
 
-<figure><img src="../../../.gitbook/assets/14.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/14.png" alt="Debian installer 'Configure the clock' time zone list" width="375"><figcaption></figcaption></figure>
 
 17. Select `Guided - use entire disk` and click `Continue`.
 
-<figure><img src="../../../.gitbook/assets/15.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/15.png" alt="Debian installer partitioning method list with 'Guided - use entire disk' selected" width="375"><figcaption></figcaption></figure>
 
 18. Select the `/dev/nvme0n1` disk and click `Continue`.
 
-<figure><img src="../../../.gitbook/assets/16.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/16.png" alt="Debian installer disk list with the /dev/nvme0n1 drive selected" width="375"><figcaption></figcaption></figure>
 
 19. Select `All files in one partition` and click `Continue`.
 
-<figure><img src="../../../.gitbook/assets/17.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/17.png" alt="Debian installer partitioning scheme list with 'All files in one partition' selected" width="375"><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
 The following two steps write the new partition table to the `/dev/nvme0n1` disk, erasing all existing data on it.
@@ -115,11 +115,11 @@ The following two steps write the new partition table to the `/dev/nvme0n1` disk
 
 20. Select `Finish partitioning and write changes to disk` and click `Continue`.
 
-<figure><img src="../../../.gitbook/assets/18.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/18.png" alt="Debian installer partition overview with 'Finish partitioning and write changes to disk' selected" width="375"><figcaption></figcaption></figure>
 
 21. Select `Yes` and click `Continue`.
 
-<figure><img src="../../../.gitbook/assets/19.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/19.png" alt="Debian installer confirmation to write partition changes to /dev/nvme0n1, with Yes selected" width="375"><figcaption></figcaption></figure>
 
 22. The base operating system installation begins. During the installation, the installer asks questions related to package management.
 23. Select `United States` and click `Continue`.
