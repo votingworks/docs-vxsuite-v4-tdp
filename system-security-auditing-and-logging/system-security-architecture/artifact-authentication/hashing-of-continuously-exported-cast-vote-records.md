@@ -26,32 +26,11 @@ Assuming every CVR has a random universally unique identifier (UUID), e.g., 4d6a
         Images
 ```
 
-### In Practice
+### On the Machine and on the USB Drive
 
-It is not necessary to 1) use a nested directory structure on the USB drive or 2) store all intermediate hashes on the USB drive. The structure and intermediate hashes are stored on the machine in a database table, e.g.,
+The nested structure above describes the tree; it is not how files are laid out on the USB drive. The scanner keeps the tree's intermediate hashes on its internal disk and updates them as each cast vote record is added, so the root hash can be recomputed without reading anything back from the USB drive. Computing hashes only from the scanner's own records protects against [compromised or faulty USB drives](https://github.com/votingworks/vxsuite/pull/3554).
 
-| CVR ID Prefix 1 | CVR ID Prefix 2 | CVR ID                               | Hash                                      |
-| --------------- | --------------- | ------------------------------------ | ----------------------------------------- |
-| -               | -               | -                                    | Root hash                                 |
-| 4               | -               | -                                    | 4 hash                                    |
-| 4               | 4d              | -                                    | 4d hash                                   |
-| 4               | 4d              | 4d6a9dad-e6d6-4a29-89bc-9ab915012b73 | 4d6a9dad-e6d6-4a29-89bc-9ab915012b73 hash |
-| …               |                 |                                      |                                           |
-
-The USB drive then holds a flat structure that is easier to reason about and iterate over:
-
-```
-<cvr-directory-name>.vxsig ← Signature on root-hash.txt
-<cvr-directory-name>/
-  root-hash.txt
-  4d6a9dad-e6d6-4a29-89bc-9ab915012b73/
-    cast-vote-record-report.json
-    Images
-```
-
-The database table makes recomputing hashes easy, as retrieval of all hashes for a given ID prefix becomes a simple SQL query. This approach also decreases the chance that hash computation accidentally depends on data written to the USB drive, protecting against [compromised or faulty USB drives](https://github.com/votingworks/vxsuite/pull/3554).
-
-The above examples list and sign a root-hash.txt file. In practice, VxSuite signs a JSON file capable of storing other metadata:
+The USB drive holds a flat structure, one directory per cast vote record, and VxSuite signs a `metadata.json` file that carries the root hash along with other export metadata:
 
 ```
 <cvr-directory-name>.vxsig ← Signature on metadata.json
@@ -62,7 +41,7 @@ The above examples list and sign a root-hash.txt file. In practice, VxSuite sign
     Images
 ```
 
-Sample metadata.json:
+Sample `metadata.json`:
 
 ```
 {
