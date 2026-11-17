@@ -171,6 +171,11 @@ Never edit GitBook's `width` attributes by hand.
 IDs that exist in VVSG 2.0, not test assertion IDs. NIST publications as
 "NIST SP 800-161".
 
+**What gets a figure**: outputs a reviewer needs to see (printed reports,
+ballots, export structures), diagrams and hardware photos. No step-by-step
+screenshots (the user manual has those) and no highlights; a user interface
+screenshot only when the behavior can't be described without it.
+
 **Figures**: GitBook figure markup, never Markdown images:
 
 ```
