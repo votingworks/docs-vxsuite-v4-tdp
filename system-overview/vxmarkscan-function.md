@@ -30,7 +30,7 @@ VxMarkScan can be unconfigured by an election manager or system administrator.
 
 ## Polls Management
 
-<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (29).png" alt="Polls state diagram: polls closed (initial), polls open, voting paused and polls closed (final), with reset to paused" width="563"><figcaption></figcaption></figure>
 
 After configuration, polls are initially closed. When polls are closed, voting is not allowed on VxMarkScan.
 
@@ -62,7 +62,7 @@ If there is no voter activity for 5 minutes during a voting session, the screen 
 
 The thermal printer prints a ballot, presents it to the voter, and prompts them to once again review their selections. This final review differs from the initial review in two ways. First, the printed ballot is being physically presented to the user which creates a voter-verified paper trail. Second, the selections being reviewed are a result of the actual interpretation of the ballot rather than simply the selections made by the voter. As a result, even when a voter is unable to verify their printed paper ballot visually they are still able to verify the ballot through another interaction mode. Once the voter is satisfied with their second round of review, they may cast their ballot which is ejected into the attached ballot box.
 
-<figure><img src="../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (46).png" alt="VxMarkScan voter session flow from inserting a blank sheet through review, print and scan, review ballot and cast" width="563"><figcaption></figcaption></figure>
 
 If the voter finds a problem in their ballot during the final review stage, they must spoil the ballot. They are prompted to get help from a poll worker who can help them spoil their ballot and load a new, blank sheet. Once the blank sheet is loaded, the voter returns to the initial review stage from which they can edit selections before reprinting, reviewing, and casting their ballot.
 

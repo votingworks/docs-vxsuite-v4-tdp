@@ -12,7 +12,7 @@ Because of the system's security measures, users are limited to using the applic
 
 ## Application Architecture
 
-<figure><img src="../.gitbook/assets/image (63).png" alt="" width="563"><figcaption><p>Application architecture diagram</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (63).png" alt="Kiosk browser connected to the application frontend server and to the backend server with its SQLite store and peripherals" width="563"><figcaption><p>Application architecture diagram</p></figcaption></figure>
 
 All machines are completely disconnected from any external network, but the frameworks and architecture employed are borrowed from web-based development. The user interacts with a restricted browser which communicates with a server that provides the web-content and another server that provides application data and hardware status.
 

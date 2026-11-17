@@ -4,11 +4,11 @@
 
 VxScan consists of two main components—the collapsible ballot box and the scanner itself—which are secured together during setup.
 
-<figure><img src="../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (41).png" alt="VxScan collapsed ballot box beside the closed scanner case, the two main components"><figcaption></figcaption></figure>
 
 ### Ballot Box
 
-<div><figure><img src="../.gitbook/assets/ballot-box labels_11.png" alt=""><figcaption><p>Ballot box front, collapsed</p></figcaption></figure> <figure><img src="../.gitbook/assets/ballot-box labels_10.png" alt=""><figcaption><p>Ballot box side, collapsed</p></figcaption></figure> <figure><img src="../.gitbook/assets/ballot-box labels_9.png" alt=""><figcaption><p>Ballot box lid underside, collapsed</p></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/ballot-box labels_11.png" alt="Front of the collapsed ballot box labeling the telescoping handle, ballot door latch, auxiliary bin, and seal points"><figcaption><p>Ballot box front, collapsed</p></figcaption></figure> <figure><img src="../.gitbook/assets/ballot-box labels_10.png" alt="Side of the collapsed ballot box labeling the nameplate and closing strap"><figcaption><p>Ballot box side, collapsed</p></figcaption></figure> <figure><img src="../.gitbook/assets/ballot-box labels_9.png" alt="Underside of the ballot box lid labeling the stowed closing straps and the wheels"><figcaption><p>Ballot box lid underside, collapsed</p></figcaption></figure></div>
 
 The ballot box features a telescoping handle and wheels for ease of transport. When collapsed, closing straps run around the side of the box to hold it closed. Before the ballot box is set up, the closing straps are loosened and secured to the underside of the ballot box lid.
 
@@ -18,13 +18,13 @@ The ballot door has a built-in auxiliary bin for depositing ballots in situation
 
 After closing straps are loosened, the ballot box can be expanded. An accented foot hook can be used as an aid in expanding the box. Once the box is fully expanded, the lid can be rotated up and over 270 degrees to eventually close and latch into place.
 
-<div><figure><img src="../.gitbook/assets/foot-hook.png" alt=""><figcaption><p>Ballot box side, open</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241031_183046879.jpg" alt=""><figcaption><p>Ballot box interior</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241031_183140058.jpg" alt=""><figcaption><p>Ballot box side, closed</p></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/foot-hook.png" alt="Side of the expanded ballot box with the lid open, labeling the purple foot hook"><figcaption><p>Ballot box side, open</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241031_183046879.jpg" alt="Top-down view into the empty interior of the expanded ballot box"><figcaption><p>Ballot box interior</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241031_183140058.jpg" alt="Side of the expanded ballot box with the lid closed and latched"><figcaption><p>Ballot box side, closed</p></figcaption></figure></div>
 
 After being latched, the ballot box lid can be released by pushing the ballot box lid handle, indicated below. The handle is covered by the scanner when installed, so it cannot be opened while the scanner is in operation and sealed in place. The box lid has a ballot slot which mates with the scanner's ballot outfeed.
 
 The scanner attaches to the ballot box by sliding into the area in the front of the lid. Flanges on the bottom of the scanner prevent it from moving up and down or side to side. To secure the scanner front to back and lock it into place, the scanner has a security bolt which mates with the security bolt hole on the top of the ballot box. After the security bolt is engaged, the scanner cannot be removed until the security bolt is unsealed and released. This is covered more fully in the next section.
 
-<figure><img src="../.gitbook/assets/ballot-box labels_8.png" alt="" width="375"><figcaption><p>Ballot box from above, closed</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/ballot-box labels_8.png" alt="Top of the closed ballot box labeling the security bolt hole, ballot slot, and box lid handle" width="375"><figcaption><p>Ballot box from above, closed</p></figcaption></figure>
 
 ### Scanner
 
@@ -36,21 +36,21 @@ The scanner is built into a customized Pelican 1485 Air case. The commercial off
 
 Additional cuts are made into the case for the back power port, the back cable wrap, the security bolt exit, nameplate attachment, front panel jacks, and mounting features within the case.
 
-<div><figure><img src="../.gitbook/assets/ballot-box labels_3.png" alt=""><figcaption><p>Ballot box with scanner installed</p></figcaption></figure> <figure><img src="../.gitbook/assets/case-back-redo.png" alt=""><figcaption><p>Scanner rear</p></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/ballot-box labels_3.png" alt="Scanner case installed on the ballot box, labeling the case seal points, case latches, and handle"><figcaption><p>Ballot box with scanner installed</p></figcaption></figure> <figure><img src="../.gitbook/assets/case-back-redo.png" alt="Rear of the scanner case labeling the power port, cable wrap, and security bolt"><figcaption><p>Scanner rear</p></figcaption></figure></div>
 
 The case is opened by pressing the buttons on each case latch and then lifting the lid. The elements that a voter or poll worker interact with are generally accented in purple, just as with the ballot box. The picture below shows the smart card insert, security bolt, ballot infeed, and printer outfeed all accented in purple.
 
-<div><figure><img src="../.gitbook/assets/ballot-box labels_7.png" alt=""><figcaption><p>Scanner main bottom tub</p></figcaption></figure> <figure><img src="../.gitbook/assets/ballot-box labels_1.png" alt=""><figcaption><p>Scanner upper tub</p></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/ballot-box labels_7.png" alt="Open scanner bottom tub labeling the smart card slot, security bolt, poll worker door, printer tear bar, ballot slot lockout, and ballot infeed"><figcaption><p>Scanner main bottom tub</p></figcaption></figure> <figure><img src="../.gitbook/assets/ballot-box labels_1.png" alt="Scanner upper tub showing the touchscreen and speaker on the VxScan insert ballot screen"><figcaption><p>Scanner upper tub</p></figcaption></figure></div>
 
 When the scanner is first installed on the ballot box, the security bolt must be disengaged. While the security bolt is disengaged, the smart card slot is blocked. Once the scanner is installed on the ballot box, the user must push the bolt down to lock the scanner into place on the ballot box. This also unblocks the smart card slot. In this way, the scanner cannot be activated until it is properly installed.
 
 When the scanner must be removed from the ballot box, the user pushes the security bolt release to the left to disengage the security bolt. The security bolt release is accented with graphical instructions for the user. In order to access the security bolt release, the poll worker door must be opened, which also exposes the scanner's USB ports. The poll worker door can be sealed shut by passing a seal through a cutout in the door and the hole in the top of the security bolt.
 
-<div><figure><img src="../.gitbook/assets/ballot-box labels_4.png" alt="" width="563"><figcaption><p>Poll worker door area</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241031_184055101.jpg" alt="" width="563"><figcaption><p>Poll worker door sealed</p></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/ballot-box labels_4.png" alt="Open poll worker door exposing the security bolt release and two USB ports" width="563"><figcaption><p>Poll worker door area</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241031_184055101.jpg" alt="Closed poll worker door sealed with a numbered seal through the door cutout and security bolt" width="563"><figcaption><p>Poll worker door sealed</p></figcaption></figure></div>
 
 Poll workers do not normally interact with any parts of the scanner that have not already been described, but election managers may have to open the access door to perform maintenance on the printer and scanner. The access door is held in place by the poll worker door and can only be opened when the poll worker door is unsealed and opened. The printer and printer roll holder are beneath the access door toward the screen. The user presses the release lever on the right side of the printer to remove the printer roll holder and install a paper roll. The scanner is opened by lifting the scanner cover handle, revealing the scanner glass for cleaning.
 
-<div><figure><img src="../.gitbook/assets/ballot-box labels_5.png" alt=""><figcaption><p>Access door area</p></figcaption></figure> <figure><img src="../.gitbook/assets/ballot-box labels_6.png" alt=""><figcaption><p>Scanner features</p></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/ballot-box labels_5.png" alt="Open access door showing the printer paper roll holder, its release, and the scanner cover handle"><figcaption><p>Access door area</p></figcaption></figure> <figure><img src="../.gitbook/assets/ballot-box labels_6.png" alt="Opened scanner cover showing the imaging sensors, upper and lower rollers, and magnetic latch"><figcaption><p>Scanner features</p></figcaption></figure></div>
 
 ## Scanner Internals
 
@@ -70,17 +70,17 @@ The wiring diagram below outlines the power and data connections within the scan
 
 VxScan does not require any direct bodily contact or for the body to be part of any electrical circuit to function.
 
-<figure><img src="../.gitbook/assets/TDP Diagrams v4.1 - VxScan - Rev. A.0.png" alt=""><figcaption><p>VxScan Wiring Diagram</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/TDP Diagrams v4.1 - VxScan - Rev. A.0.png" alt="VxScan wiring diagram of power, ground, and data connections between the computer, scanner, printer, screen, and power supplies"><figcaption><p>VxScan wiring diagram</p></figcaption></figure>
 
-<div><figure><img src="../.gitbook/assets/internals.png" alt="" width="563"><figcaption><p>Wiring components</p></figcaption></figure> <figure><img src="../.gitbook/assets/IMG_1611.jpg" alt="" width="375"><figcaption><p>Voltage warning over power supplies</p></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/internals.png" alt="Scanner bottom tub with panels removed, labeling the single board computer, cooling fan, USB hub, and 12V and 24V power supplies" width="563"><figcaption><p>Wiring components</p></figcaption></figure> <figure><img src="../.gitbook/assets/IMG_1611.jpg" alt="High voltage warning label on the panel covering the power supplies" width="375"><figcaption><p>Voltage warning over power supplies</p></figcaption></figure></div>
 
 To prevent access to internals, VotingWorks installs three seals over screws holding the metal panels in place: one on the bottom left panel covering the computer, one on the bottom right panel covering the power supplies, and one on the top panel holding the display in place. These seals are installed at the factory and are intended to be permanent aside from when panels need to be opened for repairs.
 
-<div><figure><img src="../.gitbook/assets/PXL_20241115_211101998.jpg" alt="" width="375"><figcaption><p>Bottom left panel seal</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241115_211107051.jpg" alt="" width="375"><figcaption><p>Bottom right panel seal</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241115_211114764.jpg" alt="" width="563"><figcaption><p>Top panel seal</p></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/PXL_20241115_211101998.jpg" alt="Tamper-evident seal over a screw on the bottom left panel covering the computer" width="375"><figcaption><p>Bottom left panel seal</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241115_211107051.jpg" alt="Tamper-evident seal over a screw on the bottom right panel covering the power supplies" width="375"><figcaption><p>Bottom right panel seal</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241115_211114764.jpg" alt="Tamper-evident seal on the top panel holding the display in place" width="563"><figcaption><p>Top panel seal</p></figcaption></figure></div>
 
 ### Paper Path
 
-<figure><img src="../.gitbook/assets/paper_path.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/paper_path.png" alt="Cross-section of the scanner tracing the ballot path past the infeed, upper deflector, redirector, and outfeed slot" width="563"><figcaption></figcaption></figure>
 
 The paper path is designed and tested to provide a smooth and uninterrupted ballot scan and deposit. The voter inserts paper over the infeed which mates directly with the scanner. The scanner lid handle doubles as an upper deflector, deflecting ballots which are inserted too high by the voter. As the ballot passes through the scanner, it hits the ballot redirector behind the scanner. The ballot redirector is a logarithmic curve which directs the ballot downward wherever it strikes. The ballot then passes through the outfeed slot (which is only open when the scanner case is open) into the ballot box.
 
@@ -88,7 +88,7 @@ The paper path is designed and tested to provide a smooth and uninterrupted ball
 
 VxScan enables an audio-tactile interface on all voter-facing screens when casting ballots. Two 3.5 mm (1/8 in.) stereo jacks are mounted on the front left of the Pelican case: one for headphones and one for a PAT input device such as a dual-switch. Headphones connect to the audio jack, which is internally wired to the single-board computer's audio output. A dual-switch input connects to the PAT jack via a splitter, which is internally wired to a programmable switch interface mounted to the internal USB hub. An election worker connects the headphones and dual-switch input to the front panel jacks when setting up VxScan. Voters may navigate and make selections using the dual-switch and listen to audio prompts over headphones. Volume is controlled via the on-screen interface.
 
-<div><figure><img src="../.gitbook/assets/scan_install_pat+audio-ports-1600x1200.jpg" alt=""><figcaption><p>PAT and audio ports on front lower left</p></figcaption></figure> <figure><img src="../.gitbook/assets/scan_install_pat+audio-attached-front-1600x1200.jpg" alt=""><figcaption><p>PAT device and headphones plugged in</p></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/scan_install_pat+audio-ports-1600x1200.jpg" alt="Front of the VxScan case showing the PAT and headphone jacks on the lower left"><figcaption><p>PAT and audio ports on front lower left</p></figcaption></figure> <figure><img src="../.gitbook/assets/scan_install_pat+audio-attached-front-1600x1200.jpg" alt="VxScan front jacks with a dual-switch PAT device and headphones plugged in"><figcaption><p>PAT device and headphones plugged in</p></figcaption></figure></div>
 
 ## COTS Components
 

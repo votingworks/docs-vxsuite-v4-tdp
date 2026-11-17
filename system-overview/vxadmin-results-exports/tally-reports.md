@@ -4,7 +4,7 @@
 
 The basic structure of the tally reports printed from VxAdmin is similar to the [polls opened and closed reports](../vxscan-polls-reports.md) printed from VxScan.
 
-<figure><img src="../../.gitbook/assets/vxadmin-full-election-tally-report-printed.png" alt="" width="375"><figcaption><p>Full election tally report</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/vxadmin-full-election-tally-report-printed.png" alt="Printed full election tally report with certification signature lines, ballot count and results for each contest" width="375"><figcaption><p>Full election tally report</p></figcaption></figure>
 
 ## Filtered and Grouped Reports
 
@@ -19,11 +19,11 @@ In addition to the full election report, VxAdmin exports reports filtered or gro
 
 When a report is grouped, the report is broken up into multiple sections each with their own filter. For example, a report grouped by "Voting Method" has a section filtered for precinct ballots only and a section filtered for absentee ballots only:
 
-<div><figure><img src="../../.gitbook/assets/vxadmin-tally-report-by-voting-method.png" alt="" width="375"><figcaption><p>First part of a grouped tally report</p></figcaption></figure> <figure><img src="../../.gitbook/assets/vxadmin-tally-report-by-voting-method-page2.png" alt="" width="375"><figcaption><p>Second part of a grouped tally report</p></figcaption></figure></div>
+<div><figure><img src="../../.gitbook/assets/vxadmin-tally-report-by-voting-method.png" alt="Printed tally report grouped by voting method, precinct ballots section" width="375"><figcaption><p>First part of a grouped tally report</p></figcaption></figure> <figure><img src="../../.gitbook/assets/vxadmin-tally-report-by-voting-method-page2.png" alt="Printed tally report grouped by voting method, absentee ballots section" width="375"><figcaption><p>Second part of a grouped tally report</p></figcaption></figure></div>
 
 The filter for a given report section is indicated in the title of the report. If the report has more than one filter applied to it, the full details of the filter are specified in a box below the title:
 
-<figure><img src="../../.gitbook/assets/vxadmin-tally-report-custom-filter.png" alt="" width="375"><figcaption><p>Tally report with a complex filter</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/vxadmin-tally-report-custom-filter.png" alt="Printed custom filter tally report with the precinct and ballot style filter listed in a box below the title" width="375"><figcaption><p>Tally report with a complex filter</p></figcaption></figure>
 
 Filters and groups can be combined.
 
@@ -31,7 +31,7 @@ Filters and groups can be combined.
 
 If manual results have been added, they are included in the tally report alongside the scanned results. For each contest, there are three results columns: "scanned", "manual", and "total".
 
-<figure><img src="../../.gitbook/assets/vxadmin-manual-results-tally-report.png" alt="" width="375"><figcaption><p>Tally report with manual results</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/vxadmin-manual-results-tally-report.png" alt="Printed tally report with scanned, manual and total columns for each contest" width="375"><figcaption><p>Tally report with manual results</p></figcaption></figure>
 
 ## Write-In Candidate Aggregation
 
@@ -39,5 +39,5 @@ If VxAdmin is in [Qualified Write-In Mode](../vxadmin-function.md#qualified-writ
 
 Unadjudicated write-ins are always consolidated as "Unadjudicated Write-In."
 
-<div><figure><img src="../../.gitbook/assets/Screen Shot 2024-10-01 at 4.52.26 PM.png" alt="" width="407"><figcaption><p>Before adjudication</p></figcaption></figure> <figure><img src="../../.gitbook/assets/Screen Shot 2024-10-01 at 4.52.31 PM.png" alt="" width="392"><figcaption><p>Adjudication just started</p></figcaption></figure> <figure><img src="../../.gitbook/assets/write-ins-edited.png" alt="" width="399"><figcaption><p>Adjudication almost finished</p></figcaption></figure></div>
+<div><figure><img src="../../.gitbook/assets/Screen Shot 2024-10-01 at 4.52.26 PM.png" alt="Tally report contest before adjudication, with all write-ins counted as Unadjudicated Write-In" width="407"><figcaption><p>Before adjudication</p></figcaption></figure> <figure><img src="../../.gitbook/assets/Screen Shot 2024-10-01 at 4.52.31 PM.png" alt="Tally report contest after one write-in is adjudicated, showing a generic Write-In row" width="392"><figcaption><p>Adjudication just started</p></figcaption></figure> <figure><img src="../../.gitbook/assets/write-ins-edited.png" alt="Tally report contest near the end of adjudication, listing winning write-in candidates and Other Write-In" width="399"><figcaption><p>Adjudication almost finished</p></figcaption></figure></div>
 

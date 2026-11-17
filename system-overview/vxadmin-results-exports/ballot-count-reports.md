@@ -29,7 +29,7 @@ If there are manual results, the manual ballot count is always displayed separat
 
 When grouping is applied in a ballot count report, each group corresponds to a row in the table. In the following example, the ballot counts are grouped by both precinct and voting method:
 
-<figure><img src="../../.gitbook/assets/vxadmin-ballot-count-report-by-precinct-and-voting-method.png" alt="" width="375"><figcaption><p>Ballot count report</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/vxadmin-ballot-count-report-by-precinct-and-voting-method.png" alt="Printed ballot count report with one row per precinct and voting method and a sum total" width="375"><figcaption><p>Ballot count report</p></figcaption></figure>
 
 The following metadata columns may appear in a ballot count report table in order to specify groupings:
 
@@ -37,4 +37,4 @@ The following metadata columns may appear in a ballot count report table in orde
 
 Filters apply to the entire report. Simple filters are shown in the title, while complex filters are listed in a box below the title.
 
-<figure><img src="../../.gitbook/assets/vxadmin-ballot-count-report-custom-filter.png" alt="" width="375"><figcaption><p>Ballot count report with a complex filter</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/vxadmin-ballot-count-report-custom-filter.png" alt="Printed custom filter ballot count report with the absentee and West Lincoln filter listed in a box below the title" width="375"><figcaption><p>Ballot count report with a complex filter</p></figcaption></figure>

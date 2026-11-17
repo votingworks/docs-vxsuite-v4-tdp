@@ -61,7 +61,7 @@ North Lincoln,23,Precinct,0
 North Lincoln,23,Absentee,0
 ```
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-11-26 at 1.12.02 PM.png" alt="" width="563"><figcaption><p>Formatted version of the above CSV excerpt</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-11-26 at 1.12.02 PM.png" alt="Ballot count CSV excerpt shown as a table with Precinct, Precinct ID, Voting Method and Total columns" width="563"><figcaption><p>Formatted version of the above CSV excerpt</p></figcaption></figure>
 
 The "Precinct", "Precinct ID" and "Voting Method" columns are [metadata fields](csv-exports.md#shared-metadata-structure) that are included because this example export groups results by precinct and voting method. The "Total" field is a standard field on all ballot count CSV exports, but other ballot or sheet count fields may appear depending on the election and loaded results:
 

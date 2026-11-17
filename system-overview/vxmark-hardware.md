@@ -4,7 +4,7 @@
 
 VxMark consists of two main components—the tabletop ballot-marking device (BMD) and the attached printer—which are connected together during setup.
 
-<figure><img src="../.gitbook/assets/VxMark-FrontView (2).jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/VxMark-FrontView (2).jpeg" alt="VxMark BMD and attached printer, labeling the touchscreen, accessible controller, PAT and headphone inputs, and barcode reader"><figcaption></figcaption></figure>
 
 ### Ballot-Marking Device
 
@@ -16,11 +16,11 @@ The tabletop BMD is built into a customized Pelican 1485 Air case. The commercia
 
 Additional cuts are made into the case for the nameplate attachment, personal assistive technology (PAT) input jack, barcode reader, and the spring-loaded back compartment which houses the USB and AC power cables.
 
-<figure><img src="../.gitbook/assets/LaidDownScreen-VxMark (2).jpeg" alt="" width="375"><figcaption><p>VxMark Unit</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/LaidDownScreen-VxMark (2).jpeg" alt="Open VxMark case with the touchscreen tipped back over the case interior" width="375"><figcaption><p>VxMark unit</p></figcaption></figure>
 
 The case is opened by pressing the buttons on each case latch and then lifting the lid. The picture below shows the card reader, USB port, headphone storage, and display arm storage. The audio-tactile interface (ATI) handset is located in front of the USB port.
 
-<figure><img src="../.gitbook/assets/VxMark-TopDown (1).jpeg" alt=""><figcaption><p>VxMark Overhead View</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/VxMark-TopDown (1).jpeg" alt="Overhead view inside the VxMark case labeling the card reader, USB port, headphone storage, and display arm storage"><figcaption><p>VxMark overhead view</p></figcaption></figure>
 
 ### Printer
 
@@ -33,13 +33,13 @@ The printer is the [HP LaserJet Pro 4001dn](https://github.com/votingworks/docs-
 
 The display is a 15 in. HD (1920 x 1080) touchscreen, specifically the [Elo 1504LS](https://github.com/votingworks/docs-vxsuite-v4/blob/c3708afd846808afb7249ef1c11d099a86d1e15a/hardware-assets/cots-documentation/mark/Elo-1504LS-Touchscreen-Datasheet.pdf). It can be tilted forward or backward by a voter based on their preferences. The screen includes an embedded speaker which is used for machine chimes and alerts. The screen rotates horizontally and then tips all the way back into the case for storage.
 
-<figure><img src="../.gitbook/assets/LaidDownScreen-VxMark (1).jpeg" alt="" width="375"><figcaption><p>VxMark Display</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/LaidDownScreen-VxMark (1).jpeg" alt="VxMark touchscreen rotated horizontally and tipped back into the case" width="375"><figcaption><p>VxMark display</p></figcaption></figure>
 
 ### Accessible Controller
 
 The accessible controller sits to the right of the display, either in its cradle or beside VxMark outside of its case. It is the commercially available [Storm AudioNav 9-Key Keypad](https://github.com/votingworks/docs-vxsuite-v4/blob/c3708afd846808afb7249ef1c11d099a86d1e15a/hardware-assets/cots-documentation/mark/Storm-Interfaces-AudioNav-EF-Datasheet.pdf). Four keys navigate directionally (up, down, left, right), one key is used to make selections, a pair of keys are used to control audio volume, one key pauses and resumes audio, and one key opens the controller help interface.
 
-<figure><img src="../.gitbook/assets/StormNavUpdatedImage (1).jpeg" alt="" width="188"><figcaption><p>VxMark Accessible Controller</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/StormNavUpdatedImage (1).jpeg" alt="Storm AudioNav accessible controller labeling the navigation, audio volume, pause/resume, and help keys" width="188"><figcaption><p>VxMark accessible controller</p></figcaption></figure>
 
 ### Headphone & PAT Inputs
 
@@ -53,7 +53,7 @@ The PAT input is compatible with any PAT device such as a sip-and-puff.
 
 The barcode scanner, the Honeywell [CM4680SR-BW0](https://github.com/votingworks/docs-vxsuite-v4/blob/c3708afd846808afb7249ef1c11d099a86d1e15a/hardware-assets/cots-documentation/mark/Honeywell-CM4680-SR-BarcodeReader-Datasheet.pdf), allows a poll worker to activate a voting session, or print a blank ballot, by scanning a barcode that encodes the voter's ballot style, typically produced by an electronic poll book. See [#barcode-ballot-activation](vxmark-function.md#barcode-ballot-activation "mention").
 
-<figure><img src="../.gitbook/assets/VxMark-FrontPorts-BarcodeReader (1).jpeg" alt="" width="188"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/VxMark-FrontPorts-BarcodeReader (1).jpeg" alt="Front panel of the VxMark case labeling the PAT jack, headphone jack, and barcode scanner" width="188"><figcaption></figcaption></figure>
 
 ## Electronic Subcomponents
 
@@ -69,7 +69,7 @@ The wiring diagram below outlines the power and data connections within the BMD.
 
 VxMark does not require any direct bodily contact or for the body to be part of any electrical circuit to function.
 
-<figure><img src="../.gitbook/assets/TDP Diagrams v4.1 - VxMark - Rev. A.0.png" alt=""><figcaption><p>VxMark Wiring Diagram</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/TDP Diagrams v4.1 - VxMark - Rev. A.0.png" alt="VxMark wiring diagram of power, ground, and data connections between the computer, USB hub, screen, peripherals, and power supply"><figcaption><p>VxMark wiring diagram</p></figcaption></figure>
 
 ## COTS Components
 

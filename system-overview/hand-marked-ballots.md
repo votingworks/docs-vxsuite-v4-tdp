@@ -39,7 +39,7 @@ These lengths correspond to the length specified in the [Ballot Layout](election
 
 ## Timing Mark Borders
 
-<figure><img src="../.gitbook/assets/image (21).png" alt="" width="563"><figcaption><p>Example of timing mark borders on letter-sized paper (scaled)</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (21).png" alt="Blank letter-size page showing only the timing mark border along all four edges" width="563"><figcaption><p>Example of timing mark borders on letter-sized paper (scaled)</p></figcaption></figure>
 
 Every ballot must have timing mark borders on both front and back. The timing marks and page margins are strictly defined:
 
@@ -76,7 +76,7 @@ For full specifications on how to generate readable QR codes, refer to the [ball
 
 The interpreter looks for the QR code in the bottom-left corner of the ballot. The detection area is a square whose sides are 1/4 of the ballot width.
 
-<figure><img src="../.gitbook/assets/image (66).png" alt=""><figcaption><p>The highlighted area must contain the metadata QR code</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (66).png" alt="Timing mark border with the QR code detection area highlighted in the bottom-left corner" width="563"><figcaption><p>The highlighted area must contain the metadata QR code</p></figcaption></figure>
 
 ## Bubble Format
 
@@ -89,13 +89,13 @@ In order to be interpreted correctly, bubbles must meet the following dimensions
 | Border Radius  | 0.07 in.      |
 | Line Thickness | 1 px (0.265 mm) |
 
-<figure><img src="../.gitbook/assets/Screen Shot 2024-09-26 at 11.59.35 AM.png" alt="" width="563"><figcaption><p>Bubble example (not to scale)</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2024-09-26 at 11.59.35 AM.png" alt="Enlarged empty ballot bubble, a rounded oval outline" width="563"><figcaption><p>Bubble example (not to scale)</p></figcaption></figure>
 
 ## Grid Coordinates
 
 The timing mark borders define an abstract grid that VxSuite uses to assign coordinates to positions on the ballot. In the election definition, bubble positions and other ballot regions are specified using these grid coordinates. The ballot grid is an XY grid with the origin in the top-left corner. For example, the coordinate **(5, 3)** would correspond to the following position on the ballot:
 
-<figure><img src="../.gitbook/assets/image (27).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (27).png" alt="Timing mark border with grid coordinate (5, 3) marked by lines from the top and left edges" width="563"><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 * Coordinates correspond to the _center_ of each timing mark
@@ -107,4 +107,4 @@ The timing mark borders define an abstract grid that VxSuite uses to assign coor
 
 Below is a complete ballot that, when paired with the appropriate election definition, could be interpreted within VxSuite:
 
-<figure><img src="../.gitbook/assets/image (28).png" alt="" width="563"><figcaption><p>Valid ballot with timing marks, QR code, and bubbles</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (28).png" alt="Complete one-page bubble ballot with timing marks, contests with write-in lines, and QR code in the bottom-left corner" width="563"><figcaption><p>Valid ballot with timing marks, QR code, and bubbles</p></figcaption></figure>
