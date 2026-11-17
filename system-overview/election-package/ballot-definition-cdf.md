@@ -1,6 +1,6 @@
 # Ballot Definition CDF
 
-The election definition within the election package can be a JSON Ballot Definition CDF Version 1.0 file. The full specification is defined by NIST and can be [accessed on their website](https://www.nist.gov/publications/ballot-definition-common-data-format-specification).
+The election definition within the election package can be a JSON Ballot Definition Common Data Format (CDF) Version 1.0 file. The full specification is defined by the National Institute of Standards and Technology (NIST) and is available in the [NIST Ballot Definition Common Data Format Specification](https://www.nist.gov/publications/ballot-definition-common-data-format-specification).
 
 ## VxSuite CDF Implementation
 
@@ -10,7 +10,7 @@ VxSuite accepts the Ballot Definition CDF Version 1.0 as defined by NIST without
 * Some enumeration values are more restricted in VxSuite than in the NIST CDF
 * Some classes and attributes are ignored in VxSuite
 
-The exact VxSuite schema is defined as a [JSON schema in the vxsuite repository](https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/types/src/cdf/ballot-definition/vx-schema.json) which is derived from the [original NIST schema](https://github.com/usnistgov/BallotDefinition/blob/master/NIST_V1_ballot_definition.json). The differences between the two are documented in the below tables.
+The exact VxSuite schema is defined as a [JSON schema in the vxsuite repository](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/types/src/cdf/ballot-definition/vx-schema.json) which is derived from the [original NIST schema](https://github.com/usnistgov/BallotDefinition/blob/master/NIST_V1_ballot_definition.json). The differences between the two are documented in the below tables.
 
 ### Required Class Attributes
 
@@ -61,7 +61,7 @@ The exact VxSuite schema is defined as a [JSON schema in the vxsuite repository]
 
 ## VxSuite CDF Conversion
 
-When importing a Ballot Definition CDF file, attributes will be mapped to the [VxSuite Election Definition](vxsuite-election-definition.md) and used across the system in the exact same way.
+When importing a Ballot Definition CDF file, attributes are mapped to the [VxSuite Election Definition](vxsuite-election-definition.md) and used across the system in the exact same way.
 
 ### Attribute Mappings
 
@@ -69,7 +69,7 @@ When importing a Ballot Definition CDF file, attributes will be mapped to the [V
 
 ### Translations
 
-Most attributes in the Ballot Definition CDF that could require translation are defined with the CDF `InternationalizedText` class which allows specifying variants for each language. `InternationalizedText` maps directly onto VxSuite's [ballot strings](vxsuite-election-definition.md#ballot-strings). When an `InternationalizedText` attribute is mapped to a ballot string, the English version is used as the default which will appear on reports and administrator interfaces while the translations are maintained in the election definition for multi-language experiences on voter devices.
+Most attributes in the Ballot Definition CDF that could require translation are defined with the CDF `InternationalizedText` class which allows specifying variants for each language. `InternationalizedText` maps directly onto VxSuite's [ballot strings](vxsuite-election-definition.md#ballot-strings). When an `InternationalizedText` attribute is mapped to a ballot string, the English version is used as the default, which appears on reports and administrator interfaces while the translations are maintained in the election definition for multi-language experiences on voter devices.
 
 ### Geographies
 
@@ -85,8 +85,8 @@ Some geographies _must_ exist in the Ballot Definition CDF file to be used in Vx
 
 Because VxSuite does not utilize any data extensions to the Ballot Definition CDF, some information cannot be included when using the Ballot Definition CDF. The missing information creates some limitations when using the Ballot Definition CDF when compared to the [VxSuite Election Definition](vxsuite-election-definition.md) format:
 
-* Contest term descriptions (e.g. “2 years”) will always show up in English because there is no field in the CDF for internationalized term descriptions
-* The full party name will be displayed for each candidate on VxMark and VxMarkScan (e.g. “Democratic Party” instead of “Democrat”) because the CDF only has one attribute for party name. In contrast, the VxSuite format supports two separate fields, one for the full name and one for showing on the ballot.
-* When adjudicating write-ins, the highlighted contest option area will be set to a default because there is no field in the CDF for this parameter.
-* Seal images are not supported in the CDF, so no seal will be shown in association with the election.
+* Contest term descriptions (e.g., "2 years") always appear in English because there is no field in the CDF for internationalized term descriptions
+* The full party name is displayed for each candidate on VxMark and VxMarkScan (e.g., "Democratic Party" instead of "Democrat") because the CDF only has one attribute for party name. In contrast, the VxSuite format supports two separate fields, one for the full name and one for showing on the ballot.
+* When adjudicating write-ins, the highlighted contest option area is set to a default because there is no field in the CDF for this parameter.
+* Seal images are not supported in the CDF, so no seal is shown in association with the election.
 * CDF polling places can only be distinguished in type by `IsMailOnly` being true or false. That value maps to either `absentee` or `election_day` polling place types. There is no way to indicate an `early_voting` polling place via the CDF.

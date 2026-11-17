@@ -19,13 +19,13 @@ The election package is a zip archive (a `.zip` file). The zip archive has the f
 
 ### Election Definition
 
-The election definition file includes the information that defines the election and ballots, including but not limited to definitions for contests, ballot styles, precincts, polling places, parties, multi-lingual ballot translations, and ballot layouts. The system accepts two formats - the [VxSuite Election Definition](vxsuite-election-definition.md) format or the [Ballot Definition CDF](ballot-definition-cdf.md). When using the Ballot Definition CDF, some features are not available.
+The election definition file includes the information that defines the election and ballots, including but not limited to definitions for contests, ballot styles, precincts, polling places, parties, multi-lingual ballot translations, and ballot layouts. The system accepts two formats: the [VxSuite Election Definition](vxsuite-election-definition.md) format or the [Ballot Definition Common Data Format (CDF)](ballot-definition-cdf.md). When using the Ballot Definition CDF, some features are not available.
 
 The election definition file is required to be present in the election package.
 
 ### App Strings
 
-The app strings file contains all voter-facing strings in the user interface and their translations. For example, at the beginning of the voter flow in VxMark there is a button labelled, by default, "Start Voting." If the voter has set VxMark to another language, however, the button will display the translation for that language specified in the app strings file. Additionally, the default English text can be overridden by specifying a different English value in the app strings file.
+The app strings file contains all voter-facing strings in the user interface and their translations. For example, at the beginning of the voter flow in VxMark there is a button labelled, by default, "Start Voting." If the voter has set VxMark to another language, however, the button displays the translation for that language specified in the app strings file. Additionally, the default English text can be overridden by specifying a different English value in the app strings file.
 
 In the case of specifying a Spanish translation and overriding the English translation for "Start Voting", which has an internal key of `buttonStartVoting`, the following values and overall structure would appear in the app strings file:
 
@@ -44,13 +44,13 @@ In the case of specifying a Spanish translation and overriding the English trans
 }
 ```
 
-**Notes:**
-
+{% hint style="info" %}
 * Voter-facing strings that appear on ballots (contest names, candidate names, the name of the jurisdiction, etc.) are not included in the app strings file because they are already included in the election definition.
 * The language codes in the app strings file are [IETF language tags](https://www.w3.org/International/articles/language-tags/).
-* The keys for the various user interface app strings (e.g. `buttonStartVoting`) are defined in VxSuite's [app strings catalog](https://github.com/votingworks/vxsuite/blob/v4.1.0/libs/ui/src/ui_strings/app_strings_catalog/latest.json).
+* The keys for the various user interface app strings (e.g., `buttonStartVoting`) are defined in VxSuite's [app strings catalog](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/ui/src/ui_strings/app_strings_catalog/latest.json).
+{% endhint %}
 
-The app strings file is optional. If not provided, default English strings will be used.
+The app strings file is optional. If it is not provided, the default English strings are used.
 
 ### Audio IDs & Audio Clips
 
@@ -81,7 +81,7 @@ Each row of the audio clips file contains one audio clip with relevant metadata.
 
 Together, the two files allow specifying audio playback for any text read to a voter in audio mode, including both non-English translations and English overrides.
 
-The audio IDs and audio clips files are optional. If they are not provided, audio playback will be disabled.
+The audio IDs and audio clips files are optional. If they are not provided, audio playback is disabled.
 
 ### Ballots
 
@@ -121,7 +121,7 @@ The registered voter counts file is optional. If it is not provided, voter turno
 
 ### Metadata
 
-The metadata file is a JSON file that contains a single key, `version`. In the current software version, the value will only ever be `"latest"`. In other words, the metadata file is a JSON file with the contents:
+The metadata file is a JSON file that contains a single key, `version`. In the current software version, the value is always `"latest"`. In other words, the metadata file is a JSON file with the contents:
 
 ```json
 {
@@ -135,18 +135,18 @@ In future software versions, the `"version"` value will be used to differentiate
 
 There are two hashes for each election which are both critical to operation and security of each election.
 
-The **ballot hash** is the SHA256 hash of the election definition file and represents a snapshot of all election-specific data which determines the ballot, including contest definitions and ballot layout. Ballots must include a machine-readable version of the ballot hash (e.g. a QR code or a pattern of timing marks). When a ballot is scanned, the scanner checks to make sure the ballot has the expected ballot hash. The ballot hash from the ballot must match the ballot hash from the scanner's configured election definition.
+The **ballot hash** is the SHA256 hash of the election definition file and represents a snapshot of all election-specific data which determines the ballot, including contest definitions and ballot layout. Ballots must include a machine-readable version of the ballot hash (e.g., a QR code or a pattern of timing marks). When a ballot is scanned, the scanner checks that the ballot has the expected ballot hash. The ballot hash from the ballot must match the ballot hash from the scanner's configured election definition.
 
-If any election content changes, the ballot hash will change, meaning the system will consider it to be a new election definition, and any ballots with a different ballot hash will not scan. The system's strict checking of the ballot hash prevents situations where a change to the election definition leads to ballots being miscounted (for example, if the order of two candidates is swapped). As a result, any changes to the election definition require reprinting all ballots.
+Any change to election content changes the ballot hash. The system treats the changed election definition as a new one, so the scanner rejects ballots that carry the previous hash. The system's strict checking of the ballot hash prevents situations where a change to the election definition leads to ballots being miscounted (for example, if the order of two candidates is swapped). As a result, any changes to the election definition require reprinting all ballots.
 
 The **election package hash** is the SHA256 hash of the entire election package, which includes both the election definition and all other files. The election package hash is displayed on screen to election managers and system administrators. It allows the user to ascertain which election package was used to configure a machine. The election package hash is _not_ used during ballot scanning.
 
-For example, imagine that an election administrator wants to change the audio clip for candidate's name. The audio clip is not a part of the election definition but it is a part of the election package, so the ballot hash remains the same while the election package hash changes. The election administrator can reconfigure VxMarkScan with an updated election package but does not have to reprint ballots.
+For example, suppose an election administrator changes the audio clip for a candidate's name. The audio clip is not a part of the election definition but it is a part of the election package, so the ballot hash remains the same while the election package hash changes. The election administrator can reconfigure VxMarkScan with an updated election package but does not have to reprint ballots.
 
 The **election ID** shown on screen and included in printed reports contains a shortened version of both the ballot hash and the election hash in the format: `{ballot hash}-{election hash}`. For example, with ballot hash `083e2e0afbb19191a4d2850562ddef050ff860b0d61acee15d3bb26954932941` and election hash `db5c379b71accbf991e42ab23d26202f88b2539b6c69b814a0d3c8dc9f4072dc`, the election ID would be: `083e2e0-db5c379`. This enables identification of both the specific election package and election definition that a machine is configured with.
 
 ## Ballot Rotation
 
-Ballot rotation is specified by the defined candidate order in each ballot style as opposed to specifying a rule that the voting system should apply to a given list of candidates. The system supports tabulation of ballots with any type of candidate ordering. This enables flexibility for jurisdiction-specific ballot rotation rules that can be defined in the source system creating the ballot definition.
+Ballot rotation is specified by the defined candidate order in each ballot style as opposed to specifying a rule for the voting system to apply to a given list of candidates. The system supports tabulation of ballots with any type of candidate ordering. This enables flexibility for jurisdiction-specific ballot rotation rules that can be defined in the source system creating the ballot definition.
 
 Election officials can verify their ballot rotation configuration by configuring VxMark or VxMarkScan, selecting different precincts (and by extension ballot styles), and confirming that the order of candidates differs per precinct as expected.

@@ -8,7 +8,7 @@ The VxSuite TDP is open-source and publicly available. The public documents requ
   * Cast Vote Records: [cast-vote-records.md](../system-overview/cast-vote-records.md "mention")
   * Election Results Reporting: [cdf-err-export.md](../system-overview/vxadmin-results-exports/cdf-err-export.md "mention")
   * Logging: [logging.md](../system-security-auditing-and-logging/logging.md "mention")
-* Barcodes:&#x20;
+* Barcodes:
   * Ballot QR Code Data Format: [ballot-qr-code-data-format.md](ballot-qr-code-data-format.md "mention")
   * Signed Hash Validation QR Code: [signed-hash-validation.md](../system-overview/signed-hash-validation.md "mention")
   * VxMark Ballot Activation Barcode: [#ballot-style-barcode-format](../system-overview/vxmark-function.md#ballot-style-barcode-format "mention")

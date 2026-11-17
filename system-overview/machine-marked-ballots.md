@@ -1,6 +1,6 @@
 # Summary Ballots
 
-Summary ballots are printed by ballot-marking devices. VxMarkScan only prints summary ballots whereas VxMark can be configured to print either [hand-marked-ballots.md](hand-marked-ballots.md "mention") or summary ballots. Summary ballots show the voter's selections in an easy-to-read format, omitting their non-selections. The QR code encodes the voter's choices and is used to tabulate the ballot.
+Summary ballots are printed by ballot-marking devices (BMDs). VxMarkScan only prints summary ballots whereas VxMark can be configured to print either [hand-marked-ballots.md](hand-marked-ballots.md "mention") or summary ballots. Summary ballots show the voter's selections in an easy-to-read format, omitting their non-selections. The QR code encodes the voter's choices and is used to tabulate the ballot.
 
 <figure><img src="../.gitbook/assets/summary-ballot.png" alt="" width="375"><figcaption><p>Summary Ballot</p></figcaption></figure>
 
@@ -12,16 +12,16 @@ Summary ballots are always one-sided. On VxMarkScan they are limited to a single
 
 The ballot displays information about the election, metadata about the ballot, and the voter's selections. The selections are both displayed and encoded in the QR code.
 
-<table><thead><tr><th width="232">Ballot Component</th><th>Details</th></tr></thead><tbody><tr><td>Election Seal</td><td>The seal included in the election definition</td></tr><tr><td>Ballot Title</td><td>The title is either "Unofficial Test Ballot" or "Official Ballot" depending on whether VxMarkScan is in test mode</td></tr><tr><td>Election Metadata</td><td>Includes the election title, election date, state, and county</td></tr><tr><td>Ballot Metadata</td><td>Includes the ballot style identifier, the language, and the election identifier</td></tr><tr><td>QR Code</td><td>See <a href="machine-marked-ballots.md#qr-code">QR Code</a></td></tr><tr><td>Contest Title</td><td>The contest title</td></tr><tr><td>Selection</td><td>The name of the candidate or label of the yes-no contest option that the voter selected</td></tr><tr><td>Party</td><td>The short party name associated with the selected candidate</td></tr></tbody></table>
+<table><thead><tr><th width="232">Ballot Component</th><th>Details</th></tr></thead><tbody><tr><td>Election Seal</td><td>The seal included in the election definition</td></tr><tr><td>Ballot Title</td><td>The title is either "Unofficial Test Ballot" or "Official Ballot" depending on whether VxMarkScan is in test ballot mode</td></tr><tr><td>Election Metadata</td><td>Includes the election title, election date, state, and county</td></tr><tr><td>Ballot Metadata</td><td>Includes the ballot style identifier, the language, and the election identifier</td></tr><tr><td>QR Code</td><td>See <a href="machine-marked-ballots.md#qr-code">QR Code</a></td></tr><tr><td>Contest Title</td><td>The contest title</td></tr><tr><td>Selection</td><td>The name of the candidate or label of the ballot measure contest option that the voter selected</td></tr><tr><td>Party</td><td>The short party name associated with the selected candidate</td></tr></tbody></table>
 
 In VxMarkScan, there is extra white space at the top of the ballot so that all of the ballot content is visible when VxMarkScan presents the ballot for the voter to review (since the top part of the ballot is held in the machine).
 
 ### Multi-Lingual Ballots
 
-If VxMark or VxMarkScan is being used in a language other than English, the resulting ballot will be multi-lingual and feature the other language. All pieces of text that appear on the summary ballot may have translations specified in the [election definition's ballot strings](election-package/vxsuite-election-definition.md#ballot-strings), which will then be used when printing the ballot.
+If VxMark or VxMarkScan is being used in a language other than English, the resulting ballot is multi-lingual and feature the other language. All pieces of text that appear on the summary ballot may have translations specified in the [election definition's ballot strings](election-package/vxsuite-election-definition.md#ballot-strings), which are then used when printing the ballot.
 
 <figure><img src="../.gitbook/assets/image (69).png" alt="" width="375"><figcaption><p>English/Chinese VxMarkScan Ballot</p></figcaption></figure>
 
 ## QR Code
 
-The QR codes on summary ballots are different than the [QR codes on bubble ballots](hand-marked-ballots.md#qr-code-metadata) in that they actually contain voter selections in addition to the ballot metadata. For full specifications on how metadata and selections are encoded, refer to the [ballot-qr-code-data-format.md](../public-documents/ballot-qr-code-data-format.md "mention").
+The QR codes on summary ballots differ from the [QR codes on bubble ballots](hand-marked-ballots.md#qr-code-metadata) in that they contain voter selections in addition to the ballot metadata. For full specifications on how metadata and selections are encoded, refer to the [ballot-qr-code-data-format.md](../public-documents/ballot-qr-code-data-format.md "mention").

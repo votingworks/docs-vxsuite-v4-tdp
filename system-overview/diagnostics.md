@@ -8,15 +8,15 @@ When a test is performed, the system logs the result and creates a diagnostic re
 
 ### Storage
 
-Retrieves the current amount of disk space used and disk space available for the application. The displayed total disk space will not be as large as the actual disk because some space is reserved for the system. The disk space usage will not always return to 0% after clearing election data because the database may not have liberated that disk space back to the operating system, but the space will be reused once more election data is loaded.
+Retrieves the current amount of disk space used and disk space available for the application. The displayed total disk space is smaller than the actual disk because some space is reserved for the system. The disk space usage does not always return to 0% after clearing election data because the database may not have released that disk space back to the operating system, but the space will be reused once more election data is loaded.
 
 ### Battery
 
-For components with internal batteries - VxAdmin, VxCentralScan, and VxPrint - the operating system is polled for battery status. The application will report the current charge level and whether or not the battery is currently charging.
+For components with internal batteries (VxAdmin, VxCentralScan, and VxPrint), the operating system is polled for battery status. The application reports the current charge level and whether or not the battery is currently charging.
 
 ### Uninterruptible Power Supply (UPS)
 
-For components that operate with an external UPS - VxMark, VxMarkScan, VxScan, and VxCentralScan - there is a test flow for the user to confirm that the UPS is connected and fully charged.
+For components that operate with an external UPS (VxMark, VxMarkScan, VxScan, and VxCentralScan), there is a test flow for the user to confirm that the UPS is connected and fully charged.
 
 ### Configuration
 
@@ -30,11 +30,11 @@ For polling place equipment, the list of ballot styles will include only those a
 
 #### Polling Place
 
-For polling place equipment - VxScan, VxMarkScan, VxMark, and VxPrint - the currently configured polling place will be shown, if any.
+For polling place equipment (VxScan, VxMarkScan, VxMark, and VxPrint), the currently configured polling place will be shown, if any.
 
 #### Mark Thresholds
 
-For scanners - VxScan and VxCentralScan - the currently configured mark and write-in area thresholds will be shown. The thresholds reflect what was set in the system settings.
+For scanners (VxScan and VxCentralScan), the currently configured mark and write-in area thresholds will be shown. The thresholds reflect what was set in the system settings.
 
 ## VxAdmin Diagnostics
 
@@ -50,19 +50,19 @@ The toner level and any alerts from the printer are displayed, such as sleep mod
 
 ### Batch Scanner
 
-The user may perform a test scan, which requires that a blank white sheet of paper be scanned. The scanned image is broken up into small cells and each cell is checked for the percent of black pixels after binarization. If that percent is more than slightly over 0%, that cell is flagged and the entire diagnostic fails. The goal of the diagnostic is catch any defects in the scanned images, such as streaking produced by a dirty scanner.
+The user may perform a test scan, which requires that a blank white sheet of paper be scanned. The scanned image is broken up into small cells and each cell is checked for the percent of black pixels after binarization. If that percent is more than slightly over 0%, that cell is flagged and the entire diagnostic fails. The goal of the diagnostic is to catch any defects in the scanned images, such as streaking produced by a dirty scanner.
 
 <div><figure><img src="../.gitbook/assets/3d3eeff3-0eda-48fd-be9d-8edda7abdd2d-front_debug_diagnostic.png" alt=""><figcaption><p>Passed</p></figcaption></figure> <figure><img src="../.gitbook/assets/0dc29646-3c6a-4abd-9d2d-ae1b03a3b4ad-front_debug_diagnostic.png" alt=""><figcaption><p>Failed</p></figcaption></figure></div>
 
 {% hint style="info" %}
-**User Manual Reference**: [VxCentralScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/vxcentralscan-diagnostics "mention")
+**User Manual Reference:** [VxCentralScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/vxcentralscan-diagnostics "mention")
 {% endhint %}
 
 ## VxScan Diagnostics
 
 ### Embedded Scanner
 
-The user may perform a test scan, which requires that a blank white sheet of paper be scanned. The scanned image is broken up into small cells and each cell is checked for the percent of black pixels after binarization. If that percent is more than slightly over 0%, that cell is flagged and the entire diagnostic fails. The goal of the diagnostic is catch any defects in the scanned images, such as streaking produced by a dirty scanner.
+The user may perform a test scan, which requires that a blank white sheet of paper be scanned. The scanned image is broken up into small cells and each cell is checked for the percent of black pixels after binarization. If that percent is more than slightly over 0%, that cell is flagged and the entire diagnostic fails. The goal of the diagnostic is to catch any defects in the scanned images, such as streaking produced by a dirty scanner.
 
 The test scan process is identical to that for VxCentralScan, and the images above apply.
 
@@ -77,7 +77,7 @@ The diagnostics page will also display details about any printer errors if the p
 The user may test the speaker by triggering the chime sound and confirming whether they heard the chime or not.
 
 {% hint style="info" %}
-**User Manual Reference**: [VxScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxscan/vxscan-diagnostics "mention")
+**User Manual Reference:** [VxScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxscan/vxscan-diagnostics "mention")
 {% endhint %}
 
 ## VxMarkScan Diagnostics
@@ -99,14 +99,14 @@ The user may perform a test of the accessible controller which validates that ea
 
 ### PAT Input
 
-The user may perform a test of the PAT input, which simply confirms that a PAT device can be successfully calibrated as it would be during a voting session.
+The user may perform a test of the personal assistive technology (PAT) input, which simply confirms that a PAT device can be successfully calibrated as it would be during a voting session.
 
 ### Front Headphone Input
 
 The user may perform a test of the front headphone input by connecting headphones and triggering a chime. The user must indicate whether they heard the chime or not, corresponding to a pass or fail respectively.
 
 {% hint style="info" %}
-**User Manual Reference**: [VxMarkScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmarkscan/diagnostics "mention")
+**User Manual Reference:** [VxMarkScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmarkscan/diagnostics "mention")
 {% endhint %}
 
 ## VxMark Diagnostics
@@ -136,7 +136,7 @@ The user may test the onboard speaker by triggering audio through the system spe
 The user may test the barcode reader by scanning a barcode. The test passes automatically once a scan is detected during the test.
 
 {% hint style="info" %}
-**User Manual Reference**: [VxMark Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmark/diagnostics "mention")
+**User Manual Reference:** [VxMark Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmark/diagnostics "mention")
 {% endhint %}
 
 ## VxPrint Diagnostics
