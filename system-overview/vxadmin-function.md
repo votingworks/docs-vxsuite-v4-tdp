@@ -131,7 +131,7 @@ Unofficial write-in candidates can also be allocated votes in manual tallies and
 
 Vote tallying is a multi-step process which takes place on the VxAdmin backend:
 
-<figure><img src="../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (38).png" alt="Vote tallying flow: group determination, CVR aggregation, write-in and manual tally hydration from the SQLite store, then reporting" width="563"><figcaption></figcaption></figure>
 
 Every tally is specified by a set of filters and groupings. The filter defines which CVRs are excluded and included. For example, a filter might limit the CVRs to the CVRs for a specific precinct. The group determines how tallies are subdivided by CVR metadata. For example, there may be a grouping on precinct which generates tallies for each precinct separately. Groups enable multiple related tallies to be efficiently generated at once.
 
@@ -187,7 +187,7 @@ If `electionDayPollsCloseTime` and `disallowVxAdminTabulationBeforeElectionDayPo
 
 Ballot counts are tallied as part of the vote tallying flow described above, but there is a separate tallying path that _only_ calculates the ballot counts. It is used when generating ballot count reports and exports from VxAdmin. It follows the same steps as vote tallying, but is more efficient because it can compute the counts directly in the database rather than iterating through each CVR one by one.
 
-<figure><img src="../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (40).png" alt="Ballot count tallying flow: group determination, CVR aggregation and manual tally hydration from the SQLite store, then reporting" width="563"><figcaption></figcaption></figure>
 
 #### Ballot Count Definition
 
@@ -252,7 +252,7 @@ Unlike the host VxAdmin, which can navigate forward and backward through the ent
 
 An adjudication station cannot skip a ballot. Instead, it can escalate the ballot to the host for election manager review, which discards any unsaved changes, releases the station's claim, and assigns the station the next ballot in the queue. Escalated ballots are flagged on the host, which can work through them as a separate queue or encounter them in the main queue, where they remain in their original position. The host cannot escalate ballots and resolves an escalated ballot by adjudicating it.
 
-<figure><img src="../.gitbook/assets/image (109).png" alt=""><figcaption><p>VxAdmin Network Diagram</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (109).png" alt="Host VxAdmin connected through a network switch to multiple client VxAdmin adjudication stations" width="563"><figcaption><p>VxAdmin network diagram</p></figcaption></figure>
 
 ### Network Implementation
 

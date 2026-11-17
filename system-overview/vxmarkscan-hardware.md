@@ -2,23 +2,23 @@
 
 ## Overview
 
-<figure><img src="../.gitbook/assets/vsap_frontal.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/vsap_frontal.png" alt="Assembled VxMarkScan labeling the touchscreen, accessible controller, headphones, paper input, printer-scanner cover, PAT input, and privacy shield"><figcaption></figcaption></figure>
 
 VxMarkScan exposes various hardware interfaces for various modes of voting. The touchscreen displays the ballot and allows making selections with touch. It tilts forward and backwards for easier viewing and for storage. An accessible controller sits on the left side of the screen held in place with light magnetic force. Beneath the accessible controller is the headphone input and above the accessible controller is a recess for resting headphones. On the lower right corner, there is another input jack for a personal assistive technology (PAT) device such as a sip-and-puff.
 
-<figure><img src="../.gitbook/assets/acc-controller.png" alt="" width="331"><figcaption><p>Accessible Controller</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/acc-controller.png" alt="VxMarkScan accessible controller with directional keys, select button, and help, volume, pause, and rate keys" width="331"><figcaption><p>Accessible controller</p></figcaption></figure>
 
 The right side of the machine is the paper path. Paper is inserted into the printer-scanner by feeding it forward on the front paper input. When the ballot is cast, it is ejected to the rear into the attached ballot box. In case of paper jams, the printer-scanner cover can lift to expose the printer-scanner. If the cover is opened while polls are opened without authentication, an alarm sounds through the onboard speaker.
 
-<div><figure><img src="../.gitbook/assets/ballot_box.png" alt=""><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/printer-scanner.png" alt=""><figcaption></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/ballot_box.png" alt="Right side of VxMarkScan showing the attached ballot box and privacy shield attachment points"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/printer-scanner.png" alt="Printer-scanner cover lifted to expose the printer-scanner"><figcaption></figcaption></figure></div>
 
 The primary modification made by VotingWorks to the original Smartmatic hardware is adding a smart card reader for authentication. The smart card reader is positioned beneath the accessible controller:
 
-<figure><img src="../.gitbook/assets/PXL_20241119_204113175 (1).jpg" alt="" width="375"><figcaption><p>Smart card insert</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/PXL_20241119_204113175 (1).jpg" alt="Smart card slot added by VotingWorks beneath the accessible controller" width="375"><figcaption><p>Smart card insert</p></figcaption></figure>
 
 Power is controlled by a button in the back left of the machine. When activated, an LED illuminates the power button. Between the power button and the power port is an additional headphone input which is not used by VxMarkScan. A power block plugs into the power port, and the power block plugs into the APC backup uninterruptible power supply (UPS), which is plugged into a standard power outlet.
 
-<figure><img src="../.gitbook/assets/power-labelled.png" alt="" width="375"><figcaption><p>Power controls</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/power-labelled.png" alt="Back of VxMarkScan labeling the power button and power port, with the unused headphone jack between" width="375"><figcaption><p>Power controls</p></figcaption></figure>
 
 VxMarkScan does not require any direct bodily contact or for the body to be part of any electrical circuit to function.
 
@@ -26,19 +26,19 @@ VxMarkScan does not require any direct bodily contact or for the body to be part
 
 VxMarkScan is shipped and stored in large hardshell cases with custom foam cutouts. The first case, accented in blue, is for the ballot-marking device (BMD) itself, its headphones, and its power supply. The second case, accented in yellow, is for the other peripherals: legs, power supply holder, privacy shield, and ballot box.
 
-<div><figure><img src="../.gitbook/assets/PXL_20241119_202755951.jpg" alt=""><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241119_202836043.jpg" alt=""><figcaption></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/PXL_20241119_202755951.jpg" alt="Closed VxMarkScan storage cases stacked, the blue-handled BMD case on top of the yellow-handled peripherals case"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241119_202836043.jpg" alt="Open BMD case showing the BMD, headphones, and power supply in custom foam cutouts"><figcaption></figcaption></figure></div>
 
 The BMD itself must be padded as shown below for transport and vibrational testing. Padding is used to protect the screen and hold it in place, to hold the accessible controller in place, to hold the printer-scanner cover in place, and to further secure the BMD within the enclosure.
 
-<figure><img src="../.gitbook/assets/PXL_20241119_201847102.jpg" alt="" width="375"><figcaption><p>BMD case fully packed and padded</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/PXL_20241119_201847102.jpg" alt="BMD case packed with padding over the screen, accessible controller, and printer-scanner cover" width="375"><figcaption><p>BMD case fully packed and padded</p></figcaption></figure>
 
-<div><figure><img src="../.gitbook/assets/PXL_20241119_202236326.jpg" alt=""><figcaption><p>Peripherals case fully packed</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241119_202304226.jpg" alt=""><figcaption><p>Peripherals case with privacy shield removed</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241119_203128035.jpg" alt=""><figcaption><p>Peripherals unpacked</p></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/PXL_20241119_202236326.jpg" alt="Packed peripherals case holding the ballot box and folded privacy shield"><figcaption><p>Peripherals case fully packed</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241119_202304226.jpg" alt="Peripherals case with the privacy shield removed, showing the folded legs and power block holder"><figcaption><p>Peripherals case with privacy shield removed</p></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241119_203128035.jpg" alt="Unpacked peripherals: ballot box, power block holder, folded legs, and privacy shield"><figcaption><p>Peripherals unpacked</p></figcaption></figure></div>
 
 ### Assembly
 
 Assembly instructions are covered in the user manual under [VxMarkScan Hardware Setup](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmarkscan/vxmarkscan-hardware-setup "mention"). In short, the legs are unfolded and the power block holder is set on the legs with the power block inside. The BMD then fits onto the legs with grooves on its underside.
 
-<div><figure><img src="../.gitbook/assets/PXL_20241119_203621085.jpg" alt="" width="563"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241119_204010865.jpg" alt="" width="375"><figcaption></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/PXL_20241119_203621085.jpg" alt="Unfolded legs with the power block holder and power block set on top" width="563"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241119_204010865.jpg" alt="Fully assembled VxMarkScan on its legs with the privacy shield attached" width="375"><figcaption></figcaption></figure></div>
 
 ## COTS Components
 
