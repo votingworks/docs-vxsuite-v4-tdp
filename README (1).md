@@ -62,7 +62,7 @@ By the time a VotingWorks hardware subsystem goes to assembly-line production, i
 
 ### Component Testing & Validation
 
-VotingWorks works closely with suppliers to ensure quality components. VotingWorks requires suppliers to provide documentation of their QA procedures (TA2.1.1-A.2 1). VotingWorks's policy is to report all defective components to the supplier in order to jointly plan mitigations for future orders.
+VotingWorks works closely with suppliers to ensure quality components. VotingWorks requires suppliers to provide documentation of their QA procedures (VVSG 2.0 2.1.1-A.2). VotingWorks's policy is to report all defective components to the supplier in order to jointly plan mitigations for future orders.
 
 VotingWorks component test procedures vary on a component-by-component basis:
 
