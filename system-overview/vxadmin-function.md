@@ -4,12 +4,56 @@ VxAdmin acts as the election setup hub at the beginning of the election and the 
 
 ## Configuration and Election Packages
 
-Only a [system administrator](user-roles.md#system-administrator-role) can authenticate onto an unconfigured VxAdmin and configure it with an election package from an external system. The election package must be loaded via a USB drive. The election package must be a valid `.zip` [election-package](election-package/ "mention"). If the election package zip file, election definition file, system settings file, or metadata file are not valid, VxAdmin surfaces an error to the user.
+Only a [system administrator](user-roles.md#system-administrator-role) can authenticate onto an unconfigured VxAdmin and configure it, either by creating the election on VxAdmin (see [Election Design](#election-design)) or with an election package from an external system. The election package must be loaded via a USB drive. The election package must be a valid `.zip` [election-package](election-package/ "mention"). If the election package zip file, election definition file, system settings file, or metadata file are not valid, VxAdmin surfaces an error to the user.
 
-Once VxAdmin is configured, system administrators and election managers can export signed election packages. The exported election package is the same as the imported election package but is accompanied by a digital signature, which ensures that the election package was validated by a certified VxAdmin. The election packages loaded into VxCentralScan, VxMark, VxMarkScan, VxPrint, and VxScan _must be signed_ and unsigned election packages will be rejected.
+Once VxAdmin is configured, system administrators and election managers can export signed election packages. For an election configured from an election package, the exported election package is the same as the imported election package but is accompanied by a digital signature. For an election created on VxAdmin, VxAdmin generates the election package from the finalized election and signs it. The digital signature which ensures that the election package was validated by a certified VxAdmin. The election packages loaded into VxCentralScan, VxMark, VxMarkScan, VxPrint, and VxScan _must be signed_ and unsigned election packages will be rejected.
 
 {% hint style="info" %}
 **User Manual References:** [Configure VxAdmin](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxadmin-system-setup/configure-vxadmin "mention") & [Save Election Package](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxadmin-system-setup/save-election-package "mention")
+{% endhint %}
+
+## Election Design
+
+A system administrator can create an election on an unconfigured VxAdmin instead of loading an election package. VxAdmin holds one election at a time: while an election is being created, loading an election package is unavailable, and unconfiguring VxAdmin or deleting the election removes all of its data. Election design takes place entirely on the air-gapped VxAdmin; no network connection is involved.
+
+### Election Definition
+
+The system administrator enters the election definition directly:
+
+* **Election information:** title, date, type (general or primary), state, jurisdiction, and seal image.
+* **Districts:** the geographic or political units that contests belong to.
+* **Precincts:** each precinct's districts and, optionally, registered voter counts. A precinct whose voters live in different sets of districts is divided into precinct splits, each with its own districts.
+* **Polling places:** absentee voting, early voting, and election day polling places and the precincts each serves. VxAdmin creates an election day polling place for each new precinct.
+* **Parties:** full name, short name, and abbreviation.
+* **Contests:** candidate contests (district, seats, term, whether write-ins are allowed, candidates and their parties, and, in a primary, the contest's party) and ballot measure contests (district, formatted description, and option labels), in ballot order.
+
+VxAdmin validates each change before saving it. Names must be unique within each kind of entity; precinct splits must have distinct names and distinct sets of districts; candidates within a contest and options within a ballot measure contest must be distinct; and a party cannot be deleted if doing so would make two contests identical. Deleting a district deletes its contests. The resulting election definition uses the [VxSuite election definition format](election-package/vxsuite-election-definition.md) and is subject to the same [system limits](../system-performance-and-specifications/system-limits/README.md) as a loaded election.
+
+VxAdmin derives ballot styles from the precincts' sets of districts and, in a primary, from the parties.
+
+### Translations and Audio
+
+Ballot languages other than English and their translations are optional; audio is required for every ballot language, for use on VxMark and VxMarkScan. Translations and audio are prepared outside VxAdmin and transferred by USB drive, one language at a time:
+
+* **Translations file:** a CSV file listing each election string's identifier, context, English text, and translation. VxAdmin exports the file with current translations filled in and imports the completed file.
+* **Audio file:** a ZIP file containing a CSV manifest of each election string's identifier, context, text, and audio file name, and one MP3 file per string. VxAdmin exports the manifest and imports the completed file.
+
+VxAdmin reports, for each language, which strings lack a translation or audio. A language's translations must be complete before its audio can be imported.
+
+### Ballot Layout and Proofing
+
+Ballots are rendered as [bubble ballots](hand-marked-ballots.md) using the VotingWorks ballot template, on any [supported paper size](../system-performance-and-specifications/paper-ballot-specifications.md), at default or compact density. If a contest does not fit on a page, VxAdmin reports the contest instead of rendering the ballot.
+
+For each ballot style, a system administrator can view a proof of the precinct or absentee ballot in official, logic and accuracy (L&A) test, or sample tabulation mode, print it, or save it as a PDF file to a USB drive. Every proof is watermarked "PROOF" and its file name begins with `PROOF`, so a proof cannot be mistaken for a ballot.
+
+### Finalization
+
+Finalizing locks the election: once finalized, the election definition cannot be edited. VxAdmin finalizes an election only when ballot styles exist, registered voter counts are entered for all precincts and splits or for none, every precinct is served by an absentee polling place, and every ballot language has complete translations and audio.
+
+On finalization, VxAdmin renders the official and test ballots for every ballot style and generates the election package. The system administrator saves the official ballots, for printing by a ballot printer, and the test ballots, for logic and accuracy testing, to a USB drive. The election package is then exported as described in [#configuration-and-election-packages](vxadmin-function.md#configuration-and-election-packages "mention").
+
+{% hint style="info" %}
+**User Manual Reference:** [Create an Election](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxadmin-system-setup/create-an-election "mention")
 {% endhint %}
 
 ## Smart Card Management
