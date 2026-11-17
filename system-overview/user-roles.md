@@ -14,7 +14,7 @@ The poll worker role allows a user to operate all polling place equipment. By de
 
 On all devices, the poll worker role can check the software hash and, for devices without a power button, power down the device.&#x20;
 
-The poll worker role has no privileges on VxAdmin and cannot be used to unlock the device. VxCentralScan has no poll worker role by default, but if `centralScanEnablePollWorkerRole` is set to `true` in the system settings, poll workers will be able to operate the scanner but will not not be able to delete or export data.
+The poll worker role has no privileges on VxAdmin and cannot be used to unlock the device. VxCentralScan has no poll worker role by default, but if `centralScanEnablePollWorkerRole` is set to `true` in the system settings, poll workers will be able to operate the scanner but will not be able to delete or export data.
 
 All poll worker cards are programmed at VxAdmin and are programmed for a specific election. They must be reprogrammed for every election. Poll worker cards may or may not require PINs depending on the value of the `arePollWorkerCardPinsEnabled` flag in the system settings file within the election package.
 
@@ -44,4 +44,4 @@ The vendor role is a role that only VotingWorks itself has access to. It allows 
 
 ## Voter Mode
 
-While the authentication model only includes the four aforementioned roles, one can conceptually describe a "voter mode" on the precinct devices. On VxMarkScan, a poll worker must authenticate in order to initiate a voting session. Once initiated, the voter is able to make selections, navigate menus, and print their ballot. Once done voting, the machine leaves voter mode and once again requires authentication to start a voting session. On VxScan, voter mode is any time the polls are open and no other role is authenticated, during which a ballot can be inserted for tabulation.
+While the authentication model only includes the four aforementioned roles, one can conceptually describe a "voter mode" on the precinct devices. On VxMark and VxMarkScan, a poll worker must authenticate in order to initiate a voting session. Once initiated, the voter is able to make selections, navigate menus, and print their ballot. Once done voting, the machine leaves voter mode and once again requires authentication to start a voting session. On VxScan, voter mode is any time the polls are open and no other role is authenticated, during which a ballot can be inserted for tabulation.

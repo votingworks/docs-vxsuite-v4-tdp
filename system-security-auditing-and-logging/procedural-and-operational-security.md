@@ -17,7 +17,7 @@ When there are no active elections happening, VxSuite equipment should be physic
 * The medium and large Ricoh scanners that work with VxCentralScan should be kept in their supplied manufacturer box, with tamper evident tape along all sides and a numbered sticker seal on the main opening.
 * VxScan should be kept closed with a numbered seal through one of the two seal points, preventing the case from being opened without breaking the seal.
 * VxMark should be kept closed in its case with numbered seals through the case seal points, preventing the case from being opened without breaking a seal.
-* VxAdmin, VxCentralScan, VxScan, VxMark, VxPrint, and the Fujitsu/Ricoh scanner, once sealed, should be kept in a safely locked room or storage area that only authorized election administrators have access to.
+* VxAdmin, VxCentralScan, VxScan, VxMark, VxPrint, and the Ricoh scanner, once sealed, should be kept in a safely locked room or storage area that only authorized election administrators have access to.
 * The system admin smart cards should be kept in a safe or locked drawer, separately from VxAdmin. The PIN for the system admin smart card, if recorded on paper, should also be kept locked separate from both VxAdmin and the card.
 
 You may consider occasionally resetting the PIN on the system administrator cards. This can be done using the VxAdmin laptop.
@@ -37,7 +37,7 @@ At the end of L\&A testing, ensure that the VxScan is ready and secured for elec
 * the VxScan is powered down.
 * the VxScan case is closed and sealed.
 
-If using VxCentralScan, ensure that that:
+If using VxCentralScan, ensure that:
 
 * it is switched to live mode
 * it is shut down and put away in its case
@@ -78,4 +78,4 @@ Unsealing the poll worker door is required to extract the USB drive after polls 
 
 Pack up all components in their respective cases and apply seals. Record those seals.
 
-Additionally, any auditing or review of audit logs should be completed immediately after exporting those logs from the VxScan or Central system to a USB. If there is a concern about a break in the administrative chain of custody, the user should re-export the logs to a USB from the machine and can compare the original export with the re-export to determine the logs have not been tampered with while on the USB. The logs maintained on the system are unalterable and should be pulled and reviewed in one process to ensure that chain of custody is maintained.&#x20;
+Additionally, any auditing or review of audit logs should be completed immediately after exporting those logs from a device to a USB drive. If there is a concern about a break in the administrative chain of custody, the user should re-export the logs to a USB from the machine and can compare the original export with the re-export to determine the logs have not been tampered with while on the USB. The logs maintained on the system are unalterable and should be pulled and reviewed in one process to ensure that chain of custody is maintained.&#x20;

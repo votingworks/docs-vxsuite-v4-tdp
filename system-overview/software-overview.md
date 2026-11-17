@@ -67,7 +67,7 @@ There are four code repositories relevant to the voting system:
 
 ## Key Dependency Chart
 
-<table><thead><tr><th width="293">Dependency</th><th>Version</th></tr></thead><tbody><tr><td>Debian</td><td>12.11</td></tr><tr><td>Additional Debian Packages</td><td>See <a href="https://github.com/votingworks/vxsuite-build-system/blob/v4.1.0/inventories/v4.1.0/group_vars/all/packages.yaml">build system package inventory</a></td></tr><tr><td>Node.js</td><td>24.19.0</td></tr><tr><td>pnpm</td><td>10.34.5</td></tr><tr><td>Application Node Packages</td><td>See the relevant <a href="https://github.com/votingworks/vxsuite/blob/v4.1.0/pnpm-lock.yaml">lock file</a></td></tr><tr><td>Rust</td><td>1.98.0</td></tr><tr><td>Rust Packages</td><td>See the relevant <a href="https://github.com/votingworks/vxsuite/blob/v4.1.0/Cargo.lock">lock file</a></td></tr><tr><td>yarn</td><td>1.22.22</td></tr><tr><td>Electron</td><td>37.2.1</td></tr><tr><td>Chromium</td><td><a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/138.0.7204.97:">138.0.7204.97</a></td></tr><tr><td>Kiosk Browser Node Packages</td><td>See the relevant <a href="https://github.com/votingworks/kiosk-browser/blob/v4.1.0/yarn.lock">lock file</a></td></tr></tbody></table>
+<table><thead><tr><th width="293">Dependency</th><th>Version</th></tr></thead><tbody><tr><td>Debian</td><td>12.11</td></tr><tr><td>Additional Debian Packages</td><td>See <a href="https://github.com/votingworks/vxsuite-build-system/blob/v4.1.1/inventories/stable/group_vars/all/packages.yaml">build system package inventory</a></td></tr><tr><td>Node.js</td><td>24.19.0</td></tr><tr><td>pnpm</td><td>12.9.1</td></tr><tr><td>Application Node Packages</td><td>See the relevant <a href="https://github.com/votingworks/vxsuite/blob/v4.1.1/pnpm-lock.yaml">lock file</a></td></tr><tr><td>Rust</td><td>1.98.0</td></tr><tr><td>Rust Packages</td><td>See the relevant <a href="https://github.com/votingworks/vxsuite/blob/v4.1.1/Cargo.lock">lock file</a></td></tr><tr><td>yarn</td><td>1.22.22</td></tr><tr><td>Electron</td><td>37.2.1</td></tr><tr><td>Chromium</td><td><a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/138.0.7204.97:">138.0.7204.97</a></td></tr><tr><td>Kiosk Browser Node Packages</td><td>See the relevant <a href="https://github.com/votingworks/kiosk-browser/blob/v4.1.1/yarn.lock">lock file</a></td></tr></tbody></table>
 
 ## Traceability of Procured Software
 
@@ -119,7 +119,7 @@ In order to do so, the applications have a headless browser (specifically Chromi
 
 ### Date & Time Management
 
-The date and time is set on the machine in during initial configuration before the machine is sent to a customer. There is some amount of "clock drift" over time for all computers, however, so eventually the clocks may be wrong. This may cause problems with authentication due to mismatched timestamps and will cause reports to have incorrect timestamps.
+The date and time is set on the machine during initial configuration before the machine is sent to a customer. There is some amount of "clock drift" over time for all computers, however, so eventually the clocks may be wrong. This may cause problems with authentication due to mismatched timestamps and will cause reports to have incorrect timestamps.
 
 All machines allow system administrators and election managers to edit the date, time, and time zone in order to address clock drift or, in rare cases, to set up machines for use in a part of the jurisdiction with different time settings.
 
