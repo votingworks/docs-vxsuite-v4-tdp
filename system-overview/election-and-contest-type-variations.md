@@ -44,7 +44,7 @@ Another consequence of the fact that the party of the ballot is determined at th
 
 #### Limitations
 
-* Combined primary ballots cannot span multiple sheets because, without unique identifiers, it is not possible to prevent crossover voting across sheets
+* Combined primary ballots cannot span multiple sheets because, without unique identifiers linking a ballot's sheets, the system cannot prevent crossover voting across sheets
 * VxSuite supports combined primary ballots with two or three parties
 * Manual tally entry is not supported when using combined primary ballots
 
@@ -67,7 +67,7 @@ In a "straight party contest", the voter may select no more than one party. For 
 
 If the straight party contest is undervoted or overvoted, tabulation for all other contests behaves normally. If there is a valid vote in the straight party contest, then straight party rules are applied to all partisan contests. In the general election context, "partisan contests" are defined as any contest with party-associated candidates. Nonpartisan contests would be ballot measures or nonpartisan candidate races such as many judicial or local races.
 
-Jurisdictions tabulate straight party contests in different ways, but the two main ways are "inclusive" and "exclusive" straight party voting. Voters are always allowed to vote directly in partisan races to override their straight party vote. In "exclusive" straight party voting, any direct vote in a partisan candidate contest invalidates the straight party vote for that contest. A contest cannot have both direct and indirect votes. In "inclusive" straight party voting, a direct vote does not necessarily invalidate straight party voting if it's still applicable to the contest. A contest _can_ have both direct and indirect votes. VxSuite currently supports only the "inclusive" style of tabulation for straight party contest.
+Jurisdictions tabulate straight party contests in different ways, but the two main ways are "inclusive" and "exclusive" straight party voting. Voters are always allowed to vote directly in partisan races to override their straight party vote. In "exclusive" straight party voting, any direct vote in a partisan candidate contest invalidates the straight party vote for that contest. A contest cannot have both direct and indirect votes. In "inclusive" straight party voting, a direct vote does not necessarily invalidate straight party voting if it is still applicable to the contest. A contest _can_ have both direct and indirect votes. VxSuite currently supports only the "inclusive" style of tabulation for straight party contest.
 
 The examples below are intended to express how straight party tabulation works. In short, inclusive straight party voting means that in each contest:
 
@@ -101,4 +101,4 @@ Summary ballots show "no selection" for contests where straight party votes will
 
 #### Limitations
 
-Ballots with straight party contests cannot span multiple sheets because, without unique identifiers, it is not possible to apply straight party votes across sheets.
+Ballots with straight party contests cannot span multiple sheets because, without unique identifiers linking a ballot's sheets, the system cannot apply straight party votes across sheets.

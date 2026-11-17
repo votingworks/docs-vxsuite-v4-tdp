@@ -17,25 +17,25 @@ In addition to the full election report, VxAdmin exports reports filtered or gro
 * Batch
 * District (filtering only)
 
-When a report is grouped, the report is broken up into multiple sections each with their own filter. For example, if you were to group by "Voting Method," the resulting report would have a section filtered for precinct ballots only and a section filtered for absentee ballots only:
+When a report is grouped, the report is broken up into multiple sections each with their own filter. For example, a report grouped by "Voting Method" has a section filtered for precinct ballots only and a section filtered for absentee ballots only:
 
 <div><figure><img src="../../.gitbook/assets/vxadmin-tally-report-by-voting-method.png" alt="" width="375"><figcaption><p>First part of a grouped tally report</p></figcaption></figure> <figure><img src="../../.gitbook/assets/vxadmin-tally-report-by-voting-method-page2.png" alt="" width="375"><figcaption><p>Second part of a grouped tally report</p></figcaption></figure></div>
 
-The filter for a given report section is indicated in the title of the report. If the report has more than one filter applied to it, the full details of the filter will be specified in a box below the title:
+The filter for a given report section is indicated in the title of the report. If the report has more than one filter applied to it, the full details of the filter are specified in a box below the title:
 
 <figure><img src="../../.gitbook/assets/vxadmin-tally-report-custom-filter.png" alt="" width="375"><figcaption><p>Tally report with a complex filter</p></figcaption></figure>
 
-Note that filters and groups can be combined.
+Filters and groups can be combined.
 
 ## Manual Results
 
-If manual results have been added, they will be included in the tally report alongside the scanned results. For each contest, there will be three results columns: "scanned", "manual", and "total".
+If manual results have been added, they are included in the tally report alongside the scanned results. For each contest, there are three results columns: "scanned", "manual", and "total".
 
 <figure><img src="../../.gitbook/assets/vxadmin-manual-results-tally-report.png" alt="" width="375"><figcaption><p>Tally report with manual results</p></figcaption></figure>
 
 ## Write-In Candidate Aggregation
 
-If VxAdmin is in [Qualified Write-In Mode](../vxadmin-function.md#qualified-write-in-mode), all qualified write-ins will be listed regardless of their vote totals. If VxAdmin is in [Open Write-In Mode](../vxadmin-function.md#open-write-in-mode), write-in candidates will only be explicitly listed if they have a winning vote total. Other write-ins are consolidated as "Write-In" or, if there are explicitly listed write-in candidates, "Other Write-In".
+If VxAdmin is in [Qualified Write-In Mode](../vxadmin-function.md#qualified-write-in-mode), all qualified write-ins are listed regardless of their vote totals. If VxAdmin is in [Open Write-In Mode](../vxadmin-function.md#open-write-in-mode), write-in candidates are only explicitly listed if they have a winning vote total. Other write-ins are consolidated as "Write-In" or, if there are explicitly listed write-in candidates, "Other Write-In".
 
 Unadjudicated write-ins are always consolidated as "Unadjudicated Write-In."
 

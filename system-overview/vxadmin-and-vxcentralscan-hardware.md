@@ -40,7 +40,7 @@ The VxPrint printer is powered through an APC BN1500M2 UPS to ensure that the pr
 
 VxCentralScan connects to a batch scanner for batch scanning. The scanner is either the small Ricoh fi-8170, the medium Ricoh fi-7600, or the large Ricoh fi-8950. Ballots are loaded into the hopper and then, after a scan is triggered from the application, the scanner processes the ballots one-by-one, sending images to the application for interpretation.
 
-Each of the Ricoh scanners can be used with Ricoh imprinters (not pictured) which allow printing an identifier on each ballot as it's exiting the scanner, which can be useful for certain types of post-election audits.
+Each of the Ricoh scanners can be used with Ricoh imprinters (not pictured) which allow printing an identifier on each ballot as it exits the scanner, which can be useful for certain types of post-election audits.
 
 The fi-8170 and fi-8950 each have an RJ45 (Ethernet) port which is blocked by a port blocker because network connectivity is not required by the scanner.
 
@@ -105,4 +105,4 @@ The medium criticality components and the reasons for their classification are a
 * **Monoprice USB A-B Cable -** Manages flow of data between laptop and peripherals.
 * **HP LaserJet Pro 4001dn -** The VxAdmin & VxPrint printer is responsible for printing reports from VxAdmin and printing ballots from VxPrint and therefore handles highly sensitive election information. All reports from VxAdmin can be exported as PDFs and printed elsewhere, so it is not strictly necessary for the operation of the system and thus is not the highest criticality.
 * **Ricoh fi-760PRB, fi-819PRB** **& fi-890PRB** - The imprinters that pair with the Ricoh scanners are not involved in generating ballot data, so they cannot influence the interpretation of ballots when used according to instructions. The imprinted identifiers are important for post-election audits, however, so the imprinters are security-sensitive components.
-* **Cisco Catalyst 1200-8T-D Switch** - Because all data on the network is encrypted and cryptographically verified, there's little concern of data being modified or tampered with in-flight. There are also plenty of COTS alternatives to handle supply issues. The switch is a complex component networked to each VxAdmin, however, so it is considered medium criticality as a potential launching point for network attacks.
+* **Cisco Catalyst 1200-8T-D Switch** - Because all data on the network is encrypted and cryptographically verified, data modified or tampered with in transit fails verification. Many COTS alternatives are also available to handle supply issues. The switch is a complex component networked to each VxAdmin, however, so it is considered medium criticality as a potential launching point for network attacks.

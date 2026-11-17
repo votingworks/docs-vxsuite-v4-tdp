@@ -38,14 +38,14 @@ For elections with multi-sheet ballots, counts per sheet are displayed in additi
 
 Each candidate or contest option appears in a row below the contest header. Because results at VxScan are not yet adjudicated, all write-ins are grouped under the "Write-In" bucket (except unmarked write-ins, which are reported as undervotes until adjudicated at VxAdmin).
 
-As a rule, the sum of the number of votes for all candidates, the number of undervotes, and the number of overvotes will equal the number of total possible votes for the contest, which is the number of ballots times the number of selections allowed.
+As a rule, the sum of the number of votes for all candidates, the number of undervotes, and the number of overvotes equals the number of total possible votes for the contest, which is the number of ballots times the number of selections allowed.
 
 <pre><code><strong>candidate votes + undervotes + overvotes = ballots * votes allowed
 </strong></code></pre>
 
 <div><figure><img src="../.gitbook/assets/vxscan-polls-opened-report.png" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/vxscan-polls-closed-report-printed.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
-If there were multiple batches, which on VxScan is a result of pausing and resuming voting, the polls closed report will contain a "Batch Summary" table with the sizes and timestamps of the batches.
+If there were multiple batches, which on VxScan is a result of pausing and resuming voting, the polls closed report contains a "Batch Summary" table with the sizes and timestamps of the batches.
 
 ## Voting Paused and Resumed Reports
 
@@ -57,6 +57,6 @@ Tally results are never included in polls paused or resumed reports.
 
 ## Write-In Image Reports
 
-If `precinctScanEnableWriteInImageReport` is true in the system settings, poll workers will be able to print write-in image reports from the poll worker menu after polls are closed. For each contest that allows write-ins, the report lists the total number of write-ins and includes an image of each write-in.
+If `precinctScanEnableWriteInImageReport` is true in the system settings, poll workers can print write-in image reports from the poll worker menu after polls are closed. For each contest that allows write-ins, the report lists the total number of write-ins and includes an image of each write-in.
 
 <figure><img src="../.gitbook/assets/vxscan-write-in-image-report.png" alt="" width="375"><figcaption></figcaption></figure>

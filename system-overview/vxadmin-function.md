@@ -4,7 +4,7 @@ VxAdmin acts as the election setup hub at the beginning of the election and the 
 
 ## Configuration and Election Packages
 
-Only a [system administrator ](user-roles.md#system-administrator-role)can authenticate onto an unconfigured VxAdmin and configure it with an election package from an external system. The election package must be loaded via a USB drive. The election package must be a valid `.zip` [election-package](election-package/ "mention"). If the election package zip file, election definition file, system settings file, or metadata file are not valid, VxAdmin will surface an error to the user.
+Only a [system administrator ](user-roles.md#system-administrator-role)can authenticate onto an unconfigured VxAdmin and configure it with an election package from an external system. The election package must be loaded via a USB drive. The election package must be a valid `.zip` [election-package](election-package/ "mention"). If the election package zip file, election definition file, system settings file, or metadata file are not valid, VxAdmin surfaces an error to the user.
 
 Once VxAdmin is configured, system administrators and election managers can export signed election packages. The exported election package is the same as the imported election package but is accompanied by a digital signature, which ensures that the election package was validated by a certified VxAdmin. The election packages loaded into VxCentralScan, VxMark, VxMarkScan, VxPrint, and VxScan _must be signed_ and unsigned election packages will be rejected.
 
@@ -28,7 +28,7 @@ For extensive details on the authentication scheme, see the [access control docu
 
 VxSuite components require data USB drives to be formatted with a single FAT32 or exFAT partition. The majority of USB drives are sold pre-formatted as FAT32, but some come in other formats. If an improperly formatted USB drive is inserted into a VxSuite component, it will be treated as if there is no USB drive. On VxAdmin, a drive formatted with an ext4 partition is treated as a backup drive rather than a data drive; see [#backup-and-restore](vxadmin-function.md#backup-and-restore "mention").
 
-VxAdmin includes a utility to format USB drives to be compatible with the system. The utility is available only to system administrators. It will rewrite the partition table on the drive to include a single partition with an exFAT formatted filesystem that takes up all available space on the drive. exFAT is used rather than FAT32 so that files larger than 4 GB, such as large election packages, can be saved. The reformatting clears the USB drive and is thus a destructive action. If a USB drive is already correctly formatted, the feature can be used to clear its data. VxAdmin applies a new label to the reformatted USB drive in the form of **VxUSB-00000**, where the 0's can be any random alphanumeric characters.
+VxAdmin includes a utility to format USB drives to be compatible with the system. The utility is available only to system administrators. It rewrites the partition table on the drive to include a single partition with an exFAT formatted filesystem that takes up all available space on the drive. exFAT is used rather than FAT32 so that files larger than 4 GB, such as large election packages, can be saved. The reformatting clears the USB drive and is thus a destructive action. If a USB drive is already correctly formatted, the feature can be used to clear its data. VxAdmin applies a new label to the reformatted USB drive in the form of **VxUSB-00000**, where the 0's can be any random alphanumeric characters.
 
 Improperly formatted USB drives can only be detected and reformatted if there is _some_ partition already existing, so a USB drive without any partitions cannot be reformatted using VxAdmin.
 
@@ -50,9 +50,9 @@ When loading a full CVR export, each CVR is loaded into VxAdmin's backend store 
 
 Each write-in on a CVR will map to a `write-ins` record, whether it is an unmarked write-in or a proper write-in. The ballot images are also each saved as database records. The write-in record links the write-in to its respective CVR, to the ballot images, and eventually to its adjudication result. The write-in adjudication interface essentially iterates through all `write-ins` records on a per contest basis.
 
-If an error is found when loading any single CVR in a CVR export, the entire export is rejected and a message is surfaced to the user. CVRs can be rejected for a variety of reasons: authentication failed; a file is incorrectly formatted; a CVR is not for a currently valid election, precinct, ballot style, or contest; a CVR with an identical ID has been loaded with different data. In everyday use of the system, all of these errors are either rare or impossible because VxAdmin will not allow loading CVR files from elections with mismatched metadata.
+If an error is found when loading any single CVR in a CVR export, the entire export is rejected and a message is surfaced to the user. CVRs can be rejected for a variety of reasons: authentication failed; a file is incorrectly formatted; a CVR is not for a currently valid election, precinct, ballot style, or contest; a CVR with an identical ID has been loaded with different data. In everyday use of the system, these errors are rare, because VxAdmin does not allow loading CVR files from elections with mismatched metadata.
 
-VxAdmin allows loading CVR exports that have already been partially loaded. For example, imagine that VxCentralScan exports CVRs after scanning 5 ballots and then again after scanning 10 ballots. If we first load the 5 CVR export and then the 10 CVR export, the 10 CVR export will successfully load but will ignore the CVRs that have already been imported.
+VxAdmin allows loading CVR exports that have already been partially loaded. For example, VxCentralScan might export CVRs after scanning 5 ballots and then again after scanning 10 ballots. If the 5-CVR export is loaded first and the 10-CVR export second, the 10-CVR export loads successfully but skips the CVRs that have already been loaded.
 
 {% hint style="info" %}
 **User Manual Reference:** [Tally Results](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-night-guides/tally-results "mention")
@@ -143,7 +143,7 @@ If there are no groupings specified, there is only one set of tallies. If the pr
 
 If batch or scanner parameters are included, then VxAdmin will not attempt to compute the possible groupings because they may be too numerous. The potential groups will be created opportunistically during tallying.
 
-The purpose of computing the groups when possible, rather than always creating groups opportunistically, is to know which zero tallies to expect. When we group by precinct, we'd like to generate empty results for Precinct A even if no ballots for Precinct A were cast.
+The purpose of computing the groups when possible, rather than always creating groups opportunistically, is to know which zero tallies to expect. When tallies are grouped by precinct, VxAdmin generates empty results for Precinct A even if no ballots for Precinct A were cast.
 
 **CVR Aggregation**
 
@@ -177,7 +177,7 @@ Manual tallies are then combined with the scanned tallies in one of two ways. Fo
 
 The final step is for the VxAdmin backend to format the vote tallies into one of [VxAdmin's Results Export Formats](vxadmin-results-exports/) and export the result onto a USB drive or, if it is a PDF document, print it.
 
-If `electionDayPollsCloseTime` and `disallowVxAdminTabulationBeforeElectionDayPollsCloseTime` are both set, the application will prevent generating reports until after the polls close time. In test ballot mode, the same restriction does not apply. The behavior must vary between official ballot mode and test ballot mode because testing happens before election day.
+If `electionDayPollsCloseTime` and `disallowVxAdminTabulationBeforeElectionDayPollsCloseTime` are both set, VxAdmin prevents generating reports until after the polls close time. In test ballot mode, the same restriction does not apply. The behavior differs between official ballot mode and test ballot mode because testing happens before election day.
 
 {% hint style="info" %}
 **User Manual Reference:** [Reports](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-night-guides/reports "mention")
@@ -260,7 +260,7 @@ Because a backup drive is removable media outside VxAdmin's control, the restore
 
 In order to adjudicate high volumes of ballots, additional adjudication station VxAdmins can be networked to a host VxAdmin. The adjudication station VxAdmins are only permitted to adjudicate ballots and to do basic system workflows such as exporting logs, adjusting the date and time, and performing signed hash validation. Any VxAdmin can be switched between "Host Mode" and "Adjudication Station Mode".
 
-The host VxAdmin is connected to the adjudication stations via an Ethernet network switch. In order for the network to be valid, all VxAdmins must have the same software version and there must be only one host VxAdmin. There is zero configuration required other than connecting components via Ethernet cables.
+The host VxAdmin is connected to the adjudication stations via an Ethernet network switch. In order for the network to be valid, all VxAdmins must have the same software version and there must be only one host VxAdmin. No configuration is required other than connecting the machines with Ethernet cables.
 
 The host VxAdmin is able to toggle multi-station adjudication on or off. Adjudication stations may only begin adjudication after it is enabled by the host VxAdmin.
 
@@ -274,7 +274,7 @@ An adjudication station cannot skip a ballot. Instead, it can escalate the ballo
 
 #### Network Implementation
 
-The networking implementation is a zero-configuration, host-advertised, client-pull model. There is no central registry or manual IP entry; everything is built on multicast DNS (mDNS) discovery and short-interval polling. The host advertises itself on the local network using `avahi`. When a VxAdmin starts in host mode, it publishes a network service named for its machine ID on its peer port. Adjudication stations discover hosts by browsing to find one and only one host-advertised service, and refuse to proceed if they detect more than one. Once a station finds the host, all communication flows over a dedicated host-to-station API, separate from the API the host's own UI uses: stations register themselves, pull down the election configuration, claim and release ballots from the queue, and submit completed adjudications, all by calling the host — the host never pushes to the stations. Each station runs this exchange on a short polling loop (every couple of seconds), which doubles as a heartbeat: on each cycle it confirms the host is still reachable, learns whether the host currently has multi-station adjudication enabled, and re-syncs the election configuration if it has changed since the last cycle. A station that stops polling simply ages out, at which point the host releases any ballots it was holding so they can be reassigned.
+The networking implementation is a zero-configuration, host-advertised, client-pull model. There is no central registry or manual IP entry; everything is built on multicast DNS (mDNS) discovery and short-interval polling. The host advertises itself on the local network using `avahi`. When a VxAdmin starts in host mode, it publishes a network service named for its machine ID on its peer port. Adjudication stations discover hosts by browsing to find one and only one host-advertised service, and refuse to proceed if they detect more than one. Once a station finds the host, all communication flows over a dedicated host-to-station API, separate from the API the host's own UI uses: stations register themselves, pull down the election configuration, claim and release ballots from the queue, and submit completed adjudications, all by calling the host — the host never pushes to the stations. Each station runs this exchange on a short polling loop (every few seconds), which doubles as a heartbeat: on each cycle it confirms the host is still reachable, learns whether the host currently has multi-station adjudication enabled, and re-syncs the election configuration if it has changed since the last cycle. A station that stops polling simply ages out, at which point the host releases any ballots it was holding so they can be reassigned.
 
 For more details on how networking is set up at the operating system level, see [networking.md](../system-security-auditing-and-logging/system-security-architecture/networking.md "mention").
 
@@ -282,8 +282,8 @@ For more details on how networking is set up at the operating system level, see 
 
 VxAdmin prints reports via an attached printer. The supported printer is the HP LaserJet Pro 4001dn. All reports are also available as PDFs so, in the event of a printer failure, reports will still be available.
 
-VxAdmin interfaces with the printer through CUPS, the open-source printing system developed by Apple and installed on our Debian system. When a printer is attached, it is registered with the CUPS server and made available to the application. VxAdmin is able to send print jobs to the printer via CUPS commands. The HP LaserJet Pro does not require any additional third-party or in-house driver because it supports the Internet Printing Protocol (IPP), which CUPS then utilizes.
+VxAdmin interfaces with the printer through CUPS, the open-source printing system developed by Apple and installed on the VxSuite Debian operating system. When a printer is attached, it is registered with the CUPS server and made available to the application. VxAdmin is able to send print jobs to the printer via CUPS commands. The HP LaserJet Pro does not require any additional third-party or in-house driver because it supports the Internet Printing Protocol (IPP), which CUPS then utilizes.
 
-When a print job is submitted via CUPS, CUPS sends it to the printer using IPP. VxAdmin waits until CUPS reports it has successfully sent the entire job to the printer, at which point it logs success. If the printer is disconnected before CUPS can send the entire job, VxAdmin will log the failure. In these cases it's possible that the printer still prints an incomplete document or error code. Whenever the printer is disconnected, any pending jobs are cancelled to avoid unexpected prints on reconnection.
+When a print job is submitted via CUPS, CUPS sends it to the printer using IPP. VxAdmin waits until CUPS reports it has successfully sent the entire job to the printer, at which point it logs success. If the printer is disconnected before CUPS can send the entire job, VxAdmin logs the failure. In these cases, the printer may still print an incomplete document or error code. Whenever the printer is disconnected, any pending jobs are cancelled to avoid unexpected prints on reconnection.
 
-Note that VxAdmin can only connect with one printer at a time and will always connect with the first attached printer.
+Note that VxAdmin can only connect with one printer at a time and always connects with the first attached printer.

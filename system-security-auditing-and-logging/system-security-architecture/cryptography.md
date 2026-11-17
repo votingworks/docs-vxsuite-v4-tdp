@@ -19,7 +19,7 @@ VxSuite v4 uses NXP JCOP 4 Java Cards, specifically this model: [https://www.car
 These smart cards are FIPS140-2-certified:\
 [https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3746](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3746).
 
-The applet that we run on the cards, [OpenFIPS201](https://github.com/votingworks/OpenFIPS201), is an implementation of the NIST 201 Personal Identity Verification (PIV) protocol, which sits on top of FIPS140 cryptography. In the applet, all cryptographic operations are handled by the Java Card operating system, implemented by the NXP JCOP 4 card.
+The applet that runs on the cards, [OpenFIPS201](https://github.com/votingworks/OpenFIPS201), is an implementation of the NIST 201 Personal Identity Verification (PIV) protocol, which sits on top of FIPS140 cryptography. In the applet, all cryptographic operations are handled by the Java Card operating system, implemented by the NXP JCOP 4 card.
 
 ### VxAdmin / VxCentralScan / VxPrint TPM
 
@@ -41,14 +41,14 @@ This chip is FIPS140-2-certified: [https://csrc.nist.gov/projects/cryptographic-
 
 ### OpenSSL
 
-We use OpenSSL 3.0.9 and install the FIPS provider, per [these instructions](https://github.com/votingworks/docs-vxsuite-v4/blob/main/software-docs/README-FIPS.md). In the basic configuration wizard run on first boot after imaging, we run the mandatory `openssl fipsinstall` command to ensure that the FIPS provider is configured correctly and OpenSSL is running in FIPS mode.
+VxSuite uses OpenSSL 3.0.9 with the FIPS provider installed, per [these instructions](https://github.com/votingworks/docs-vxsuite-v4/blob/main/software-docs/README-FIPS.md). In the basic configuration wizard run on first boot after imaging, the mandatory `openssl fipsinstall` command runs to ensure that the FIPS provider is configured correctly and OpenSSL is running in FIPS mode.
 
 This provider is FIPS140-2-certified: [https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4282](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4282).
 
-FIPS-compliance of all OpenSSL operations is guaranteed as follows:
+FIPS compliance of all OpenSSL operations is achieved as follows:
 
-* **FIPS compliance via hardware modules:** For relevant operations, OpenSSL outsources cryptographic operations to the TPM 2.0 chip, and as noted above, all of our TPM 2.0 chips are FIPS-compliant.
-* **FIPS compliance via software modules:** For all other operations, OpenSSL uses the FIPS provider. Our [OpenSSL config](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.1/playbooks/trusted_build/files/openssl-3.0.9.cnf) guarantees this.
+* **FIPS compliance via hardware modules:** For relevant operations, OpenSSL outsources cryptographic operations to the TPM 2.0 chip, and as noted above, all VxSuite TPM 2.0 chips are FIPS-compliant.
+* **FIPS compliance via software modules:** For all other operations, OpenSSL uses the FIPS provider. The VxSuite [OpenSSL config](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.1/playbooks/trusted_build/files/openssl-3.0.9.cnf) enforces this.
 
 ## Authentication vs. Encryption
 

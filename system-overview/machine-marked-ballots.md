@@ -18,10 +18,10 @@ In VxMarkScan, there is extra white space at the top of the ballot so that all o
 
 ### Multi-Lingual Ballots
 
-If VxMark or VxMarkScan is being used in a language other than English, the resulting ballot will be multi-lingual and feature the other language. All pieces of text that appear on the summary ballot may have translations specified in the [election definition's ballot strings](election-package/vxsuite-election-definition.md#ballot-strings), which will then be used when printing the ballot.
+If VxMark or VxMarkScan is being used in a language other than English, the resulting ballot is multi-lingual and feature the other language. All pieces of text that appear on the summary ballot may have translations specified in the [election definition's ballot strings](election-package/vxsuite-election-definition.md#ballot-strings), which are then used when printing the ballot.
 
 <figure><img src="../.gitbook/assets/image (69).png" alt="" width="375"><figcaption><p>English/Chinese VxMarkScan Ballot</p></figcaption></figure>
 
 ## QR Code
 
-The QR codes on summary ballots are different than the [QR codes on bubble ballots](hand-marked-ballots.md#qr-code-metadata) in that they actually contain voter selections in addition to the ballot metadata. For full specifications on how metadata and selections are encoded, refer to the [ballot-qr-code-data-format.md](../public-documents/ballot-qr-code-data-format.md "mention").
+The QR codes on summary ballots differ from the [QR codes on bubble ballots](hand-marked-ballots.md#qr-code-metadata) in that they contain voter selections in addition to the ballot metadata. For full specifications on how metadata and selections are encoded, refer to the [ballot-qr-code-data-format.md](../public-documents/ballot-qr-code-data-format.md "mention").

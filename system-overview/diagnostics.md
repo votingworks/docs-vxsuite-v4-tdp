@@ -8,11 +8,11 @@ When a test is performed, the system logs the result and creates a diagnostic re
 
 ### Storage
 
-Retrieves the current amount of disk space used and disk space available for the application. The displayed total disk space will not be as large as the actual disk because some space is reserved for the system. The disk space usage will not always return to 0% after clearing election data because the database may not have liberated that disk space back to the operating system, but the space will be reused once more election data is loaded.
+Retrieves the current amount of disk space used and disk space available for the application. The displayed total disk space is smaller than the actual disk because some space is reserved for the system. The disk space usage does not always return to 0% after clearing election data because the database may not have released that disk space back to the operating system, but the space will be reused once more election data is loaded.
 
 ### Battery
 
-For components with internal batteries - VxAdmin, VxCentralScan, and VxPrint - the operating system is polled for battery status. The application will report the current charge level and whether or not the battery is currently charging.
+For components with internal batteries - VxAdmin, VxCentralScan, and VxPrint - the operating system is polled for battery status. The application reports the current charge level and whether or not the battery is currently charging.
 
 ### Uninterruptible Power Supply (UPS)
 
@@ -50,7 +50,7 @@ The toner level and any alerts from the printer are displayed, such as sleep mod
 
 ### Batch Scanner
 
-The user may perform a test scan, which requires that a blank white sheet of paper be scanned. The scanned image is broken up into small cells and each cell is checked for the percent of black pixels after binarization. If that percent is more than slightly over 0%, that cell is flagged and the entire diagnostic fails. The goal of the diagnostic is catch any defects in the scanned images, such as streaking produced by a dirty scanner.
+The user may perform a test scan, which requires that a blank white sheet of paper be scanned. The scanned image is broken up into small cells and each cell is checked for the percent of black pixels after binarization. If that percent is more than slightly over 0%, that cell is flagged and the entire diagnostic fails. The goal of the diagnostic is to catch any defects in the scanned images, such as streaking produced by a dirty scanner.
 
 <div><figure><img src="../.gitbook/assets/3d3eeff3-0eda-48fd-be9d-8edda7abdd2d-front_debug_diagnostic.png" alt=""><figcaption><p>Passed</p></figcaption></figure> <figure><img src="../.gitbook/assets/0dc29646-3c6a-4abd-9d2d-ae1b03a3b4ad-front_debug_diagnostic.png" alt=""><figcaption><p>Failed</p></figcaption></figure></div>
 
@@ -62,7 +62,7 @@ The user may perform a test scan, which requires that a blank white sheet of pap
 
 ### Embedded Scanner
 
-The user may perform a test scan, which requires that a blank white sheet of paper be scanned. The scanned image is broken up into small cells and each cell is checked for the percent of black pixels after binarization. If that percent is more than slightly over 0%, that cell is flagged and the entire diagnostic fails. The goal of the diagnostic is catch any defects in the scanned images, such as streaking produced by a dirty scanner.
+The user may perform a test scan, which requires that a blank white sheet of paper be scanned. The scanned image is broken up into small cells and each cell is checked for the percent of black pixels after binarization. If that percent is more than slightly over 0%, that cell is flagged and the entire diagnostic fails. The goal of the diagnostic is to catch any defects in the scanned images, such as streaking produced by a dirty scanner.
 
 The test scan process is identical to that for VxCentralScan, and the images above apply.
 

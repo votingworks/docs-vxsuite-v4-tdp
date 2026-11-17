@@ -8,7 +8,7 @@ VxMarkScan exposes various hardware interfaces for various modes of voting. The 
 
 <figure><img src="../.gitbook/assets/acc-controller.png" alt="" width="331"><figcaption><p>Accessible Controller</p></figcaption></figure>
 
-The right side of the machine is the paper path. Paper is inserted into the printer-scanner by feeding it forward on the front paper input. When the ballot is cast, it is ejected to the rear into the attached ballot box. In case of paper jams, the printer-scanner cover can lift to expose the printer-scanner. If the cover is opened while polls are opened without authentication, an alarm will be triggered through the onboard speaker.
+The right side of the machine is the paper path. Paper is inserted into the printer-scanner by feeding it forward on the front paper input. When the ballot is cast, it is ejected to the rear into the attached ballot box. In case of paper jams, the printer-scanner cover can lift to expose the printer-scanner. If the cover is opened while polls are opened without authentication, an alarm sounds through the onboard speaker.
 
 <div><figure><img src="../.gitbook/assets/ballot_box.png" alt=""><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/printer-scanner.png" alt=""><figcaption></figcaption></figure></div>
 
@@ -16,7 +16,7 @@ The primary modification made by VotingWorks to the original Smartmatic hardware
 
 <figure><img src="../.gitbook/assets/PXL_20241119_204113175 (1).jpg" alt="" width="375"><figcaption><p>Smart card insert</p></figcaption></figure>
 
-Power is controlled by a button in the back left of the machine. When activated, an LED will illuminate the power button. Between the power button and the power port is an additional headphone input which is not used by VxMarkScan. A power block plugs into the power port, and the power block plugs into the APC backup uninterruptible power supply (UPS), which is plugged into a standard power outlet.
+Power is controlled by a button in the back left of the machine. When activated, an LED illuminates the power button. Between the power button and the power port is an additional headphone input which is not used by VxMarkScan. A power block plugs into the power port, and the power block plugs into the APC backup uninterruptible power supply (UPS), which is plugged into a standard power outlet.
 
 <figure><img src="../.gitbook/assets/power-labelled.png" alt="" width="375"><figcaption><p>Power controls</p></figcaption></figure>
 
@@ -24,7 +24,7 @@ VxMarkScan does not require any direct bodily contact or for the body to be part
 
 ### Storage
 
-VxMarkScan is shipped and stored in large hardshell cases with custom foam cutouts. The first case, accented in blue, is for the ballot-marking device (BMD) itself, its headphones, and its power supply. The second case, accented in yellow, is for the other peripherals - legs, power supply holder, privacy shield, and ballot box.
+VxMarkScan is shipped and stored in large hardshell cases with custom foam cutouts. The first case, accented in blue, is for the ballot-marking device (BMD) itself, its headphones, and its power supply. The second case, accented in yellow, is for the other peripherals: legs, power supply holder, privacy shield, and ballot box.
 
 <div><figure><img src="../.gitbook/assets/PXL_20241119_202755951.jpg" alt=""><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241119_202836043.jpg" alt=""><figcaption></figcaption></figure></div>
 
@@ -50,6 +50,6 @@ The specified neckloop achieves a T4 rating when used with assistive hearing dev
 
 ## Criticality Discussion
 
-The VSAP system provided by LA County is the primary component and the highest criticality component. The entire system runs on it. The embedded computer and the printer-scanner are both responsible for the printing of ballots and the interpretation of ballots. The various interaction interfaces - touchscreen, accessible controller, and PAT input - can all affect voter selections. VotingWorks and Los Angeles County have a robust partnership that includes the sale of the hardware itself, documentation transfer, and alignment on access control and quality assurance procedures.
+The VSAP system provided by LA County is the primary component and the highest criticality component. The entire system runs on it. The embedded computer and the printer-scanner are both responsible for the printing of ballots and the interpretation of ballots. The various interaction interfaces—touchscreen, accessible controller, and PAT input—can all affect voter selections. VotingWorks and Los Angeles County have a robust partnership that includes the sale of the hardware itself, documentation transfer, and alignment on access control and quality assurance procedures.
 
 The only other critical component, with medium criticality, is the HID smart card reader. As it is responsible for communicating with smart cards and facilitating authentication, it is a sensitive component.

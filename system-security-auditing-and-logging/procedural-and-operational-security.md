@@ -20,11 +20,11 @@ When there are no active elections happening, VxSuite equipment should be physic
 * VxAdmin, VxCentralScan, VxScan, VxMark, VxPrint, and the Ricoh scanner, once sealed, should be kept in a safely locked room or storage area that only authorized election administrators have access to.
 * The system administrator smart cards should be kept in a safe or locked drawer, separately from VxAdmin. The PIN for the system administrator smart card, if recorded on paper, should also be kept locked separate from both VxAdmin and the card.
 
-You may consider occasionally resetting the PIN on the system administrator cards. This can be done using the VxAdmin laptop.
+Election officials may also occasionally reset the PIN on the system administrator cards using the VxAdmin laptop.
 
 ## During L\&A Testing
 
-Both VxAdmin and VxScan are required for logic and accuracy (L\&A) testing. VxCentralScan is required if it is planned to be used for counting absentee ballots. VotingWorks's recommended practices take into account that this testing is often performed in view of the public.
+Both VxAdmin and VxScan are required for logic and accuracy (L\&A) testing. VxCentralScan is required if it will be used to count absentee ballots. VotingWorks's recommended practices take into account that this testing is often performed in view of the public.
 
 * When retrieving all components from their locked storage location, ensure that the seal numbers match the logs.
 * Keep clear and strong custody of all smart cards.
@@ -68,7 +68,7 @@ If a ballot jam requires opening the poll worker door or the ballot box door, re
 
 ### Scanning Absentee Ballots
 
-VxCentralScan is only meant to be accessed by authorized election administrators. However, it is safe to project the screen via overhead projector, as long as the smart card PIN is entered via the keyboard, and not via the mouse.
+VxCentralScan is only meant to be accessed by authorized election administrators. However, the screen can be projected via overhead projector, provided that the smart card PIN is entered via the keyboard and not via the mouse.
 
 ### Closing the Polls
 
@@ -78,4 +78,4 @@ Unsealing the poll worker door is required to extract the USB drive after polls 
 
 Pack up all components in their respective cases and apply seals. Record those seals.
 
-Additionally, any auditing or review of audit logs should be completed immediately after exporting those logs from a device to a USB drive. If there is a concern about a break in the administrative chain of custody, the user should re-export the logs to a USB drive from the machine and can compare the original export with the re-export to determine the logs have not been tampered with while on the USB drive. The logs maintained on the system are unalterable and should be pulled and reviewed in one process to ensure that chain of custody is maintained.
+Additionally, any auditing or review of audit logs should be completed immediately after exporting those logs from a device to a USB drive. If there is a concern about a break in the administrative chain of custody, the user should re-export the logs to a USB drive from the machine and can compare the original export with the re-export to confirm that the logs were not altered while on the USB drive. The logs maintained on the system are designed to be protected from alteration and should be pulled and reviewed in one process to maintain chain of custody.

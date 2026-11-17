@@ -8,7 +8,7 @@ All system components - VxAdmin, VxCentralScan, VxMark, VxMarkScan, VxScan, VxPr
 
 The system uses [Debian](https://www.debian.org/) 12 as the base operating system. Debian is a free and open source Linux distribution developed by the Debian Project. The operating system is first installed with the minimally required dependencies and then any additional packages required by the system are installed during build time.
 
-Due to the extensive security measures, users are limited to using the application software and will not have access to Debian's typical set of features.
+Because of the system's security measures, users are limited to using the application software and do not have access to Debian's typical set of features.
 
 ## Application Architecture
 
@@ -48,7 +48,7 @@ Firmware for embedded devices such as screens and speakers is bundled with the o
 
 The voting system achieves software independence through the use of independent voter-verifiable paper records. All ballots are voter-verified paper ballots, whether they are hand-marked or printed by a ballot-marking device.
 
-On bubble ballots, voters fill in bubbles next to their selections. Because voter indications are made and reviewed directly by the voter, they are inherently voter-verified. The software interprets the image of the ballot for tabulation but, of course, the paper ballot persists after scanning.
+On bubble ballots, voters fill in bubbles next to their selections. Because voter indications are made and reviewed directly by the voter, they are inherently voter-verified. The software interprets the image of the ballot for tabulation, but the paper ballot persists after scanning.
 
 On VxMark and VxMarkScan, voters make selections via the touchscreen or an accessible input device. After the voter has made all their selections, the ballot is printed and the voter can verify their physical paper ballot.
 
@@ -63,7 +63,7 @@ There are four code repositories relevant to the voting system:
 * [vxsuite](https://github.com/votingworks/vxsuite/tree/v4.1.1) — Core application code
 * [kiosk-browser](https://github.com/votingworks/kiosk-browser/tree/v4.1.1) — Generic Electron-based kiosk-mode browser
 * [vxsuite-complete-system](https://github.com/votingworks/vxsuite-complete-system/tree/v4.1.1) — Links compatible versions of vxsuite and kiosk-browser, and includes the scripts necessary to create a production machine
-* [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.1.1) — Our framework for building VxSuite and managing its dependencies, across versions and environments
+* [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.1.1) — The VotingWorks framework for building VxSuite and managing its dependencies, across versions and environments
 
 ## Key Dependency Chart
 
@@ -71,25 +71,25 @@ There are four code repositories relevant to the voting system:
 
 ## Traceability of Procured Software
 
-We take care to ensure that we're pulling authentic/correct versions of dependencies, by verifying against known hashes, checksums, or digital signatures. The details of this are covered in [hash-checksum-verification-of-dependencies.md](../software-installation/trusted-build/hash-checksum-verification-of-dependencies.md "mention").
+VotingWorks verifies that dependencies are authentic and the correct versions by checking them against known hashes, checksums, or digital signatures. The details are covered in [hash-checksum-verification-of-dependencies.md](../software-installation/trusted-build/hash-checksum-verification-of-dependencies.md "mention").
 
 ## Software Best Practices
 
-The VotingWorks codebase is written in TypeScript and Rust, two widely used languages with well established coding conventions. We make use of automatic code linters to enforce these conventions. Details about our best practices and tooling used to enforce those best practices can be found here:
+The VotingWorks codebase is written in TypeScript and Rust, two widely used languages with well established coding conventions. VotingWorks uses automatic code linters to enforce these conventions. Details about VotingWorks' best practices and the tooling used to enforce them can be found here:
 
 * [TypeScript best practices and tooling](https://github.com/votingworks/docs-vxsuite-v4/blob/main/software-docs/best-practices/typescript.md)
 * [Rust best practices and tooling](https://github.com/votingworks/docs-vxsuite-v4/blob/main/software-docs/best-practices/rust.md)
 
-We also require peer code review of every change ([examples of that process here](https://github.com/votingworks/vxsuite/pulls?q=is%3Apr+is%3Aclosed)), and for larger changes and features, we hold architecture discussions as a team to land on the best possible solutions given the constraints.
+VotingWorks also requires peer code review of every change ([examples of that process here](https://github.com/votingworks/vxsuite/pulls?q=is%3Apr+is%3Aclosed)), and for larger changes and features, the team holds architecture discussions to arrive at the best solution given the constraints.
 
-Our practices around testing are covered under [#quality-assurance-protocols-software](<../README (1).md#quality-assurance-protocols-software> "mention").
+VotingWorks' testing practices are covered under [#quality-assurance-protocols-software](<../README (1).md#quality-assurance-protocols-software> "mention").
 
 ### Failure Recovery
 
-The VotingWorks codebase uses database transactions to ensure that only complete and consistent (and not partial) updates are persisted. For data synced across a machine's internal drive and a connected USB drive, namely cast vote records (CVRs), we detect when data has fallen out of sync after a failure using the Merkle tree hash of the data ([hashing-of-continuously-exported-cast-vote-records.md](../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/hashing-of-continuously-exported-cast-vote-records.md "mention")) and re-sync data as needed.
+The VotingWorks codebase uses database transactions to ensure that only complete and consistent (and not partial) updates are persisted. For data synced across a machine's internal drive and a connected USB drive, namely cast vote records (CVRs), the system detects when data has fallen out of sync after a failure using the Merkle tree hash of the data ([hashing-of-continuously-exported-cast-vote-records.md](../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/hashing-of-continuously-exported-cast-vote-records.md "mention")) and re-sync data as needed.
 
 {% hint style="success" %}
-Through the above best practices, tooling used to enforce those best practices, and peer code review of every change, we guarantee that we meet the following requirements:
+Through the above best practices, tooling used to enforce those best practices, and peer code review of every change, VotingWorks meets the following requirements:
 
 * 2.3: Voting system logic is clear, meaningful, and well-structured
 * 2.4: Voting system structure is modular, scalable, and robust
@@ -105,15 +105,15 @@ Subsequent articles will describe the particular software design of each applica
 
 ### USB Management
 
-All VxSuite components require a USB drive at some point in their operation for configuration or for the import or export of results. The application is polling for attached USB drives multiple times per second. If a USB drive with a FAT32 partition is detected, the application will attempt to mount the USB drive to a known mount point. Once mounted, the USB drive will be available for use by the application.
+All VxSuite components require a USB drive at some point in their operation for configuration or for the import or export of results. The application polls for attached USB drives multiple times per second. If a USB drive with a FAT32 partition is detected, the application will attempt to mount the USB drive to a known mount point. Once mounted, the USB drive will be available for use by the application.
 
-The USB drive should be ejected before removing it. Most critical operations also make sure to sync the data to the USB drive before allowing the user to continue, however, so removing the USB drive without ejecting will normally not result in problems.
+The USB drive should be ejected before removing it. Most critical operations also sync the data to the USB drive before allowing the user to continue, however, so removing the USB drive without ejecting normally does not cause problems.
 
 Only one USB drive can be used at a time and additional USB drives inserted after the first USB drive will be ignored.
 
 ### Document Creation
 
-All VxSuite components must generate documents for printing or export. VxAdmin and VxScan must generate tally and ballot count reports. All components must generate diagnostic readiness reports.
+All VxSuite components generate documents for printing or export. VxAdmin and VxScan generate tally and ballot count reports. All components generate diagnostic readiness reports.
 
 In order to do so, the applications have a headless browser (specifically Chromium) launched by the backend. Exported documents are all defined in terms of HTML (using React), so the headless browser is able to load the documents and render them as PDFs. The PDFs can then be sent to printer or saved to a USB drive.
 

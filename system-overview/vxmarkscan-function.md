@@ -38,9 +38,9 @@ Poll workers open the polls to allow voting. Once polls are opened, polls can on
 
 Poll workers close the polls when voting should no longer be allowed. Polls are closed until VxMarkScan is unconfigured or switched from one ballot mode to another, with one exception discussed below.
 
-VxMarkScan also allows poll workers to pause voting a.k.a. suspend the polls. While voting is paused, no voting sessions can be started. Voting can be resumed, after which the polls are back in the standard polls opened state. Pausing voting might be used in an early voting model between voting days or, in the case of an emergency, to pause voting while the emergency is resolved. The poll worker may choose to close polls directly from voting paused instead of resuming voting.
+VxMarkScan also allows poll workers to pause voting, also called suspending the polls. While voting is paused, no voting sessions can be started. Voting can be resumed, after which the polls are back in the standard polls opened state. Pausing voting might be used in an early voting model between voting days or, in the case of an emergency, to pause voting while the emergency is resolved. The poll worker may choose to close polls directly from voting paused instead of resuming voting.
 
-If the polls have been closed, the only possible way for the polls to be re-opened is if a system administrator resets the polls to paused. Only the system administrator may do this - poll workers and election managers cannot - per the allowance in VVSG 2.0 1.1.7-E. Once polls have been reset to paused by the system administrator, voting may be resumed by a poll worker. The goal of this flow is to allow voting to continue after a poll worker has prematurely closed the polls.
+If the polls have been closed, they can be re-opened only if a system administrator resets the polls to paused. Only the system administrator may do this - poll workers and election managers cannot - per the allowance in VVSG 2.0 1.1.7-E. Once polls have been reset to paused by the system administrator, voting may be resumed by a poll worker. The goal of this flow is to allow voting to continue after a poll worker has prematurely closed the polls.
 
 {% hint style="info" %}
 **User Manual Reference:** [Open and Close Polls](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmarkscan/open-and-close-polls "mention")
@@ -64,11 +64,11 @@ The thermal printer prints a ballot, presents it to the voter, and prompts them 
 
 If the voter finds a problem in their ballot during the final review stage, they must spoil the ballot. They are prompted to get help from a poll worker who can help them spoil their ballot and load a new, blank sheet. Once the blank sheet is loaded, the voter returns to the initial review stage from which they can edit selections before reprinting, reviewing, and casting their ballot.
 
-While the paper ballot is being presented to the voter, they are supposed to leave it in the scanner so it can be ejected into the ballot box when they cast their ballot. Many voters will naturally remove the ballot from the scanner, however, and cannot cast their ballot until they re-insert the ballot. When they do insert their ballot, it is scanned again and they are returned to the final review stage.
+While the paper ballot is being presented to the voter, the voter should leave it in the scanner so it can be ejected into the ballot box when they cast their ballot. Voters often remove the ballot from the scanner, however, and cannot cast their ballot until they re-insert it. When they do insert their ballot, it is scanned again and they are returned to the final review stage.
 
-It's possible that a voter removes their ballot and does not re-insert it before the voting session times out. In this case, it's possible for a poll worker to initialize a session by re-inserting an already printed ballot rather than by selecting a ballot style. The already printed ballot is scanned and the voter is dropped directly on the final review screen.
+A voter may remove their ballot and not re-insert it before the voting session times out. In this case, a poll worker can initialize a session by re-inserting an already printed ballot rather than by selecting a ballot style. The already printed ballot is scanned and the voter is taken directly to the final review screen.
 
-If a re-inserted ballot is somehow not compatible with the machine - wrong election, wrong precinct or wrong ballot mode - the user is alerted and the ballot is rejected out the front.
+If a re-inserted ballot is not compatible with the machine - wrong election, wrong precinct or wrong ballot mode - the user is alerted and the ballot is rejected out the front.
 
 If a poll worker card is inserted during a voting session the poll worker can deactivate the current session and spoil any current ballot.
 
@@ -99,7 +99,7 @@ The voting session begins in visual mode with the following default settings:
 
 The voter can update the **Text Size** to Small, Medium, Large, or Extra-Large, which map to the four discrete text sizes defined in VVSG 2.0 7.1-G. Changing the text size changes the size of all informational elements including buttons, icons, and layout (VVSG 2.0 7.1-H) because all such elements are sized relative to the base font size. The font is always sans-serif (VVSG 2.0 7.1-J).
 
-If there's too much content on a page to fit all on screen at once, which happens most commonly in large or extra-large text size, the interface introduces a large "More" button to indicate there are more contest options to scroll through. The interface never lays out content in a way which requires horizontal scrolling.
+If there is too much content on a page to fit all on screen at once, which happens most commonly in large or extra-large text size, the interface introduces a large "More" button to indicate there are more contest options to scroll through. The interface never lays out content in a way which requires horizontal scrolling.
 
 The voter can update the **Contrast** from medium contrast to low contrast, high contrast with black background, or high contrast with white background corresponding to the contrast options specified in VVSG 2.0 7.1-D. The contrast changes apply to all elements on screen.
 
@@ -119,7 +119,7 @@ Once a voter has used all their votes in a race, the progress button at the bott
 
 Voters usually choose to use the touchscreen to vote. The voter taps buttons to move between contests and through the stages of the voting flow. The voter taps list items on each contest page in order to make selections. Touch areas never overlap and are sized to meet minimums described in VVSG 2.0 7.2-I. Touch areas require that the user's touch begins and ends within the touch area to activate, meaning that dragging a finger across a touch area will not activate the touch area, in order to avoid accidental activation (VVSG 2.0 7.2-H).
 
-When there's more content on a page than can fit on one screen, the voter can scroll through the screen in one of two ways. First, they can tap the "More" button which acts as both the visual indicator that there are more contest options or contests. Second, they can use a swiping motion on the screen to move up or down. Swiping to see more contest options or contests is VxMarkScan's only touch screen gesture. It cannot be used horizontally to navigate between contests or pages (VVSG 2.0 7.2-E).
+When there is more content on a page than can fit on one screen, the voter can scroll through the screen in one of two ways. First, they can tap the "More" button which acts as both the visual indicator that there are more contest options or contests. Second, they can use a swiping motion on the screen to move up or down. Swiping to see more contest options or contests is VxMarkScan's only touch screen gesture. It cannot be used horizontally to navigate between contests or pages (VVSG 2.0 7.2-E).
 
 ### Audio Tactile Mode - Accessible Controller
 
@@ -158,6 +158,6 @@ If a language other than English is set when printing the ballot, the ballot wil
 
 ## Printer Access Control
 
-VxMarkScan's printer and scanner are covered by the printer cover which can be opened at any time in order to clear a paper jam or clean the scanner. In order to prevent unauthorized access, pursuant to VVSG 2.0 12.1-B, VxMarkScan produces a jarring, audible alarm if the printer cover is opened while polls are opened. The alarm should alert a poll worker that something is wrong. A poll worker then inserts their card, which silences the alarm, and follows on screen instructions to close the printer cover.
+VxMarkScan's printer and scanner are covered by the printer cover which can be opened at any time in order to clear a paper jam or clean the scanner. In order to prevent unauthorized access, pursuant to VVSG 2.0 12.1-B, VxMarkScan produces an audible alarm if the printer cover is opened while polls are opened. The alarm is intended to alert a poll worker that something is wrong. A poll worker then inserts their card, which silences the alarm, and follows on screen instructions to close the printer cover.
 
 Because authentication is required for the poll worker to open the printer cover without triggering an alarm, poll workers are instructed on screen to authenticate when clearing a paper jam. When polls are closed, the alarm is not active, so cleaning and setup can take place without triggering the alarm.

@@ -21,7 +21,7 @@ layout:
 
 # Bubble Ballots
 
-Bubble ballots are the primary type of ballot used in VxSuite. All ballots marked by hand are bubble ballots. Some ballots marked by a machine are also bubble ballots - VxMark can print bubble ballots marked with the voter's selections.
+Bubble ballots are the primary type of ballot used in VxSuite. All ballots marked by hand are bubble ballots. Some ballots marked by a machine are also bubble ballots: VxMark can print bubble ballots marked with the voter's selections.
 
 VxSuite can tabulate a wide variety of ballot designs as long as they conform to the following requirements:
 
@@ -50,7 +50,7 @@ Every ballot must have timing mark borders on both front and back. The timing ma
 | Page Margin (Top, Bottom) | 12 pt (1/6 in.) |
 | Page Margin (Left, Right) | 5 mm           |
 
-As for number of timing marks, there are always 34 in the top and bottom borders, yielding a grid that is always 32 bubble positions wide. The number of rows depends on the ballot length; for example, a letter-sized ballot has a 32 x 39 grid of possible bubble positions inside the timing mark border. The number of marks in the left and right borders varies based on the length of the ballot, and should be calculated by the formula **(# inches \* 4) - 3**. For example, a letter-sized ballot (11 in.) should have 41 left and right timing marks whereas a legal-sized ballot (14 in.) should have 53 left and right timing marks.
+As for number of timing marks, there are always 34 in the top and bottom borders, yielding a grid that is always 32 bubble positions wide. The number of rows depends on the ballot length; for example, a letter-sized ballot has a 32 x 39 grid of possible bubble positions inside the timing mark border. The number of marks in the left and right borders varies based on the length of the ballot, and is calculated by the formula **(# inches \* 4) - 3**. For example, a letter-sized ballot (11 in.) has 41 left and right timing marks whereas a legal-sized ballot (14 in.) has 53 left and right timing marks.
 
 The timing marks must be aligned to the margins of the page and evenly spaced.
 
@@ -68,7 +68,7 @@ The QR code includes ballot metadata:
 * Test Ballot Flag - indicates whether the ballot is a test ballot or an official ballot
 * Ballot Type (Precinct, Absentee, or Provisional)
 
-In addition, the QR code includes the ballot hash. The ballot hash ensures that the ballot was generated from the same election definition that will be used to interpret the ballot.
+In addition, the QR code includes the ballot hash. The ballot hash allows the scanner to check that the ballot was generated from the same election definition that is used to interpret the ballot.
 
 For full specifications on how to generate readable QR codes, refer to the [ballot-qr-code-data-format.md](../public-documents/ballot-qr-code-data-format.md "mention").
 

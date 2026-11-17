@@ -20,9 +20,9 @@ All poll worker cards are programmed at VxAdmin and are programmed for a specifi
 
 ## Election Manager Role
 
-The election manager role is a broad role for election officials to setup and operate the election.
+The election manager role is a broad role for election officials to set up and operate the election.
 
-On the polling place equipment, an election manager card is used to configure the machines at the beginning of each election. This includes loading the election package, selecting a polling place for the device, and checking on consumables such as thermal paper for VxScan. At the end of an election, the election manager card can be used to unconfigure machines, re-export results, and export logs. In addition, system functions like setting date and time, turning on and off certain features, and accessing system diagnostics are available to election managers. The election manager card is not usually required at the polling place on election day, however, where the poll worker card should be sufficient for all election day tasks.
+On the polling place equipment, an election manager card is used to configure the machines at the beginning of each election. This includes loading the election package, selecting a polling place for the device, and checking on consumables such as thermal paper for VxScan. At the end of an election, the election manager card can be used to unconfigure machines, re-export results, and export logs. In addition, system functions like setting date and time, turning on and off certain features, and accessing system diagnostics are available to election managers. The election manager card is not usually required at the polling place on election day, however, where the poll worker card is sufficient for all election day tasks.
 
 On the central equipment, an election manager card is used to access core election management features. On VxAdmin, it is used to load, adjudicate, review, and export results. On VxCentralScan, it is used to operate the scanner and export results.
 
@@ -44,4 +44,4 @@ The vendor role is a role that only VotingWorks itself has access to. It allows 
 
 ## Voter Mode
 
-While the authentication model only includes the four aforementioned roles, one can conceptually describe a "voter mode" on the precinct devices. On VxMark and VxMarkScan, a poll worker must authenticate in order to initiate a voting session. Once initiated, the voter is able to make selections, navigate menus, and print their ballot. Once done voting, the machine leaves voter mode and once again requires authentication to start a voting session. On VxScan, voter mode is any time the polls are open and no other role is authenticated, during which a ballot can be inserted for tabulation.
+While the authentication model only includes the four aforementioned roles, a "voter mode" can be described conceptually on the precinct devices. On VxMark and VxMarkScan, a poll worker must authenticate in order to initiate a voting session. Once initiated, the voter is able to make selections, navigate menus, and print their ballot. Once done voting, the machine leaves voter mode and once again requires authentication to start a voting session. On VxScan, voter mode is any time the polls are open and no other role is authenticated, during which a ballot can be inserted for tabulation.

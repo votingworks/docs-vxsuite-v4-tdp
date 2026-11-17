@@ -2,15 +2,15 @@
 
 ## Continuous Export
 
-Our precinct scanners export cast vote records (CVRs) to USB drive continuously, as ballots are cast. Continuous export also allows for a speedy polls close, as cast vote records need not be exported all at once on polls close.
+VxSuite precinct scanners export cast vote records (CVRs) to USB drive continuously, as ballots are cast. Continuous export also allows for a speedy polls close, as cast vote records need not be exported all at once on polls close.
 
 ## Merkle Tree Structure
 
-To perform continuous export while also keeping signatures, i.e., authenticity information, up-to-date, we have to be able to write both CVRs and authenticity information incrementally. (It isn’t enough to just hash and sign new data. We need an up-to-date root hash/signature.) We can use a [Merkle tree](https://en.wikipedia.org/wiki/Merkle_tree) structure to accomplish this efficiently.
+To perform continuous export while also keeping signatures, i.e., authenticity information, up-to-date, the scanner must be able to write both CVRs and authenticity information incrementally. Hashing and signing only the new data is not sufficient; an up-to-date root hash and signature are required. A [Merkle tree](https://en.wikipedia.org/wiki/Merkle_tree) structure accomplishes this efficiently.
 
 <figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-Assuming every CVR has a random universally unique identifier (UUID), e.g., 4d6a9dad-e6d6-4a29-89bc-9ab915012b73, we can specifically use the following structure:
+Assuming every CVR has a random universally unique identifier (UUID), e.g., 4d6a9dad-e6d6-4a29-89bc-9ab915012b73, the following structure can be used:
 
 ```
 <cvr-directory-name>.vxsig ← Signature on root-hash.txt
@@ -28,7 +28,7 @@ Assuming every CVR has a random universally unique identifier (UUID), e.g., 4d6a
 
 ### In Practice
 
-We don’t actually have to 1) use a nested directory structure on the USB drive or 2) store all intermediate hashes on the USB drive. We can store the structure and intermediate hashes on the machine in a database table, e.g.,
+It is not necessary to 1) use a nested directory structure on the USB drive or 2) store all intermediate hashes on the USB drive. The structure and intermediate hashes are stored on the machine in a database table, e.g.,
 
 | CVR ID Prefix 1 | CVR ID Prefix 2 | CVR ID                               | Hash                                      |
 | --------------- | --------------- | ------------------------------------ | ----------------------------------------- |
@@ -38,7 +38,7 @@ We don’t actually have to 1) use a nested directory structure on the USB drive
 | 4               | 4d              | 4d6a9dad-e6d6-4a29-89bc-9ab915012b73 | 4d6a9dad-e6d6-4a29-89bc-9ab915012b73 hash |
 | …               |                 |                                      |                                           |
 
-Then on the USB drive, we can use a flat structure that’s much easier to reason about and iterate over:
+The USB drive then holds a flat structure that is easier to reason about and iterate over:
 
 ```
 <cvr-directory-name>.vxsig ← Signature on root-hash.txt
@@ -49,9 +49,9 @@ Then on the USB drive, we can use a flat structure that’s much easier to reaso
     Images
 ```
 
-The database table makes recomputing hashes easy, as retrieval of all hashes for a given ID prefix becomes a simple SQL query. This approach also decreases the chance that we accidentally depend on data written to the USB drive when computing hashes, protecting against [compromised or faulty USB drives](https://github.com/votingworks/vxsuite/pull/3554).
+The database table makes recomputing hashes easy, as retrieval of all hashes for a given ID prefix becomes a simple SQL query. This approach also decreases the chance that hash computation accidentally depends on data written to the USB drive, protecting against [compromised or faulty USB drives](https://github.com/votingworks/vxsuite/pull/3554).
 
-In the above examples, we’ve listed a root-hash.txt file and have signed that. In practice, we use a JSON file capable of storing other metadata and sign that:
+The above examples list and sign a root-hash.txt file. In practice, VxSuite signs a JSON file capable of storing other metadata:
 
 ```
 <cvr-directory-name>.vxsig ← Signature on metadata.json
@@ -74,7 +74,7 @@ Sample metadata.json:
 
 ## Import
 
-Whenever a machine imports a CVR directory, it authenticates the CVRs by 1) verifying the signature on the metadata.json file and 2) recomputing the “castVoteRecordRootHash” in metadata.json from scratch to ensure that it’s correct.
+Whenever a machine imports a CVR directory, it authenticates the CVRs by 1) verifying the signature on the metadata.json file and 2) recomputing the “castVoteRecordRootHash” in metadata.json from scratch to confirm that it is correct.
 
 ## Code Links
 

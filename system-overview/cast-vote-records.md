@@ -23,7 +23,7 @@ layout:
 
 A cast vote record (CVR) is a record of voter selections based on the system's interpretation of a scanned ballot. Each cast vote record corresponds to a single scanned ballot sheet. Multi-sheet ballots produce multiple cast vote records.
 
-Cast vote records are exported from VxScan and VxCentralScan onto USB drives and then imported into VxAdmin. Each cast vote record export is created with a digital signature. VxAdmin verifies this signature when importing cast vote records to ensure that the export has not been tampered with.
+Cast vote records are exported from VxScan and VxCentralScan onto USB drives and then imported into VxAdmin. Each cast vote record export is created with a digital signature. VxAdmin verifies this signature when importing cast vote records and rejects an export whose contents have changed since it was signed.
 
 ## Directory Structure
 
@@ -63,7 +63,7 @@ The version 4 UUID for each cast vote record is generated when the ballot inform
 
 ### Rejected Ballots
 
-Images of rejected ballots are also included in the cast vote record export. There are no layout files or cast vote record report for rejected ballots because they are often uninterpretable. Rejected ballots will appear in the directory with the prefix `rejected-`, as in the following example:
+Images of rejected ballots are also included in the cast vote record export. There are no layout files or cast vote record report for rejected ballots because they are often uninterpretable. Rejected ballots appear in the directory with the prefix `rejected-`, as in the following example:
 
 ```
 - root
@@ -80,7 +80,7 @@ Images of rejected ballots are also included in the cast vote record export. The
 
 VxSuite does not use any data extensions beyond the National Institute of Standards and Technology (NIST) specification, but some fields are made required that are not required in the original NIST specification. The two specifications can be compared by comparing the [NIST JSON schema](https://github.com/usnistgov/CastVoteRecords/blob/master/NIST_V0_cast_vote_records.json) with the [VxSuite JSON schema](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/types/src/cdf/cast-vote-records/vx-schema.json). The additionally required fields are listed in a table below.
 
-Because VxAdmin requires a VxSuite digital signature on all imported cast vote records, it's not possible to import a cast vote record from outside of VxSuite. The goal of using CDF is to help external systems consume VxSuite cast vote records for audit or analysis.
+Because VxAdmin requires a VxSuite digital signature on all imported cast vote records, it rejects cast vote records from outside of VxSuite. The goal of using CDF is to help external systems consume VxSuite cast vote records for audit or analysis.
 
 #### VxSuite Required Fields
 
@@ -88,7 +88,7 @@ Because VxAdmin requires a VxSuite digital signature on all imported cast vote r
 
 ### Report Metadata
 
-The CDF specification includes many metadata fields that might help a consumer make sense of the cast vote record data. For example, you may define the candidates that are referenced as contest selections. VxSuite cast vote records all include this metadata to conform to the CDF, but nearly none of it is actually utilized when imported into VxAdmin. VxAdmin already has that information from the [election package](election-package/). The only data that is utilized by VxAdmin is the `GeneratedDate` and the indication of whether or not the report is a test report in `ReportType` and `OtherReportType`.
+The CDF specification includes many metadata fields that might help a consumer make sense of the cast vote record data. For example, the report may define the candidates that are referenced as contest selections. VxSuite cast vote records all include this metadata to conform to the CDF, but VxAdmin uses almost none of it on import. VxAdmin already has that information from the [election package](election-package/). The only data that is utilized by VxAdmin is the `GeneratedDate` and the indication of whether or not the report is a test report in `ReportType` and `OtherReportType`.
 
 #### CastVoteRecordReport
 
@@ -141,7 +141,7 @@ For bubble ballots, there are both "original" and "interpreted" snapshots. The "
 
 For summary ballots, there is only an "original" snapshot.
 
-The snapshot is referenced in the `CVR.CurrentSnapshotId` field by its identifier, which will be the unique identifier of the cast vote record along with its type, such as
+The snapshot is referenced in the `CVR.CurrentSnapshotId` field by its identifier, which is the unique identifier of the cast vote record along with its type, such as
 
 ```
 864a2854-ee26-4223-8097-9633b7bed096-interpreted
@@ -174,10 +174,10 @@ Ballot layouts are JSON files which describe the discovered position of ballot c
 
 The metadata file includes data that applies to all cast vote records in the export. There is only one per export. The relevant attributes are:
 
-<table><thead><tr><th width="301">Attribute</th><th>Usage</th></tr></thead><tbody><tr><td>arePollsClosed</td><td>For VxScan exports, the flag indicates whether polls were closed at the time of export. If polls were not closed, that may indicate an incomplete export</td></tr><tr><td>castVoteRecordReportMetadata</td><td>The <a href="cast-vote-records.md#cast-vote-record-report">cast vote record report</a> without any specific cast vote record data. In other words, only data about the election and its contests</td></tr><tr><td>castVoteRecordRootHash</td><td>A hash of all cast vote record files in the export. Including the hash here, which rolls up into the digital signature, ensures that cast vote records cannot be added or removed from the export</td></tr><tr><td>batchManifest</td><td>The list of batches on the originating scanner, see below</td></tr></tbody></table>
+<table><thead><tr><th width="301">Attribute</th><th>Usage</th></tr></thead><tbody><tr><td>arePollsClosed</td><td>For VxScan exports, the flag indicates whether polls were closed at the time of export. If polls were not closed, that may indicate an incomplete export</td></tr><tr><td>castVoteRecordReportMetadata</td><td>The <a href="cast-vote-records.md#cast-vote-record-report">cast vote record report</a> without any specific cast vote record data. In other words, only data about the election and its contests</td></tr><tr><td>castVoteRecordRootHash</td><td>A hash of all cast vote record files in the export. Including the hash here, which rolls up into the digital signature, means that adding or removing cast vote records changes the hash and invalidates the signature</td></tr><tr><td>batchManifest</td><td>The list of batches on the originating scanner, see below</td></tr></tbody></table>
 
 ### Batch Manifest
 
-Each cast vote record is associated with a batch via its `BatchId` metadata field. The CDF doesn't have a place within the cast vote record report to include batch metadata, so it is included here.
+Each cast vote record is associated with a batch via its `BatchId` metadata field. The CDF does not have a place within the cast vote record report to include batch metadata, so it is included here.
 
 <table><thead><tr><th width="231">Attribute</th><th>Usage</th></tr></thead><tbody><tr><td>id</td><td>The UUID of the batch generated by the scanner</td></tr><tr><td>label</td><td>The label for the batch</td></tr><tr><td>batchNumber</td><td>The sequential number of the batch, e.g., 2 for the second batch</td></tr><tr><td>startTime</td><td>The time a batch was started in ISO 8601 format</td></tr><tr><td>endTime</td><td>The time a batch ended in ISO 8601 format</td></tr><tr><td>sheetCount</td><td>The number of sheets (i.e., cast vote records) in a batch</td></tr><tr><td>scannerId</td><td>The serial number of the scanner</td></tr><tr><td>scannerMachineType</td><td>The type of scanner - "precinct" for VxScan and "central" for VxCentralScan.</td></tr><tr><td>ballotCastingMode</td><td>The casting mode of the batch, either "early_voting" or "election_day". Optional.</td></tr><tr><td>pollingPlaceId</td><td>The UUID of the batch's polling place.</td></tr></tbody></table>

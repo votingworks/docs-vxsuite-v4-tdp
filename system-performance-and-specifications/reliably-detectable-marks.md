@@ -4,7 +4,7 @@ Marks are determined valid and counted by the system if the amount of darker pix
 
 The recommended and default threshold is 7%. With this threshold setting, bubble ballot interpretation detects a valid mark per the mark conditions described by VVSG 1.1.6-H.
 
-At this default threshold, marks such as a light dot, a fold through a bubble, a stray mark outside of the bubble, or a small line just on the corner of a bubble will be considered invalid. Marks such as a completely filled bubble, half filled bubble, or an X in a bubble will be considered valid.
+At this default threshold, marks such as a light dot, a fold through a bubble, a stray mark outside of the bubble, or a small line just on the corner of a bubble are considered invalid. Marks such as a completely filled bubble, half filled bubble, or an X in a bubble are considered valid.
 
 Examples of invalid and valid marks along with the score for that mark (in green) are shown below.
 
@@ -20,5 +20,5 @@ The mark threshold set on a scanner can be checked by an election official at an
 
 ### Marginal Marks
 
-The system also supports setting a marginal mark threshold for flagging ambiguous marks close to but not quite over the definite mark threshold. If a marginal mark threshold is set and marginal mark adjudication is enabled, the definite mark threshold can be increased without having to worry about completely missing marks.
+The system also supports setting a marginal mark threshold for flagging ambiguous marks close to but not quite over the definite mark threshold. If a marginal mark threshold is set and marginal mark adjudication is enabled, the definite mark threshold can be increased while marks that fall just below it are flagged for adjudication rather than missed.
 

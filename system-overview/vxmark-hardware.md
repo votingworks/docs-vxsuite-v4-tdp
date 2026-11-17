@@ -2,7 +2,7 @@
 
 ## Overview
 
-VxMark consists of two main components - the tabletop ballot-marking device (BMD) and the attached printer - which are connected together during setup.
+VxMark consists of two main components—the tabletop ballot-marking device (BMD) and the attached printer—which are connected together during setup.
 
 <figure><img src="../.gitbook/assets/VxMark-FrontView (2).jpeg" alt=""><figcaption></figcaption></figure>
 
@@ -18,7 +18,7 @@ Additional cuts are made into the case for the nameplate attachment, personal as
 
 <figure><img src="../.gitbook/assets/LaidDownScreen-VxMark (2).jpeg" alt="" width="375"><figcaption><p>VxMark Unit</p></figcaption></figure>
 
-The case is opened by pressing the buttons on each case latch and then lifting the lid. In the picture below you can see the card reader, USB port, headphone storage, and display arm storage. The audio-tactile interface (ATI) handset is located in front of the USB port.
+The case is opened by pressing the buttons on each case latch and then lifting the lid. The picture below shows the card reader, USB port, headphone storage, and display arm storage. The audio-tactile interface (ATI) handset is located in front of the USB port.
 
 <figure><img src="../.gitbook/assets/VxMark-TopDown (1).jpeg" alt=""><figcaption><p>VxMark Overhead View</p></figcaption></figure>
 
@@ -26,7 +26,7 @@ The case is opened by pressing the buttons on each case latch and then lifting t
 
 The printer is the [HP LaserJet Pro 4001dn](https://github.com/votingworks/docs-vxsuite-v4/blob/c3708afd846808afb7249ef1c11d099a86d1e15a/hardware-assets/cots-documentation/mark/HP-LaserJet-Pro-4001dn-Datasheet.pdf), which prints double-sided black-and-white pages up to legal length (14 in.). The printer connects to VxMark via the USB cable in VxMark's back compartment. VxMark is compatible with a variety of other HP printers and extensions:
 
-* Extended Input Tray - If a jurisdiction wishes to print on ballots longer than 14 in., we can provide a custom printer tray supporting up to 22 in. ballots.
+* Extended Input Tray - If a jurisdiction wishes to print on ballots longer than 14 in., VotingWorks can provide a custom printer tray supporting up to 22 in. ballots.
 * High Volume Input Tray - A larger input tray is available for jurisdictions where every voter uses VxMark.
 
 ### Display
@@ -45,7 +45,7 @@ The accessible controller sits to the right of the display, either in its cradle
 
 The Headphone and PAT inputs are located on the front of the case to the right of the screen.  Both inputs accept 3.5 mm audio plugs.
 
-Any standard headphones can be used if a voter prefers, but note that the default volume levels were calibrated for the headphones that were provided with VxMark. Voting session audio plays through the headphones and only through the headphones. The volume and rate adjustments will have no impact on system sounds played over the speakers.
+Any standard headphones can be used if a voter prefers, although the default volume levels were calibrated for the headphones provided with VxMark. Voting session audio plays through the headphones and only through the headphones. The volume and rate adjustments have no effect on system sounds played over the speakers.
 
 The PAT input is compatible with any PAT device such as a sip-and-puff.
 
@@ -61,7 +61,7 @@ The various components of the BMD are arranged and wired together within the Pel
 
 Power enters through a power module located within the back compartment of the case where the power and data cables are located. The power module connects to a 12-volt power supply which supplies power to all components within the device.
 
-All USB cables ultimately connect to the single board computer. The card reader, and accessible controller connect directly to the single board computer via USB cable. The USB hub which supplies power and data connections to the USB panel, PAT signal processor (PAT input jack), and printer, is connected directly to the computer. Finally, a USB-C cable connects the computer to the screen. The USB-C cable carries video, audio, touch input, and power.
+All USB cables ultimately connect to the single board computer. The card reader and accessible controller connect directly to the single board computer via USB cable. The USB hub which supplies power and data connections to the USB panel, PAT signal processor (PAT input jack), and printer, is connected directly to the computer. Finally, a USB-C cable connects the computer to the screen. The USB-C cable carries video, audio, touch input, and power.
 
 Audio is provided to the headphones via a 3.5 mm jack located on the Accessible Controller. A 3.5 mm panel-mount jack, on the front right of the unit, provides a PAT input. This PAT jack is internally wired to a programmable switch interface connected to the USB hub. This device converts dual-switch input events into keyboard commands recognized by the software.
 

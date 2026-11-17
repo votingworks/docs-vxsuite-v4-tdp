@@ -18,7 +18,7 @@
 ### VxAdmin
 
 * The total number of cast vote records (CVRs) that can be imported is limited by the total disk space on the laptop (\~200 GB). The exact number of CVRs depends on ballot size, ballot selections, tabulator used (VxScan or VxCentralScan), the configured ballot image bit depth, and other factors that determine expected CVR size.
-* The number of elections a backup drive can hold is limited by the capacity of the drive. Each backup contains the election's CVRs and ballot images, so its size depends on the same factors. As a point of reference, for a jurisdiction with a turnout of 250,000 voters per election, single-sheet ballots, and standard system settings, a 1 TB drive should hold at least 10 elections. Backup drive specifications are listed in the user manual's [Supply List](https://docs.voting.works/vxsuite-user-manual-v4.1/miscellaneous/supply-list#backup-drives).
+* The number of elections a backup drive can hold is limited by the capacity of the drive. Each backup contains the election's CVRs and ballot images, so its size depends on the same factors. As a point of reference, for a jurisdiction with a turnout of 250,000 voters per election, single-sheet ballots, and standard system settings, a 1 TB drive is expected to hold at least 10 elections. Backup drive specifications are listed in the user manual's [Supply List](https://docs.voting.works/vxsuite-user-manual-v4.1/miscellaneous/supply-list#backup-drives).
 
 ### VxCentralScan
 
@@ -49,7 +49,7 @@
 * The ballot box supports up to 3,000 ballots in the main compartment before needing to be cleared.
 * The ballot box auxiliary compartment supports up to 100 ballots before needing to be cleared. Ballots longer than 19 in. must be folded.
 * Total ballots scanned for a given VxScan configuration are limited to 10,000 ballots. This limit is set based on the disk space available on specified external disks to ensure adequate disk space in the case of needing to re-sync CVRs.
-* Ballot tabulation rate depends on election content / ballot length. A typical 11 in. ballot sheet is scanned and tabulated in 3 seconds.
+* Ballot tabulation rate depends on election content and ballot length. A typical 11 in. ballot sheet is scanned and tabulated in 3 seconds.
 * A user can feed a ballot sheet every 10 seconds. At that feeding rate, the maximum tabulation rate is 360 sheets per hour.
 
 ### VxPrint

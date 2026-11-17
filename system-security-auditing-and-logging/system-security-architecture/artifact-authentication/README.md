@@ -1,6 +1,6 @@
 # Artifact Authentication
 
-When a VxSuite machine exports data to a USB drive for another VxSuite machine to import, the first machine digitally signs that data so that the second machine can verify its authenticity. We use this mechanism in three places in particular:
+When a VxSuite machine exports data to a USB drive for another VxSuite machine to import, the first machine digitally signs that data so that the second machine can verify its authenticity. VxSuite uses this mechanism in three places:
 
 1. To authenticate election definitions/packages — These configuration bundles are exported by VxAdmin and used to configure VxCentralScan, VxMark, VxMarkScan, VxScan, and VxPrint.
 2. To authenticate cast vote records — These are exported by VxCentralScan and VxScan and imported by VxAdmin for tabulation.
