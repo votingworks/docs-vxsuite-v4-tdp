@@ -16,17 +16,17 @@ To further ensure that consistent versions of dependencies and transitive depend
 
 Python's package manager, pip, does not verify package integrity by default. However, secure installation is possible via the method described here: [pip: Secure installs](https://pip.pypa.io/en/stable/topics/secure-installs/).
 
-The VotingWorks build process implements the above method in the [tb-install-ansible.sh](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.0/scripts/tb-install-ansible.sh) script. The required packages are listed, along with their hash, in unique requirements files based on the operating system version and architecture. For an example, see the [Debian 12 x86 pip requirements](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.0/scripts/pip_deb12_x86_64_requirements.txt).
+The VotingWorks build process implements the above method in the [tb-install-ansible.sh](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.1/scripts/tb-install-ansible.sh) script. The required packages are listed, along with their hash, in unique requirements files based on the operating system version and architecture. For an example, see the [Debian 12 x86 pip requirements](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.1/scripts/pip_deb12_x86_64_requirements.txt).
 
 ## RubyGems
 
 Ruby's package manager, gem, does not verify package integrity by default. However, the official gem repository provides SHA256 checksums for hosted packages. For an example, see [FPM 1.15.1](https://rubygems.org/gems/fpm/versions/1.15.1).
 
-The VotingWorks build process requires the version and SHA256 checksum for any installed gems. Once the gem file has been downloaded, it is checked against this checksum to verify its integrity. The checksum verification is in the rubygems playbook, [rubygems.yaml](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.0/playbooks/trusted_build/rubygems.yaml).
+The VotingWorks build process requires the version and SHA256 checksum for any installed gems. Once the gem file has been downloaded, it is checked against this checksum to verify its integrity. The checksum verification is in the rubygems playbook, [rubygems.yaml](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.1/playbooks/trusted_build/rubygems.yaml).
 
 ## Rust
 
-By default, Rust is installed over an active internet connection. Since that method is not available during the offline phase of the VotingWorks build process, the build process uses a standalone, offline installer binary provided by Rust. To verify the integrity of the installer, the downloaded file is verified against the officially published checksum that can be found in each version's official manifest. The checksum verification is in the rust playbook, [rust.yaml](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.0/playbooks/trusted_build/rust.yaml).
+By default, Rust is installed over an active internet connection. Since that method is not available during the offline phase of the VotingWorks build process, the build process uses a standalone, offline installer binary provided by Rust. To verify the integrity of the installer, the downloaded file is verified against the officially published checksum that can be found in each version's official manifest. The checksum verification is in the rust playbook, [rust.yaml](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.1/playbooks/trusted_build/rust.yaml).
 
 ## Cargo
 
@@ -34,13 +34,13 @@ Cargo is the Rust package manager. It provides secure installs via the combinati
 
 ## Node
 
-Node is typically installed via package managers like apt, or via a direct install from a specific version. The build process does not install Node via apt, because it uses an explicit Node version. Instead, it downloads the appropriate installer from the official Node repository. That downloaded file is then checked against the officially provided checksum. The checksum verification is in the node playbook, [node.yaml](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.0/playbooks/trusted_build/node.yaml).
+Node is typically installed via package managers like apt, or via a direct install from a specific version. The build process does not install Node via apt, because it uses an explicit Node version. Instead, it downloads the appropriate installer from the official Node repository. That downloaded file is then checked against the officially provided checksum. The checksum verification is in the node playbook, [node.yaml](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.1/playbooks/trusted_build/node.yaml).
 
 ## npm
 
 npm is the default Node package manager. It is installed as part of the Node install previously described.
 
-Packages installed via npm are checked against the officially provided checksums for each package. The checksum verification is in the node playbook, [node.yaml](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.0/playbooks/trusted_build/node.yaml).
+Packages installed via npm are checked against the officially provided checksums for each package. The checksum verification is in the node playbook, [node.yaml](https://github.com/votingworks/vxsuite-build-system/blob/v4.1.1/playbooks/trusted_build/node.yaml).
 
 ## pnpm
 
