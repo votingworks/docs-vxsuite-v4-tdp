@@ -69,4 +69,4 @@ For example, an 11 in. ballot has a 32 x 39 timing mark grid. The QR code and th
 
 #### Candidates Per Contest
 
-The total number of candidates per contest is limited by ballot design requirements restricting contest options to one column and one page (7.3-B.1). Therefore, the maximum number of candidates in a contest is the maximum number of bubble positions in a column. For a 22 in. ballot, there is a maximum of 83 possible bubble positions in a column. The maximum number of candidates per contest may be lower than 83 when accounting for instructional text and contest information in the ballot design.
+The total number of candidates per contest is limited by ballot design requirements restricting contest options to one column and one page (VVSG 2.0 7.3-B.1). Therefore, the maximum number of candidates in a contest is the maximum number of bubble positions in a column. For a 22 in. ballot, there is a maximum of 83 possible bubble positions in a column. The maximum number of candidates per contest may be lower than 83 when accounting for instructional text and contest information in the ballot design.
