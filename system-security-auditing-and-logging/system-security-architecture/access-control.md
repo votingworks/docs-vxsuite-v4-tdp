@@ -2,9 +2,9 @@
 
 ## Certification of VxSuite Components
 
-VxSuite is composed of individual machines, namely VxAdmin, VxCentralScan, VxMark, VxMarkScan, VxScan, and VxPrint, as well as smart cards for authentication. Each machine and each smart card has a unique 256-bit ECC private key (or keys in the case of smart cards) stored in tamper-resistant hardware, plus one or more X.509 certificates for the corresponding public key (or keys) with relevant attributes bound.
+VxSuite is composed of individual machines, namely VxAdmin, VxCentralScan, VxMark, VxMarkScan, VxScan, and VxPrint, as well as smart cards for authentication. Each machine and each smart card has a unique 256-bit elliptic curve cryptography (ECC) private key (or keys in the case of smart cards) stored in tamper-resistant hardware, plus one or more X.509 certificates for the corresponding public key (or keys) with relevant attributes bound.
 
-This means that every VxSuite component can prove its authenticity, notably to any other VxSuite component. For example, a smart card can prove to a VxAdmin that it is a valid election administrator card for a particular election, or a VxScan can export digitally signed cast vote records, which a VxAdmin can then verify are authentic before importing.
+This means that every VxSuite component can prove its authenticity, notably to any other VxSuite component. For example, a smart card can prove to a VxAdmin that it is a valid election administrator card for a particular election, or a VxScan can export digitally signed cast vote records (CVRs), which a VxAdmin can then verify are authentic before importing.
 
 Certification relationships work as follows:
 
@@ -59,7 +59,7 @@ The certificates that we use are effectively vouchers—a certificate authority 
 
 While we could use existing X.509 fields like Organization, Organizational Unit, and Serial Number, and wedge our data into those types, overloading existing fields that don’t quite match isn’t ideal and could lead to security issues from type confusion.
 
-Instead, we use our own fields. We’ve registered with IANA to have a VotingWorks enterprise object identifier (OID), which is effectively a prefix for OIDs of the form 1.3.6.1.4.1.32473.123, where 1.3.6.1.4.1.32473 is the enterprise OID for an example organization, and 123 is the 123rd field defined by that organization.
+Instead, we use our own fields. We’ve registered with the Internet Assigned Numbers Authority (IANA) to have a VotingWorks enterprise object identifier (OID), which is effectively a prefix for OIDs of the form 1.3.6.1.4.1.32473.123, where 1.3.6.1.4.1.32473 is the enterprise OID for an example organization, and 123 is the 123rd field defined by that organization.
 
 Our IANA-assigned Private Enterprise Number (PEN) is 59817, which means that the enterprise OID, fully-prefixed, is 1.3.6.1.4.1.59817. See [https://www.iana.org/assignments/enterprise-numbers/?q=59817](https://www.iana.org/assignments/enterprise-numbers/?q=59817).
 
@@ -104,7 +104,7 @@ VotingWorks also certifies its machines at this facility. After a machine has be
 1. VotingWorks machine code instructs the machine’s TPM to generate a key pair and export the public key.
 2. VotingWorks machine code generates a certificate signing request (CSR) for that public key and writes the CSR to a USB drive.
    1. On VxAdmin, VotingWorks additionally specifies a jurisdiction. That jurisdiction is included in the CSR.
-3. The USB is plugged into VxCertifier. Through VxCertifier, the root VotingWorks CA certifies the machine public key and saves the resulting certificate onto the USB drive.
+3. The USB drive is plugged into VxCertifier. Through VxCertifier, the root VotingWorks CA certifies the machine public key and saves the resulting certificate onto the USB drive.
    1. VxAdmin certificates are themselves CA certificates capable of creating additional certificates (necessary for smart card programming).
 4. The USB drive is plugged back into the machine to be certified. The machine loads the certificate from the USB drive, verifies its correctness, and saves it onto its hard drive.
 5. On VxAdmin, the configuration wizard also surfaces a prompt to program a first system administrator card to bootstrap the jurisdiction as, from here on out, the machine will need to be unlocked by a system administrator card in order to program any other cards.

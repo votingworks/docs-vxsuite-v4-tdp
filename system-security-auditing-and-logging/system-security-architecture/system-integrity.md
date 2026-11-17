@@ -1,13 +1,13 @@
 # System Integrity
 
-The foundation of our system integrity solution is the TPM (described in greater detail under [cryptography.md](cryptography.md "mention")).
+The foundation of our system integrity solution is the Trusted Platform Module (TPM) (described in greater detail under [cryptography.md](cryptography.md "mention")).
 
 Our design for system integrity maps closely to that of ChromeOS:
 
 1. The hard drive is partitioned such that executable code lives on the read-only partition `/`, and only `/var`, `/tmp`, and `/home` are mounted read/write for configuration, logs, and working data like scanned ballot images.
 2. The read-only partition is verified by [dm-verity](https://source.android.com/docs/security/features/verifiedboot/dm-verity), which generates a hash tree of all the raw partition blocks, culminating in a single hash root for the entire read-only filesystem.
 3. The kernel boot command line includes the dm-verity hash root as an argument, ensuring that Linux halts if the read-only partitions are not successfully verified against this hash root.
-4. The BIOS is configured to only boot a properly signed bootloader+kernel+command-line, with public keys managed by VotingWorks and configured in the BIOS as secure boot keys. The bootloader+kernel+command-line that we want is set up as the default boot option in UEFI.
+4. The BIOS is configured to only boot a properly signed bootloader+kernel+command-line, with public keys managed by VotingWorks and configured in the BIOS as Secure Boot keys. The bootloader+kernel+command-line that we want is set up as the default boot option in UEFI.
 5. The private key described previously in [Access Control](access-control.md) is generated in the TPM and bound to Platform Configuration Registers (PCRs) that include the BIOS, the Secure Boot public keys, and the bootloader+kernel+command-line. Thus, this private key is only usable if the machine boots appropriately sanctioned source code with a hard drive whose read-only partitions are unmodified.
 
 As a diagram:
@@ -39,11 +39,11 @@ Furthermore, as an extra layer of defense, every individual VxSuite component in
 
 ## Signed Bootloader and Kernel
 
-With Secure Boot, UEFI passes control to the bootloader only if the bootloader is appropriately signed. Then, the bootloader passes control to the kernel. We choose to bundle the bootloader, kernel, and command line that is used to run the kernel all as one, and to present that to the UEFI as the single executable whose signature should be verified before running. The three are combined into a single object file, along with the dm-verity root hash. This single object file is signed by VotingWorks secure boot private keys.
+With Secure Boot, UEFI passes control to the bootloader only if the bootloader is appropriately signed. Then, the bootloader passes control to the kernel. We choose to bundle the bootloader, kernel, and command line that is used to run the kernel all as one, and to present that to the UEFI as the single executable whose signature should be verified before running. The three are combined into a single object file, along with the dm-verity root hash. This single object file is signed by VotingWorks Secure Boot private keys.
 
 ## Secure Boot
 
-Every VotingWorks machine’s BIOS is configured with VotingWorks secure boot public keys, and the BIOS is configured to require Secure Boot. Thus, only a properly signed object file can serve as bootloader.
+Every VotingWorks machine’s BIOS is configured with VotingWorks Secure Boot public keys, and the BIOS is configured to require Secure Boot. Thus, only a properly signed object file can serve as bootloader.
 
 ## Mounting USB Drives
 

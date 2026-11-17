@@ -20,7 +20,7 @@ The voter may only vote in one party's contests. Voting in more than one party's
 
 Both VxScan and VxCentralScan warn when crossover voting is detected. VxScan shows a message to the voter and gives them the option to return or cast their ballot. VxCentralScan stops on crossover voted ballots, presents the ballot image and message to the operator, and gives them the option to tabulate or remove the ballot. The user experience on both components is nearly the same as the user experience for overvotes if overvote adjudication is turned on in the system settings.
 
-#### Ballot Marking Device Experience
+#### Ballot-Marking Device Experience
 
 VxMark and VxMarkScan have unique voting flows for combined primary ballots. The voting flow does not allow crossover voting, similar to not allowing overvotes.
 
@@ -53,7 +53,7 @@ Another consequence of the fact that the party of the ballot is determined at th
 The two most common supported contest types are:
 
 * N-of-M contests, which are typically candidate contests
-* Yes-No contests, also known as ballot propositions or ballot measures
+* Ballot measure contests, also known as ballot propositions
 
 VxSuite additionally supports straight party voting.
 
@@ -91,11 +91,11 @@ The examples below are intended to express how straight party tabulation works. 
 | <img src="../.gitbook/assets/image (99).png" alt="" data-size="original">  | <img src="../.gitbook/assets/image (105).png" alt="" data-size="original"> | One vote is counted toward the marked Democratic candidate and one vote is left unused, so the contest ends up undervoted. The straight party vote could not be applied because the tabulator would have had to choose between the two Republican candidates. |
 | <img src="../.gitbook/assets/image (107).png" alt="" data-size="original"> | <img src="../.gitbook/assets/image (104).png" alt="" data-size="original"> | One vote is counted toward the marked Republican candidate and one vote is also counted toward the U.S. Taxpayers candidate. Because there is only one candidate for U.S. Taxpayers, the one remaining vote could apply.                                      |
 
-#### Ballot Marking Device Experience
+#### Ballot-Marking Device Experience
 
 On VxMark and VxMarkScan, the straight party contest itself behaves like any other contest. The voter can always choose to leave it blank but they are prevented from overvoting it.
 
-If a selection is made in the straight party contest, affected contests will show an indication of which candidates are receiving indirect votes via the straight party vote. As on a paper ballot, BMD voters can make direct votes in affected contests which will be tabulated according to the rules described above. As on a paper ballot, BMD voters can only cancel out a straight party vote by making other selections directly.
+If a selection is made in the straight party contest, affected contests will show an indication of which candidates are receiving indirect votes via the straight party vote. As on a paper ballot, ballot-marking device (BMD) voters can make direct votes in affected contests which will be tabulated according to the rules described above. As on a paper ballot, BMD voters can only cancel out a straight party vote by making other selections directly.
 
 Summary ballots show "no selection" for contests where straight party votes will generate votes in tabulation for consistency with the bubble ballot.
 

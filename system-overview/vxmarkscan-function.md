@@ -1,10 +1,10 @@
 # VxMarkScan Function
 
-VxMarkScan is the system's free-standing ballot marking device. It allows all voters to make selections in various interaction modes, print their ballot, verify their ballot, and cast their ballot independently. VxMarkScan is not a tabulator - the cast ballots must be later tabulated at VxCentralScan.
+VxMarkScan is the system's free-standing ballot-marking device (BMD). It allows all voters to make selections in various interaction modes, print their ballot, verify their ballot, and cast their ballot independently. VxMarkScan is not a tabulator - the cast ballots must be later tabulated at VxCentralScan.
 
 ## Configuration
 
-VxMarkScan is configured with a signed [election package](election-package/#election-definition) exported from VxAdmin. The election definition defines the ballot styles that will be available to voters. The election definition also includes the translations defined for text on the ballot, while the [app strings](election-package/#app-strings) file contains the translations for other text shown on screen. The election package's [audio files](election-package/#audio-ids-and-audio-clips) are played for the voter in audio-mode.
+VxMarkScan is configured with a signed [election package](election-package/#election-definition) exported from VxAdmin. The election definition defines the ballot styles that will be available to voters. The election definition also includes the translations defined for text on the ballot, while the [app strings](election-package/#app-strings) file contains the translations for other text shown on screen. The election package's [audio files](election-package/#audio-ids-and-audio-clips) are played for the voter in audio mode.
 
 {% hint style="info" %}
 **User Manual Reference:** [VxMarkScan](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmarkscan "mention")
@@ -80,7 +80,7 @@ From the poll worker screen a poll worker may choose "Insert Printed Ballot" in 
 
 ### Voter Privacy
 
-The voter's choices do not persist on VxMarkScan after the end of the voting session. Other than the increase in the count of printed ballots, the only data that persist after each voting session are the relevant log events for authentication, casting a ballot, invalidating a ballot, and hardware state changes. The voter's selections or any voter actions that may trigger selections (such as touch screen presses, accessible controller presses, PAT input events) are not included in logging or otherwise persisted. After the voting session is complete, their printed ballot is the only record of their selections. Throughout the voting session, the physical privacy shield restricts others' view of the voter's actions and their printed ballot.
+The voter's choices do not persist on VxMarkScan after the end of the voting session. Other than the increase in the count of printed ballots, the only data that persist after each voting session are the relevant log events for authentication, casting a ballot, invalidating a ballot, and hardware state changes. The voter's selections or any voter actions that may trigger selections (such as touch screen presses, accessible controller presses, personal assistive technology (PAT) input events) are not included in logging or otherwise persisted. After the voting session is complete, their printed ballot is the only record of their selections. Throughout the voting session, the physical privacy shield restricts others' view of the voter's actions and their printed ballot.
 
 ## Display Formats & Interaction Modes
 
@@ -94,7 +94,7 @@ VxMarkScan supports voting sessions in various display formats and interaction m
 
 The voting session begins in visual mode with the following default settings:
 
-* **Text Size** - Medium, which corresponds to between 14pt - 16pt, meeting the default text size requirement specified in VVSG 2.0 7.1-G.
+* **Text Size** - Medium, which corresponds to between 14–16 pt, meeting the default text size requirement specified in VVSG 2.0 7.1-G.
 * **Contrast** - Medium, which is at least a 10:1 contrast for all informational elements, meeting the default contrast requirement specified in VVSG 2.0 7.1-C
 
 The voter can update the **Text Size** to Small, Medium, Large, or Extra-Large, which map to the four discrete text sizes defined in VVSG 2.0 7.1-G. Changing the text size changes the size of all informational elements including buttons, icons, and layout (VVSG 2.0 7.1-H) because all such elements are sized relative to the base font size. The font is always sans-serif (VVSG 2.0 7.1-J).
@@ -131,7 +131,7 @@ The accessible controller is integrated with the application via a hardware daem
 
 ### Limited Dexterity Mode - PAT Input
 
-VxMarkScan has a PAT (personal assistive technology) input port into which a voter can plug in their own two-switch adaptive input such as a sip-and-puff device. When a PAT input is attached during a voting session, VxMarkScan will enter a calibration flow where the voter will map their two inputs to "move" and "select." Different voters can calibrate their sip & puff devices differently such that sip is "move" for one and "select" for another.
+VxMarkScan has a PAT input port into which a voter can plug in their own two-switch adaptive input such as a sip-and-puff device. When a PAT input is attached during a voting session, VxMarkScan will enter a calibration flow where the voter will map their two inputs to "move" and "select." Different voters can calibrate their sip & puff devices differently such that sip is "move" for one and "select" for another.
 
 Once calibrated, the voter can use the two inputs to navigate through the ballot. The "move" input advances the focus on screen to the next element and the "select" input is the equivalent of a tap in touch interaction mode. Just as with the accessible controller, the currently focused element on screen is highlighted in visual mode or read aloud in audio mode.
 

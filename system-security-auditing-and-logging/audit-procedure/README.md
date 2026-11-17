@@ -8,13 +8,13 @@ description: >-
 
 ## Ballot-Comparison Risk-Limiting Audit
 
-In a **ballot-comparison risk-limiting audit**, the goal is to compare, for a random sample of the cast ballots, the paper ballot and the corresponding cast-vote record. The specifics of sample selection and risk-limit calculation are out of scope for this document – VotingWorks Arlo or other RLA tool may be used for this purpose.
+In a **ballot-comparison risk-limiting audit**, the goal is to compare, for a random sample of the cast ballots, the paper ballot and the corresponding cast vote record (CVR). The specifics of sample selection and risk-limit calculation are out of scope for this document – VotingWorks Arlo or another risk-limiting audit (RLA) tool may be used for this purpose.
 
 To enable a ballot-comparison risk-limiting audit, VxSuite provides:
 
 * imprinting of ballots on VxCentralScan, with a unique identifier of the form\
   `<BATCH-ID>_<SEQUENCE-NUM>`
-* cast-vote records including the field `BallotAuditId` which matches the imprinted identifier
+* cast vote records including the field `BallotAuditId` which matches the imprinted identifier
 
 Then, to run a ballot-comparison risk-limiting audit with VxSuite:
 
@@ -33,7 +33,7 @@ Alternatively, unique identifiers may be added by VxScan — see [vxscan-unique-
 
 ## Batch-Comparison Risk-Limiting Audit
 
-In a **batch-comparison risk-limiting audit**, the goal is to compare, for a random sample of ballot batches, the hand tally of that batch with the corresponding batch tally. The specifics of sample selection and risk-limit calculation are out of scope for this document – VotingWorks Arlo or other RLA tool may be used for this purpose.
+In a **batch-comparison risk-limiting audit**, the goal is to compare, for a random sample of ballot batches, the hand tally of that batch with the corresponding batch tally. The specifics of sample selection and risk-limit calculation are out of scope for this document – VotingWorks Arlo or another RLA tool may be used for this purpose.
 
 To enable a batch-comparison risk-limiting audit, VxSuite provides:
 

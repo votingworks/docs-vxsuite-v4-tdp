@@ -20,7 +20,7 @@ cat /proc/sys/kernel/randomize_va_space
 
 ## No Root User Access
 
-Once a VxSuite image is built, access for the root user is shut down and that shutdown is locked in via secure-boot verification of the root partition.
+Once a VxSuite image is built, access for the root user is shut down and that shutdown is locked in via Secure Boot verification of the root partition.
 
 ## Narrow Superuser Functions
 

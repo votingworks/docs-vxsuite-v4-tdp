@@ -28,7 +28,7 @@ The scanner attaches to the ballot box by sliding into the area in the front of 
 
 ### Scanner
 
-The scanner is built into a customized Pelican 1485 Air case. The COTS case features:
+The scanner is built into a customized Pelican 1485 Air case. The commercial off-the-shelf (COTS) case features:
 
 * Seal Points
 * Carrying Handle
@@ -58,13 +58,13 @@ The various components of the scanner are arranged and wired together within the
 
 Power enters through a power module embedded in the case. The power module connects to a 24-volt power supply which supplies the scanner and printer with power. A 12-volt power supply is daisy-chained from the 24-volt power supply in order to power the single board computer.
 
-The metal chassis of the bottom tub is grounded to exterior ground via the power module. Ground connections between the scanner PCB and chassis, and between the upper and lower scanner assemblies use braided ground straps. The access door ground connection is similarly braided. The front panel jack bracket is grounded to the sub-plate via a ground lug and strap.
+The metal chassis of the bottom tub is grounded to exterior ground via the power module. Ground connections between the scanner printed circuit board (PCB) and chassis, and between the upper and lower scanner assemblies use braided ground straps. The access door ground connection is similarly braided. The front panel jack bracket is grounded to the sub-plate via a ground lug and strap.
 
 All USB cables ultimately connect to the single board computer. The card reader and printer connect via a custom USB cable directly to headers on the computer. The USB hub, which then connects to the USB ports and scanner, is connected directly to the computer. Finally, a USB-C cable connects the computer to the screen. The USB-C cable carries video, audio, touch input, and power.
 
 Audio for the headphone output is routed from the single-board computer's onboard audio output via an internal cable to a 3.5 mm panel-mount jack on the front left of the Pelican case. A second 3.5 mm panel-mount jack, also on the front left, provides a personal assistive technology (PAT) input. This PAT jack is internally wired to a programmable switch interface mounted on the USB hub bracket. This device converts dual-switch input events into keyboard commands recognized by the software.
 
-Ferrite clamps are applied to the USB-C cable, headphone cable, PAT cable, and AC input line to mitigate radiated emissions. Ferrite clamps are also applied to the USB A-B cable which connects the scanner to the USB hub to improve radiated RF immunity.
+Ferrite clamps are applied to the USB-C cable, headphone cable, PAT cable, and AC input line to mitigate radiated emissions. Ferrite clamps are also applied to the USB A-B cable which connects the scanner to the USB hub to improve radiated radio frequency (RF) immunity.
 
 The wiring diagram below outlines the power and data connections within the scanner. Black lines indicate power connections, gray lines indicate ground connections, and purple lines indicate data connections, which may also carry low voltage power.
 
@@ -86,7 +86,7 @@ The paper path is carefully designed and tested to ensure a smooth and uninterru
 
 ## Audio Tactile Interface
 
-VxScan enables an audio-tactile interface on all voter-facing screens when casting ballots. Two 3.5 mm (1/8 inch) stereo jacks are mounted on the front left of the Pelican case: one for headphones and one for a personal assistive technology (PAT) input device such as a dual-switch. Headphones connect to the audio jack, which is internally wired to the single-board computer's audio output. A dual-switch input connects to the PAT jack via a splitter, which is internally wired to a programmable switch interface mounted to the internal USB hub. An election worker connects the headphones and dual-switch input to the front panel jacks when setting up VxScan. Voters may navigate and make selections using the dual-switch and listen to audio prompts over headphones. Volume is controlled via the on-screen interface.
+VxScan enables an audio-tactile interface on all voter-facing screens when casting ballots. Two 3.5 mm (1/8 in.) stereo jacks are mounted on the front left of the Pelican case: one for headphones and one for a PAT input device such as a dual-switch. Headphones connect to the audio jack, which is internally wired to the single-board computer's audio output. A dual-switch input connects to the PAT jack via a splitter, which is internally wired to a programmable switch interface mounted to the internal USB hub. An election worker connects the headphones and dual-switch input to the front panel jacks when setting up VxScan. Voters may navigate and make selections using the dual-switch and listen to audio prompts over headphones. Volume is controlled via the on-screen interface.
 
 <div><figure><img src="../.gitbook/assets/scan_install_pat+audio-ports-1600x1200.jpg" alt=""><figcaption><p>PAT and audio ports on front lower left</p></figcaption></figure> <figure><img src="../.gitbook/assets/scan_install_pat+audio-attached-front-1600x1200.jpg" alt=""><figcaption><p>PAT device and headphones plugged in</p></figcaption></figure></div>
 

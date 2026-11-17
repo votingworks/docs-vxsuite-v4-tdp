@@ -1,10 +1,10 @@
 # VxScan Unique Identifiers
 
-VxScan supports generating a unique audit identifier for each cast paper ballot. During a post-election audit, auditors can use these audit IDs to match a ballot to its corresponding cast vote record.
+VxScan supports generating a unique audit identifier for each cast paper ballot. During a post-election audit, auditors can use these audit IDs to match a ballot to its corresponding cast vote record (CVR).
 
 ## Overall Process
 
-1. A serial number is added to each hand-marked paper ballot. This serial number is encoded in the ballot's metadata QR code.
+1. A serial number is added to each bubble ballot. This serial number is encoded in the ballot's metadata QR code.
 2. VxScan generates a random secret key when configured with an election package.
 3. When a ballot is cast, VxScan generates a unique audit ID for the ballot by randomizing the ballot's serial number using AES-256. It adds the randomized audit ID to the CVR.
 4. After polls are closed, an election manager saves the secret key from VxScan.

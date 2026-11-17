@@ -1,12 +1,12 @@
 # Artifact Authentication
 
-When a VxSuite machine exports data to a USB for another VxSuite machine to import, the first machine digitally signs that data so that the second machine can verify its authenticity. We use this mechanism in three places in particular:
+When a VxSuite machine exports data to a USB drive for another VxSuite machine to import, the first machine digitally signs that data so that the second machine can verify its authenticity. We use this mechanism in three places in particular:
 
 1. To authenticate election definitions/packages — These configuration bundles are exported by VxAdmin and used to configure VxCentralScan, VxMark, VxMarkScan, VxScan, and VxPrint.
 2. To authenticate cast vote records — These are exported by VxCentralScan and VxScan and imported by VxAdmin for tabulation.
 3. To authenticate VxAdmin backups — The backup's manifest, which lists every backed-up file with its hash, is signed when the backup is saved and verified when it is restored. The signature file lives inside the backup directory next to the manifest it signs. See [#backup-and-restore](../../../system-overview/vxadmin-function.md#backup-and-restore "mention").
 
-The exporting machine digitally signs the following message using its TPM private key:
+The exporting machine digitally signs the following message using its Trusted Platform Module (TPM) private key:
 
 `MESSAGE_FORMAT_VERSION + “//” + ARTIFACT_TYPE + “//” + ARTIFACT_CONTENTS`
 
@@ -14,7 +14,7 @@ It then outputs the following to a .vxsig file:
 
 `SIGNATURE_LENGTH + SIGNATURE + SIGNING_MACHINE_CERTIFICATE`
 
-The importing machine parses the above and verifies that the signing machine certificate in the .vxsig file is a valid certificate that is signed by VotingWorks, using the VotingWorks CA certificate installed on every machine. The importing machine then extracts the exporting/signing machine’s public key from this certificate, reconstructs the message, and verifies the signature. After this, the importing machine performs artifact-specific authentication checks, e.g., that the signing machine cert is a VxAdmin cert if the artifact is an election package.
+The importing machine parses the above and verifies that the signing machine certificate in the .vxsig file is a valid certificate that is signed by VotingWorks, using the VotingWorks certificate authority (CA) certificate installed on every machine. The importing machine then extracts the exporting/signing machine’s public key from this certificate, reconstructs the message, and verifies the signature. After this, the importing machine performs artifact-specific authentication checks, e.g., that the signing machine cert is a VxAdmin cert if the artifact is an election package.
 
 If verification fails on the importing machine, the importing machine will refuse to import the artifact. This provides protection against data tampering and/or corruption as data is transferred from one machine to another via USB drive.
 

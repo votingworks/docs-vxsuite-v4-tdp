@@ -1,6 +1,6 @@
 # Ballot Definition CDF
 
-The election definition within the election package can be a JSON Ballot Definition CDF Version 1.0 file. The full specification is defined by NIST and can be [accessed on their website](https://www.nist.gov/publications/ballot-definition-common-data-format-specification).
+The election definition within the election package can be a JSON Ballot Definition Common Data Format (CDF) Version 1.0 file. The full specification is defined by the National Institute of Standards and Technology (NIST) and can be [accessed on their website](https://www.nist.gov/publications/ballot-definition-common-data-format-specification).
 
 ## VxSuite CDF Implementation
 
@@ -85,8 +85,8 @@ Some geographies _must_ exist in the Ballot Definition CDF file to be used in Vx
 
 Because VxSuite does not utilize any data extensions to the Ballot Definition CDF, some information cannot be included when using the Ballot Definition CDF. The missing information creates some limitations when using the Ballot Definition CDF when compared to the [VxSuite Election Definition](vxsuite-election-definition.md) format:
 
-* Contest term descriptions (e.g., “2 years”) will always show up in English because there is no field in the CDF for internationalized term descriptions
-* The full party name will be displayed for each candidate on VxMark and VxMarkScan (e.g., “Democratic Party” instead of “Democrat”) because the CDF only has one attribute for party name. In contrast, the VxSuite format supports two separate fields, one for the full name and one for showing on the ballot.
+* Contest term descriptions (e.g., "2 years") will always show up in English because there is no field in the CDF for internationalized term descriptions
+* The full party name will be displayed for each candidate on VxMark and VxMarkScan (e.g., "Democratic Party" instead of "Democrat") because the CDF only has one attribute for party name. In contrast, the VxSuite format supports two separate fields, one for the full name and one for showing on the ballot.
 * When adjudicating write-ins, the highlighted contest option area will be set to a default because there is no field in the CDF for this parameter.
 * Seal images are not supported in the CDF, so no seal will be shown in association with the election.
 * CDF polling places can only be distinguished in type by `IsMailOnly` being true or false. That value maps to either `absentee` or `election_day` polling place types. There is no way to indicate an `early_voting` polling place via the CDF.

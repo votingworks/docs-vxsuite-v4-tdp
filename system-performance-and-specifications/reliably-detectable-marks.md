@@ -2,7 +2,7 @@
 
 Marks are determined valid and counted by the system if the amount of darker pixels in the bubble area exceeds a configurable "definite" mark threshold set in the [election-package](../system-overview/election-package/ "mention") system settings file. This mark threshold can be adjusted to have a stricter or looser interpretation of what is considered a valid mark. On both VxScan and VxCentralScan, the voting system does not process any marks as ambiguous. All marks are either valid or invalid.
 
-The recommended and default threshold is 7%. With this threshold setting, hand marked paper ballot interpretation detects a valid mark per the mark conditions described by VVSG 1.1.6-H.
+The recommended and default threshold is 7%. With this threshold setting, bubble ballot interpretation detects a valid mark per the mark conditions described by VVSG 1.1.6-H.
 
 At this default threshold, marks such as a light dot, a fold through a bubble, a stray mark outside of the bubble, or a small line just on the corner of a bubble will be considered invalid. Marks such as a completely filled bubble, half filled bubble, or an X in a bubble will be considered valid.
 

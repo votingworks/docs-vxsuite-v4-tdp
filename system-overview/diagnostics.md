@@ -99,7 +99,7 @@ The user may perform a test of the accessible controller which validates that ea
 
 ### PAT Input
 
-The user may perform a test of the PAT input, which simply confirms that a PAT device can be successfully calibrated as it would be during a voting session.
+The user may perform a test of the personal assistive technology (PAT) input, which simply confirms that a PAT device can be successfully calibrated as it would be during a voting session.
 
 ### Front Headphone Input
 

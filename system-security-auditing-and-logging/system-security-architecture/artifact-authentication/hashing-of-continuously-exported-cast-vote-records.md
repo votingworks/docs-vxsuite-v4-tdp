@@ -10,7 +10,7 @@ To perform continuous export while also keeping signatures, i.e., authenticity i
 
 <figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-Assuming every CVR has a random UUID, e.g., 4d6a9dad-e6d6-4a29-89bc-9ab915012b73, we can specifically use the following structure:
+Assuming every CVR has a random universally unique identifier (UUID), e.g., 4d6a9dad-e6d6-4a29-89bc-9ab915012b73, we can specifically use the following structure:
 
 ```
 <cvr-directory-name>.vxsig ← Signature on root-hash.txt
@@ -28,7 +28,7 @@ Assuming every CVR has a random UUID, e.g., 4d6a9dad-e6d6-4a29-89bc-9ab915012b73
 
 ### In Practice
 
-We don’t actually have to 1) use a nested directory structure on the USB or 2) store all intermediate hashes on the USB. We can store the structure and intermediate hashes on the machine in a database table, e.g.,
+We don’t actually have to 1) use a nested directory structure on the USB drive or 2) store all intermediate hashes on the USB drive. We can store the structure and intermediate hashes on the machine in a database table, e.g.,
 
 | CVR ID Prefix 1 | CVR ID Prefix 2 | CVR ID                               | Hash                                      |
 | --------------- | --------------- | ------------------------------------ | ----------------------------------------- |
@@ -38,7 +38,7 @@ We don’t actually have to 1) use a nested directory structure on the USB or 2)
 | 4               | 4d              | 4d6a9dad-e6d6-4a29-89bc-9ab915012b73 | 4d6a9dad-e6d6-4a29-89bc-9ab915012b73 hash |
 | …               |                 |                                      |                                           |
 
-Then on the USB, we can use a flat structure that’s much easier to reason about and iterate over:
+Then on the USB drive, we can use a flat structure that’s much easier to reason about and iterate over:
 
 ```
 <cvr-directory-name>.vxsig ← Signature on root-hash.txt

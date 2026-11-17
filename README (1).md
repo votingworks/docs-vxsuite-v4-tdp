@@ -10,7 +10,7 @@ VotingWorks code has extensive unit test coverage. All libraries in the [vxsuite
 
 Each test always either passes or fails. A test fails if an error is thrown or an assertion fails. An assertion may be something like "the phrase _General Election_ appear on screen" or "there are 56 votes for a specific candidate after loading cast vote records."
 
-Whenever changes are made to VotingWorks code, all tests are automatically run as part of a continuous integration (CI) process through CircleCI. Code changes cannot be merged unless all tests pass. A single failing test will prevent changes from being merged. Every test run on CirceCI provides evidence that the software is operating as expected.
+Whenever changes are made to VotingWorks code, all tests are automatically run as part of a continuous integration (CI) process through CircleCI. Code changes cannot be merged unless all tests pass. A single failing test will prevent changes from being merged. Every test run on CircleCI provides evidence that the software is operating as expected.
 
 Test runs are public information available via CircleCI. For example, tests running in `vxsuite` are tracked [here](https://app.circleci.com/pipelines/github/votingworks/vxsuite).
 
@@ -30,7 +30,7 @@ Even tests which are not explicitly created as regression tests have an anti-reg
 
 While we strive to cover as much as we possibly can with automated tests, there remains significant value in rigorous manual testing of software on actual hardware. We periodically conduct such passes and perform particularly rigorous passes before freezing software for a release.
 
-To organize this process, we make use of checklists. A base set of checklists can be viewed here: [Software QA Checklists](https://github.com/votingworks/docs-vxsuite-v4/blob/main/quality-assurance/Software%20QA%20Checklists.pdf). When performing QA before a release for a particular state or election, we often tweak these base checklists to hone in on the specific circumstances, e.g., using specific adjudication settings and paper ballot lengths.
+To organize this process, we make use of checklists. A base set of checklists can be viewed here: [Software QA Checklists](https://github.com/votingworks/docs-vxsuite-v4/blob/main/quality-assurance/Software%20QA%20Checklists.pdf). When performing quality assurance (QA) before a release for a particular state or election, we often tweak these base checklists to hone in on the specific circumstances, e.g., using specific adjudication settings and paper ballot lengths.
 
 ### Safe Concurrency (2.5-B)
 
@@ -50,13 +50,13 @@ Once software is actually imaged to hardware, VotingWorks tests the software tho
 
 ### Hardware Design
 
-VotingWorks uses large-scale COTS hardware wherever possible, including laptops, single-board computers, document scanners, and printers. By virtue of designing around components that are produced and field-tested at much higher scale than voting machines ever can be, we reduce the chance of a quality problem at the design phase.
+VotingWorks uses large-scale commercial off-the-shelf (COTS) hardware wherever possible, including laptops, single-board computers, document scanners, and printers. By virtue of designing around components that are produced and field-tested at much higher scale than voting machines ever can be, we reduce the chance of a quality problem at the design phase.
 
 For components that must be custom-made, for example the VxScan precinct scanner module and the ballot box, we have followed the industry-standard multi-phase design process to ensure that quality issues are caught early, long before we've committed to large production runs. In particular:
 
-* **design prototyping** – every individual hardware component is prototyped using 3D-printing and laser-cut parts in order to validate CAD designs, in particular when managing a paper path.
+* **design prototyping** – every individual hardware component is prototyped using 3D-printing and laser-cut parts in order to validate computer-aided design (CAD) models, in particular when managing a paper path.
 * **lab prototypes** – every hardware subsystem – e.g., the VxScan module or the VxBox ballot box – goes through multiple lab prototypes of increasing fidelity. Each prototype is fully functional and is tested with thousands of ballots, through setup and teardown repeatedly. Weaknesses are cataloged and fed into the next lab prototype.
-* **engineering prototype** – once the lab prototype is fully validated, an engineering prototype is designed, tweaked for manufacturing (DFM). The tooling is then built, in order to produce an engineering prototype that is as close as possible to the final product. The tooling is adjusted in minor ways based on tests performed on the engineering prototype.
+* **engineering prototype** – once the lab prototype is fully validated, an engineering prototype is designed and tweaked following design for manufacturing (DFM) principles. The tooling is then built, in order to produce an engineering prototype that is as close as possible to the final product. The tooling is adjusted in minor ways based on tests performed on the engineering prototype.
 
 By the time a VotingWorks hardware subsystem goes to assembly-line production, it has gone through a number of iterations to ensure that the design is high quality.
 

@@ -12,7 +12,7 @@ VxCentralScan is configured with a signed [election-package](election-package/ "
 
 ### Ballot Mode
 
-After initial configuration, VxCentralScan is in test ballot mode. The election manager can toggle between test ballot mode and official ballot mode. In official ballot mode, only official ballots can be scanned and exported CVRs will be official ballot CVRs. In test ballot mode, only test ballots can be scanned and exported CVRs will be test ballot CVRs. If `allowOfficialBallotsInTestMode` is set in the [system settings](election-package/#system-settings), official ballots will be allowed in test mode but exported CVRs will still be test CVRs.
+After initial configuration, VxCentralScan is in test ballot mode. The election manager can toggle between test ballot mode and official ballot mode. In official ballot mode, only official ballots can be scanned and exported cast vote records (CVRs) will be official ballot CVRs. In test ballot mode, only test ballots can be scanned and exported CVRs will be test ballot CVRs. If `allowOfficialBallotsInTestMode` is set in the [system settings](election-package/#system-settings), official ballots will be allowed in test ballot mode but exported CVRs will still be test CVRs.
 
 Switching between ballot modes clears all scanned ballot data. The election manager can switch from test ballot mode to official ballot mode at any time. When in official ballot mode after ballots have been scanned, the election manager can only switch back to test ballot mode if the scanned ballot data has been backed up.
 
@@ -26,13 +26,13 @@ VxCentralScan maintains a lifetime scan count that gives the number of ballot sh
 
 * The count does not include rejected and removed ballots e.g., unreadable ballots or ballots removed for manual adjudication
 * If a batch is scanned but discarded rather than saved, those scans will still contribute toward the lifetime scan count
-* The count includes ballots scanned in both official and test mode
+* The count includes ballots scanned in both official ballot mode and test ballot mode
 
 ## Batch Scanning
 
 ### Scanner Management
 
-VxCentralScan is compatible with the Ricoh fi-8170, fi-7600, and fi-8950 production scanners. Once a scanner is detected, the user may begin scanning batches. The scanners are controlled via commands provided by the Debian `sane` package ("Scanner Access Now Easy") which creates a uniform API for most commercial scanners. As a result, no scanner-specific drivers are required.
+VxCentralScan is compatible with the Ricoh fi-8170, fi-7600, and fi-8950 production scanners. Once a scanner is detected, the user may begin scanning batches. The scanners are controlled via commands provided by Scanner Access Now Easy (SANE), installed as the Debian `sane` package, which creates a uniform API for most commercial scanners. As a result, no scanner-specific drivers are required.
 
 ### Batch Management
 
@@ -46,7 +46,7 @@ The start time, end time, size, and index of all batches is tracked and displaye
 
 #### Batch UUIDs
 
-The v4 UUID (universally unique identifier) for each batch is generated when the batch is first created. It is generated with the node package `uuid` which uses the system's underlying FIPS-compliant OpenSSL implementation to generate random bytes.
+The version 4 universally unique identifier (UUID) for each batch is generated when the batch is first created. It is generated with the node package `uuid` which uses the system's underlying OpenSSL implementation, which is compliant with the Federal Information Processing Standards (FIPS), to generate random bytes.
 
 ### Imprinting
 
@@ -85,7 +85,7 @@ In these cases, the affected contests will be highlighted on screen to the elect
 
 ## Exporting CVRs
 
-CVRs must be exported onto a USB drive and taken to VxAdmin for aggregation and reporting. After ballots are interpreted, their images are saved to disk and their interpretation is stored in VxCentralScan's data store. On export, all CVRs are pulled from the data store, converted to the CVR CDF, and written to the USB drive.
+CVRs must be exported onto a USB drive and taken to VxAdmin for aggregation and reporting. After ballots are interpreted, their images are saved to disk and their interpretation is stored in VxCentralScan's data store. On export, all CVRs are pulled from the data store, converted to the CVR Common Data Format (CDF), and written to the USB drive.
 
 {% hint style="info" %}
 **User Manual Reference:** [saving-cast-vote-records-cvrs](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/scanning-ballots#saving-cast-vote-records-cvrs "mention")

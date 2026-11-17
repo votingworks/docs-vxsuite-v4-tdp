@@ -14,32 +14,32 @@ When there are no active elections happening, VxSuite equipment should be physic
 * VxCentralScan laptop and peripherals should be kept in their case, with numbered seals through both case seal points, preventing the case from being opened without breaking one or both seals.
 * VxPrint laptop and peripherals should be kept in their case, with numbered seals through both case seal points, preventing the case from being opened without breaking one or both seals.
 * The small Ricoh scanner that works with VxCentralScan should be kept in its supplied soft case, with a numbered seal through the appropriate zipper hole, preventing the case from being opened without breaking the seal.
-* The medium and large Ricoh scanners that work with VxCentralScan should be kept in their supplied manufacturer box, with tamper evident tape along all sides and a numbered sticker seal on the main opening.
+* The medium and large Ricoh scanners that work with VxCentralScan should be kept in their supplied manufacturer box, with tamper-evident tape along all sides and a numbered sticker seal on the main opening.
 * VxScan should be kept closed with a numbered seal through one of the two seal points, preventing the case from being opened without breaking the seal.
 * VxMark should be kept closed in its case with numbered seals through the case seal points, preventing the case from being opened without breaking a seal.
 * VxAdmin, VxCentralScan, VxScan, VxMark, VxPrint, and the Ricoh scanner, once sealed, should be kept in a safely locked room or storage area that only authorized election administrators have access to.
-* The system admin smart cards should be kept in a safe or locked drawer, separately from VxAdmin. The PIN for the system admin smart card, if recorded on paper, should also be kept locked separate from both VxAdmin and the card.
+* The system administrator smart cards should be kept in a safe or locked drawer, separately from VxAdmin. The PIN for the system administrator smart card, if recorded on paper, should also be kept locked separate from both VxAdmin and the card.
 
 You may consider occasionally resetting the PIN on the system administrator cards. This can be done using the VxAdmin laptop.
 
 ## During L\&A Testing
 
-Both VxAdmin and VxScan are required for Logic & Accuracy testing. VxCentralScan is required if it is planned to be used for counting absentee ballots. VotingWorks's recommended practices take into account that this testing is often performed in view of the public.
+Both VxAdmin and VxScan are required for logic and accuracy (L\&A) testing. VxCentralScan is required if it is planned to be used for counting absentee ballots. VotingWorks's recommended practices take into account that this testing is often performed in view of the public.
 
 * When retrieving all components from their locked storage location, ensure that the seal numbers match the logs.
 * Keep clear and strong custody of all smart cards.
-* Use the system admin card only long enough to un-configure VxAdmin, VxScan, and VxCentralScan from the last election, and to program VxAdmin for the new election. Then return the system admin card to its secure storage.
+* Use the system administrator card only long enough to un-configure VxAdmin, VxScan, and VxCentralScan from the last election, and to program VxAdmin for the new election. Then return the system administrator card to its secure storage.
 
 At the end of L\&A testing, ensure that the VxScan is ready and secured for election day:
 
 * the correct USB drive is inserted into one of the two USB slots.
-* the system has been switched to official-ballot mode.
+* the system has been switched to official ballot mode.
 * the VxScan is powered down.
 * the VxScan case is closed and sealed.
 
 If using VxCentralScan, ensure that:
 
-* it is switched to live mode
+* it is switched to official ballot mode
 * it is shut down and put away in its case
 * the case is closed and sealed.
 
@@ -78,4 +78,4 @@ Unsealing the poll worker door is required to extract the USB drive after polls 
 
 Pack up all components in their respective cases and apply seals. Record those seals.
 
-Additionally, any auditing or review of audit logs should be completed immediately after exporting those logs from a device to a USB drive. If there is a concern about a break in the administrative chain of custody, the user should re-export the logs to a USB from the machine and can compare the original export with the re-export to determine the logs have not been tampered with while on the USB. The logs maintained on the system are unalterable and should be pulled and reviewed in one process to ensure that chain of custody is maintained.
+Additionally, any auditing or review of audit logs should be completed immediately after exporting those logs from a device to a USB drive. If there is a concern about a break in the administrative chain of custody, the user should re-export the logs to a USB drive from the machine and can compare the original export with the re-export to determine the logs have not been tampered with while on the USB drive. The logs maintained on the system are unalterable and should be pulled and reviewed in one process to ensure that chain of custody is maintained.

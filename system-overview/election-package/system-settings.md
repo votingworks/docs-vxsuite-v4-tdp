@@ -28,9 +28,9 @@ The system settings file contains settings which are not specific to an election
 ## Scanning Settings
 
 * `disallowCastingOvervotes` - When set to `true`, scanners will always reject overvoted ballots. When set to `false`, VxScan will allow a voter to choose whether to reject or cast an overvoted ballot, and VxCentralScan will allow an election manager to choose whether to reject or tabulate an overvoted ballot.
-* `allowOfficialBallotsInTestMode` - When set to `true`, official ballots will not be rejected in test mode. The setting is for jurisdictions where testing must take place on official ballots.
+* `allowOfficialBallotsInTestMode` - When set to `true`, official ballots will not be rejected in test ballot mode. The setting is for jurisdictions where testing must take place on official ballots.
 * `disableVerticalStreakDetection` - Disables the warning when streaks are detected when scanning ballots (which indicates that the scanner needs to be cleaned). Used as a failsafe in case of erroneous warnings.
-* `ballotImageBitDepth` - Bit depth of the ballot images saved by VxScan and VxCentralScan when scanning hand-marked paper ballots. Supported values are `1`, `2`, and `8`. `1` saves pure black and white images. `2` (the default) adds two gray levels so light marks such as pencil remain visible during adjudication. `8` preserves the full grayscale scan.
+* `ballotImageBitDepth` - Bit depth of the ballot images saved by VxScan and VxCentralScan when scanning bubble ballots. Supported values are `1`, `2`, and `8`. `1` saves pure black and white images. `2` (the default) adds two gray levels so light marks such as pencil remain visible during adjudication. `8` preserves the full grayscale scan.
 
 ## VxMark Settings
 
@@ -44,8 +44,8 @@ The system settings file contains settings which are not specific to an election
 ## Other Settings
 
 * `precinctScanEnableShoeshineMode` - When set to `true`, VxScan will run in "shoeshine mode," which will scan the same ballot repeatedly. Instead of ejecting the ballot after scanning it, VxScan will move it back to the input tray and scan it again. This mode is used only for internal testing and certification testing.
-* `castVoteRecordsIncludeRedundantMetadata` - When set to `true`, scanners will include election and system metadata in each ballot's CVR as specified in the CVR CDF, rather than just including it once for the entire export. This extra information increases the size of the CVR export, degrading performance.
-* `precinctScanEnableBallotAuditIds` - Enables the VxScan feature to read ballot IDs from hand marked paper ballot QR codes, encrypt them, and export them to cast vote records (to be used for post-election auditing).
+* `castVoteRecordsIncludeRedundantMetadata` - When set to `true`, scanners will include election and system metadata in each ballot's cast vote record (CVR) as specified in the CVR Common Data Format (CDF), rather than just including it once for the entire export. This extra information increases the size of the CVR export, degrading performance.
+* `precinctScanEnableBallotAuditIds` - Enables the VxScan feature to read ballot IDs from bubble ballot QR codes, encrypt them, and export them to cast vote records (to be used for post-election auditing).
 * `precinctScanEnableWriteInImageReport` - Enables printing write-in image reports at VxScan after polls are closed.
 * `precinctScanNumberOfReportCopies` - The number of polls reports that will be automatically printed at VxScan on polls transitions. When not set, VxScan will default to one. Used to streamline the poll worker flow in jurisdictions where multiple copies are always required.
 * `enableEarlyVoting` - Enables early voting features on VxScan and VxAdmin, e.g., setting a ballot casting mode of "Early Voting" on VxScan and tabulating early voting results separately on VxAdmin.

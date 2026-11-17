@@ -21,7 +21,7 @@ layout:
 
 # Cast Vote Records
 
-A cast vote record is a record of voter selections based on the system's interpretation of a scanned ballot. Each cast vote record corresponds to a single scanned ballot sheet. Multi-sheet ballots produce multiple cast vote records.
+A cast vote record (CVR) is a record of voter selections based on the system's interpretation of a scanned ballot. Each cast vote record corresponds to a single scanned ballot sheet. Multi-sheet ballots produce multiple cast vote records.
 
 Cast vote records are exported from VxScan and VxCentralScan onto USB drives and then imported into VxAdmin. Each cast vote record export is created with a digital signature. VxAdmin verifies this signature when importing cast vote records to ensure that the export has not been tampered with.
 
@@ -49,9 +49,9 @@ In order to export cast vote records efficiently and without compromising voter 
     - ...
 ```
 
-The cast vote record export contains a directory for each cast vote record, labelled with its UUID. Each specific cast vote record directory contains:
+The cast vote record export contains a directory for each cast vote record, labelled with its universally unique identifier (UUID). Each specific cast vote record directory contains:
 
-* **Cast Vote Record Report** - Contains information about the election and the ballot interpretation in the Common Data Format. The information in the report is used as the basis for tabulation by VxAdmin.
+* **Cast Vote Record Report** - Contains information about the election and the ballot interpretation in the Common Data Format (CDF). The information in the report is used as the basis for tabulation by VxAdmin.
 * **Images** - Ballot images to be used in adjudication or auditing. Included for all ballots.
 * **Interpreted Ballot Layouts -** Metadata for the position of ballot features such as contests, contest options, and bubbles in the ballot image. The interpreted layout data is used to properly crop and highlight ballot images for adjudication. Included for bubble ballots but not summary ballots.
 
@@ -59,7 +59,7 @@ In addition, there is a metadata file that applies to the entire export at the r
 
 #### CVR UUIDs
 
-The v4 UUID (universally unique identifier) for each cast vote record is generated when the ballot information is first stored in the database in VxScan or VxCentralScan. It is generated with the node package `uuid` which uses the system's underlying FIPS-compliant OpenSSL implementation to generate random bytes.
+The version 4 UUID for each cast vote record is generated when the ballot information is first stored in the database in VxScan or VxCentralScan. It is generated with the node package `uuid` which uses the system's underlying OpenSSL implementation, compliant with Federal Information Processing Standards (FIPS), to generate random bytes.
 
 ### Rejected Ballots
 
@@ -78,7 +78,7 @@ Images of rejected ballots are also included in the cast vote record export. The
 
 ### CDF Implementation
 
-VxSuite does not use any data extensions beyond the NIST specification, but some fields are made required that are not required in the original NIST specification. The two specifications can be compared by comparing the [NIST JSON schema](https://github.com/usnistgov/CastVoteRecords/blob/master/NIST_V0_cast_vote_records.json) with the [VxSuite JSON schema](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/types/src/cdf/cast-vote-records/vx-schema.json). The additionally required fields are listed in a table below.
+VxSuite does not use any data extensions beyond the National Institute of Standards and Technology (NIST) specification, but some fields are made required that are not required in the original NIST specification. The two specifications can be compared by comparing the [NIST JSON schema](https://github.com/usnistgov/CastVoteRecords/blob/master/NIST_V0_cast_vote_records.json) with the [VxSuite JSON schema](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/types/src/cdf/cast-vote-records/vx-schema.json). The additionally required fields are listed in a table below.
 
 Because VxAdmin requires a VxSuite digital signature on all imported cast vote records, it's not possible to import a cast vote record from outside of VxSuite. The goal of using CDF is to help external systems consume VxSuite cast vote records for audit or analysis.
 

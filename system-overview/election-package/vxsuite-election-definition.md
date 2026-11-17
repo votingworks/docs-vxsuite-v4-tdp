@@ -45,7 +45,7 @@ A cross-party endorsed candidate may have multiple candidate options associated 
 
 ### Contest
 
-There are two types of contests - candidate contests and yes-no contests. Both types share core attributes:
+There are two types of contests - candidate contests and ballot measure contests. Both types share core attributes:
 
 <table><thead><tr><th width="172">Attribute</th><th width="229">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier</td></tr><tr><td><code>districtId</code></td><td><code>string</code> - ID for <a href="vxsuite-election-definition.md#district">District</a></td><td>The associated district of the contest such as a state, county, or ward</td></tr><tr><td><code>title</code></td><td><code>string</code></td><td>Title of the contest</td></tr><tr><td><code>type</code></td><td><code>string</code> - "candidate", "yesno", or "straight-party"</td><td>Type of the contest</td></tr></tbody></table>
 
@@ -68,7 +68,7 @@ In a ballot measure contest, the voter is presented text and makes a selection b
 | `description` | `string`                                                                                                | Contest description |
 | `options`     | `array` - [Ballot Measure Contest Option](vxsuite-election-definition.md#ballot-measure-contest-option) | Contest options     |
 
-The `description` field supports rich text formatting, including images. Images are represented using the syntax `<img src=\"` + data URL + `\">`, where an image can be converted to a data URL using [https://www.base64-image.de](https://www.base64-image.de/). For example, if an image after conversion via the aforementioned site yields the data URL `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO1n0X8AAAAASUVORK5CYII=`, the image embedded in a yes-no contest description will look as follows:
+The `description` field supports rich text formatting, including images. Images are represented using the syntax `<img src=\"` + data URL + `\">`, where an image can be converted to a data URL using [https://www.base64-image.de](https://www.base64-image.de/). For example, if an image after conversion via the aforementioned site yields the data URL `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO1n0X8AAAAASUVORK5CYII=`, the image embedded in a ballot measure contest description will look as follows:
 
 {% code overflow="wrap" %}
 ```
@@ -142,7 +142,7 @@ Examples of instructional ballot text include:
 * "Vote for up to 3",
 * "Official Absentee Ballot"
 
-Although the system does not use the hand marked ballot instructional text for any purpose, it must be included in the election definition for security purposes. When included, it becomes a part of the [ballot hash](./#ballot-hash-and-election-package-hash) and cannot be changed without invalidating older ballots.
+Although the system does not use the bubble ballot instructional text for any purpose, it must be included in the election definition for security purposes. When included, it becomes a part of the [ballot hash](./#ballot-hash-and-election-package-hash) and cannot be changed without invalidating older ballots.
 
 ### Election-Specific Text
 
@@ -159,7 +159,7 @@ The election-specific `ballotStrings` recognized by the system are the following
 | Ballot Style IDs      | `ballotStyleId`      | key-value pairs, [Ballot Style](vxsuite-election-definition.md#ballot-style) IDs mapped to names                    |
 | Candidate Names       | `candidateName`      | key-value pairs, [Candidate](vxsuite-election-definition.md#candidate) IDs mapped to names                          |
 | Contest Descriptions  | `contestDescription` | key-value pairs, [Contest](vxsuite-election-definition.md#contest) IDs mapped to descriptions                       |
-| Contest Option Labels | `contestOptionLabel` | key-value pairs, [Yes-No Contest Option](vxsuite-election-definition.md#yes-no-contest-option) IDs mapped to labels |
+| Contest Option Labels | `contestOptionLabel` | key-value pairs, [Ballot Measure Contest Option](vxsuite-election-definition.md#yes-no-contest-option) IDs mapped to labels |
 | Contest Terms         | `contestTerm`        | key-value pairs, [Contest](vxsuite-election-definition.md#contest) IDs mapped to term descriptions                  |
 | Contest Titles        | `contestTitle`       | key-value pairs, [Contest](vxsuite-election-definition.md#contest) IDs mapped to titles                             |
 | County Name           | `countyName`         | `string`                                                                                                            |

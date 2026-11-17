@@ -15,7 +15,7 @@ We handle vulnerabilities using the following coordinated vulnerability disclosu
 * VotingWorks prepares fixes as needed for reported vulnerabilities. Some fixes will be operational, others in software, and others potentially in hardware. Where the issues affect a third-party component, VotingWorks will do its best to coordinate advisories and disclosures with other involved parties.
 * When fixes require certification by the appropriate agencies, notably the Election Assistance Commission, VotingWorks works with these agencies to certify the fixes.
 * VotingWorks privately works with affected jurisdictions to deploy mitigations and fixes.
-* VotingWorks assigns a CVE for the vulnerability and publishes the vulnerability on the disclosure page, giving credit to the reporter if they choose to take credit. VotingWorks reserves the assignment of a CVE to confirmed security issues on products that have not been end-of-life’d.
+* VotingWorks assigns a Common Vulnerabilities and Exposures (CVE) identifier for the vulnerability and publishes the vulnerability on the disclosure page, giving credit to the reporter if they choose to take credit. VotingWorks reserves the assignment of a CVE to confirmed security issues on products that have not been end-of-life’d.
 
 ## Known Vulnerabilities Not of Concern
 

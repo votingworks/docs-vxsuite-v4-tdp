@@ -9,7 +9,7 @@ The machine preps a payload consisting of the following, with `1//shv1//` as a p
 * Election ID
 * Current timestamp
 
-The machine signs that payload with its TPM private key and then bundles the following together, with `;` as a separator:
+The machine signs that payload with its Trusted Platform Module (TPM) private key and then bundles the following together, with `;` as a separator:
 
 * Payload
 * Payload signature

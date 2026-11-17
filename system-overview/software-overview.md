@@ -48,7 +48,7 @@ Firmware for embedded devices such as screens and speakers is bundled with the o
 
 The voting system achieves software independence through the use of independent voter-verifiable paper records. All ballots are voter-verified paper ballots, whether they are hand-marked or printed by a ballot-marking device.
 
-On hand-marked ballots, voters fill in bubbles next to their selections. Because voter indications are made and reviewed directly by the voter, they are inherently voter-verified. The software interprets the image of the ballot for tabulation but, of course, the paper ballot persists after scanning.
+On bubble ballots, voters fill in bubbles next to their selections. Because voter indications are made and reviewed directly by the voter, they are inherently voter-verified. The software interprets the image of the ballot for tabulation but, of course, the paper ballot persists after scanning.
 
 On VxMark and VxMarkScan, voters make selections via the touchscreen or an accessible input device. After the voter has made all their selections, the ballot is printed and the voter can verify their physical paper ballot.
 
@@ -86,7 +86,7 @@ Our practices around testing are covered under [#quality-assurance-protocols-sof
 
 ### Failure Recovery
 
-The VotingWorks codebase uses database transactions to ensure that only complete and consistent (and not partial) updates are persisted. For data synced across a machine's internal drive and a connected USB drive, namely CVRs, we detect when data has fallen out of sync after a failure using the Merkle tree hash of the data ([hashing-of-continuously-exported-cast-vote-records.md](../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/hashing-of-continuously-exported-cast-vote-records.md "mention")) and re-sync data as needed.
+The VotingWorks codebase uses database transactions to ensure that only complete and consistent (and not partial) updates are persisted. For data synced across a machine's internal drive and a connected USB drive, namely cast vote records (CVRs), we detect when data has fallen out of sync after a failure using the Merkle tree hash of the data ([hashing-of-continuously-exported-cast-vote-records.md](../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/hashing-of-continuously-exported-cast-vote-records.md "mention")) and re-sync data as needed.
 
 {% hint style="success" %}
 Through the above best practices, tooling used to enforce those best practices, and peer code review of every change, we guarantee that we meet the following requirements:

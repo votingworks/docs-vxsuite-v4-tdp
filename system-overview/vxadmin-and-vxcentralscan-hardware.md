@@ -18,9 +18,9 @@ While not strictly necessary, VxAdmin, VxPrint, and VxCentralScan are bundled wi
 
 ### VxAdmin
 
-VxAdmin connects to a printer for the purposes of printing reports. The printer includes an RJ45 (ethernet) port which is blocked by a port blocker because network connectivity is not required by the printer.
+VxAdmin connects to a printer for the purposes of printing reports. The printer includes an RJ45 (Ethernet) port which is blocked by a port blocker because network connectivity is not required by the printer.
 
-The VxAdmin printer is powered through an APC BN1500M2 UPS (Uninterruptible Power Supply) to ensure that the printer can operate in variable power environments.
+The VxAdmin printer is powered through an APC BN1500M2 uninterruptible power supply (UPS) to ensure that the printer can operate in variable power environments.
 
 <figure><img src="../.gitbook/assets/PXL_20241119_221005359 (1).jpg" alt="" width="563"><figcaption><p>VxAdmin fully connected with mouse, hub, charger, USB cable, and printer</p></figcaption></figure>
 
@@ -28,11 +28,11 @@ The VxAdmin printer is powered through an APC BN1500M2 UPS (Uninterruptible Powe
 
 VxPrint connects to the HP LaserJet Pro 4001dn printer. The printer is duplex, black and white, and capable of printing up to 40 pages per minute.
 
-The included printer tray can be extended from letter size to legal size. VotingWorks, in partnership with HP, can provide a tray extender that allows printing up to 22" ballots.
+The included printer tray can be extended from letter size to legal size. VotingWorks, in partnership with HP, can provide a tray extender that allows printing up to 22 in. ballots.
 
-The printer has an ethernet port on the back which is not used for operation of VxPrint, so it is blocked by an RJ45 port blocker.
+The printer has an Ethernet port on the back which is not used for operation of VxPrint, so it is blocked by an RJ45 port blocker.
 
-The VxPrint printer is powered through an APC BN1500M2 UPS (Uninterruptible Power Supply) to ensure that the printer can operate in variable power environments.
+The VxPrint printer is powered through an APC BN1500M2 UPS to ensure that the printer can operate in variable power environments.
 
 <figure><img src="../.gitbook/assets/VxPrint-System-Pic-Hardware.webp" alt=""><figcaption><p>VxPrint laptop connected to ballot printer</p></figcaption></figure>
 
@@ -42,15 +42,15 @@ VxCentralScan connects to a batch scanner for batch scanning. The scanner is eit
 
 Each of the Ricoh scanners can be used with Ricoh imprinters (not pictured) which allow printing an identifier on each ballot as it's exiting the scanner, which can be useful for certain types of post-election audits.
 
-The fi-8170 and fi-8950 each have an RJ45 (ethernet) port which is blocked by a port blocker because network connectivity is not required by the scanner.
+The fi-8170 and fi-8950 each have an RJ45 (Ethernet) port which is blocked by a port blocker because network connectivity is not required by the scanner.
 
-The batch scanner is powered through an APC BN1500M2 UPS (Uninterruptible Power Supply) to ensure that the scanner can operate in variable power environments.
+The batch scanner is powered through an APC BN1500M2 UPS to ensure that the scanner can operate in variable power environments.
 
 <figure><img src="../.gitbook/assets/centralscan.jpg" alt=""><figcaption><p>VxCentralScan fully connected with mouse, hub, charger, USB cable, scanner (fi-8170), and power backup</p></figcaption></figure>
 
 ## Bill of Materials
 
-All components for VxAdmin, VxPrint, and VxCentralScan are commercial-off-the-shelf (COTS) components. Data sheets and related documentation are available [in the documentation repository](https://github.com/votingworks/docs-vxsuite-v4/tree/main/hardware-assets/cots-documentation/central-system).
+All components for VxAdmin, VxPrint, and VxCentralScan are commercial off-the-shelf (COTS) components. Data sheets and related documentation are available [in the documentation repository](https://github.com/votingworks/docs-vxsuite-v4/tree/main/hardware-assets/cots-documentation/central-system).
 
 ### Shared Components (Laptop & Accessories)
 
@@ -95,7 +95,7 @@ The laptop is a custom configuration of the widely available HP Elitebook 840 14
 
 As listed in the bill of materials above, the high criticality components are as follows:
 
-* **HP Elitebook 840 14" G11** - As the processor and data store for ballot data and other tallies, the laptops are one of the most critical components in the entire system. HP is the only manufacturer. VotingWorks is an official OEM partner of HP in order to work closely together to ensure the quality and configuration of the laptops.
+* **HP Elitebook 840 14" G11** - As the processor and data store for ballot data and other tallies, the laptops are one of the most critical components in the entire system. HP is the only manufacturer. VotingWorks is an official original equipment manufacturer (OEM) partner of HP in order to work closely together to ensure the quality and configuration of the laptops.
 * **Ricoh fi-8170, fi-7600, & fi-8950** - As the source of ballot images for VxCentralScan, the Ricoh scanners are highly sensitive and critical components.
 
 The medium criticality components and the reasons for their classification are as follows:

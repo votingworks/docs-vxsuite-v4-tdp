@@ -21,7 +21,7 @@ layout:
 
 # Bubble Ballots
 
-Bubble ballots are the primary type of ballot used in VxSuite. All hand-marked ballots are bubble ballots. Some machine-marked ballots are also bubble ballots - VxMark can print bubble ballots marked with the voter's selections.
+Bubble ballots are the primary type of ballot used in VxSuite. All ballots marked by hand are bubble ballots. Some ballots marked by a machine are also bubble ballots - VxMark can print bubble ballots marked with the voter's selections.
 
 VxSuite can tabulate a wide variety of ballot designs as long as they conform to the following requirements:
 
@@ -33,7 +33,7 @@ VxSuite can tabulate a wide variety of ballot designs as long as they conform to
 
 ## Ballot Size
 
-All supported ballot sizes are 8.5 inches in width, but vary in height as specified in [paper-ballot-specifications.md](../system-performance-and-specifications/paper-ballot-specifications.md "mention").
+All supported ballot sizes are 8.5 in. wide, but vary in height as specified in [paper-ballot-specifications.md](../system-performance-and-specifications/paper-ballot-specifications.md "mention").
 
 These lengths correspond to the length specified in the [Ballot Layout](election-package/vxsuite-election-definition.md#ballot-layout) within the election definition.
 
@@ -47,10 +47,10 @@ Every ballot must have timing mark borders on both front and back. The timing ma
 | ------------------------- | -------------- |
 | Timing Mark Width         | 3/16 in.       |
 | Timing Mark Height        | 1/16 in.       |
-| Page Margin (Top, Bottom) | 12pt (1/6 in.) |
-| Page Margin (Left, Right) | 5mm            |
+| Page Margin (Top, Bottom) | 12 pt (1/6 in.) |
+| Page Margin (Left, Right) | 5 mm           |
 
-As for number of timing marks, there are always 34 in the top and bottom borders, yielding a grid that is always 32 bubble positions wide. The number of rows depends on the ballot length; for example, a letter-sized ballot has a 32 x 39 grid of possible bubble positions inside the timing mark border. The number of marks in the left and right borders varies based on the length of the ballot, and should be calculated by the formula **(# inches \* 4) - 3**. For example, a letter-sized ballot (11 inches) should have 41 left and right timing marks whereas a legal-sized ballot (14 inches) should have 53 left and right timing marks.
+As for number of timing marks, there are always 34 in the top and bottom borders, yielding a grid that is always 32 bubble positions wide. The number of rows depends on the ballot length; for example, a letter-sized ballot has a 32 x 39 grid of possible bubble positions inside the timing mark border. The number of marks in the left and right borders varies based on the length of the ballot, and should be calculated by the formula **(# inches \* 4) - 3**. For example, a letter-sized ballot (11 in.) should have 41 left and right timing marks whereas a legal-sized ballot (14 in.) should have 53 left and right timing marks.
 
 The timing marks must be aligned to the margins of the page and evenly spaced.
 
@@ -84,10 +84,10 @@ In order to be interpreted correctly, bubbles must meet the following dimensions
 
 | Dimension      | Measurement   |
 | -------------- | ------------- |
-| Width          | 0.20"         |
-| Height         | 0.13"         |
-| Border Radius  | 0.07"         |
-| Line Thickness | 1px (0.265mm) |
+| Width          | 0.20 in.      |
+| Height         | 0.13 in.      |
+| Border Radius  | 0.07 in.      |
+| Line Thickness | 1 px (0.265 mm) |
 
 <figure><img src="../.gitbook/assets/Screen Shot 2024-09-26 at 11.59.35 AM.png" alt="" width="563"><figcaption><p>Bubble example (not to scale)</p></figcaption></figure>
 

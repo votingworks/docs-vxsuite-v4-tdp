@@ -2,36 +2,36 @@
 
 ## Overview
 
-VxMark consists of two main components - the tabletop ballot marking device and the attached printer - which are connected together during setup.
+VxMark consists of two main components - the tabletop ballot-marking device (BMD) and the attached printer - which are connected together during setup.
 
 <figure><img src="../.gitbook/assets/VxMark-FrontView (2).jpeg" alt=""><figcaption></figcaption></figure>
 
-### Ballot Marking Device
+### Ballot-Marking Device
 
-The tabletop ballot marking device is built into a customized Pelican 1485 Air case. The COTS case features:
+The tabletop BMD is built into a customized Pelican 1485 Air case. The commercial off-the-shelf (COTS) case features:
 
 * Seal Points
 * Carrying Handle
 * Spring-Loaded Latches
 
-Additional cuts are made into the case for the nameplate attachment, PAT input jack, barcode reader, and the spring-loaded back compartment which houses the USB and AC power cables.
+Additional cuts are made into the case for the nameplate attachment, personal assistive technology (PAT) input jack, barcode reader, and the spring-loaded back compartment which houses the USB and AC power cables.
 
 <figure><img src="../.gitbook/assets/LaidDownScreen-VxMark (2).jpeg" alt="" width="375"><figcaption><p>VxMark Unit</p></figcaption></figure>
 
-The case is opened by pressing the buttons on each case latch and then lifting the lid. In the picture below you can see the card reader, USB port, headphone storage, and display arm storage. The ATI handset is located in front of the USB port.
+The case is opened by pressing the buttons on each case latch and then lifting the lid. In the picture below you can see the card reader, USB port, headphone storage, and display arm storage. The audio-tactile interface (ATI) handset is located in front of the USB port.
 
 <figure><img src="../.gitbook/assets/VxMark-TopDown (1).jpeg" alt=""><figcaption><p>VxMark Overhead View</p></figcaption></figure>
 
 ### Printer
 
-The printer is the [HP LaserJet Pro 4001dn](https://github.com/votingworks/docs-vxsuite-v4/blob/c3708afd846808afb7249ef1c11d099a86d1e15a/hardware-assets/cots-documentation/mark/HP-LaserJet-Pro-4001dn-Datasheet.pdf), which prints double-sided black-and-white pages up to legal length (14"). The printer connects to VxMark via the USB cable in VxMark's back compartment. VxMark is compatible with a variety of other HP printers and extensions:
+The printer is the [HP LaserJet Pro 4001dn](https://github.com/votingworks/docs-vxsuite-v4/blob/c3708afd846808afb7249ef1c11d099a86d1e15a/hardware-assets/cots-documentation/mark/HP-LaserJet-Pro-4001dn-Datasheet.pdf), which prints double-sided black-and-white pages up to legal length (14 in.). The printer connects to VxMark via the USB cable in VxMark's back compartment. VxMark is compatible with a variety of other HP printers and extensions:
 
-* Extended Input Tray - If a jurisdiction wishes to print on ballots longer than 14", we can provide a custom printer tray supporting up to 22" ballots.
+* Extended Input Tray - If a jurisdiction wishes to print on ballots longer than 14 in., we can provide a custom printer tray supporting up to 22 in. ballots.
 * High Volume Input Tray - A larger input tray is available for jurisdictions where every voter uses VxMark.
 
 ### Display
 
-The display is a 15" HD (1920 x 1080) touchscreen, specifically the [Elo 1504LS](https://github.com/votingworks/docs-vxsuite-v4/blob/c3708afd846808afb7249ef1c11d099a86d1e15a/hardware-assets/cots-documentation/mark/Elo-1504LS-Touchscreen-Datasheet.pdf). It can be tilted forward or backward by a voter based on their preferences. The screen includes an embedded speaker which is used for machine chimes and alerts. The screen rotates horizontally and then tips all the way back into the case for storage.
+The display is a 15 in. HD (1920 x 1080) touchscreen, specifically the [Elo 1504LS](https://github.com/votingworks/docs-vxsuite-v4/blob/c3708afd846808afb7249ef1c11d099a86d1e15a/hardware-assets/cots-documentation/mark/Elo-1504LS-Touchscreen-Datasheet.pdf). It can be tilted forward or backward by a voter based on their preferences. The screen includes an embedded speaker which is used for machine chimes and alerts. The screen rotates horizontally and then tips all the way back into the case for storage.
 
 <figure><img src="../.gitbook/assets/LaidDownScreen-VxMark (1).jpeg" alt="" width="375"><figcaption><p>VxMark Display</p></figcaption></figure>
 
@@ -43,11 +43,11 @@ The accessible controller sits to the right of the display, either in its cradle
 
 ### Headphone & PAT Inputs
 
-The Headphone and PAT inputs are located on the front of the case to the right of the screen.  Both inputs accept 3.5mm audio plugs.
+The Headphone and PAT inputs are located on the front of the case to the right of the screen.  Both inputs accept 3.5 mm audio plugs.
 
 Any standard headphones can be used if a voter prefers, but note that the default volume levels were calibrated for the headphones that were provided with VxMark. Voting session audio plays through the headphones and only through the headphones. The volume and rate adjustments will have no impact on system sounds played over the speakers.
 
-The PAT input is compatible with any PAT (Personal Assistive Technology) device such as a sip-and-puff.
+The PAT input is compatible with any PAT device such as a sip-and-puff.
 
 ### Barcode Scanner
 
@@ -57,15 +57,15 @@ The barcode scanner, the Honeywell [CM4680SR-BW0](https://github.com/votingworks
 
 ## Electronic Subcomponents
 
-The various components of the ballot marking device are arranged and wired together within the Pelican case. Custom cut holes in the Pelican case allow mounting brackets in the top and bottom tubs which are then used to attach components.
+The various components of the BMD are arranged and wired together within the Pelican case. Custom cut holes in the Pelican case allow mounting brackets in the top and bottom tubs which are then used to attach components.
 
 Power enters through a power module located within the back compartment of the case where the power and data cables are located. The power module connects to a 12-volt power supply which supplies power to all components within the device.
 
 All USB cables ultimately connect to the single board computer. The card reader, and accessible controller connect directly to the single board computer via USB cable. The USB hub which supplies power and data connections to the USB panel, PAT signal processor (PAT input jack), and printer, is connected directly to the computer. Finally, a USB-C cable connects the computer to the screen. The USB-C cable carries video, audio, touch input, and power.
 
-Audio is provided to the headphones via a 3.5 mm jack located on the Accessible Controller. A 3.5 mm panel-mount jack, on the front right of the unit, provides a personal assistive technology (PAT) input. This PAT jack is internally wired to a programmable switch interface connected to the USB hub. This device converts dual-switch input events into keyboard commands recognized by the software.
+Audio is provided to the headphones via a 3.5 mm jack located on the Accessible Controller. A 3.5 mm panel-mount jack, on the front right of the unit, provides a PAT input. This PAT jack is internally wired to a programmable switch interface connected to the USB hub. This device converts dual-switch input events into keyboard commands recognized by the software.
 
-The wiring diagram below outlines the power and data connections within the ballot marking device. Black lines indicate power connections, gray lines indicate ground connections, and purple lines indicate data connections, which may also carry low voltage power.
+The wiring diagram below outlines the power and data connections within the BMD. Black lines indicate power connections, gray lines indicate ground connections, and purple lines indicate data connections, which may also carry low voltage power.
 
 VxMark does not require any direct bodily contact or for the body to be part of any electrical circuit to function.
 
@@ -86,7 +86,7 @@ As listed in the COTS table above, the high criticality components are as follow
 * **Aaeon UP Squared Pro 7000 Computer** - As the computer which facilitates accessible ballot marking, ballot review, and ballot printing, the single board computer is a highly critical component. VotingWorks partners with Aaeon, Inc. and their production in Taiwan to ensure the trustworthy production and quality of each single board computer.
 * **Solid State Drive -** The solid state drive is the storage medium for all sensitive election data.
 * **HP LaserJet Pro 4001dn Printer -** The HP LaserJet Printer is the means for printing ballots and reports.
-* **ELO Touch 15" LCD Touchscreen -** The Elo touchscreen is responsible for rendering election data and correctly handling user touches. It is a custom component from a single manufacturer and therefore has high criticality.
+* **ELO Touch 15 in. LCD Touchscreen -** The Elo touchscreen is responsible for rendering election data and correctly handling user touches. It is a custom component from a single manufacturer and therefore has high criticality.
 
 The medium criticality components and the reasons for their classification are as follows:
 
