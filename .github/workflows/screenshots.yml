@@ -8,23 +8,22 @@
 #
 # - On a pull request: syncs the screenshots referenced by the pages it
 #   changes, committing to its branch.
-# - On weekdays, or run by hand with no branch: syncs every page into one
-#   "Refresh screenshots" pull request. Its branch, screenshots/refresh, is
-#   rebuilt from main on every run, so don't push to it by hand: a screenshot
-#   that needs changing is changed in the gallery.
 # - Run by hand with a branch: syncs that branch as for a pull request (for
 #   a screenshot published after the branch's last push).
+#
+# The weekday refresh of every page is screenshots-refresh.yml, kept separate
+# so pull requests list only this job. A sync commit is pushed with
+# [skip ci] (a push by this workflow's token starts no run anyway) and is
+# marked passing here, so the required "branch" check is on every head.
 name: screenshots
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-  schedule:
-    - cron: '0 14 * * 1-5'
   workflow_dispatch:
     inputs:
       branch:
-        description: Branch to sync as a pull request (empty for a full refresh)
-        required: false
+        description: Branch to sync as a pull request
+        required: true
 
 env:
   TOOLS_URL: https://vxsuite-integration-test-screenshots.s3.us-west-2.amazonaws.com/tools
@@ -35,16 +34,19 @@ jobs:
       (github.event_name == 'pull_request' &&
        github.event.pull_request.head.repo.full_name == github.repository &&
        !startsWith(github.event.pull_request.head.ref, 'screenshots/')) ||
-      (github.event_name == 'workflow_dispatch' && inputs.branch != '')
+      github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      statuses: write
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.ref || inputs.branch }}
           fetch-depth: 0
       - name: Sync the screenshots the changed pages reference
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git diff --name-only origin/main...HEAD -- '*.md' > "$RUNNER_TEMP/pages.txt"
           if [ ! -s "$RUNNER_TEMP/pages.txt" ]; then echo "no pages changed"; exit 0; fi
@@ -58,46 +60,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .gitbook/assets
-          git commit -q -m "Sync screenshots from the gallery" -m "$(cat "$RUNNER_TEMP/report.md")"
+          git commit -q -m "Sync screenshots from the gallery [skip ci]" -m "$(cat "$RUNNER_TEMP/report.md")"
           git push -q origin HEAD
-
-  refresh:
-    if: >-
-      github.event_name == 'schedule' ||
-      (github.event_name == 'workflow_dispatch' && inputs.branch == '')
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-      - name: Get the sync tool
-        run: |
-          mkdir -p "$RUNNER_TEMP/tools"
-          for f in sync-docs-screenshots.mjs png-diff.mjs; do
-            curl -fsS "$TOOLS_URL/$f" -o "$RUNNER_TEMP/tools/$f"
-          done
-      - name: Sync every page and open or update the refresh pull request
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: screenshots/refresh
-        run: |
-          node "$RUNNER_TEMP/tools/sync-docs-screenshots.mjs" . --report "$RUNNER_TEMP/report.md"
-          if [ -z "$(git status --porcelain -- .gitbook/assets)" ]; then
-            echo "every screenshot is current"; exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -q -B "$BRANCH"
-          git add .gitbook/assets
-          git commit -q -m "Refresh screenshots from the gallery" -m "$(cat "$RUNNER_TEMP/report.md")"
-          git push -q --force origin "$BRANCH"
-          pr="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')"
-          if [ -n "$pr" ]; then
-            gh api -X PATCH "repos/$GITHUB_REPOSITORY/pulls/$pr" -F body=@"$RUNNER_TEMP/report.md" --silent
-          else
-            gh pr create --head "$BRANCH" --base main \
-              --title "Refresh screenshots from the gallery" --body-file "$RUNNER_TEMP/report.md"
-          fi
+          gh api "repos/$GITHUB_REPOSITORY/statuses/$(git rev-parse HEAD)" \
+            -f state=success -f context=branch \
+            -f description="Screenshots synced from the gallery" --silent
