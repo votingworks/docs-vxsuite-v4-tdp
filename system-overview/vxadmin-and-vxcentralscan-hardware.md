@@ -20,8 +20,6 @@ While not strictly necessary, VxAdmin, VxPrint, and VxCentralScan are bundled wi
 
 VxAdmin connects to a printer for the purposes of printing reports. The printer includes an RJ45 (Ethernet) port which is blocked by a port blocker because network connectivity is not required by the printer.
 
-The VxAdmin printer is powered through an APC BN1500M2 uninterruptible power supply (UPS) to ensure that the printer can operate in variable power environments.
-
 <figure><img src="../.gitbook/assets/PXL_20241119_221005359 (1).jpg" alt="VxAdmin laptop connected through a USB hub to an HP LaserJet printer, with mouse and charger" width="563"><figcaption><p>VxAdmin fully connected with mouse, hub, charger, USB cable, and printer</p></figcaption></figure>
 
 ### VxPrint
@@ -31,8 +29,6 @@ VxPrint connects to the HP LaserJet Pro 4001dn printer. The printer is duplex, b
 The included printer tray can be extended from letter size to legal size. VotingWorks, in partnership with HP, can provide a tray extender that allows printing up to 22 in. ballots.
 
 The printer has an Ethernet port on the back which is not used for operation of VxPrint, so it is blocked by an RJ45 port blocker.
-
-The VxPrint printer is powered through an APC BN1500M2 UPS to ensure that the printer can operate in variable power environments.
 
 <figure><img src="../.gitbook/assets/VxPrint-System-Pic-Hardware.webp" alt="VxPrint laptop on the lock screen connected to an HP LaserJet Pro 4001dn printing a ballot"><figcaption><p>VxPrint laptop connected to ballot printer</p></figcaption></figure>
 
@@ -44,7 +40,7 @@ Each of the Ricoh scanners can be used with Ricoh imprinters (not pictured) whic
 
 The fi-8170 and fi-8950 each have an RJ45 (Ethernet) port which is blocked by a port blocker because network connectivity is not required by the scanner.
 
-The batch scanner is powered through an APC BN1500M2 UPS to ensure that the scanner can operate in variable power environments.
+The batch scanner is powered through an APC BN1500M2 uninterruptible power supply (UPS) to ensure that the scanner can operate in variable power environments.
 
 <figure><img src="../.gitbook/assets/centralscan.jpg" alt="VxCentralScan laptop with mouse and USB hub beside an APC UPS and Ricoh fi-8170 batch scanner"><figcaption><p>VxCentralScan fully connected with mouse, hub, charger, USB cable, scanner (fi-8170), and power backup</p></figcaption></figure>
 
@@ -58,7 +54,7 @@ All components for VxAdmin, VxPrint, and VxCentralScan are commercial off-the-sh
 
 ### VxAdmin & VxPrint Components (Printer)
 
-<table><thead><tr><th width="152">Manufacturer</th><th width="263">Component</th><th width="167.58465576171875">Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>HP</td><td>LaserJet Pro 4001dn Printer</td><td>2Z600F#BGJ</td><td>Medium</td></tr><tr><td>Lindy</td><td>RJ45 Port Blocker</td><td>40471</td><td>Low</td></tr><tr><td>APC</td><td>Uninterruptible Power Supply (UPS)</td><td>BN1500M2</td><td>Low</td></tr></tbody></table>
+<table><thead><tr><th width="152">Manufacturer</th><th width="263">Component</th><th width="167.58465576171875">Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>HP</td><td>LaserJet Pro 4001dn Printer</td><td>2Z600F#BGJ</td><td>Medium</td></tr><tr><td>Lindy</td><td>RJ45 Port Blocker</td><td>40471</td><td>Low</td></tr></tbody></table>
 
 ### VxAdmin Networking Components
 
