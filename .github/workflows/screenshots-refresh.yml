@@ -1,0 +1,64 @@
+# Refreshes every screenshot the pages reference from the screenshot gallery
+# (votingworks/vxsuite-screenshots), on weekdays or when run by hand, into one
+# "Refresh screenshots" pull request. Its branch, screenshots/refresh, is
+# rebuilt from main on every run, so don't push to it by hand: a screenshot
+# that needs changing is changed in the gallery. Pull requests are synced by
+# screenshots.yml; this workflow marks the refresh commit with that
+# workflow's "branch" check, since the commit is a sync itself.
+name: screenshots-refresh
+on:
+  schedule:
+    - cron: '0 14 * * 1-5'
+  workflow_dispatch:
+
+env:
+  TOOLS_URL: https://vxsuite-integration-test-screenshots.s3.us-west-2.amazonaws.com/tools
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      statuses: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Get the sync tool
+        run: |
+          mkdir -p "$RUNNER_TEMP/tools"
+          for f in sync-docs-screenshots.mjs png-diff.mjs; do
+            curl -fsS "$TOOLS_URL/$f" -o "$RUNNER_TEMP/tools/$f"
+          done
+      - name: Sync every page and open or update the refresh pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: screenshots/refresh
+        run: |
+          node "$RUNNER_TEMP/tools/sync-docs-screenshots.mjs" . --report "$RUNNER_TEMP/report.md"
+          if [ -z "$(git status --porcelain -- .gitbook/assets)" ]; then
+            echo "every screenshot is current"
+            stale="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')"
+            if [ -n "$stale" ]; then
+              gh pr close "$stale" --delete-branch \
+                --comment "Every screenshot on main is current, so this refresh is no longer needed."
+            fi
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -q -B "$BRANCH"
+          git add .gitbook/assets
+          git commit -q -m "Refresh screenshots from the gallery [skip ci]" -m "$(cat "$RUNNER_TEMP/report.md")"
+          git push -q --force origin "$BRANCH"
+          gh api "repos/$GITHUB_REPOSITORY/statuses/$(git rev-parse HEAD)" \
+            -f state=success -f context=branch \
+            -f description="Screenshots refreshed from the gallery" --silent
+          pr="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')"
+          if [ -n "$pr" ]; then
+            gh api -X PATCH "repos/$GITHUB_REPOSITORY/pulls/$pr" -F body=@"$RUNNER_TEMP/report.md" --silent
+          else
+            gh pr create --head "$BRANCH" --base main \
+              --title "Refresh screenshots from the gallery" --body-file "$RUNNER_TEMP/report.md"
+          fi
