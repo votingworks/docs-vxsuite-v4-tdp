@@ -30,6 +30,7 @@ env:
 
 jobs:
   branch:
+    name: Screenshots match the gallery
     if: >-
       (github.event_name == 'pull_request' &&
        github.event.pull_request.head.repo.full_name == github.repository &&
@@ -63,5 +64,5 @@ jobs:
           git commit -q -m "Sync screenshots from the gallery [skip ci]" -m "$(cat "$RUNNER_TEMP/report.md")"
           git push -q origin HEAD
           gh api "repos/$GITHUB_REPOSITORY/statuses/$(git rev-parse HEAD)" \
-            -f state=success -f context=branch \
+            -f state=success -f context="Screenshots match the gallery" \
             -f description="Screenshots synced from the gallery" --silent
