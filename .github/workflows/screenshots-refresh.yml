@@ -53,7 +53,7 @@ jobs:
           git commit -q -m "Refresh screenshots from the gallery [skip ci]" -m "$(cat "$RUNNER_TEMP/report.md")"
           git push -q --force origin "$BRANCH"
           gh api "repos/$GITHUB_REPOSITORY/statuses/$(git rev-parse HEAD)" \
-            -f state=success -f context=branch \
+            -f state=success -f context="Screenshots are up-to-date" \
             -f description="Screenshots refreshed from the gallery" --silent
           pr="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')"
           if [ -n "$pr" ]; then
