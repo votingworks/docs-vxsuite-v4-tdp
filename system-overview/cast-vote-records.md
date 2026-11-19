@@ -25,6 +25,8 @@ A cast vote record (CVR) is a record of voter selections based on the system's i
 
 Cast vote records are exported from VxScan and VxCentralScan onto USB drives and then imported into VxAdmin. Each cast vote record export is created with a digital signature. VxAdmin verifies this signature when importing cast vote records and rejects an export whose contents have changed since it was signed.
 
+A networked VxCentralScan can instead send the cast vote records of each saved batch to the host VxAdmin over the local network. These cast vote records use the same format but carry no export signature; they are authenticated by the encrypted connection between the two machines, which requires a VotingWorks machine certificate tied to each machine's Trusted Platform Module (TPM), as described in [networking.md](../system-security-auditing-and-logging/system-security-architecture/networking.md "mention").
+
 ## Directory Structure
 
 In order to export cast vote records efficiently and without compromising voter privacy, every cast vote record is generated individually. The structure of a cast vote record directory is as follows:
@@ -80,7 +82,7 @@ Images of rejected ballots are also included in the cast vote record export. The
 
 VxSuite does not use any data extensions beyond the National Institute of Standards and Technology (NIST) specification, but some fields are made required that are not required in the original NIST specification. The two specifications can be compared by comparing the [NIST JSON schema](https://github.com/usnistgov/CastVoteRecords/blob/master/NIST_V0_cast_vote_records.json) with the [VxSuite JSON schema](https://github.com/votingworks/vxsuite/blob/v4.1.1/libs/types/src/cdf/cast-vote-records/vx-schema.json). The additionally required fields are listed in a table below.
 
-Because VxAdmin requires a VxSuite digital signature on all imported cast vote records, it rejects cast vote records from outside of VxSuite. The goal of using CDF is to help external systems consume VxSuite cast vote records for audit or analysis.
+Because VxAdmin requires a VxSuite digital signature on all cast vote records imported from a USB drive, and accepts network-sent cast vote records only over the authenticated connection from a networked VxCentralScan, it rejects cast vote records from outside of VxSuite. The goal of using CDF is to help external systems consume VxSuite cast vote records for audit or analysis.
 
 #### VxSuite Required Fields
 

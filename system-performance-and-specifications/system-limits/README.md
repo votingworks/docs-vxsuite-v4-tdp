@@ -25,6 +25,10 @@
 * The total number of ballots scanned is limited by the total disk space on the laptop (\~200 GB). The exact number of ballots depends on ballot size, complexity, selections made, and the configured ballot image bit depth, which determine the CVR and ballot image sizes.
 * VxCentralScan is limited by the batch scanner maximum tabulation rate: [maximum-tabulation-rate.md](maximum-tabulation-rate.md "mention")
 
+### Networked Machines
+
+* A local network holds at most 8 machines: 1 host VxAdmin plus any combination of up to 7 adjudication station VxAdmins and VxCentralScans. For example, 1 host and 7 adjudication stations, 1 host and 7 VxCentralScans, or 1 host, 3 adjudication stations, and 4 VxCentralScans are all valid.
+
 ### VxMarkScan
 
 * VxMarkScan only supports 8 in. x 11 in. and 8 in. x 13.25 in. ballot sizes as specified in [paper-ballot-specifications.md](../paper-ballot-specifications.md "mention").
