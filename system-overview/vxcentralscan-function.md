@@ -38,7 +38,7 @@ VxCentralScan is compatible with the Ricoh fi-8170, fi-7600, and fi-8950 product
 
 When the user triggers a batch scan, the scanner starts a batch and begins scanning sheets one at a time. The scanner pulls each sheet through and transfers a scanned image to the application which will then [interpret the ballot](ballot-interpretation.md) according to the current election definition. Scanning continues until the hopper is empty, at which point the user chooses to either continue the batch, save the batch, or discard the batch. The option to "continue the batch" would typically be used if the batch is too large for the hopper and needs to be loaded in parts. If the interpreter encounters a ballot issue or adjudication reason, enumerated below, the user chooses between continuing the batch or discarding the batch.
 
-The start time, end time, size, and index of all batches is tracked and displayed on the batch history page. If a mistake was made in organizing batches or adjudicating a ballot, election managers can delete any individual batch or delete all batches.
+The start time, end time, size, and index of all batches is tracked and displayed on the batch history page. When local networking is turned on, the batch history page also shows whether each batch has been sent to VxAdmin. If a mistake was made in organizing batches or adjudicating a ballot, election managers can delete any individual batch or delete all batches.
 
 {% hint style="info" %}
 **User Manual Reference:** [Central Scanning #Scan Ballot Batches](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/scanning-ballots#scan-ballot-batches "mention")
@@ -85,8 +85,26 @@ In these cases, the affected contests will be highlighted on screen to the elect
 
 ## Exporting CVRs
 
-CVRs must be exported onto a USB drive and taken to VxAdmin for aggregation and reporting. After ballots are interpreted, their images are saved to disk and their interpretation is stored in VxCentralScan's data store. On export, all CVRs are pulled from the data store, converted to the CVR Common Data Format (CDF), and written to the USB drive.
+CVRs are exported onto a USB drive and taken to VxAdmin for aggregation and reporting or, on a networked VxCentralScan, sent to the host VxAdmin over the local network. After ballots are interpreted, their images are saved to disk and their interpretation is stored in VxCentralScan's data store. On export, all CVRs are pulled from the data store, converted to the CVR Common Data Format (CDF), and written to the USB drive.
 
 {% hint style="info" %}
 **User Manual Reference:** [saving-cast-vote-records-cvrs](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/scanning-ballots#saving-cast-vote-records-cvrs "mention")
+{% endhint %}
+
+### Sending CVRs to VxAdmin
+
+Local networking is off on VxCentralScan unless VotingWorks turns it on (see [networking.md](../system-security-auditing-and-logging/system-security-architecture/networking.md "mention")). When it is on, VxCentralScan looks for a host VxAdmin on the local network and connects only if all of the following hold:
+
+* Exactly one host VxAdmin is on the network.
+* The host VxAdmin runs the same software version as VxCentralScan.
+* The host VxAdmin is configured for the same election as VxCentralScan.
+
+VxCentralScan shows the connection status on screen and on its diagnostics page.
+
+When a batch is saved, VxCentralScan sends that batch's CVRs, in the CVR Common Data Format (CDF) with their ballot images, to the host VxAdmin and records the time the batch was sent. If sending fails, for example because the host is unreachable, the batch is marked as not sent and the user can retry it. A batch that was already sent can also be sent again; the host VxAdmin ignores CVRs it has already loaded, so CVRs are not counted twice. Saving CVRs to a USB drive remains available on a networked VxCentralScan.
+
+The host VxAdmin's handling of received CVRs is described in [#receiving-cvrs-over-the-network](vxadmin-function.md#receiving-cvrs-over-the-network "mention").
+
+{% hint style="info" %}
+**User Manual Reference:** [Network VxCentralScan](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/network-vxcentralscan "mention")
 {% endhint %}

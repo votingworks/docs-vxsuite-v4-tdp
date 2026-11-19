@@ -56,9 +56,9 @@ All components for VxAdmin, VxPrint, and VxCentralScan are commercial off-the-sh
 
 <table><thead><tr><th width="152">Manufacturer</th><th width="263">Component</th><th width="167.58465576171875">Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>HP</td><td>LaserJet Pro 4001dn Printer</td><td>2Z600F#BGJ</td><td>Medium</td></tr><tr><td>Lindy</td><td>RJ45 Port Blocker</td><td>40471</td><td>Low</td></tr></tbody></table>
 
-### VxAdmin Networking Components
+### Networking Components
 
-These components are only relevant if the jurisdiction is using multiple VxAdmins networked together for multi-station adjudication.
+These components are only relevant if the jurisdiction is using multiple VxAdmins networked together for multi-station adjudication or VxCentralScans networked to a host VxAdmin. VxAdmin and VxCentralScan use the same components.
 
 <table><thead><tr><th width="152">Manufacturer</th><th width="264.83984375">Component</th><th width="167.58465576171875">Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>Cisco</td><td>Catalyst 1200-8T-D Switch</td><td>1200-8T-D</td><td>Medium</td></tr><tr><td>Monoprice</td><td>Cat6 Ethernet Patch Cable, Various Lengths</td><td>Varies by length, e.g., 3ft is 9821</td><td>Low</td></tr><tr><td>Startech.com</td><td>USB-C to Ethernet Adapter</td><td>US1GC30B2</td><td>Low</td></tr></tbody></table>
 
@@ -101,4 +101,4 @@ The medium criticality components and the reasons for their classification are a
 * **Monoprice USB A-B Cable:** Manages flow of data between laptop and peripherals.
 * **HP LaserJet Pro 4001dn:** The VxAdmin & VxPrint printer is responsible for printing reports from VxAdmin and printing ballots from VxPrint and therefore handles highly sensitive election information. All reports from VxAdmin can be exported as PDFs and printed elsewhere, so it is not strictly necessary for the operation of the system and thus is not the highest criticality.
 * **Ricoh fi-760PRB, fi-819PRB & fi-890PRB:** The imprinters that pair with the Ricoh scanners are not involved in generating ballot data, so they cannot influence the interpretation of ballots when used according to instructions. The imprinted identifiers are important for post-election audits, however, so the imprinters are security-sensitive components.
-* **Cisco Catalyst 1200-8T-D Switch:** Because all data on the network is encrypted and cryptographically verified, data modified or tampered with in transit fails verification. Many COTS alternatives are also available to handle supply issues. The switch is a complex component networked to each VxAdmin, however, so it is considered medium criticality as a potential launching point for network attacks.
+* **Cisco Catalyst 1200-8T-D Switch:** Because all data on the network is encrypted and cryptographically verified, data modified or tampered with in transit fails verification. Many COTS alternatives are also available to handle supply issues. The switch is a complex component networked to each VxAdmin and VxCentralScan, however, so it is considered medium criticality as a potential launching point for network attacks.
