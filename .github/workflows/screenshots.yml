@@ -11,6 +11,13 @@
 # - Run by hand with a branch: syncs that branch as for a pull request (for
 #   a screenshot published after the branch's last push).
 #
+# A docs-request branch can hold previews: screenshots an open spec rendered,
+# copied in by the docs bot (votingworks/vxsuite-docs-automation) before the
+# gallery publishes them, and listed in .screenshot-previews.json. The sync
+# leaves them alone, and this check fails while any are listed, so a preview
+# never merges: the docs bot swaps the published screenshots in, and deletes
+# the list, before it merges the pull request.
+#
 # The weekday refresh of every page is screenshots-refresh.yml, kept separate
 # so pull requests list only this job. A sync commit is pushed with
 # [skip ci] (a push by this workflow's token starts no run anyway) and is
@@ -50,13 +57,29 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git diff --name-only origin/main...HEAD -- '*.md' > "$RUNNER_TEMP/pages.txt"
-          if [ ! -s "$RUNNER_TEMP/pages.txt" ]; then echo "no pages changed"; exit 0; fi
+          if [ ! -s "$RUNNER_TEMP/pages.txt" ] && [ ! -f .screenshot-previews.json ]; then
+            echo "no pages changed"; exit 0
+          fi
           mkdir -p "$RUNNER_TEMP/tools"
           for f in sync-docs-screenshots.mjs png-diff.mjs; do
             curl -fsS "$TOOLS_URL/$f" -o "$RUNNER_TEMP/tools/$f"
           done
           node "$RUNNER_TEMP/tools/sync-docs-screenshots.mjs" . \
             --pages "$RUNNER_TEMP/pages.txt" --report "$RUNNER_TEMP/report.md"
+
+          # Previews the docs bot copied in: kept as committed (whatever the
+          # sync tool's version), and listed so the check can fail on them.
+          previews=""
+          if [ -f .screenshot-previews.json ]; then
+            previews="$(python3 -I - <<'PY'
+          import json
+          for capture_id, record in sorted(json.load(open(".screenshot-previews.json")).items()):
+              print(f"- `{capture_id}` from {record.get('spec', 'an open spec')}")
+          PY
+          )"
+            python3 -I -c 'import json; print("\n".join(f".gitbook/assets/{i}.png" for i in json.load(open(".screenshot-previews.json"))))' \
+              | xargs -r git checkout -q HEAD -- 2>/dev/null || true
+          fi
 
           # The sync skips a name the gallery doesn't publish (it may be a
           # photo), so a page can point at an image that exists nowhere: a
@@ -81,14 +104,19 @@ jobs:
             git add .gitbook/assets
             git commit -q -m "Sync screenshots from the gallery [skip ci]" -m "$(cat "$RUNNER_TEMP/report.md")"
             git push -q origin HEAD
-            if [ -z "$missing" ]; then state=success desc="Screenshots synced from the gallery"
-            else state=failure desc="Pages reference images that don't exist"; fi
+            if [ -n "$missing" ]; then state=failure desc="Pages reference images that don't exist"
+            elif [ -n "$previews" ]; then state=failure desc="Previews in place; the published screenshots aren't swapped in yet"
+            else state=success desc="Screenshots synced from the gallery"; fi
             gh api "repos/$GITHUB_REPOSITORY/statuses/$(git rev-parse HEAD)" \
               -f state="$state" -f context="Screenshots are up-to-date" \
               -f description="$desc" --silent
           fi
+          if [ -n "$previews" ]; then
+            printf 'These screenshots are previews from open screenshot specs. The docs bot swaps in the published copies when the docs request is approved, before it merges:\n%s\n\n' "$previews" \
+              | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
           if [ -n "$missing" ]; then
             printf 'Pages reference images that are neither in the repository nor published in the gallery:\n%s\n' "$missing" \
               | tee -a "$GITHUB_STEP_SUMMARY"
-            exit 1
           fi
+          if [ -n "$missing" ] || [ -n "$previews" ]; then exit 1; fi
