@@ -1,6 +1,6 @@
 # System Overview
 
-<figure><img src=".gitbook/assets/image (115).png" alt="Data flow from the external election definition system through VxAdmin, VxPrint, VxMark or VxMarkScan, and VxScan or VxCentralScan"><figcaption><p>Top-level system diagram</p></figcaption></figure>
+<figure><img src=".gitbook/assets/system-overview-diagram.png" alt="Data flow through VxSuite: VxAdmin creates the election or loads an election package from an optional external election definition system, sends bubble ballot PDFs to a third party printer and signed election packages to VxPrint, VxMark or VxMarkScan, and VxScan or VxCentralScan, which return cast vote records to VxAdmin"><figcaption><p>Top-level system diagram</p></figcaption></figure>
 
 The VotingWorks voting system (also known as **VxSuite**) consists of six primary components:
 
