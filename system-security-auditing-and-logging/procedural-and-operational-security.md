@@ -17,7 +17,7 @@ When there are no active elections happening, VxSuite equipment should be physic
 * The medium and large Ricoh scanners that work with VxCentralScan should be kept in their supplied manufacturer box, with tamper-evident tape along all sides and a numbered sticker seal on the main opening.
 * VxScan should be kept closed with a numbered seal through one of the two seal points, preventing the case from being opened without breaking the seal.
 * VxMark should be kept closed in its case with numbered seals through the case seal points, preventing the case from being opened without breaking a seal.
-* VxAdmin, VxCentralScan, VxScan, VxMark, VxPrint, and the Ricoh scanner, once sealed, should be kept in a safely locked room or storage area that only authorized election administrators have access to.
+* VxAdmin, VxCentralScan, VxScan, VxMark, VxPrint, and the batch scanner, once sealed, should be kept in a safely locked room or storage area that only authorized election administrators have access to.
 * The system administrator smart cards should be kept in a safe or locked drawer, separately from VxAdmin. The PIN for the system administrator smart card, if recorded on paper, should also be kept locked separate from both VxAdmin and the card.
 
 Election officials may also occasionally reset the PIN on the system administrator cards using the VxAdmin laptop.

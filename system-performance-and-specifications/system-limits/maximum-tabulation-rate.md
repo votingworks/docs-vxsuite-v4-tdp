@@ -5,6 +5,7 @@ The maximum tabulation rate for batch-fed scanners is primarily limited by the h
 * Ricoh fi-8170: 80 sheets per minute
 * Ricoh fi-7600: 100 sheets per minute
 * Ricoh fi-8950: 150 sheets per minute
+* interScan DeskPro 631: 210 sheets per minute
 
 The sheet per minute rate is reduced by the need to interpret ballot images. Ballot interpretation speed varies based on the following ballot variables:
 
@@ -19,10 +20,12 @@ In addition to the sheet per minute rate of a given batch, the maximum tabulatio
 * Ricoh fi-8170: 30 sheets per batch
 * Ricoh fi-7600: 100 sheets per batch
 * Ricoh fi-8950: 250 sheets per batch
+* interScan DeskPro 631: 250 sheets per batch
 
 Finally, the maximum tabulation rate over the course of a day is limited by the daily volume limitations of each central scanner:
 
 * Ricoh fi-8170: 10,000 sheets per day
 * Ricoh fi-7600: 44,000 sheets per day
 * Ricoh fi-8950: 130,000 sheets per day
+* interScan DeskPro 631: no daily limit, provided the scanner is maintained as directed, including replacing its rollers
 

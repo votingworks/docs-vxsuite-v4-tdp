@@ -32,7 +32,7 @@ VxCentralScan maintains a lifetime scan count that gives the number of ballot sh
 
 ### Scanner Management
 
-VxCentralScan is compatible with the Ricoh fi-8170, fi-7600, and fi-8950 production scanners. Once a scanner is detected, the user may begin scanning batches. The scanners are controlled via commands provided by Scanner Access Now Easy (SANE), installed as a Debian package, which creates a uniform API for most commercial scanners. As a result, no scanner-specific drivers are required.
+VxCentralScan is compatible with the Ricoh fi-8170, fi-7600, and fi-8950 and the interScan DeskPro 631 production scanners. Once a scanner is detected, the user may begin scanning batches. The Ricoh scanners are controlled via commands provided by Scanner Access Now Easy (SANE), installed as a Debian package, which creates a uniform API for most commercial scanners, so they require no scanner-specific drivers. The DeskPro 631 is controlled through the manufacturer's Linux driver, which VxCentralScan runs in a separate process.
 
 ### Batch Management
 
@@ -50,11 +50,12 @@ The version 4 universally unique identifier (UUID) for each batch is generated w
 
 ### Imprinting
 
-All of the Ricoh scanners can be used with an optional imprinter:
+All of the scanners can be used with an optional imprinter:
 
 * The fi-8170 attaches to the fi-819PRB imprinter
 * The fi-7600 attaches to the fi-760PRB imprinter
 * The fi-8950 has the fi-890PRB installed into it
+* The DeskPro 631 has the HD Rear Imprinter installed into it, which prints after the sheet is scanned
 
 As the ballot exits the scanner, the imprinter prints an identifier on the side margin of the ballot. The identifier is the batch's truncated UUID followed by the index of the sheet within the batch e.g., `378f6a69-3a5d90083e21_0000` for the first sheet in a batch. The identifier will appear in the CVR as the `BallotAuditId` with the full batch ID, e.g., `378f6a69-ad3f-25f2-234f-3a5d90083e21_0000`. Imprinting allows later reconciling CVRs to ballots such as in ballot comparison audits.
 
