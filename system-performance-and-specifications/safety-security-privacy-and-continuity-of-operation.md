@@ -26,7 +26,7 @@ If a machine is damaged to the point of being inoperable, a replacement machine 
 
 * **VxScan:** Switch to scanning on the replacement VxScan and, at the end of the election, aggregate the cast vote records from both the damaged and replacement VxScans.
 * **VxMarkScan:** Voters should start new voting sessions on the replacement VxMarkScan.
-* **VxCentralScan:** The document scanner can be replaced. If the laptop is damaged and cast vote records were never exported, the scanned ballots should be re-scanned with the replacement laptop.
+* **VxCentralScan:** The document scanner can be replaced. If the laptop is damaged and cast vote records were never exported or sent to VxAdmin, the scanned ballots should be re-scanned with the replacement laptop.
 * **VxAdmin:** If a backup was saved, the replacement laptop can be restored from it as described in [Backup and Restore](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxadmin-system-setup/backup-and-restore "mention"). Otherwise, the laptop should be reconfigured with the election package and any cast vote records should be reloaded from the various USB drives.
 
 ### Paper Processes

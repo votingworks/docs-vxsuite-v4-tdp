@@ -18,6 +18,8 @@ The importing machine parses the above and verifies that the signing machine cer
 
 If verification fails on the importing machine, the importing machine will refuse to import the artifact. This provides protection against data tampering and/or corruption as data is transferred from one machine to another via USB drive.
 
+Cast vote records that a networked VxCentralScan sends to a host VxAdmin over the local network are not signed this way. They are authenticated by the encrypted, certificate-authenticated connection between the two machines, described in [networking.md](../networking.md "mention").
+
 ## Code Links
 
 Refer to the following code links for more details:

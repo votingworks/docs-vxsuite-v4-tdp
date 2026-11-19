@@ -122,7 +122,7 @@ manuals.
 | 3.2-G Maximum and minimum values of storage locations | — | None | |
 | 3.2-I Backup power operational range | um:setup-inspection.md | Partial | No nominal range |
 | 3.2-K Cabling connectivity inspection | um:setup-inspection.md | Partial | Implicit |
-| 3.2-L, -M Communications status inspection | um:pre-election-adjudication-setup.md | Partial | No check that networking is absent or off |
+| 3.2-L, -M Communications status inspection | um:pre-election-adjudication-setup.md; um:vxcentralscan/network-vxcentralscan.md | Partial | No check that networking is absent or off |
 | 3.2-N Consumables | um:setup-inspection.md; um:supply-list.md | Partial | Usage estimates for toner only |
 | 3.2-P Calibration | um:setup-inspection.md; um:vxscan/scanner-management.md | Partial | No nominal ranges or inspection procedure |
 | 3.2-Q Checklist of properties | um:setup-inspection.md | Partial | Unused interfaces; per-check risks |
@@ -154,7 +154,7 @@ manuals.
 | 14.3-C Bill of materials | hardware pages; software-overview.md | Partial | Hardware only |
 | 15.2-B Error handling documentation | um: error message pages; software-overview.md | Full | |
 | 15.3-C Malware protection updates | system-integrity.md; logging.md | Partial | Rationale, no update procedure |
-| 15.4-A Internal network architecture | networking.md; um:pre-election-adjudication-setup.md | Partial | No diagram or data flow |
+| 15.4-A Internal network architecture | networking.md; um:pre-election-adjudication-setup.md; um:vxcentralscan/network-vxcentralscan.md | Partial | No diagram or data flow |
 | 15.4-B Secure network configuration | networking.md | Partial | Little guidance for officials |
 | 15.4-C Disabled wireless | networking.md | Full | |
 
