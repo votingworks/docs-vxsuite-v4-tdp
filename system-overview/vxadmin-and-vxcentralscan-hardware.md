@@ -26,11 +26,11 @@ The VxAdmin printer is powered through an APC BN1500M2 uninterruptible power sup
 
 ### VxPrint
 
-VxPrint connects to the HP LaserJet Pro 4001dn printer. The printer is duplex, black and white, and capable of printing up to 40 pages per minute.
+VxPrint connects to either the HP LaserJet Pro 4001dn printer or, for jurisdictions with color requirements on their ballots, the HP Color LaserJet Pro 4201dn printer. Both printers are duplex. The 4001dn prints black and white at up to 40 pages per minute. The 4201dn prints bubble ballots in color at up to 35 pages per minute.
 
-The included printer tray can be extended from letter size to legal size. VotingWorks, in partnership with HP, can provide a tray extender that allows printing up to 22 in. ballots.
+The included printer tray of either printer can be extended from letter size to legal size. VotingWorks, in partnership with HP, can provide a tray extender that allows printing up to 22 in. ballots.
 
-The printer has an Ethernet port on the back which is not used for operation of VxPrint, so it is blocked by an RJ45 port blocker.
+Each printer has an Ethernet port which is not used for operation of VxPrint, so it is blocked by an RJ45 port blocker.
 
 The VxPrint printer is powered through an APC BN1500M2 UPS to ensure that the printer can operate in variable power environments.
 
@@ -58,7 +58,7 @@ All components for VxAdmin, VxPrint, and VxCentralScan are commercial off-the-sh
 
 ### VxAdmin & VxPrint Components (Printer)
 
-<table><thead><tr><th width="152">Manufacturer</th><th width="263">Component</th><th width="167.58465576171875">Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>HP</td><td>LaserJet Pro 4001dn Printer</td><td>2Z600F#BGJ</td><td>Medium</td></tr><tr><td>Lindy</td><td>RJ45 Port Blocker</td><td>40471</td><td>Low</td></tr><tr><td>APC</td><td>Uninterruptible Power Supply (UPS)</td><td>BN1500M2</td><td>Low</td></tr></tbody></table>
+<table><thead><tr><th width="152">Manufacturer</th><th width="263">Component</th><th width="167.58465576171875">Mfr. Part Number</th><th>Criticality</th></tr></thead><tbody><tr><td>HP</td><td>LaserJet Pro 4001dn Printer</td><td>2Z600F#BGJ</td><td>Medium</td></tr><tr><td>HP</td><td>Color LaserJet Pro 4201dn Printer (VxPrint only)</td><td>4RA85F#BGJ</td><td>Medium</td></tr><tr><td>Lindy</td><td>RJ45 Port Blocker</td><td>40471</td><td>Low</td></tr><tr><td>APC</td><td>Uninterruptible Power Supply (UPS)</td><td>BN1500M2</td><td>Low</td></tr></tbody></table>
 
 ### VxAdmin Networking Components
 
@@ -104,5 +104,6 @@ The medium criticality components and the reasons for their classification are a
 * **Logitech B100 Mouse:** Does not directly handle election data but does plug into a USB port, thus it could still pose a USB attack vector.
 * **Monoprice USB A-B Cable:** Manages flow of data between laptop and peripherals.
 * **HP LaserJet Pro 4001dn:** The VxAdmin & VxPrint printer is responsible for printing reports from VxAdmin and printing ballots from VxPrint and therefore handles highly sensitive election information. All reports from VxAdmin can be exported as PDFs and printed elsewhere, so it is not strictly necessary for the operation of the system and thus is not the highest criticality.
+* **HP Color LaserJet Pro 4201dn:** The optional VxPrint color printer is responsible for printing ballots and therefore handles highly sensitive election information. It has the same criticality as the HP LaserJet Pro 4001dn, which it can replace on VxPrint.
 * **Ricoh fi-760PRB, fi-819PRB & fi-890PRB and interScan HD Rear Imprinter:** The imprinters that pair with the batch scanners are not involved in generating ballot data, so they cannot influence the interpretation of ballots when used according to instructions. The imprinted identifiers are important for post-election audits, however, so the imprinters are security-sensitive components.
 * **Cisco Catalyst 1200-8T-D Switch:** Because all data on the network is encrypted and cryptographically verified, data modified or tampered with in transit fails verification. Many COTS alternatives are also available to handle supply issues. The switch is a complex component networked to each VxAdmin, however, so it is considered medium criticality as a potential launching point for network attacks.

@@ -179,9 +179,9 @@ When the Barcode Activation Mode is set to "Print Ballot", scanning a ballot sty
 
 ## Printer Management
 
-VxMark prints ballots via an attached printer. The supported printer is the HP LaserJet Pro 4001dn. VxMark exports reports as PDFs so, in the event of a printer failure, reports will always be available.
+VxMark prints ballots via an attached printer. The supported printers are the HP LaserJet Pro 4001dn and, for jurisdictions with color requirements on their ballots, the HP Color LaserJet Pro 4201dn, which prints bubble ballots in color. VxMark exports reports as PDFs so, in the event of a printer failure, reports will always be available.
 
-VxMark interfaces with the printer through CUPS, the open-source printing system developed by Apple and installed on the VxSuite Debian operating system. When a printer is attached, it is registered with the CUPS server and made available to the application. VxMark is able to send print jobs to the printer via CUPS commands. The HP LaserJet Pro does not require any additional third-party or in-house driver because it supports the Internet Printing Protocol (IPP), which CUPS then utilizes.
+VxMark interfaces with the printer through CUPS, the open-source printing system developed by Apple and installed on the VxSuite Debian operating system. When a printer is attached, it is registered with the CUPS server and made available to the application. VxMark is able to send print jobs to the printer via CUPS commands. The HP LaserJet Pro printers do not require any additional third-party or in-house driver because they support the Internet Printing Protocol (IPP), which CUPS then utilizes.
 
 When a print job is submitted via CUPS, CUPS sends it to the printer using IPP. VxMark waits until CUPS reports it has successfully sent the entire job to the printer, at which point it logs success and increments the ballots printed count. If the printer is disconnected before CUPS can send the entire job, VxMark logs the failure and displays an error message on screen. In these cases, the printer may still print an incomplete document or error code. Whenever the printer is disconnected, any pending jobs are cancelled to avoid unexpected prints on reconnection.
 

@@ -34,7 +34,7 @@ Once VxPrint is configured, an election manager or poll worker can print ballots
 
 VxPrint then prints the requested ballot(s) on the connected commercial off-the-shelf (COTS) printer. It records a running count of how many ballots have been printed, broken down by these attributes, for the current ballot mode.
 
-The supported printer is the HP LaserJet Pro 4001dn. VxPrint must be connected to a printer before it can print.
+The supported printers are the HP LaserJet Pro 4001dn and, for jurisdictions with color requirements on their ballots, the HP Color LaserJet Pro 4201dn, which prints bubble ballots in color. VxPrint must be connected to a printer before it can print.
 
 {% hint style="info" %}
 **User Manual Reference:** [Printing Ballots](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxprint/printing-ballots "mention")
@@ -50,9 +50,9 @@ VxPrint can produce a ballots printed report summarizing how many ballots have b
 
 ## Printer Management
 
-VxPrint prints ballots via an attached printer. The supported printer is the HP LaserJet Pro 4001dn. VxPrint exports reports as PDFs so, in the event of a printer failure, reports will always be available.
+VxPrint prints ballots via an attached printer. The supported printers are the HP LaserJet Pro 4001dn and, for jurisdictions with color requirements on their ballots, the HP Color LaserJet Pro 4201dn, which prints bubble ballots in color. VxPrint exports reports as PDFs so, in the event of a printer failure, reports will always be available.
 
-VxPrint interfaces with the printer through CUPS, the open-source printing system developed by Apple and installed on the VxSuite Debian operating system. When a printer is attached, it is registered with the CUPS server and made available to the application. VxPrint is able to send print jobs to the printer via CUPS commands. The HP LaserJet Pro does not require any additional third-party or in-house driver because it supports the Internet Printing Protocol (IPP), which CUPS then utilizes.
+VxPrint interfaces with the printer through CUPS, the open-source printing system developed by Apple and installed on the VxSuite Debian operating system. When a printer is attached, it is registered with the CUPS server and made available to the application. VxPrint is able to send print jobs to the printer via CUPS commands. The HP LaserJet Pro printers do not require any additional third-party or in-house driver because they support the Internet Printing Protocol (IPP), which CUPS then utilizes.
 
 When a print job is submitted via CUPS, CUPS sends it to the printer using IPP. VxPrint waits until CUPS reports it has successfully sent the entire job to the printer, at which point it logs success and increments the ballots printed count. If the printer is disconnected before CUPS can send the entire job, VxPrint logs the failure and displays an error message. In these cases, the printer may still print an incomplete document or error code. Whenever the printer is disconnected, any pending jobs are cancelled to avoid unexpected prints on reconnection.
 
