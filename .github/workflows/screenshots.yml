@@ -57,12 +57,38 @@ jobs:
           done
           node "$RUNNER_TEMP/tools/sync-docs-screenshots.mjs" . \
             --pages "$RUNNER_TEMP/pages.txt" --report "$RUNNER_TEMP/report.md"
-          if [ -z "$(git status --porcelain -- .gitbook/assets)" ]; then exit 0; fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .gitbook/assets
-          git commit -q -m "Sync screenshots from the gallery [skip ci]" -m "$(cat "$RUNNER_TEMP/report.md")"
-          git push -q origin HEAD
-          gh api "repos/$GITHUB_REPOSITORY/statuses/$(git rev-parse HEAD)" \
-            -f state=success -f context="Screenshots are up-to-date" \
-            -f description="Screenshots synced from the gallery" --silent
+
+          # The sync skips a name the gallery doesn't publish (it may be a
+          # photo), so a page can point at an image that exists nowhere: a
+          # screenshot not yet published, or a typo. Fail on those.
+          missing="$(python3 -I - "$RUNNER_TEMP/pages.txt" <<'PY'
+          import re, sys, urllib.parse
+          from pathlib import Path
+          ref = re.compile(r"\.gitbook/assets/[^\"<>\n]+?\.(?:png|jpe?g|gif|svg|webp|pdf)", re.I)
+          for page in Path(sys.argv[1]).read_text().splitlines():
+              if not Path(page).is_file():
+                  continue
+              for found in sorted(set(ref.findall(Path(page).read_text()))):
+                  path = urllib.parse.unquote(found)
+                  if not Path(path).is_file():
+                      print(f"- `{path}` on `{page}`")
+          PY
+          )"
+
+          if [ -n "$(git status --porcelain -- .gitbook/assets)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add .gitbook/assets
+            git commit -q -m "Sync screenshots from the gallery [skip ci]" -m "$(cat "$RUNNER_TEMP/report.md")"
+            git push -q origin HEAD
+            if [ -z "$missing" ]; then state=success desc="Screenshots synced from the gallery"
+            else state=failure desc="Pages reference images that don't exist"; fi
+            gh api "repos/$GITHUB_REPOSITORY/statuses/$(git rev-parse HEAD)" \
+              -f state="$state" -f context="Screenshots are up-to-date" \
+              -f description="$desc" --silent
+          fi
+          if [ -n "$missing" ]; then
+            printf 'Pages reference images that are neither in the repository nor published in the gallery:\n%s\n' "$missing" \
+              | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
