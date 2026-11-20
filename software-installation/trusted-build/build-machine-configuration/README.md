@@ -3,15 +3,17 @@
 ## Build Machine Requirements <a href="#build-machine-requirements" id="build-machine-requirements"></a>
 
 * Operating system: Debian 12
-* RAM: 8GB minimum
+* RAM: 8 GB minimum
 * Chip: x86-64 / amd64 CPU architecture, Intel i5 or higher
-* Storage: 250GB minimum
+* Storage: 250 GB minimum
 
 ## Build Machine Configuration <a href="#build-machine-configuration" id="build-machine-configuration"></a>
 
-Debian 12 will need to be installed on the build machine. You can find detailed instructions for that process under [Installing Debian 12 on VxBuild](installing-debian-12-on-vxbuild.md). Once that is complete, we can install the VotingWorks build system, [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.1.0).
+Debian 12 must be installed on the build machine, as described under [Installing Debian 12 on VxBuild](installing-debian-12-on-vxbuild.md).
 
 Throughout the rest of this document, substitute `<version>` with the version string provided by VotingWorks, e.g., `v4.1.1`.
+
+To install the VotingWorks build system, [vxsuite-build-system](https://github.com/votingworks/vxsuite-build-system/tree/v4.1.0), run the following commands:
 
 ```
 sudo apt install -y git
@@ -26,7 +28,7 @@ git checkout <version>
 ./scripts/tb-clone-images.sh stable
 ```
 
-At this point, you should have two separate VMs: `debian-<version>-<apt-snapshot-date>-<debian-release-name>` and `online`. You can confirm this by running:
+The build machine now has two separate virtual machines (VMs): `debian-<version>-<apt-snapshot-date>-<debian-release-name>` and `online`. To confirm this, run:
 
 ```
 sudo virsh list --all
