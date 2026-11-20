@@ -1,6 +1,6 @@
 # System Overview
 
-<figure><img src=".gitbook/assets/image (115).png" alt="Data flow from the external election definition system through VxAdmin, VxPrint, VxMark or VxMarkScan, and VxScan or VxCentralScan"><figcaption><p>Top-level system diagram</p></figcaption></figure>
+<figure><img src=".gitbook/assets/diagram-system-overview.svg" alt="Data flow from the external election definition system through VxAdmin, VxPrint, VxMark or VxMarkScan, and VxScan or VxCentralScan"><figcaption><p>Top-level system diagram</p></figcaption></figure>
 
 The VotingWorks voting system (also known as **VxSuite**) consists of six primary components:
 
