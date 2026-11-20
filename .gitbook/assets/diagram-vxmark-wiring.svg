@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1604" height="1679" viewBox="0 0 1604 1679" fill="none">
   <!--
     VxMark wiring (electrical) diagram, TDP system-overview/vxmark-hardware.md.
-    Edit this file directly: every label is text. Connector labels sit in a
-    gap cut into their line, so a much longer label also needs its gap
-    widened (that line's path data). Inter (Latin, OFL) is embedded so the
+    Edit this file directly: every label is text. Connector lines run
+    unbroken under their labels, which are drawn last with a white halo, so
+    renaming a label needs no other change. Inter (Latin, OFL) is embedded so the
     diagram renders the same in an <img>. Exported from Figma's
     "TDP Diagrams v4.1 - Rev. A.0" board, page "VxMark Wiring"; this file now
     replaces it as the source.
@@ -12,15 +12,10 @@
   <rect width="1604" height="1679" fill="#fff"/>
   <g transform="translate(130 130)">
 <g data-figma="Group 1" transform="translate(1008.00 0.00)">
-<path d="M49 68.5H101.5M204.5 68.5H257" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="110.237" y="74.3182">Power Only</tspan></text>
-<path d="M49 102.5H116.5M189.5 102.5H257" stroke="#757575" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="125.167" y="108.318">Ground</tspan></text>
-<path d="M49 136.5H95.9804M213.98 136.5H257" stroke="#874FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="104.659" y="142.318">Data &#38; Power</tspan></text>
+<path d="M49 68.5H101.5L204.5 68.5H257" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
+<path d="M49 102.5H116.5L189.5 102.5H257" stroke="#757575" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
+<path d="M49 136.5H95.98L213.98 136.5H257" stroke="#874FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
 <path d="M72.2052 204.033C74.5937 205.289 77.3138 206 80.2 206H87.5596M64.967 196.795C63.7109 194.406 63 191.686 63 188.8V186.154M63 182.846V180.2C63 177.314 63.7109 174.594 64.9671 172.205M72.2052 164.967C74.5937 163.711 77.3138 163 80.2 163H87.5596M96.7591 163H111.478M120.678 163H135.397M144.597 163H159.316M168.515 163H183.235M192.434 163H207.153M216.353 163H223.713C226.599 163 229.319 163.711 231.707 164.967M238.945 172.205C240.202 174.594 240.913 177.314 240.913 180.2V182.846M240.913 186.154V188.8C240.913 191.686 240.202 194.406 238.945 196.795M231.707 204.033C229.319 205.289 226.599 206 223.713 206H216.353M207.153 206H192.434M183.235 206H168.515M159.316 206H144.597M135.397 206H120.678M111.478 206H96.7591" stroke-width="4" stroke-linecap="round" stroke="#1E1E1E"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="110.465" y="190.818">Removable</tspan></text>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="24" font-weight="500" letter-spacing="-0.019em"><tspan x="110.191" y="33.7273">Legend</tspan></text>
 </g>
 <g data-figma="Power Entry Module" transform="translate(1086.00 488.50)">
 <rect x="2" y="2" width="256" height="96" rx="38.4" fill="white" stroke-width="4" stroke="#1E1E1E"/>
@@ -28,7 +23,7 @@
 </g>
 <g data-figma="Power Cord to 120VAC" transform="translate(1163.50 312.50)">
 <path d="M53.9142 0.585786C53.1332 -0.195262 51.8668 -0.195262 51.0858 0.585786L38.3579 13.3137C37.5768 14.0948 37.5768 15.3611 38.3579 16.1421C39.1389 16.9232 40.4052 16.9232 41.1863 16.1421L52.5 4.82843L63.8137 16.1421C64.5948 16.9232 65.8611 16.9232 66.6421 16.1421C67.4232 15.3611 67.4232 14.0948 66.6421 13.3137L53.9142 0.585786ZM50.5 170C50.5 171.105 51.3954 172 52.5 172C53.6046 172 54.5 171.105 54.5 170H52.5H50.5ZM52.5 2H50.5V53.5H52.5H54.5V2H52.5ZM52.5 118.5H50.5V170H52.5H54.5V118.5H52.5Z" fill="#1E1E1E"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.56544" y="79.8182">Power Cord&#10;</tspan><tspan x="13.2665" y="103.818">to 120VAC</tspan></text>
+<path d="M52.5 53.5V118.5" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round"/>
 </g>
 <g data-figma="Connector" transform="translate(1118.00 776.50)">
 <rect x="2" y="2" width="192" height="64" rx="25.6" fill="white" stroke-width="4" stroke="#1E1E1E"/>
@@ -36,7 +31,7 @@
 </g>
 <g data-figma="Module Jumper" transform="translate(1149.00 592.50)">
 <path d="M69 2C69 0.89543 68.1046 0 67 0C65.8954 0 65 0.89543 65 2H67H69ZM65 178C65 179.105 65.8954 180 67 180C68.1046 180 69 179.105 69 178H67H65ZM67 2H65V69.5H67H69V2H67ZM67 110.5H65V178H67H69V110.5H67Z" fill="#1E1E1E"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.54037" y="95.8182">Module Jumper</tspan></text>
+<path d="M67 69.5V110.5" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round"/>
 </g>
 <g data-figma="12V Power Supply" transform="translate(1086.00 1112.50)">
 <rect x="2" y="2" width="256" height="256" rx="80" fill="white" stroke-width="4" stroke="#1E1E1E"/>
@@ -44,7 +39,7 @@
 </g>
 <g data-figma="Jumper Harness" transform="translate(1145.50 848.50)">
 <path d="M72.5 2C72.5 0.89543 71.6046 0 70.5 0C69.3954 0 68.5 0.89543 68.5 2H70.5H72.5ZM68.5 258C68.5 259.105 69.3954 260 70.5 260C71.6046 260 72.5 259.105 72.5 258H70.5H68.5ZM70.5 2H68.5V109.5H70.5H72.5V2H70.5ZM70.5 150.5H68.5V258H70.5H72.5V150.5H70.5Z" fill="#1E1E1E"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.96431" y="135.818">Jumper Harness</tspan></text>
+<path d="M70.5 109.5V150.5" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round"/>
 </g>
 <g data-figma="Single Board Computer" transform="translate(438.00 968.50)">
 <rect x="2" y="2" width="256" height="176" rx="70.4" fill="white" stroke-width="4" stroke="#1E1E1E"/>
@@ -52,23 +47,20 @@
 </g>
 <g data-figma="SBC Power" transform="translate(698.31 1096.60)">
 <path d="M381.372 147.79C382.477 147.79 383.372 146.895 383.372 145.79C383.372 144.685 382.477 143.79 381.372 143.79V145.79V147.79ZM2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4V2V0ZM381.372 145.79V143.79H205.372V145.79V147.79H381.372V145.79ZM181.372 121.79H183.372V105.556H181.372H179.372V121.79H181.372ZM181.372 64.5556H183.372V26H181.372H179.372V64.5556H181.372ZM157.372 2V0H2V2V4H157.372V2ZM181.372 26H183.372C183.372 11.6406 171.732 0 157.372 0V2V4C169.522 4 179.372 13.8497 179.372 26H181.372ZM205.372 145.79V143.79C193.222 143.79 183.372 133.94 183.372 121.79H181.372H179.372C179.372 136.149 191.013 147.79 205.372 147.79V145.79Z" fill="#1E1E1E"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="139.709" y="90.8737">SBC Power</tspan></text>
+<path d="M181.4 64.556V105.556" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round"/>
 </g>
 <g data-figma="Chassis Ground" transform="translate(926.00 824.50)">
 <circle cx="50" cy="50" r="48" fill="white" stroke-width="4" stroke-linecap="round" stroke="#757575"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="18.3894" y="43.8182">Chassis </tspan><tspan x="22.1666" y="67.8182">Ground</tspan></text>
 </g>
 <g data-figma="Power Ground" transform="translate(912.53 928.25)">
-<path d="M62 2V111.754M62 152.754V238.507C62 251.762 72.7452 262.507 86 262.507H168.064" stroke="#757575" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.593" y="138.072">Power Ground</tspan></text>
+<path d="M62 2V111.754L62 152.754V238.507C62 251.762 72.745 262.507 86 262.507H168.064" stroke="#757575" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
 </g>
 <g data-figma="USB Hub" transform="translate(454.00 717.50)">
 <rect x="2" y="2" width="224" height="123" rx="49.2" fill="white" stroke-width="4" stroke="#1E1E1E"/>
 <text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="bold" letter-spacing="-0.011em"><tspan x="80.278" y="69.8182">USB Hub</tspan></text>
 </g>
 <g data-figma="USB A-B Cable" transform="translate(503.00 848.50)">
-<path d="M65 114V78.5M65 37.5V2" stroke="#757575" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.8685" y="63.8182">USB A-B Cable</tspan></text>
+<path d="M65 114V78.5L65 37.5V2" stroke="#757575" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
 </g>
 <g data-figma="USB Panel Mount" transform="translate(-2.00 525.50)">
 <rect x="2" y="2" width="168" height="80" rx="32" fill="white" stroke-width="4" stroke="#1E1E1E"/>
@@ -79,12 +71,10 @@
 <text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="bold" letter-spacing="-0.011em"><tspan x="20.232" y="47.8182">USB Panel Mount</tspan></text>
 </g>
 <g data-figma="USB Panel Mount Cable" transform="translate(81.77 613.50)">
-<path d="M431.535 98V74C431.535 60.7452 420.79 50 407.535 50H249.201M98.2007 50H26C12.7452 50 2 39.2548 2 26V2" stroke="#874FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="106.771" y="43.8182">USB Panel Mount &#10;</tspan><tspan x="151.92" y="67.8182">Cable</tspan></text>
+<path d="M431.535 98V74C431.535 60.745 420.79 50 407.535 50H249.201L98.201 50H26C12.745 50 2 39.255 2 26V2" stroke="#874FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
 </g>
 <g data-figma="USB Panel Mount Cable" transform="translate(173.56 722.88)">
-<path d="M277.121 28.3775H213.5M62.5 36.6225H2" stroke="#874FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="71.07" y="26.3182">USB Panel Mount &#10;</tspan><tspan x="116.219" y="50.3182">Cable</tspan></text>
+<path d="M277.121 28.378H213.5L62.5 28.378H2" stroke="#874FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
 </g>
 <g data-figma="External Printer" transform="translate(-2.00 272.50)">
 <rect x="2" y="2" width="168" height="80" rx="32" fill="white"/>
@@ -93,15 +83,14 @@
 </g>
 <g data-figma="USB A-B Printer Cable" transform="translate(26.50 360.75)">
 <path d="M55.5 158.5C55.5 159.605 56.3954 160.5 57.5 160.5C58.6046 160.5 59.5 159.605 59.5 158.5H57.5H55.5ZM59.5 112.75C59.5 111.645 58.6046 110.75 57.5 110.75C56.3954 110.75 55.5 111.645 55.5 112.75H57.5H59.5ZM55.5 47.75C55.5 48.8546 56.3954 49.75 57.5 49.75C58.6046 49.75 59.5 48.8546 59.5 47.75H57.5H55.5ZM58.9142 0.585786C58.1332 -0.195262 56.8668 -0.195262 56.0858 0.585786L43.3579 13.3137C42.5768 14.0948 42.5768 15.3611 43.3579 16.1421C44.1389 16.9232 45.4052 16.9232 46.1863 16.1421L57.5 4.82843L68.8137 16.1421C69.5948 16.9232 70.8611 16.9232 71.6421 16.1421C72.4232 15.3611 72.4232 14.0948 71.6421 13.3137L58.9142 0.585786ZM57.5 158.5H59.5V112.75H57.5H55.5V158.5H57.5ZM57.5 47.75H59.5V2H57.5H55.5V47.75H57.5Z" fill="#874FFF"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="23.0613" y="74.0682">USB A-B &#10;</tspan><tspan x="8.64975" y="98.0682">Printer Cable</tspan></text>
+<path d="M57.5 47.75V112.75" stroke="#874FFF" stroke-width="4" stroke-linecap="round"/>
 </g>
 <g data-figma="Screen" transform="translate(566.00 248.50)">
 <rect x="2" y="2" width="312" height="212" rx="80" fill="white" stroke-width="4" stroke="#1E1E1E"/>
 <text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="bold" letter-spacing="-0.011em"><tspan x="130.893" y="113.818">Screen</tspan></text>
 </g>
 <g data-figma="USB-C Cable" transform="translate(666.00 468.26)">
-<path d="M33.0935 546.527H34C47.2548 546.527 58 535.782 58 522.527V124.354M58 83.3541V2" stroke="#874FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.76281" y="109.672">USB-C Cable</tspan></text>
+<path d="M33.093 546.527H34C47.255 546.527 58 535.782 58 522.527V124.354L58 83.354V2" stroke="#874FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
 </g>
 <g data-figma="USB 3.0 Switch" transform="translate(-2.00 872.50)">
 <rect x="2" y="2" width="168" height="96" rx="38.4" fill="white" stroke-width="4" stroke="#1E1E1E"/>
@@ -115,16 +104,14 @@
 <text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="bold" letter-spacing="-0.011em"><tspan x="53.0223" y="55.8182">PAT Port</tspan></text>
 </g>
 <g data-figma="AUX Cable" transform="translate(35.00 976.50)">
-<path d="M49 2V45.5M49 86.5V130" stroke="#874FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.62587" y="71.8182">AUX Cable</tspan></text>
+<path d="M49 2V45.5L49 86.5V130" stroke="#874FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
 </g>
 <g data-figma="Audio Port" transform="translate(206.00 1112.50)">
 <rect x="2" y="2" width="168" height="96" rx="38.4" fill="white" stroke-width="4" stroke="#1E1E1E"/>
 <text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="bold" letter-spacing="-0.011em"><tspan x="45.1904" y="55.8182">Audio Port</tspan></text>
 </g>
 <g data-figma="AUX Cable" transform="translate(290.00 1036.75)">
-<path d="M142 20.5H121M23 20.5C11.402 20.5 2 29.902 2 41.5V68.5" stroke="#874FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="31.6259" y="26.3182">AUX Cable</tspan></text>
+<path d="M142 20.5H121L23 20.5C11.402 20.5 2 29.902 2 41.5V68.5" stroke="#874FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
 </g>
 <g data-figma="PAT Device" transform="translate(-2.00 1320.50)">
 <rect x="2" y="2" width="168" height="96" rx="38.4" fill="white"/>
@@ -137,35 +124,32 @@
 </g>
 <g data-figma="Headphone Cable" transform="translate(216.00 1216.75)">
 <path d="M77.4142 0.585786C76.6332 -0.195262 75.3668 -0.195262 74.5858 0.585786L61.8579 13.3137C61.0768 14.0948 61.0768 15.3611 61.8579 16.1421C62.6389 16.9232 63.9052 16.9232 64.6863 16.1421L76 4.82843L87.3137 16.1421C88.0948 16.9232 89.3611 16.9232 90.1421 16.1421C90.9232 15.3611 90.9232 14.0948 90.1421 13.3137L77.4142 0.585786ZM74 29.25C74 30.3546 74.8954 31.25 76 31.25C77.1046 31.25 78 30.3546 78 29.25H76H74ZM78 70.25C78 69.1454 77.1046 68.25 76 68.25C74.8954 68.25 74 69.1454 74 70.25H76H78ZM74 97.5C74 98.6046 74.8954 99.5 76 99.5C77.1046 99.5 78 98.6046 78 97.5H76H74ZM76 2H74V29.25H76H78V2H76ZM76 70.25H74V97.5H76H78V70.25H76Z" fill="#874FFF"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.73981" y="55.5682">Headphone Cable</tspan></text>
+<path d="M76 29.25V70.25" stroke="#874FFF" stroke-width="4" stroke-linecap="round"/>
 </g>
 <g data-figma="AUX Cable" transform="translate(35.00 1216.75)">
 <path d="M50.4142 0.585786C49.6332 -0.195262 48.3668 -0.195262 47.5858 0.585786L34.8579 13.3137C34.0768 14.0948 34.0768 15.3611 34.8579 16.1421C35.6389 16.9232 36.9052 16.9232 37.6863 16.1421L49 4.82843L60.3137 16.1421C61.0948 16.9232 62.3611 16.9232 63.1421 16.1421C63.9232 15.3611 63.9232 14.0948 63.1421 13.3137L50.4142 0.585786ZM47 29.25C47 30.3546 47.8954 31.25 49 31.25C50.1046 31.25 51 30.3546 51 29.25H49H47ZM51 70.25C51 69.1454 50.1046 68.25 49 68.25C47.8954 68.25 47 69.1454 47 70.25H49H51ZM47 97.5C47 98.6046 47.8954 99.5 49 99.5C50.1046 99.5 51 98.6046 51 97.5H49H47ZM49 2H47V29.25H49H51V2H49ZM49 70.25H47V97.5H49H51V70.25H49Z" fill="#874FFF"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.62587" y="55.5682">AUX Cable</tspan></text>
+<path d="M49 29.25V70.25" stroke="#874FFF" stroke-width="4" stroke-linecap="round"/>
 </g>
 <g data-figma="Barcode Reader" transform="translate(482.00 1320.50)">
 <rect x="2" y="2" width="168" height="96" rx="38.4" fill="white" stroke-width="4" stroke="#1E1E1E"/>
 <text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="bold" letter-spacing="-0.011em"><tspan x="25.0815" y="55.8182">Barcode Reader</tspan></text>
 </g>
 <g data-figma="USB A-MicroB Cable" transform="translate(482.00 1152.50)">
-<path d="M86 2V69.5802M86 110.58V162" stroke="#874FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.86319" y="95.8984">USB A-MicroB Cable</tspan></text>
+<path d="M86 2V69.58L86 110.58V162" stroke="#874FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
 </g>
 <g data-figma="Accessibility Controller" transform="translate(254.00 264.50)">
 <rect x="2" y="2" width="168" height="96" rx="38.4" fill="white" stroke-width="4" stroke="#1E1E1E"/>
 <text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="bold" letter-spacing="-0.011em"><tspan x="34.7534" y="43.8182">Accessibility </tspan><tspan x="47.3936" y="67.8182">Controller</tspan></text>
 </g>
 <g data-figma="USB A-MiniB Cable" transform="translate(297.89 368.50)">
-<path d="M318.705 343V196.5C318.705 183.245 307.96 172.5 294.705 172.5H161M40.9619 152V2" stroke="#874FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.77518" y="178.318">USB A-MiniB Cable</tspan></text>
+<path d="M318.705 343V196.5C318.705 183.245 307.96 172.5 294.705 172.5H161L40.962 172.5L40.962 152V2" stroke="#874FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
 </g>
 <g data-figma="Card Reader" transform="translate(910.00 328.50)">
 <rect x="2" y="2" width="192" height="96" rx="38.4" fill="white" stroke-width="4" stroke="#1E1E1E"/>
 <text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="bold" letter-spacing="-0.011em"><tspan x="50.4738" y="55.8182">Card Reader</tspan></text>
 </g>
 <g data-figma="Card Reader Cable" transform="translate(702.00 432.50)">
-<path d="M2 626H122C135.255 626 146 615.255 146 602V282.348M146 241.348V146C146 132.745 156.745 122 170 122H282C295.255 122 306 111.255 306 98V2" stroke="#874FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="75.5564" y="267.666">Card Reader Cable</tspan></text>
+<path d="M2 626H122C135.255 626 146 615.255 146 602V282.348L146 241.348V146C146 132.745 156.745 122 170 122H282C295.255 122 306 111.255 306 98V2" stroke="#874FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
 </g>
 <g data-figma="Connector line" transform="translate(846.00 872.50)">
 <path d="M2 2H74" stroke="#757575" stroke-width="4" stroke-linecap="round" stroke-linejoin="bevel"/>
@@ -175,8 +159,31 @@
 </g>
 <g data-figma="VxMark Electrical Diagram" transform="translate(302.00 40.00)">
 <rect x="2" y="2" width="576" height="123" rx="6" fill="white" stroke-width="4" stroke-linecap="round" stroke="#874FFF"/>
-<text fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="40" font-weight="500" letter-spacing="-0.022em"><tspan x="49.0952" y="78.5455">VxMark Electrical Diagram</tspan></text>
 </g>
-
+<!-- Labels last, each with a white halo over its line -->
+<g transform="translate(1008.00 0.00)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="110.237" y="74.3182">Power Only</tspan></text></g>
+<g transform="translate(1008.00 0.00)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="125.167" y="108.318">Ground</tspan></text></g>
+<g transform="translate(1008.00 0.00)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="104.659" y="142.318">Data &#38; Power</tspan></text></g>
+<g transform="translate(1008.00 0.00)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="110.465" y="190.818">Removable</tspan></text></g>
+<g transform="translate(1008.00 0.00)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="24" font-weight="500" letter-spacing="-0.019em"><tspan x="110.191" y="33.7273">Legend</tspan></text></g>
+<g transform="translate(1163.50 312.50)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.56544" y="79.8182">Power Cord&#10;</tspan><tspan x="13.2665" y="103.818">to 120VAC</tspan></text></g>
+<g transform="translate(1149.00 592.50)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.54037" y="95.8182">Module Jumper</tspan></text></g>
+<g transform="translate(1145.50 848.50)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.96431" y="135.818">Jumper Harness</tspan></text></g>
+<g transform="translate(698.31 1096.60)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="139.709" y="90.8737">SBC Power</tspan></text></g>
+<g transform="translate(926.00 824.50)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="18.3894" y="43.8182">Chassis </tspan><tspan x="22.1666" y="67.8182">Ground</tspan></text></g>
+<g transform="translate(912.53 928.25)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.593" y="138.072">Power Ground</tspan></text></g>
+<g transform="translate(503.00 848.50)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.8685" y="63.8182">USB A-B Cable</tspan></text></g>
+<g transform="translate(81.77 613.50)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="106.771" y="43.8182">USB Panel Mount &#10;</tspan><tspan x="151.92" y="67.8182">Cable</tspan></text></g>
+<g transform="translate(173.56 722.88)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="71.07" y="26.3182">USB Panel Mount &#10;</tspan><tspan x="116.219" y="50.3182">Cable</tspan></text></g>
+<g transform="translate(26.50 360.75)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="23.0613" y="74.0682">USB A-B &#10;</tspan><tspan x="8.64975" y="98.0682">Printer Cable</tspan></text></g>
+<g transform="translate(666.00 468.26)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.76281" y="109.672">USB-C Cable</tspan></text></g>
+<g transform="translate(35.00 976.50)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.62587" y="71.8182">AUX Cable</tspan></text></g>
+<g transform="translate(290.00 1036.75)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="31.6259" y="26.3182">AUX Cable</tspan></text></g>
+<g transform="translate(216.00 1216.75)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.73981" y="55.5682">Headphone Cable</tspan></text></g>
+<g transform="translate(35.00 1216.75)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.62587" y="55.5682">AUX Cable</tspan></text></g>
+<g transform="translate(482.00 1152.50)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.86319" y="95.8984">USB A-MicroB Cable</tspan></text></g>
+<g transform="translate(297.89 368.50)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="8.77518" y="178.318">USB A-MiniB Cable</tspan></text></g>
+<g transform="translate(702.00 432.50)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="16" font-weight="500" letter-spacing="-0.011em"><tspan x="75.5564" y="267.666">Card Reader Cable</tspan></text></g>
+<g transform="translate(302.00 40.00)"><text stroke="white" stroke-width="24" stroke-linejoin="round" paint-order="stroke" fill="black" fill-opacity="0.8" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="40" font-weight="500" letter-spacing="-0.022em"><tspan x="49.0952" y="78.5455">VxMark Electrical Diagram</tspan></text></g>
 </g>
 </svg>
