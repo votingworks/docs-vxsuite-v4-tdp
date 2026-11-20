@@ -192,13 +192,16 @@ screenshot only when the behavior can't be described without it.
   screenshots workflow keeps them current. Other new images get descriptive
   kebab-case names with no spaces.
 - Diagrams are SVG (`diagram-<name>.svg`), edited as text: labels stay
-  `<text>` (never outlined), and each file embeds the Inter font it uses so
-  it renders the same in GitBook. Connector lines run unbroken under their
-  labels, and each label is drawn after the lines with a white halo
-  (a `.halo` class in the file's `<style>`: GitBook strips `paint-order` as an attribute), so renaming a label is a text edit only; never
-  cut a gap into a line for a label. Diagrams have a plain white background,
-  which the halo needs. A new diagram can start from a Figma SVG export with
-  "Outline text" off; the file in this repo is then its source.
+  `<text>` (never outlined), set in Inter with a sans-serif fallback
+  (`font-family: "Inter", sans-serif`). Don't embed fonts: GitBook strips
+  them, so readers see their own sans-serif unless they have Inter.
+  Connector lines run unbroken under their labels, and each label is drawn
+  after the lines with a white halo (a `.halo` class in the file's
+  `<style>`; GitBook strips `paint-order` as an attribute), so renaming a
+  label is a text edit only; never cut a gap into a line for a label.
+  Diagrams have a plain white background, which the halo needs. A new
+  diagram can start from a Figma SVG export with "Outline text" off; the
+  file in this repo is then its source.
 
 ## Procedures
 
