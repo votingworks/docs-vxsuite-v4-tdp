@@ -70,7 +70,7 @@ The wiring diagram below outlines the power and data connections within the scan
 
 VxScan does not require any direct bodily contact or for the body to be part of any electrical circuit to function.
 
-<figure><img src="../.gitbook/assets/TDP Diagrams v4.1 - VxScan - Rev. A.0.png" alt="VxScan wiring diagram of power, ground, and data connections between the computer, scanner, printer, screen, and power supplies"><figcaption><p>VxScan wiring diagram</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/diagram-vxscan-wiring.svg" alt="VxScan wiring diagram of power, ground, and data connections between the computer, scanner, printer, screen, and power supplies"><figcaption><p>VxScan wiring diagram</p></figcaption></figure>
 
 <div><figure><img src="../.gitbook/assets/internals.png" alt="Scanner bottom tub with panels removed, labeling the single board computer, cooling fan, USB hub, and 12V and 24V power supplies" width="563"><figcaption><p>Wiring components</p></figcaption></figure> <figure><img src="../.gitbook/assets/IMG_1611.jpg" alt="High voltage warning label on the panel covering the power supplies" width="375"><figcaption><p>Voltage warning over power supplies</p></figcaption></figure></div>
 

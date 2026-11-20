@@ -69,7 +69,7 @@ The wiring diagram below outlines the power and data connections within the BMD.
 
 VxMark does not require any direct bodily contact or for the body to be part of any electrical circuit to function.
 
-<figure><img src="../.gitbook/assets/TDP Diagrams v4.1 - VxMark - Rev. A.0.png" alt="VxMark wiring diagram of power, ground, and data connections between the computer, USB hub, screen, peripherals, and power supply"><figcaption><p>VxMark wiring diagram</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/diagram-vxmark-wiring.svg" alt="VxMark wiring diagram of power, ground, and data connections between the computer, USB hub, screen, peripherals, and power supply"><figcaption><p>VxMark wiring diagram</p></figcaption></figure>
 
 ## COTS Components
 
