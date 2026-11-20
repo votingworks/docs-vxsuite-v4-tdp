@@ -193,8 +193,12 @@ screenshot only when the behavior can't be described without it.
   kebab-case names with no spaces.
 - Diagrams are SVG (`diagram-<name>.svg`), edited as text: labels stay
   `<text>` (never outlined), and each file embeds the Inter font it uses so
-  it renders the same in GitBook. A new diagram can start from a Figma SVG
-  export with "Outline text" off; the file in this repo is then its source.
+  it renders the same in GitBook. Connector lines run unbroken under their
+  labels, and each label is drawn after the lines with a white halo
+  (`paint-order="stroke"`), so renaming a label is a text edit only; never
+  cut a gap into a line for a label. Diagrams have a plain white background,
+  which the halo needs. A new diagram can start from a Figma SVG export with
+  "Outline text" off; the file in this repo is then its source.
 
 ## Procedures
 
