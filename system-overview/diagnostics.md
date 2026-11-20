@@ -52,7 +52,11 @@ The toner level and any alerts from the printer are displayed, such as sleep mod
 
 The user may perform a test scan, which requires that a blank white sheet of paper be scanned. The scanned image is broken up into small cells and each cell is checked for the percent of black pixels after binarization. If that percent is more than slightly over 0%, that cell is flagged and the entire diagnostic fails. The goal of the diagnostic is to catch any defects in the scanned images, such as streaking produced by a dirty scanner.
 
-<div><figure><img src="../.gitbook/assets/3d3eeff3-0eda-48fd-be9d-8edda7abdd2d-front_debug_diagnostic.png" alt=""><figcaption><p>Passed</p></figcaption></figure> <figure><img src="../.gitbook/assets/0dc29646-3c6a-4abd-9d2d-ae1b03a3b4ad-front_debug_diagnostic.png" alt=""><figcaption><p>Failed</p></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/3d3eeff3-0eda-48fd-be9d-8edda7abdd2d-front_debug_diagnostic.png" alt="Blank test sheet scan divided into cells, all outlined green"><figcaption><p>Passed</p></figcaption></figure> <figure><img src="../.gitbook/assets/0dc29646-3c6a-4abd-9d2d-ae1b03a3b4ad-front_debug_diagnostic.png" alt="Blank test sheet scan with vertical streaks, the affected cells outlined red"><figcaption><p>Failed</p></figcaption></figure></div>
+
+### Network
+
+When local networking is turned on, VxCentralScan's diagnostics show the network status: whether VxCentralScan is connected to the local network, and whether it is connected to a host VxAdmin or why not (no host found, more than one host, a different software version, or a different election).
 
 {% hint style="info" %}
 **User Manual Reference:** [VxCentralScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/vxcentralscan-diagnostics "mention")

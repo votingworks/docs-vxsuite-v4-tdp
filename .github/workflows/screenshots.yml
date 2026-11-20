@@ -8,96 +8,115 @@
 #
 # - On a pull request: syncs the screenshots referenced by the pages it
 #   changes, committing to its branch.
-# - On weekdays, or run by hand with no branch: syncs every page into one
-#   "Refresh screenshots" pull request. Its branch, screenshots/refresh, is
-#   rebuilt from main on every run, so don't push to it by hand: a screenshot
-#   that needs changing is changed in the gallery.
 # - Run by hand with a branch: syncs that branch as for a pull request (for
 #   a screenshot published after the branch's last push).
+#
+# A docs-request branch can hold previews: screenshots an open spec rendered,
+# copied in by the docs bot (votingworks/vxsuite-docs-automation) before the
+# gallery publishes them, and listed in .screenshot-previews.json. The sync
+# leaves them alone, and this check fails while any are listed, so a preview
+# never merges: the docs bot swaps the published screenshots in, and deletes
+# the list, before it merges the pull request.
+#
+# The weekday refresh of every page is screenshots-refresh.yml, kept separate
+# so pull requests list only this job. A sync commit is pushed with
+# [skip ci] (a push by this workflow's token starts no run anyway) and is
+# marked passing here, so the required "branch" check is on every head.
 name: screenshots
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-  schedule:
-    - cron: '0 14 * * 1-5'
   workflow_dispatch:
     inputs:
       branch:
-        description: Branch to sync as a pull request (empty for a full refresh)
-        required: false
+        description: Branch to sync as a pull request
+        required: true
 
 env:
   TOOLS_URL: https://vxsuite-integration-test-screenshots.s3.us-west-2.amazonaws.com/tools
 
 jobs:
   branch:
+    name: Screenshots are up-to-date
     if: >-
       (github.event_name == 'pull_request' &&
        github.event.pull_request.head.repo.full_name == github.repository &&
        !startsWith(github.event.pull_request.head.ref, 'screenshots/')) ||
-      (github.event_name == 'workflow_dispatch' && inputs.branch != '')
+      github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      statuses: write
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.ref || inputs.branch }}
           fetch-depth: 0
       - name: Sync the screenshots the changed pages reference
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git diff --name-only origin/main...HEAD -- '*.md' > "$RUNNER_TEMP/pages.txt"
-          if [ ! -s "$RUNNER_TEMP/pages.txt" ]; then echo "no pages changed"; exit 0; fi
+          if [ ! -s "$RUNNER_TEMP/pages.txt" ] && [ ! -f .screenshot-previews.json ]; then
+            echo "no pages changed"; exit 0
+          fi
           mkdir -p "$RUNNER_TEMP/tools"
           for f in sync-docs-screenshots.mjs png-diff.mjs; do
             curl -fsS "$TOOLS_URL/$f" -o "$RUNNER_TEMP/tools/$f"
           done
           node "$RUNNER_TEMP/tools/sync-docs-screenshots.mjs" . \
             --pages "$RUNNER_TEMP/pages.txt" --report "$RUNNER_TEMP/report.md"
-          if [ -z "$(git status --porcelain -- .gitbook/assets)" ]; then exit 0; fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .gitbook/assets
-          git commit -q -m "Sync screenshots from the gallery" -m "$(cat "$RUNNER_TEMP/report.md")"
-          git push -q origin HEAD
 
-  refresh:
-    if: >-
-      github.event_name == 'schedule' ||
-      (github.event_name == 'workflow_dispatch' && inputs.branch == '')
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-      - name: Get the sync tool
-        run: |
-          mkdir -p "$RUNNER_TEMP/tools"
-          for f in sync-docs-screenshots.mjs png-diff.mjs; do
-            curl -fsS "$TOOLS_URL/$f" -o "$RUNNER_TEMP/tools/$f"
-          done
-      - name: Sync every page and open or update the refresh pull request
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: screenshots/refresh
-        run: |
-          node "$RUNNER_TEMP/tools/sync-docs-screenshots.mjs" . --report "$RUNNER_TEMP/report.md"
-          if [ -z "$(git status --porcelain -- .gitbook/assets)" ]; then
-            echo "every screenshot is current"; exit 0
+          # Previews the docs bot copied in: kept as committed (whatever the
+          # sync tool's version), and listed so the check can fail on them.
+          previews=""
+          if [ -f .screenshot-previews.json ]; then
+            previews="$(python3 -I - <<'PY'
+          import json
+          for capture_id, record in sorted(json.load(open(".screenshot-previews.json")).items()):
+              print(f"- `{capture_id}` from {record.get('spec', 'an open spec')}")
+          PY
+          )"
+            python3 -I -c 'import json; print("\n".join(f".gitbook/assets/{i}.png" for i in json.load(open(".screenshot-previews.json"))))' \
+              | xargs -r git checkout -q HEAD -- 2>/dev/null || true
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -q -B "$BRANCH"
-          git add .gitbook/assets
-          git commit -q -m "Refresh screenshots from the gallery" -m "$(cat "$RUNNER_TEMP/report.md")"
-          git push -q --force origin "$BRANCH"
-          pr="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')"
-          if [ -n "$pr" ]; then
-            gh api -X PATCH "repos/$GITHUB_REPOSITORY/pulls/$pr" -F body=@"$RUNNER_TEMP/report.md" --silent
-          else
-            gh pr create --head "$BRANCH" --base main \
-              --title "Refresh screenshots from the gallery" --body-file "$RUNNER_TEMP/report.md"
+
+          # The sync skips a name the gallery doesn't publish (it may be a
+          # photo), so a page can point at an image that exists nowhere: a
+          # screenshot not yet published, or a typo. Fail on those.
+          missing="$(python3 -I - "$RUNNER_TEMP/pages.txt" <<'PY'
+          import re, sys, urllib.parse
+          from pathlib import Path
+          ref = re.compile(r"\.gitbook/assets/[^\"<>\n]+?\.(?:png|jpe?g|gif|svg|webp|pdf)", re.I)
+          for page in Path(sys.argv[1]).read_text().splitlines():
+              if not Path(page).is_file():
+                  continue
+              for found in sorted(set(ref.findall(Path(page).read_text()))):
+                  path = urllib.parse.unquote(found)
+                  if not Path(path).is_file():
+                      print(f"- `{path}` on `{page}`")
+          PY
+          )"
+
+          if [ -n "$(git status --porcelain -- .gitbook/assets)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add .gitbook/assets
+            git commit -q -m "Sync screenshots from the gallery [skip ci]" -m "$(cat "$RUNNER_TEMP/report.md")"
+            git push -q origin HEAD
+            if [ -n "$missing" ]; then state=failure desc="Pages reference images that don't exist"
+            elif [ -n "$previews" ]; then state=failure desc="Previews in place; the published screenshots aren't swapped in yet"
+            else state=success desc="Screenshots synced from the gallery"; fi
+            gh api "repos/$GITHUB_REPOSITORY/statuses/$(git rev-parse HEAD)" \
+              -f state="$state" -f context="Screenshots are up-to-date" \
+              -f description="$desc" --silent
           fi
+          if [ -n "$previews" ]; then
+            printf 'These screenshots are previews from open screenshot specs. The docs bot swaps in the published copies when the docs request is approved, before it merges:\n%s\n\n' "$previews" \
+              | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ -n "$missing" ]; then
+            printf 'Pages reference images that are neither in the repository nor published in the gallery:\n%s\n' "$missing" \
+              | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ -n "$missing" ] || [ -n "$previews" ]; then exit 1; fi

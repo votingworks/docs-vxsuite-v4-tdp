@@ -6,17 +6,17 @@ The recommended definite mark threshold is 7%. With this threshold setting, bubb
 
 At this threshold, marks such as a light dot, a fold through a bubble, a stray mark outside of the bubble, or a small line just on the corner of a bubble are considered invalid. Marks such as a completely filled bubble, half filled bubble, or an X in a bubble are considered valid.
 
-Examples of invalid and valid marks along with the score for that mark (in green) are shown below.
+Examples of invalid and valid marks along with the score for that mark (in teal, below each bubble) are shown below.
 
 The mark threshold set on a scanner can be checked by an election official at any point by viewing the readiness report for that device as described in [diagnostics.md](../system-overview/diagnostics.md "mention") (see also [VxScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxscan/vxscan-diagnostics "mention") and [VxCentralScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/vxcentralscan-diagnostics "mention") in the user manual).
 
 ## Invalid Marks
 
-<figure><img src="../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (65).png" alt="Scanned bubble crops of invalid marks (dots, circled names, stray lines) with mark scores below 7%"><figcaption></figcaption></figure>
 
 ## Valid Marks
 
-<figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (2).png" alt="Scanned bubble crops of valid marks (filled, half-filled and X marks) with mark scores above 7%"><figcaption></figcaption></figure>
 
 ## Marginal Marks
 

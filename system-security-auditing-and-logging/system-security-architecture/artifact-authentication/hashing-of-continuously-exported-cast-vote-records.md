@@ -8,7 +8,7 @@ VxSuite precinct scanners export cast vote records (CVRs) to USB drive continuou
 
 To perform continuous export while also keeping signatures, i.e., authenticity information, up-to-date, the scanner must be able to write both CVRs and authenticity information incrementally. Hashing and signing only the new data is not sufficient; an up-to-date root hash and signature are required. A [Merkle tree](https://en.wikipedia.org/wiki/Merkle_tree) structure accomplishes this efficiently.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt="Merkle tree in which leaf data block hashes combine pairwise up to a single top hash" width="563"><figcaption></figcaption></figure>
 
 Assuming every CVR has a random universally unique identifier (UUID), e.g., 4d6a9dad-e6d6-4a29-89bc-9ab915012b73, the following structure can be used:
 

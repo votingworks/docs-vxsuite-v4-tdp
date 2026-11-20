@@ -25,9 +25,9 @@ layout:
 
 The write-in adjudication report includes the results of all write-in adjudication organized by contest:
 
-<figure><img src="../../.gitbook/assets/vxadmin-write-in-adjudication-report-printed.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/vxadmin-write-in-adjudication-report-printed.png" alt="Printed write-in adjudication report showing write-in totals and adjudication results for each contest" width="375"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt="" width="375"><figcaption><p>Write-in adjudication contest results</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt="One contest in the write-in adjudication report, with official candidate, write-in candidate and invalid counts" width="375"><figcaption><p>Write-in adjudication contest results</p></figcaption></figure>
 
 The values in the contest table above are as follows:
 
@@ -55,4 +55,4 @@ Because the write-in adjudication report includes unmarked write-ins, the "Unadj
 
 The write-in image report shows all write-in images for a specified contest. The write-ins are grouped by candidate or under "Invalid" or "Unadjudicated".
 
-<figure><img src="../../.gitbook/assets/vxadmin-write-in-image-report-printed.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/vxadmin-write-in-image-report-printed.png" alt="Printed write-in image report for one contest, with write-in images grouped by candidate and Invalid" width="375"><figcaption></figcaption></figure>

@@ -161,7 +161,9 @@ Never edit GitBook's `width` attributes by hand.
 - Whole pages by GitBook mention links; sections by relative links with an
   anchor.
 - Source code pinned to the release tag the TDP documents (currently
-  `v4.1.1`), never `main`.
+  `v4.1.1`), never `main`. Links into `docs-vxsuite-v4` (datasheets,
+  reports, risk assessment) stay on `main`: that repository has no release
+  tags.
 - Descriptive link text, not "here" or a bare URL.
 - Prose says "VxSuite" unless the version is the point.
 
@@ -170,6 +172,11 @@ Never edit GitBook's `width` attributes by hand.
 7.3-B.1", "8.1-A.2.b"), a range with an en dash ("14.1-C.1–4"). Cite only
 IDs that exist in VVSG 2.0, not test assertion IDs. NIST publications as
 "NIST SP 800-161".
+
+**What gets a figure**: outputs a reviewer needs to see (printed reports,
+ballots, export structures), diagrams and hardware photos. No step-by-step
+screenshots (the user manual has those) and no highlights; a user interface
+screenshot only when the behavior can't be described without it.
 
 **Figures**: GitBook figure markup, never Markdown images:
 
@@ -184,6 +191,12 @@ IDs that exist in VVSG 2.0, not test assertion IDs. NIST publications as
 - Screenshots use their gallery ID as the file name (`vxadmin-….png`); the
   screenshots workflow keeps them current. Other new images get descriptive
   kebab-case names with no spaces.
+- Diagrams are SVG (`diagram-<name>.svg`), edited as text: labels stay
+  `<text>` (never outlined), and each file embeds the Inter font it uses so
+  it renders the same in GitBook. Rename a label by changing its text;
+  connector labels are centered on their line with a white halo, so the
+  geometry doesn't change. A new diagram can start from a Figma SVG export
+  with "Outline text" off; the file in this repo is then its source.
 
 ## Procedures
 

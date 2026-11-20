@@ -42,7 +42,7 @@ The core post-election (and pre-election testing) function of VxAdmin is loading
 
 ### Loading CVRs
 
-CVRs must be loaded from a USB drive. CVRs are exported from VxScan or VxCentralScan and are accompanied by a digital signature. CVRs without a digital signature cannot be loaded. CVR exports with digital signatures that do not match the content of the CVR exports cannot be loaded in order to prevent tampering.
+CVRs are loaded from a USB drive or, on a host VxAdmin, received over the local network from networked VxCentralScans. CVRs on a USB drive are exported from VxScan or VxCentralScan and are accompanied by a digital signature. CVRs without a digital signature cannot be loaded. CVR exports with digital signatures that do not match the content of the CVR exports cannot be loaded in order to prevent tampering.
 
 The CVRs from the scanners are saved to a specific directory structure on the USB drive, but exports can be loaded from anywhere on a USB drive's filesystem. When selecting an export manually, the export's `metadata.json` file must be selected by the user.
 
@@ -54,8 +54,12 @@ If an error is found when loading any single CVR in a CVR export, the entire exp
 
 VxAdmin allows loading CVR exports that have already been partially loaded. For example, VxCentralScan might export CVRs after scanning 5 ballots and then again after scanning 10 ballots. If the 5-CVR export is loaded first and the 10-CVR export second, the 10-CVR export loads successfully but skips the CVRs that have already been loaded.
 
+### Receiving CVRs over the Network
+
+A networked VxCentralScan sends the CVRs of each saved batch to the host VxAdmin over the local network. These CVRs carry no export signature; they are protected instead by the authenticated, encrypted connection described in [networking.md](../system-security-auditing-and-logging/system-security-architecture/networking.md "mention"). The host VxAdmin otherwise validates each received CVR as it does CVRs loaded from a USB drive, and rejects any that is not for the configured election, precinct, ballot style, or contest, or that has the ID of an already loaded CVR with different data. CVRs that have already been loaded are ignored, so a batch that is sent again is not counted twice.
+
 {% hint style="info" %}
-**User Manual Reference:** [Tally Results](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-night-guides/tally-results "mention")
+**User Manual References:** [Tally Results](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-night-guides/tally-results "mention") & [Network VxCentralScan](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/network-vxcentralscan "mention")
 {% endhint %}
 
 ### Ballot Mode
@@ -131,7 +135,7 @@ Unofficial write-in candidates can also be allocated votes in manual tallies and
 
 Vote tallying is a multi-step process which takes place on the VxAdmin backend:
 
-<figure><img src="../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (38).png" alt="Vote tallying flow: group determination, CVR aggregation, write-in and manual tally hydration from the SQLite store, then reporting" width="563"><figcaption></figcaption></figure>
 
 Every tally is specified by a set of filters and groupings. The filter defines which CVRs are excluded and included. For example, a filter might limit the CVRs to the CVRs for a specific precinct. The group determines how tallies are subdivided by CVR metadata. For example, there may be a grouping on precinct which generates tallies for each precinct separately. Groups enable multiple related tallies to be efficiently generated at once.
 
@@ -187,7 +191,7 @@ If `electionDayPollsCloseTime` and `disallowVxAdminTabulationBeforeElectionDayPo
 
 Ballot counts are tallied as part of the vote tallying flow described above, but there is a separate tallying path that _only_ calculates the ballot counts. It is used when generating ballot count reports and exports from VxAdmin. It follows the same steps as vote tallying, but is more efficient because it can compute the counts directly in the database rather than iterating through each CVR one by one.
 
-<figure><img src="../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (40).png" alt="Ballot count tallying flow: group determination, CVR aggregation and manual tally hydration from the SQLite store, then reporting" width="563"><figcaption></figcaption></figure>
 
 #### Ballot Count Definition
 
@@ -244,6 +248,8 @@ In order to adjudicate high volumes of ballots, additional adjudication station 
 
 The host VxAdmin is connected to the adjudication stations via an Ethernet network switch. In order for the network to be valid, all VxAdmins must have the same software version and there must be only one host VxAdmin. No configuration is required other than connecting the machines with Ethernet cables.
 
+Networked VxCentralScans can join the same network to send CVRs to the host VxAdmin (see [#receiving-cvrs-over-the-network](vxadmin-function.md#receiving-cvrs-over-the-network "mention")). A network holds at most 8 machines: 1 host VxAdmin plus any combination of up to 7 adjudication stations and VxCentralScans. The host VxAdmin lists the networked VxCentralScans and their connection status in its Networked Scanners view.
+
 The host VxAdmin is able to toggle multi-station adjudication on or off. Adjudication stations may only begin adjudication after it is enabled by the host VxAdmin.
 
 The adjudication stations do not need to be configured individually; they pull their configuration from the host while connected.
@@ -252,11 +258,11 @@ Unlike the host VxAdmin, which can navigate forward and backward through the ent
 
 An adjudication station cannot skip a ballot. Instead, it can escalate the ballot to the host for election manager review, which discards any unsaved changes, releases the station's claim, and assigns the station the next ballot in the queue. Escalated ballots are flagged on the host, which can work through them as a separate queue or encounter them in the main queue, where they remain in their original position. The host cannot escalate ballots and resolves an escalated ballot by adjudicating it.
 
-<figure><img src="../.gitbook/assets/image (109).png" alt=""><figcaption><p>VxAdmin Network Diagram</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (109).png" alt="Host VxAdmin connected through a network switch to multiple client VxAdmin adjudication stations" width="563"><figcaption><p>VxAdmin network diagram</p></figcaption></figure>
 
 ### Network Implementation
 
-Multi-station adjudication needs no network configuration: the host VxAdmin announces itself on the local network and adjudication stations find it automatically. A station that finds more than one host refuses to proceed. Stations always start each exchange with the host; the host never sends anything to a station unprompted.
+Multi-station adjudication needs no network configuration: the host VxAdmin announces itself on the local network and adjudication stations find it automatically. A station or VxCentralScan that finds more than one host refuses to proceed. Stations and VxCentralScans always start each exchange with the host; the host never sends anything to a station or VxCentralScan unprompted.
 
 Each ballot in the adjudication queue is claimed by one station at a time, so no two stations adjudicate the same ballot at once. A station's claim is released when it saves the adjudication or escalates the ballot. If the host has not heard from a station for 10 seconds, for example because its network cable was unplugged, the host marks the station offline and releases the ballots it had claimed so other stations can adjudicate them. Turning off multi-station adjudication on the host releases all station claims. Changes to the election configuration on the host reach every station automatically.
 

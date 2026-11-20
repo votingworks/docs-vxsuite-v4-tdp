@@ -43,7 +43,7 @@ As a rule, the sum of the number of votes for all candidates, the number of unde
 <pre><code><strong>candidate votes + undervotes + overvotes = ballots * votes allowed
 </strong></code></pre>
 
-<div><figure><img src="../.gitbook/assets/vxscan-polls-opened-report.png" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/vxscan-polls-closed-report-printed.png" alt="" width="375"><figcaption></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/vxscan-polls-opened-report.png" alt="Printed VxScan polls opened report with signature lines and zero counts for every contest" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/vxscan-polls-closed-report-printed.png" alt="Printed VxScan polls closed report with signature lines, ballot count and results for every contest" width="375"><figcaption></figcaption></figure></div>
 
 If there were multiple batches, which on VxScan is a result of pausing and resuming voting, the polls closed report contains a "Batch Summary" table with the sizes and timestamps of the batches.
 
@@ -53,10 +53,10 @@ When voting is paused, VxScan prints a voting paused report containing the total
 
 Tally results are never included in polls paused or resumed reports.
 
-<div><figure><img src="../.gitbook/assets/vxscan-voting-resumed-report.png" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/vxscan-voting-paused-report.png" alt="" width="375"><figcaption></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/vxscan-voting-resumed-report.png" alt="Printed VxScan voting resumed report with total sheets scanned and the batch summary table" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/vxscan-voting-paused-report.png" alt="Printed VxScan voting paused report with total sheets scanned, most recent batch and the batch summary table" width="375"><figcaption></figcaption></figure></div>
 
 ## Write-In Image Reports
 
 If `precinctScanEnableWriteInImageReport` is true in the system settings, poll workers can print write-in image reports from the poll worker menu after polls are closed. For each contest that allows write-ins, the report lists the total number of write-ins and includes an image of each write-in.
 
-<figure><img src="../.gitbook/assets/vxscan-write-in-image-report.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/vxscan-write-in-image-report.png" alt="Printed VxScan write-in image report with the total and an image of each write-in by contest" width="375"><figcaption></figcaption></figure>

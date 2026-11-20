@@ -41,4 +41,4 @@ Auditors can use the public [ballot-qr-code-data-format.md](../../public-documen
 
 For convenience, VotingWorks has implemented a QR code scanning website meant to be accessed on a smartphone: the [VotingWorks ballot QR code decoder](https://vx-hmpb-qr-decoder.pages.dev/). When pointed at a valid VotingWorks paper ballot QR code, the website displays the parsed contents of that QR code, including the ballot serial number. The website refers to the ballot serial number, if present, as the "Ballot ID", as shown in the screenshot below.
 
-<figure><img src="../../.gitbook/assets/vx-hmpb-qr-decoder.jpg" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/vx-hmpb-qr-decoder.jpg" alt="Ballot QR code decoder on a smartphone showing the decoded ballot hash and Ballot ID of a scanned ballot" width="375"><figcaption></figcaption></figure>
