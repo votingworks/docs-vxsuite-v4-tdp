@@ -191,6 +191,12 @@ screenshot only when the behavior can't be described without it.
 - Screenshots use their gallery ID as the file name (`vxadmin-….png`); the
   screenshots workflow keeps them current. Other new images get descriptive
   kebab-case names with no spaces.
+- Diagrams are SVG (`diagram-<name>.svg`), edited as text: labels stay
+  `<text>` (never outlined), and each file embeds the Inter font it uses so
+  it renders the same in GitBook. Rename a label by changing its text;
+  connector labels are centered on their line with a white halo, so the
+  geometry doesn't change. A new diagram can start from a Figma SVG export
+  with "Outline text" off; the file in this repo is then its source.
 
 ## Procedures
 
