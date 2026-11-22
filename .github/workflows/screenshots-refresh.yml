@@ -1,15 +1,21 @@
-# Refreshes every screenshot the pages reference from the screenshot gallery
-# (votingworks/vxsuite-screenshots), on weekdays or when run by hand, into one
-# "Refresh screenshots" pull request. Its branch, screenshots/refresh, is
-# rebuilt from main on every run, so don't push to it by hand: a screenshot
-# that needs changing is changed in the gallery. Pull requests are synced by
-# screenshots.yml; this workflow marks the refresh commit with that
-# workflow's "branch" check, since the commit is a sync itself.
+# Refreshes screenshots the pages reference from the screenshot gallery
+# (votingworks/vxsuite-screenshots) into one "Refresh screenshots" pull
+# request, when run by hand: every screenshot, or only the IDs given. Images
+# otherwise reach these pages only with their text (screenshots.yml syncs a
+# pull request's pages), and the docs bot's weekly screenshots report
+# (votingworks/vxsuite-docs-automation) lists what's out of date and which
+# IDs to refresh here. Its branch, screenshots/refresh, is rebuilt from main
+# on every run, so don't push to it by hand: a screenshot that needs
+# changing is changed in the gallery. This workflow marks the refresh commit
+# with screenshots.yml's "branch" check, since the commit is a sync itself.
 name: screenshots-refresh
 on:
-  schedule:
-    - cron: '0 14 * * 1-5'
   workflow_dispatch:
+    inputs:
+      ids:
+        description: Screenshot IDs to refresh, space-separated (blank for every screenshot)
+        required: false
+        default: ""
 
 env:
   TOOLS_URL: https://vxsuite-integration-test-screenshots.s3.us-west-2.amazonaws.com/tools
@@ -35,12 +41,18 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: screenshots/refresh
+          IDS: ${{ inputs.ids }}
         run: |
-          node "$RUNNER_TEMP/tools/sync-docs-screenshots.mjs" . --report "$RUNNER_TEMP/report.md"
+          only=()
+          if [ -n "$IDS" ]; then
+            printf '%s\n' "$IDS" > "$RUNNER_TEMP/ids.txt"
+            only=(--ids "$RUNNER_TEMP/ids.txt")
+          fi
+          node "$RUNNER_TEMP/tools/sync-docs-screenshots.mjs" . "${only[@]}" --report "$RUNNER_TEMP/report.md"
           if [ -z "$(git status --porcelain -- .gitbook/assets)" ]; then
             echo "every screenshot is current"
             stale="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')"
-            if [ -n "$stale" ]; then
+            if [ -n "$stale" ] && [ -z "$IDS" ]; then
               gh pr close "$stale" --delete-branch \
                 --comment "Every screenshot on main is current, so this refresh is no longer needed."
             fi

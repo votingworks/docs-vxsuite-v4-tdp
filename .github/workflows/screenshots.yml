@@ -18,7 +18,7 @@
 # never merges: the docs bot swaps the published screenshots in, and deletes
 # the list, before it merges the pull request.
 #
-# The weekday refresh of every page is screenshots-refresh.yml, kept separate
+# The manual refresh of every page (or chosen IDs) is screenshots-refresh.yml, kept separate
 # so pull requests list only this job. A sync commit is pushed with
 # [skip ci] (a push by this workflow's token starts no run anyway) and is
 # marked passing here, so the required "branch" check is on every head.
