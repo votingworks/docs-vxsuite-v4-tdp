@@ -14,9 +14,19 @@
 # A docs-request branch can hold previews: screenshots an open spec rendered,
 # copied in by the docs bot (votingworks/vxsuite-docs-automation) before the
 # gallery publishes them, and listed in .screenshot-previews.json. The sync
-# leaves them alone, and this check fails while any are listed, so a preview
-# never merges: the docs bot swaps the published screenshots in, and deletes
-# the list, before it merges the pull request.
+# leaves them alone.
+#
+# While .screenshot-previews.json exists (the docs bot adds it, possibly
+# empty, to every docs-request branch), the branch is in review: each
+# screenshot its changed pages use that differs from main's copy is kept at
+# <id>.review.png, with those pages pointing there and <id>.png left as on
+# main, so GitBook's diff shows the old screen beside the new one (it draws
+# an image by filename, so a screenshot changed in place shows the new one
+# on both sides). The gallery's review-names.mjs moves them; every other tool
+# reads <id>.png, so the sync runs between `un` and `re`. This check fails
+# while the branch is in review or any review copy remains: the docs bot
+# swaps in the published screenshots, puts the stable names back and deletes
+# the list before it merges, so main only ever has <id>.png.
 #
 # The manual refresh of every page (or chosen IDs) is screenshots-refresh.yml, kept separate
 # so pull requests list only this job. A sync commit is pushed with
@@ -56,19 +66,24 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git diff --name-only origin/main...HEAD -- '*.md' > "$RUNNER_TEMP/pages.txt"
-          if [ ! -s "$RUNNER_TEMP/pages.txt" ] && [ ! -f .screenshot-previews.json ]; then
-            echo "no pages changed"; exit 0
-          fi
           mkdir -p "$RUNNER_TEMP/tools"
-          for f in sync-docs-screenshots.mjs png-diff.mjs; do
+          for f in sync-docs-screenshots.mjs png-diff.mjs review-names.mjs; do
             curl -fsS "$TOOLS_URL/$f" -o "$RUNNER_TEMP/tools/$f"
           done
+          node "$RUNNER_TEMP/tools/review-names.mjs" . un
+          git diff --name-only origin/main...HEAD -- '*.md' > "$RUNNER_TEMP/pages.txt"
+          in_review=false
+          [ -f .screenshot-previews.json ] && in_review=true
+          if [ ! -s "$RUNNER_TEMP/pages.txt" ] && [ "$in_review" != true ]; then
+            echo "no pages changed"; exit 0
+          fi
           node "$RUNNER_TEMP/tools/sync-docs-screenshots.mjs" . \
             --pages "$RUNNER_TEMP/pages.txt" --report "$RUNNER_TEMP/report.md"
+          if [ "$in_review" = true ]; then
+            node "$RUNNER_TEMP/tools/review-names.mjs" . re --pages "$RUNNER_TEMP/pages.txt"
+          fi
 
-          # Previews the docs bot copied in: kept as committed (whatever the
-          # sync tool's version), and listed so the check can fail on them.
+          # Previews the docs bot copied in, listed so the check can fail on them.
           previews=""
           if [ -f .screenshot-previews.json ]; then
             previews="$(python3 -I - <<'PY'
@@ -77,8 +92,6 @@ jobs:
               print(f"- `{capture_id}` from {record.get('spec', 'an open spec')}")
           PY
           )"
-            python3 -I -c 'import json; print("\n".join(f".gitbook/assets/{i}.png" for i in json.load(open(".screenshot-previews.json"))))' \
-              | xargs -r git checkout -q HEAD -- 2>/dev/null || true
           fi
 
           # The sync skips a name the gallery doesn't publish (it may be a
@@ -98,14 +111,15 @@ jobs:
           PY
           )"
 
-          if [ -n "$(git status --porcelain -- .gitbook/assets)" ]; then
+          if [ -n "$(git status --porcelain -- .gitbook/assets '*.md')" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add .gitbook/assets
+            git add -A -- .gitbook/assets '*.md'
             git commit -q -m "Sync screenshots from the gallery [skip ci]" -m "$(cat "$RUNNER_TEMP/report.md")"
             git push -q origin HEAD
             if [ -n "$missing" ]; then state=failure desc="Pages reference images that don't exist"
             elif [ -n "$previews" ]; then state=failure desc="Previews in place; the published screenshots aren't swapped in yet"
+            elif [ "$in_review" = true ]; then state=failure desc="In review; the docs bot restores screenshot names before merging"
             else state=success desc="Screenshots synced from the gallery"; fi
             gh api "repos/$GITHUB_REPOSITORY/statuses/$(git rev-parse HEAD)" \
               -f state="$state" -f context="Screenshots are up-to-date" \
@@ -115,8 +129,13 @@ jobs:
             printf 'These screenshots are previews from open screenshot specs. The docs bot swaps in the published copies when the docs request is approved, before it merges:\n%s\n\n' "$previews" \
               | tee -a "$GITHUB_STEP_SUMMARY"
           fi
+          if [ "$in_review" = true ]; then
+            reviewed="$(find .gitbook/assets -maxdepth 1 -name '*.review.png' -printf '- `%f`\n' 2>/dev/null | sed 's/\.review\.png`$/`/' | sort || true)"
+            printf 'In review (.screenshot-previews.json is present). Changed screenshots are under review names so the GitBook diff shows old beside new; the docs bot restores the stable names when the request is approved, before it merges:\n%s\n\n' "${reviewed:-(none changed)}" \
+              | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
           if [ -n "$missing" ]; then
             printf 'Pages reference images that are neither in the repository nor published in the gallery:\n%s\n' "$missing" \
               | tee -a "$GITHUB_STEP_SUMMARY"
           fi
-          if [ -n "$missing" ] || [ -n "$previews" ]; then exit 1; fi
+          if [ -n "$missing" ] || [ -n "$previews" ] || [ "$in_review" = true ]; then exit 1; fi
