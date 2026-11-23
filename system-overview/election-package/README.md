@@ -9,6 +9,8 @@ After VxAdmin is configured, the election package can then be digitally signed a
 The election package is a zip archive (a `.zip` file). The zip archive has the following content:
 
 * Election Definition (`election.json`)
+* Ballot Positions (`ballotPositions.jsonl`), split-file packages only
+* Candidate Orderings (`candidateOrderings.jsonl`), split-file packages only
 * App Strings (`appStrings.json`)
 * Audio IDs (`audioIds.json`)
 * Audio Clips (`audioClips.jsonl`)
@@ -17,11 +19,40 @@ The election package is a zip archive (a `.zip` file). The zip archive has the f
 * System Settings (`systemSettings.json`)
 * Metadata (`metadata.json`)
 
+An election package has one of two formats, chosen by the `splitElectionDefinition` setting in the system settings file:
+
+* **Single-file:** The election definition file holds the whole election definition, including each ballot style's bubble ballot grid positions and candidate order.
+* **Split-file:** When `splitElectionDefinition` is `true`, each ballot style's bubble ballot grid positions are in the [ballot positions file](#ballot-positions) and each ballot style group's candidate order is in the [candidate orderings file](#candidate-orderings). The election definition file holds the rest.
+
 ### Election Definition
 
 The election definition file includes the information that defines the election and ballots, including but not limited to definitions for contests, ballot styles, precincts, polling places, parties, multi-lingual ballot translations, and ballot layouts. The system accepts two formats: the [VxSuite Election Definition](vxsuite-election-definition.md) format or the [Ballot Definition Common Data Format (CDF)](ballot-definition-cdf.md). When using the Ballot Definition CDF, some features are not available.
 
+In a split-file package, the election definition file uses the VxSuite Election Definition format, not the Ballot Definition CDF. Its ballot styles have no `ballotPositions` or `orderedCandidatesByContest` attributes, and the file is written without whitespace between JSON elements.
+
 The election definition file is required to be present in the election package.
+
+### Ballot Positions
+
+The ballot positions file is a [JSONL](https://jsonlines.org/) file that contains the bubble ballot grid positions for each ballot style, one line per ballot style that has a bubble ballot layout. Each line holds a ballot style ID and the ballot style's positions, organized by sheet, in the format described under [Bubble Ballot Grid Positions](vxsuite-election-definition.md#bubble-ballot-grid-positions). For example, a single line would appear as:
+
+```json
+{ "ballotStyleId": "1_en", "positions": [[[...], [...]]] }
+```
+
+The ballot positions file is present only in split-file packages.
+
+### Candidate Orderings
+
+The candidate orderings file is a JSONL file that contains the candidate order for each ballot style group, one line per ballot style group. A ballot style group is the set of ballot styles that are identical except for language, so all language versions of a ballot share one candidate order. Each line maps the ID of each candidate contest to its ordered list of candidate options, in the format of a ballot style's `orderedCandidatesByContest` attribute in the [VxSuite Election Definition](vxsuite-election-definition.md#ballot-style). For example, a single line would appear as:
+
+```json
+{ "ballotStyleGroupId": "1", "orderings": { "mayor": [{ "id": "alice" }, { "id": "bob" }] } }
+```
+
+When importing a split-file package, VxAdmin rejects the election package if the file has more than one line for the same ballot style group, a line for a ballot style group that is not in the election definition, or a candidate ordering that does not match its contest.
+
+The candidate orderings file is present only in split-file packages.
 
 ### App Strings
 
@@ -137,6 +168,8 @@ There are two hashes for each election which are both critical to operation and 
 
 The **ballot hash** is the SHA256 hash of the election definition file and represents a snapshot of all election-specific data which determines the ballot, including contest definitions and ballot layout. Ballots must include a machine-readable version of the ballot hash (e.g., a QR code or a pattern of timing marks). When a ballot is scanned, the scanner checks that the ballot has the expected ballot hash. The ballot hash from the ballot must match the ballot hash from the scanner's configured election definition.
 
+In a split-file package, the ballot hash covers the three files that together define the ballot. It is the SHA256 hash of the hexadecimal SHA256 hashes of the election definition file, the ballot positions file, and the candidate orderings file, joined in that order. A change to any of the three files changes the ballot hash.
+
 Any change to election content changes the ballot hash. The system treats the changed election definition as a new one, so the scanner rejects ballots that carry the previous hash. The system's strict checking of the ballot hash prevents situations where a change to the election definition leads to ballots being miscounted (for example, if the order of two candidates is swapped). As a result, any changes to the election definition require reprinting all ballots.
 
 The **election package hash** is the SHA256 hash of the entire election package, which includes both the election definition and all other files. The election package hash is displayed on screen to election managers and system administrators. It allows the user to ascertain which election package was used to configure a machine. The election package hash is _not_ used during ballot scanning.
@@ -147,6 +180,6 @@ The **election ID** shown on screen and included in printed reports contains a s
 
 ## Ballot Rotation
 
-Ballot rotation is specified by the defined candidate order in each ballot style as opposed to specifying a rule for the voting system to apply to a given list of candidates. The system supports tabulation of ballots with any type of candidate ordering. This enables flexibility for jurisdiction-specific ballot rotation rules that can be defined in the source system creating the ballot definition.
+Ballot rotation is specified by the defined candidate order in each ballot style as opposed to specifying a rule for the voting system to apply to a given list of candidates. The system supports tabulation of ballots with any type of candidate ordering. This enables flexibility for jurisdiction-specific ballot rotation rules that can be defined in the source system creating the ballot definition. In a split-file package, the candidate order for each ballot style group is defined in its line of the [candidate orderings file](#candidate-orderings).
 
 Election officials can verify their ballot rotation configuration by configuring VxMark or VxMarkScan, selecting different precincts (and by extension ballot styles), and confirming that the order of candidates differs per precinct as expected.
