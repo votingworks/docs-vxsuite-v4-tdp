@@ -12,6 +12,8 @@ A photo is an image named photo-..., or a JPEG/HEIC/WebP/AVIF that isn't a
 gallery screenshot; a screenshot is a gallery ID (vx<app>-....png).
 
 usage: check-images.py <base ref>   (from the repository root, in CI)
+       check-images.py --list-photos <base ref> [<head ref>]
+         print the photos added or changed since <base ref>, one per line
 """
 import json, os, re, subprocess, sys, urllib.parse
 
@@ -52,6 +54,12 @@ def shape(w, h):
 
 def warn(msg, path=None):
     print(f"::warning{' file=' + path if path else ''}::{msg}")
+
+
+def changed_photos(base, head="HEAD"):
+    changed = git("diff", "--name-only", "--diff-filter=AM", base, head).splitlines()
+    return [p for p in changed if p.startswith(ASSETS) and p.lower().endswith(RASTER)
+            and is_photo(os.path.basename(p)) and os.path.exists(p)]
 
 
 def main(base):
@@ -106,4 +114,7 @@ def main(base):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1] if len(sys.argv) > 1 else "origin/main")
+    if sys.argv[1:2] == ["--list-photos"]:
+        print("\n".join(changed_photos(*sys.argv[2:4])))
+    else:
+        main(sys.argv[1] if len(sys.argv) > 1 else "origin/main")

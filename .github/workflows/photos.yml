@@ -1,9 +1,22 @@
-# Checks the images a pull request adds or changes, and the image rows on the
-# pages it changes, against the style guide's photo rules
-# (.github/scripts/check-images.py). Fails on location metadata (GPS and
-# similar): this repository is public, and a photo straight off a phone
+# Brings the photos a pull request adds or changes to the style guide's
+# standard, then checks them.
+#
+# Fix: runs the gallery's process-photos.py on the PR's changed photos
+# (upright, at most 1600 px, no metadata but the color profile; never
+# cropped or renamed) and pushes the result to the branch as the docs bot.
+# That push starts this workflow and every other check again, as a push
+# with this workflow's own token wouldn't; the second run finds nothing to
+# fix and goes straight to the check. Pull requests from forks get the check
+# only.
+#
+# Check (.github/scripts/check-images.py): fails on location metadata (GPS
+# and similar): this repository is public, and a photo straight off a phone
 # carries where it was taken. Everything else (size, format, shape, name,
 # photos beside screenshots or of mixed shapes in a row) is a warning.
+#
+# The fix keeps location metadata out of main and GitBook, but the original
+# file is already in the pull request's history once it's pushed: turn off
+# location tagging on the camera.
 name: photos
 on:
   pull_request:
@@ -12,19 +25,61 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: photos-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+env:
+  TOOL: https://vxsuite-integration-test-screenshots.s3.us-west-2.amazonaws.com/tools/process-photos.py
+
 jobs:
   photos:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
+      - id: app
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.DOCS_BOT_APP_ID }}
+          private-key: ${{ secrets.DOCS_BOT_PRIVATE_KEY }}
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          token: ${{ steps.app.outputs.token || github.token }}
           fetch-depth: 0
-          persist-credentials: false
-      - name: Install exiftool
-        run: sudo apt-get install -y -qq libimage-exiftool-perl >/dev/null
+      - name: Install exiftool and Pillow
+        run: |
+          sudo apt-get install -y -qq libimage-exiftool-perl >/dev/null
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/pip" install -q pillow pillow-heif
+          curl -fsS "$TOOL" -o "$RUNNER_TEMP/process-photos.py"
+      - name: Fix the changed photos
+        id: fix
+        if: steps.app.outputs.token != ''
+        env:
+          BASE: ${{ github.event.pull_request.base.ref }}
+          APP_SLUG: ${{ steps.app.outputs.app-slug }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+        run: |
+          git fetch -q origin "$BASE"
+          mapfile -t photos < <(python3 .github/scripts/check-images.py --list-photos "$(git merge-base "origin/$BASE" HEAD)")
+          [ "${#photos[@]}" -gt 0 ] || { echo "No photos changed."; exit 0; }
+          "$RUNNER_TEMP/venv/bin/python" "$RUNNER_TEMP/process-photos.py" "${photos[@]}" | tee "$RUNNER_TEMP/report.txt" || true
+          git diff --quiet && { echo "Photos already meet the standard."; exit 0; }
+          id="$(gh api "/users/${APP_SLUG}[bot]" --jq .id)"
+          git config user.name "${APP_SLUG}[bot]"
+          git config user.email "${id}+${APP_SLUG}[bot]@users.noreply.github.com"
+          git commit -q -am "Bring photos to the docs standard" -m "$(cat "$RUNNER_TEMP/report.txt")"
+          for attempt in 1 2 3; do
+            git push -q origin HEAD && { echo "pushed=true" >> "$GITHUB_OUTPUT"; exit 0; }
+            git pull -q --rebase origin "$HEAD_REF"
+          done
+          echo "::error::Couldn't push the fixed photos after three tries."; exit 1
       - name: Check images
+        if: steps.fix.outputs.pushed != 'true'
         env:
           BASE: ${{ github.event.pull_request.base.ref }}
         run: |
