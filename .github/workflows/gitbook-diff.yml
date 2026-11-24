@@ -1,0 +1,59 @@
+# Warns when a pull request will make GitBook's diff mark every page as
+# edited. GitBook builds a pull request's preview against main's content and
+# rebuilds the whole space, rather than importing just the changes, when the
+# branch (compared with main as it is now):
+#
+# - lacks an image main has: deleted, renamed, or added to main after the
+#   branch was cut (merge main in to fix that one); or
+# - adds an image byte-identical to another one.
+#
+# Found with controlled test PRs (docs-vxsuite-v4-tdp #46-#54). The pages
+# are unchanged; only the review diff becomes useless. Unused images are
+# harmless, so leave a replaced image in place and remove unused ones in a
+# separate cleanup PR. This check never fails: a cleanup is allowed to
+# rebuild.
+name: gitbook-diff
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Check for removed or duplicate images
+        env:
+          BASE: ${{ github.event.pull_request.base.ref }}
+        run: |
+          git fetch -q origin "$BASE"
+          assets() { git ls-tree -r "$1" -- .gitbook/assets | awk -F '\t' '{split($1, m, " "); print m[3] "\t" $2}'; }
+          duplicates() { assets "$1" | sort | awk -F '\t' '{n[$1] = n[$1] (n[$1] ? ", " : "") $2; c[$1]++} END {for (h in c) if (c[h] > 1) print n[h]}' | sort; }
+          removed="$(git diff --name-only --diff-filter=D "origin/$BASE" HEAD -- .gitbook/assets)"
+          added_dupes="$(comm -13 <(duplicates "origin/$BASE") <(duplicates HEAD))"
+          found=false
+          while IFS= read -r f; do
+            [ -n "$f" ] || continue
+            found=true
+            echo "::warning file=$f::$f is on $BASE but not on this branch, so GitBook's diff will mark every page as edited. Keep the image (an unused one is harmless), or merge $BASE in if it was added there after this branch was cut."
+          done <<< "$removed"
+          while IFS= read -r group; do
+            [ -n "$group" ] || continue
+            found=true
+            echo "::warning::These images are byte-identical: $group. GitBook's diff will mark every page as edited; make each image's bytes unique."
+          done <<< "$added_dupes"
+          if [ "$found" = true ]; then
+            { echo "### GitBook's diff will mark every page as edited"
+              echo
+              echo "See the warnings on this run. The pages themselves are fine; only the review diff is affected."; } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "No removed or duplicate images: GitBook's diff will show only the pages this branch changes."
+          fi
