@@ -6,7 +6,7 @@
 
 VxAdmin, VxPrint, and VxCentralScan are laptops which connect to peripherals as needed. The laptop is a [custom configured HP Elitebook 840 14" G11](vxadmin-and-vxcentralscan-hardware.md#laptop-specification).
 
-<div><figure><img src="../.gitbook/assets/840-front.jpg" alt="HP EliteBook 840 laptop open, showing the keyboard and screen" width="375"><figcaption><p>Laptop keyboard and screen</p></figcaption></figure> <figure><img src="../.gitbook/assets/840-side.avif" alt="Left and right sides of the HP EliteBook 840 showing its HDMI, USB, and other ports" width="430"><figcaption><p>Laptop ports</p></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/840-front.jpg" alt="HP EliteBook 840 laptop open, showing the keyboard and screen" width="375"><figcaption><p>Laptop keyboard and screen</p></figcaption></figure> <figure><img src="../.gitbook/assets/840-side.jpg" alt="Left and right sides of the HP EliteBook 840 showing its HDMI, USB, and other ports" width="430"><figcaption><p>Laptop ports</p></figcaption></figure></div>
 
 The relevant hardware interfaces are:
 
@@ -30,7 +30,7 @@ The included printer tray can be extended from letter size to legal size. Voting
 
 The printer has an Ethernet port on the back which is not used for operation of VxPrint, so it is blocked by an RJ45 port blocker.
 
-<figure><img src="../.gitbook/assets/VxPrint-System-Pic-Hardware.webp" alt="VxPrint laptop on the lock screen connected to an HP LaserJet Pro 4001dn printing a ballot"><figcaption><p>VxPrint laptop connected to ballot printer</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/VxPrint-System-Pic-Hardware.jpg" alt="VxPrint laptop on the lock screen connected to an HP LaserJet Pro 4001dn printing a ballot"><figcaption><p>VxPrint laptop connected to ballot printer</p></figcaption></figure>
 
 ### VxCentralScan
 
