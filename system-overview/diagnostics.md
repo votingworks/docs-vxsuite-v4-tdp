@@ -43,7 +43,7 @@ For scanners (VxScan and VxCentralScan), the currently configured mark and write
 The toner level and any alerts from the printer are displayed, such as sleep mode, paper jams, or hardware malfunctions. The user may perform a test print, which will send a mock report to the printer. The user inspects the printed document and confirms whether the test print was successful or failed.
 
 {% hint style="info" %}
-**User Manual Reference:** [VxAdmin Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxadmin-system-setup/vxadmin-diagnostics "mention")
+**User Manual Reference:** [VxAdmin Diagnostics](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxadmin-system-setup/vxadmin-diagnostics "mention")
 {% endhint %}
 
 ## VxCentralScan Diagnostics
@@ -59,7 +59,7 @@ The user may perform a test scan, which requires that a blank white sheet of pap
 When local networking is turned on, VxCentralScan's diagnostics show the network status: whether VxCentralScan is connected to the local network, and whether it is connected to a host VxAdmin or why not (no host found, more than one host, a different software version, or a different election).
 
 {% hint style="info" %}
-**User Manual Reference:** [VxCentralScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/vxcentralscan-diagnostics "mention")
+**User Manual Reference:** [VxCentralScan Diagnostics](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxcentralscan/vxcentralscan-diagnostics "mention")
 {% endhint %}
 
 ## VxScan Diagnostics
@@ -81,7 +81,7 @@ The diagnostics page will also display details about any printer errors if the p
 The user may test the speaker by triggering the chime sound and confirming whether they heard the chime or not.
 
 {% hint style="info" %}
-**User Manual Reference:** [VxScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxscan/vxscan-diagnostics "mention")
+**User Manual Reference:** [VxScan Diagnostics](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxscan/vxscan-diagnostics "mention")
 {% endhint %}
 
 ## VxMarkScan Diagnostics
@@ -110,7 +110,7 @@ The user may perform a test of the personal assistive technology (PAT) input, wh
 The user may perform a test of the front headphone input by connecting headphones and triggering a chime. The user must indicate whether they heard the chime or not, corresponding to a pass or fail respectively.
 
 {% hint style="info" %}
-**User Manual Reference:** [VxMarkScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmarkscan/diagnostics "mention")
+**User Manual Reference:** [VxMarkScan Diagnostics](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxmarkscan/diagnostics "mention")
 {% endhint %}
 
 ## VxMark Diagnostics
@@ -140,7 +140,7 @@ The user may test the onboard speaker by triggering audio through the system spe
 The user may test the barcode reader by scanning a barcode. The test passes automatically once a scan is detected during the test.
 
 {% hint style="info" %}
-**User Manual Reference:** [VxMark Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmark/diagnostics "mention")
+**User Manual Reference:** [VxMark Diagnostics](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxmark/diagnostics "mention")
 {% endhint %}
 
 ## VxPrint Diagnostics
@@ -150,5 +150,5 @@ The user may test the barcode reader by scanning a barcode. The test passes auto
 The toner level and any alerts from the attached HP LaserJet printer are displayed, such as sleep mode, paper jams, or hardware malfunctions. The user may perform a test print, which sends a mock document to the printer. The user inspects the printed document and confirms whether the test print was successful or failed.
 
 {% hint style="info" %}
-**User Manual Reference:** [VxPrint Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxprint/vxprint-diagnostics "mention")
+**User Manual Reference:** [VxPrint Diagnostics](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxprint/vxprint-diagnostics "mention")
 {% endhint %}

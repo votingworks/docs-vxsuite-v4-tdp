@@ -36,7 +36,7 @@ The BMD itself must be padded as shown below for transport and vibrational testi
 
 ### Assembly
 
-Assembly instructions are covered in the user manual under [VxMarkScan Hardware Setup](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmarkscan/vxmarkscan-hardware-setup "mention"). In short, the legs are unfolded and the power block holder is set on the legs with the power block inside. The BMD then fits onto the legs with grooves on its underside.
+Assembly instructions are covered in the user manual under [VxMarkScan Hardware Setup](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxmarkscan/vxmarkscan-hardware-setup "mention"). In short, the legs are unfolded and the power block holder is set on the legs with the power block inside. The BMD then fits onto the legs with grooves on its underside.
 
 <div><figure><img src="../.gitbook/assets/PXL_20241119_203621085.jpg" alt="Unfolded legs with the power block holder and power block set on top" width="563"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/PXL_20241119_204010865.jpg" alt="Fully assembled VxMarkScan on its legs with the privacy shield attached" width="375"><figcaption></figcaption></figure></div>
 

@@ -8,7 +8,7 @@ At this threshold, marks such as a light dot, a fold through a bubble, a stray m
 
 Examples of invalid and valid marks along with the score for that mark (in teal, below each bubble) are shown below.
 
-The mark threshold set on a scanner can be checked by an election official at any point by viewing the readiness report for that device as described in [diagnostics.md](../system-overview/diagnostics.md "mention") (see also [VxScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxscan/vxscan-diagnostics "mention") and [VxCentralScan Diagnostics](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/vxcentralscan-diagnostics "mention") in the user manual).
+The mark threshold set on a scanner can be checked by an election official at any point by viewing the readiness report for that device as described in [diagnostics.md](../system-overview/diagnostics.md "mention") (see also [VxScan Diagnostics](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxscan/vxscan-diagnostics "mention") and [VxCentralScan Diagnostics](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxcentralscan/vxcentralscan-diagnostics "mention") in the user manual).
 
 ## Invalid Marks
 

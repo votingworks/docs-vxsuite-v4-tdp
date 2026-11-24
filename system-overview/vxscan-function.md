@@ -17,7 +17,7 @@ Election managers normally install the thermal paper rolls via a guided flow. Th
 The printer roll can be loaded at any time, including when VxScan is off. It only requires opening the access door which may be sealed.
 
 {% hint style="info" %}
-**User Manual Reference:** [Printer Management](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxscan/printer-management "mention")
+**User Manual Reference:** [Printer Management](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxscan/printer-management "mention")
 {% endhint %}
 
 ### Scanner Management
@@ -31,7 +31,7 @@ The embedded scanner has image sensors that are calibrated at the factory and ge
 The scanner's cover can be opened for cleaning, during which scanning will be disabled and the application will show a warning on screen if the polls are open.
 
 {% hint style="info" %}
-**User Manual Reference:** [Scanner Management](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxscan/scanner-management "mention")
+**User Manual Reference:** [Scanner Management](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxscan/scanner-management "mention")
 {% endhint %}
 
 ### Audio Management
@@ -43,7 +43,7 @@ VxScan makes noises whenever a ballot is accepted or rejected. The ballot accept
 VxScan is configured with a [configuration package](election-package/) exported from VxAdmin. The election definition includes the ballot layouts necessary for interpreting ballots and the system settings which indicate what type of ballot issues (e.g., overvotes) require adjudication.
 
 {% hint style="info" %}
-**User Manual Reference:** [Configure VxScan](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxscan/configure-vxscan "mention")
+**User Manual Reference:** [Configure VxScan](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxscan/configure-vxscan "mention")
 {% endhint %}
 
 ### Polling Place Selection
@@ -88,7 +88,7 @@ If `electionDayPollsCloseTime` and `disallowClosingPollsBeforeElectionDayPollsCl
 If the polls have been closed, they can be re-opened only if a system administrator resets the polls to paused. Only the system administrator may do this—poll workers and election managers cannot—as VVSG 2.0 allows (VVSG 2.0 1.1.7-E). Once polls have been reset to paused by the system administrator, voting may be resumed by a poll worker. The goal of this flow is to allow voting to continue after a poll worker has prematurely closed the polls.
 
 {% hint style="info" %}
-**User Manual Reference:** [Opening Polls](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-day-guides/opening-polls "mention"), [Closing Polls](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-day-guides/closing-polls "mention"), [Additional Poll Worker Actions](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxscan/additional-poll-worker-actions "mention")
+**User Manual Reference:** [Opening Polls](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/election-day-guides/opening-polls "mention"), [Closing Polls](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/election-day-guides/closing-polls "mention"), [Additional Poll Worker Actions](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxscan/additional-poll-worker-actions "mention")
 {% endhint %}
 
 ## Scanning
@@ -106,7 +106,7 @@ If the `precinctScanAdjudicationReasons` includes adjudicating unmarked write-in
 Once the ballot is cast, whether immediately after interpretation or after the voter confirms to cast a ballot with errors, the image and interpretation are both saved to disk and exported to the inserted USB drive as a CVR in the Common Data Format (CDF). The sheet count shown on screen will increment accordingly.
 
 {% hint style="info" %}
-**User Manual Reference:** [Assisting Voters](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-day-guides/assisting-voters "mention")
+**User Manual Reference:** [Assisting Voters](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/election-day-guides/assisting-voters "mention")
 {% endhint %}
 
 ### Visual Settings
@@ -130,7 +130,7 @@ Continuous export can be disabled by an election manager if need be, for example
 CVRs can be exported directly from the election manager menu, in which case they export all at once.
 
 {% hint style="info" %}
-**User Manual Reference:** [Additional VxScan Settings #Saving CVRs](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxscan/additional-vxscan-settings#saving-cvrs "mention")
+**User Manual Reference:** [Additional VxScan Settings #Saving CVRs](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxscan/additional-vxscan-settings#saving-cvrs "mention")
 {% endhint %}
 
 ## Reports

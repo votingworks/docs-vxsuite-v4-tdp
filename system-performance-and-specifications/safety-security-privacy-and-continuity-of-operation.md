@@ -4,7 +4,7 @@ The following article and linked related articles are intended to cover the docu
 
 ## Safety
 
-To eliminate hazards (VVSG 2.0 8.1-K), devices associated with the voting system are certified in accordance with the requirements of UL 62368-1. See [#eliminating-hazards](../audio-visual-and-display-screen-settings.md#eliminating-hazards "mention"). VxSuite hardware is designed to eliminate hazards from shock, radiation, heat, and mechanical dangers when used and maintained in accordance with the [VxSuite User Manual - v4](https://app.gitbook.com/o/-MG9xpTX0GFiCyXHEhNe/s/vh0Xx7zclRU0SsZ9mvKy/ "mention").
+To eliminate hazards (VVSG 2.0 8.1-K), devices associated with the voting system are certified in accordance with the requirements of UL 62368-1. See [#eliminating-hazards](../audio-visual-and-display-screen-settings.md#eliminating-hazards "mention"). VxSuite hardware is designed to eliminate hazards from shock, radiation, heat, and mechanical dangers when used and maintained in accordance with the [VxSuite User Manual - v4](https://app.gitbook.com/o/-MG9xpTX0GFiCyXHEhNe/s/Blk9V7L3xSoGDrocz6MA/ "mention").
 
 ## Security
 
@@ -18,7 +18,7 @@ The provisions for voter privacy on VxScan are described in [preserving-voter-pr
 
 ### Error Recovery
 
-The voting system is designed to recover from errors as gracefully as possible. Displayed error messages, as enumerated in the error message sections in the [VxSuite User Manual - v4](https://app.gitbook.com/o/-MG9xpTX0GFiCyXHEhNe/s/vh0Xx7zclRU0SsZ9mvKy/ "mention"), are written to guide users to address the error. If the user encounters a recoverable error, the error message instructs them how to continue operation. For example, if a smart card is inserted backward, the message prompts the user to insert it correctly. If the user encounters an unrecoverable software error, the error message prompts the user to restart the machine. Most problematic software states are resolved by a restart. After restarting, operation can continue.
+The voting system is designed to recover from errors as gracefully as possible. Displayed error messages, as enumerated in the error message sections in the [VxSuite User Manual - v4](https://app.gitbook.com/o/-MG9xpTX0GFiCyXHEhNe/s/Blk9V7L3xSoGDrocz6MA/ "mention"), are written to guide users to address the error. If the user encounters a recoverable error, the error message instructs them how to continue operation. For example, if a smart card is inserted backward, the message prompts the user to insert it correctly. If the user encounters an unrecoverable software error, the error message prompts the user to restart the machine. Most problematic software states are resolved by a restart. After restarting, operation can continue.
 
 ### Machine Replacement
 
@@ -27,7 +27,7 @@ If a machine is damaged to the point of being inoperable, a replacement machine 
 * **VxScan:** Switch to scanning on the replacement VxScan and, at the end of the election, aggregate the cast vote records from both the damaged and replacement VxScans.
 * **VxMarkScan:** Voters should start new voting sessions on the replacement VxMarkScan.
 * **VxCentralScan:** The document scanner can be replaced. If the laptop is damaged and cast vote records were never exported or sent to VxAdmin, the scanned ballots should be re-scanned with the replacement laptop.
-* **VxAdmin:** If a backup was saved, the replacement laptop can be restored from it as described in [Backup and Restore](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxadmin-system-setup/backup-and-restore "mention"). Otherwise, the laptop should be reconfigured with the election package and any cast vote records should be reloaded from the various USB drives.
+* **VxAdmin:** If a backup was saved, the replacement laptop can be restored from it as described in [Backup and Restore](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxadmin-system-setup/backup-and-restore "mention"). Otherwise, the laptop should be reconfigured with the election package and any cast vote records should be reloaded from the various USB drives.
 
 ### Paper Processes
 
