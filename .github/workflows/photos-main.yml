@@ -67,9 +67,12 @@ jobs:
           if [ -z "$BEFORE" ] || [ "$BEFORE" = 0000000000000000000000000000000000000000 ]; then
             echo "No earlier commit to compare with."; exit 0
           fi
-          git checkout -q "$AFTER"
-          mapfile -t photos < <(python3 .github/scripts/check-images.py --list-photos "$BEFORE" "$AFTER")
-          [ "${#photos[@]}" -gt 0 ] || { echo "No photos changed."; exit 0; }
+          # Stay on main, which has the scripts; list what the range changed.
+          git fetch -q origin "$BEFORE" "$AFTER" 2>/dev/null || true
+          list="$(python3 .github/scripts/check-images.py --list-photos "$BEFORE" "$AFTER")"
+          [ -n "$list" ] || { echo "No photos changed."; exit 0; }
+          mapfile -t photos <<< "$list"
+          echo "Photos changed in the range: ${#photos[@]}"
           PY="$RUNNER_TEMP/venv/bin/python"
           "$PY" "$RUNNER_TEMP/process-photos.py" --check --json "$RUNNER_TEMP/check.json" "${photos[@]}" && { echo "Photos meet the standard."; exit 0; }
           location="$("$PY" -c 'import json,sys; print(sum("including" in a for r in json.load(open(sys.argv[1])) for a in r["actions"]))' "$RUNNER_TEMP/check.json")"
