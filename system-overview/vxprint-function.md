@@ -4,7 +4,7 @@ VxPrint is the system's on-demand ballot printer. It prints blank official and t
 
 ## Configuration
 
-VxPrint is configured with a signed [election-package](election-package/ "mention") exported from VxAdmin, loaded by an election manager from a USB drive. In addition to the election definition and system settings, the election package must contain the [ballots file](election-package/#ballots), which holds the pre-rendered ballot PDFs that VxPrint prints. If the election package does not include any ballots, configuration fails and VxPrint surfaces an error to the user.
+VxPrint is configured with a [configuration package](election-package/) exported from VxAdmin, loaded by an election manager from a USB drive. In addition to the election definition and system settings, the election package must contain the [ballots file](election-package/#ballots), which holds the pre-rendered ballot PDFs that VxPrint prints. If the election package does not include any ballots, configuration fails and VxPrint surfaces an error to the user.
 
 {% hint style="info" %}
 **User Manual Reference:** [Configure VxPrint](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxprint/configure-vxprint "mention")

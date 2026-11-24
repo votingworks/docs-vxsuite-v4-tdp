@@ -40,7 +40,7 @@ VxScan makes noises whenever a ballot is accepted or rejected. The ballot accept
 
 ## Configuration
 
-VxScan is configured with a signed [election package](election-package/) exported from VxAdmin. The election definition includes the ballot layouts necessary for interpreting ballots and the system settings which indicate what type of ballot issues (e.g., overvotes) require adjudication.
+VxScan is configured with a [configuration package](election-package/) exported from VxAdmin. The election definition includes the ballot layouts necessary for interpreting ballots and the system settings which indicate what type of ballot issues (e.g., overvotes) require adjudication.
 
 {% hint style="info" %}
 **User Manual Reference:** [Configure VxScan](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxscan/configure-vxscan "mention")

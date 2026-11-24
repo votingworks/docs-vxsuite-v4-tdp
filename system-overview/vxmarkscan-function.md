@@ -4,7 +4,7 @@ VxMarkScan is the system's free-standing ballot-marking device (BMD). It allows 
 
 ## Configuration
 
-VxMarkScan is configured with a signed [election package](election-package/#election-definition) exported from VxAdmin. The election definition defines the ballot styles that will be available to voters. The election definition also includes the translations defined for text on the ballot, while the [app strings](election-package/#app-strings) file contains the translations for other text shown on screen. The election package's [audio files](election-package/#audio-ids-and-audio-clips) are played for the voter in audio mode.
+VxMarkScan is configured with a [configuration package](election-package/#election-definition) exported from VxAdmin. The election definition defines the ballot styles that will be available to voters. The election definition also includes the translations defined for text on the ballot, while the [app strings](election-package/#app-strings) file contains the translations for other text shown on screen. The election package's [audio files](election-package/#audio-ids-and-audio-clips) are played for the voter in audio mode.
 
 {% hint style="info" %}
 **User Manual Reference:** [VxMarkScan](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmarkscan "mention")

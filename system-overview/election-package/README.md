@@ -2,7 +2,7 @@
 
 The election package contains all of the information that defines an election. VxAdmin is configured by inserting a USB drive and selecting an election package from the drive.
 
-After VxAdmin is configured, the election package can then be digitally signed and exported onto a USB drive in order to configure the other system components. The [digital signature](../../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/) verifies that the election package is legitimate. The other devices require that the signature is present. As a result, an election package from outside the system cannot be used to directly configure VxScan, VxMark, VxMarkScan, VxCentralScan, or VxPrint.
+After VxAdmin is configured, the election package can then be digitally signed and exported onto a USB drive as a configuration package in order to configure the other system components. The [digital signature](../../system-security-auditing-and-logging/system-security-architecture/artifact-authentication/) verifies that the configuration package is legitimate. The other devices require that the signature is present. As a result, an election package from outside the system cannot be used to directly configure VxScan, VxMark, VxMarkScan, VxCentralScan, or VxPrint.
 
 ## Election Package Contents
 

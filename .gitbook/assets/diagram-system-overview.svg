@@ -50,8 +50,8 @@
   <!-- Connector labels -->
   <text class="label" x="851.2" y="1121.5">Election Package (USB Drive)</text>
   <text class="label" x="464" y="450">Bubble Ballot PDFs</text>
-  <text class="label" x="2159.9" y="1121.5">Signed Election Package (USB Drive)</text>
-  <text class="label" x="1544" y="739">Signed Election Package (USB Drive)</text>
+  <text class="label" x="2159.9" y="1121.5">Configuration Package (USB Drive)</text>
+  <text class="label" x="1544" y="739">Configuration Package (USB Drive)</text>
   <text class="label" x="2259.5" y="277.5">Hand-marked Bubble Ballots</text>
   <text class="label" x="2752" y="437.5">Hand-marked Bubble Ballots</text>
   <text class="label" x="2986.6" y="876">Machine-marked Ballots</text>

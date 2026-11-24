@@ -19,7 +19,7 @@ An election begins with generating an [election package](system-overview/electio
 
 VxAdmin is where the election administrator performs election setup tasks and manages election results. At the beginning of an election, the user configures VxAdmin with an [election package](system-overview/election-package/). Once configured, VxAdmin is used for two key election setup tasks:
 
-* Exporting a copy of the election package to USB drives with a [digital signature](system-security-auditing-and-logging/system-security-architecture/artifact-authentication/). The election package is used to configure VxMark, VxMarkScan, VxPrint, VxScan, and VxCentralScan, and it **must** be digitally signed by VxAdmin.
+* Exporting a configuration package, a copy of the election package with a [digital signature](system-security-auditing-and-logging/system-security-architecture/artifact-authentication/), to USB drives. The configuration package is used to configure VxMark, VxMarkScan, VxPrint, VxScan, and VxCentralScan, and it **must** be digitally signed by VxAdmin.
 * Programming [role-based smart cards](system-overview/user-roles.md) that will be used to authenticate on all machines. While the "System Administrator" role is election-agnostic, the "Election Manager" and "Poll Worker" roles are election-specific and cards must be programmed for every election.
 
 VxAdmin is later used to load, store, and aggregate cast vote records from the scanners. The results are available for review or export in [several results formats](system-overview/vxadmin-results-exports/). Election administrators can mark results as official, after which no new results can be added.
@@ -29,7 +29,7 @@ VxAdmin is later used to load, store, and aggregate cast vote records from the s
 
 ## VxMark
 
-VxMark is the system's tabletop ballot-marking device (BMD) that provides an accessible voting experience. At the beginning of an election, it is configured with an [election package](system-overview/election-package/) from VxAdmin. Once configured, a voter can make vote selections in various interaction modes according to their needs.
+VxMark is the system's tabletop ballot-marking device (BMD) that provides an accessible voting experience. At the beginning of an election, it is configured with a [configuration package](system-overview/election-package/) from VxAdmin. Once configured, a voter can make vote selections in various interaction modes according to their needs.
 
 The following input modes are supported:
 
@@ -51,7 +51,7 @@ After the voter finishes their vote selections, VxMark prints a ballot via the c
 
 ## VxMarkScan
 
-VxMarkScan is the system's free-standing ballot-marking device (BMD) that provides an accessible voting experience. At the beginning of an election, it is configured with an [election package](system-overview/election-package/) from VxAdmin. Once configured, a voter can make vote selections in various interaction modes according to their needs.
+VxMarkScan is the system's free-standing ballot-marking device (BMD) that provides an accessible voting experience. At the beginning of an election, it is configured with a [configuration package](system-overview/election-package/) from VxAdmin. Once configured, a voter can make vote selections in various interaction modes according to their needs.
 
 The following input modes are supported:
 
@@ -73,7 +73,7 @@ After the voter finishes their vote selections, VxMarkScan prints a [summary bal
 
 ## VxScan
 
-VxScan is the system's precinct scanner. At the beginning of an election, it is configured with an [election package](system-overview/election-package/) from VxAdmin. The election package specifies the ballot layouts. The polls are opened by a poll worker after which casting ballots is allowed. Opening polls prints [a tally report](system-overview/vxscan-polls-reports.md) which is empty because no ballots have been scanned, also known as the zero report.
+VxScan is the system's precinct scanner. At the beginning of an election, it is configured with a [configuration package](system-overview/election-package/) from VxAdmin. The election package specifies the ballot layouts. The polls are opened by a poll worker after which casting ballots is allowed. Opening polls prints [a tally report](system-overview/vxscan-polls-reports.md) which is empty because no ballots have been scanned, also known as the zero report.
 
 Voters cast ballots by inserting their ballots into the scanner in any orientation. After interpreting the scanned ballot, the scanner drops the ballot into the ballot box and informs the voter that their ballot was successfully cast. During voting, VxScan continuously exports [cast vote records](system-overview/cast-vote-records.md) (CVRs) to an attached USB drive.
 
@@ -86,7 +86,7 @@ When polls are closed, the CVR export is completed and a [polls closed report](s
 
 ## VxCentralScan
 
-VxCentralScan is the system's batch scanner, often used to scan absentee or provisional ballots. At the beginning of an election, it is configured with an [election package](system-overview/election-package/) from VxAdmin. The election package specifies the ballot layouts.
+VxCentralScan is the system's batch scanner, often used to scan absentee or provisional ballots. At the beginning of an election, it is configured with a [configuration package](system-overview/election-package/) from VxAdmin. The election package specifies the ballot layouts.
 
 Ballots are inserted in the batch scanner's hopper and a batch scan is triggered from VxCentralScan. The ballots are scanned and interpreted in succession until the hopper is empty. If a ballot triggers a configured adjudication reason (e.g., it has an overvote), scanning pauses and the ballot is displayed on screen, at which point the user can choose to tabulate the ballot anyway or remove it without tabulating.
 
