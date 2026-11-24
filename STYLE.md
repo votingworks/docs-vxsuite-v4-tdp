@@ -218,6 +218,15 @@ GitBook site's style guide.
 - **TDP-818** Each diagram label is drawn after the lines with a white halo,
   from a `.halo` class in the file's `<style>`.
 - **TDP-819** Diagrams have a plain white background.
+- **TDP-820** Photos are JPEG files.
+- **TDP-821** A photo is 4:3 landscape at 1600×1200 or 3:4 portrait at
+  1200×1600.
+- **TDP-822** A photo never shares a row with a screenshot: give it its own
+  row.
+- **TDP-823** Photos in one row have the same shape, all 4:3 or all 3:4.
+- **TDP-824** A photo's file name is `photo-<subject>.jpg`, in lowercase
+  kebab-case: `photo-vxscan-internals.jpg`.
+- **TDP-825** A photo carries no metadata: no location, camera or date.
 
 ## Procedures
 
@@ -266,3 +275,17 @@ Advice and reasons, not rules to flag.
   using. Deleting any image makes GitBook rebuild the whole space, so its
   diff marks every page as edited. An unused image is harmless; remove
   unused images in a separate cleanup pull request.
+- **Taking photos.** Shoot in the phone's 4:3 mode, the default on iPhone
+  and Pixel, and fill the frame with the subject on a plain background.
+  Shoot landscape for setups and portrait for tall subjects. Set the camera
+  to save JPEG ("Most Compatible" on iPhone) and turn off location tagging.
+  Crop to 4:3 or 3:4 and resize to 1600 px on the long side before adding a
+  photo.
+- **The photos check** on pull requests fails on location metadata, since
+  this repository is public, and warns on the other photo rules (TDP-820 to
+  TDP-824). Strip metadata with `exiftool -all= -tagsfromfile @
+  -icc_profile <file>`, which keeps the colors and changes no pixels.
+- **Why photos and screenshots don't share rows:** screenshots come in three
+  shapes (16:10 on VxAdmin, VxCentralScan and VxPrint, 16:9 on VxScan, 9:16
+  on VxMark and VxMarkScan), and a 4:3 or 3:4 photo beside any of them
+  renders at a different height.
