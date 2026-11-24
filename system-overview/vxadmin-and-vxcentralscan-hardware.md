@@ -38,7 +38,7 @@ The fi-8170 includes an RJ45 (ethernet) port which is blocked by a port blocker 
 
 ## Bill of Materials
 
-All components for VxAdmin and VxCentralScan are commercial-off-the-shelf (COTS) components. Data sheets and related documentation are available [in the documentation repository](https://github.com/votingworks/docs-vxsuite-v4/tree/main/hardware-assets/cots-documentation/central-system).
+All components for VxAdmin and VxCentralScan are commercial-off-the-shelf (COTS) components. Data sheets and related documentation are available [in the documentation repository](https://github.com/votingworks/docs-vxsuite-v4/tree/v4.0/hardware-assets/cots-documentation/central-system).
 
 ### Shared Components (Laptop & Accessories)
 

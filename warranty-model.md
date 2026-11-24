@@ -19,7 +19,7 @@ VotingWorks requires all voting equipment customers to purchase our Technology R
 
 ## Associated Replacement Policies, Services, and Available Maintenance Agreements
 
-A sample TRUST Services Agreement is available [here](https://github.com/votingworks/docs-vxsuite-v4/blob/main/warranty-model/TRUST_Services_Agreement.pdf).
+A sample TRUST Services Agreement is available [here](https://github.com/votingworks/docs-vxsuite-v4/blob/v4.0/warranty-model/TRUST_Services_Agreement.pdf).
 
 ## Plans for Collecting, Maintaining, and Reporting Data to the EAC to Support and Validate Estimates
 
