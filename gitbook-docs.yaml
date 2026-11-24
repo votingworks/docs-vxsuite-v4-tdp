@@ -1,0 +1,11 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+site:
+  title: VxSuite TDP - v4.0
+  structure:
+    - type: space
+      key: space-tdp
+      title: VxSuite TDP - v4.0
+      path: vxsuite-tdp-v4
+      default: true
+      content:
+        directory: ./

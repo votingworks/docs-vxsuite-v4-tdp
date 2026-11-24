@@ -21,7 +21,7 @@ Programming, like authentication, takes place via the laptop's built-in USB card
 For extensive details on the authentication scheme, see the [access control documentation](../system-security-auditing-and-logging/system-security-architecture/access-control.md).
 
 {% hint style="info" %}
-**User Manual Reference:** [Smart Cards and User Roles](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxadmin-system-setup/programming-cards "mention")
+**User Manual Reference:** [Smart Cards and User Roles](https://app.gitbook.com/s/7FNpjHxUV9v7ibASIUGH/vxadmin-system-setup/programming-cards "mention")
 {% endhint %}
 
 ## USB Formatting
@@ -33,7 +33,7 @@ VxAdmin includes a utility to format USB drives to be compatible with the system
 Improperly formatted USB drives can only be detected and reformatted if there is _some_ partition already existing, so a USB drive without any partitions cannot be reformatted using VxAdmin.
 
 {% hint style="info" %}
-**User Manual Reference:** [USB Formatting](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/vxadmin-system-setup/usb-formatting "mention")
+**User Manual Reference:** [USB Formatting](https://app.gitbook.com/s/7FNpjHxUV9v7ibASIUGH/vxadmin-system-setup/usb-formatting "mention")
 {% endhint %}
 
 ## CVR Management
@@ -55,7 +55,7 @@ If an error is found when loading any single CVR in a CVR export, the entire exp
 VxAdmin allows loading CVR exports that have already been partially loaded. For example, imagine that VxCentralScan exports CVRs after scanning 5 ballots and then again after scanning 10 ballots. If we first load the 5 CVR export and then the 10 CVR export, the 10 CVR export will successfully load but will ignore the CVRs that have already been imported.
 
 {% hint style="info" %}
-**User Manual Reference:** [Tally Results](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/election-night-guides/tally-results "mention")
+**User Manual Reference:** [Tally Results](https://app.gitbook.com/s/7FNpjHxUV9v7ibASIUGH/election-night-guides/tally-results "mention")
 {% endhint %}
 
 ### Ballot Mode
@@ -105,7 +105,7 @@ Changes made in adjudication are immediately reflected in tally reports.
 The list of unofficial write-in candidates is created by the election manager as they adjudicate. The interface has an option to add a new write-in candidate and specify their name. That candidate will then be an option for other write-ins for the same contest. If there are no longer any adjudications that reference the unofficial candidates, their name will be removed from the list.
 
 {% hint style="info" %}
-**User Manual Reference:** [Adjudication](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/election-night-guides/adjudication "mention")
+**User Manual Reference:** [Adjudication](https://app.gitbook.com/s/7FNpjHxUV9v7ibASIUGH/election-night-guides/adjudication "mention")
 {% endhint %}
 
 ## Manual Tallies
@@ -127,7 +127,7 @@ In most cases, the ballot count will be the same across all contests. In some ju
 Unofficial write-in candidates can also be allocated votes in manual tallies and new unofficial write-in candidates can be added directly from the manual tallies interface.
 
 {% hint style="info" %}
-**User Manual Reference**: [Manual Tallies](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/election-night-guides/manual-tallies "mention")
+**User Manual Reference**: [Manual Tallies](https://app.gitbook.com/s/7FNpjHxUV9v7ibASIUGH/election-night-guides/manual-tallies "mention")
 {% endhint %}
 
 ## Tallying & Reports
@@ -183,7 +183,7 @@ Manual tallies are then combined with the scanned tallies in one of two ways. Fo
 The final step is for the VxAdmin backend to format the vote tallies into one of [VxAdmin's Results Export Formats](vxadmin-results-exports/) and export the result onto a USB drive or, if it is a PDF document, print it.
 
 {% hint style="info" %}
-**User Manual Reference:** [Reports](https://app.gitbook.com/s/JtZutzGTdCzsGITrdiph/election-night-guides/reports "mention")
+**User Manual Reference:** [Reports](https://app.gitbook.com/s/7FNpjHxUV9v7ibASIUGH/election-night-guides/reports "mention")
 {% endhint %}
 
 ### Ballot Count Tallying
