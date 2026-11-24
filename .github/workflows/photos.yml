@@ -1,0 +1,32 @@
+# Checks the images a pull request adds or changes, and the image rows on the
+# pages it changes, against the style guide's photo rules
+# (.github/scripts/check-images.py). Fails on location metadata (GPS and
+# similar): this repository is public, and a photo straight off a phone
+# carries where it was taken. Everything else (size, format, shape, name,
+# photos beside screenshots or of mixed shapes in a row) is a warning.
+name: photos
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  photos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install exiftool
+        run: sudo apt-get install -y -qq libimage-exiftool-perl >/dev/null
+      - name: Check images
+        env:
+          BASE: ${{ github.event.pull_request.base.ref }}
+        run: |
+          git fetch -q origin "$BASE"
+          python3 .github/scripts/check-images.py "origin/$BASE"
