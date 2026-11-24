@@ -1,0 +1,99 @@
+# Catches photos that reach main without a pull request: chiefly GitBook's
+# exports of change requests merged in its editor, which push straight to
+# main, so photos.yml never sees them. For a push that adds or changes
+# photos, runs the gallery's process-photos.py in check mode; if any photo
+# isn't at the standard (or carries location metadata), it fixes them on a
+# branch and opens a pull request as the docs bot.
+#
+# GitBook keeps the uploaded original in its own storage, so a photo
+# uploaded in the editor stays there as uploaded: this keeps main clean and
+# says so loudly, but it can't reach GitBook's copy. Turn off location
+# tagging on the camera.
+#
+# Run by hand with a commit range to check older pushes.
+name: photos-main
+on:
+  push:
+    branches: [main]
+    paths: ['.gitbook/assets/**']
+  workflow_dispatch:
+    inputs:
+      before:
+        description: Check photos changed after this commit
+        required: true
+      after:
+        description: ...up to this commit (blank for main)
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: photos-main
+  cancel-in-progress: false
+
+env:
+  TOOL: https://vxsuite-integration-test-screenshots.s3.us-west-2.amazonaws.com/tools/process-photos.py
+
+jobs:
+  photos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - id: app
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.DOCS_BOT_APP_ID }}
+          private-key: ${{ secrets.DOCS_BOT_PRIVATE_KEY }}
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ steps.app.outputs.token }}
+          fetch-depth: 0
+      - name: Install exiftool and Pillow
+        run: |
+          sudo apt-get install -y -qq libimage-exiftool-perl >/dev/null
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/pip" install -q pillow pillow-heif
+          curl -fsS "$TOOL" -o "$RUNNER_TEMP/process-photos.py"
+      - name: Fix photos on a branch and open a pull request
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          APP_SLUG: ${{ steps.app.outputs.app-slug }}
+          BEFORE: ${{ inputs.before || github.event.before }}
+          AFTER: ${{ inputs.after || github.event.after || 'main' }}
+        run: |
+          if [ -z "$BEFORE" ] || [ "$BEFORE" = 0000000000000000000000000000000000000000 ]; then
+            echo "No earlier commit to compare with."; exit 0
+          fi
+          git checkout -q "$AFTER"
+          mapfile -t photos < <(python3 .github/scripts/check-images.py --list-photos "$BEFORE" "$AFTER")
+          [ "${#photos[@]}" -gt 0 ] || { echo "No photos changed."; exit 0; }
+          PY="$RUNNER_TEMP/venv/bin/python"
+          "$PY" "$RUNNER_TEMP/process-photos.py" --check --json "$RUNNER_TEMP/check.json" "${photos[@]}" && { echo "Photos meet the standard."; exit 0; }
+          location="$("$PY" -c 'import json,sys; print(sum("including" in a for r in json.load(open(sys.argv[1])) for a in r["actions"]))' "$RUNNER_TEMP/check.json")"
+          short="$(git rev-parse --short "$AFTER")"
+          branch="photo-fix/$short"
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+            echo "$branch exists already."; exit 0
+          fi
+          git checkout -q -B "$branch" origin/main
+          "$PY" "$RUNNER_TEMP/process-photos.py" "${photos[@]}" | tee "$RUNNER_TEMP/report.txt" || true
+          git diff --quiet && { echo "Nothing left to fix on main."; exit 0; }
+          id="$(gh api "/users/${APP_SLUG}[bot]" --jq .id)"
+          git config user.name "${APP_SLUG}[bot]"
+          git config user.email "${id}+${APP_SLUG}[bot]@users.noreply.github.com"
+          if [ "$location" -gt 0 ]; then
+            title="Strip location metadata from photos (from $short)"
+            echo "::error::$location photo(s) reached main with location metadata. GitBook keeps its uploaded copies; see the pull request."
+          else
+            title="Bring photos to the docs standard (from $short)"
+          fi
+          git commit -q -am "$title" -m "$(cat "$RUNNER_TEMP/report.txt")"
+          git push -q origin "$branch"
+          body="$(printf 'Photos reached main in %s without meeting the docs standard (upright, at most 1600 px, no metadata but the color profile). This fixes them in place; nothing is renamed, cropped or deleted.\n\n```\n%s\n```\n' "$short" "$(cat "$RUNNER_TEMP/report.txt")")"
+          if [ "$location" -gt 0 ]; then
+            body="$body"$'\n\n> [!WARNING]\n> '"$location photo(s) carried location metadata. This removes it from the repository, but GitBook keeps the copy that was uploaded in its editor, and anyone with that file's link can still download it. Turn off location tagging on the camera."
+          fi
+          gh pr create --head "$branch" --base main --title "$title" --body "$body"
