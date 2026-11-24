@@ -1,0 +1,6 @@
+marks:
+  - badge: A
+    at: [0.5, 0.5]
+  - label: Test part
+    at: [0.5, 0.15]
+    to: [0.5, 0.42]
