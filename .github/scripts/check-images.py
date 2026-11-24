@@ -64,7 +64,9 @@ def changed_photos(base, head="HEAD"):
 
 def main(base):
     changed = git("diff", "--name-only", "--diff-filter=AM", f"{base}...HEAD").splitlines()
-    images = [p for p in changed if p.startswith(ASSETS) and p.lower().endswith(RASTER) and os.path.exists(p)]
+    # Sources of labeled photos (photos/) are public too: checked for location.
+    images = [p for p in changed if (p.startswith(ASSETS) or p.startswith("photos/"))
+              and p.lower().endswith(RASTER) and os.path.exists(p)]
     pages = [p for p in changed if p.endswith(".md") and os.path.exists(p)]
     meta = exif(images)
     failed = False
@@ -76,7 +78,7 @@ def main(base):
             print(f"::error file={p}::{p} carries location metadata ({', '.join(found)}). "
                   "Strip it before merging, e.g. exiftool -all= -tagsfromfile @ -icc_profile <file>.")
         name = os.path.basename(p)
-        if not is_photo(name):
+        if not is_photo(name) or p.startswith("photos/"):
             continue
         w, h = m.get("ImageWidth"), m.get("ImageHeight")
         if w and h:
@@ -115,6 +117,7 @@ def main(base):
 
 if __name__ == "__main__":
     if sys.argv[1:2] == ["--list-photos"]:
-        print("\n".join(changed_photos(*sys.argv[2:4])))
+        for photo in changed_photos(*sys.argv[2:4]):
+            print(photo)
     else:
         main(sys.argv[1] if len(sys.argv) > 1 else "origin/main")
