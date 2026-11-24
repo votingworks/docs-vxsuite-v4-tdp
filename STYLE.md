@@ -159,7 +159,7 @@ GitBook site's style guide.
 
   ```
   {% hint style="info" %}
-  **User Manual Reference:** [Configure VxScan](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/... "mention")
+  **User Manual Reference:** [Configure VxScan](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/... "mention")
   {% endhint %}
   ```
 

@@ -7,7 +7,7 @@ VxMarkScan is the system's free-standing ballot-marking device (BMD). It allows 
 VxMarkScan is configured with a [configuration package](election-package/#election-definition) exported from VxAdmin. The election definition defines the ballot styles that will be available to voters. The election definition also includes the translations defined for text on the ballot, while the [app strings](election-package/#app-strings) file contains the translations for other text shown on screen. The election package's [audio files](election-package/#audio-ids-and-audio-clips) are played for the voter in audio mode.
 
 {% hint style="info" %}
-**User Manual Reference:** [VxMarkScan](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmarkscan "mention")
+**User Manual Reference:** [VxMarkScan](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxmarkscan "mention")
 {% endhint %}
 
 ### Polling Place Selection
@@ -43,7 +43,7 @@ VxMarkScan also allows poll workers to pause voting, also called suspending the 
 If the polls have been closed, they can be re-opened only if a system administrator resets the polls to paused. Only the system administrator may do this—poll workers and election managers cannot—as VVSG 2.0 allows (VVSG 2.0 1.1.7-E). Once polls have been reset to paused by the system administrator, voting may be resumed by a poll worker. The goal of this flow is to allow voting to continue after a poll worker has prematurely closed the polls.
 
 {% hint style="info" %}
-**User Manual Reference:** [Open and Close Polls](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmarkscan/open-and-close-polls "mention")
+**User Manual Reference:** [Open and Close Polls](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxmarkscan/open-and-close-polls "mention")
 {% endhint %}
 
 ## Voting Sessions
@@ -77,7 +77,7 @@ If a poll worker card is inserted during a voting session the poll worker can de
 From the poll worker screen a poll worker may choose `Insert Printed Ballot` in order to scan a previously printed ballot and start a new voter session at the "Review Ballot" stage of the flow diagram above.
 
 {% hint style="info" %}
-**User Manual Reference:** [Voting Sessions](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmarkscan/voting-sessions "mention")
+**User Manual Reference:** [Voting Sessions](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxmarkscan/voting-sessions "mention")
 {% endhint %}
 
 ### Voter Privacy
@@ -89,7 +89,7 @@ The voter's choices do not persist on VxMarkScan after the end of the voting ses
 VxMarkScan supports voting sessions in various display formats and interaction modes.
 
 {% hint style="info" %}
-**User Manual Reference:** [Voting Sessions](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxmarkscan/voting-sessions "mention")
+**User Manual Reference:** [Voting Sessions](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxmarkscan/voting-sessions "mention")
 {% endhint %}
 
 ### Visual and Enhanced Visual Formats

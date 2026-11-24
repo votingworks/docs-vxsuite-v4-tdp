@@ -9,7 +9,7 @@ Only a [system administrator](user-roles.md#system-administrator-role) can authe
 Once VxAdmin is configured, system administrators and election managers can export configuration packages. A configuration package is a signed election package: the same as the imported election package but accompanied by a digital signature, which ensures that the election package was validated by a certified VxAdmin. VxCentralScan, VxMark, VxMarkScan, VxPrint, and VxScan _must be configured with a configuration package_, and unsigned election packages will be rejected.
 
 {% hint style="info" %}
-**User Manual References:** [Configure VxAdmin](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxadmin-system-setup/configure-vxadmin "mention") & [Save the Configuration Package](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxadmin-system-setup/save-election-package "mention")
+**User Manual References:** [Configure VxAdmin](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxadmin-system-setup/configure-vxadmin "mention") & [Save the Configuration Package](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxadmin-system-setup/save-election-package "mention")
 {% endhint %}
 
 ## Smart Card Management
@@ -21,7 +21,7 @@ Programming, like authentication, takes place via the laptop's built-in USB card
 For extensive details on the authentication scheme, see the [access control documentation](../system-security-auditing-and-logging/system-security-architecture/access-control.md).
 
 {% hint style="info" %}
-**User Manual Reference:** [Smart Cards and User Roles](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxadmin-system-setup/programming-cards "mention")
+**User Manual Reference:** [Smart Cards and User Roles](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxadmin-system-setup/programming-cards "mention")
 {% endhint %}
 
 ## USB Formatting
@@ -33,7 +33,7 @@ VxAdmin includes a utility to format USB drives to be compatible with the system
 Improperly formatted USB drives can only be detected and reformatted if there is _some_ partition already existing, so a USB drive without any partitions cannot be reformatted using VxAdmin.
 
 {% hint style="info" %}
-**User Manual Reference:** [USB Formatting](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxadmin-system-setup/usb-formatting "mention")
+**User Manual Reference:** [USB Formatting](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxadmin-system-setup/usb-formatting "mention")
 {% endhint %}
 
 ## CVR Management
@@ -59,7 +59,7 @@ VxAdmin allows loading CVR exports that have already been partially loaded. For 
 A networked VxCentralScan sends the CVRs of each saved batch to the host VxAdmin over the local network. These CVRs carry no export signature; they are protected instead by the authenticated, encrypted connection described in [networking.md](../system-security-auditing-and-logging/system-security-architecture/networking.md "mention"). The host VxAdmin otherwise validates each received CVR as it does CVRs loaded from a USB drive, and rejects any that is not for the configured election, precinct, ballot style, or contest, or that has the ID of an already loaded CVR with different data. CVRs that have already been loaded are ignored, so a batch that is sent again is not counted twice.
 
 {% hint style="info" %}
-**User Manual References:** [Tally Results](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-night-guides/tally-results "mention") & [Network VxCentralScan](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/vxcentralscan/network-vxcentralscan "mention")
+**User Manual References:** [Tally Results](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/election-night-guides/tally-results "mention") & [Network VxCentralScan](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/vxcentralscan/network-vxcentralscan "mention")
 {% endhint %}
 
 ### Ballot Mode
@@ -104,7 +104,7 @@ If `areWriteInCandidatesQualified` is true, then adjudicators can only allocate 
 If `areWriteInCandidatesQualified` is false, write-in candidates are added on an ad hoc basis. The adjudicator has the option to add a new unofficial write-in candidate or select any previously added unofficial write-in candidate. The adjudicator may also adjudicate the write-in as "Invalid" or, in jurisdictions that allow it, for an official candidate that is already on the ballot. In open write-in mode, unofficial write-ins only appear on tally reports if they have a winning vote total.
 
 {% hint style="info" %}
-**User Manual Reference:** [Adjudication](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-night-guides/adjudication "mention")
+**User Manual Reference:** [Adjudication](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/election-night-guides/adjudication "mention")
 {% endhint %}
 
 ## Manual Tallies
@@ -126,7 +126,7 @@ In most cases, the ballot count will be the same across all contests. In some ju
 Unofficial write-in candidates can also be allocated votes in manual tallies and new unofficial write-in candidates can be added directly from the manual tallies interface.
 
 {% hint style="info" %}
-**User Manual Reference:** [Manual Tallies](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-night-guides/manual-tallies "mention")
+**User Manual Reference:** [Manual Tallies](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/election-night-guides/manual-tallies "mention")
 {% endhint %}
 
 ## Tallying & Reports
@@ -184,7 +184,7 @@ The final step is for the VxAdmin backend to format the vote tallies into one of
 If `electionDayPollsCloseTime` and `disallowVxAdminTabulationBeforeElectionDayPollsCloseTime` are both set, VxAdmin prevents generating reports until after the polls close time. In test ballot mode, the same restriction does not apply. The behavior differs between official ballot mode and test ballot mode because testing happens before election day.
 
 {% hint style="info" %}
-**User Manual Reference:** [Reports](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/election-night-guides/reports "mention")
+**User Manual Reference:** [Reports](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/election-night-guides/reports "mention")
 {% endhint %}
 
 ### Ballot Count Tallying

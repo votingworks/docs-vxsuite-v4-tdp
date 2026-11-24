@@ -124,7 +124,7 @@ The date and time is set on the machine during initial configuration before the 
 All machines allow system administrators and election managers to edit the date, time, and time zone in order to address clock drift or, in rare cases, to set up machines for use in a part of the jurisdiction with different time settings.
 
 {% hint style="info" %}
-**User Manual Reference:** [Setting Date & Time](https://app.gitbook.com/s/vh0Xx7zclRU0SsZ9mvKy/miscellaneous/setting-date-and-time "mention")
+**User Manual Reference:** [Setting Date & Time](https://app.gitbook.com/s/Blk9V7L3xSoGDrocz6MA/miscellaneous/setting-date-and-time "mention")
 {% endhint %}
 
 ### Other Shared Software Patterns
