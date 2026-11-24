@@ -9,6 +9,10 @@
 # fix and goes straight to the check. Pull requests from forks get the check
 # only.
 #
+# Labeled photos: a clean source in photos/ plus photos/<name>.yaml (crop
+# and callouts) is rendered to .gitbook/assets/<name>.jpg whenever either
+# changes; the published file is never edited by hand.
+#
 # Check (.github/scripts/check-images.py): fails on location metadata (GPS
 # and similar): this repository is public, and a photo straight off a phone
 # carries where it was taken. Everything else (size, format, shape, name,
@@ -53,8 +57,10 @@ jobs:
         run: |
           sudo apt-get install -y -qq libimage-exiftool-perl >/dev/null
           python3 -m venv "$RUNNER_TEMP/venv"
-          "$RUNNER_TEMP/venv/bin/pip" install -q pillow pillow-heif
+          "$RUNNER_TEMP/venv/bin/pip" install -q pillow pillow-heif pyyaml
           curl -fsS "$TOOL" -o "$RUNNER_TEMP/process-photos.py"
+          mkdir -p "$RUNNER_TEMP/fonts"
+          curl -fsS "${TOOL%/*}/fonts/Inter-Bold.ttf" -o "$RUNNER_TEMP/fonts/Inter-Bold.ttf"
       - name: Fix the changed photos
         id: fix
         if: steps.app.outputs.token != ''
@@ -65,14 +71,33 @@ jobs:
           GH_TOKEN: ${{ steps.app.outputs.token }}
         run: |
           git fetch -q origin "$BASE"
-          mapfile -t photos < <(python3 .github/scripts/check-images.py --list-photos "$(git merge-base "origin/$BASE" HEAD)")
-          [ "${#photos[@]}" -gt 0 ] || { echo "No photos changed."; exit 0; }
-          "$RUNNER_TEMP/venv/bin/python" "$RUNNER_TEMP/process-photos.py" "${photos[@]}" | tee "$RUNNER_TEMP/report.txt" || true
-          git diff --quiet && { echo "Photos already meet the standard."; exit 0; }
+          base="$(git merge-base "origin/$BASE" HEAD)"
+          mapfile -t photos < <(python3 .github/scripts/check-images.py --list-photos "$base")
+          # A labeled photo is a clean source in photos/ plus its description
+          # (photos/<name>.yaml), rendered to .gitbook/assets/<name>.jpg.
+          mapfile -t sources < <(git diff --name-only --diff-filter=AM "$base" HEAD -- photos | grep -iE '\.(jpe?g|png|heic|heif|webp|avif|tiff?)$' || true)
+          described="$(git diff --name-only --diff-filter=AM "$base" HEAD -- photos | grep -E '\.(ya?ml|json)$' || true)"
+          if [ "${#photos[@]}" -eq 0 ] && [ "${#sources[@]}" -eq 0 ] && [ -z "$described" ]; then
+            echo "No photos changed."; exit 0
+          fi
+          PY="$RUNNER_TEMP/venv/bin/python" TOOL_PY="$RUNNER_TEMP/process-photos.py"
+          : > "$RUNNER_TEMP/report.txt"
+          # Sources are public too: upright and stripped, kept up to 3200 px for crops.
+          if [ "${#sources[@]}" -gt 0 ]; then
+            "$PY" "$TOOL_PY" --max-side 3200 "${sources[@]}" | tee -a "$RUNNER_TEMP/report.txt" || true
+          fi
+          if [ "${#sources[@]}" -gt 0 ] || [ -n "$described" ]; then
+            "$PY" "$TOOL_PY" --render photos .gitbook/assets | tee -a "$RUNNER_TEMP/report.txt" || true
+          fi
+          if [ "${#photos[@]}" -gt 0 ]; then
+            "$PY" "$TOOL_PY" "${photos[@]}" | tee -a "$RUNNER_TEMP/report.txt" || true
+          fi
+          git add -A -- photos .gitbook/assets
+          git diff --cached --quiet && { echo "Photos already meet the standard."; exit 0; }
           id="$(gh api "/users/${APP_SLUG}[bot]" --jq .id)"
           git config user.name "${APP_SLUG}[bot]"
           git config user.email "${id}+${APP_SLUG}[bot]@users.noreply.github.com"
-          git commit -q -am "Bring photos to the docs standard" -m "$(cat "$RUNNER_TEMP/report.txt")"
+          git commit -q -m "Bring photos to the docs standard" -m "$(cat "$RUNNER_TEMP/report.txt")"
           for attempt in 1 2 3; do
             git push -q origin HEAD && { echo "pushed=true" >> "$GITHUB_OUTPUT"; exit 0; }
             git pull -q --rebase origin "$HEAD_REF"
