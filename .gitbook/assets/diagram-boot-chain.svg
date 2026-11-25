@@ -65,9 +65,10 @@
   <rect class="box" x="1312.5" y="220" width="955" height="87.5" rx="0"/>
   <text x="1790" y="263.8">… command line invokes <tspan class="b">dm-verity</tspan> with <tspan class="b">root hash</tspan></text>
   <rect class="plain" x="1000" y="307.5" width="1577.5" height="142.5" rx="0"/>
-  <text class="code" x="1017.5" y="345">BOOT_IMAGE=/vmlinuz-5.10.0-11-amd64 root=/dev/mapper/vroot ro quiet vt.handoff=7 fsck.mode=skip</text>
-  <text class="code" x="1017.5" y="380">verity.hashdev=/dev/mapper/Vx--vg-hashes verity.rootdev=/dev/mapper/Vx--vg-root</text>
-  <text class="code" x="1017.5" y="415">verity.hash=<tspan class="b">&lt;ROOT_HASH&gt;</tspan></text>
+  <!-- The command line from vxsuite-complete-system's config/cmdline, with the root hash appended at lockdown -->
+  <text class="code" x="1017.5" y="345">root=/dev/mapper/vroot ro quiet loglevel=3 vt.handoff=7 fsck.mode=skip panic=3</text>
+  <text class="code" x="1017.5" y="380">verity.error_behavior=restart verity.hashdev=/dev/mapper/Vx--vg-hashes</text>
+  <text class="code" x="1017.5" y="415">verity.rootdev=/dev/mapper/Vx--vg-root verity.hash=<tspan class="b">&lt;ROOT_HASH&gt;</tspan></text>
   <rect class="box" x="1585" y="706.2" width="407.5" height="166.2" rx="27.5"/>
   <text x="1788.8" y="746.2">… <tspan class="b">dm-verity</tspan></text>
   <text x="1788.8" y="792.5">verifies <tspan class="b">hard drive</tspan></text>
