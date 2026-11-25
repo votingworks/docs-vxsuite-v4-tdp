@@ -4,7 +4,7 @@ The VxSuite Election Definition is a data format for defining an election that i
 
 ## Core Election Attributes and Relationships
 
-<figure><img src="../../.gitbook/assets/vxsuite-election-definition.png" alt="Diagram of how election, precinct, district, ballot style, language, party, contest, candidate and yes/no option relate" width="563"><figcaption><p>Election entity relationship diagram</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/diagram-election-definition.svg" alt="Diagram of how election, precinct, district, ballot style, language, party, contest, candidate and yes/no option relate" width="563"><figcaption><p>Election entity relationship diagram</p></figcaption></figure>
 
 ### Election
 

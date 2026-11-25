@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1723" height="1051" viewBox="-62 -16 1723 1051">
+  <!--
+    Merkle (hash) tree diagram, TDP
+    system-security-auditing-and-logging/system-security-architecture/artifact-authentication/hashing-of-continuously-exported-cast-vote-records.md.
+    Edit this file directly: every label is text. Text is set in Inter,
+    falling back to the reader's sans-serif (GitBook strips embedded fonts).
+    Redrawn from "image (1).png"; this file now replaces it as the source.
+  -->
+  <style>
+    text { font-family: "Inter", sans-serif; font-size: 30px; font-weight: 400; fill: #1e1e1e; text-anchor: middle; dominant-baseline: central; }
+    .small { font-size: 15px; }
+    .start { text-anchor: start; }
+    .halo { stroke: #fff; stroke-width: 24px; stroke-linejoin: round; paint-order: stroke; }
+    .box { fill: #fff; stroke: #1e1e1e; stroke-width: 2; }
+    .value { fill: #fff1ac; }
+    .group { fill: none; stroke: #ccc; stroke-width: 3; stroke-dasharray: 14 8; }
+    .line { fill: none; stroke: #1e1e1e; stroke-width: 4; stroke-linecap: round; }
+  </style>
+  <defs>
+    <marker id="head" viewBox="-38 -16 40 32" refX="0" refY="0" markerWidth="40" markerHeight="32" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L-36 -14 L-26 0 L-36 14 Z" fill="#1e1e1e"/>
+    </marker>
+  </defs>
+
+  <rect x="-62" y="-16" width="1723" height="1051" fill="#fff"/>
+
+  <!-- Data blocks -->
+  <rect class="group" x="26" y="791" width="1547" height="156"/>
+  <text class="start" x="1427" y="848">Data</text>
+  <text class="start" x="1427" y="884">Blocks</text>
+
+  <!-- Each hash is computed from the hashes or blocks below it -->
+  <path class="line" marker-end="url(#head)" d="M216 824 V739"/>
+  <path class="line" marker-end="url(#head)" d="M554 824 V739"/>
+  <path class="line" marker-end="url(#head)" d="M892 824 V739"/>
+  <path class="line" marker-end="url(#head)" d="M1229 824 V739"/>
+  <path class="line" marker-end="url(#head)" d="M216 573 L315 485"/>
+  <path class="line" marker-end="url(#head)" d="M553 573 L455 485"/>
+  <path class="line" marker-end="url(#head)" d="M891 573 L990 485"/>
+  <path class="line" marker-end="url(#head)" d="M1228 573 L1130 485"/>
+  <path class="line" marker-end="url(#head)" d="M451 321 L615 234"/>
+  <path class="line" marker-end="url(#head)" d="M995 321 L831 234"/>
+
+  <!-- Hashes -->
+  <rect class="box" x="575" y="72" width="296" height="160"/>
+  <text x="723" y="118">Top Hash</text>
+  <rect class="value" x="591" y="162" width="260" height="54"/>
+  <text x="652" y="189">hash(</text>
+  <text class="small" x="750" y="178">Hash 0</text>
+  <text class="small" x="750" y="189">+</text>
+  <text class="small" x="750" y="200">Hash 1</text>
+  <text x="820" y="189">)</text>
+  <rect class="box" x="237" y="323" width="296" height="160"/>
+  <text x="385" y="352">Hash</text>
+  <text x="385" y="388">0</text>
+  <rect class="value" x="253" y="413" width="260" height="54"/>
+  <text x="314" y="440">hash(</text>
+  <text class="small" x="412" y="429">Hash 0-0</text>
+  <text class="small" x="412" y="440">+</text>
+  <text class="small" x="412" y="451">Hash 0-1</text>
+  <text x="482" y="440">)</text>
+  <rect class="box" x="913" y="323" width="296" height="160"/>
+  <text x="1061" y="352">Hash</text>
+  <text x="1061" y="388">1</text>
+  <rect class="value" x="929" y="413" width="260" height="54"/>
+  <text x="990" y="440">hash(</text>
+  <text class="small" x="1088" y="429">Hash 1-0</text>
+  <text class="small" x="1088" y="440">+</text>
+  <text class="small" x="1088" y="451">Hash 1-1</text>
+  <text x="1158" y="440">)</text>
+  <rect class="box" x="68" y="575" width="296" height="160"/>
+  <text x="216" y="604">Hash</text>
+  <text x="216" y="640">0-0</text>
+  <rect class="value" x="84" y="665" width="260" height="54"/>
+  <text x="216" y="695">hash(L1)</text>
+  <rect class="box" x="406" y="575" width="296" height="160"/>
+  <text x="554" y="604">Hash</text>
+  <text x="554" y="640">0-1</text>
+  <rect class="value" x="422" y="665" width="260" height="54"/>
+  <text x="554" y="695">hash(L2)</text>
+  <rect class="box" x="744" y="575" width="296" height="160"/>
+  <text x="892" y="604">Hash</text>
+  <text x="892" y="640">1-0</text>
+  <rect class="value" x="760" y="665" width="260" height="54"/>
+  <text x="892" y="695">hash(L3)</text>
+  <rect class="box" x="1081" y="575" width="296" height="160"/>
+  <text x="1229" y="604">Hash</text>
+  <text x="1229" y="640">1-1</text>
+  <rect class="value" x="1097" y="665" width="260" height="54"/>
+  <text x="1229" y="695">hash(L4)</text>
+  <rect class="box" x="68" y="826" width="296" height="90"/>
+  <rect class="value" x="85" y="846" width="260" height="54"/>
+  <text x="216" y="872">L1</text>
+  <rect class="box" x="406" y="826" width="296" height="90"/>
+  <rect class="value" x="423" y="846" width="260" height="54"/>
+  <text x="554" y="872">L2</text>
+  <rect class="box" x="744" y="826" width="296" height="90"/>
+  <rect class="value" x="761" y="846" width="260" height="54"/>
+  <text x="892" y="872">L3</text>
+  <rect class="box" x="1081" y="826" width="296" height="90"/>
+  <rect class="value" x="1098" y="846" width="260" height="54"/>
+  <text x="1229" y="872">L4</text>
+</svg>

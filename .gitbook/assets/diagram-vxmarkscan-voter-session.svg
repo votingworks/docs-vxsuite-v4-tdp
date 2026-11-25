@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2516" height="1153" viewBox="22 33 2516 1153">
+  <!--
+    VxMarkScan voter session flow, TDP system-overview/vxmarkscan-function.md.
+    Edit this file directly: every label is text, drawn after the lines with a
+    white halo, so renaming one needs no other change. Text is set in Inter,
+    falling back to the reader's sans-serif (GitBook strips embedded fonts).
+    Redrawn from the Figma export "image (46).png"; this file now replaces it as
+    the source.
+
+    Heavy lines with bold labels are the usual path through a session; light
+    lines are the alternatives.
+  -->
+  <style>
+    text { font-family: "Inter", sans-serif; font-size: 30.6px; font-weight: 500; letter-spacing: -0.4px; fill: #1e1e1e; text-anchor: middle; dominant-baseline: central; }
+    .halo { stroke: #fff; stroke-width: 22.1px; stroke-linejoin: round; paint-order: stroke; }
+    .box { fill: #fff; stroke: #1e1e1e; stroke-width: 4; }
+    .line { fill: none; stroke: #1e1e1e; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .optional { stroke-dasharray: 16 12; stroke-linecap: butt; }
+    .bold { font-weight: 700; }
+    .main { stroke-width: 9; }
+  </style>
+  <defs>
+    <marker id="head" viewBox="-16 -16 20 32" refX="0" refY="0" markerWidth="20" markerHeight="32" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M-12 -12 L0 0 L-12 12" fill="none" stroke="#1e1e1e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="head-main" viewBox="-30 -28 36 56" refX="0" refY="0" markerWidth="36" markerHeight="56" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M-22 -22 L0 0 L-22 22" fill="none" stroke="#1e1e1e" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="22" y="33" width="2516" height="1153" fill="#fff"/>
+
+  <!-- The usual path -->
+  <path class="line main" marker-end="url(#head-main)" d="M481.1 576.3 H572.9"/>
+  <path class="line main" marker-end="url(#head-main)" d="M958.8 576.3 H1392.3"/>
+  <path class="line main" marker-end="url(#head-main)" d="M1778.2 576.3 H2079.1"/>
+  <path class="line main" marker-end="url(#head-main)" d="M289 926.5 V669.8"/>
+
+  <!-- Alternatives -->
+  <path class="line" marker-end="url(#head)" d="M765 489.6 V445.4 Q765 409.7 729.3 409.7 H324.7 Q289 409.7 289 445.4 V486.2"/>
+  <path class="line" marker-end="url(#head)" d="M1511.3 663 V773.5 Q1511.3 809.2 1475.6 809.2 H863.6 Q827.9 809.2 827.9 773.5 V664.7"/>
+  <path class="line" marker-end="url(#head)" d="M477.7 1020 H1616.7 Q1652.4 1020 1652.4 984.3 V664.7"/>
+  <path class="line" marker-end="url(#head)" d="M1511.3 489.6 V289"/>
+  <path class="line" marker-end="url(#head)" d="M1657.5 287.3 V487.9"/>
+
+  <!-- Screens -->
+  <rect class="box" x="110.5" y="498.1" width="355.3" height="156.4" rx="64.6"/>
+  <text class="bold" x="288.1" y="576.3">Make Selections</text>
+  <rect class="box" x="588.2" y="498.1" width="355.3" height="156.4" rx="64.6"/>
+  <text class="bold" x="765.9" y="576.3">Review Selections</text>
+  <rect class="box" x="1407.6" y="498.1" width="355.3" height="156.4" rx="64.6"/>
+  <text class="bold" x="1585.2" y="576.3">Review Ballot</text>
+  <rect class="box" x="2094.4" y="498.1" width="355.3" height="156.4" rx="64.6"/>
+  <text class="bold" x="2272" y="576.3">End Session</text>
+  <rect class="box" x="1407.6" y="120.7" width="355.3" height="156.4" rx="64.6"/>
+  <text class="bold" x="1585.2" y="174.2">Ballot Removed</text>
+  <text class="bold" x="1585.2" y="223.5">Warning</text>
+  <rect class="box" x="110.5" y="941.8" width="355.3" height="156.4" rx="64.6"/>
+  <text class="bold" x="288.1" y="1020">Start Session</text>
+
+  <!-- Transition labels -->
+  <text class="halo bold" x="1174.7" y="576.3">Print &amp; Scan Ballot</text>
+  <text class="halo bold" x="1929.5" y="576.3">Cast Ballot</text>
+  <text class="halo bold" x="289" y="797.3">Insert Blank Sheet</text>
+  <text class="halo" x="527" y="409.7">Edit Selections</text>
+  <text class="halo" x="1169.6" y="809.2">Spoil Ballot &amp; Load New Sheet</text>
+  <text class="halo" x="1064.2" y="1020">Insert Ballot</text>
+  <text class="halo" x="1511.3" y="368.1">Remove</text>
+  <text class="halo" x="1511.3" y="408.8">Ballot</text>
+  <text class="halo" x="1657.5" y="371.4">Insert</text>
+  <text class="halo" x="1657.5" y="412.2">Ballot</text>
+</svg>

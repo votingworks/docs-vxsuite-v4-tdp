@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1880" height="864" viewBox="16 8 1880 864">
+  <!--
+    VxAdmin ballot count tallying flow, TDP system-overview/vxadmin-function.md. Edit this file directly: every label is text,
+    and connector labels are drawn after the lines with a white halo, so
+    renaming one needs no other change. Text is set in Inter, falling back to
+    the reader's sans-serif (GitBook strips embedded fonts). Redrawn from the
+    Figma export "image (40).png"; this file now replaces it as the source.
+  -->
+  <style>
+    text { font-family: "Inter", sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.4px; fill: #1e1e1e; text-anchor: middle; dominant-baseline: central; }
+    .halo { stroke: #fff; stroke-width: 24px; stroke-linejoin: round; paint-order: stroke; }
+    .box { fill: #fff; stroke: #1e1e1e; stroke-width: 4; stroke-linejoin: round; }
+    .group { fill: none; }
+    .line { fill: none; stroke: #1e1e1e; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="-20 -18 24 36" refX="0" refY="0" markerWidth="24" markerHeight="36" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M-16 -16 L0 0 L-16 16" fill="none" stroke="#1e1e1e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="16" y="8" width="1880" height="864" fill="#fff"/>
+
+  <!-- Connectors -->
+  <path class="line" marker-end="url(#arrow)" d="M368 168 H488"/>
+  <path class="line" marker-end="url(#arrow)" d="M760 168 H856"/>
+  <path class="line" marker-end="url(#arrow)" d="M232 306 V232"/>
+  <path class="line" marker-end="url(#arrow)" d="M992 296 V248"/>
+  <path class="line" marker-end="url(#arrow)" d="M624 576 V240"/>
+  <path class="line" marker-end="url(#arrow)" d="M992 568 V456"/>
+  <path class="line" marker-end="url(#arrow)" d="M1128 168 H1316 A20 20 0 0 1 1336 188 V356 A20 20 0 0 0 1356 376 H1544"/>
+
+  <!-- SQLite data store -->
+  <rect class="box group" x="496" y="496" width="904" height="288" rx="80"/>
+  <text x="1267" y="640">SQLite Data Store</text>
+
+  <!-- Steps and stored data -->
+  <rect class="box" x="104" y="112" width="256" height="112" rx="56"/>
+  <text x="232" y="150">Group</text>
+  <text x="232" y="186">Determination</text>
+  <text x="232" y="358">Filter &amp; Group</text>
+  <text x="232" y="394">Parameters</text>
+  <rect class="box" x="496" y="104" width="256" height="128" rx="56"/>
+  <text x="624" y="168">CVR Aggregation</text>
+  <rect class="box" x="864" y="96" width="256" height="144" rx="56"/>
+  <text x="992" y="150">Manual Tallies</text>
+  <text x="992" y="186">Hydration</text>
+  <rect class="box" x="800" y="304" width="384" height="144" rx="64"/>
+  <text x="992" y="376">Manual Tallies Aggregation</text>
+  <rect class="box" x="1552" y="304" width="256" height="144" rx="64"/>
+  <text x="1680" y="376">Reporting</text>
+  <rect class="box" x="536" y="584" width="176" height="128" rx="56"/>
+  <text x="624" y="648">CVRs</text>
+  <rect class="box" x="880" y="576" width="224" height="128" rx="56"/>
+  <text x="992" y="640">Manual Tallies</text>
+
+  <!-- Connector labels -->
+  <text class="halo" x="1336" y="272">Complete Ballot Counts</text>
+</svg>

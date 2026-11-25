@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1833" height="689" viewBox="21 44 1833 689">
+  <!--
+    Polls state diagram, TDP system-overview/vxmark-function.md,
+    vxmarkscan-function.md and vxscan-function.md. Edit this file directly: every
+    label is text, drawn after the lines with a white halo, so renaming one needs
+    no other change. Text is set in Inter, falling back to the reader's
+    sans-serif (GitBook strips embedded fonts). Redrawn from the Figma export
+    "image (29).png"; this file now replaces it as the source.
+
+    The dashed transition (resetting polls to paused) is the exceptional one.
+  -->
+  <style>
+    text { font-family: "Inter", sans-serif; font-size: 22.5px; font-weight: 500; letter-spacing: -0.4px; fill: #1e1e1e; text-anchor: middle; dominant-baseline: central; }
+    .halo { stroke: #fff; stroke-width: 16.2px; stroke-linejoin: round; paint-order: stroke; }
+    .box { fill: #fff; stroke: #1e1e1e; stroke-width: 4; }
+    .line { fill: none; stroke: #1e1e1e; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .optional { stroke-dasharray: 16 12; stroke-linecap: butt; }
+    .state { font-size: 32.5px; font-weight: 700; }
+  </style>
+  <defs>
+    <marker id="head" viewBox="-20 -18 24 36" refX="0" refY="0" markerWidth="24" markerHeight="36" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M-16 -16 L0 0 L-16 16" fill="none" stroke="#1e1e1e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="21" y="44" width="1833" height="689" fill="#fff"/>
+
+  <!-- Transitions -->
+  <path class="line" marker-end="url(#head)" d="M510 218.8 H755"/>
+  <path class="line" marker-end="url(#head)" d="M1167.5 218.8 H1411.2"/>
+  <path class="line" marker-end="url(#head)" d="M892.5 462.5 V423.8 Q892.5 396.2 865 396.2 H800 V381.2 H865 Q892.5 381.2 892.5 353.8 V318.8"/>
+  <path class="line" marker-end="url(#head)" d="M1041.2 315 V353.8 Q1041.2 381.2 1070 381.2 H1162.5 V396.2 H1070 Q1041.2 396.2 1041.2 423.8 V461.2"/>
+  <path class="line" marker-end="url(#head)" d="M1163.8 497.5 H1493.8 Q1521.2 497.5 1521.2 470 V316.2"/>
+  <path class="line optional" marker-end="url(#head)" d="M1650 315 V580 Q1650 607.5 1622.5 607.5 H1180"/>
+
+  <!-- States -->
+  <rect class="box" x="108.8" y="132.5" width="391.2" height="171.2" rx="68.8"/>
+  <text class="state" x="304.4" y="191.2">Polls Closed</text>
+  <text class="state" x="304.4" y="245">(Initial)</text>
+  <rect class="box" x="766.2" y="132.5" width="391.2" height="171.2" rx="68.8"/>
+  <text class="state" x="961.9" y="218.1">Polls Open</text>
+  <rect class="box" x="1422.5" y="132.5" width="343.8" height="171.2" rx="68.8"/>
+  <text class="state" x="1594.4" y="191.2">Polls Closed</text>
+  <text class="state" x="1594.4" y="245">(Final)</text>
+  <rect class="box" x="778.8" y="472.5" width="390" height="172.5" rx="68.8"/>
+  <text class="state" x="973.8" y="558.8">Voting Paused</text>
+
+  <!-- Transition labels -->
+  <text class="halo" x="632.5" y="218.8">Open Polls</text>
+  <text class="halo" x="1290" y="218.8">Close Polls</text>
+  <text class="halo" x="766.2" y="388.8">Resume Voting</text>
+  <text class="halo" x="1180" y="388.8">Pause Voting</text>
+  <text class="halo" x="1342.5" y="497.5">Close Polls</text>
+  <text class="halo" x="1412.5" y="607.5">Reset Polls to Paused</text>
+</svg>

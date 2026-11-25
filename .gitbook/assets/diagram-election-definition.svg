@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2754" height="1168" viewBox="64 80 2754 1168">
+  <!--
+    Election entity relationship diagram, TDP
+    system-overview/election-package/vxsuite-election-definition.md. Edit this
+    file directly: every label is text. Text is set in Inter, falling back to
+    the reader's sans-serif (GitBook strips embedded fonts). Redrawn from the
+    Figma export vxsuite-election-definition.png; this file now replaces it as
+    the source.
+
+    Solid lines are required relationships, dashed lines optional ones. A
+    "tail" marker is a triangle whose base sits on the box and points back
+    along the line; a "head" marker points into the box.
+  -->
+  <style>
+    text { font-family: "Inter", sans-serif; font-size: 36px; font-weight: 500; letter-spacing: -0.6px; fill: #1e1e1e; text-anchor: middle; dominant-baseline: central; }
+    .halo { stroke: #fff; stroke-width: 24px; stroke-linejoin: round; paint-order: stroke; }
+    .box { fill: #fff; stroke: #1e1e1e; stroke-width: 4; }
+    .line { fill: none; stroke: #1e1e1e; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .group { fill: none; }
+    .optional { stroke-dasharray: 16 12; stroke-linecap: butt; }
+  </style>
+  <defs>
+    <marker id="head" viewBox="-20 -10 22 20" refX="0" refY="0" markerWidth="22" markerHeight="20" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L-20 -9 L-20 9 Z" fill="#1e1e1e"/>
+    </marker>
+    <marker id="tail" viewBox="-22 -10 24 20" refX="0" refY="0" markerWidth="24" markerHeight="20" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M-20 0 L0 -9 L0 9 Z" fill="#1e1e1e"/>
+    </marker>
+  </defs>
+
+  <rect x="64" y="80" width="2754" height="1168" fill="#fff"/>
+
+  <!-- Required relationships -->
+  <path class="line" marker-end="url(#tail)" d="M928 232 H316 A20 20 0 0 0 296 252 V352"/>
+  <path class="line" marker-end="url(#tail)" d="M1080 304 V432"/>
+  <path class="line" marker-end="url(#tail)" d="M1018 304 V324 A20 20 0 0 1 998 344 H635 A20 20 0 0 0 615 364 V672"/>
+  <path class="line" marker-end="url(#tail)" d="M1232 232 H1316 A20 20 0 0 1 1336 252 V768"/>
+  <path class="line" marker-end="url(#tail)" d="M1232 232 H1834 A20 20 0 0 1 1854 252 V768"/>
+  <path class="line" marker-end="url(#tail)" d="M448 424 H668 A20 20 0 0 1 688 444 V484 A20 20 0 0 0 708 504 H928"/>
+  <path class="line" marker-end="url(#tail)" d="M496 744 H316 A20 20 0 0 1 296 724 V496"/>
+  <path class="line" marker-end="url(#tail)" d="M800 744 H1060 A20 20 0 0 0 1080 724 V576"/>
+  <path class="line" marker-end="url(#head)" d="M1750 768 V524 A20 20 0 0 0 1730 504 H1232"/>
+  <path class="line" marker-end="url(#tail)" d="M1960 840 H2192"/>
+
+  <!-- Optional relationships -->
+  <path class="line optional" marker-end="url(#head)" d="M648 816 V820 A20 20 0 0 0 668 840 H1184"/>
+  <path class="line optional" marker-end="url(#head)" d="M590 816 V898 A20 20 0 0 0 610 918 H676 A20 20 0 0 1 696 938 V1024"/>
+  <path class="line optional" marker-end="url(#head)" d="M1656 840 H1488"/>
+  <path class="line optional" marker-end="url(#head)" d="M2312 968 H1356 A20 20 0 0 1 1336 948 V912"/>
+
+  <!-- Entities -->
+  <rect class="box" x="936" y="168" width="288" height="128" rx="56"/>
+  <text x="1080" y="232">Election</text>
+  <rect class="box" x="152" y="360" width="288" height="128" rx="56"/>
+  <text x="296" y="424">Precinct</text>
+  <rect class="box" x="936" y="440" width="288" height="128" rx="56"/>
+  <text x="1080" y="504">District</text>
+  <rect class="box" x="504" y="680" width="288" height="128" rx="56"/>
+  <text x="648" y="744">Ballot Style</text>
+  <rect class="box" x="1192" y="776" width="288" height="128" rx="56"/>
+  <text x="1336" y="840">Party</text>
+  <rect class="box" x="552" y="1032" width="288" height="128" rx="56"/>
+  <text x="696" y="1096">Language</text>
+  <rect class="box" x="1664" y="776" width="288" height="128" rx="56"/>
+  <text x="1808" y="840">Contest</text>
+
+  <!-- A contest's options: yes/no options or candidates -->
+  <rect class="box group" x="2200" y="592" width="528" height="496" rx="72"/>
+  <rect class="box" x="2272" y="648" width="384" height="128" rx="56"/>
+  <text x="2464" y="712">Yes / No Option</text>
+  <text x="2464" y="840">or</text>
+  <rect class="box" x="2320" y="904" width="288" height="128" rx="56"/>
+  <text x="2464" y="968">Candidate</text>
+</svg>

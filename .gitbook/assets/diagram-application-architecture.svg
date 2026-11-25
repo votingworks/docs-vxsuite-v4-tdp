@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1947" height="1547" viewBox="24 24 1947 1547">
+  <!--
+    Application architecture, TDP system-overview/software-overview.md. Edit
+    this file directly: every label is text, drawn after the lines with a white
+    halo, so renaming one needs no other change. Text is set in Inter, falling
+    back to the reader's sans-serif (GitBook strips embedded fonts). Redrawn from
+    the Figma export "image (63).png"; this file now replaces it as the source.
+
+    The connector between the kiosk browser and the backend is one line that
+    runs under its label, with an arrowhead at each end.
+  -->
+  <style>
+    text { font-family: "Inter", sans-serif; font-size: 34.6px; font-weight: 500; letter-spacing: -0.4px; fill: #1e1e1e; text-anchor: middle; dominant-baseline: central; }
+    .halo { stroke: #fff; stroke-width: 23.9px; stroke-linejoin: round; paint-order: stroke; }
+    .box { fill: #fff; stroke: #1e1e1e; stroke-width: 4; }
+    .line { fill: none; stroke: #1e1e1e; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .optional { stroke-dasharray: 16 12; stroke-linecap: butt; }
+    .name { font-weight: 700; text-anchor: start; }
+    .detail { text-anchor: start; }
+  </style>
+  <defs>
+    <marker id="head" viewBox="-20 -18 24 36" refX="0" refY="0" markerWidth="24" markerHeight="36" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M-16 -16 L0 0 L-16 16" fill="none" stroke="#1e1e1e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="24" y="24" width="1947" height="1547" fill="#fff"/>
+
+  <!-- Connections, each two-way -->
+  <path class="line" marker-start="url(#head)" marker-end="url(#head)" d="M847.2 262 H454.9 Q424.3 262 424.3 292.6 V722.2"/>
+  <path class="line" marker-start="url(#head)" marker-end="url(#head)" d="M1146.5 424.3 V574.6 H1371.2 V722.2"/>
+  <path class="line" marker-start="url(#head)" marker-end="url(#head)" d="M1371.2 1048 V1170.4"/>
+
+  <!-- Components -->
+  <rect class="box" x="860.5" y="111.7" width="573.2" height="299.2" rx="126.4"/>
+  <rect class="box" x="111.7" y="735.5" width="623.8" height="299.2" rx="126.4"/>
+  <rect class="box" x="860.5" y="735.5" width="1022.8" height="299.2" rx="126.4"/>
+  <rect class="box" x="860.5" y="1183.7" width="1022.8" height="299.2" rx="126.4"/>
+  <rect class="box optional" x="1433.7" y="784.7" width="375.1" height="200.8" rx="82.5"/>
+  <text class="name" x="911.1" y="262">Kiosk Browser (Electron)</text>
+  <text class="name" x="163.6" y="885.8">Application Frontend Server</text>
+  <text class="name" x="911.1" y="885.8">Application Backend Server</text>
+  <text x="1621.3" y="885.8">SQLite Data Store</text>
+  <text class="name" x="911.1" y="1307.4">Peripherals</text>
+  <text class="detail" x="911.1" y="1363.2">(Scanners, Printers, USB Drives, Card Readers, etc.)</text>
+
+  <!-- Connection labels -->
+  <text class="halo" x="1258.2" y="574.6">Application Data &amp; Peripheral Status</text>
+</svg>

@@ -30,7 +30,7 @@ VxMark can be unconfigured by an election manager or system administrator. Uncon
 
 ## Polls Management
 
-<figure><img src="../.gitbook/assets/image (29).png" alt="Polls state diagram: polls closed (initial), polls open, voting paused and polls closed (final), with reset to paused" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/diagram-polls-states.svg" alt="Polls state diagram: polls closed (initial), polls open, voting paused and polls closed (final), with reset to paused" width="563"><figcaption></figcaption></figure>
 
 After configuration, polls are initially closed. When polls are closed, voting is not allowed on VxMark.
 

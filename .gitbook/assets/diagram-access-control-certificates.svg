@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2234.1" height="1658.1" viewBox="13.9 70.9 2234.1 1658.1">
+  <!--
+    Certificate relationships diagram, TDP
+    system-security-auditing-and-logging/system-security-architecture/access-control.md.
+    Edit this file directly: every label is text. Text is set in Inter,
+    falling back to the reader's sans-serif (GitBook strips embedded fonts).
+    Redrawn from security-diagram.png; this file now replaces it as the
+    source.
+
+    Each line runs from the certifying party to the certified machine or
+    card; the yellow box on it lists the certificate's fields.
+  -->
+  <style>
+    text { font-family: "Inter", sans-serif; font-size: 42px; font-weight: 400; fill: #1e1e1e; text-anchor: middle; dominant-baseline: central; }
+    .fields { font-size: 28px; text-anchor: start; }
+    .role { text-anchor: start; }
+    .b { font-weight: 700; }
+    .halo { stroke: #fff; stroke-width: 24px; stroke-linejoin: round; paint-order: stroke; }
+    .party { fill: #d8d2e7; stroke: #1e1e1e; stroke-width: 2; }
+    .machine { fill: #ccd9f5; stroke: #1e1e1e; stroke-width: 2; }
+    .cert { fill: #fdf2d0; stroke: #1e1e1e; stroke-width: 2; }
+    .card { fill: #fff; stroke: #ddd; stroke-width: 2; }
+    .card-shadow { fill: #c8c8c8; }
+    .chip { fill: #d4a94a; stroke: #93633a; stroke-width: 1.5; }
+    .line { fill: none; stroke: #1e1e1e; stroke-width: 2; }
+  </style>
+  <defs>
+    <marker id="head" viewBox="-18 -7 20 14" refX="0" refY="0" markerWidth="20" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L-17 -6 L-17 6 Z" fill="#1e1e1e"/>
+    </marker>
+  </defs>
+
+  <rect x="13.9" y="70.9" width="2234.1" height="1658.1" fill="#fff"/>
+
+  <!-- VotingWorks certifies machines and system administrator, election manager and poll worker cards -->
+  <path class="line" marker-end="url(#head)" d="M426 264 H1392"/>
+  <path class="line" marker-end="url(#head)" d="M426 264 C660 270 750 345 840 427.5 C1020 600 1140 717 1392 721.5"/>
+  <path class="line" marker-end="url(#head)" d="M426 264 C600 277.5 690 375 780 502.5 C900 705 1020 975 1140 1095 C1230 1185 1320 1212 1392 1215"/>
+  <path class="line" marker-end="url(#head)" d="M264 345 V1473"/>
+  <path class="line" marker-end="url(#head)" d="M264 345 L676.5 1473"/>
+
+  <!-- VxAdmin certifies cards for its jurisdiction -->
+  <path class="line" marker-end="url(#head)" d="M840 1560 C930 1545 975 1425 1035 1200 L1215 517.5 C1260 360 1320 267 1392 264"/>
+  <path class="line" marker-end="url(#head)" d="M840 1560 C945 1530 1020 1380 1080 1200 L1185 960 C1245 810 1305 724.5 1392 721.5"/>
+  <path class="line" marker-end="url(#head)" d="M840 1560 C960 1560 1050 1470 1095 1425 C1185 1290 1290 1218 1392 1215"/>
+
+  <!-- Certifying parties and machines -->
+  <rect class="party" x="102" y="183" width="324" height="162"/>
+  <text x="264" y="264">VotingWorks</text>
+  <rect class="machine" x="102" y="1479" width="324" height="162"/>
+  <text x="264" y="1560">VxScan</text>
+  <rect class="machine" x="516" y="1479" width="324" height="162"/>
+  <text x="678" y="1560">VxAdmin</text>
+
+  <!-- Cards -->
+  <rect class="card-shadow" x="1399.5" y="163.5" width="316.5" height="207" rx="12"/>
+  <rect class="card" x="1399.5" y="159" width="316.5" height="207" rx="12"/>
+  <rect class="chip" x="1434" y="228" width="45" height="48" rx="6"/>
+  <path d="M1449 228 V276 M1464 228 V276 M1434 244.5 H1449 M1434 259.5 H1449 M1464 244.5 H1479 M1464 259.5 H1479" fill="none" stroke="#93633a" stroke-width="1.5"/>
+  <text class="role" x="1741.5" y="262.5">System administrator</text>
+  <rect class="card-shadow" x="1399.5" y="621" width="316.5" height="207" rx="12"/>
+  <rect class="card" x="1399.5" y="616.5" width="316.5" height="207" rx="12"/>
+  <rect class="chip" x="1434" y="685.5" width="45" height="48" rx="6"/>
+  <path d="M1449 685.5 V733.5 M1464 685.5 V733.5 M1434 702 H1449 M1434 717 H1449 M1464 702 H1479 M1464 717 H1479" fill="none" stroke="#93633a" stroke-width="1.5"/>
+  <text class="role" x="1741.5" y="720">Election manager</text>
+  <rect class="card-shadow" x="1399.5" y="1116" width="316.5" height="207" rx="12"/>
+  <rect class="card" x="1399.5" y="1111.5" width="316.5" height="207" rx="12"/>
+  <rect class="chip" x="1434" y="1180.5" width="45" height="48" rx="6"/>
+  <path d="M1449 1180.5 V1228.5 M1464 1180.5 V1228.5 M1434 1197 H1449 M1434 1212 H1449 M1464 1197 H1479 M1464 1212 H1479" fill="none" stroke="#93633a" stroke-width="1.5"/>
+  <text class="role" x="1741.5" y="1215">Poll worker</text>
+
+  <!-- Certificate fields, drawn over their lines -->
+  <rect class="cert" x="750" y="223.5" width="324" height="78"/>
+  <text class="fields" x="769.5" y="262.5"><tspan class="b">component</tspan>: card</text>
+  <rect class="cert" x="750" y="339" width="324" height="79.5"/>
+  <text class="fields" x="769.5" y="378"><tspan class="b">component</tspan>: card</text>
+  <rect class="cert" x="480" y="454.5" width="324" height="79.5"/>
+  <text class="fields" x="499.5" y="493.5"><tspan class="b">component</tspan>: card</text>
+  <rect class="cert" x="1182" y="408" width="540" height="114"/>
+  <text class="fields" x="1201.5" y="445.5"><tspan class="b">jurisdiction</tspan>: ms.warren</text>
+  <text class="fields" x="1201.5" y="481.5"><tspan class="b">cardType</tspan>: system-administrator</text>
+  <rect class="cert" x="1182" y="865.5" width="540" height="187.5"/>
+  <text class="fields" x="1201.5" y="903"><tspan class="b">jurisdiction</tspan>: ms.warren</text>
+  <text class="fields" x="1201.5" y="939"><tspan class="b">cardType</tspan>: election-manager</text>
+  <text class="fields" x="1201.5" y="975"><tspan class="b">electionId</tspan>: abcd1234</text>
+  <text class="fields" x="1201.5" y="1011"><tspan class="b">electionDate</tspan>: 2024-11-25</text>
+  <rect class="cert" x="102" y="1092" width="324" height="115.5"/>
+  <text class="fields" x="121.5" y="1131"><tspan class="b">component</tspan>: scan</text>
+  <text class="fields" x="121.5" y="1167"><tspan class="b">machineId</tspan>: SC01</text>
+  <rect class="cert" x="516" y="1092" width="432" height="151.5"/>
+  <text class="fields" x="535.5" y="1131"><tspan class="b">component</tspan>: admin</text>
+  <text class="fields" x="535.5" y="1167"><tspan class="b">machineId</tspan>: AD01</text>
+  <text class="fields" x="535.5" y="1203"><tspan class="b">jurisdiction</tspan>: ms.warren</text>
+  <rect class="cert" x="1092" y="1360.5" width="540" height="187.5"/>
+  <text class="fields" x="1111.5" y="1398"><tspan class="b">jurisdiction</tspan>: ms.warren</text>
+  <text class="fields" x="1111.5" y="1434"><tspan class="b">cardType</tspan>: poll-worker</text>
+  <text class="fields" x="1111.5" y="1470"><tspan class="b">electionId</tspan>: abcd1234</text>
+  <text class="fields" x="1111.5" y="1506"><tspan class="b">electionDate</tspan>: 2024-11-25</text>
+</svg>
