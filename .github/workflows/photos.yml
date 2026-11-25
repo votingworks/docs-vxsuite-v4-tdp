@@ -92,7 +92,8 @@ jobs:
           if [ "${#photos[@]}" -gt 0 ]; then
             "$PY" "$TOOL_PY" "${photos[@]}" | tee -a "$RUNNER_TEMP/report.txt" || true
           fi
-          git add -A -- photos .gitbook/assets
+          git add -A -- .gitbook/assets
+          [ ! -d photos ] || git add -A -- photos
           git diff --cached --quiet && { echo "Photos already meet the standard."; exit 0; }
           id="$(gh api "/users/${APP_SLUG}[bot]" --jq .id)"
           git config user.name "${APP_SLUG}[bot]"
