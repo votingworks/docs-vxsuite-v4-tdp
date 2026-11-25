@@ -12,7 +12,7 @@ The VxSuite system integrity design maps closely to that of ChromeOS:
 
 As a diagram:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-06-30 at 9.55.02 AM.png" alt="Boot chain from UEFI Secure Boot through dm-verity to the TPM releasing the application signing key" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/diagram-boot-chain.svg" alt="Boot chain from UEFI Secure Boot through dm-verity to the TPM releasing the application signing key" width="563"><figcaption></figcaption></figure>
 
 The integrity of the overall system is ensured because:
 

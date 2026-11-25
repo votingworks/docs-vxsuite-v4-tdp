@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1248" height="560" viewBox="-32 -32 1248 560">
+  <!--
+    VxAdmin adjudication network, TDP system-overview/vxadmin-function.md. Edit this file directly: every label is text,
+    and connector labels are drawn after the lines with a white halo, so
+    renaming one needs no other change. Text is set in Inter, falling back to
+    the reader's sans-serif (GitBook strips embedded fonts). Redrawn from the
+    Figma export "image (109).png"; this file now replaces it as the source.
+  -->
+  <style>
+    text { font-family: "Inter", sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.4px; fill: #1e1e1e; text-anchor: middle; dominant-baseline: central; }
+    .halo { stroke: #fff; stroke-width: 24px; stroke-linejoin: round; paint-order: stroke; }
+    .box { fill: #fff; stroke: #1e1e1e; stroke-width: 4; stroke-linejoin: round; }
+    .group { fill: none; }
+    .line { fill: none; stroke: #1e1e1e; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="-20 -18 24 36" refX="0" refY="0" markerWidth="24" markerHeight="36" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M-16 -16 L0 0 L-16 16" fill="none" stroke="#1e1e1e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="-32" y="-32" width="1248" height="560" fill="#fff"/>
+
+  <!-- Connections -->
+  <path class="line" marker-start="url(#arrow)" marker-end="url(#arrow)" d="M320 304 H416"/>
+  <path class="line" marker-start="url(#arrow)" marker-end="url(#arrow)" d="M592 304 H736"/>
+  <path class="line" marker-end="url(#arrow)" d="M644 304 A20 20 0 0 0 664 284 V148 A20 20 0 0 1 684 128 H736"/>
+  <path class="line" marker-end="url(#arrow)" d="M644 304 A20 20 0 0 1 664 324 V452 A20 20 0 0 0 684 472 H744"/>
+
+  <!-- Machines -->
+  <rect class="box" x="56" y="248" width="256" height="112" rx="56"/>
+  <text x="184" y="304">Host VxAdmin</text>
+  <path class="box" d="M424 304 L448 248 H560 L584 304 L560 360 H448 Z"/>
+  <text x="504" y="286">Network</text>
+  <text x="504" y="322">Switch</text>
+  <rect class="box" x="744" y="56" width="384" height="144" rx="64"/>
+  <text x="936" y="110">Client VxAdmin</text>
+  <text x="936" y="146">Adjudication Station #1</text>
+  <rect class="box" x="744" y="232" width="384" height="144" rx="64"/>
+  <text x="936" y="286">Client VxAdmin</text>
+  <text x="936" y="322">Adjudication Station #2</text>
+
+  <!-- More client stations -->
+  <circle cx="900" cy="472" r="10" fill="#1e1e1e"/>
+  <circle cx="935" cy="472" r="10" fill="#1e1e1e"/>
+  <circle cx="970" cy="472" r="10" fill="#1e1e1e"/>
+</svg>

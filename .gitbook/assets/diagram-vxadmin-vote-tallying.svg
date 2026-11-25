@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2233" height="888" viewBox="-33 -16 2233 888">
+  <!--
+    VxAdmin vote tallying flow, TDP system-overview/vxadmin-function.md. Edit this file directly: every label is text,
+    and connector labels are drawn after the lines with a white halo, so
+    renaming one needs no other change. Text is set in Inter, falling back to
+    the reader's sans-serif (GitBook strips embedded fonts). Redrawn from the
+    Figma export "image (38).png"; this file now replaces it as the source.
+  -->
+  <style>
+    text { font-family: "Inter", sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.4px; fill: #1e1e1e; text-anchor: middle; dominant-baseline: central; }
+    .halo { stroke: #fff; stroke-width: 24px; stroke-linejoin: round; paint-order: stroke; }
+    .box { fill: #fff; stroke: #1e1e1e; stroke-width: 4; stroke-linejoin: round; }
+    .group { fill: none; }
+    .line { fill: none; stroke: #1e1e1e; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="-20 -18 24 36" refX="0" refY="0" markerWidth="24" markerHeight="36" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M-16 -16 L0 0 L-16 16" fill="none" stroke="#1e1e1e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="-33" y="-16" width="2233" height="888" fill="#fff"/>
+
+  <!-- Connectors -->
+  <path class="line" marker-end="url(#arrow)" d="M320 144 H344"/>
+  <path class="line" marker-end="url(#arrow)" d="M616 144 H776"/>
+  <path class="line" marker-end="url(#arrow)" d="M1048 144 H1224"/>
+  <path class="line" marker-end="url(#arrow)" d="M184 272 V208"/>
+  <path class="line" marker-end="url(#arrow)" d="M832 296 V280 A20 20 0 0 1 852 260 H892 A20 20 0 0 0 912 240 V224"/>
+  <path class="line" marker-end="url(#arrow)" d="M480 560 V216"/>
+  <path class="line" marker-end="url(#arrow)" d="M832 568 V456"/>
+  <path class="line" marker-end="url(#arrow)" d="M1296 296 V280 A20 20 0 0 1 1316 260 H1340 A20 20 0 0 0 1360 240 V224"/>
+  <path class="line" marker-end="url(#arrow)" d="M1296 568 V456"/>
+  <path class="line" marker-end="url(#arrow)" d="M1496 144 H1652 A20 20 0 0 1 1672 164 V356 A20 20 0 0 0 1692 376 H1848"/>
+
+  <!-- SQLite data store -->
+  <rect class="box group" x="344" y="496" width="1360" height="288" rx="80"/>
+  <text x="1572" y="640">SQLite Data Store</text>
+
+  <!-- Steps and stored data -->
+  <rect class="box" x="55" y="88" width="257" height="112" rx="56"/>
+  <text x="183.5" y="126">Group</text>
+  <text x="183.5" y="162">Determination</text>
+  <text x="184" y="326">Filter &amp; Group</text>
+  <text x="184" y="362">Parameters</text>
+  <rect class="box" x="352" y="80" width="256" height="128" rx="56"/>
+  <text x="480" y="144">CVR Aggregation</text>
+  <rect class="box" x="784" y="72" width="256" height="144" rx="56"/>
+  <text x="912" y="108">Write-In</text>
+  <text x="912" y="144">Adjudication</text>
+  <text x="912" y="180">Hydration</text>
+  <rect class="box" x="1232" y="72" width="256" height="144" rx="56"/>
+  <text x="1360" y="126">Manual Tallies</text>
+  <text x="1360" y="162">Hydration</text>
+  <rect class="box" x="592" y="304" width="480" height="144" rx="64"/>
+  <text x="832" y="376">Write-In Adjudication Aggregation</text>
+  <rect class="box" x="1104" y="304" width="384" height="144" rx="64"/>
+  <text x="1296" y="376">Manual Tallies Aggregation</text>
+  <rect class="box" x="1856" y="304" width="256" height="144" rx="64"/>
+  <text x="1984" y="376">Reporting</text>
+  <rect class="box" x="392" y="568" width="176" height="128" rx="56"/>
+  <text x="480" y="632">CVRs</text>
+  <rect class="box" x="664" y="576" width="336" height="112" rx="56"/>
+  <text x="832" y="632">Write-In Adjudications</text>
+  <rect class="box" x="1184" y="576" width="224" height="128" rx="56"/>
+  <text x="1296" y="640">Manual Tallies</text>
+
+  <!-- Connector labels -->
+  <text class="halo" x="696" y="144">Cache</text>
+  <text class="halo" x="1672" y="260">Complete Tallies</text>
+</svg>

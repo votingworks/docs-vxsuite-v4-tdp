@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2754" height="1352" viewBox="64 80 2754 1352">
+  <!--
+    Election entity relationship diagram, TDP
+    system-overview/election-package/vxsuite-election-definition.md. Edit this
+    file directly: every label is text. Text is set in Inter, falling back to
+    the reader's sans-serif (GitBook strips embedded fonts). Redrawn from the
+    Figma export vxsuite-election-definition.png; this file now replaces it as
+    the source.
+
+    Solid lines are required relationships, dashed lines optional ones. Every
+    line runs from box edge to box edge. A "head" marker's tip touches the box
+    it points into; a "tail" marker's base sits on its box and points back
+    along the line.
+  -->
+  <style>
+    text { font-family: "Inter", sans-serif; font-size: 36px; font-weight: 500; letter-spacing: -0.6px; fill: #1e1e1e; text-anchor: middle; dominant-baseline: central; }
+    .halo { stroke: #fff; stroke-width: 24px; stroke-linejoin: round; paint-order: stroke; }
+    .box { fill: #fff; stroke: #1e1e1e; stroke-width: 4; }
+    .group { fill: none; }
+    .line { fill: none; stroke: #1e1e1e; stroke-width: 4; stroke-linecap: butt; stroke-linejoin: round; }
+    .optional { stroke-dasharray: 16 12; }
+  </style>
+  <defs>
+    <marker id="head" viewBox="-22 -11 22 22" refX="0" refY="0" markerWidth="22" markerHeight="22" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L-22 -10 L-22 10 Z" fill="#1e1e1e"/>
+    </marker>
+    <marker id="tail" viewBox="-22 -11 22 22" refX="0" refY="0" markerWidth="22" markerHeight="22" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M-22 0 L0 -10 L0 10 Z" fill="#1e1e1e"/>
+    </marker>
+  </defs>
+
+  <rect x="64" y="80" width="2754" height="1352" fill="#fff"/>
+
+  <!-- Required relationships -->
+  <path class="line" marker-end="url(#tail)" d="M934 232 H316 A20 20 0 0 0 296 252 V358"/>
+  <path class="line" marker-end="url(#tail)" d="M1080 298 V438"/>
+  <path class="line" marker-end="url(#tail)" d="M1018 298 V324 A20 20 0 0 1 998 344 H635 A20 20 0 0 0 615 364 V678"/>
+  <path class="line" marker-end="url(#tail)" d="M1226 232 H1316 A20 20 0 0 1 1336 252 V774"/>
+  <path class="line" marker-end="url(#tail)" d="M1226 232 H1834 A20 20 0 0 1 1854 252 V774"/>
+  <path class="line" marker-end="url(#tail)" d="M442 424 H668 A20 20 0 0 1 688 444 V484 A20 20 0 0 0 708 504 H934"/>
+  <path class="line" marker-end="url(#tail)" d="M502 744 H316 A20 20 0 0 1 296 724 V490"/>
+  <path class="line" marker-end="url(#tail)" d="M794 744 H1060 A20 20 0 0 0 1080 724 V570"/>
+  <path class="line" marker-end="url(#head)" d="M1750 774 V524 A20 20 0 0 0 1730 504 H1226"/>
+  <path class="line" marker-end="url(#tail)" d="M1954 840 H2198"/>
+  <path class="line" marker-end="url(#head)" d="M2262 1224 H1396 A20 20 0 0 1 1376 1204 V906"/>
+
+  <!-- Optional relationships -->
+  <path class="line optional" marker-end="url(#head)" d="M648 810 V820 A20 20 0 0 0 668 840 H1190"/>
+  <path class="line optional" marker-end="url(#tail)" d="M590 810 V898 A20 20 0 0 0 610 918 H676 A20 20 0 0 1 696 938 V1030"/>
+  <path class="line optional" marker-end="url(#head)" d="M1662 840 H1482"/>
+  <path class="line optional" marker-end="url(#head)" d="M2318 968 H1316 A20 20 0 0 1 1296 948 V906"/>
+
+  <!-- Entities -->
+  <rect class="box" x="936" y="168" width="288" height="128" rx="56"/>
+  <text x="1080" y="232">Election</text>
+  <rect class="box" x="152" y="360" width="288" height="128" rx="56"/>
+  <text x="296" y="424">Precinct</text>
+  <rect class="box" x="936" y="440" width="288" height="128" rx="56"/>
+  <text x="1080" y="504">District</text>
+  <rect class="box" x="504" y="680" width="288" height="128" rx="56"/>
+  <text x="648" y="744">Ballot Style</text>
+  <rect class="box" x="1192" y="776" width="288" height="128" rx="56"/>
+  <text x="1336" y="840">Party</text>
+  <rect class="box" x="552" y="1032" width="288" height="128" rx="56"/>
+  <text x="696" y="1096">Language</text>
+  <rect class="box" x="1664" y="776" width="288" height="128" rx="56"/>
+  <text x="1808" y="840">Contest</text>
+
+  <!-- A contest's options: ballot measure options, candidates or straight party options -->
+  <rect class="box group" x="2200" y="592" width="528" height="752" rx="72"/>
+  <rect class="box" x="2264" y="648" width="400" height="128" rx="56"/>
+  <text x="2464" y="712">Ballot Measure Option</text>
+  <text x="2464" y="840">or</text>
+  <rect class="box" x="2320" y="904" width="288" height="128" rx="56"/>
+  <text x="2464" y="968">Candidate</text>
+  <text x="2464" y="1096">or</text>
+  <rect class="box" x="2264" y="1160" width="400" height="128" rx="56"/>
+  <text x="2464" y="1224">Straight Party Option</text>
+</svg>
